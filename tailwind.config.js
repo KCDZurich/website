@@ -12,6 +12,20 @@ module.exports = {
       sans: ['Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', ...defaultTheme.fontFamily.sans],
       mono: ['', ...defaultTheme.fontFamily.mono],
     },
+    fontSize: {
+      xs: ['12px'],
+      sm: ['14px'],
+      base: ['16px'],
+      lg: ['18px'],
+      xl: ['20px'],
+      '2xl': ['24px'],
+      '3xl': ['28px'],
+      '4xl': ['36px'],
+      '5xl': ['40px'],
+      '6xl': ['48px'],
+      '7xl': ['56px'],
+      '8xl': ['80px'],
+    },
     colors: ({ colors }) => ({
       inherit: colors.inherit,
       current: colors.current,
@@ -51,6 +65,11 @@ module.exports = {
       md: { max: '1023px' },
       sm: { max: '767px' },
       xs: { max: '359px' },
+    },
+    extend: {
+      lineHeight: {
+        denser: '1.125',
+      },
     },
   },
   plugins: [require('tailwindcss-safe-area')],
