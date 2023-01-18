@@ -3,6 +3,7 @@ import React from 'react';
 
 import Experts from 'components/pages/experts';
 import Hero from 'components/pages/hero';
+import Participate from 'components/pages/participate';
 import Schedule from 'components/pages/schedule';
 import Venue from 'components/pages/venue';
 import Layout from 'components/shared/layout';
@@ -14,6 +15,7 @@ const HomePage = () => (
     <Venue />
     <Experts />
     <Schedule />
+    <Participate />
   </Layout>
 );
 
