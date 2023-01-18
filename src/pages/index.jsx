@@ -4,6 +4,7 @@ import React from 'react';
 import Experts from 'components/pages/experts';
 import Hero from 'components/pages/hero';
 import Participate from 'components/pages/participate';
+import Partners from 'components/pages/partners';
 import Schedule from 'components/pages/schedule';
 import Sponsors from 'components/pages/sponsors';
 import Venue from 'components/pages/venue';
@@ -20,6 +21,7 @@ const HomePage = () => (
     <Participate />
     <Workshops />
     <Sponsors />
+    <Partners />
   </Layout>
 );
 
