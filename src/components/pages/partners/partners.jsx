@@ -13,7 +13,7 @@ const TITLE = 'Community & Media Partners';
 const ITEMS = [Cloudnative, Techface, InsideIt, ArchCloud, Rokt, Vshn, WhiteRabbit];
 
 const Partners = () => (
-  <section className="safe-paddings relative bg-[#EDC3C7] bg-opacity-10 pt-24 pb-48">
+  <section className="safe-paddings relative bg-gray-12 pt-24 pb-48">
     <div className="container text-center">
       <h2 className="text-6xl font-bold leading-denser text-primary-1">{TITLE}</h2>
 

@@ -40,7 +40,7 @@ const ITEMS = [
 ];
 
 const Sponsors = () => (
-  <section className="safe-paddings relative bg-[#EDC3C7] bg-opacity-10 pt-40">
+  <section className="safe-paddings relative bg-gray-12 pt-40">
     <div className="container text-center">
       <h2 className="text-6xl font-bold leading-denser text-primary-1">{TITLE}</h2>
       <p className="mx-auto mt-5 max-w-[800px] text-xl leading-normal text-primary-1">
