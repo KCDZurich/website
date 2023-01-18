@@ -22,7 +22,7 @@ module.exports = {
       '3xl': ['28px'],
       '4xl': ['36px'],
       '5xl': ['40px'],
-      '6xl': ['48px'],
+      '6xl': ['50px'],
       '7xl': ['56px'],
       '8xl': ['80px'],
     },
@@ -56,6 +56,7 @@ module.exports = {
         9: '#CCCCCC',
         10: '#E6E6E6',
         11: '#D1D1E0',
+        12: '#F5F5F5',
       },
     }),
     screens: {
