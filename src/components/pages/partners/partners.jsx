@@ -20,7 +20,7 @@ const Partners = () => (
       <ul className="mt-16 flex flex-wrap justify-center gap-y-8 gap-x-8">
         {ITEMS.map((logo, index) => (
           <li
-            className="flex min-h-[104px] min-w-[280px] items-center justify-center  rounded border border-gray-10"
+            className="flex min-h-[80px] min-w-[280px] items-center justify-center  rounded border border-gray-10"
             key={index}
           >
             <img

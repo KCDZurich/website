@@ -59,6 +59,10 @@ module.exports = {
         12: '#F5F5F5',
       },
     }),
+    backgroundImage: {
+      'header-gradient': 'linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)',
+      ...defaultTheme.backgroundImage,
+    },
     screens: {
       '2xl': { max: '1919px' },
       xl: { max: '1535px' },
