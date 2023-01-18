@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
+import Experts from 'components/pages/experts';
 import Hero from 'components/pages/hero';
 import Venue from 'components/pages/venue';
 import Layout from 'components/shared/layout';
@@ -10,6 +11,7 @@ const HomePage = () => (
   <Layout>
     <Hero />
     <Venue />
+    <Experts />
   </Layout>
 );
 
