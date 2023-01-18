@@ -12,9 +12,9 @@ const DESCRIPTION =
 const Schedule = () => (
   <section className="safe-paddings relative bg-gray-12 pb-40">
     <div className="container flex justify-between">
-      <div className="max-w-[428px]">
-        <h2 className="text-6xl font-bold leading-tight text-primary-1">{TITLE}</h2>
-        <p className="mt-5 max-w-[500px] text-xl leading-normal text-primary-1">{DESCRIPTION}</p>
+      <div className="max-w-[428px] text-primary-1">
+        <h2 className="text-6xl font-bold leading-tight">{TITLE}</h2>
+        <p className="mt-5 text-xl leading-normal ">{DESCRIPTION}</p>
         <Button className="mt-7 text-white" to="/" theme="blue" size="lg">
           Get your ticket
         </Button>

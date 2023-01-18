@@ -6,6 +6,7 @@ import Hero from 'components/pages/hero';
 import Participate from 'components/pages/participate';
 import Schedule from 'components/pages/schedule';
 import Venue from 'components/pages/venue';
+import Workshops from 'components/pages/workshops';
 import Layout from 'components/shared/layout';
 import SEO from 'components/shared/seo';
 
@@ -16,6 +17,7 @@ const HomePage = () => (
     <Experts />
     <Schedule />
     <Participate />
+    <Workshops />
   </Layout>
 );
 
