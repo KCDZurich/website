@@ -1,9 +1,10 @@
 import { m, LazyMotion, domAnimation, useAnimation } from 'framer-motion';
 import PropTypes from 'prop-types';
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import Link from 'components/shared/link';
 import MENUS from 'constants/menus';
+import useScrollOverflow from 'hooks/use-scroll-overflow';
 
 import Button from '../button';
 
@@ -33,13 +34,15 @@ const variants = {
 const MobileMenu = ({ isOpen }) => {
   const controls = useAnimation();
 
-  useEffect(() => {
-    if (isOpen) {
-      controls.start('to');
-    } else {
-      controls.start('from');
-    }
-  }, [isOpen, controls]);
+  // useEffect(() => {
+  //   if (isOpen) {
+  //     controls.start('to');
+  //   } else {
+  //     controls.start('from');
+  //   }
+  // }, [isOpen, controls]);
+
+  useScrollOverflow(controls, isOpen);
 
   return (
     <LazyMotion features={domAnimation}>
