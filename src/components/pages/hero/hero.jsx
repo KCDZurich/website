@@ -20,7 +20,7 @@ const Hero = () => (
         <h1 className="mt-3 max-w-[570px] text-8xl font-bold leading-denser text-primary-1 lg:max-w-[1050px] sm:text-7xl">
           {TITLE}
         </h1>
-        <p className="mt-5 max-w-[500px] text-lg leading-normal text-primary-1 lg:max-w-[600px] sm:text-base">
+        <p className="mt-5 max-w-[500px] text-lg leading-normal text-primary-1 lg:max-w-[600px]">
           {DESCRIPTION}
         </p>
         <Button className="mt-7 text-white" to="/" theme="blue" size="lg">

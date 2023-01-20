@@ -20,7 +20,7 @@ const ITEMS = [
   {
     title: 'Gold',
     logos: [Google, Isovalent],
-    cardClassname: 'min-w-[488px] min-h-[152px]',
+    cardClassname: 'min-w-[488px] min-h-[152px] sm:min-w-[350px] sm:min-h-[130px]',
   },
   {
     title: 'Silver',
@@ -40,7 +40,7 @@ const ITEMS = [
 ];
 
 const Sponsors = () => (
-  <section className="safe-paddings relative bg-gray-12 pt-40">
+  <section className="safe-paddings relative bg-gray-12 pt-40 lg:pt-32 md:pt-24 sm:py-16">
     <div className="container text-center">
       <h2 className="text-6xl font-bold leading-denser text-primary-1">{TITLE}</h2>
       <p className="mx-auto mt-5 max-w-[800px] text-xl leading-normal text-primary-1">
@@ -56,17 +56,17 @@ const Sponsors = () => (
               {title}
             </p>
 
-            <ul className="mt-10 mb-[70px] flex justify-center">
+            <ul className="mt-10 mb-[70px] flex flex-wrap justify-center gap-x-8 xl:gap-y-6">
               {logos.map((logo, index) => (
                 <li
                   className={clsx(
-                    'ml-8 flex items-center justify-center rounded border border-gray-10 first:ml-0',
+                    'flex items-center justify-center rounded border border-gray-10',
                     cardClassname
                   )}
                   key={index}
                 >
                   <img
-                    className="h-auto w-auto"
+                    className="h-auto w-auto sm:max-w-[210px]"
                     src={logo}
                     width="auto"
                     height="auto"

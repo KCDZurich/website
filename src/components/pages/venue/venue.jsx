@@ -5,9 +5,9 @@ import CardIllusrtation from './images/card-illustration.jpg';
 const TITLE = 'Venue information';
 
 const Venue = () => (
-  <section className="safe-paddings bg-gray-12 py-40 md:py-24">
+  <section className="safe-paddings bg-gray-12 py-40 md:py-24 sm:py-16">
     <div className="container-md">
-      <div className="text-2xl sm:text-lg">
+      <div className="text-2xl sm:text-xl">
         <p>
           <span className="font-bold">Kubernetes Community Days</span> (KCDs) are global,
           community-organized events that gather adopters and technologists from open source and
