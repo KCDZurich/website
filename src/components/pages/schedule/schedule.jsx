@@ -11,19 +11,19 @@ const DESCRIPTION =
 
 const Schedule = () => (
   <section className="safe-paddings relative bg-gray-12 pb-40">
-    <div className="container flex justify-between">
-      <div className="max-w-[428px] text-primary-1">
-        <h2 className="text-6xl font-bold leading-tight">{TITLE}</h2>
-        <p className="mt-5 text-xl leading-normal ">{DESCRIPTION}</p>
+    <div className="container flex justify-between lg:flex-col">
+      <div className="text-primary-1">
+        <h2 className="max-w-[428px] text-6xl font-bold leading-tight lg:max-w-[800px]">{TITLE}</h2>
+        <p className="mt-5 max-w-[428px] text-xl leading-normal lg:max-w-[650px]">{DESCRIPTION}</p>
         <Button className="mt-7 text-white" to="/" theme="blue" size="lg">
           Get your ticket
         </Button>
       </div>
       <img
-        className="mt-16 h-[238px] w-[728px]"
+        className="mt-16 h-[238px] w-[728px] lg:mx-auto lg:h-auto sm:max-h-[200px]"
         src={illustration}
-        width={728}
-        height={238}
+        width="auto"
+        height="auto"
         loading="lazy"
         alt=""
       />

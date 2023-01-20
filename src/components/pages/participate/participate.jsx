@@ -11,7 +11,7 @@ const Participate = () => (
   <section className="safe-paddings bg-[#EDC3C7] bg-opacity-10 py-20">
     <div className="container-md">
       <h2 className="text-center text-6xl font-bold leading-tight text-primary-1">{TITLE}</h2>
-      <div className="mt-8 text-2xl leading-normal">
+      <div className="mt-8 text-2xl leading-normal sm:text-lg">
         <p>{DESCRIPTION1}</p>
         <p className="mt-7 font-bold">{DESCRIPTION2}</p>
       </div>

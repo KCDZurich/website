@@ -58,12 +58,24 @@ const Experts = () => (
   <section className="safe-paddings relative bg-gray-12 pb-40">
     <div className="container">
       <h2 className="text-6xl font-bold leading-tight text-primary-1">{TITLE}</h2>
-      <ul className="mt-14 grid grid-cols-4 gap-x-8 gap-y-8">
+      <ul className="mt-14 grid grid-cols-4 gap-8 lg:gap-6 md:grid-cols-3 sm:flex sm:flex-wrap sm:justify-evenly">
         {ITEMS.map(({ name, position, photo }, index) => (
-          <li className="flex w-[240px] flex-col" key={index}>
-            <img src={photo} width={240} height={284} loading="lazy" alt={name} />
+          <li
+            className="flex w-[240px] flex-col lg:w-52 md:w-48 sm:w-auto sm:max-w-[200px]"
+            key={index}
+          >
+            <img
+              className="w-full"
+              src={photo}
+              width={240}
+              height={284}
+              loading="lazy"
+              alt={name}
+            />
 
-            <p className="mt-2.5 text-2xl font-bold leading-normal text-primary-1">{name}</p>
+            <p className="mt-2.5 text-2xl font-bold leading-normal text-primary-1 sm:text-left">
+              {name}
+            </p>
 
             <span className="mt-1.5 text-primary-1">{position}</span>
           </li>
