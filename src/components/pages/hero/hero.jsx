@@ -23,12 +23,17 @@ const Hero = () => (
         <p className="mt-5 max-w-[500px] text-lg leading-normal text-primary-1 lg:max-w-[600px]">
           {DESCRIPTION}
         </p>
-        <Button className="mt-7 text-white" to="/" theme="blue" size="lg">
+        <Button
+          className="mt-7 text-white shadow-[0_15px_40px_#999999]"
+          to="/"
+          theme="blue"
+          size="lg"
+        >
           Get your ticket
         </Button>
       </div>
       <img
-        className="absolute -top-44 -left-32 translate-x-1/2 xl:-top-28 xl:-left-8 xl:w-[920px]  lg:hidden"
+        className="absolute -top-44 -left-32 translate-x-1/2 xl:-top-28 xl:-left-8 xl:w-[920px] lg:hidden"
         src={illustration}
         width={1090}
         height="auto"

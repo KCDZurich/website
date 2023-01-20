@@ -12,7 +12,7 @@ import Link from '../link';
 const Header = ({ isMobileMenuOpen, onBurgerClick }) => (
   <header
     className={clsx(
-      'safe-paddings transition-200 transition-colors',
+      'safe-paddings transition-200 z-10 transition-colors',
       isMobileMenuOpen ? 'bg-gray-12 bg-opacity-100' : 'bg-[#EDC3C7] bg-opacity-10'
     )}
   >
@@ -25,7 +25,9 @@ const Header = ({ isMobileMenuOpen, onBurgerClick }) => (
         <ul className="flex space-x-10 text-white md:hidden">
           {MENUS.header.map(({ to, text }, index) => (
             <li className="font-semibold text-primary-1" key={index}>
-              <Link to={to}>{text}</Link>
+              <Link theme="primary" to={to}>
+                {text}
+              </Link>
             </li>
           ))}
         </ul>

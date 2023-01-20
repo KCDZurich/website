@@ -16,7 +16,9 @@ const Footer = () => (
         <ul className="flex space-x-10 text-white">
           {MENUS.footer.map(({ to, text }, index) => (
             <li className="font-semibold text-primary-1" key={index}>
-              <Link to={to}>{text}</Link>
+              <Link theme="primary" to={to}>
+                {text}
+              </Link>
             </li>
           ))}
         </ul>

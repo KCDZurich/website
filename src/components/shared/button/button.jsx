@@ -14,8 +14,9 @@ const styles = {
     xs: 'h-10 px-5 text-xs',
   },
   theme: {
-    blue: 'bg-blue text-white hover:bg-white hover:text-blue',
-    primary: 'bg-none text-primary-1 border-2 border-primary-1',
+    blue: 'bg-blue-1 text-white hover:bg-blue-2',
+    primary:
+      'bg-none text-primary-1 border-2 border-primary-1 hover:bg-primary-1 hover:bg-opacity-10',
   },
 };
 

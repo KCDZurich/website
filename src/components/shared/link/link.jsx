@@ -14,7 +14,9 @@ const styles = {
   // TODO: Add themes. Better to name the theme using this pattern: "${color-name}-${theme-type}", e.g. "black-filled"
   //       If there is no dividing between theme types, then feel free to use just color names, e.g. "black"
   //       Check out an example by a link above for better understanding
-  theme: {},
+  theme: {
+    primary: 'text-primary-1 hover:text-blue-1',
+  },
 };
 
 const Link = ({ className: additionalClassName, size, theme, to, children, ...props }) => {
