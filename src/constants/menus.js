@@ -13,7 +13,12 @@ const MENUS = {
     { text: 'Sponsors', ...LINKS.sponsors },
     { text: 'Tickets', ...LINKS.tickets },
   ],
-  mobile: [],
+  mobile: [
+    { text: 'Speakers', ...LINKS.speakers },
+    { text: 'Schedule', ...LINKS.schedule },
+    { text: 'Sponsors', ...LINKS.sponsors },
+    { text: 'Tickets', ...LINKS.tickets },
+  ],
 };
 
 export default MENUS;

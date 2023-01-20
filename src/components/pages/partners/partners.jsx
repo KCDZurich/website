@@ -23,14 +23,7 @@ const Partners = () => (
             className="flex min-h-[80px] min-w-[280px] items-center justify-center  rounded border border-gray-10"
             key={index}
           >
-            <img
-              className="h-auto w-auto"
-              src={logo}
-              width="auto"
-              height="auto"
-              loading="lazy"
-              alt=""
-            />
+            <img src={logo} width="auto" height="auto" loading="lazy" alt="" />
           </li>
         ))}
       </ul>
