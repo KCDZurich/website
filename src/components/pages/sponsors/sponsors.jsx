@@ -19,22 +19,36 @@ const TITLE = 'Sponsors';
 const ITEMS = [
   {
     title: 'Gold',
-    logos: [Google, Isovalent],
+    logos: [
+      { icon: Google, url: 'https://www.google.com/' },
+      { icon: Isovalent, url: 'https://isovalent.com/' },
+    ],
     cardClassname: 'min-w-[488px] min-h-[152px] sm:min-w-[350px] sm:min-h-[130px]',
   },
   {
     title: 'Silver',
-    logos: [Swisscom, Vmware, Dynatrace],
+    logos: [
+      { icon: Swisscom, url: 'https://www.swisscom.ch/' },
+      { icon: Vmware, url: 'https://www.vmware.com/' },
+      { icon: Dynatrace, url: 'https://www.dynatrace.com/' },
+    ],
     cardClassname: 'min-w-[384px] min-h-[122px]',
   },
   {
     title: 'Bronze',
-    logos: [Innoq, Adfinis],
+    logos: [
+      { icon: Innoq, url: 'https://www.innoq.com/' },
+      { icon: Adfinis, url: 'https://adfinis.com/' },
+    ],
     cardClassname: 'min-w-[280px] min-h-[104px]',
   },
   {
     title: 'Special Sponsors',
-    logos: [Postfinance, Puzzle, Camptocamp],
+    logos: [
+      { icon: Postfinance, url: 'https://www.postfinance.ch/' },
+      { icon: Puzzle, url: 'https://www.puzzle.ch/' },
+      { icon: Camptocamp, url: 'https://www.camptocamp.com/' },
+    ],
     cardClassname: 'min-w-[280px] min-h-[104px]',
   },
 ];
@@ -60,7 +74,7 @@ const Sponsors = () => (
             </p>
 
             <ul className="mt-10 mb-[70px] flex flex-wrap justify-center gap-x-8 xl:gap-y-6">
-              {logos.map((logo, index) => (
+              {logos.map(({ icon, url }, index) => (
                 <li
                   className={clsx(
                     'flex items-center justify-center rounded border border-gray-10',
@@ -68,14 +82,16 @@ const Sponsors = () => (
                   )}
                   key={index}
                 >
-                  <img
-                    className="h-auto w-auto sm:max-w-[210px]"
-                    src={logo}
-                    width="auto"
-                    height="auto"
-                    loading="lazy"
-                    alt=""
-                  />
+                  <Link className="flex h-full w-full items-center justify-center" to={url}>
+                    <img
+                      className="h-auto w-auto sm:max-w-[210px]"
+                      src={icon}
+                      width="auto"
+                      height="auto"
+                      loading="lazy"
+                      alt=""
+                    />
+                  </Link>
                 </li>
               ))}
             </ul>
