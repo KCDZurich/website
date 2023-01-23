@@ -5,9 +5,9 @@ import CardIllusrtation from './images/card-illustration.jpg';
 const TITLE = 'Venue information';
 
 const Venue = () => (
-  <section className="safe-paddings bg-gray-12 py-40 md:py-24 sm:py-16">
+  <section className="safe-paddings bg-white py-40 md:py-24 sm:py-16">
     <div className="container-md">
-      <div className="text-2xl sm:text-xl">
+      <div className="text-2xl sm:text-lg">
         <p>
           <span className="font-bold">Kubernetes Community Days</span> (KCDs) are global,
           community-organized events that gather adopters and technologists from open source and
@@ -36,17 +36,17 @@ const Venue = () => (
               alt="card-illustration"
             />
             <div className="pt-5 pb-8 pl-10 pr-16 leading-normal md:row-start-1 md:px-6 sm:row-start-2">
-              <p className="text-2xl font-semibold sm:text-xl">
+              <p className="text-2xl font-semibold sm:text-lg">
                 Google HQ <br />
                 at Zurich Europaallee
               </p>
-              <p className="mt-5 text-xl text-[#262F59] opacity-60 sm:text-base">
+              <p className="mt-5 text-lg text-[#262F59] opacity-60 sm:text-base">
                 Europaallee 1st - 9th Floors, Basement & Ground, 8004 Zürich, Switzerland
               </p>
             </div>
           </div>
 
-          <div className="mt-9 w-[520px] text-xl leading-normal xl:max-w-[470px] lg:ml-8 lg:max-w-[530px] md:ml-0 md:w-full md:max-w-none sm:text-lg">
+          <div className="mt-9 w-[520px] text-lg leading-normal xl:max-w-[470px] lg:ml-8 lg:max-w-[530px] md:ml-0 md:w-full md:max-w-none sm:text-lg">
             <p>
               The Kubernetes Community Days in Zurich will be held at the Google HQ at Zurich
               Europaallee, a modern and convenient location next to the train station. Attendees can

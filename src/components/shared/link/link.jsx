@@ -5,8 +5,7 @@ import React from 'react';
 
 // Example of the code — https://user-images.githubusercontent.com/20713191/144221096-1939c382-4ab8-4d28-b0e6-7bbe3a8f8556.png
 const styles = {
-  // TODO: Add base styles
-  base: '',
+  base: 'font-semibold inline-flex items-baseline leading-none transition-colors duration-200 group relative',
   // TODO: Add sizes. Better to write down all sizes and go from higher to lower, e.g. "xl", "lg", "md", "sm", "xs"
   //       The name of the size cannot be lower than the font size that being used, e.g. "sm" size cannot have font-size "xs"
   //       Check out an example by a link above for better understanding
@@ -16,6 +15,8 @@ const styles = {
   //       Check out an example by a link above for better understanding
   theme: {
     primary: 'text-primary-1 hover:text-blue-1',
+    'blue-underlined':
+      'text-blue-1 border-b-2 hover:border-blue-1 border-transparent transition-colors duration-200',
   },
 };
 

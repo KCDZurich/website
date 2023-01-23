@@ -40,13 +40,16 @@ const ITEMS = [
 ];
 
 const Sponsors = () => (
-  <section className="safe-paddings relative bg-gray-12 pt-40 lg:pt-32 md:pt-24 sm:py-16">
+  <section className="safe-paddings relative bg-white pt-40 lg:pt-32 md:pt-24 sm:py-16">
     <div className="container text-center">
       <h2 className="text-6xl font-bold leading-denser text-primary-1">{TITLE}</h2>
-      <p className="mx-auto mt-5 max-w-[800px] text-xl leading-normal text-primary-1">
+      <p className="mx-auto mt-5 max-w-[800px] text-lg leading-normal text-primary-1">
         We would like to extend a special thank you to our sponsors for their support and commitment
         to the community. We couldn't do it without them! If you’re interested in becoming a
-        sponsor, please contact <Link to="mailto:hello@kcdzurich.ch">hello@kcdzurich.ch</Link>
+        sponsor, please contact{' '}
+        <Link theme="blue-underlined" to="mailto:hello@kcdzurich.ch">
+          hello@kcdzurich.ch
+        </Link>
       </p>
 
       <ul className="mt-20 flex flex-col">

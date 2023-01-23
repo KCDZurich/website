@@ -55,7 +55,7 @@ const ITEMS = [
 ];
 
 const Experts = () => (
-  <section className="safe-paddings relative bg-gray-12 pb-40 lg:pb-32 md:py-24 sm:py-16">
+  <section className="safe-paddings relative bg-white pb-40 lg:pb-32 md:py-24 sm:py-16">
     <div className="container">
       <h2 className="text-6xl font-bold leading-tight text-primary-1">{TITLE}</h2>
       <ul className="mt-14 grid grid-cols-4 gap-8 lg:gap-6 md:grid-cols-3 sm:flex sm:flex-wrap sm:justify-evenly">
