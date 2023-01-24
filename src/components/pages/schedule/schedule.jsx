@@ -12,7 +12,7 @@ const DESCRIPTION =
 const Schedule = () => (
   <section className="safe-paddings relative bg-white pb-40 lg:pb-32 md:py-24 sm:py-16">
     <div className="container flex justify-between lg:flex-col">
-      <div className="text-primary-1">
+      <div className="text-primary-1 lg:flex lg:flex-col lg:items-center lg:justify-center lg:text-center">
         <h2 className="lg:min-w-none min-w-[428px] max-w-[428px] text-6xl font-bold leading-tight lg:max-w-[800px]">
           {TITLE}
         </h2>
@@ -22,7 +22,7 @@ const Schedule = () => (
         </Button>
       </div>
       <img
-        className="mt-16 h-[238px] w-[728px] lg:mx-auto lg:h-auto sm:max-h-[200px]"
+        className="mt-16 h-[238px] w-[520px] xl:ml-10 lg:mx-auto lg:h-auto sm:max-h-[200px]"
         src={illustration}
         width="auto"
         height="auto"

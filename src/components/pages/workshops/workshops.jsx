@@ -18,7 +18,7 @@ const Workshops = () => (
         loading="lazy"
         alt=""
       />
-      <div className="text-primary-1">
+      <div className="text-primary-1 lg:flex lg:flex-col lg:items-center lg:justify-center lg:text-center">
         <h2 className="max-w-[592px] text-6xl font-bold leading-tight lg:max-w-[650px]">
           Workshops <br />
           on June 14, 2023

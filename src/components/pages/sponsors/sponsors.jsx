@@ -32,7 +32,7 @@ const ITEMS = [
       { icon: Vmware, url: 'https://www.vmware.com/' },
       { icon: Dynatrace, url: 'https://www.dynatrace.com/' },
     ],
-    cardClassname: 'min-w-[384px] min-h-[122px]',
+    cardClassname: 'min-w-[384px] min-h-[122px] sm:min-w-[320px] sm:min-h-[115px]',
   },
   {
     title: 'Bronze',
@@ -40,7 +40,7 @@ const ITEMS = [
       { icon: Innoq, url: 'https://www.innoq.com/' },
       { icon: Adfinis, url: 'https://adfinis.com/' },
     ],
-    cardClassname: 'min-w-[280px] min-h-[104px]',
+    cardClassname: 'min-w-[280px] min-h-[104px] sm:min-w-[250px] sm:min-h-[94px]',
   },
   {
     title: 'Special Sponsors',
@@ -49,7 +49,7 @@ const ITEMS = [
       { icon: Puzzle, url: 'https://www.puzzle.ch/' },
       { icon: Camptocamp, url: 'https://www.camptocamp.com/' },
     ],
-    cardClassname: 'min-w-[280px] min-h-[104px]',
+    cardClassname: 'min-w-[280px] min-h-[104px] sm:min-w-[250px] sm:min-h-[94px]',
   },
 ];
 
@@ -61,7 +61,7 @@ const Sponsors = () => (
         We would like to extend a special thank you to our sponsors for their support and commitment
         to the community. We couldn't do it without them! If you’re interested in becoming a
         sponsor, please contact{' '}
-        <Link theme="blue-underlined" to="mailto:hello@kcdzurich.ch">
+        <Link className="font-semibold" theme="blue-underlined" to="mailto:hello@kcdzurich.ch">
           hello@kcdzurich.ch
         </Link>
       </p>

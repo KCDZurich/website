@@ -13,7 +13,7 @@ const Header = ({ isMobileMenuOpen, onBurgerClick }) => (
   <header
     className={clsx(
       'safe-paddings transition-200 z-10 transition-colors',
-      isMobileMenuOpen ? 'bg-gray-12 bg-opacity-100' : 'bg-[#EDC3C7] bg-opacity-10'
+      isMobileMenuOpen ? 'bg-white bg-opacity-100' : 'bg-[#EDC3C7] bg-opacity-10'
     )}
   >
     <div className="container flex items-center justify-between pt-5 pb-2">
@@ -32,7 +32,7 @@ const Header = ({ isMobileMenuOpen, onBurgerClick }) => (
           ))}
         </ul>
       </nav>
-      <Button className="-mr-2 md:hidden" to="/" theme="primary" size="sm">
+      <Button className="-mr-2 text-base md:hidden" to="/" theme="primary" size="sm">
         Get your ticket
       </Button>
 
