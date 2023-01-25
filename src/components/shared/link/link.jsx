@@ -16,7 +16,7 @@ const styles = {
   theme: {
     primary: 'text-primary-1 hover:text-blue-1',
     'blue-underlined':
-      'text-blue-1 border-b-2 hover:border-blue-1 border-transparent transition-colors duration-200',
+      'text-blue-1 border-b-2 hover:border-blue-1 pb-0.5 border-transparent transition-colors duration-200',
   },
 };
 
