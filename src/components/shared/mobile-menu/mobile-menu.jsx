@@ -2,7 +2,6 @@ import { m, LazyMotion, domAnimation, useAnimation } from 'framer-motion';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Link from 'components/shared/link';
 import MENUS from 'constants/menus';
 import useScrollOverflow from 'hooks/use-scroll-overflow';
 
@@ -31,10 +30,28 @@ const variants = {
   },
 };
 
-const MobileMenu = ({ isOpen }) => {
+const MobileMenu = ({ isOpen, onButtonClick }) => {
   const controls = useAnimation();
 
   useScrollOverflow(controls, isOpen);
+
+  const handleAnchorClick = (e) => {
+    e.preventDefault();
+
+    const id = e.target.firstChild.data;
+    const element = document.getElementById(id);
+
+    if (element) {
+      const indent = 50;
+      const elementTop = element.getBoundingClientRect().top;
+      const elementOffset = window.pageYOffset + elementTop - indent;
+
+      window.scrollTo({
+        top: elementOffset,
+        behavior: 'smooth',
+      });
+    }
+  };
 
   return (
     <LazyMotion features={domAnimation}>
@@ -46,11 +63,15 @@ const MobileMenu = ({ isOpen }) => {
       >
         <div className="scrollbar-hidden my-auto flex h-full w-full overflow-x-hidden overflow-y-scroll">
           <ul className="mx-auto flex flex-col justify-center space-y-3 text-center text-xl font-semibold text-primary-1">
-            {MENUS.mobile.map(({ text, to }, index) => (
+            {MENUS.mobile.map(({ text }, index) => (
               <li key={index}>
-                <Link className="block py-4" to={to}>
+                <Button
+                  className="block py-4"
+                  theme="link-primary"
+                  onClick={(handleAnchorClick, onButtonClick)}
+                >
                   {text}
-                </Link>
+                </Button>
               </li>
             ))}
           </ul>
@@ -65,6 +86,7 @@ const MobileMenu = ({ isOpen }) => {
 
 MobileMenu.propTypes = {
   isOpen: PropTypes.bool,
+  onButtonClick: PropTypes.func.isRequired,
 };
 
 MobileMenu.defaultProps = {

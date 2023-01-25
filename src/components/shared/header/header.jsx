@@ -26,6 +26,7 @@ const Header = ({ isMobileMenuOpen, onBurgerClick }) => {
       });
     }
   };
+
   return (
     <header
       className={clsx(

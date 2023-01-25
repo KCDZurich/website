@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
       <Header isMobileMenuOpen={isMobileMenuOpen} onBurgerClick={handleHeaderBurgerClick} />
       <main className="flex-grow">{children}</main>
       <Footer />
-      <MobileMenu isOpen={isMobileMenuOpen} />
+      <MobileMenu isOpen={isMobileMenuOpen} onButtonClick={handleHeaderBurgerClick} />
     </div>
   );
 };
