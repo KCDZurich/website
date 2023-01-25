@@ -13,7 +13,7 @@ const Schedule = () => (
   <section className="safe-paddings relative bg-white pb-40 lg:pb-32 md:py-24 sm:py-16">
     <div className="container flex justify-between lg:flex-col">
       <div className="text-primary-1 lg:flex lg:flex-col lg:items-center lg:justify-center lg:text-center">
-        <h2 className="lg:min-w-none min-w-[428px] max-w-[428px] text-6xl font-bold leading-tight lg:max-w-[800px]">
+        <h2 className="min-w-[428px] max-w-[428px] text-6xl font-bold leading-tight lg:min-w-0 lg:max-w-[800px]">
           {TITLE}
         </h2>
         <p className="mt-5 max-w-[428px] text-lg leading-normal lg:max-w-[650px]">{DESCRIPTION}</p>
