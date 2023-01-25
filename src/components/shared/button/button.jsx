@@ -17,6 +17,8 @@ const styles = {
     blue: 'bg-blue-1 text-white hover:bg-blue-2',
     primary:
       'bg-none text-primary-1 border-2 border-primary-1 hover:bg-primary-1 hover:bg-opacity-10',
+    'link-primary':
+      'font-semibold inline-flex items-baseline leading-none transition-colors text-primary-1 hover:text-blue-1',
   },
 };
 
@@ -35,7 +37,7 @@ const Button = ({ className: additionalClassName, to, size, theme, children, ...
 Button.propTypes = {
   className: PropTypes.string,
   to: PropTypes.string,
-  size: PropTypes.oneOf(Object.keys(styles.size)).isRequired,
+  size: PropTypes.oneOf(Object.keys(styles.size)),
   theme: PropTypes.oneOf(Object.keys(styles.theme)).isRequired,
   children: PropTypes.node.isRequired,
 };
@@ -43,6 +45,7 @@ Button.propTypes = {
 Button.defaultProps = {
   className: null,
   to: null,
+  size: null,
 };
 
 export default Button;

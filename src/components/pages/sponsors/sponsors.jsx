@@ -56,7 +56,9 @@ const ITEMS = [
 const Sponsors = () => (
   <section className="safe-paddings relative bg-white pt-40 lg:pt-32 md:pt-24 sm:py-16">
     <div className="container text-center">
-      <h2 className="text-6xl font-bold leading-denser text-primary-1">{TITLE}</h2>
+      <h2 className="text-6xl font-bold leading-denser text-primary-1" id={TITLE}>
+        {TITLE}
+      </h2>
       <p className="mx-auto mt-5 max-w-[800px] text-lg leading-normal text-primary-1">
         We would like to extend a special thank you to our sponsors for their support and commitment
         to the community. We couldn't do it without them! If you’re interested in becoming a
