@@ -2,6 +2,10 @@
 import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
 
+const defaultTitle = 'Kubernetes Community Days Zürich';
+const defaultDescription =
+  'Experience the power of community at the Kubernetes Community Days in Zurich!';
+
 const SEO = ({ title, description, pathname }) => {
   const {
     site: {
@@ -20,8 +24,8 @@ const SEO = ({ title, description, pathname }) => {
     }
   `);
 
-  const currentTitle = title || siteTitle;
-  const currentDescription = description || siteDescription;
+  const currentTitle = title || defaultTitle || siteTitle;
+  const currentDescription = description || defaultDescription || siteDescription;
   const currentUrl = pathname !== '/' ? `${siteUrl}${pathname}` : siteUrl;
 
   return (
