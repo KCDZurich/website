@@ -13,7 +13,7 @@ const TITLE = 'Community & Media Partners';
 
 const ITEMS = [
   { icon: Cloudnative, url: 'https://www.cncf.io/' },
-  { icon: Techface, url: ' http://techface.ch' },
+  { icon: Techface, url: 'http://techface.ch' },
   { icon: InsideIt, url: 'https://www.inside-it.ch' },
   { icon: ArchCloud, url: 'https://arch.cloud/' },
   { icon: Rokt, url: 'https://rokt.cloud/' },
