@@ -41,12 +41,12 @@ const Venue = () => (
                 at Zurich Europaallee
               </p>
               <p className="mt-5 text-lg text-[#262F59] opacity-60 sm:text-lg">
-                Europaallee 1st - 9th Floors, Basement & Ground, 8004 Zürich, Switzerland
+                Google EURF <br /> Europaallee 36 <br /> 8004 Zürich
               </p>
             </div>
           </div>
 
-          <div className="mt-9 w-[520px] text-lg leading-normal text-primary-1 xl:max-w-[470px] lg:ml-8 lg:max-w-[530px] md:ml-0 md:w-full md:max-w-none sm:text-lg">
+          <div className="w-[520px] self-center text-lg leading-normal text-primary-1 xl:max-w-[470px] lg:ml-8 lg:max-w-[530px] md:ml-0 md:w-full md:max-w-none sm:text-lg">
             <p>
               The Kubernetes Community Days in Zurich will be held at the Google HQ at Zurich
               Europaallee, a modern and convenient location next to the train station. Attendees can

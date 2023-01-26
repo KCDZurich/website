@@ -11,7 +11,7 @@ import Link from '../link';
 
 const Header = ({ isMobileMenuOpen, onBurgerClick }) => {
   const handleAnchorClick = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const id = e.target.firstChild.data;
     const element = document.getElementById(id);
 
@@ -40,17 +40,17 @@ const Header = ({ isMobileMenuOpen, onBurgerClick }) => {
         </Link>
 
         <nav>
-          <ul className="flex space-x-10 text-white md:hidden">
-            {MENUS.header.map(({ text }, index) => (
-              <li className="font-semibold text-primary-1" key={index}>
-                <Button theme="link-primary" onClick={handleAnchorClick}>
+          <ul className="-ml-8 flex space-x-8 text-white md:hidden">
+            {MENUS.header.map(({ text, to }, index) => (
+              <li className="text-[15px] font-semibold text-primary-1" key={index}>
+                <Button theme="link-primary" to={to} onClick={handleAnchorClick}>
                   {text}
                 </Button>
               </li>
             ))}
           </ul>
         </nav>
-        <Button className="-mr-2 text-base md:hidden" to="/" theme="primary" size="sm">
+        <Button className="md:hidden" to="https://tickets.kcdzurich.ch/" theme="primary" size="sm">
           Get your ticket
         </Button>
 

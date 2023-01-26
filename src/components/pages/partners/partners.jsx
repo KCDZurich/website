@@ -7,19 +7,17 @@ import Cloudnative from './images/cloudnative.svg';
 import InsideIt from './images/insideIt.svg';
 import Rokt from './images/rokt.svg';
 import Techface from './images/techface.svg';
-import Vshn from './images/vshn.svg';
 import WhiteRabbit from './images/white-rabbit.svg';
 
 const TITLE = 'Community & Media Partners';
 
 const ITEMS = [
   { icon: Cloudnative, url: 'https://www.cncf.io/' },
-  { icon: Techface, url: '/' },
-  { icon: InsideIt, url: '/' },
+  { icon: Techface, url: ' http://techface.ch' },
+  { icon: InsideIt, url: 'https://www.inside-it.ch' },
   { icon: ArchCloud, url: 'https://arch.cloud/' },
-  { icon: Rokt, url: '/' },
-  { icon: Vshn, url: 'https://www.vshn.ch/' },
-  { icon: WhiteRabbit, url: '/' },
+  { icon: Rokt, url: 'https://rokt.cloud/' },
+  { icon: WhiteRabbit, url: 'https://www.whiterabbitcom.ch' },
 ];
 
 const Partners = () => (
@@ -27,12 +25,9 @@ const Partners = () => (
     <div className="container text-center">
       <h2 className="text-6xl font-bold leading-denser text-primary-1">{TITLE}</h2>
 
-      <ul className="mt-16 flex flex-wrap justify-center gap-y-8 gap-x-8">
+      <ul className="mx-auto mt-20 flex max-w-[1000px] flex-wrap justify-center gap-y-14 gap-x-8">
         {ITEMS.map(({ icon, url }, index) => (
-          <li
-            className="flex min-h-[80px] min-w-[280px] items-center justify-center  rounded border border-gray-10"
-            key={index}
-          >
+          <li className="flex min-h-[80px] min-w-[280px] items-center justify-center" key={index}>
             <Link className="flex h-full w-full items-center justify-center" to={url}>
               <img className="" src={icon} width="auto" height="auto" loading="lazy" alt="" />
             </Link>

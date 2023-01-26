@@ -4,16 +4,22 @@ export default {
     to: '/',
   },
   schedule: {
-    to: '/',
+    to: '',
   },
   sponsors: {
-    to: '/',
+    to: '',
   },
   speakers: {
-    to: '/',
+    to: '',
   },
   tickets: {
-    to: '/',
+    to: 'https://tickets.kcdzurich.ch/',
+  },
+  proposal: {
+    to: '',
+  },
+  workshops: {
+    to: '',
   },
 
   // Social

@@ -9,7 +9,7 @@ import PriyaWadhwaPhoto from './images/priya-wadhwa-photo.jpg';
 import RicardoRochaPhoto from './images/ricardo-rocha-photo.jpg';
 import ThomasGrafPhoto from './images/thomas-graf-photo.jpg';
 
-const TITLE = 'Learn from our experts';
+const TITLE = 'Speakers';
 
 const ITEMS = [
   {
@@ -54,7 +54,7 @@ const ITEMS = [
   },
 ];
 
-const Experts = () => (
+const Speakers = () => (
   <section className="safe-paddings relative bg-white pb-40 lg:pb-32 md:py-24 sm:py-16">
     <div className="container">
       <h2 className="text-6xl font-bold leading-tight text-primary-1 md:text-center" id="Speakers">
@@ -87,4 +87,4 @@ const Experts = () => (
   </section>
 );
 
-export default Experts;
+export default Speakers;

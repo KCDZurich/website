@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'components/shared/link';
 
 import Adfinis from './images/adfinis.svg';
+import BGNova from './images/bg-nova.svg';
 import Camptocamp from './images/camptocamp.svg';
 import Dynatrace from './images/dynatrace.svg';
 import Google from './images/google.svg';
@@ -48,13 +49,14 @@ const ITEMS = [
       { icon: Postfinance, url: 'https://www.postfinance.ch/' },
       { icon: Puzzle, url: 'https://www.puzzle.ch/' },
       { icon: Camptocamp, url: 'https://www.camptocamp.com/' },
+      { icon: BGNova, url: 'https://b-nova.com/' },
     ],
     cardClassname: 'min-w-[280px] min-h-[104px] sm:min-w-[250px] sm:min-h-[94px]',
   },
 ];
 
 const Sponsors = () => (
-  <section className="safe-paddings relative bg-white pt-40 lg:pt-32 md:pt-24 sm:py-16">
+  <section className="safe-paddings relative bg-white sm:pb-16">
     <div className="container text-center">
       <h2 className="text-6xl font-bold leading-denser text-primary-1" id={TITLE}>
         {TITLE}
@@ -68,7 +70,7 @@ const Sponsors = () => (
         </Link>
       </p>
 
-      <ul className="mt-20 flex flex-col">
+      <ul className="mt-16 flex flex-col">
         {ITEMS.map(({ title, logos, cardClassname }, index) => (
           <li className="" key={index}>
             <p className="text-center text-2xl font-bold uppercase leading-normal text-primary-1">
@@ -77,14 +79,8 @@ const Sponsors = () => (
 
             <ul className="mt-10 mb-[70px] flex flex-wrap justify-center gap-x-8 xl:gap-y-6">
               {logos.map(({ icon, url }, index) => (
-                <li
-                  className={clsx(
-                    'flex items-center justify-center rounded border border-gray-10',
-                    cardClassname
-                  )}
-                  key={index}
-                >
-                  <Link className="flex h-full w-full items-center justify-center" to={url}>
+                <li className={clsx('flex items-center justify-center', cardClassname)} key={index}>
+                  <Link className="flex h-full w-fit items-center justify-center" to={url}>
                     <img
                       className="h-auto w-auto sm:max-w-[210px]"
                       src={icon}

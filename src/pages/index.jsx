@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
-import Experts from 'components/pages/experts';
 import Hero from 'components/pages/hero';
-import Participate from 'components/pages/participate';
 import Partners from 'components/pages/partners';
+import Proposal from 'components/pages/proposal';
 import Schedule from 'components/pages/schedule';
+import Speakers from 'components/pages/speakers';
 import Sponsors from 'components/pages/sponsors';
 import Venue from 'components/pages/venue';
 import Workshops from 'components/pages/workshops';
@@ -16,9 +16,9 @@ const HomePage = () => (
   <Layout>
     <Hero />
     <Venue />
-    <Experts />
+    <Speakers />
     <Schedule />
-    <Participate />
+    <Proposal />
     <Workshops />
     <Sponsors />
     <Partners />

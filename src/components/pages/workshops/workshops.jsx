@@ -2,29 +2,52 @@ import React from 'react';
 
 import Button from 'components/shared/button';
 
-import illustration from './images/section-illustration.svg';
+import Argo from './images/argo-logo.svg';
+import Cilium from './images/cilium-logo.svg';
+import Go from './images/go-logo.svg';
+import Kubernetes from './images/kubernetes-logo.svg';
+
+const items = [Kubernetes, Argo, Go, Cilium];
 
 const DESCRIPTION =
   "Roll up your sleeves and learn! We have an exciting lineup of hands-on workshops where you can put your skills to the test and learn from experts. Whether you're a beginner looking to get started with cloud native technologies or a seasoned pro looking to dive deeper, we have something for everyone. Don't miss out on this chance to advance your knowledge and skills in a practical, hands-on environment.";
 
 const Workshops = () => (
-  <section className="safe-paddings relative bg-white pt-40 lg:pt-32 md:pt-24 sm:pt-16">
+  <section className="safe-paddings relative bg-white py-40 lg:py-32 md:py-24 sm:py-16">
     <div className="container flex justify-between lg:flex-col-reverse">
-      <img
-        className="mt-14 h-[238px] w-[520px] lg:mx-auto"
-        src={illustration}
-        width={520}
-        height={238}
-        loading="lazy"
-        alt=""
-      />
+      <ul className="ml-16 flex max-w-[464px] flex-wrap justify-center gap-x-8 gap-y-8 px-6">
+        {items.map((icon, index) => (
+          <li
+            className="flex h-[189px] w-44 items-center justify-center rounded border border-gray-10 shadow-[0_14px_40px_#CCCCCC] first:mt-9 last:-mr-9 last:-mt-9"
+            key={index}
+          >
+            <img
+              className="h-auto w-auto sm:max-w-[210px]"
+              src={icon}
+              width="auto"
+              height="auto"
+              loading="lazy"
+              alt=""
+            />
+          </li>
+        ))}
+      </ul>
+
       <div className="text-primary-1 lg:flex lg:flex-col lg:items-center lg:justify-center lg:text-center">
-        <h2 className="max-w-[592px] text-6xl font-bold leading-tight lg:max-w-[650px]">
+        <h2
+          className="max-w-[592px] text-6xl font-bold leading-tight lg:max-w-[650px]"
+          id="Workshops"
+        >
           Workshops <br />
           on June 14, 2023
         </h2>
         <p className="mt-5 max-w-[592px] text-lg leading-normal lg:max-w-[700px] ">{DESCRIPTION}</p>
-        <Button className="mt-7 text-white" to="/" theme="blue" size="lg">
+        <Button
+          className="mt-7 text-white"
+          to="https://tickets.kcdzurich.ch/"
+          theme="blue"
+          size="lg"
+        >
           Get your ticket
         </Button>
       </div>

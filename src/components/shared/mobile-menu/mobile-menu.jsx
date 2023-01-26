@@ -76,7 +76,12 @@ const MobileMenu = ({ isOpen, onButtonClick }) => {
             ))}
           </ul>
         </div>
-        <Button className="mt-7 text-white" to="/" theme="blue" size="lg">
+        <Button
+          className="mt-7 text-white"
+          to="https://tickets.kcdzurich.ch/"
+          theme="blue"
+          size="lg"
+        >
           Get your ticket
         </Button>
       </m.nav>

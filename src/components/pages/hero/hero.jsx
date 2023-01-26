@@ -26,7 +26,7 @@ const Hero = () => (
         </p>
         <Button
           className="mt-7 text-white shadow-[0_15px_40px_#999999] hover:shadow-[0px_15px_30px_#adadad]"
-          to="/"
+          to="https://tickets.kcdzurich.ch/"
           theme="blue"
           size="lg"
         >
