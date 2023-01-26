@@ -25,16 +25,20 @@ const Footer = () => {
   };
   return (
     <footer className="safe-paddings border-t border-t-gray-10 bg-white">
-      <div className="container flex items-center justify-between pt-5 pb-5 sm:justify-around">
+      <div className="container flex items-center justify-between pt-5 pb-5 sm:flex-col sm:justify-around">
         <Link className="ml-2" to="/">
           <Logo className="h-12 w-44" />
         </Link>
 
         <nav>
-          <ul className="-ml-2 mt-4 grid grid-cols-4 gap-y-4 gap-x-3 sm:max-w-[200px]">
+          <ul className="-ml-2 mt-4 grid min-w-fit grid-cols-4 gap-y-4 gap-x-3 xl:gap-x-1 lg:mr-6 lg:grid-cols-2 sm:mx-auto">
             {MENUS.footer.map(({ text }, index) => (
-              <li className="w-fit text-sm font-semibold text-primary-1" key={index}>
-                <Button theme="link-primary" onClick={handleAnchorClick}>
+              <li className="w-fit max-w-min text-sm font-semibold text-primary-1" key={index}>
+                <Button
+                  className="flex sm:flex-wrap"
+                  theme="link-primary"
+                  onClick={handleAnchorClick}
+                >
                   {text}
                 </Button>
               </li>

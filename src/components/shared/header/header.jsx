@@ -11,7 +11,6 @@ import Link from '../link';
 
 const Header = ({ isMobileMenuOpen, onBurgerClick }) => {
   const handleAnchorClick = (e) => {
-    // e.preventDefault();
     const id = e.target.firstChild.data;
     const element = document.getElementById(id);
 
