@@ -2,7 +2,6 @@ import React from 'react';
 
 import Button from 'components/shared/button';
 
-// import illustrationLg from './images/hero-illustration-lg.png';
 import illustration from './images/hero-illustration.png';
 
 const TITLE = 'Kubernetes Community Days Zürich';
