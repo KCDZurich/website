@@ -14,7 +14,7 @@ const Hero = () => (
   <section className="safe-paddings overflow-hidden bg-[#EDC3C7] bg-opacity-10 pt-28 pb-40 lg:pb-32 md:pt-24 md:pb-[500px] sm:pb-[520px] [@media(max-width:600px)]:pb-[430px] [@media(max-width:460px)]:pb-[420px]">
     <div className="container relative md:flex md:flex-col">
       <div className="absolute top-0 -left-[40%] h-[566px] w-[566px] translate-x-1/2 bg-white blur-[100px] md:-left-[30%] md:h-[350px] md:w-[350px]" />
-      <div className="relative md:flex md:flex-col md:items-center md:text-center ">
+      <div className="relative md:flex md:flex-col md:items-center md:text-center">
         <span className="rounded-3xl bg-yellow px-4 py-2 text-xs font-bold uppercase leading-none text-black">
           June 15, 2023
         </span>

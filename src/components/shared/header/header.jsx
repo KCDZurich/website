@@ -50,7 +50,12 @@ const Header = ({ isMobileMenuOpen, onBurgerClick }) => {
             ))}
           </ul>
         </nav>
-        <Button className="md:hidden" to="https://tickets.kcdzurich.ch/" theme="primary" size="sm">
+        <Button
+          className="-mr-2 md:hidden"
+          to="https://tickets.kcdzurich.ch/"
+          theme="primary"
+          size="sm"
+        >
           Get your ticket
         </Button>
 
