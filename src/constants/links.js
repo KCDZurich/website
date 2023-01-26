@@ -14,12 +14,25 @@ export default {
   },
   tickets: {
     to: 'https://tickets.kcdzurich.ch/',
+    target: '_blank',
   },
   proposal: {
     to: '',
   },
   workshops: {
     to: '',
+  },
+  mission: {
+    to: 'https://kcdzurich.ch/missionstatement/',
+    target: '_blank',
+  },
+  privacy: {
+    to: '',
+    target: '_blank',
+  },
+  conduct: {
+    to: 'https://events.linuxfoundation.org/about/code-of-conduct/',
+    target: '_blank',
   },
 
   // Social

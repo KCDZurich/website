@@ -31,9 +31,9 @@ const Footer = () => {
         </Link>
 
         <nav>
-          <ul className="flex space-x-10 text-white md:mr-4 md:space-x-8 sm:mx-6 sm:max-w-[200px] sm:flex-col sm:space-y-3 sm:space-x-0 sm:self-center">
+          <ul className="-ml-2 mt-4 grid grid-cols-4 gap-y-4 gap-x-3 sm:max-w-[200px]">
             {MENUS.footer.map(({ text }, index) => (
-              <li className="font-semibold text-primary-1" key={index}>
+              <li className="w-fit text-sm font-semibold text-primary-1" key={index}>
                 <Button theme="link-primary" onClick={handleAnchorClick}>
                   {text}
                 </Button>

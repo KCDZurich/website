@@ -68,6 +68,7 @@ const MobileMenu = ({ isOpen, onButtonClick }) => {
                 <Button
                   className="block py-4"
                   theme="link-primary"
+                  to={`#${text}`}
                   onClick={(handleAnchorClick, onButtonClick)}
                 >
                   {text}
