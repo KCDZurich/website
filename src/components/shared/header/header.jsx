@@ -39,7 +39,7 @@ const Header = ({ isMobileMenuOpen, onBurgerClick }) => {
         </Link>
 
         <nav>
-          <ul className="-ml-8 flex space-x-8 text-white md:hidden">
+          <ul className="-ml-8 flex space-x-8 text-white lg:ml-0 lg:space-x-6 md:hidden">
             {MENUS.header.map(({ text, to }, index) => (
               <li className="text-[15px] font-semibold text-primary-1" key={index}>
                 <Button theme="link-primary" to={to} onClick={handleAnchorClick}>

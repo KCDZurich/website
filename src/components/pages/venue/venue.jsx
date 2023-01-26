@@ -46,7 +46,7 @@ const Venue = () => (
             </div>
           </div>
 
-          <div className="w-[520px] self-center text-lg leading-normal text-primary-1 xl:max-w-[470px] lg:ml-8 lg:max-w-[530px] md:ml-0 md:w-full md:max-w-none sm:text-lg">
+          <div className="w-[520px] self-center text-lg leading-normal text-primary-1 xl:max-w-[470px] lg:ml-8 lg:max-w-[530px] md:ml-0 md:mt-5 md:w-full md:max-w-none sm:text-lg">
             <p>
               The Kubernetes Community Days in Zurich will be held at the Google HQ at Zurich
               Europaallee, a modern and convenient location next to the train station. Attendees can
