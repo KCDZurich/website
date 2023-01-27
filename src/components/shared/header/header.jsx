@@ -58,6 +58,7 @@ const Header = ({ isMobileMenuOpen, onBurgerClick }) => {
           to="https://tickets.kcdzurich.ch/"
           theme="primary"
           size="sm"
+          target="_blank"
         >
           Get your ticket
         </Button>

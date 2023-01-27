@@ -21,6 +21,7 @@ const Proposal = () => (
           to="https://kcd.smapply.io/prog/kcd_zurich_2023/"
           theme="primary"
           size="lg"
+          target="_blank"
         >
           Call for Proposal
         </Button>

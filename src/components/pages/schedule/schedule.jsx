@@ -26,6 +26,7 @@ const Schedule = () => (
           to="https://tickets.kcdzurich.ch/"
           theme="blue"
           size="lg"
+          target="_blank"
         >
           Get your ticket
         </Button>

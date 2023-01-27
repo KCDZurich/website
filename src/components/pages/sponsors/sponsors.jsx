@@ -81,14 +81,18 @@ const Sponsors = () => (
             <ul className="mt-10 mb-[70px] flex flex-wrap justify-center gap-x-8 xl:gap-y-6">
               {logos.map(({ icon, url }, index) => (
                 <li className={clsx('flex items-center justify-center', cardClassname)} key={index}>
-                  <Link className="flex h-full w-fit items-center justify-center" to={url}>
+                  <Link
+                    className="flex h-full w-fit items-center justify-center"
+                    to={url}
+                    target="_blank"
+                  >
                     <img
                       className="h-auto w-auto sm:max-w-[210px]"
                       src={icon}
                       width="auto"
                       height="auto"
                       loading="lazy"
-                      alt=""
+                      alt="sponsor-logo"
                     />
                   </Link>
                 </li>

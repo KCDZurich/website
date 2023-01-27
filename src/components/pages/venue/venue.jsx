@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Link from 'components/shared/link';
+
 import CardIllusrtation from './images/card-illustration.jpg';
 
 const TITLE = 'Venue information';
@@ -36,10 +38,14 @@ const Venue = () => (
               alt="card-illustration"
             />
             <div className="pt-5 pb-8 pl-10 pr-16 leading-normal md:row-start-1 md:px-6 sm:row-start-2">
-              <p className="text-2xl font-semibold sm:text-xl">
+              <Link
+                to="https://goo.gl/maps/ooQufQWKzaRM286Z7"
+                className="text-2xl font-semibold sm:text-xl"
+                theme="primary"
+              >
                 Google HQ <br />
                 at Zurich Europaallee
-              </p>
+              </Link>
               <p className="mt-5 text-lg text-[#262F59] opacity-60 sm:text-lg">
                 Google EURF <br /> Europaallee 36 <br /> 8004 Zürich
               </p>
