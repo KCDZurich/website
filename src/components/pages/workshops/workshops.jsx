@@ -16,14 +16,14 @@ const DESCRIPTION =
 const Workshops = () => (
   <section className="safe-paddings relative bg-white py-40 lg:py-32 md:py-24 sm:py-16">
     <div className="container flex justify-between lg:flex-col-reverse">
-      <ul className="ml-16 flex max-w-[464px] flex-wrap justify-center gap-x-8 gap-y-8 px-6">
+      <ul className="ml-16 flex max-w-[464px] flex-wrap justify-center gap-x-8 gap-y-8 px-6 lg:mx-auto lg:mt-10">
         {items.map((icon, index) => (
           <li
-            className="flex h-[189px] w-44 items-center justify-center rounded border border-gray-10 shadow-[0_14px_40px_#CCCCCC] first:mt-9 last:-mr-9 last:-mt-9"
+            className="flex h-[189px] w-44 items-center justify-center rounded border border-gray-10 shadow-[0_14px_40px_#CCCCCC] first:mt-9 last:-mt-9 last:-mr-9 [@media(max-width:478px)]:last:mr-0 [@media(max-width:478px)]:last:mt-0"
             key={index}
           >
             <img
-              className="h-auto w-auto sm:max-w-[210px]"
+              className="h-auto w-auto sm:max-w-[120px]"
               src={icon}
               width="auto"
               height="auto"
