@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 
 import Link from 'components/shared/link';
+import LINKS from 'constants/links';
 
 import Adfinis from './images/adfinis.svg';
 import BGNova from './images/bg-nova.svg';
@@ -58,7 +59,7 @@ const ITEMS = [
 const Sponsors = () => (
   <section className="safe-paddings relative bg-white sm:pb-16">
     <div className="container text-center">
-      <h2 className="text-6xl font-bold leading-denser text-primary-1" id={TITLE}>
+      <h2 className="text-6xl font-bold leading-denser text-primary-1" id={LINKS.sponsors.id}>
         {TITLE}
       </h2>
       <p className="mx-auto mt-5 max-w-[800px] text-lg leading-normal text-primary-1">

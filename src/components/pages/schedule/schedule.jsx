@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Button from 'components/shared/button';
+import LINKS from 'constants/links';
 
 import illustration from './images/section-illustration.svg';
 
@@ -15,7 +16,7 @@ const Schedule = () => (
       <div className="text-primary-1 lg:flex lg:flex-col lg:items-center lg:justify-center lg:text-center">
         <h2
           className="min-w-[428px] max-w-[428px] text-6xl font-bold leading-tight lg:min-w-0 lg:max-w-[800px]"
-          id="Schedule"
+          id={LINKS.schedule.id}
         >
           {TITLE}
         </h2>

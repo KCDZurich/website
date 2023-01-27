@@ -1,16 +1,23 @@
+import slugify from 'slugify';
+
+const getAnchor = (str) => slugify(str).toLocaleLowerCase();
+
 export default {
-  // Pages
+  // Pages and sections
   home: {
     to: '/',
   },
   schedule: {
     to: '',
+    id: getAnchor('Schedule'),
   },
   sponsors: {
     to: '',
+    id: getAnchor('Sponsors'),
   },
   speakers: {
     to: '',
+    id: getAnchor('Speakers'),
   },
   tickets: {
     to: 'https://tickets.kcdzurich.ch/',
@@ -18,9 +25,11 @@ export default {
   },
   proposal: {
     to: '',
+    id: getAnchor('Call for Proposal'),
   },
   workshops: {
     to: '',
+    id: getAnchor('Workshops'),
   },
   mission: {
     to: 'https://kcdzurich.ch/missionstatement/',
@@ -37,15 +46,15 @@ export default {
 
   // Social
   discord: {
-    to: 'https://discord.gg/9wcGSf22PM',
+    to: '',
     target: '_blank',
   },
   twitter: {
-    to: 'https://twitter.com/novuhq',
+    to: '',
     target: '_blank',
   },
   github: {
-    to: 'https://github.com/novuhq/novu',
+    to: '',
     target: '_blank',
   },
 };

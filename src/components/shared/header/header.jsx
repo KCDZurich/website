@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import React from 'react';
+import slugify from 'slugify';
 
 import MENUS from 'constants/menus';
 import Logo from 'icons/logo.inline.svg';
@@ -10,8 +11,11 @@ import Button from '../button';
 import Link from '../link';
 
 const Header = ({ isMobileMenuOpen, onBurgerClick }) => {
+  const getAnchor = (str) => slugify(str).toLocaleLowerCase();
+
   const handleAnchorClick = (e) => {
-    const id = e.target.firstChild.data;
+    const id = getAnchor(e.target.firstChild.data);
+
     const element = document.getElementById(id);
 
     if (element) {
@@ -42,7 +46,7 @@ const Header = ({ isMobileMenuOpen, onBurgerClick }) => {
           <ul className="-ml-8 flex space-x-8 text-white lg:ml-0 lg:space-x-6 md:hidden">
             {MENUS.header.map(({ text, to }, index) => (
               <li className="text-[15px] font-semibold text-primary-1" key={index}>
-                <Button theme="link-primary" to={to} onClick={handleAnchorClick}>
+                <Button to={to} theme="link-primary" onClick={handleAnchorClick}>
                   {text}
                 </Button>
               </li>

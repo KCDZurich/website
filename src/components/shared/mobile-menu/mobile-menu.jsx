@@ -35,24 +35,6 @@ const MobileMenu = ({ isOpen, onButtonClick }) => {
 
   useScrollOverflow(controls, isOpen);
 
-  const handleAnchorClick = (e) => {
-    e.preventDefault();
-
-    const id = e.target.firstChild.data;
-    const element = document.getElementById(id);
-
-    if (element) {
-      const indent = 50;
-      const elementTop = element.getBoundingClientRect().top;
-      const elementOffset = window.pageYOffset + elementTop - indent;
-
-      window.scrollTo({
-        top: elementOffset,
-        behavior: 'smooth',
-      });
-    }
-  };
-
   return (
     <LazyMotion features={domAnimation}>
       <m.nav
@@ -63,13 +45,13 @@ const MobileMenu = ({ isOpen, onButtonClick }) => {
       >
         <div className="scrollbar-hidden my-auto flex h-full w-full overflow-x-hidden overflow-y-scroll">
           <ul className="mx-auto flex flex-col justify-center space-y-3 text-center text-xl font-semibold text-primary-1">
-            {MENUS.mobile.map(({ text }, index) => (
+            {MENUS.mobile.map(({ text, id }, index) => (
               <li key={index}>
                 <Button
                   className="block py-4"
                   theme="link-primary"
-                  to={`#${text}`}
-                  onClick={(handleAnchorClick, onButtonClick)}
+                  to={`#${id}`}
+                  onClick={onButtonClick}
                 >
                   {text}
                 </Button>

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import LINKS from 'constants/links';
+
 import AnnieTalvastoPhoto from './images/annie-talvasto-photo.jpg';
 import JuliusVolzPhoto from './images/julius-volz-photo.jpg';
 import KatieGamanjiPhoto from './images/katie-gamanji-photo.jpg';
@@ -57,7 +59,10 @@ const ITEMS = [
 const Speakers = () => (
   <section className="safe-paddings relative bg-white pb-40 lg:pb-32 md:py-24 sm:py-16">
     <div className="container">
-      <h2 className="text-6xl font-bold leading-tight text-primary-1 md:text-center" id="Speakers">
+      <h2
+        className="text-6xl font-bold leading-tight text-primary-1 md:text-center"
+        id={LINKS.speakers.id}
+      >
         {TITLE}
       </h2>
       <ul className="mt-14 grid grid-cols-4 gap-8 lg:gap-6 md:grid-cols-3 sm:flex sm:flex-wrap sm:justify-evenly">

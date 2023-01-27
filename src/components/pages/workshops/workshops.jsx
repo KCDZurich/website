@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Button from 'components/shared/button';
+import LINKS from 'constants/links';
 
 import Argo from './images/argo-logo.svg';
 import Cilium from './images/cilium-logo.svg';
@@ -36,7 +37,7 @@ const Workshops = () => (
       <div className="text-primary-1 lg:flex lg:flex-col lg:items-center lg:justify-center lg:text-center">
         <h2
           className="max-w-[592px] text-6xl font-bold leading-tight lg:max-w-[650px]"
-          id="Workshops"
+          id={LINKS.workshops.id}
         >
           Workshops <br />
           on June 14, 2023

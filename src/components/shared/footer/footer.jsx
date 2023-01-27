@@ -1,4 +1,5 @@
 import React from 'react';
+import slugify from 'slugify';
 
 import MENUS from 'constants/menus';
 import Logo from 'icons/logo.inline.svg';
@@ -8,8 +9,9 @@ import Link from '../link';
 
 const Footer = () => {
   const handleAnchorClick = (e) => {
-    e.preventDefault();
-    const id = e.target.firstChild.data;
+    const getAnchor = (str) => slugify(str).toLocaleLowerCase();
+
+    const id = getAnchor(e.target.firstChild.data);
     const element = document.getElementById(id);
 
     if (element) {
@@ -32,11 +34,12 @@ const Footer = () => {
 
         <nav>
           <ul className="-ml-2 mt-4 grid min-w-fit grid-cols-4 gap-y-4 gap-x-3 xl:gap-x-1 lg:mr-6 lg:grid-cols-3 lg:gap-x-4 md:grid-cols-2 sm:mx-auto">
-            {MENUS.footer.map(({ text }, index) => (
+            {MENUS.footer.map(({ text, to }, index) => (
               <li className="w-fit max-w-min text-sm font-semibold text-primary-1" key={index}>
                 <Button
                   className="flex sm:flex-wrap"
                   theme="link-primary"
+                  to={to}
                   onClick={handleAnchorClick}
                 >
                   {text}
