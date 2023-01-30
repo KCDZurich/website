@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
-import Hero from 'components/pages/hero';
-import Partners from 'components/pages/partners';
-import Proposal from 'components/pages/proposal';
-import Schedule from 'components/pages/schedule';
-import Speakers from 'components/pages/speakers';
-import Sponsors from 'components/pages/sponsors';
-import Venue from 'components/pages/venue';
-import Workshops from 'components/pages/workshops';
+import Hero from 'components/pages/home/hero';
+import Partners from 'components/pages/home/partners';
+import Proposal from 'components/pages/home/proposal';
+import Schedule from 'components/pages/home/schedule';
+import Speakers from 'components/pages/home/speakers';
+import Sponsors from 'components/pages/home/sponsors';
+import Venue from 'components/pages/home/venue';
+import Workshops from 'components/pages/home/workshops';
 import Layout from 'components/shared/layout';
 import SEO from 'components/shared/seo';
 
