@@ -9,14 +9,10 @@ const MENUS = {
     { text: 'Workshops', ...LINKS.workshops },
   ],
   footer: [
-    { text: 'Team', ...LINKS.team },
-    { text: 'Speakers', ...LINKS.speakers },
-    { text: 'Sponsors', ...LINKS.sponsors },
-    { text: 'Impressum & Data Privacy', ...LINKS.privacy },
-    { text: 'Mission Statement', ...LINKS.mission },
-    { text: 'Schedule', ...LINKS.schedule },
-    { text: 'Tickets', ...LINKS.tickets },
     { text: 'Code of Conduct', ...LINKS.conduct },
+    { text: 'Team', ...LINKS.team },
+    { text: 'Mission Statement', ...LINKS.mission },
+    { text: 'Impressum & Data Privacy', ...LINKS.privacy },
   ],
   mobile: [
     { text: 'Speakers', ...LINKS.speakers },
