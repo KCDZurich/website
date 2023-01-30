@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import React from 'react';
 import slugify from 'slugify';
 
@@ -60,7 +59,11 @@ const Footer = () => {
           </ul>
         </nav>
         <div className="mt-4">
-          <Link className="font-semibold" theme="primary" to="mailto:hello@kcdzurich.ch">
+          <Link
+            className="font-semibold transition-colors duration-200"
+            theme="primary"
+            to="mailto:hello@kcdzurich.ch"
+          >
             hello@kcdzurich.ch
           </Link>
           <ul className="mt-4 flex min-w-fit gap-x-2.5">
@@ -73,7 +76,7 @@ const Footer = () => {
                   key={index}
                 >
                   <Link className="flex h-full w-full items-center justify-center" to={url}>
-                    <Icon className={clsx('', iconClassName)} />
+                    <Icon className={iconClassName} />
                   </Link>
                 </li>
               );
