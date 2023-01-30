@@ -20,6 +20,14 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'static',
+        path: `${__dirname}/content/static-pages`,
+      },
+    },
+
     'gatsby-plugin-image',
     'gatsby-transformer-sharp',
     {
@@ -63,6 +71,20 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        extensions: ['.mdx', '.md'],
+        mdxOptions: {
+          remarkPlugins: [
+            // Add GitHub Flavored Markdown (GFM) support
+            // eslint-disable-next-line global-require
+            // require(`remark-gfm`),
+          ],
+        },
+        // gatsbyRemarkPlugins: ['gatsby-remark-copy-linked-files', 'gatsby-remark-responsive-iframe'],
       },
     },
     // TODO: Either uncomment this part of the code if the website is being hosted on Gatsby Cloud and install "gatsby-plugin-gatsby-cloud" or delete it
