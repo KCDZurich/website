@@ -46,7 +46,7 @@ const items = [
   {
     icon: Kubernetes,
     iconClassname: 'h-16 w-[266px]',
-    title: 'GitOps with ArgoCD',
+    title: 'Kubernetes Basics',
     description:
       'This one-day training in German or English provides a practical and easy-to-understand introduction to Kubernetes.',
     date: 'June 15, 2023',
@@ -62,15 +62,15 @@ const DESCRIPTION =
   "Roll up your sleeves and learn! We have an exciting lineup of hands-on workshop where you can put your skills to the test and learn from experts. Whether you're a beginner looking to get started with cloud native technologies or a seasoned pro looking to dive deeper, we have something for everyone. Take advantage of this.";
 
 const Hero = () => (
-  <section className="safe-paddings pt-24">
-    <div className="container relative mt-4 text-center text-primary-1">
+  <section className="safe-paddings pt-24 pb-40">
+    <div className="container mt-4 text-center text-primary-1">
       <h1 className="text-6xl font-bold leading-denser ">{TITLE}</h1>
       <p className="mx-auto mt-8 max-w-[1008px] text-2xl leading-normal">{DESCRIPTION}</p>
     </div>
     <ul className="mx-auto mt-20 grid w-[800px] grid-cols-2 gap-8">
       {items.map(({ icon, iconClassname, title, description, date, time, price, url }, index) => (
         <li
-          className="flex w-[384px] flex-col rounded p-8 shadow-[0_14px_40px_#CCCCCC]"
+          className="flex h-full w-[384px] flex-col rounded p-8 shadow-[0_14px_40px_#CCCCCC]"
           key={index}
         >
           <img
