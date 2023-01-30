@@ -10,7 +10,7 @@ import Burger from '../burger';
 import Button from '../button';
 import Link from '../link';
 
-const Header = ({ isMobileMenuOpen, onBurgerClick }) => {
+const Header = ({ isMobileMenuOpen, onBurgerClick, additionalClassName }) => {
   const getAnchor = (str) => slugify(str).toLocaleLowerCase();
 
   const handleAnchorClick = (e) => {
@@ -34,7 +34,8 @@ const Header = ({ isMobileMenuOpen, onBurgerClick }) => {
     <header
       className={clsx(
         'safe-paddings transition-200 z-10 transition-colors',
-        isMobileMenuOpen ? 'bg-white bg-opacity-100' : 'bg-[#EDC3C7] bg-opacity-10'
+        isMobileMenuOpen ? 'bg-white bg-opacity-100' : 'bg-[#EDC3C7] bg-opacity-10',
+        additionalClassName
       )}
     >
       <div className="container flex items-center justify-between pt-5 pb-2">
@@ -76,10 +77,12 @@ const Header = ({ isMobileMenuOpen, onBurgerClick }) => {
 Header.propTypes = {
   isMobileMenuOpen: PropTypes.bool,
   onBurgerClick: PropTypes.func.isRequired,
+  additionalClassName: PropTypes.string,
 };
 
 Header.defaultProps = {
   isMobileMenuOpen: false,
+  additionalClassName: null,
 };
 
 export default Header;

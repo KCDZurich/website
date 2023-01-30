@@ -2,11 +2,10 @@ import React from 'react';
 
 import Button from 'components/shared/button';
 import LINKS from 'constants/links';
-
-import Argo from './images/argo-logo.svg';
-import Cilium from './images/cilium-logo.svg';
-import Go from './images/go-logo.svg';
-import Kubernetes from './images/kubernetes-logo.svg';
+import Argo from 'icons/argo-logo.svg';
+import Cilium from 'icons/cilium-logo.svg';
+import Go from 'icons/go-logo.svg';
+import Kubernetes from 'icons/kubernetes-logo.svg';
 
 const items = [Kubernetes, Argo, Go, Cilium];
 
