@@ -198,7 +198,7 @@ const Cards = [
       date: 'June 15, 2023',
       time: '09:00 - 16:45',
       price: 'CHF 600',
-      url: '/',
+      url: 'https://workshops.kcdzurich.ch/',
     },
   ],
   [
@@ -211,7 +211,7 @@ const Cards = [
       date: 'June 15, 2023',
       time: '09:00 - 16:45',
       price: 'CHF 600',
-      url: '/',
+      url: 'https://workshops.kcdzurich.ch/',
     },
   ],
   [
@@ -224,7 +224,7 @@ const Cards = [
       date: 'June 15, 2023',
       time: '09:00 - 16:45',
       price: 'CHF 600',
-      url: '/',
+      url: 'https://workshops.kcdzurich.ch/',
     },
   ],
   [
@@ -237,7 +237,7 @@ const Cards = [
       date: 'June 15, 2023',
       time: '09:00 - 16:45',
       price: 'CHF 600',
-      url: '/',
+      url: 'https://workshops.kcdzurich.ch/',
     },
   ],
 ];

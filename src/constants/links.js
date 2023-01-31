@@ -8,15 +8,15 @@ export default {
     to: '/',
   },
   schedule: {
-    to: '',
+    to: `/#${getAnchor('Schedule')}`,
     id: getAnchor('Schedule'),
   },
   sponsors: {
-    to: '',
+    to: `/#${getAnchor('Sponsors')}`,
     id: getAnchor('Sponsors'),
   },
   speakers: {
-    to: '',
+    to: `/#${getAnchor('Speakers')}`,
     id: getAnchor('Speakers'),
   },
   tickets: {
@@ -24,19 +24,19 @@ export default {
     target: '_blank',
   },
   proposal: {
-    to: '',
+    to: `/#${getAnchor('Call for Proposal')}`,
     id: getAnchor('Call for Proposal'),
   },
   workshops: {
-    to: '',
+    to: '/workshops',
     id: getAnchor('Workshops'),
   },
   mission: {
-    to: 'https://kcdzurich.ch/missionstatement/',
+    to: '/mission-statement',
     target: '_blank',
   },
   privacy: {
-    to: '',
+    to: '/data-privacy',
     target: '_blank',
   },
   conduct: {
@@ -44,17 +44,17 @@ export default {
     target: '_blank',
   },
 
-  // Social
-  discord: {
-    to: '',
+  // Social-links
+  linkedin: {
+    to: 'https://www.linkedin.com/company/kubernetes-community-days-zurich/',
     target: '_blank',
   },
   twitter: {
-    to: '',
+    to: 'https://twitter.com/KcdZurich?s=20&t=2K7fxHFqThcgycuBzO_rSw',
     target: '_blank',
   },
-  github: {
-    to: '',
+  slack: {
+    to: '/',
     target: '_blank',
   },
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import slugify from 'slugify';
 
+import LINKS from 'constants/links.js';
 import MENUS from 'constants/menus';
 import LinkedIn from 'icons/linkedin-logo.inline.svg';
 import Logo from 'icons/logo.inline.svg';
@@ -11,9 +12,9 @@ import Button from '../button';
 import Link from '../link';
 
 const items = [
-  { icon: Slack, iconClassName: 'w-[22px] h-[22px]', url: '/' },
-  { icon: LinkedIn, iconClassName: 'w-4 h-4', url: '/' },
-  { icon: Twitter, iconClassName: 'w-5 h-4', url: '/' },
+  { icon: Slack, iconClassName: 'w-[22px] h-[22px]', url: LINKS.slack.to },
+  { icon: LinkedIn, iconClassName: 'w-4 h-4', url: LINKS.linkedin.to },
+  { icon: Twitter, iconClassName: 'w-5 h-4', url: LINKS.twitter.to },
 ];
 
 const Footer = () => {
@@ -75,7 +76,11 @@ const Footer = () => {
                   className="h-9 w-9 rounded-full border border-gray-10 transition-colors duration-200 hover:border-primary-1 hover:border-opacity-40"
                   key={index}
                 >
-                  <Link className="flex h-full w-full items-center justify-center" to={url}>
+                  <Link
+                    className="flex h-full w-full items-center justify-center"
+                    to={url}
+                    target="_blank"
+                  >
                     <Icon className={iconClassName} />
                   </Link>
                 </li>
