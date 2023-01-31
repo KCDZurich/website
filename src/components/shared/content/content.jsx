@@ -11,7 +11,7 @@ const components = {
 };
 
 const Content = ({ className, content, asHTML }) => {
-  <div className={clsx('prose-doc prose', className)}>
+  <div className={clsx('content', className)}>
     {asHTML ? (
       <div dangerouslySetInnerHTML={{ __html: content }} />
     ) : (

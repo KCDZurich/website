@@ -87,7 +87,7 @@ const Information = () => (
                 <ul className="mt-5 space-y-2 border-b border-gray-10 pl-4 pb-4">
                   {features.map((item, index) => (
                     <li
-                      className="relative before:absolute before:top-2.5 before:-left-4 before:!h-2 before:!w-2 before:rounded-full before:bg-blue-1"
+                      className="relative before:absolute before:top-2.5 before:-left-4 before:!h-2 before:!w-2 before:rounded-full before:bg-blue-1 before:content-['']"
                       key={index}
                     >
                       <p className="text-lg leading-normal">{item}</p>

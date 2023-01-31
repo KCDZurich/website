@@ -3,24 +3,30 @@ import { MDXProvider } from '@mdx-js/react';
 import { graphql } from 'gatsby';
 import React from 'react';
 
-import Content from 'components/shared/content';
+import AnchorHeading from 'components/shared/anchor-heading';
 import Layout from 'components/shared/layout';
 import SEO from 'components/shared/seo';
+
+const components = {
+  h2: AnchorHeading('h2'),
+  h3: AnchorHeading('h3'),
+};
 
 const StaticTemplate = ({
   data: {
     mdx: {
       frontmatter: { title },
-      body,
     },
   },
+  children,
 }) => (
   <Layout headerClassnames="!bg-white">
-    <section className="container">
-      <article className="safe-paddings pt-24">
+    <section className="container-sm">
+      <article className="safe-paddings pt-24 pb-44">
         <h1 className="text-6xl font-bold text-primary-1">{title}</h1>
-        <Content className="" content={body} />
-        <MDXProvider>{body}</MDXProvider>
+        <div className="content mt-16">
+          <MDXProvider components={components}>{children}</MDXProvider>
+        </div>
       </article>
     </section>
   </Layout>
