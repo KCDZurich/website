@@ -1,7 +1,6 @@
 ---
 title: Mission Statement
 slug: mission-statement
-isDraft: false
 ---
 
 "**Kubernetes Community Days Zürich** is a community-driven event that aims to bring together Kubernetes enthusiasts from around the region to learn, share knowledge, and network with each other. We strive to create a welcoming and inclusive environment for attendees of all experience levels, from beginners to experts. Our goal is to promote the adoption of Kubernetes and cloud-native technologies and to provide a platform for community members to share their experiences and best practices. We believe in the power of collaboration and community to drive innovation and the future of cloud computing.

@@ -1,32 +1,30 @@
 /* eslint-disable react/prop-types */
+import { MDXProvider } from '@mdx-js/react';
 import { graphql } from 'gatsby';
 import React from 'react';
 
 import Content from 'components/shared/content';
 import Layout from 'components/shared/layout';
-// import SEO from 'components/shared/seo';
+import SEO from 'components/shared/seo';
 
 const StaticTemplate = ({
   data: {
     mdx: {
       frontmatter: { title },
+      body,
     },
   },
-  children,
-}) => {
-  // const info = mdx;
-
-  console.log(children);
-
-  return (
-    <Layout>
-      <article className="safe-paddings 3xl:py-44 py-48 2xl:py-40 xl:py-32 lg:pt-12 lg:pb-24 md:pt-6 md:pb-20">
-        <h1 className="t-5xl font-semibold">{title}</h1>
-        <Content className="mt-8 2xl:mt-7 xl:mt-6" content={children} asHTML />
+}) => (
+  <Layout headerClassnames="!bg-white">
+    <section className="container">
+      <article className="safe-paddings pt-24">
+        <h1 className="text-6xl font-bold text-primary-1">{title}</h1>
+        <Content className="" content={body} />
+        <MDXProvider>{body}</MDXProvider>
       </article>
-    </Layout>
-  );
-};
+    </section>
+  </Layout>
+);
 
 export const query = graphql`
   query ($id: String!) {
@@ -34,19 +32,11 @@ export const query = graphql`
       frontmatter {
         title
       }
+      body
     }
   }
 `;
 
 export default StaticTemplate;
 
-// export const Head = ({
-//   location: { pathname },
-//   data: {
-//     mdx: {
-//       frontmatter: { title },
-//     },
-//   },
-// }) => <SEO pathname={pathname} {...SEO_DATA.static({ title })} />;
-
-// export const Head = ({ location: { pathname } }) => <SEO pathname={pathname} />;
+export const Head = ({ location: { pathname } }) => <SEO pathname={pathname} />;

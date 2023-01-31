@@ -2,57 +2,50 @@ const path = require('path');
 
 const get = require('lodash.get');
 
-const { DRAFT_FILTER, STATIC_PAGE_REQUIRED_FIELDS } = require('./constants');
-const createRedirects = require('./create-redirects');
+const { STATIC_PAGE_REQUIRED_FIELDS } = require('./constants');
+// const createRedirects = require('./create-redirects');
 
 const staticTemplate = path.resolve('./src/templates/static.jsx');
 
 module.exports = async ({ graphql, actions }) => {
   const result = await graphql(
     `
-      query ($draftFilter: [Boolean]!) {
-        allMdx(
-          filter: {
-            internal: { contentFilePath: { regex: "/content/static-pages/" } }
-            frontmatter: { isDraft: { in: $draftFilter } }
-          }
-        ) {
+      query {
+        allMdx(filter: { internal: { contentFilePath: { regex: "/content/static-pages/" } } }) {
           nodes {
             id
             internal {
               contentFilePath
             }
             frontmatter {
-              title
               slug
+              title
             }
+            body
           }
         }
       }
-    `,
-    { draftFilter: DRAFT_FILTER }
+    `
   );
 
   if (result.errors) throw new Error(result.errors);
 
-  result.data.allMdx.nodes.forEach(
-    ({ id, internal: { contentFilePath }, fields: { redirectFrom, slug }, frontmatter }) => {
-      // Required fields validation
-      STATIC_PAGE_REQUIRED_FIELDS.forEach((fieldName) => {
-        if (!get(frontmatter, fieldName)) {
-          throw new Error(`Static page "${contentFilePath}" does not have field "${fieldName}"!`);
-        }
-      });
+  result.data.allMdx.nodes.forEach(({ id, internal: { contentFilePath }, frontmatter }) => {
+    // Required fields validation
+    STATIC_PAGE_REQUIRED_FIELDS.forEach((fieldName) => {
+      if (!get(frontmatter, fieldName)) {
+        throw new Error(`Static page "${contentFilePath}" does not have field "${fieldName}"!`);
+      }
+    });
 
-      const pagePath = `/${slug}/`;
+    const pagePath = `/${frontmatter.slug}/`;
 
-      createRedirects({ redirectFrom, actions, pagePath });
+    // createRedirects({ redirectFrom, actions, pagePath });
 
-      actions.createPage({
-        path: pagePath,
-        component: `${staticTemplate}?__contentFilePath=${contentFilePath}`,
-        context: { id },
-      });
-    }
-  );
+    actions.createPage({
+      path: pagePath,
+      component: `${staticTemplate}?__contentFilePath=${contentFilePath}`,
+      context: { id },
+    });
+  });
 };

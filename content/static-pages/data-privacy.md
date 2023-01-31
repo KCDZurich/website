@@ -1,7 +1,6 @@
 ---
 title: Impressum & Data Privacy
 slug: data-privacy
-isDraft: false
 ---
 
 ## Impressum

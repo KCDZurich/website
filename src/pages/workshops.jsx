@@ -8,7 +8,7 @@ import Layout from 'components/shared/layout';
 import SEO from 'components/shared/seo';
 
 const Workshops = () => (
-  <Layout headerClassnames="bg-white">
+  <Layout headerClassnames="!bg-white">
     <Hero />
     <Acend />
     <Venue />
