@@ -30,7 +30,7 @@ const items = [
     date: 'June 15, 2023',
     time: '09:00 - 16:45',
     price: 'CHF 600',
-    url: '/',
+    url: '/workshop-go',
   },
   {
     icon: Cilium,
@@ -41,7 +41,7 @@ const items = [
     date: 'June 15, 2023',
     time: '09:00 - 16:45',
     price: 'CHF 600',
-    url: '/',
+    url: '/workshop-cilium',
   },
   {
     icon: Kubernetes,
@@ -52,7 +52,7 @@ const items = [
     date: 'June 15, 2023',
     time: '09:00 - 16:45',
     price: 'CHF 600',
-    url: '/',
+    url: '/workshop-kubernetes',
   },
 ];
 
