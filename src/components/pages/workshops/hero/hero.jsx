@@ -19,7 +19,7 @@ const items = [
     date: 'June 15, 2023',
     time: '09:00 - 16:45',
     price: 'CHF 600',
-    url: '/',
+    url: '/workshop-argo',
   },
   {
     icon: Go,
