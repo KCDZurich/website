@@ -244,8 +244,8 @@ const Cards = [
 
 const Information = ({ position }) => (
   <section className="safe-paddings pt-20 pb-48">
-    <div className="container grid grid-cols-12">
-      <div className="content col-start-2 col-end-7">
+    <div className="container grid grid-cols-12 md:flex md:flex-col">
+      <div className="content col-start-2 col-end-7 xl:col-start-1 lg:col-end-8">
         <ul className="ml-3 !pl-0">
           {Content[position].map(
             ({ description, features, requirements, audience, conditions, trainers }, index) => (
@@ -303,16 +303,19 @@ const Information = ({ position }) => (
                     <span className="font-bold">Costs: </span>
                     {conditions.costs}
                   </p>
-                  <p>{conditions.description1}</p>
+                  <p className="border-b border-gray-10 pb-3">{conditions.description1}</p>
                 </div>
 
                 <div className="mt-3.5 flex w-fit items-center justify-center">
                   <Trainer className="mr-3 h-[22px] w-[18px]" />
                   <span className="text-2xl font-bold leading-normal text-primary-1">Trainer</span>
                 </div>
-                <ul className="mt-5 flex space-x-8 !pl-0">
+                <ul className="mt-5 flex space-x-8 !pl-0 sm:flex-wrap sm:space-y-4 sm:space-x-0">
                   {trainers.map(({ name, photo, position }, index) => (
-                    <li className="!mt-0 leading-normal text-primary-1" key={index}>
+                    <li
+                      className="!mt-0 leading-normal text-primary-1 sm:w-auto sm:max-w-[200px] sm:first:mr-8 sm:first:mb-6"
+                      key={index}
+                    >
                       <img
                         className="h-[237px] w-[176px]"
                         src={photo}
@@ -332,7 +335,7 @@ const Information = ({ position }) => (
         </ul>
       </div>
 
-      <ul className="card col-start-8 col-end-12 ml-6">
+      <ul className="card col-span-4 col-start-8 ml-6 xl:col-end-13 md:row-start-2 md:mt-8 md:max-w-[384px] md:self-center">
         {Cards[position].map(
           ({ icon, iconClassname, title, description, date, time, price, url }, index) => (
             <li className="flex flex-col rounded p-8 shadow-[0_14px_40px_#CCCCCC]" key={index}>
