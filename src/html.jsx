@@ -4,7 +4,7 @@ import React from 'react';
 const fontsBasePath = '/fonts';
 
 // TODO: Add paths to fonts that need to be preloaded, need to add only fonts that are being used in header + hero sections
-const fontsPaths = [];
+const fontsPaths = ['/plus-jakarta-sans/plus-jakarta-sans-600.woff2'];
 
 const HTML = ({
   htmlAttributes,

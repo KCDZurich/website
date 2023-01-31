@@ -7,15 +7,19 @@ import Link from 'components/shared/link';
 // Example of the code — https://user-images.githubusercontent.com/20713191/144215307-35538500-b9f0-486d-abed-1a14825bb75c.png
 const styles = {
   // TODO: Add base styles
-  base: '',
-  // TODO: Add sizes. Better to write down all sizes and go from higher to lower, e.g. "xl", "lg", "md", "sm", "xs"
-  //       The name of the size cannot be lower than the font size that being used, e.g. "sm" size cannot have font-size "xs"
-  //       Check out an example by a link above for better understanding
-  size: {},
-  // TODO: Add themes. Better to name the theme using this pattern: "${color-name}-${theme-type}", e.g. "black-filled"
-  //       If there is no dividing between theme types, then feel free to use just color names, e.g. "black"
-  //       Check out an example by a link above for better understanding
-  theme: {},
+  base: 'inline-flex items-center justify-center !leading-none text-center whitespace-nowrap rounded transition-[colors, opacity] duration-200 outline-none font-bold',
+  size: {
+    lg: 'h-14 px-8 py-[18px] text-lg',
+    sm: 'h-10 px-4 text-[15px]',
+    xs: 'h-10 px-5 text-xs',
+  },
+  theme: {
+    blue: 'bg-blue-1 text-white hover:bg-blue-2',
+    primary:
+      'bg-none text-primary-1 border-2 border-primary-1 hover:bg-primary-1 hover:bg-opacity-10',
+    'link-primary':
+      'font-semibold inline-flex items-baseline leading-none transition-colors text-primary-1 hover:text-blue-1',
+  },
 };
 
 const Button = ({ className: additionalClassName, to, size, theme, children, ...otherProps }) => {
@@ -33,7 +37,7 @@ const Button = ({ className: additionalClassName, to, size, theme, children, ...
 Button.propTypes = {
   className: PropTypes.string,
   to: PropTypes.string,
-  size: PropTypes.oneOf(Object.keys(styles.size)).isRequired,
+  size: PropTypes.oneOf(Object.keys(styles.size)),
   theme: PropTypes.oneOf(Object.keys(styles.theme)).isRequired,
   children: PropTypes.node.isRequired,
 };
@@ -41,6 +45,7 @@ Button.propTypes = {
 Button.defaultProps = {
   className: null,
   to: null,
+  size: null,
 };
 
 export default Button;
