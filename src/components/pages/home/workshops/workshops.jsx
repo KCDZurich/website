@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Button from 'components/shared/button';
-import LINKS from 'constants/links';
 import Argo from 'icons/argo-logo.svg';
 import Cilium from 'icons/cilium-logo.svg';
 import Go from 'icons/go-logo.svg';
@@ -34,21 +33,13 @@ const Workshops = () => (
       </ul>
 
       <div className="text-primary-1 lg:flex lg:flex-col lg:items-center lg:justify-center lg:text-center">
-        <h2
-          className="max-w-[592px] text-6xl font-bold leading-tight lg:max-w-[650px]"
-          id={LINKS.workshops.id}
-        >
+        <h2 className="max-w-[592px] text-6xl font-bold leading-tight lg:max-w-[650px]">
           Workshops <br />
           on June 14, 2023
         </h2>
         <p className="mt-5 max-w-[592px] text-lg leading-normal lg:max-w-[700px] ">{DESCRIPTION}</p>
-        <Button
-          className="mt-7 text-white"
-          to="https://tickets.kcdzurich.ch/"
-          theme="blue"
-          size="lg"
-        >
-          Get your ticket
+        <Button className="mt-7 text-white" to="/workshops" theme="blue" size="lg">
+          Explore
         </Button>
       </div>
     </div>

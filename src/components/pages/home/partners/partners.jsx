@@ -29,7 +29,14 @@ const Partners = () => (
         {ITEMS.map(({ icon, url }, index) => (
           <li className="flex min-h-[80px] min-w-[280px] items-center justify-center" key={index}>
             <Link className="flex h-full w-full items-center justify-center" to={url}>
-              <img className="" src={icon} width="auto" height="auto" loading="lazy" alt="" />
+              <img
+                className="max-w-[210px]"
+                src={icon}
+                width="auto"
+                height="auto"
+                loading="lazy"
+                alt=""
+              />
             </Link>
           </li>
         ))}

@@ -13,7 +13,7 @@ import Layout from 'components/shared/layout';
 import SEO from 'components/shared/seo';
 
 const HomePage = () => (
-  <Layout>
+  <Layout homepage>
     <Hero />
     <Venue />
     <Speakers />

@@ -88,6 +88,10 @@ const Speakers = () => (
           </li>
         ))}
       </ul>
+
+      <p className="mt-14 text-center text-[22px] font-semibold leading-normal text-primary-1">
+        More to come...
+      </p>
     </div>
   </section>
 );

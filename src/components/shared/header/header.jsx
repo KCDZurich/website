@@ -10,7 +10,7 @@ import Burger from '../burger';
 import Button from '../button';
 import Link from '../link';
 
-const Header = ({ isMobileMenuOpen, onBurgerClick, additionalClassName }) => {
+const Header = ({ isMobileMenuOpen, onBurgerClick, additionalClassName, homepage }) => {
   const getAnchor = (str) => slugify(str).toLocaleLowerCase();
 
   const handleAnchorClick = (e) => {
@@ -45,11 +45,17 @@ const Header = ({ isMobileMenuOpen, onBurgerClick, additionalClassName }) => {
 
         <nav>
           <ul className="-ml-8 flex space-x-8 text-white lg:ml-0 lg:space-x-6 md:hidden">
-            {MENUS.header.map(({ text, to }, index) => (
+            {MENUS.header.map(({ text, to, homeTo }, index) => (
               <li className="text-[15px] font-semibold text-primary-1" key={index}>
-                <Button to={to} theme="link-primary" onClick={handleAnchorClick}>
-                  {text}
-                </Button>
+                {homepage ? (
+                  <Button to={homeTo} theme="link-primary" onClick={handleAnchorClick}>
+                    {text}
+                  </Button>
+                ) : (
+                  <Button to={to} theme="link-primary">
+                    {text}
+                  </Button>
+                )}
               </li>
             ))}
           </ul>
@@ -78,11 +84,13 @@ Header.propTypes = {
   isMobileMenuOpen: PropTypes.bool,
   onBurgerClick: PropTypes.func.isRequired,
   additionalClassName: PropTypes.string,
+  homepage: PropTypes.bool,
 };
 
 Header.defaultProps = {
   isMobileMenuOpen: false,
   additionalClassName: null,
+  homepage: false,
 };
 
 export default Header;
