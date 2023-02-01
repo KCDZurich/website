@@ -1,5 +1,5 @@
 @layer components {
-  .content {
+  .static-content {
     @apply text-lg text-primary-1 sm:text-lg;
 
     > *:first-child {

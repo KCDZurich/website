@@ -24,7 +24,7 @@ const StaticTemplate = ({
     <section className="container-sm">
       <article className="safe-paddings pt-24 pb-44">
         <h1 className="text-6xl font-bold text-primary-1">{title}</h1>
-        <div className="content mt-16">
+        <div className="static-content mt-16">
           <MDXProvider components={components}>{children}</MDXProvider>
         </div>
       </article>
