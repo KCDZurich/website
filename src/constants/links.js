@@ -57,4 +57,8 @@ export default {
     to: '/',
     target: '_blank',
   },
+  googlemaps: {
+    to: 'https://goo.gl/maps/ooQufQWKzaRM286Z7',
+    target: '_blank',
+  },
 };

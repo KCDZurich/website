@@ -48,7 +48,7 @@ const Workshops = () => (
           theme="blue"
           size="lg"
         >
-          Get your ticket
+          Explore
         </Button>
       </div>
     </div>

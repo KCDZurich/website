@@ -3,16 +3,16 @@ import slugify from 'slugify';
 
 import LINKS from 'constants/links.js';
 import MENUS from 'constants/menus';
+import GoogleMaps from 'icons/google-maps-icon.inline.svg';
 import LinkedIn from 'icons/linkedin-logo.inline.svg';
 import Logo from 'icons/logo.inline.svg';
-import Slack from 'icons/slack-logo.inline.svg';
 import Twitter from 'icons/twitter-logo.inline.svg';
 
 import Button from '../button';
 import Link from '../link';
 
 const items = [
-  { icon: Slack, iconClassName: 'w-[22px] h-[22px]', url: LINKS.slack.to },
+  { icon: GoogleMaps, iconClassName: 'w-11 h-9', url: LINKS.googlemaps.to },
   { icon: LinkedIn, iconClassName: 'w-4 h-4', url: LINKS.linkedin.to },
   { icon: Twitter, iconClassName: 'w-5 h-4', url: LINKS.twitter.to },
 ];
