@@ -19,11 +19,7 @@ const Hero = ({ title, description }) => (
 
 Hero.propTypes = {
   title: PropTypes.string.isRequired,
-  description: PropTypes.arrayOf(
-    PropTypes.shape({
-      item: PropTypes.string.isRequired,
-    })
-  ).isRequired,
+  description: PropTypes.array.isRequired,
 };
 
 export default Hero;
