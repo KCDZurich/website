@@ -6,6 +6,7 @@ import Layout from 'components/shared/layout';
 import SEO from 'components/shared/seo';
 import Hero from 'components/shared/workshop-hero/hero';
 import Information from 'components/shared/workshop-information';
+import SEO_DATA from 'constants/seo-data';
 
 const TITLE = 'Go Basics Workshop';
 
@@ -24,4 +25,6 @@ const WorkshopGo = () => (
 
 export default WorkshopGo;
 
-export const Head = ({ location: { pathname } }) => <SEO pathname={pathname} />;
+export const Head = ({ location: { pathname } }) => (
+  <SEO {...SEO_DATA.workshopGo} pathname={pathname} />
+);

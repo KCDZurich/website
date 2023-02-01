@@ -6,6 +6,7 @@ import React from 'react';
 import AnchorHeading from 'components/shared/anchor-heading';
 import Layout from 'components/shared/layout';
 import SEO from 'components/shared/seo';
+import SEO_DATA from 'constants/seo-data';
 
 const components = {
   h2: AnchorHeading('h2'),
@@ -45,4 +46,11 @@ export const query = graphql`
 
 export default StaticTemplate;
 
-export const Head = ({ location: { pathname } }) => <SEO pathname={pathname} />;
+export const Head = ({
+  location: { pathname },
+  data: {
+    mdx: {
+      frontmatter: { title },
+    },
+  },
+}) => <SEO pathname={pathname} {...SEO_DATA.static({ title })} />;

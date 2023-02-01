@@ -38,12 +38,7 @@ const Workshops = () => (
           on June 14, 2023
         </h2>
         <p className="mt-5 max-w-[592px] text-lg leading-normal lg:max-w-[700px] ">{DESCRIPTION}</p>
-        <Button
-          className="mt-7 text-white"
-          to="https://tickets.kcdzurich.ch/"
-          theme="blue"
-          size="lg"
-        >
+        <Button className="mt-7 text-white" to="/workshops" theme="blue" size="lg">
           Explore
         </Button>
       </div>
