@@ -5,7 +5,7 @@ import Footer from 'components/shared/footer';
 import Header from 'components/shared/header';
 import MobileMenu from 'components/shared/mobile-menu';
 
-const Layout = ({ children, headerClassnames }) => {
+const Layout = ({ children, headerClassnames, homepage }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleHeaderBurgerClick = () => setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -15,6 +15,7 @@ const Layout = ({ children, headerClassnames }) => {
       <Header
         isMobileMenuOpen={isMobileMenuOpen}
         additionalClassName={headerClassnames}
+        homepage={homepage}
         onBurgerClick={handleHeaderBurgerClick}
       />
       <main className="flex-grow">{children}</main>
@@ -27,10 +28,12 @@ const Layout = ({ children, headerClassnames }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   headerClassnames: PropTypes.string,
+  homepage: PropTypes.bool,
 };
 
 Layout.defaultProps = {
   headerClassnames: null,
+  homepage: false,
 };
 
 export default Layout;

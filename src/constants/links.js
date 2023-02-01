@@ -10,26 +10,31 @@ export default {
   schedule: {
     to: `/#${getAnchor('Schedule')}`,
     id: getAnchor('Schedule'),
+    homeTo: null,
   },
   sponsors: {
     to: `/#${getAnchor('Sponsors')}`,
     id: getAnchor('Sponsors'),
+    homeTo: null,
   },
   speakers: {
     to: `/#${getAnchor('Speakers')}`,
     id: getAnchor('Speakers'),
-  },
-  tickets: {
-    to: 'https://tickets.kcdzurich.ch/',
-    target: '_blank',
-  },
-  proposal: {
-    to: `/#${getAnchor('Call for Proposal')}`,
-    id: getAnchor('Call for Proposal'),
+    homeTo: null,
   },
   workshops: {
     to: '/workshops',
     id: getAnchor('Workshops'),
+    homeTo: '/workshops',
+  },
+  proposal: {
+    to: `/#${getAnchor('Call for Proposal')}`,
+    id: getAnchor('Call for Proposal'),
+    homeTo: null,
+  },
+  tickets: {
+    to: 'https://tickets.kcdzurich.ch/',
+    target: '_blank',
   },
   mission: {
     to: '/mission-statement',
