@@ -25,229 +25,221 @@ import RaffaelHertle from './images/raffael-hertle-photo.jpg';
 import SebastianPlattner from './images/sebastian-plattner-photo.jpg';
 
 const Content = [
-  [
-    {
-      description:
-        'The workshop consists of varied presentations and hands-on labs in order to teach content in an appealing fashion.',
-      features: [
-        'Basic concepts',
-        'Architecture',
-        'Managing Argo CD applications in Git',
-        'Sync policies',
-        'Comparing application state (Git vs. Kubernetes Cluster)',
-        'Self-healing',
-        'Pruning of resources',
-        'Resource hooks',
-        'Sync phases and waves',
-        'Backup and restore',
-        'Various manifest formats',
-        'Permission structures',
-      ],
-      requirements: 'Participants will need a laptop with direct access to the Internet.',
-      audience:
-        'The workshop is aimed at people who already have prior knowledge of container technologies, Git and Kubernetes.',
-      conditions: {
-        description: 'At least 8 Participants are required for the workshop to take place.',
-        seats: 14,
-        costs: '600 CHF',
-        description1: 'Includes catering, documentation and a cluster in the cloud',
-      },
-      trainers: [
-        {
-          name: 'Christian Schlatter',
-          photo: ChristianSchlatter,
-          position: 'Trainer Puzzle ITC',
-        },
-        {
-          name: 'Raffael Hertle',
-          photo: RaffaelHertle,
-          position: 'Trainer acend',
-        },
-      ],
+  {
+    name: 'argo',
+    description:
+      'The workshop consists of varied presentations and hands-on labs in order to teach content in an appealing fashion.',
+    features: [
+      'Basic concepts',
+      'Architecture',
+      'Managing Argo CD applications in Git',
+      'Sync policies',
+      'Comparing application state (Git vs. Kubernetes Cluster)',
+      'Self-healing',
+      'Pruning of resources',
+      'Resource hooks',
+      'Sync phases and waves',
+      'Backup and restore',
+      'Various manifest formats',
+      'Permission structures',
+    ],
+    requirements: 'Participants will need a laptop with direct access to the Internet.',
+    audience:
+      'The workshop is aimed at people who already have prior knowledge of container technologies, Git and Kubernetes.',
+    conditions: {
+      description: 'At least 8 Participants are required for the workshop to take place.',
+      seats: 14,
+      costs: '600 CHF',
+      description1: 'Includes catering, documentation and a cluster in the cloud',
     },
-  ],
-  [
-    {
-      description:
-        'The workshop consists of varied presentations and hands-on labs in order to teach content in an appealing fashion.',
-      features: [
-        'Introduction to Linux & Kubernetes networking',
-        'eBPF basics',
-        'Container Network Interface',
-        'Cilium systems architecture',
-        'Kubernetes & Cilium network policies',
-        'Hubble & Hubble UI',
-        'Cilium Cluster Mesh',
-        'Cilium deployment',
-        'Cilium troubleshooting',
-        'Cilium Service Mesh',
-      ],
-      requirements: 'Participants will need a laptop with direct access to the Internet',
-      audience:
-        'Our training is aimed at people who already have knowledge and experience in operating a Kubernetes platform. Participants should have experience in using the command line.',
-      conditions: {
-        description: 'At least 8 Participants are required for the workshop to take place.',
-        seats: 14,
-        costs: '600 CHF',
-        description1: 'Includes catering, documentation and a cluster in the cloud',
+    trainers: [
+      {
+        name: 'Christian Schlatter',
+        photo: ChristianSchlatter,
+        position: 'Trainer Puzzle ITC',
       },
-      trainers: [
-        {
-          name: 'David Schneider',
-          photo: DavidSchneider,
-          position: 'Trainer Puzzle ITC',
-        },
-        {
-          name: 'Lorenz Bischof',
-          photo: LorenzBischof,
-          position: 'Trainer, Puzzle ITC',
-        },
-      ],
-    },
-  ],
-  [
-    {
-      description:
-        'The workshop consists of varied presentations and hands-on labs in order to teach content in an appealing fashion.',
-      features: [
-        'Introduction, history and application areas of Go',
-        'Ecosystem & Tooling',
-        'Syntax and language constructs',
-        'Error Handling',
-        'Standard Library (net/http, os, encoding/json, etc.)',
-        'Testing',
-        'Concurrency & Multithreading',
-        'Release Code / Packaging',
-      ],
-      requirements: 'Participants will need a laptop with direct access to the Internet.',
-      audience:
-        'The workshop is aimed at people who have basic programming skills and are interested in learning a new programming language.',
-      conditions: {
-        description: 'At least 8 Participants are required for the workshop to take place.',
-        seats: 14,
-        costs: '600 CHF',
-        description1: 'Includes catering, documentation and a cluster in the cloud',
+      {
+        name: 'Raffael Hertle',
+        photo: RaffaelHertle,
+        position: 'Trainer acend',
       },
-      trainers: [
-        {
-          name: 'Sebastian Plattner',
-          photo: SebastianPlattner,
-          position: 'Trainer acend',
-        },
-        {
-          name: 'Gabriel Graf',
-          photo: GabrielGraf,
-          position: 'Trainer acend',
-        },
-      ],
+    ],
+  },
+  {
+    name: 'cilium',
+    description:
+      'The workshop consists of varied presentations and hands-on labs in order to teach content in an appealing fashion.',
+    features: [
+      'Introduction to Linux & Kubernetes networking',
+      'eBPF basics',
+      'Container Network Interface',
+      'Cilium systems architecture',
+      'Kubernetes & Cilium network policies',
+      'Hubble & Hubble UI',
+      'Cilium Cluster Mesh',
+      'Cilium deployment',
+      'Cilium troubleshooting',
+      'Cilium Service Mesh',
+    ],
+    requirements: 'Participants will need a laptop with direct access to the Internet',
+    audience:
+      'Our training is aimed at people who already have knowledge and experience in operating a Kubernetes platform. Participants should have experience in using the command line.',
+    conditions: {
+      description: 'At least 8 Participants are required for the workshop to take place.',
+      seats: 14,
+      costs: '600 CHF',
+      description1: 'Includes catering, documentation and a cluster in the cloud',
     },
-  ],
-  [
-    {
-      description:
-        'The workshop consists of varied presentations and hands-on labs in order to teach content in an appealing fashion.',
-      features: [
-        'Basic concepts',
-        'Architecture and components of Kubernetes',
-        'Useful CLI-Tools',
-        'Applications deployment',
-        'Access opportunities',
-        'Pod scaling',
-        'Service layer and discovery',
-        'Deployment strategies',
-        'Persistent storage',
-        'StatefulSet, DaemonSet, Job, ConfigMap',
-        'Init and Sidecar Container',
-        'Quotas and limits',
-        'Troubleshooting',
-        'CNCF Landscape',
-      ],
-      requirements: 'Participants will need a laptop with direct access to the Internet.',
-      audience:
-        'Our training is designed for software and system engineers. No prior knowledge of Kubernetes is required.',
-      conditions: {
-        description: 'At least 8 Participants are required for the workshop to take place.',
-        seats: 14,
-        costs: '600 CHF',
-        description1: 'Includes catering, documentation and a cluster in the cloud',
+    trainers: [
+      {
+        name: 'David Schneider',
+        photo: DavidSchneider,
+        position: 'Trainer Puzzle ITC',
       },
-      trainers: [
-        {
-          name: 'Daniel Strohecker',
-          photo: DanielStrohecker,
-          position: 'Trainer acend',
-        },
-        {
-          name: 'Christian Haller',
-          photo: ChristianHaller,
-          position: 'Trainer Puzzle ITC',
-        },
-      ],
+      {
+        name: 'Lorenz Bischof',
+        photo: LorenzBischof,
+        position: 'Trainer, Puzzle ITC',
+      },
+    ],
+  },
+  {
+    name: 'go',
+    description:
+      'The workshop consists of varied presentations and hands-on labs in order to teach content in an appealing fashion.',
+    features: [
+      'Introduction, history and application areas of Go',
+      'Ecosystem & Tooling',
+      'Syntax and language constructs',
+      'Error Handling',
+      'Standard Library (net/http, os, encoding/json, etc.)',
+      'Testing',
+      'Concurrency & Multithreading',
+      'Release Code / Packaging',
+    ],
+    requirements: 'Participants will need a laptop with direct access to the Internet.',
+    audience:
+      'The workshop is aimed at people who have basic programming skills and are interested in learning a new programming language.',
+    conditions: {
+      description: 'At least 8 Participants are required for the workshop to take place.',
+      seats: 14,
+      costs: '600 CHF',
+      description1: 'Includes catering, documentation and a cluster in the cloud',
     },
-  ],
+    trainers: [
+      {
+        name: 'Sebastian Plattner',
+        photo: SebastianPlattner,
+        position: 'Trainer acend',
+      },
+      {
+        name: 'Gabriel Graf',
+        photo: GabrielGraf,
+        position: 'Trainer acend',
+      },
+    ],
+  },
+  {
+    name: 'kubernetes',
+    description:
+      'The workshop consists of varied presentations and hands-on labs in order to teach content in an appealing fashion.',
+    features: [
+      'Basic concepts',
+      'Architecture and components of Kubernetes',
+      'Useful CLI-Tools',
+      'Applications deployment',
+      'Access opportunities',
+      'Pod scaling',
+      'Service layer and discovery',
+      'Deployment strategies',
+      'Persistent storage',
+      'StatefulSet, DaemonSet, Job, ConfigMap',
+      'Init and Sidecar Container',
+      'Quotas and limits',
+      'Troubleshooting',
+      'CNCF Landscape',
+    ],
+    requirements: 'Participants will need a laptop with direct access to the Internet.',
+    audience:
+      'Our training is designed for software and system engineers. No prior knowledge of Kubernetes is required.',
+    conditions: {
+      description: 'At least 8 Participants are required for the workshop to take place.',
+      seats: 14,
+      costs: '600 CHF',
+      description1: 'Includes catering, documentation and a cluster in the cloud',
+    },
+    trainers: [
+      {
+        name: 'Daniel Strohecker',
+        photo: DanielStrohecker,
+        position: 'Trainer acend',
+      },
+      {
+        name: 'Christian Haller',
+        photo: ChristianHaller,
+        position: 'Trainer Puzzle ITC',
+      },
+    ],
+  },
 ];
 
 const Cards = [
-  [
-    {
-      icon: Argo,
-      iconClassname: 'h-16 w-[138px]',
-      title: 'GitOps with ArgoCD',
-      description:
-        'This one-day training in German or English offers a practical and clearly understandable introduction to GitOps using Argo CD on Kubernetes.',
-      date: 'June 15, 2023',
-      time: '09:00 - 16:45',
-      price: 'CHF 600',
-      url: 'https://workshops.kcdzurich.ch/',
-    },
-  ],
-  [
-    {
-      icon: Go,
-      iconClassname: 'h-16 w-[129px]',
-      title: 'Go Basics',
-      description:
-        'This one-day training in German or English offers an introduction to Go for software developers, architects and DevOps engineers.',
-      date: 'June 15, 2023',
-      time: '09:00 - 16:45',
-      price: 'CHF 600',
-      url: 'https://workshops.kcdzurich.ch/',
-    },
-  ],
-  [
-    {
-      icon: Cilium,
-      iconClassname: 'h-16 w-[136px]',
-      title: 'Cilium Basics',
-      description:
-        'This one-day training in English or German provides a practical and clear introduction to Cilium, an eBFP-based networking, observability and security stack for cloud and on-premise infrastructure.',
-      date: 'June 15, 2023',
-      time: '09:00 - 16:45',
-      price: 'CHF 600',
-      url: 'https://workshops.kcdzurich.ch/',
-    },
-  ],
-  [
-    {
-      icon: Kubernetes,
-      iconClassname: 'h-16 w-[266px]',
-      title: 'Kubernetes Basics',
-      description:
-        'This one-day training in German or English provides a practical and easy-to-understand introduction to Kubernetes.',
-      date: 'June 15, 2023',
-      time: '09:00 - 16:45',
-      price: 'CHF 600',
-      url: 'https://workshops.kcdzurich.ch/',
-    },
-  ],
+  {
+    name: 'argo',
+    icon: Argo,
+    iconClassname: 'h-16 w-[138px]',
+    title: 'GitOps with ArgoCD',
+    description:
+      'This one-day training in German or English offers a practical and clearly understandable introduction to GitOps using Argo CD on Kubernetes.',
+    date: 'June 15, 2023',
+    time: '09:00 - 16:45',
+    price: 'CHF 600',
+    url: 'https://workshops.kcdzurich.ch/',
+  },
+  {
+    name: 'go',
+    icon: Go,
+    iconClassname: 'h-16 w-[129px]',
+    title: 'Go Basics',
+    description:
+      'This one-day training in German or English offers an introduction to Go for software developers, architects and DevOps engineers.',
+    date: 'June 15, 2023',
+    time: '09:00 - 16:45',
+    price: 'CHF 600',
+    url: 'https://workshops.kcdzurich.ch/',
+  },
+  {
+    name: 'cilium',
+    icon: Cilium,
+    iconClassname: 'h-16 w-[136px]',
+    title: 'Cilium Basics',
+    description:
+      'This one-day training in English or German provides a practical and clear introduction to Cilium, an eBFP-based networking, observability and security stack for cloud and on-premise infrastructure.',
+    date: 'June 15, 2023',
+    time: '09:00 - 16:45',
+    price: 'CHF 600',
+    url: 'https://workshops.kcdzurich.ch/',
+  },
+  {
+    name: 'kubernetes',
+    icon: Kubernetes,
+    iconClassname: 'h-16 w-[266px]',
+    title: 'Kubernetes Basics',
+    description:
+      'This one-day training in German or English provides a practical and easy-to-understand introduction to Kubernetes.',
+    date: 'June 15, 2023',
+    time: '09:00 - 16:45',
+    price: 'CHF 600',
+    url: 'https://workshops.kcdzurich.ch/',
+  },
 ];
 
-const Information = ({ position }) => (
+const Information = ({ itemName }) => (
   <section className="safe-paddings pt-20 pb-48">
     <div className="container grid grid-cols-12 md:flex md:flex-col">
       <div className="content col-start-2 col-end-7 xl:col-start-1 lg:col-end-8">
-        <ul className="ml-3 !pl-0">
-          {Content[position].map(
+        <ul className="ml-3">
+          {Content.filter((item) => item.name === itemName).map(
             ({ description, features, requirements, audience, conditions, trainers }, index) => (
               <li key={index}>
                 <div className="flex w-fit items-center justify-center">
@@ -256,13 +248,13 @@ const Information = ({ position }) => (
                 </div>
                 <p className="mt-6 text-lg leading-normal">{description}</p>
 
-                <ul className="mt-5 !space-y-2 border-b border-gray-10 !pl-4 !pb-4">
+                <ul className="mt-5 space-y-2 border-b border-gray-10 pl-4 pb-4">
                   {features.map((item, index) => (
                     <li
-                      className="relative  before:absolute before:top-2.5 before:-left-4 before:!h-2 before:!w-2 before:rounded-full before:bg-blue-1 before:content-['']"
+                      className="relative  before:absolute before:top-2.5 before:-left-4 before:h-2 before:w-2 before:rounded-full before:bg-blue-1 before:content-['']"
                       key={index}
                     >
-                      <p className="!my-0 text-lg leading-normal">{item}</p>
+                      <p className="text-lg leading-normal">{item}</p>
                     </li>
                   ))}
                 </ul>
@@ -310,10 +302,10 @@ const Information = ({ position }) => (
                   <Trainer className="mr-3 h-[22px] w-[18px]" />
                   <span className="text-2xl font-bold leading-normal text-primary-1">Trainer</span>
                 </div>
-                <ul className="mt-5 flex space-x-8 !pl-0 sm:flex-wrap sm:space-y-4 sm:space-x-0">
+                <ul className="mt-5 flex space-x-8 sm:flex-wrap sm:space-y-4 sm:space-x-0">
                   {trainers.map(({ name, photo, position }, index) => (
                     <li
-                      className="!mt-0 leading-normal text-primary-1 sm:w-auto sm:max-w-[200px] sm:first:mr-8 sm:first:mb-6"
+                      className="mt-0 leading-normal text-primary-1 sm:w-auto sm:max-w-[200px] sm:first:mr-8 sm:first:mb-6"
                       key={index}
                     >
                       <img
@@ -336,7 +328,7 @@ const Information = ({ position }) => (
       </div>
 
       <ul className="card col-span-4 col-start-8 ml-6 xl:col-end-13 md:row-start-2 md:mt-8 md:max-w-[384px] md:self-center">
-        {Cards[position].map(
+        {Cards.filter((item) => item.name === itemName).map(
           ({ icon, iconClassname, title, description, date, time, price, url }, index) => (
             <li className="flex flex-col rounded p-8 shadow-[0_14px_40px_#CCCCCC]" key={index}>
               <img
@@ -373,7 +365,7 @@ const Information = ({ position }) => (
 );
 
 Information.propTypes = {
-  position: PropTypes.string.isRequired,
+  itemName: PropTypes.string.isRequired,
 };
 
 export default Information;

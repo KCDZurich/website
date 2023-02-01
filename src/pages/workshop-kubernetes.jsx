@@ -18,7 +18,7 @@ const DESCRIPTION = [
 const WorkshopGo = () => (
   <Layout>
     <Hero title={TITLE} description={DESCRIPTION} />
-    <Information position={3} />
+    <Information itemName="kubernetes" />
   </Layout>
 );
 

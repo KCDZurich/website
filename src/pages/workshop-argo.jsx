@@ -18,7 +18,7 @@ const DESCRIPTION = [
 const WorkshopArgo = () => (
   <Layout>
     <Hero title={TITLE} description={DESCRIPTION} />
-    <Information position={0} />
+    <Information itemName="argo" />
   </Layout>
 );
 
