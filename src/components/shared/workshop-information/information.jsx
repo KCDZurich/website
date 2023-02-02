@@ -241,17 +241,17 @@ const Information = ({ itemName }) => (
         <ul className="ml-3">
           {Content.filter((item) => item.name === itemName).map(
             ({ description, features, requirements, audience, conditions, trainers }, index) => (
-              <li key={index}>
+              <li className="text-primary-1" key={index}>
                 <div className="flex w-fit items-center justify-center">
                   <ContentIcon className="mr-3 h-[23px] w-4" />
                   <span className="text-2xl font-bold leading-normal text-primary-1">Content</span>
                 </div>
-                <p className="mt-6 text-lg leading-normal">{description}</p>
+                <p className="mt-6 text-lg leading-normal text-primary-1">{description}</p>
 
                 <ul className="mt-5 space-y-2 border-b border-gray-10 pl-4 pb-4">
                   {features.map((item, index) => (
                     <li
-                      className="relative  before:absolute before:top-2.5 before:-left-4 before:h-2 before:w-2 before:rounded-full before:bg-blue-1 before:content-['']"
+                      className="relative before:absolute before:top-2.5 before:-left-4 before:h-2 before:w-2 before:rounded-full before:bg-blue-1 before:content-['']"
                       key={index}
                     >
                       <p className="text-lg leading-normal">{item}</p>
@@ -330,7 +330,10 @@ const Information = ({ itemName }) => (
       <ul className="card col-span-4 col-start-8 ml-6 xl:col-end-13 md:row-start-2 md:mt-8 md:max-w-[384px] md:self-center">
         {Cards.filter((item) => item.name === itemName).map(
           ({ icon, iconClassname, title, description, date, time, price, url }, index) => (
-            <li className="flex flex-col rounded p-8 shadow-[0_14px_40px_#CCCCCC]" key={index}>
+            <li
+              className="flex flex-col rounded p-8 text-primary-1 shadow-[0_14px_40px_#CCCCCC]"
+              key={index}
+            >
               <img
                 className={iconClassname}
                 src={icon}

@@ -48,7 +48,7 @@ const Venue = () => (
           </p>
           <p className="mt-5 font-bold">We can't wait to see you there!</p>
 
-          <Button className="mt-7 w-2/3" size="lg" theme="blue">
+          <Button className="mt-7 w-2/3" to="https://tickets.kcdzurich.ch/" size="lg" theme="blue">
             Buy tickets
           </Button>
         </div>

@@ -58,10 +58,6 @@ export default {
     to: 'https://twitter.com/KcdZurich?s=20&t=2K7fxHFqThcgycuBzO_rSw',
     target: '_blank',
   },
-  slack: {
-    to: '/',
-    target: '_blank',
-  },
   googlemaps: {
     to: 'https://goo.gl/maps/ooQufQWKzaRM286Z7',
     target: '_blank',
