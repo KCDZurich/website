@@ -49,7 +49,7 @@ const Content = [
     conditions: {
       description: 'At least 8 Participants are required for the workshop to take place.',
       seats: 14,
-      costs: '600 CHF',
+      costs: '650 CHF',
       description1: 'Includes catering, documentation and a cluster in the cloud',
     },
     trainers: [
@@ -87,7 +87,7 @@ const Content = [
     conditions: {
       description: 'At least 8 Participants are required for the workshop to take place.',
       seats: 14,
-      costs: '600 CHF',
+      costs: '650 CHF',
       description1: 'Includes catering, documentation and a cluster in the cloud',
     },
     trainers: [
@@ -123,7 +123,7 @@ const Content = [
     conditions: {
       description: 'At least 8 Participants are required for the workshop to take place.',
       seats: 14,
-      costs: '600 CHF',
+      costs: '650 CHF',
       description1: 'Includes catering, documentation and a cluster in the cloud',
     },
     trainers: [
@@ -165,7 +165,7 @@ const Content = [
     conditions: {
       description: 'At least 8 Participants are required for the workshop to take place.',
       seats: 14,
-      costs: '600 CHF',
+      costs: '650 CHF',
       description1: 'Includes catering, documentation and a cluster in the cloud',
     },
     trainers: [
