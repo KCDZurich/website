@@ -67,7 +67,7 @@ const Hero = () => (
       <h1 className="text-6xl font-bold leading-denser ">{TITLE}</h1>
       <p className="mx-auto mt-8 max-w-[1008px] text-2xl leading-normal">{DESCRIPTION}</p>
     </div>
-    <ul className="mx-auto mt-20 grid w-[800px] grid-cols-2 gap-8">
+    <ul className="mx-auto mt-20 grid w-[800px] grid-cols-2 gap-8 sm:flex sm:w-auto sm:flex-wrap sm:justify-center">
       {items.map(({ icon, iconClassname, title, description, date, time, price, url }, index) => (
         <li
           className="flex h-full w-[384px] flex-col rounded p-8 text-primary-1 shadow-[0_14px_40px_#CCCCCC]"

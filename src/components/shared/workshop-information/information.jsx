@@ -92,14 +92,14 @@ const Content = [
     },
     trainers: [
       {
-        name: 'David Schneider',
-        photo: DavidSchneider,
-        position: 'Trainer Puzzle ITC',
+        name: 'Gabriel Graf',
+        photo: GabrielGraf,
+        position: 'Trainer acend',
       },
       {
-        name: 'Lorenz Bischof',
-        photo: LorenzBischof,
-        position: 'Trainer, Puzzle ITC',
+        name: 'Sebastian Plattner',
+        photo: SebastianPlattner,
+        position: 'Trainer acend',
       },
     ],
   },
@@ -128,14 +128,14 @@ const Content = [
     },
     trainers: [
       {
-        name: 'Sebastian Plattner',
-        photo: SebastianPlattner,
-        position: 'Trainer acend',
+        name: 'David Schneider',
+        photo: DavidSchneider,
+        position: 'Trainer Puzzle ITC',
       },
       {
-        name: 'Gabriel Graf',
-        photo: GabrielGraf,
-        position: 'Trainer acend',
+        name: 'Lorenz Bischof',
+        photo: LorenzBischof,
+        position: 'Trainer, Puzzle ITC',
       },
     ],
   },

@@ -3,6 +3,7 @@ import React from 'react';
 
 import Link from 'components/shared/link';
 import LINKS from 'constants/links';
+import Acend from 'icons/acend-logo.svg';
 
 import Adfinis from './images/adfinis.svg';
 import BGNova from './images/bg-nova.svg';
@@ -51,6 +52,7 @@ const ITEMS = [
       { icon: Puzzle, url: 'https://www.puzzle.ch/' },
       { icon: Camptocamp, url: 'https://www.camptocamp.com/' },
       { icon: BGNova, url: 'https://b-nova.com/' },
+      { icon: Acend, url: 'https://acend.ch/' },
     ],
     cardClassname: 'min-w-[280px] min-h-[104px] sm:min-w-[250px] sm:min-h-[94px]',
   },
@@ -87,7 +89,7 @@ const Sponsors = () => (
                     target="_blank"
                   >
                     <img
-                      className="h-auto w-auto sm:max-w-[210px]"
+                      className="h-auto w-auto max-w-[250px] sm:max-w-[210px]"
                       src={icon}
                       width="auto"
                       height="auto"
