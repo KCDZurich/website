@@ -70,7 +70,7 @@ const Hero = () => (
     <ul className="mx-auto mt-20 grid w-[800px] grid-cols-2 gap-8">
       {items.map(({ icon, iconClassname, title, description, date, time, price, url }, index) => (
         <li
-          className="flex h-full w-[384px] flex-col rounded p-8 shadow-[0_14px_40px_#CCCCCC]"
+          className="flex h-full w-[384px] flex-col rounded p-8 text-primary-1 shadow-[0_14px_40px_#CCCCCC]"
           key={index}
         >
           <img
