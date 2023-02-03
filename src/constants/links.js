@@ -32,6 +32,9 @@ export default {
     id: getAnchor('Call for Proposal'),
     homeTo: null,
   },
+  team: {
+    to: '/team',
+  },
   tickets: {
     to: 'https://tickets.kcdzurich.ch/',
     target: '_blank',
@@ -60,6 +63,10 @@ export default {
   },
   googlemaps: {
     to: 'https://goo.gl/maps/ooQufQWKzaRM286Z7',
+    target: '_blank',
+  },
+  youtube: {
+    to: 'https://www.youtube.com/@KCDZH)',
     target: '_blank',
   },
 };

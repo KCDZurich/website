@@ -14,8 +14,10 @@ import Innoq from './images/innoq.svg';
 import Isovalent from './images/isovalent.svg';
 import Postfinance from './images/postfinance.svg';
 import Puzzle from './images/puzzle.svg';
+import RedHat from './images/red-hat.svg';
 import Swisscom from './images/swisscom.svg';
 import Vmware from './images/vmware.svg';
+import Vshn from './images/vshn.svg';
 
 const TITLE = 'Sponsors';
 
@@ -25,8 +27,10 @@ const ITEMS = [
     logos: [
       { icon: Google, url: 'https://www.google.com/' },
       { icon: Isovalent, url: 'https://isovalent.com/' },
+      { icon: Vshn, url: 'https://www.vshn.ch/' },
     ],
-    cardClassname: 'min-w-[488px] min-h-[152px] sm:min-w-[350px] sm:min-h-[130px]',
+    cardClassname: 'min-w-[488px] max-w-[330px] min-h-[152px] sm:min-w-[350px] sm:min-h-[130px]',
+    iconClassname: 'max-w-[390px] sm:max-w-[350px]',
   },
   {
     title: 'Silver',
@@ -34,8 +38,10 @@ const ITEMS = [
       { icon: Swisscom, url: 'https://www.swisscom.ch/' },
       { icon: Vmware, url: 'https://www.vmware.com/' },
       { icon: Dynatrace, url: 'https://www.dynatrace.com/' },
+      { icon: RedHat, url: 'https://www.redhat.com/' },
     ],
     cardClassname: 'min-w-[384px] min-h-[122px] sm:min-w-[320px] sm:min-h-[115px]',
+    iconClassname: 'max-w-[330px] sm:min-w-[290px]',
   },
   {
     title: 'Bronze',
@@ -74,7 +80,7 @@ const Sponsors = () => (
       </p>
 
       <ul className="mt-16 flex flex-col">
-        {ITEMS.map(({ title, logos, cardClassname }, index) => (
+        {ITEMS.map(({ title, logos, cardClassname, iconClassname }, index) => (
           <li className="" key={index}>
             <p className="text-center text-2xl font-bold uppercase leading-normal text-primary-1">
               {title}
@@ -89,7 +95,7 @@ const Sponsors = () => (
                     target="_blank"
                   >
                     <img
-                      className="h-auto w-auto"
+                      className={clsx('h-auto w-auto', iconClassname)}
                       src={icon}
                       width="auto"
                       height="auto"
