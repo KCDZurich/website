@@ -9,7 +9,7 @@ import Adfinis from './images/adfinis.svg';
 import BGNova from './images/bg-nova.svg';
 import Camptocamp from './images/camptocamp.svg';
 import Dynatrace from './images/dynatrace.svg';
-import Google from './images/google.svg';
+import Google from './images/google-cloud.svg';
 import Innoq from './images/innoq.svg';
 import Isovalent from './images/isovalent.svg';
 import Postfinance from './images/postfinance.svg';
@@ -54,7 +54,7 @@ const ITEMS = [
       { icon: BGNova, url: 'https://b-nova.com/' },
       { icon: Acend, url: 'https://acend.ch/' },
     ],
-    cardClassname: 'min-w-[280px] min-h-[104px] sm:min-w-[250px] sm:min-h-[94px]',
+    cardClassname: 'min-w-[280px] min-h-[104px] sm:min-w-[250px] sm:w-fit sm:min-h-[94px]',
   },
 ];
 
@@ -89,7 +89,7 @@ const Sponsors = () => (
                     target="_blank"
                   >
                     <img
-                      className="h-auto w-auto max-w-[250px] sm:max-w-[210px]"
+                      className="h-auto w-auto"
                       src={icon}
                       width="auto"
                       height="auto"
