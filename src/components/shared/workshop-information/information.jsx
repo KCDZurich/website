@@ -191,7 +191,7 @@ const Cards = [
     title: 'GitOps with ArgoCD',
     description:
       'This one-day training in German or English offers a practical and clearly understandable introduction to GitOps using Argo CD on Kubernetes.',
-    date: 'June 15, 2023',
+    date: 'June 14, 2023',
     time: '09:00 - 16:45',
     price: 'CHF 650',
     url: 'https://workshops.kcdzurich.ch/',
@@ -203,7 +203,7 @@ const Cards = [
     title: 'Go Basics',
     description:
       'This one-day training in German or English offers an introduction to Go for software developers, architects and DevOps engineers.',
-    date: 'June 15, 2023',
+    date: 'June 14, 2023',
     time: '09:00 - 16:45',
     price: 'CHF 650',
     url: 'https://workshops.kcdzurich.ch/',
@@ -215,7 +215,7 @@ const Cards = [
     title: 'Cilium Basics',
     description:
       'This one-day training in English or German provides a practical and clear introduction to Cilium, an eBFP-based networking, observability and security stack for cloud and on-premise infrastructure.',
-    date: 'June 15, 2023',
+    date: 'June 14, 2023',
     time: '09:00 - 16:45',
     price: 'CHF 650',
     url: 'https://workshops.kcdzurich.ch/',
@@ -227,7 +227,7 @@ const Cards = [
     title: 'Kubernetes Basics',
     description:
       'This one-day training in German or English provides a practical and easy-to-understand introduction to Kubernetes.',
-    date: 'June 15, 2023',
+    date: 'June 14, 2023',
     time: '09:00 - 16:45',
     price: 'CHF 650',
     url: 'https://workshops.kcdzurich.ch/',
