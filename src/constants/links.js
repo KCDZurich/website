@@ -66,7 +66,7 @@ export default {
     target: '_blank',
   },
   youtube: {
-    to: 'https://www.youtube.com/@KCDZH)',
+    to: 'https://www.youtube.com/@KCDZH',
     target: '_blank',
   },
 };

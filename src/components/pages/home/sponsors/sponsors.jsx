@@ -9,6 +9,7 @@ import Adfinis from './images/adfinis.svg';
 import BGNova from './images/bg-nova.svg';
 import Camptocamp from './images/camptocamp.svg';
 import Dynatrace from './images/dynatrace.svg';
+import Flow from './images/flow.svg';
 import Google from './images/google-cloud.svg';
 import Innoq from './images/innoq.svg';
 import Isovalent from './images/isovalent.svg';
@@ -39,6 +40,7 @@ const ITEMS = [
       { icon: Vmware, url: 'https://www.vmware.com/' },
       { icon: Dynatrace, url: 'https://www.dynatrace.com/' },
       { icon: RedHat, url: 'https://www.redhat.com/' },
+      { icon: Flow, url: 'https://flow.swiss/' },
     ],
     cardClassname: 'min-w-[384px] min-h-[122px] sm:min-w-[320px] sm:min-h-[115px]',
     iconClassname: 'max-w-[330px] sm:min-w-[290px]',
