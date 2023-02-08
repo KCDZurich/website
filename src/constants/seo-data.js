@@ -24,6 +24,10 @@ export default {
     description:
       'This one-day training in German or English provides a practical and easy-to-understand introduction to Kubernetes.',
   },
+  team: {
+    title: 'Team — Kubernetes Community Days',
+    description: 'Experience the power of community at the Kubernetes Community Days in Zurich!',
+  },
   static: ({ title }) => ({
     title: `${title} — Kubernetes Community Days`,
   }),
