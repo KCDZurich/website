@@ -1,13 +1,12 @@
 import React from 'react';
 
 import Link from 'components/shared/link';
-
-import ArchCloud from './images/archcloud.svg';
-import Cloudnative from './images/cloudnative.svg';
-import InsideIt from './images/insideIt.svg';
-import Rokt from './images/rokt.svg';
-import Techface from './images/techface.svg';
-import WhiteRabbit from './images/white-rabbit.svg';
+import ArchCloud from 'icons/archcloud.svg';
+import Cloudnative from 'icons/cloudnative.svg';
+import InsideIt from 'icons/insideIt.svg';
+import Rokt from 'icons/rokt.svg';
+import Techface from 'icons/techface.svg';
+import WhiteRabbit from 'icons/white-rabbit.svg';
 
 const TITLE = 'Community & Media Partners';
 

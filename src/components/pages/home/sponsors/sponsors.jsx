@@ -4,21 +4,20 @@ import React from 'react';
 import Link from 'components/shared/link';
 import LINKS from 'constants/links';
 import Acend from 'icons/acend-logo.svg';
-
-import Adfinis from './images/adfinis.svg';
-import BGNova from './images/bg-nova.svg';
-import Camptocamp from './images/camptocamp.svg';
-import Dynatrace from './images/dynatrace.svg';
-import Flow from './images/flow.svg';
-import Google from './images/google-cloud.svg';
-import Innoq from './images/innoq.svg';
-import Isovalent from './images/isovalent.svg';
-import Postfinance from './images/postfinance.svg';
-import Puzzle from './images/puzzle.svg';
-import RedHat from './images/red-hat.svg';
-import Swisscom from './images/swisscom.svg';
-import Vmware from './images/vmware.svg';
-import Vshn from './images/vshn.svg';
+import Adfinis from 'icons/adfinis.svg';
+import BGNova from 'icons/bg-nova.svg';
+import Camptocamp from 'icons/camptocamp.svg';
+import Dynatrace from 'icons/dynatrace.svg';
+import Flow from 'icons/flow.svg';
+import Google from 'icons/google-cloud.svg';
+import Innoq from 'icons/innoq.svg';
+import Isovalent from 'icons/isovalent.svg';
+import Postfinance from 'icons/postfinance.svg';
+import Puzzle from 'icons/puzzle.svg';
+import RedHat from 'icons/red-hat.svg';
+import Swisscom from 'icons/swisscom.svg';
+import Vmware from 'icons/vmware.svg';
+import Vshn from 'icons/vshn.svg';
 
 const TITLE = 'Sponsors';
 
