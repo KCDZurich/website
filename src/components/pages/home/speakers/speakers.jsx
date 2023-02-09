@@ -3,8 +3,10 @@ import React from 'react';
 import LINKS from 'constants/links';
 
 import AnnieTalvastoPhoto from './images/annie-talvasto-photo.jpg';
+import CherylHungPhoto from './images/cheryl-hung-photo.jpg';
 import JuliusVolzPhoto from './images/julius-volz-photo.jpg';
 import KatieGamanjiPhoto from './images/katie-gamanji-photo.jpg';
+import LisaFalcoPhoto from './images/lisa-falco-photo.jpg';
 import LizRicePhoto from './images/liz-rice-photo.jpg';
 import MaxKorbacherPhoto from './images/max-korbacher-photo.jpg';
 import PriyaWadhwaPhoto from './images/priya-wadhwa-photo.jpg';
@@ -53,6 +55,16 @@ const ITEMS = [
     name: 'Priya Wadhwa',
     position: 'Software Engineer at Chainguard',
     photo: PriyaWadhwaPhoto,
+  },
+  {
+    name: 'Cheryl Hung',
+    position: 'Sr Director in Infrastructure at Arm',
+    photo: CherylHungPhoto,
+  },
+  {
+    name: 'Lisa Falco ',
+    position: 'Consultant in Medical & Responsible AI at Zühlke Group',
+    photo: LisaFalcoPhoto,
   },
 ];
 
