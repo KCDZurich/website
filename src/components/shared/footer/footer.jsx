@@ -7,6 +7,7 @@ import GoogleMaps from 'icons/google-maps-icon.inline.svg';
 import LinkedIn from 'icons/linkedin-logo.inline.svg';
 import Logo from 'icons/logo.inline.svg';
 import Twitter from 'icons/twitter-logo.inline.svg';
+import Youtube from 'icons/youtube.inline.svg';
 
 import Button from '../button';
 import Link from '../link';
@@ -15,6 +16,7 @@ const items = [
   { icon: GoogleMaps, iconClassName: 'w-11 h-9', url: LINKS.googlemaps.to },
   { icon: LinkedIn, iconClassName: 'w-4 h-4', url: LINKS.linkedin.to },
   { icon: Twitter, iconClassName: 'w-5 h-4', url: LINKS.twitter.to },
+  { icon: Youtube, iconClassName: 'w-6 h-5', url: LINKS.youtube.to },
 ];
 
 const Footer = () => {
@@ -43,7 +45,7 @@ const Footer = () => {
         </Link>
 
         <nav className="mt-4 flex">
-          <ul className="grid min-w-fit grid-cols-2 grid-rows-2 gap-y-4 gap-x-3 xl:gap-x-1 lg:mr-6 lg:grid-cols-3 lg:gap-x-4 md:grid-cols-2 sm:mx-auto">
+          <ul className="grid min-w-fit grid-cols-2 grid-rows-2 gap-y-4 gap-x-3 xl:gap-x-1 lg:mr-6 lg:gap-x-4 sm:mx-auto">
             {MENUS.footer.map(({ text, to, target }, index) => (
               <li className="w-fit max-w-min text-sm font-semibold text-primary-1" key={index}>
                 <Button
@@ -61,7 +63,7 @@ const Footer = () => {
         </nav>
         <div className="mt-4">
           <Link
-            className="font-semibold transition-colors duration-200"
+            className="ml-2 font-semibold transition-colors duration-200"
             theme="primary"
             to="mailto:hello@kcdzurich.ch"
           >
@@ -72,10 +74,7 @@ const Footer = () => {
               const Icon = icon;
 
               return (
-                <li
-                  className="h-9 w-9 rounded-full border border-gray-10 transition-colors duration-200 hover:border-primary-1 hover:border-opacity-40"
-                  key={index}
-                >
+                <li className="h-9 w-9" key={index}>
                   <Link
                     className="flex h-full w-full items-center justify-center"
                     to={url}
