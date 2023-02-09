@@ -3,8 +3,8 @@ import React from 'react';
 
 import Link from 'components/shared/link';
 import ArchCloud from 'icons/archcloud.svg';
+import Isovalent from 'icons/isovalent.svg';
 import Rokt from 'icons/rokt.svg';
-import Vshn from 'icons/vshn.svg';
 import WhiteRabbit from 'icons/white-rabbit.svg';
 
 import AndreasGehrigPhoto from './images/andreas-gehrig-photo.jpg';
@@ -40,10 +40,10 @@ const ITEMS = [
 ];
 
 const LOGOS = [
-  { icon: ArchCloud, url: 'https://arch.cloud/', iconClassName: 'w-[260px] h-7' },
-  { icon: Rokt, url: 'https://rokt.cloud/', iconClassName: 'w-28 h-[72px]' },
+  { icon: ArchCloud, url: 'https://arch.cloud/', iconClassName: 'w-[260px] h-auto' },
   { icon: WhiteRabbit, url: 'https://www.whiterabbitcom.ch', iconClassName: 'w-[200px]' },
-  { icon: Vshn, url: 'https://www.vshn.ch/', iconClassName: 'w-[205px] h-12' },
+  { icon: Isovalent, url: 'https://isovalent.com/', iconClassName: '' },
+  { icon: Rokt, url: 'https://rokt.cloud/', iconClassName: 'w-28 h-[72px]' },
 ];
 
 const Members = () => (
