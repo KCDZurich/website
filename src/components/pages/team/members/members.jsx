@@ -17,25 +17,25 @@ const ITEMS = [
     name: 'Andreas Gehrig',
     position: 'Co-founder Arch.cloud',
     photo: AndreasGehrigPhoto,
-    url: '/',
+    url: 'https://www.linkedin.com/in/andreasgehrig/',
   },
   {
     name: 'Milena Thalmann',
     position: 'Founder White Rabbit Communications',
     photo: MilenaThalmannPhoto,
-    url: '/',
+    url: 'https://www.linkedin.com/in/milena-thalmann/',
   },
   {
     name: 'Philipp Meier',
     position: 'Ecosystem Builder - Isovalent',
     photo: PhilippMeierPhoto,
-    url: '/',
+    url: 'https://www.linkedin.com/in/phmeier/',
   },
   {
     name: 'Thomas Philipona',
     position: 'Founder ROKT GmbH',
     photo: ThomasPhiliponaPhoto,
-    url: '/',
+    url: 'https://www.linkedin.com/in/thomas-philipona-thun/',
   },
 ];
 
@@ -70,7 +70,11 @@ const Members = () => (
 
             <span className="mt-1.5 text-primary-1">{position}</span>
 
-            <Link className="mt-2.5 text-base font-semibold leading-normal text-blue-1" to={url}>
+            <Link
+              className="mt-2.5 text-base font-semibold leading-normal text-blue-1"
+              to={url}
+              target="_blank"
+            >
               LinkedIn
             </Link>
           </li>
@@ -83,7 +87,7 @@ const Members = () => (
         <li className="flex min-h-[80px] min-w-[280px] items-center justify-center" key={index}>
           <Link className="flex h-full w-full items-center justify-center" to={url}>
             <img
-              className={clsx(iconClassName, 'max-w-[260px]')}
+              className={clsx(iconClassName, 'max-w-[260px] md:max-w-[220px]')}
               src={icon}
               width="auto"
               height="auto"
