@@ -11,6 +11,7 @@ import LizRicePhoto from './images/liz-rice-photo.jpg';
 import MaxKorbacherPhoto from './images/max-korbacher-photo.jpg';
 import PriyaWadhwaPhoto from './images/priya-wadhwa-photo.jpg';
 import RicardoRochaPhoto from './images/ricardo-rocha-photo.jpg';
+import SebastianKisterPhoto from './images/sebastian-kister-photo.jpeg';
 import ThomasGrafPhoto from './images/thomas-graf-photo.jpg';
 
 const TITLE = 'Speakers';
@@ -62,22 +63,27 @@ const ITEMS = [
     photo: CherylHungPhoto,
   },
   {
-    name: 'Lisa Falco ',
+    name: 'Lisa Falco',
     position: 'Consultant in Medical & Responsible AI at Zühlke Group',
     photo: LisaFalcoPhoto,
+  },
+  {
+    name: 'Sebastian Kister',
+    position: 'Lead Kubernetes Competence Center Audi',
+    photo: SebastianKisterPhoto,
   },
 ];
 
 const Speakers = () => (
   <section className="safe-paddings relative bg-white pb-40 lg:pb-32 md:py-24 sm:py-16">
-    <div className="container">
+    <div className="container flex flex-col sm:items-center">
       <h2
         className="text-6xl font-bold leading-tight text-primary-1 md:text-center"
         id={LINKS.speakers.id}
       >
         {TITLE}
       </h2>
-      <ul className="mt-14 grid grid-cols-4 gap-8 lg:gap-6 md:grid-cols-3 sm:flex sm:flex-wrap sm:justify-evenly">
+      <ul className="mt-14 grid w-full grid-cols-4 gap-8 lg:gap-6 md:grid-cols-3 md:justify-items-center md:gap-4 xs:flex xs:flex-wrap xs:justify-evenly [@media(max-width:620px)]:grid-cols-2">
         {ITEMS.map(({ name, position, photo }, index) => (
           <li
             className="flex w-[240px] flex-col lg:w-52 md:w-48 sm:w-auto sm:max-w-[200px]"
