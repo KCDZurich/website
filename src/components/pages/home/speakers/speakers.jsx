@@ -11,6 +11,7 @@ import LizRicePhoto from './images/liz-rice-photo.jpg';
 import MaxKorbacherPhoto from './images/max-korbacher-photo.jpg';
 import PriyaWadhwaPhoto from './images/priya-wadhwa-photo.jpg';
 import RicardoRochaPhoto from './images/ricardo-rocha-photo.jpg';
+import SebastianKisterPhoto from './images/sebastian-kister-photo.jpeg';
 import ThomasGrafPhoto from './images/thomas-graf-photo.jpg';
 
 const TITLE = 'Speakers';
@@ -62,9 +63,14 @@ const ITEMS = [
     photo: CherylHungPhoto,
   },
   {
-    name: 'Lisa Falco ',
+    name: 'Lisa Falco',
     position: 'Consultant in Medical & Responsible AI at Zühlke Group',
     photo: LisaFalcoPhoto,
+  },
+  {
+    name: 'Sebastian Kister',
+    position: 'Lead Kubernetes Competence Center Audi',
+    photo: SebastianKisterPhoto,
   },
 ];
 
