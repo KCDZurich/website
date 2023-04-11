@@ -169,18 +169,18 @@ const ITEMS = [
 
 const Speakers = () => {
   // State used to control the modal
-  const [modalVisible, setModalVisible] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalDataId, setModalDataId] = useState(0);
 
   const handleModalShow = (id) => {
-    setModalVisible(true);
-    setModalDataId(id);
     document.body.classList.add('overflow-hidden');
+    setIsModalVisible(true);
+    setModalDataId(id);
   };
 
   const handleModalHide = () => {
     document.body.classList.remove('overflow-hidden');
-    setModalVisible(false);
+    setIsModalVisible(false);
     setModalDataId(0);
   };
 
@@ -217,7 +217,7 @@ const Speakers = () => {
         </ul>
         <Modal
           modalData={ITEMS[modalDataId]}
-          isVisible={modalVisible}
+          isVisible={isModalVisible}
           onModalHide={handleModalHide}
         />
         <p className="mt-14 text-center text-[22px] font-semibold leading-normal text-primary-1">

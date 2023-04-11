@@ -176,8 +176,8 @@ const Modal = ({ isVisible, modalData, onModalHide }) => {
           <motion.div
             className="fixed inset-0 z-10 bg-primary-1 opacity-40"
             key="modal-backdrop"
-            {...modalBackdropAnimation}
             onClick={onModalHide}
+            {...modalBackdropAnimation}
           />
         </>
       )}
