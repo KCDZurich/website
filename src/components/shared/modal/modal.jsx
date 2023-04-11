@@ -86,20 +86,23 @@ const Modal = ({ isVisible, modalData, onModalHide }) => {
                 >
                   {name}
                 </h2>
-                <p className="mt-2 text-lg font-semibold leading-normal sm:text-base">{position}</p>
+                <p
+                  className="mt-2 text-lg font-semibold leading-normal sm:text-base"
+                  dangerouslySetInnerHTML={{ __html: position }}
+                />
               </div>
             </div>
             <div className="text-lg leading-normal sm:text-base">{content}</div>
-            <ul className="my-8 flex items-center gap-3">
+            <ul className="mt-8 flex items-center gap-3">
               {twitterUrl && (
                 <li>
                   <a
-                    className="flex h-[28px] w-[28px] items-center justify-center transition-colors duration-200 hover:text-blue-1"
+                    className="transition-colors duration-200 hover:text-blue-1"
                     href={twitterUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <TwitterIcon />
+                    <TwitterIcon className="h-[20px]" />
                     <span className="sr-only">Twitter link</span>
                   </a>
                 </li>
@@ -107,12 +110,12 @@ const Modal = ({ isVisible, modalData, onModalHide }) => {
               {linkedInUrl && (
                 <li>
                   <a
-                    className="flex h-[28px] w-[28px] items-center justify-center transition-colors duration-200 hover:text-blue-1"
+                    className="transition-colors duration-200 hover:text-blue-1"
                     href={linkedInUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <LinkedInIcon />
+                    <LinkedInIcon className="h-[21px]" />
                     <span className="sr-only">Linkedin link</span>
                   </a>
                 </li>
@@ -120,12 +123,12 @@ const Modal = ({ isVisible, modalData, onModalHide }) => {
               {githubUrl && (
                 <li>
                   <a
-                    className="flex h-[28px] w-[28px] items-center justify-center transition-colors duration-200 hover:text-blue-1"
+                    className="transition-colors duration-200 hover:text-blue-1"
                     href={githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <GithubIcon />
+                    <GithubIcon className="h-[20px]" />
                     <span className="sr-only">Github link</span>
                   </a>
                 </li>
@@ -133,12 +136,12 @@ const Modal = ({ isVisible, modalData, onModalHide }) => {
               {communityUrl && (
                 <li>
                   <a
-                    className="flex h-[28px] w-[28px] items-center justify-center transition-colors duration-200 hover:text-blue-1"
+                    className="transition-colors duration-200 hover:text-blue-1"
                     href={communityUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <CommunityIcon />
+                    <CommunityIcon className="h-[22px]" />
                     <span className="sr-only">Cloud native community link</span>
                   </a>
                 </li>
@@ -146,12 +149,12 @@ const Modal = ({ isVisible, modalData, onModalHide }) => {
               {instagramUrl && (
                 <li>
                   <a
-                    className="flex h-[28px] w-[28px] items-center justify-center transition-colors duration-200 hover:text-blue-1"
+                    className="transition-colors duration-200 hover:text-blue-1"
                     href={instagramUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <InstagramIcon />
+                    <InstagramIcon className="h-[21px]" />
                     <span className="sr-only">Instagram link</span>
                   </a>
                 </li>
@@ -159,18 +162,17 @@ const Modal = ({ isVisible, modalData, onModalHide }) => {
               {websiteUrl && (
                 <li>
                   <a
-                    className="flex h-[28px] w-[28px] items-center justify-center transition-colors duration-200 hover:text-blue-1"
+                    className="transition-colors duration-200 hover:text-blue-1"
                     href={websiteUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <WebsiteIcon />
+                    <WebsiteIcon className="h-[21px]" />
                     <span className="sr-only">Personal website link</span>
                   </a>
                 </li>
               )}
             </ul>
-            <h3 className="text-lg font-bold leading-normal">Speaker’s schedule</h3>
           </motion.div>
 
           <motion.div

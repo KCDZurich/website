@@ -14,9 +14,12 @@ const Hero = () => (
     <div className="container relative md:flex md:flex-col">
       <div className="absolute top-0 -left-[40%] h-[566px] w-[566px] translate-x-1/2 bg-white blur-[100px] md:-left-[30%] md:h-[350px] md:w-[350px]" />
       <div className="relative md:flex md:flex-col md:items-center md:text-center">
-        <span className="rounded-3xl bg-yellow px-4 py-2 text-sm font-bold leading-none text-black">
+        <time
+          className="rounded-3xl bg-yellow px-4 py-2 text-sm font-bold leading-none text-black"
+          dateTime="2023-06-14"
+        >
           JUNE 14th - 15th, 2023
-        </span>
+        </time>
         <h1 className="mt-3 max-w-[570px] text-8xl font-bold leading-denser text-primary-1 lg:max-w-[500px] sm:text-7xl">
           {TITLE}
         </h1>
