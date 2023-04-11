@@ -150,7 +150,7 @@ const ITEMS = [
     githubUrl: '',
     communityUrl: '',
     instagramUrl: 'https://www.instagram.com/lisafalco_dsw/',
-    websiteUrl: 'lisafalco.com',
+    websiteUrl: 'https://lisafalco.com',
   },
   {
     name: 'Sebastian Kister',

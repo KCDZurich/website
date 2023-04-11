@@ -30,9 +30,9 @@ const Venue = () => (
               Google HQ <br />
               at Zurich Europaallee
             </Link>
-            <p className="mt-5 text-lg text-[#262F59] opacity-60 sm:text-lg">
+            <address className="mt-5 text-lg not-italic text-[#262F59] opacity-60 sm:text-lg">
               Google EURF <br /> Europaallee 36 <br /> 8004 Zürich
-            </p>
+            </address>
           </div>
         </div>
 
