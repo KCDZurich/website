@@ -28,6 +28,8 @@ const ITEMS = [
     linkedInUrl: '',
     githubUrl: '',
     communityUrl: '',
+    instagramUrl: '',
+    websiteUrl: '',
   },
   {
     name: 'Liz Rice',
@@ -39,6 +41,8 @@ const ITEMS = [
     linkedInUrl: '',
     githubUrl: '',
     communityUrl: '',
+    instagramUrl: '',
+    websiteUrl: '',
   },
   {
     name: 'Katie Gamanji',
@@ -50,6 +54,8 @@ const ITEMS = [
     linkedInUrl: 'https://www.linkedin.com/in/katie-gamanji/',
     githubUrl: '',
     communityUrl: '',
+    instagramUrl: '',
+    websiteUrl: '',
   },
   {
     name: 'Julius Volz',
@@ -61,6 +67,8 @@ const ITEMS = [
     linkedInUrl: 'https://www.linkedin.com/in/julius-volz/',
     githubUrl: '',
     communityUrl: 'https://community.cncf.io/u/mvhzxh/',
+    instagramUrl: '',
+    websiteUrl: 'https://juliusv.com/',
   },
   {
     name: 'Annie Talvasto',
@@ -72,6 +80,8 @@ const ITEMS = [
     linkedInUrl: 'https://www.linkedin.com/in/talvasto/',
     githubUrl: '',
     communityUrl: 'https://community.cncf.io/u/mwwdtj/#/about',
+    instagramUrl: '',
+    websiteUrl: '',
   },
   {
     name: 'Ricardo Rocha',
@@ -83,6 +93,8 @@ const ITEMS = [
     linkedInUrl: 'https://www.linkedin.com/in/ricardo-rocha-739aa718/',
     githubUrl: 'https://github.com/rochaporto',
     communityUrl: 'https://community.cncf.io/u/m46hr5/#/about',
+    instagramUrl: '',
+    websiteUrl: '',
   },
   {
     name: 'Max Körbächer',
@@ -94,6 +106,8 @@ const ITEMS = [
     linkedInUrl: 'https://www.linkedin.com/in/maxkoerbaecher/',
     githubUrl: '',
     communityUrl: 'https://community.cncf.io/u/m76gha/#/about',
+    instagramUrl: '',
+    websiteUrl: '',
   },
   {
     name: 'Priya Wadhwa',
@@ -105,6 +119,8 @@ const ITEMS = [
     linkedInUrl: '',
     githubUrl: 'https://github.com/priyawadhwa',
     communityUrl: '',
+    instagramUrl: '',
+    websiteUrl: '',
   },
   {
     name: 'Cheryl Hung',
@@ -120,6 +136,8 @@ const ITEMS = [
     linkedInUrl: '',
     githubUrl: '',
     communityUrl: '',
+    instagramUrl: '',
+    websiteUrl: '',
   },
   {
     name: 'Lisa Falco',
@@ -131,6 +149,8 @@ const ITEMS = [
     linkedInUrl: 'https://www.linkedin.com/in/lisa-falco-jon',
     githubUrl: '',
     communityUrl: '',
+    instagramUrl: 'https://www.instagram.com/lisafalco_dsw/',
+    websiteUrl: 'lisafalco.com',
   },
   {
     name: 'Sebastian Kister',
@@ -142,6 +162,8 @@ const ITEMS = [
     linkedInUrl: 'https://www.linkedin.com/in/sebastiankister/',
     githubUrl: '',
     communityUrl: 'https://community.cncf.io/u/mrku63/#/about',
+    instagramUrl: '',
+    websiteUrl: '',
   },
 ];
 

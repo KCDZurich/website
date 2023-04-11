@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 import React, { useCallback, useEffect, useId } from 'react';
 
 import CommunityIcon from 'icons/cncf-icon.inline.svg';
+import GithubIcon from 'icons/github-icon.inline.svg';
+import InstagramIcon from 'icons/instagram-icon.inline.svg';
 import LinkedInIcon from 'icons/linkedin-icon.inline.svg';
 import TwitterIcon from 'icons/twitter-icon.inline.svg';
+import WebsiteIcon from 'icons/webpage-icon.inline.svg';
 
 const defaultModalAnimation = {
   transition: { duration: 0.2, delay: 0.1, ease: 'easeInOut' },
@@ -26,8 +29,18 @@ const defaultModalBackdropAnimation = {
 };
 
 const Modal = ({ isVisible, modalData, onModalHide }) => {
-  const { name, photo, position, content, twitterUrl, linkedInUrl, githubUrl, communityUrl } =
-    modalData;
+  const {
+    name,
+    photo,
+    position,
+    content,
+    twitterUrl,
+    linkedInUrl,
+    githubUrl,
+    communityUrl,
+    instagramUrl,
+    websiteUrl,
+  } = modalData;
   const shouldReduceMotion = useReducedMotion();
   const headingId = useId();
   const modalAnimation = shouldReduceMotion ? {} : defaultModalAnimation;
@@ -104,6 +117,19 @@ const Modal = ({ isVisible, modalData, onModalHide }) => {
                   </a>
                 </li>
               )}
+              {githubUrl && (
+                <li>
+                  <a
+                    className="flex h-[28px] w-[28px] items-center justify-center transition-colors duration-200 hover:text-blue-1"
+                    href={githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <GithubIcon />
+                    <span className="sr-only">Github link</span>
+                  </a>
+                </li>
+              )}
               {communityUrl && (
                 <li>
                   <a
@@ -117,15 +143,29 @@ const Modal = ({ isVisible, modalData, onModalHide }) => {
                   </a>
                 </li>
               )}
-              {githubUrl && (
+              {instagramUrl && (
                 <li>
                   <a
                     className="flex h-[28px] w-[28px] items-center justify-center transition-colors duration-200 hover:text-blue-1"
-                    href={githubUrl}
+                    href={instagramUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span className="sr-only">Github link</span>
+                    <InstagramIcon />
+                    <span className="sr-only">Instagram link</span>
+                  </a>
+                </li>
+              )}
+              {websiteUrl && (
+                <li>
+                  <a
+                    className="flex h-[28px] w-[28px] items-center justify-center transition-colors duration-200 hover:text-blue-1"
+                    href={websiteUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <WebsiteIcon />
+                    <span className="sr-only">Personal website link</span>
                   </a>
                 </li>
               )}
@@ -157,6 +197,8 @@ Modal.propTypes = {
     linkedInUrl: PropTypes.string.isRequired,
     githubUrl: PropTypes.string.isRequired,
     communityUrl: PropTypes.string.isRequired,
+    instagramUrl: PropTypes.string.isRequired,
+    websiteUrl: PropTypes.string.isRequired,
   }).isRequired,
 };
 export default Modal;
