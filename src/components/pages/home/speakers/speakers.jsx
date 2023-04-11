@@ -196,7 +196,7 @@ const Speakers = () => {
         <ul className="mt-14 grid w-full grid-cols-4 gap-8 lg:gap-6 md:grid-cols-3 md:justify-items-center md:gap-4 xs:flex xs:flex-wrap xs:justify-evenly [@media(max-width:620px)]:grid-cols-2">
           {ITEMS.map(({ name, position, photo }, index) => (
             <li
-              className="flex w-[240px] cursor-pointer flex-col lg:w-52 md:w-48 sm:w-auto sm:max-w-[200px]"
+              className="group flex w-[240px] cursor-pointer flex-col lg:w-52 md:w-48 sm:w-auto sm:max-w-[200px]"
               key={index}
               onClick={() => handleModalShow(index)}
             >
@@ -208,7 +208,7 @@ const Speakers = () => {
                 loading="lazy"
                 alt={name}
               />
-              <p className="mt-2.5 text-2xl font-bold leading-normal text-primary-1 sm:text-left">
+              <p className="mt-2.5 text-2xl font-bold leading-normal text-primary-1 transition-colors duration-200 group-hover:text-blue-1 sm:text-left">
                 {name}
               </p>
               <span
