@@ -394,11 +394,11 @@ const Information = ({ itemName }) => (
               <p className="mt-1.5">{description}</p>
               <div className="mt-6 flex w-fit items-center justify-center">
                 <Calendar className="h-4 w-4" />
-                <span className="ml-2.5 w-fit font-bold leading-normal">{date}</span>
+                <time className="ml-2.5 w-fit font-bold leading-normal">{date}</time>
               </div>
               <div className="mt-2 flex w-fit items-center justify-center">
                 <Clock className="h-4 w-4" />
-                <span className="ml-2.5 font-bold leading-normal">{time}</span>
+                <time className="ml-2.5 font-bold leading-normal">{time}</time>
               </div>
               <div className="mt-6 mb-8 flex w-fit items-center justify-center">
                 <Coins className="h-4 w-4" />
