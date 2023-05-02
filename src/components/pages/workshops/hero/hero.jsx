@@ -2,7 +2,7 @@ import React from 'react';
 
 import Button from 'components/shared/button';
 import Argo from 'icons/argo-horizontal-logo.svg';
-import Aws from 'icons/aws-logo.svg';
+// import Aws from 'icons/aws-logo.svg';
 import Calendar from 'icons/calendar-icon.inline.svg';
 import Cilium from 'icons/cilium-horizontal-logo.svg';
 import Clock from 'icons/clock-icon.inline.svg';
@@ -55,17 +55,17 @@ const items = [
     price: 'CHF 650',
     url: '/workshop-kubernetes',
   },
-  {
-    icon: Aws,
-    iconClassname: 'h-16 w-[106px]',
-    title: 'AWS Serverless',
-    description:
-      'This one-day training in English will demonstrate how to build your startup application, from a napkin idea to a fully functional production deployment, using AWS serverless services.',
-    date: 'June 15, 2023',
-    time: '09:00 - 16:45',
-    price: 'CHF 650',
-    url: '/workshop-aws',
-  },
+  // {
+  //   icon: Aws,
+  //   iconClassname: 'h-16 w-[106px]',
+  //   title: 'AWS Serverless',
+  //   description:
+  //     'This one-day training in English will demonstrate how to build your startup application, from a napkin idea to a fully functional production deployment, using AWS serverless services.',
+  //   date: 'June 15, 2023',
+  //   time: '09:00 - 16:45',
+  //   price: 'CHF 650',
+  //   url: '/workshop-aws',
+  // },
 ];
 
 const TITLE = 'Workshops';
