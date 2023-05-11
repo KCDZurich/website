@@ -8,9 +8,9 @@ export default {
     to: '/',
   },
   schedule: {
-    to: `/#${getAnchor('Schedule')}`,
+    to: '/schedule',
     id: getAnchor('Schedule'),
-    homeTo: null,
+    homeTo: '/schedule',
   },
   sponsors: {
     to: `/#${getAnchor('Sponsors')}`,

@@ -15,7 +15,7 @@ const Hero = () => (
       />
       <p className="mx-auto mt-9 max-w-[865px] text-2xl leading-normal">{DESCRIPTION}</p>
       <Button
-        className="mt-10 shadow-xl"
+        className="mt-10 shadow-xl hover:bg-blue-2 hover:shadow-[0px_15px_30px_#adadad]"
         size="lg"
         theme="blue"
         to="https://tickets.kcdzurich.ch/"
