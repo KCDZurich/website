@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import React, { useState } from 'react';
 
 import Modal from 'components/shared/modal';
@@ -20,6 +21,7 @@ import RicardoRochaPhoto from './images/ricardo-rocha-photo.jpg';
 import SebastianKisterPhoto from './images/sebastian-kister-photo.jpg';
 import ThomasGrafPhoto from './images/thomas-graf-photo.jpg';
 import TimoSalmPhoto from './images/timo-salm-photo.jpg';
+import ChevronDown from './svg/arrow-down.inline.svg';
 
 const TITLE = 'Speakers';
 
@@ -241,7 +243,7 @@ const ITEMS = [
 ];
 
 const Speakers = () => {
-  // State used to control the modal
+  const [isSpeakersOpen, setIsSpeakersOpen] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalDataId, setModalDataId] = useState(0);
 
@@ -257,6 +259,10 @@ const Speakers = () => {
     setModalDataId(0);
   };
 
+  const handleShowMoreClick = () => {
+    setIsSpeakersOpen((isSpeakersOpen) => !isSpeakersOpen);
+  };
+
   return (
     <section className="safe-paddings relative bg-white pb-40 lg:pb-32 md:py-24 sm:py-16">
       <div className="container flex flex-col sm:items-center">
@@ -269,7 +275,10 @@ const Speakers = () => {
         <ul className="mt-14 grid w-full grid-cols-4 gap-8 lg:gap-6 md:grid-cols-3 md:justify-items-center md:gap-4 xs:flex xs:flex-wrap xs:justify-evenly [@media(max-width:620px)]:grid-cols-2">
           {ITEMS.map(({ name, position, photo }, index) => (
             <li
-              className="group flex w-[240px] cursor-pointer flex-col lg:w-52 md:w-48 sm:w-auto sm:max-w-[200px]"
+              className={clsx(
+                'group flex w-[240px] cursor-pointer flex-col lg:w-52 md:w-48 sm:w-auto sm:max-w-[200px]',
+                index > 3 && !isSpeakersOpen ? 'hidden' : 'flex'
+              )}
               key={index}
               onClick={() => handleModalShow(index)}
             >
@@ -291,14 +300,24 @@ const Speakers = () => {
             </li>
           ))}
         </ul>
+        <button
+          className="mx-auto mt-10 flex items-center px-5 py-2 text-center text-lg font-bold leading-none text-primary-1 transition-colors duration-200"
+          type="button"
+          onClick={handleShowMoreClick}
+        >
+          <span>{isSpeakersOpen ? 'Hide all speakers' : 'View all speakers'}</span>
+          <ChevronDown
+            className={clsx(
+              'ml-2 block w-2.5 shrink-0 transition-[transform,color] duration-200',
+              isSpeakersOpen ? 'rotate-180' : ''
+            )}
+          />
+        </button>
         <Modal
           modalData={ITEMS[modalDataId]}
           isVisible={isModalVisible}
           onModalHide={handleModalHide}
         />
-        <p className="mt-14 text-center text-[22px] font-semibold leading-normal text-primary-1">
-          More to come...
-        </p>
       </div>
     </section>
   );
