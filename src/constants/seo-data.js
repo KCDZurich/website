@@ -1,4 +1,8 @@
 export default {
+  schedule: {
+    title: 'Schedule — Kubernetes Community Days',
+    description: 'Experience the power of community at the Kubernetes Community Days in Zurich!',
+  },
   workshops: {
     title: 'Workshops — Kubernetes Community Days',
     description:
