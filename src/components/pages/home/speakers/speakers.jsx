@@ -3,17 +3,23 @@ import React, { useState } from 'react';
 import Modal from 'components/shared/modal';
 import LINKS from 'constants/links';
 
+import AdrianReberPhoto from './images/adrian-reber-photo.jpg';
 import AnnieTalvastoPhoto from './images/annie-talvasto-photo.jpg';
-import CherylHungPhoto from './images/cheryl-hung-photo.jpg';
+import BillPhoto from './images/bill-mulligan-photo.jpg';
+import FilipPhoto from './images/filip-nicolic-photo.jpg';
 import JuliusVolzPhoto from './images/julius-volz-photo.jpg';
 import KatieGamanjiPhoto from './images/katie-gamanji-photo.jpg';
+import LenaPhoto from './images/lena-fuhrimann-photo.jpg';
 import LisaFalcoPhoto from './images/lisa-falco-photo.jpg';
 import LizRicePhoto from './images/liz-rice-photo.jpg';
+import MatthiasPhoto from './images/matthias-bertschy-photo.jpg';
 import MaxKorbacherPhoto from './images/max-korbacher-photo.jpg';
 import PriyaWadhwaPhoto from './images/priya-wadhwa-photo.jpg';
+import RetoLehmannPhoto from './images/reto-lehmann-photo.jpg';
 import RicardoRochaPhoto from './images/ricardo-rocha-photo.jpg';
-import SebastianKisterPhoto from './images/sebastian-kister-photo.jpeg';
+import SebastianKisterPhoto from './images/sebastian-kister-photo.jpg';
 import ThomasGrafPhoto from './images/thomas-graf-photo.jpg';
+import TimoSalmPhoto from './images/timo-salm-photo.jpg';
 
 const TITLE = 'Speakers';
 
@@ -123,23 +129,6 @@ const ITEMS = [
     websiteUrl: '',
   },
   {
-    name: 'Cheryl Hung',
-    position: 'Sr Director in Infrastructure <br/> Arm',
-    content:
-      'Cheryl brings engineers together to build the future of infrastructure, especially cloud native and open source.\n' +
-      '\n' +
-      'As Senior Director at Arm, Cheryl leads strategy across the cloud and infrastructure ecosystem to drive adoption of Arm. She founded Cloud Native London and runs monthly events for 7000 architects, SREs and DevOps engineers.\n' +
-      '\n' +
-      'Previously Cheryl was VP Ecosystem at the Cloud Native Computing Foundation / Linux Foundation, bringing Spotify, Apple and Airbnb into the End User Community. She was a C++ engineer on Google Maps and and engineering manager at Apple, and holds a Masters Computer Science from the University of Cambridge.',
-    photo: CherylHungPhoto,
-    twitterUrl: '',
-    linkedInUrl: '',
-    githubUrl: '',
-    communityUrl: '',
-    instagramUrl: '',
-    websiteUrl: '',
-  },
-  {
     name: 'Lisa Falco',
     position: 'Consultant in Medical & Responsible AI <br/> Zühlke Group',
     content:
@@ -162,6 +151,90 @@ const ITEMS = [
     linkedInUrl: 'https://www.linkedin.com/in/sebastiankister/',
     githubUrl: '',
     communityUrl: 'https://community.cncf.io/u/mrku63/#/about',
+    instagramUrl: '',
+    websiteUrl: '',
+  },
+  {
+    name: 'Reto Lehmann',
+    position: 'Principal Software Engineer at Red Hat',
+    content: '',
+    photo: RetoLehmannPhoto,
+    twitterUrl: '',
+    linkedInUrl: '',
+    githubUrl: '',
+    communityUrl: '',
+    instagramUrl: '',
+    websiteUrl: '',
+  },
+  {
+    name: 'Bill Mulligan',
+    position: 'Cilium and eBPF Community Pollinator',
+    content: '',
+    photo: BillPhoto,
+    twitterUrl: '',
+    linkedInUrl: '',
+    githubUrl: '',
+    communityUrl: '',
+    instagramUrl: '',
+    websiteUrl: '',
+  },
+  {
+    name: 'Adrian Reber',
+    position: 'Senior Principal Software Engineer at Red Hat',
+    content: '',
+    photo: AdrianReberPhoto,
+    twitterUrl: '',
+    linkedInUrl: '',
+    githubUrl: '',
+    communityUrl: '',
+    instagramUrl: '',
+    websiteUrl: '',
+  },
+  {
+    name: 'Filip Nikolic',
+    position: 'Architect Owner Kubernetes Postfinance',
+    content: '',
+    photo: FilipPhoto,
+    twitterUrl: '',
+    linkedInUrl: '',
+    githubUrl: '',
+    communityUrl: '',
+    instagramUrl: '',
+    websiteUrl: '',
+  },
+  {
+    name: 'Timo Salm',
+    position: 'Lead Developer Experience Solutions Engineer VMware',
+    content: '',
+    photo: TimoSalmPhoto,
+    twitterUrl: '',
+    linkedInUrl: '',
+    githubUrl: '',
+    communityUrl: '',
+    instagramUrl: '',
+    websiteUrl: '',
+  },
+  {
+    name: 'Lena Fuhrimann',
+    position: 'Co-Founder & Cloud Software Architect bespinian',
+    content: '',
+    photo: LenaPhoto,
+    twitterUrl: '',
+    linkedInUrl: '',
+    githubUrl: '',
+    communityUrl: '',
+    instagramUrl: '',
+    websiteUrl: '',
+  },
+  {
+    name: 'Matthias Bertschy',
+    position: 'Senior Kubernetes Developer at ARMO',
+    content: '',
+    photo: MatthiasPhoto,
+    twitterUrl: '',
+    linkedInUrl: '',
+    githubUrl: '',
+    communityUrl: '',
     instagramUrl: '',
     websiteUrl: '',
   },
