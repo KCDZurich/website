@@ -277,7 +277,7 @@ const ITEMS = [
   },
   {
     time: '14:45',
-    title: 'Change tracks, Short Break',
+    title: 'Coffee Break',
     duration: '30 min',
   },
   {
@@ -320,7 +320,7 @@ const ITEMS = [
   },
   {
     time: '15:45',
-    title: 'Coffee Break',
+    title: 'Change tracks, Short Break',
     duration: '15 min',
   },
   {
