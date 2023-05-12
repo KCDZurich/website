@@ -448,7 +448,7 @@ const Schedule = ({ location }) => {
               key={index}
             >
               <div className="flex items-center justify-center sm:justify-start sm:px-5 sm:pt-5">
-                <time className="mb-10 text-[15px] font-semibold leading-none tracking-tight text-primary-1 opacity-60 md:text-sm sm:mb-0">
+                <time className="mb-auto mt-7 text-[15px] font-semibold leading-none tracking-tight text-primary-1 opacity-60 md:text-sm sm:my-0">
                   {time}
                 </time>
                 {isKeynote && (
@@ -562,7 +562,7 @@ const Schedule = ({ location }) => {
                                   alt={`${name} photo`}
                                   loading="lazy"
                                 />
-                                <figcaption className="text-sm font-medium leading-none text-primary-5">
+                                <figcaption className="text-sm font-medium leading-none text-primary-5 md:text-[13px]">
                                   {name}
                                 </figcaption>
                               </figure>
