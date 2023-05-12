@@ -1,7 +1,8 @@
 export default {
   schedule: {
-    title: 'Schedule — Kubernetes Community Days',
-    description: 'Experience the power of community at the Kubernetes Community Days in Zurich!',
+    title: 'Kubernetes Community Days Zürich - Event Schedule for June 15, 2023',
+    description:
+      'Explore the detailed agenda for Kubernetes Community Days in Zürich on June 15, 2023. Listen to expert talks, and connect with Kubernetes professionals. Plan your day now!',
   },
   workshops: {
     title: 'Workshops — Kubernetes Community Days',
