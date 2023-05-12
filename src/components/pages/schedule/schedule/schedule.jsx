@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { Link } from 'gatsby';
 import React from 'react';
 
 import AdrianPhoto from './images/adrian-reber-photo.jpg';
@@ -31,6 +32,7 @@ const ITEMS = [
     duration: '15 min',
   },
   {
+    id: '1',
     time: '9:00 AM',
     title: 'Simplifying multi-cloud networking with Cilium',
     duration: '30 min',
@@ -52,6 +54,7 @@ const ITEMS = [
     duration: '15 min',
   },
   {
+    id: '6',
     time: '9:45 AM',
     title: 'The state of Green Washing - or how to build sustainable systems with Kubernetes ',
     duration: '30 min',
@@ -62,6 +65,7 @@ const ITEMS = [
       },
     ],
     coincidedEvent: {
+      id: '12',
       time: '9:45 AM',
       title: 'Forensic container checkpointing and analysis',
       duration: '30 min',
@@ -79,6 +83,7 @@ const ITEMS = [
     duration: '30 min',
   },
   {
+    id: '5',
     time: '10:45 AM',
     title: 'To be announced',
     duration: '30 min',
@@ -89,6 +94,7 @@ const ITEMS = [
       },
     ],
     coincidedEvent: {
+      id: '13',
       time: '10:45 AM',
       title: 'Demystifying eBPF - eBPF Firewall from scratch',
       duration: '30 min',
@@ -106,6 +112,7 @@ const ITEMS = [
     duration: '15 min',
   },
   {
+    id: '8',
     time: '11:30 AM',
     title: 'Responsible AI: The Key to Ethical, Safe and Inclusive Software Development',
     duration: '30 min',
@@ -116,6 +123,7 @@ const ITEMS = [
       },
     ],
     coincidedEvent: {
+      id: '4',
       time: '11:30 AM',
       title: 'What Anime Taught Me About K8s & Tech Careers',
       duration: '30 min',
@@ -133,6 +141,7 @@ const ITEMS = [
     duration: '1h 30min',
   },
   {
+    id: '2',
     time: '1:30 PM',
     title: 'Reverse Engineering Cloud Native: Interoperability and Community',
     duration: '30 min',
@@ -150,6 +159,7 @@ const ITEMS = [
     duration: '15 min',
   },
   {
+    id: '11',
     time: '2:15 PM',
     title: 'Buzzing Across the Cloud Native Landscape with eBPF',
     duration: '30 min',
@@ -160,6 +170,7 @@ const ITEMS = [
       },
     ],
     coincidedEvent: {
+      id: '15',
       time: '2:15 PM',
       title: 'Streamlined Troubleshooting in Kubernetes',
       duration: '30 min',
@@ -177,6 +188,7 @@ const ITEMS = [
     duration: '15 min',
   },
   {
+    id: '3',
     time: '3:00 PM',
     title: 'To be announced',
     duration: '30 min',
@@ -187,6 +199,7 @@ const ITEMS = [
       },
     ],
     coincidedEvent: {
+      id: '10',
       time: '3:00 PM',
       title: 'Tales of Serverless - a story about building scalable applications',
       duration: '30 min',
@@ -204,6 +217,7 @@ const ITEMS = [
     duration: '30 min',
   },
   {
+    id: '7',
     time: '4:00 PM',
     title: 'Securing your Software Supply Chain on Kubernetes with Sigstore',
     duration: '30 min',
@@ -214,6 +228,7 @@ const ITEMS = [
       },
     ],
     coincidedEvent: {
+      id: '14',
       time: '4:00 PM',
       title: 'Closing the Developer Experience Gap of your Container Platforms',
       duration: '30 min',
@@ -231,6 +246,7 @@ const ITEMS = [
     duration: '15 min',
   },
   {
+    id: '9',
     time: '4:45 PM',
     title:
       "Process is what naturally follows - a cloud platform's guide on people-first transformation",
@@ -242,6 +258,7 @@ const ITEMS = [
       },
     ],
     coincidedEvent: {
+      id: '16',
       time: '4:45 PM',
       title: "What We've Learned from Scanning 10K+ Kubernetes Clusters",
       duration: '30 min',
@@ -279,7 +296,7 @@ const ITEMS = [
 const Schedule = () => (
   <section className="safe-paddings pt-9 pb-48">
     <ul className="mx-auto w-[1072px] rounded-[10px] border border-primary-2 shadow-lg">
-      {ITEMS.map(({ time, title, duration, isKeynote, speakers, coincidedEvent }, index) => {
+      {ITEMS.map(({ id, time, title, duration, isKeynote, speakers, coincidedEvent }, index) => {
         const isEven = index % 2 === 1;
 
         return (
@@ -303,8 +320,20 @@ const Schedule = () => (
               })}
             >
               <div className="flex flex-col gap-y-3 px-7 py-6">
-                <h3 className="inline-flex items-center gap-x-3 text-lg font-semibold leading-snug tracking-tight text-primary-1">
-                  {title}
+                <h3 className="inline-flex items-center gap-x-3">
+                  {id ? (
+                    <Link
+                      className="text-lg font-semibold leading-snug tracking-tight text-primary-1 transition-colors duration-200 hover:text-blue-1"
+                      to="/#speaker"
+                      state={{ modalId: id }}
+                    >
+                      {title}
+                    </Link>
+                  ) : (
+                    <span className="text-lg font-semibold leading-snug tracking-tight text-primary-1">
+                      {title}
+                    </span>
+                  )}
                   {isKeynote && (
                     <span className="rounded-full bg-blue-1 px-2 py-2 text-xs font-semibold leading-none tracking-tighter text-white">
                       Keynote
@@ -325,7 +354,7 @@ const Schedule = () => (
                               src={photo}
                               width={28}
                               height={28}
-                              alt={`${name} photo`}
+                              alt={name}
                               loading="lazy"
                             />
                             <figcaption className="text-sm font-medium leading-none text-primary-5">
@@ -340,8 +369,20 @@ const Schedule = () => (
               </div>
               {coincidedEvent && (
                 <div className="flex flex-col gap-y-3 border-l border-l-primary-2 px-7 py-6">
-                  <h3 className="inline-flex items-center gap-x-3 text-lg font-semibold leading-snug tracking-tight text-primary-1">
-                    {coincidedEvent.title}
+                  <h3 className="inline-flex items-center gap-x-3">
+                    {coincidedEvent.id ? (
+                      <Link
+                        className="text-lg font-semibold leading-snug tracking-tight text-primary-1 transition-colors duration-200 hover:text-blue-1"
+                        to="/#speaker"
+                        state={{ modalId: coincidedEvent.id }}
+                      >
+                        {coincidedEvent.title}
+                      </Link>
+                    ) : (
+                      <span className="text-lg font-semibold leading-snug tracking-tight text-primary-1">
+                        {coincidedEvent.title}
+                      </span>
+                    )}
                     {coincidedEvent.isKeynote && (
                       <span className="rounded-full bg-blue-1 px-4 py-2 text-xs font-semibold leading-none tracking-tighter text-white">
                         Keynote

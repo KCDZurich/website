@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Modal from 'components/shared/modal';
 import LINKS from 'constants/links';
@@ -38,6 +38,12 @@ const ITEMS = [
     communityUrl: '',
     instagramUrl: '',
     websiteUrl: '',
+    schedule: {
+      time: '9:00 AM',
+      title: 'Simplifying multi-cloud networking with Cilium',
+      duration: '30 min',
+      content: '',
+    },
   },
   {
     name: 'Liz Rice',
@@ -51,6 +57,12 @@ const ITEMS = [
     communityUrl: '',
     instagramUrl: '',
     websiteUrl: '',
+    schedule: {
+      time: '9:00 AM',
+      title: 'Simplifying multi-cloud networking with Cilium',
+      duration: '30 min',
+      content: '',
+    },
   },
   {
     name: 'Katie Gamanji',
@@ -64,6 +76,15 @@ const ITEMS = [
     communityUrl: '',
     instagramUrl: '',
     websiteUrl: '',
+    schedule: {
+      time: '1:30 PM',
+      title: 'Reverse Engineering Cloud Native: Interoperability and Community',
+      duration: '30 min',
+      content:
+        'Kubernetes has become the default container orchestrator framework, setting the standards for application deployment in a distributed environment. In the past years, numerous tools have been developed to extend Kubernetes capabilities and enhance its features. Simultaneously, the expansion of the technology landscape prompted the growth of the adopter base and the number of scenarios where cloud native can be applied. The organic adoption and development of new tools, created the ecosystem and community as we know it today.\n' +
+        '\n' +
+        "This keynote will feature the core principles that define the next generation's identity of cloud native practitioners using a reverse engineering approach. It will present the interoperability of tools, inclusivity at the community and adopters level, and a culture of change and education that drives the ubiquity of the cloud native.",
+    },
   },
   {
     name: 'Julius Volz',
@@ -77,6 +98,15 @@ const ITEMS = [
     communityUrl: 'https://community.cncf.io/u/mvhzxh/',
     instagramUrl: '',
     websiteUrl: 'https://juliusv.com/',
+    schedule: {
+      time: '3:00 PM',
+      title: 'To be announced',
+      duration: '30 min',
+      content:
+        'Histograms are crucial for anyone who wants to track service latency and other numeric value distributions in Prometheus. However, the existing "legacy" histograms in Prometheus come with a number of painful drawbacks: they require manual and static bucket configuration, generate a separate time series for each configured histogram bucket, and thus require you to make hard tradeoffs between a histogram\'s resolution and cost.\n' +
+        '\n' +
+        'In this talk, Prometheus co-founder Julius Volz will present a new "native" histogram metric type that is currently being added to Prometheus. These native histograms allow you to track value distributions in higher detail at a significantly lower storage and processing cost, while also reducing the manual bucket configuration effort. Julius will explain how native histograms work, how they achieve these key benefits, and how you can use them in Prometheus today in an experimental fashion.',
+    },
   },
   {
     name: 'Annie Talvasto',
@@ -90,6 +120,13 @@ const ITEMS = [
     communityUrl: 'https://community.cncf.io/u/mwwdtj/#/about',
     instagramUrl: '',
     websiteUrl: '',
+    schedule: {
+      time: '11:30 AM',
+      title: 'What Anime Taught Me About K8s & Tech Careers',
+      duration: '30 min',
+      content:
+        'From One piece and Naruto to Neon Genesis Evangelion and DragonBall, Japanese animation is a cultural phenomena. This session will take you through both the landscape of anime and Kubernetes development, with helpful beginner tips to get you started on your cloud native journey. The session will also cover what the hero’s of East blue and Planet 4032-877 can tech us about career development tech world. Importance of perseverance, inclusion & diversity as well as always having a snack at hand - come and learn how anime can your boost you Kubernetes and tech career to next level!\n',
+    },
   },
   {
     name: 'Ricardo Rocha',
@@ -103,6 +140,13 @@ const ITEMS = [
     communityUrl: 'https://community.cncf.io/u/m46hr5/#/about',
     instagramUrl: '',
     websiteUrl: '',
+    schedule: {
+      time: '10:45 AM',
+      title: 'To be announced',
+      duration: '30 min',
+      content:
+        'The move to containers has significantly improved the way services and workloads are deployed and managed in large scale computing infrastructures. It also brought new challenges that can be handled with intrusive changes in the workflows or hidden in the stack. This session will focus on one of those challenges and go in detail on how you can efficiently distribute very large software packages across thousands of nodes for your batch, HPC or ML workloads.',
+    },
   },
   {
     name: 'Max Körbächer',
@@ -116,6 +160,13 @@ const ITEMS = [
     communityUrl: 'https://community.cncf.io/u/m76gha/#/about',
     instagramUrl: '',
     websiteUrl: '',
+    schedule: {
+      time: '9:45 AM',
+      title: 'The state of Green Washing - or how to build sustainable systems with Kubernetes',
+      duration: '30 min',
+      content:
+        'Kubernetes is not the answer to everything, but where it is, it is a great companion to designing systems and putting environmental sustainability into your mind. But being eco-friendly invites people to greenwash their intentions, so let us start the story from the end and clarify some myths. Saving money on infrastructure may reduce your Carbon impact, but we can do more. In this presentation, we will look at what is currently possible, what are the recent developments and what we need in the future to create a carbon-aware system landscape. You will learn how designing system architectures for eco-friendliness, will have a sustainable impact, in many ways.',
+    },
   },
   {
     name: 'Priya Wadhwa',
@@ -129,6 +180,13 @@ const ITEMS = [
     communityUrl: '',
     instagramUrl: '',
     websiteUrl: '',
+    schedule: {
+      time: '4:00 PM',
+      title: 'Securing your Software Supply Chain on Kubernetes with Sigstore',
+      duration: '30 min',
+      content:
+        'How secure are the images running in your Kubernetes cluster right now? If you don’t know, then this talk is for you! In this talk, Priya Wadhwa will discuss how to determine the composition and vulnerability risk of your images. She’ll cover how to secure your images with easy container signing through Sigstore, and how to enforce policies against your images in your Kubernetes cluster with the Sigstore policy-controller. This talk will demo how to set this up while diving in to the SLSA principles of software supply chain security and how they can be applied to secure a build pipeline. \n',
+    },
   },
   {
     name: 'Lisa Falco',
@@ -142,6 +200,33 @@ const ITEMS = [
     communityUrl: '',
     instagramUrl: 'https://www.instagram.com/lisafalco_dsw/',
     websiteUrl: 'https://lisafalco.com',
+    schedule: {
+      time: '11:30 AM',
+      title: 'Responsible AI: The Key to Ethical, Safe and Inclusive Software Development',
+      duration: '30 min',
+      content:
+        'The development of artificial intelligence (AI) has the potential to \n' +
+        'revolutionize many aspects of society, but it also poses significant ethical \n' +
+        'and societal challenges. Responsible AI refers to the development and use\n' +
+        'of AI in a manner that is ethical, transparent, and accountable, and is \n' +
+        'crucial to ensure that the potential benefits of AI are realized while \n' +
+        'minimizing negative consequences.\n' +
+        'In her talk, Lisa Falco will present frameworks and advice to develop \n' +
+        'ethical and interpretable AI. The frameworks are based on a long \n' +
+        'experience of developing machine learning applications within the \n' +
+        'medically regulated field. They cover multiple layers of the development \n' +
+        'process - the data, the model, and the human interaction. These are \n' +
+        'hands-on frameworks that clearly indicate which considerations are \n' +
+        'needed at every phase of the implementation and distributes roles and \n' +
+        'responsibilities. \n' +
+        'The principles and practices of responsible AI can be extended to the \n' +
+        'development of software in general. By placing a focus on ethics, \n' +
+        'transparency, and accountability, software development can be done in a \n' +
+        'way that is more inclusive and beneficial for society, and that minimizes \n' +
+        'negative consequences. Additionally, considering issues such as fairness, \n' +
+        'bias, privacy, security, and transparency in the software development \n' +
+        'process can help ensure that the software is safe and secure to use.',
+    },
   },
   {
     name: 'Sebastian Kister',
@@ -155,35 +240,82 @@ const ITEMS = [
     communityUrl: 'https://community.cncf.io/u/mrku63/#/about',
     instagramUrl: '',
     websiteUrl: '',
+    schedule: {
+      time: '4:45 PM',
+      title:
+        "Process is what naturally follows - a cloud platform's guide on people-first transformation",
+      duration: '30 min',
+      content:
+        "The fastest way to change the world is by making it a business case. Let's talk about real transformation hands-on, about time-to-market and the priorities when it's necessary to change cultural paradigms.",
+    },
   },
   {
     name: 'Reto Lehmann',
     position: 'Principal Software Engineer at Red Hat',
-    content: '',
+    content:
+      'Reto Lehmann is a Principal Software Engineer at Red Hat and a contributor to the Knative project. He has been working on its various components, including Knative Serving, Client, and sandbox repositories. Reto has over ten years of experience in the field of containers and cloud-native technology, having built Kubernetes-based platforms\n' +
+      'both on-premise and in various public clouds.\n' +
+      '\n' +
+      'Before his work at Red Hat, Reto gained valuable experience as a consultant, helping organizations adopt cloud- native technology and implement effective solutions. He is also an adjunct professor, where he teaches courses about these topics.',
     photo: RetoLehmannPhoto,
     twitterUrl: '',
-    linkedInUrl: '',
+    linkedInUrl: 'https://www.linkedin.com/in/retocode/',
     githubUrl: '',
     communityUrl: '',
     instagramUrl: '',
     websiteUrl: '',
+    schedule: {
+      time: '3:00 PM',
+      title: 'Tales of Serverless - a story about building scalable applications',
+      duration: '30 min',
+      content:
+        'In this talk Reto is going to tell a story about building Scalable Serverless cloud-native Applications. Using the magic of the Knative serverless platform, you are going to experience applications that are going to appear and\n' +
+        "disappear. We'll wander the foreign lands of the Serverless ecosystem, guided by fairies, conquering mythical beings and unimaginable challenges. \n" +
+        "Together, we'll get to know the mechanics and inner workings of this magical world. Hopefully, by the end of this talk, we'll be able to lift the spell and enchantments to see and understand the mechanics behind the curtains.\n" +
+        '\n' +
+        'Whether you are a brave developer-knight, a mighty operator-king or simply an interested serverless-bard, this presentation should not be scaled-to-zero.',
+    },
   },
   {
     name: 'Bill Mulligan',
     position: 'Cilium and eBPF Community Pollinator',
-    content: '',
+    content:
+      'Bill Mulligan is a cloud native pollinator and community builder. He has given talks and written articles about\n' +
+      'building the business case for cloud native. While at CNCF he restarted the Kubernetes Community Day program\n' +
+      'and worked to grow the student community. He is currently at Isovalent strengthening the Cilium and eBPF\n' +
+      'communities.',
     photo: BillPhoto,
-    twitterUrl: '',
-    linkedInUrl: '',
+    twitterUrl: 'https://twitter.com/breakawaybilly',
+    linkedInUrl: 'https://www.linkedin.com/in/bamulligan/',
     githubUrl: '',
     communityUrl: '',
     instagramUrl: '',
     websiteUrl: '',
+    schedule: {
+      time: '2:15 PM',
+      title: 'Buzzing Across the Cloud Native Landscape with eBPF',
+      duration: '30 min',
+      content:
+        'The buzz around eBPF in cloud native is growing quickly and it can be hard to know where to start or how to keep\n' +
+        'up. In this talk, Bill will trace how he got into eBPF, explore where eBPF fits on the cloud native landscape, and\n' +
+        'teach others how to dive into the hive of activity around eBPF.\n' +
+        '\n\n\n' +
+        'People just beginning with eBPF will learn how eBPF makes it possible to have efficient networking, observability\n' +
+        'without instrumentation, effortless tracing, and real-time security (among other things). Those already familiar with\n' +
+        'eBPF will get an overview of the eBPF landscape and learn about many eBPF applications on the cloud native\n' +
+        'landscape that allow them to harness the power without needing to dive into the bytecode. The audience will walk\n' +
+        'away with an understanding of the buzz around eBPF and knowledge of tools that may solve some of their\n' +
+        'problems in networking, observability, and security.',
+    },
   },
   {
     name: 'Adrian Reber',
     position: 'Senior Principal Software Engineer at Red Hat',
-    content: '',
+    content:
+      'Adrian is a Senior Principal Software Engineer at Red Hat and is migrating processes at least since 2010. He\n' +
+      'started to migrate processes in a high performance computing environment and at some point he migrated so\n' +
+      'many processes that he got a PhD for that. Most of the time he is now migrating containers but occasionally he still\n' +
+      'migrates single processes.',
     photo: AdrianReberPhoto,
     twitterUrl: '',
     linkedInUrl: '',
@@ -191,60 +323,160 @@ const ITEMS = [
     communityUrl: '',
     instagramUrl: '',
     websiteUrl: '',
+    schedule: {
+      time: '9:45 AM',
+      title: 'Forensic container checkpointing and analysis',
+      duration: '30 min',
+      content:
+        'With the introduction of "Forensic Container Checkpointing" in Kubernetes 1.25 it is possible to checkpoint\n' +
+        'containers. The ability to checkpoint containers opens up many new use cases. Containers can be migrated\n' +
+        'without loosing the state of the container, fast startup from existing checkpoints, using spot instances more\n' +
+        'effective. The primary use case, based on the title of the Kubernetes enhancement proposal, is the forensic\n' +
+        'analysis of the checkpointed containers.\n' +
+        '\n' +
+        'In this session I want to introduce the different possible use cases of "Forensic Container Checkpointing" with a\n' +
+        'focus on how to perform forensic analysis on the checkpointed containers. The presented use cases and\n' +
+        'especially the forensic analysis will be done as a live demo giving the audience a hands on experience.',
+    },
   },
   {
     name: 'Filip Nikolic',
     position: 'Architect Owner Kubernetes Postfinance',
-    content: '',
+    content:
+      'Filip works for a financial institute and is a strong advocate of cloud-native technologies. As a speaker at the\n' +
+      'conference, Filip will share insights into why an increasing number of CNCF projects decide to make use of eBPF.',
     photo: FilipPhoto,
-    twitterUrl: '',
-    linkedInUrl: '',
+    twitterUrl: 'https://twitter.com/f1kook1f',
+    linkedInUrl: 'https://www.linkedin.com/in/filip-nikolic/',
     githubUrl: '',
     communityUrl: '',
     instagramUrl: '',
     websiteUrl: '',
+    schedule: {
+      time: '10:45 AM',
+      title: 'Demystifying eBPF - eBPF Firewall from scratch',
+      duration: '30 min',
+      content:
+        'eBPF has emerged as a powerful technology for extending the Linux kernel, enabling users to safely and\n' +
+        'efficiently run custom code within the kernel. One of the most popular applications of eBPF is in the realm of\n' +
+        'networking, where it is used to implement high-performance firewalls and other security-related functionality.\n' +
+        '\n' +
+        'eBPF is becoming increasingly popular in the cloud-native ecosystem, with many CNCF projects utilizing its\n' +
+        'capabilities, including Cilium, Calico, and Pixie to name a few.\n' +
+        '\n' +
+        'This talk aims to demystify eBPF and demonstrate how it can be used to build a firewall from scratch. By\n' +
+        'highlighting core concepts of eBPF, attendees can better understand how it is being used in real-world scenarios,\n' +
+        'by various CNCF projects and how it can be applied to their own use cases.',
+    },
   },
   {
     name: 'Timo Salm',
     position: 'Lead Developer Experience Solutions Engineer VMware',
-    content: '',
+    content:
+      'Timo Salm is based out of Stuttgart in southwest Germany and in the role of the first VMware Tanzu Solutions\n' +
+      'Engineer for Developer Experience in EMEA with a focus on VMware Tanzu Application Platform and commercial\n' +
+      "Spring products. In this role, he’s responsible for educating customers on these products' value, vision, and\n" +
+      'strategy and ensuring that they succeed by working closely on different levels of abstractions of modern\n' +
+      'applications and modern infrastructure.\n' +
+      'Before Timo joined Pivotal and VMware, he worked for more than seven years for consulting firms in the\n' +
+      'automotive industry as a software architect and full-stack developer on projects for customer-facing products.',
     photo: TimoSalmPhoto,
-    twitterUrl: '',
-    linkedInUrl: '',
+    twitterUrl: 'https://twitter.com/salmto',
+    linkedInUrl: 'https://www.linkedin.com/in/timo-salm-8779a680/',
     githubUrl: '',
     communityUrl: '',
     instagramUrl: '',
     websiteUrl: '',
+    schedule: {
+      time: '4:00 PM',
+      title: 'Closing the Developer Experience Gap of your Container Platforms',
+      duration: '30 min',
+      content:
+        'Due to the lack of user focus, many container platforms have a big developer experience gap.\n' +
+        "That's not only because building a Kubernetes platform is complex but also because deploying applications on\n" +
+        'Kubernetes requires expertise in many Container and Kubernetes concepts. And once developers learn them,\n' +
+        'they still must spend a lot of time maintaining containers, writing YAML templates, and orchestrating many moving\n' +
+        'Kubernetes parts.\n' +
+        'Like in the days when the Waterfall model was the standard for software development, developers today shouldn’t\n' +
+        'have to care where and how their applications run and focus on adding business value by implementing new\n' +
+        'features.\n' +
+        'In this session, we will explore some of the powerful open-source technologies available within the Kubernetes\n' +
+        'ecosystem to close the developer experience gap like Backstage, Cloud Native Buildpacks, Knative, and\n' +
+        'Cartographer.',
+    },
   },
   {
     name: 'Lena Fuhrimann',
     position: 'Co-Founder & Cloud Software Architect bespinian',
-    content: '',
+    content:
+      'Lena is a passionate software engineer and architect. Together with Mathis Kretz she founded the company\n' +
+      'bespinian in 2019 and has since worked with many customers and interesting technologies. Her main focus lies on\n' +
+      'security, Kubernetes, serverless technologies, public clouds and Infrastructure as Code. However, she has also\n' +
+      'worked a lot with Kubernetes and its ecosystem and has deployed many applications to those platforms using\n' +
+      'automation and GitOps. She uses Arch btw.',
     photo: LenaPhoto,
-    twitterUrl: '',
-    linkedInUrl: '',
+    twitterUrl: 'https://twitter.com/the_cloudlena',
+    linkedInUrl: 'https://www.linkedin.com/in/lena-fuhrimann/',
     githubUrl: '',
     communityUrl: '',
     instagramUrl: '',
     websiteUrl: '',
+    schedule: {
+      time: '2:15 PM',
+      title: 'Streamlined Troubleshooting in Kubernetes',
+      duration: '30 min',
+      content:
+        'In this talk, we will highlight different methods to make debugging and troubleshooting in Kubernetes more streamlined and organized. People tend to mostly make the same mistakes and run into errors others have already dealt with. There are different methodologies and tools that help us to benefit from that and to more easily find where the problem lies when something goes wrong by adhering to clear solving strategies and automation tools.\n' +
+        '\n' +
+        'We will go through some of these techniques and see the respective open source tools in action. Live coding\n' +
+        'included!',
+    },
   },
   {
     name: 'Matthias Bertschy',
     position: 'Senior Kubernetes Developer at ARMO',
-    content: '',
+    content:
+      'Matthias is a Senior Kubernetes Developer at ARMO working on Kubescape, the open-source Kubernetes security\n' +
+      'platform. He started his career in 2005 as a System Administrator. In 2011 he joined a leading security solution\n' +
+      'provider in Switzerland to become a Security System Engineer. He got certified as an Ethical Hacker in 2012\n' +
+      '(GPEN certification) and validated his first four years as a professional with a CISSP in 2015. He discovered\n' +
+      'Kubernetes in 2016 and has become a regular contributor, member of SIG Node and a reviewer for the kubelet\n' +
+      'and test-infra. During the last 5 years, he has helped several Swiss banks through their digital transformations in\n' +
+      'Senior DevOps Engineer, Productivity Manager and Platform Architect positions. His list of certifications include Red\n' +
+      'Hat Certified Architect, every Kubernetes certifications, and many Linux Foundation courses on Open Source\n' +
+      'Management & Strategy.',
     photo: MatthiasPhoto,
-    twitterUrl: '',
-    linkedInUrl: '',
+    twitterUrl: 'https://twitter.com/matthyx',
+    linkedInUrl: 'https://www.linkedin.com/in/matthias-bertschy-b427b815/',
     githubUrl: '',
     communityUrl: '',
     instagramUrl: '',
     websiteUrl: '',
+    schedule: {
+      time: '4:45 PM',
+      title: "What We've Learned from Scanning 10K+ Kubernetes Clusters",
+      duration: '30 min',
+      content:
+        'The number of misconfigurations, unpatched vulnerabilities, & overly-privileged users in K8s systems is\n' +
+        "ASTOUNDING. We learned this from analyzing the data from more than 10K+ unique K8s cluster scans, and we've\n" +
+        'learned a great deal about the state of K8s risk, compliance, & security vulnerabilities.\n' +
+        '\n' +
+        "In this talk we'll shed light on the most common misconfigurations according to multiple frameworks (NSA-CISA,\n" +
+        'MITRE ATT&CK), alongside known vulnerabilities, & RBAC violations in CI/CD pipelines.\n' +
+        '\n' +
+        "We'll also provide interesting insights on why and where Kubernetes deployments mostly commonly fail and\n" +
+        'statistics on which controls fail most, as well as the weak spots and gotchas to pay attention to. Stick around\n' +
+        "though, as we'll wrap up with some simple measures your can take immediately to work towards eliminating these\n" +
+        'risks and improving your overall cloud native security posture.',
+    },
   },
 ];
 
-const Speakers = () => {
+// eslint-disable-next-line react/prop-types
+const Speakers = ({ location }) => {
   const [isSpeakersOpen, setIsSpeakersOpen] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isPresentationShow, setIsPresentationShow] = useState(false);
   const [modalDataId, setModalDataId] = useState(0);
 
   const handleModalShow = (id) => {
@@ -256,12 +488,35 @@ const Speakers = () => {
   const handleModalHide = () => {
     document.body.classList.remove('overflow-hidden');
     setIsModalVisible(false);
+    setIsPresentationShow(false);
     setModalDataId(0);
   };
 
   const handleShowMoreClick = () => {
     setIsSpeakersOpen((isSpeakersOpen) => !isSpeakersOpen);
   };
+
+  const handlePresentationShow = () => {
+    setIsPresentationShow(!isPresentationShow);
+  };
+
+  useEffect(() => {
+    if (typeof window !== `undefined`) {
+      // eslint-disable-next-line react/prop-types
+      const { state = {} } = location;
+
+      if (state?.modalId) {
+        const element = document.getElementById('speakers');
+
+        window.scrollTo({
+          top: window.pageYOffset + element.getBoundingClientRect().top,
+        });
+
+        handleModalShow(Number(state.modalId));
+        setIsPresentationShow(true);
+      }
+    }
+  }, [location]);
 
   return (
     <section className="safe-paddings relative bg-white pb-40 lg:pb-32 md:py-24 sm:py-16">
@@ -316,7 +571,9 @@ const Speakers = () => {
         <Modal
           modalData={ITEMS[modalDataId]}
           isVisible={isModalVisible}
+          isPresentationShow={isPresentationShow}
           onModalHide={handleModalHide}
+          onPresentationShow={handlePresentationShow}
         />
       </div>
     </section>
