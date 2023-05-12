@@ -429,7 +429,7 @@ const Schedule = ({ location }) => {
   }, [location]);
 
   return (
-    <section className="safe-paddings pt-9 pb-48 lg:px-8 md:px-5 xs:px-0">
+    <section className="safe-paddings pt-9 pb-48 lg:px-8 md:px-5 sm:pt-10 xs:px-0">
       <ul className="mx-auto w-[1072px] max-w-full rounded-[10px] border border-primary-2 shadow-lg">
         {ITEMS.map(({ id, time, title, duration, isKeynote, speakers, coincidedEvent }, index) => {
           const isEven = index % 2 === 1;
@@ -464,14 +464,14 @@ const Schedule = ({ location }) => {
               >
                 <div
                   className={clsx(
-                    'flex flex-col gap-y-3 px-7 py-6 md:py-4 sm:gap-y-1.5 sm:px-5 sm:py-4',
-                    { 'sm:pt-2': isKeynote }
+                    'flex flex-col gap-y-3 px-7 py-6 md:py-4 sm:gap-y-2 sm:px-5 sm:pb-4',
+                    isKeynote ? 'sm:pt-2' : 'sm:pt-3'
                   )}
                 >
                   <h3 className="inline-flex items-center gap-x-3">
                     {id ? (
                       <Button
-                        className="!whitespace-normal !text-left text-lg !font-semibold leading-snug tracking-tight text-primary-1 transition-colors duration-200 hover:text-blue-1 md:text-base"
+                        className="!whitespace-normal !text-left text-lg !font-semibold !leading-snug tracking-tight text-primary-1 transition-colors duration-200 hover:text-blue-1 md:text-base"
                         theme="link-primary"
                         onClick={() => handleModalShow(index)}
                       >
@@ -518,14 +518,14 @@ const Schedule = ({ location }) => {
                 {coincidedEvent && (
                   <div
                     className={clsx(
-                      'flex flex-col gap-y-3 border-l border-primary-2 px-7 py-6 md:py-4 sm:gap-y-1.5 sm:border-t sm:border-l-0 sm:px-5 sm:py-4',
-                      { 'sm:pt-2': isKeynote }
+                      'flex flex-col gap-y-3 border-l border-primary-2 px-7 py-6 md:py-4 sm:gap-y-2 sm:border-t sm:border-l-0 sm:px-5 sm:pb-4',
+                      isKeynote ? 'sm:pt-2' : 'sm:pt-3'
                     )}
                   >
                     <h3 className="inline-flex items-center gap-x-3">
                       {coincidedEvent.id ? (
                         <Button
-                          className="!whitespace-normal !text-left text-lg !font-semibold leading-snug tracking-tight text-primary-1 transition-colors duration-200 hover:text-blue-1 md:text-base"
+                          className="!whitespace-normal !text-left text-lg !font-semibold !leading-snug tracking-tight text-primary-1 transition-colors duration-200 hover:text-blue-1 md:text-base"
                           theme="link-primary"
                           onClick={() => {
                             handleModalShow(index);
