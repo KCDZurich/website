@@ -141,26 +141,8 @@ const ITEMS = [
     duration: '1h 30min',
   },
   {
-    id: '2',
-    time: '13:30',
-    title: 'Reverse Engineering Cloud Native: Interoperability and Community',
-    duration: '30 min',
-    isKeynote: true,
-    speakers: [
-      {
-        name: 'Katie Gamanji',
-        photo: KatieGamanjiPhoto,
-      },
-    ],
-  },
-  {
-    time: '14:00',
-    title: 'Change tracks, Short Break',
-    duration: '15 min',
-  },
-  {
     id: '11',
-    time: '14:15',
+    time: '13:30',
     title: 'Buzzing Across the Cloud Native Landscape with eBPF',
     duration: '30 min',
     speakers: [
@@ -171,7 +153,7 @@ const ITEMS = [
     ],
     coincidedEvent: {
       id: '15',
-      time: '14:15',
+      time: '13:30',
       title: 'Streamlined Troubleshooting in Kubernetes',
       duration: '30 min',
       speakers: [
@@ -183,13 +165,13 @@ const ITEMS = [
     },
   },
   {
-    time: '14:45',
+    time: '14:00',
     title: 'Change tracks, Short Break',
     duration: '15 min',
   },
   {
     id: '3',
-    time: '15:00',
+    time: '14:15',
     title: 'Native Histograms in Prometheus: A Better Histogram Experience for Everyone',
     duration: '30 min',
     speakers: [
@@ -200,7 +182,7 @@ const ITEMS = [
     ],
     coincidedEvent: {
       id: '10',
-      time: '15:00',
+      time: '14:15',
       title: 'Tales of Serverless - a story about building scalable applications',
       duration: '30 min',
       speakers: [
@@ -212,13 +194,13 @@ const ITEMS = [
     },
   },
   {
-    time: '15:30',
-    title: 'Coffee Break',
+    time: '14:45',
+    title: 'Change tracks, Short Break',
     duration: '30 min',
   },
   {
     id: '7',
-    time: '16:00',
+    time: '15:15',
     title: 'Securing your Software Supply Chain on Kubernetes with Sigstore',
     duration: '30 min',
     speakers: [
@@ -229,7 +211,7 @@ const ITEMS = [
     ],
     coincidedEvent: {
       id: '14',
-      time: '16:00',
+      time: '15:15',
       title: 'Closing the Developer Experience Gap of your Container Platforms',
       duration: '30 min',
       speakers: [
@@ -241,13 +223,13 @@ const ITEMS = [
     },
   },
   {
-    time: '16:30',
-    title: 'Change tracks, Short Break',
+    time: '15:45',
+    title: 'Coffee Break',
     duration: '15 min',
   },
   {
     id: '9',
-    time: '16:45',
+    time: '16:00',
     title:
       "Process is what naturally follows - a cloud platform's guide on people-first transformation",
     duration: '30 min',
@@ -259,7 +241,7 @@ const ITEMS = [
     ],
     coincidedEvent: {
       id: '16',
-      time: '16:45',
+      time: '16:00',
       title: "What We've Learned from Scanning 10K+ Kubernetes Clusters",
       duration: '30 min',
       speakers: [
@@ -271,17 +253,30 @@ const ITEMS = [
     },
   },
   {
-    time: '17:15',
+    time: '16:30',
     title: 'Change tracks, Short Break',
     duration: '15 min',
   },
   {
-    time: '17:30',
+    id: '2',
+    time: '16:45',
+    title: 'Reverse Engineering Cloud Native: Interoperability and Community',
+    duration: '30 min',
+    isKeynote: true,
+    speakers: [
+      {
+        name: 'Katie Gamanji',
+        photo: KatieGamanjiPhoto,
+      },
+    ],
+  },
+  {
+    time: '17:15',
     title: 'Closing',
     duration: '15 min',
   },
   {
-    time: '17:45',
+    time: '17:30',
     title: 'Apéro',
     duration: '3h 45min',
   },
