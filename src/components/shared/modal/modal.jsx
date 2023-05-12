@@ -1,4 +1,5 @@
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import { AnimatePresence, m, LazyMotion, domAnimation, useReducedMotion } from 'framer-motion';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React, { useCallback, useEffect, useId } from 'react';
 
@@ -28,18 +29,25 @@ const defaultModalBackdropAnimation = {
   exit: { opacity: 0 },
 };
 
-const Modal = ({ isVisible, modalData, onModalHide }) => {
+const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow }) => {
   const {
-    name,
-    photo,
-    position,
-    content,
-    twitterUrl,
-    linkedInUrl,
-    githubUrl,
-    communityUrl,
-    instagramUrl,
-    websiteUrl,
+    id = '',
+    name = '',
+    photo = '',
+    position = '',
+    content = '',
+    twitterUrl = '',
+    linkedInUrl = '',
+    githubUrl = '',
+    communityUrl = '',
+    instagramUrl = '',
+    websiteUrl = '',
+    time = '',
+    title = '',
+    duration = '',
+    presentation = '',
+    speakers = [],
+    isCoincidedEvent = false,
   } = modalData;
   const shouldReduceMotion = useReducedMotion();
   const headingId = useId();
@@ -63,125 +71,190 @@ const Modal = ({ isVisible, modalData, onModalHide }) => {
   return (
     <AnimatePresence>
       {isVisible && (
-        <>
-          <motion.div
-            className="fixed inset-0 z-20 m-auto flex h-[fit-content] max-h-[calc(100%-60px)] max-w-[620px] flex-col overflow-y-auto rounded bg-white p-10 text-primary-1 sm:left-2 sm:right-2 sm:p-5"
+        <LazyMotion features={domAnimation}>
+          <m.div
+            className="fixed inset-0 z-20 m-auto flex h-[fit-content] max-h-[calc(100%-60px)] max-w-[592px] flex-col overflow-y-auto rounded bg-white p-10 text-primary-1 sm:left-2 sm:right-2 sm:p-5"
             key="modal"
             role="dialog"
             aria-modal="true"
             aria-labelledby={headingId}
             {...modalAnimation}
           >
-            <div className="flex items-start">
-              <img
-                className="mr-7 mb-7 h-auto w-[120px] sm:mr-4 sm:mb-4"
-                src={photo}
-                width={120}
-                alt={name}
-              />
-              <div>
-                <h2
-                  id={headingId}
-                  className="whitespace-nowrap text-6xl font-bold leading-tight sm:whitespace-normal sm:text-4xl"
-                >
-                  {name}
+            {isPresentationShow ? (
+              <>
+                <div className="flex items-center">
+                  <time className="text-sm font-semibold leading-none tracking-tight text-primary-1 opacity-60">
+                    {time}
+                  </time>
+                  <span className="relative ml-8 rounded-full bg-yellow px-2 py-1.5 text-[13px] font-semibold leading-none tracking-tighter text-primary-1 before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3">
+                    {duration}
+                  </span>
+                  {speakers.length > 0 &&
+                    speakers.map(({ id: speakerId, name, photo }, index) => (
+                      <Link
+                        className="relative ml-8 inline-flex items-center gap-x-2 text-left text-lg font-semibold leading-normal text-primary-5 transition-colors duration-200 before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3 hover:text-blue-1"
+                        to="/#speaker"
+                        state={{ modalId: speakerId || id }}
+                        key={index}
+                      >
+                        <img
+                          className="h-7 w-7 rounded-full"
+                          src={photo}
+                          width={28}
+                          alt={name}
+                          loading="lazy"
+                        />
+                        <p className="whitespace-nowrap text-sm font-medium leading-none sm:whitespace-normal">
+                          {name}
+                        </p>
+                      </Link>
+                    ))}
+                </div>
+                <h2 className="mt-7 text-2xl font-semibold leading-tight tracking-[-0.01em] text-primary-1 sm:text-lg">
+                  {title}
                 </h2>
                 <p
-                  className="mt-2 text-lg font-semibold leading-normal sm:text-base"
-                  dangerouslySetInnerHTML={{ __html: position }}
+                  className="mt-3 text-lg leading-normal text-primary-1 sm:text-base"
+                  dangerouslySetInnerHTML={{ __html: presentation }}
                 />
-              </div>
-            </div>
-            <div className="text-lg leading-normal sm:text-base">{content}</div>
-            <ul className="mt-8 flex items-center gap-3">
-              {twitterUrl && (
-                <li>
-                  <a
-                    className="transition-colors duration-200 hover:text-blue-1"
-                    href={twitterUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <TwitterIcon className="h-[20px]" />
-                    <span className="sr-only">Twitter link</span>
-                  </a>
-                </li>
-              )}
-              {linkedInUrl && (
-                <li>
-                  <a
-                    className="transition-colors duration-200 hover:text-blue-1"
-                    href={linkedInUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <LinkedInIcon className="h-[21px]" />
-                    <span className="sr-only">Linkedin link</span>
-                  </a>
-                </li>
-              )}
-              {githubUrl && (
-                <li>
-                  <a
-                    className="transition-colors duration-200 hover:text-blue-1"
-                    href={githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <GithubIcon className="h-[20px]" />
-                    <span className="sr-only">Github link</span>
-                  </a>
-                </li>
-              )}
-              {communityUrl && (
-                <li>
-                  <a
-                    className="transition-colors duration-200 hover:text-blue-1"
-                    href={communityUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <CommunityIcon className="h-[22px]" />
-                    <span className="sr-only">Cloud native community link</span>
-                  </a>
-                </li>
-              )}
-              {instagramUrl && (
-                <li>
-                  <a
-                    className="transition-colors duration-200 hover:text-blue-1"
-                    href={instagramUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <InstagramIcon className="h-[21px]" />
-                    <span className="sr-only">Instagram link</span>
-                  </a>
-                </li>
-              )}
-              {websiteUrl && (
-                <li>
-                  <a
-                    className="transition-colors duration-200 hover:text-blue-1"
-                    href={websiteUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <WebsiteIcon className="h-[21px]" />
-                    <span className="sr-only">Personal website link</span>
-                  </a>
-                </li>
-              )}
-            </ul>
-          </motion.div>
+              </>
+            ) : (
+              <>
+                <div className="flex items-start">
+                  <img
+                    className="mr-7 mb-7 h-auto w-[120px] sm:mr-4 sm:mb-4"
+                    src={photo}
+                    width={120}
+                    alt={name}
+                  />
+                  <div>
+                    <h2
+                      id={headingId}
+                      className="whitespace-nowrap text-4xl font-bold leading-tight tracking-[-0.01em] sm:whitespace-normal sm:text-2xl"
+                    >
+                      {name}
+                    </h2>
+                    <p
+                      className="mt-2 text-lg font-semibold leading-normal sm:text-base"
+                      dangerouslySetInnerHTML={{ __html: position }}
+                    />
+                  </div>
+                </div>
+                <div
+                  className="text-lg leading-normal sm:text-base"
+                  dangerouslySetInnerHTML={{ __html: content }}
+                />
+                <ul className="flex items-center gap-5">
+                  {twitterUrl && (
+                    <li>
+                      <a
+                        className="mt-8 block transition-colors duration-200 hover:text-blue-1"
+                        href={twitterUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <TwitterIcon className="h-[20px]" />
+                        <span className="sr-only">Twitter link</span>
+                      </a>
+                    </li>
+                  )}
+                  {linkedInUrl && (
+                    <li>
+                      <a
+                        className="mt-8 block transition-colors duration-200 hover:text-blue-1"
+                        href={linkedInUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <LinkedInIcon className="h-[21px]" />
+                        <span className="sr-only">Linkedin link</span>
+                      </a>
+                    </li>
+                  )}
+                  {githubUrl && (
+                    <li>
+                      <a
+                        className="mt-8 block transition-colors duration-200 hover:text-blue-1"
+                        href={githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <GithubIcon className="h-[20px]" />
+                        <span className="sr-only">Github link</span>
+                      </a>
+                    </li>
+                  )}
+                  {communityUrl && (
+                    <li>
+                      <a
+                        className="mt-8 block transition-colors duration-200 hover:text-blue-1"
+                        href={communityUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <CommunityIcon className="h-[22px]" />
+                        <span className="sr-only">Cloud native community link</span>
+                      </a>
+                    </li>
+                  )}
+                  {instagramUrl && (
+                    <li>
+                      <a
+                        className="mt-8 block transition-colors duration-200 hover:text-blue-1"
+                        href={instagramUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <InstagramIcon className="h-[21px]" />
+                        <span className="sr-only">Instagram link</span>
+                      </a>
+                    </li>
+                  )}
+                  {websiteUrl && (
+                    <li>
+                      <a
+                        className="mt-8 block transition-colors duration-200 hover:text-blue-1"
+                        href={websiteUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <WebsiteIcon className="h-[21px]" />
+                        <span className="sr-only">Personal website link</span>
+                      </a>
+                    </li>
+                  )}
+                </ul>
+                <div className="mt-8">
+                  <h3 className="text-lg font-bold leading-normal text-primary-1">
+                    Speaker’s schedule
+                  </h3>
+                  <div className="mt-4 border-l-2 border-l-primary-1 pl-8">
+                    <time className="text-sm font-semibold leading-none tracking-tight text-primary-1 opacity-60">
+                      {time}
+                    </time>
+                    <span className="relative ml-8 rounded-full bg-yellow px-2 py-1.5 text-[13px] font-semibold leading-none tracking-tighter text-primary-1 before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3">
+                      {duration}
+                    </span>
+                    <Link
+                      className="mt-3 block text-left text-lg font-semibold leading-normal text-primary-1 transition-colors duration-200 hover:text-blue-1"
+                      to="/schedule"
+                      state={{ modalId: id, isCoincidedEvent }}
+                    >
+                      {title}
+                    </Link>
+                  </div>
+                </div>
+              </>
+            )}
+          </m.div>
 
-          <motion.div
+          <m.div
             className="fixed inset-0 z-10 bg-primary-1 opacity-40"
             key="modal-backdrop"
             onClick={onModalHide}
             {...modalBackdropAnimation}
           />
-        </>
+        </LazyMotion>
       )}
     </AnimatePresence>
   );
@@ -190,17 +263,25 @@ const Modal = ({ isVisible, modalData, onModalHide }) => {
 Modal.propTypes = {
   onModalHide: PropTypes.func.isRequired,
   isVisible: PropTypes.bool.isRequired,
+  isPresentationShow: PropTypes.bool.isRequired,
   modalData: PropTypes.shape({
-    photo: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    position: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
-    twitterUrl: PropTypes.string.isRequired,
-    linkedInUrl: PropTypes.string.isRequired,
-    githubUrl: PropTypes.string.isRequired,
-    communityUrl: PropTypes.string.isRequired,
-    instagramUrl: PropTypes.string.isRequired,
-    websiteUrl: PropTypes.string.isRequired,
+    id: PropTypes.string,
+    photo: PropTypes.string,
+    name: PropTypes.string,
+    position: PropTypes.string,
+    content: PropTypes.string,
+    twitterUrl: PropTypes.string,
+    linkedInUrl: PropTypes.string,
+    githubUrl: PropTypes.string,
+    communityUrl: PropTypes.string,
+    instagramUrl: PropTypes.string,
+    websiteUrl: PropTypes.string,
+    time: PropTypes.string,
+    title: PropTypes.string,
+    duration: PropTypes.string,
+    presentation: PropTypes.string,
+    speakers: PropTypes.array,
+    isCoincidedEvent: PropTypes.bool,
   }).isRequired,
 };
 export default Modal;

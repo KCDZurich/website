@@ -48,7 +48,11 @@ const Header = ({ isMobileMenuOpen, onBurgerClick, additionalClassName, homepage
             {MENUS.header.map(({ text, to, homeTo }, index) => (
               <li className="text-[15px] font-semibold text-primary-1" key={index}>
                 {homepage ? (
-                  <Button to={homeTo} theme="link-primary" onClick={handleAnchorClick}>
+                  <Button
+                    to={homeTo}
+                    theme="link-primary"
+                    onClick={homeTo ? undefined : handleAnchorClick}
+                  >
                     {text}
                   </Button>
                 ) : (

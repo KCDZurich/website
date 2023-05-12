@@ -45,7 +45,7 @@ const Footer = () => {
         </Link>
 
         <nav className="mt-4 flex">
-          <ul className="grid min-w-fit grid-cols-2 grid-rows-2 gap-y-4 gap-x-3 xl:gap-x-1 lg:mr-6 lg:gap-x-4 sm:mx-auto">
+          <ul className="grid min-w-fit grid-cols-2 grid-rows-2 gap-y-4 gap-x-3 xl:gap-x-1 lg:mr-6 lg:gap-x-4 sm:mx-auto [@media(max-width:375px)]:grid-cols-1 [@media(max-width:375px)]:justify-items-center">
             {MENUS.footer.map(({ text, to, target }, index) => (
               <li className="w-fit max-w-min text-sm font-semibold text-primary-1" key={index}>
                 <Button
