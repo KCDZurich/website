@@ -29,7 +29,8 @@ const ITEMS = [
       { icon: Isovalent, url: 'https://isovalent.com/' },
       { icon: Vshn, url: 'https://www.vshn.ch/' },
     ],
-    cardClassname: 'min-w-[488px] max-w-[330px] min-h-[152px] sm:min-w-[350px] sm:min-h-[130px]',
+    cardClassname:
+      'min-w-[488px] max-w-[330px] min-h-[152px] sm:min-w-[350px] sm:min-h-[130px] xs:min-w-fit xs:max-w-full',
     iconClassname: 'max-w-[390px] sm:max-w-[350px]',
   },
   {
@@ -41,7 +42,8 @@ const ITEMS = [
       { icon: RedHat, url: 'https://www.redhat.com/' },
       { icon: Flow, url: 'https://flow.swiss/' },
     ],
-    cardClassname: 'min-w-[384px] min-h-[122px] sm:min-w-[320px] sm:min-h-[115px]',
+    cardClassname:
+      'min-w-[384px] min-h-[122px] sm:min-w-[320px] sm:min-h-[115px] xs:min-w-fit xs:max-w-full',
     iconClassname: 'max-w-[330px] sm:min-w-[290px]',
   },
   {
@@ -50,7 +52,8 @@ const ITEMS = [
       { icon: Innoq, url: 'https://www.innoq.com/' },
       { icon: Adfinis, url: 'https://adfinis.com/' },
     ],
-    cardClassname: 'min-w-[280px] min-h-[104px] sm:min-w-[250px] sm:min-h-[94px]',
+    cardClassname:
+      'min-w-[280px] min-h-[104px] sm:min-w-[250px] sm:min-h-[94px] xs:min-w-fit xs:max-w-full',
   },
   {
     title: 'Special Sponsors',
@@ -61,7 +64,8 @@ const ITEMS = [
       { icon: BGNova, url: 'https://b-nova.com/' },
       { icon: Acend, url: 'https://acend.ch/' },
     ],
-    cardClassname: 'min-w-[280px] min-h-[104px] sm:min-w-[250px] sm:w-fit sm:min-h-[94px]',
+    cardClassname:
+      'min-w-[280px] min-h-[104px] sm:min-w-[250px] sm:w-fit sm:min-h-[94px] xs:min-w-fit xs:max-w-full',
   },
 ];
 
@@ -96,7 +100,7 @@ const Sponsors = () => (
                     target="_blank"
                   >
                     <img
-                      className={clsx('h-auto w-auto', iconClassname)}
+                      className={clsx('h-auto w-auto xs:max-w-full', iconClassname)}
                       src={icon}
                       width="auto"
                       height="auto"

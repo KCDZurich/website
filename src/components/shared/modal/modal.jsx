@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import { AnimatePresence, m, LazyMotion, domAnimation, useReducedMotion } from 'framer-motion';
 import PropTypes from 'prop-types';
 import React, { useCallback, useEffect, useId } from 'react';
 
@@ -64,8 +64,8 @@ const Modal = ({ isVisible, isPresentationShow, modalData, onModalHide, onPresen
   return (
     <AnimatePresence>
       {isVisible && (
-        <>
-          <motion.div
+        <LazyMotion features={domAnimation}>
+          <m.div
             className="fixed inset-0 z-20 m-auto flex h-[fit-content] max-h-[calc(100%-60px)] max-w-[592px] flex-col overflow-y-auto rounded bg-white p-10 text-primary-1 sm:left-2 sm:right-2 sm:p-5"
             key="modal"
             role="dialog"
@@ -235,15 +235,15 @@ const Modal = ({ isVisible, isPresentationShow, modalData, onModalHide, onPresen
                 </div>
               </>
             )}
-          </motion.div>
+          </m.div>
 
-          <motion.div
+          <m.div
             className="fixed inset-0 z-10 bg-primary-1 opacity-40"
             key="modal-backdrop"
             onClick={onModalHide}
             {...modalBackdropAnimation}
           />
-        </>
+        </LazyMotion>
       )}
     </AnimatePresence>
   );

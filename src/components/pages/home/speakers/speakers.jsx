@@ -39,7 +39,7 @@ const ITEMS = [
     instagramUrl: '',
     websiteUrl: '',
     schedule: {
-      time: '9:00 AM',
+      time: '9:00',
       title: 'Simplifying multi-cloud networking with Cilium',
       duration: '30 min',
       content: '',
@@ -58,7 +58,7 @@ const ITEMS = [
     instagramUrl: '',
     websiteUrl: '',
     schedule: {
-      time: '9:00 AM',
+      time: '9:00',
       title: 'Simplifying multi-cloud networking with Cilium',
       duration: '30 min',
       content: '',
@@ -77,7 +77,7 @@ const ITEMS = [
     instagramUrl: '',
     websiteUrl: '',
     schedule: {
-      time: '1:30 PM',
+      time: '13:30',
       title: 'Reverse Engineering Cloud Native: Interoperability and Community',
       duration: '30 min',
       content:
@@ -99,7 +99,7 @@ const ITEMS = [
     instagramUrl: '',
     websiteUrl: 'https://juliusv.com/',
     schedule: {
-      time: '3:00 PM',
+      time: '15:00',
       title: 'Native Histograms in Prometheus: A Better Histogram Experience for Everyone',
       duration: '30 min',
       content:
@@ -121,7 +121,7 @@ const ITEMS = [
     instagramUrl: '',
     websiteUrl: '',
     schedule: {
-      time: '11:30 AM',
+      time: '11:30',
       title: 'What Anime Taught Me About K8s & Tech Careers',
       duration: '30 min',
       content:
@@ -141,7 +141,7 @@ const ITEMS = [
     instagramUrl: '',
     websiteUrl: '',
     schedule: {
-      time: '10:45 AM',
+      time: '10:45',
       title: 'To be announced',
       duration: '30 min',
       content:
@@ -161,7 +161,7 @@ const ITEMS = [
     instagramUrl: '',
     websiteUrl: '',
     schedule: {
-      time: '9:45 AM',
+      time: '9:45',
       title: 'The state of Green Washing - or how to build sustainable systems with Kubernetes',
       duration: '30 min',
       content:
@@ -181,7 +181,7 @@ const ITEMS = [
     instagramUrl: '',
     websiteUrl: '',
     schedule: {
-      time: '4:00 PM',
+      time: '16:00',
       title: 'Securing your Software Supply Chain on Kubernetes with Sigstore',
       duration: '30 min',
       content:
@@ -201,7 +201,7 @@ const ITEMS = [
     instagramUrl: 'https://www.instagram.com/lisafalco_dsw/',
     websiteUrl: 'https://lisafalco.com',
     schedule: {
-      time: '11:30 AM',
+      time: '11:30',
       title: 'Responsible AI: The Key to Ethical, Safe and Inclusive Software Development',
       duration: '30 min',
       content:
@@ -241,7 +241,7 @@ const ITEMS = [
     instagramUrl: '',
     websiteUrl: '',
     schedule: {
-      time: '4:45 PM',
+      time: '16:45',
       title:
         "Process is what naturally follows - a cloud platform's guide on people-first transformation",
       duration: '30 min',
@@ -265,7 +265,7 @@ const ITEMS = [
     instagramUrl: '',
     websiteUrl: '',
     schedule: {
-      time: '3:00 PM',
+      time: '15:00',
       title: 'Tales of Serverless - a story about building scalable applications',
       duration: '30 min',
       content:
@@ -292,7 +292,7 @@ const ITEMS = [
     instagramUrl: '',
     websiteUrl: '',
     schedule: {
-      time: '2:15 PM',
+      time: '14:15',
       title: 'Buzzing Across the Cloud Native Landscape with eBPF',
       duration: '30 min',
       content:
@@ -324,7 +324,7 @@ const ITEMS = [
     instagramUrl: '',
     websiteUrl: '',
     schedule: {
-      time: '9:45 AM',
+      time: '9:45',
       title: 'Forensic container checkpointing and analysis',
       duration: '30 min',
       content:
@@ -353,7 +353,7 @@ const ITEMS = [
     instagramUrl: '',
     websiteUrl: '',
     schedule: {
-      time: '10:45 AM',
+      time: '10:45',
       title: 'Demystifying eBPF - eBPF Firewall from scratch',
       duration: '30 min',
       content:
@@ -388,7 +388,7 @@ const ITEMS = [
     instagramUrl: '',
     websiteUrl: '',
     schedule: {
-      time: '4:00 PM',
+      time: '16:00',
       title: 'Closing the Developer Experience Gap of your Container Platforms',
       duration: '30 min',
       content:
@@ -422,7 +422,7 @@ const ITEMS = [
     instagramUrl: '',
     websiteUrl: '',
     schedule: {
-      time: '2:15 PM',
+      time: '14:15',
       title: 'Streamlined Troubleshooting in Kubernetes',
       duration: '30 min',
       content:
@@ -453,7 +453,7 @@ const ITEMS = [
     instagramUrl: '',
     websiteUrl: '',
     schedule: {
-      time: '4:45 PM',
+      time: '16:45',
       title: "What We've Learned from Scanning 10K+ Kubernetes Clusters",
       duration: '30 min',
       content:

@@ -22,18 +22,18 @@ import TimoSalmPhoto from './images/timo-salm-photo.jpg';
 
 const ITEMS = [
   {
-    time: '8:00 AM',
+    time: '8:00',
     title: 'Registration',
     duration: '45 min',
   },
   {
-    time: '8:45 AM',
+    time: '8:45',
     title: 'Welcome',
     duration: '15 min',
   },
   {
     id: '1',
-    time: '9:00 AM',
+    time: '9:00',
     title: 'Simplifying multi-cloud networking with Cilium',
     duration: '30 min',
     isKeynote: true,
@@ -49,13 +49,13 @@ const ITEMS = [
     ],
   },
   {
-    time: '9:30 AM',
+    time: '9:30',
     title: 'Change tracks, Short Break',
     duration: '15 min',
   },
   {
     id: '6',
-    time: '9:45 AM',
+    time: '9:45',
     title: 'The state of Green Washing - or how to build sustainable systems with Kubernetes ',
     duration: '30 min',
     speakers: [
@@ -66,7 +66,7 @@ const ITEMS = [
     ],
     coincidedEvent: {
       id: '12',
-      time: '9:45 AM',
+      time: '9:45',
       title: 'Forensic container checkpointing and analysis',
       duration: '30 min',
       speakers: [
@@ -78,13 +78,13 @@ const ITEMS = [
     },
   },
   {
-    time: '10:15 AM',
+    time: '10:15',
     title: 'Coffee Break',
     duration: '30 min',
   },
   {
     id: '5',
-    time: '10:45 AM',
+    time: '10:45',
     title: 'To be announced',
     duration: '30 min',
     speakers: [
@@ -95,7 +95,7 @@ const ITEMS = [
     ],
     coincidedEvent: {
       id: '13',
-      time: '10:45 AM',
+      time: '10:45',
       title: 'Demystifying eBPF - eBPF Firewall from scratch',
       duration: '30 min',
       speakers: [
@@ -107,13 +107,13 @@ const ITEMS = [
     },
   },
   {
-    time: '11:15 AM',
+    time: '11:15',
     title: 'Change tracks, Short Break',
     duration: '15 min',
   },
   {
     id: '8',
-    time: '11:30 AM',
+    time: '11:30',
     title: 'Responsible AI: The Key to Ethical, Safe and Inclusive Software Development',
     duration: '30 min',
     speakers: [
@@ -124,7 +124,7 @@ const ITEMS = [
     ],
     coincidedEvent: {
       id: '4',
-      time: '11:30 AM',
+      time: '11:30',
       title: 'What Anime Taught Me About K8s & Tech Careers',
       duration: '30 min',
       speakers: [
@@ -136,13 +136,13 @@ const ITEMS = [
     },
   },
   {
-    time: '12:00 AM',
+    time: '12:00',
     title: 'Lunch',
     duration: '1h 30min',
   },
   {
     id: '2',
-    time: '1:30 PM',
+    time: '13:30',
     title: 'Reverse Engineering Cloud Native: Interoperability and Community',
     duration: '30 min',
     isKeynote: true,
@@ -154,13 +154,13 @@ const ITEMS = [
     ],
   },
   {
-    time: '2:00 PM',
+    time: '14:00',
     title: 'Change tracks, Short Break',
     duration: '15 min',
   },
   {
     id: '11',
-    time: '2:15 PM',
+    time: '14:15',
     title: 'Buzzing Across the Cloud Native Landscape with eBPF',
     duration: '30 min',
     speakers: [
@@ -171,7 +171,7 @@ const ITEMS = [
     ],
     coincidedEvent: {
       id: '15',
-      time: '2:15 PM',
+      time: '14:15',
       title: 'Streamlined Troubleshooting in Kubernetes',
       duration: '30 min',
       speakers: [
@@ -183,13 +183,13 @@ const ITEMS = [
     },
   },
   {
-    time: '2:45 PM',
+    time: '14:45',
     title: 'Change tracks, Short Break',
     duration: '15 min',
   },
   {
     id: '3',
-    time: '3:00 PM',
+    time: '15:00',
     title: 'Native Histograms in Prometheus: A Better Histogram Experience for Everyone',
     duration: '30 min',
     speakers: [
@@ -200,7 +200,7 @@ const ITEMS = [
     ],
     coincidedEvent: {
       id: '10',
-      time: '3:00 PM',
+      time: '15:00',
       title: 'Tales of Serverless - a story about building scalable applications',
       duration: '30 min',
       speakers: [
@@ -212,13 +212,13 @@ const ITEMS = [
     },
   },
   {
-    time: '3:30 PM',
+    time: '15:30',
     title: 'Coffee Break',
     duration: '30 min',
   },
   {
     id: '7',
-    time: '4:00 PM',
+    time: '16:00',
     title: 'Securing your Software Supply Chain on Kubernetes with Sigstore',
     duration: '30 min',
     speakers: [
@@ -229,7 +229,7 @@ const ITEMS = [
     ],
     coincidedEvent: {
       id: '14',
-      time: '4:00 PM',
+      time: '16:00',
       title: 'Closing the Developer Experience Gap of your Container Platforms',
       duration: '30 min',
       speakers: [
@@ -241,13 +241,13 @@ const ITEMS = [
     },
   },
   {
-    time: '4:30 PM',
+    time: '16:30',
     title: 'Change tracks, Short Break',
     duration: '15 min',
   },
   {
     id: '9',
-    time: '4:45 PM',
+    time: '16:45',
     title:
       "Process is what naturally follows - a cloud platform's guide on people-first transformation",
     duration: '30 min',
@@ -259,7 +259,7 @@ const ITEMS = [
     ],
     coincidedEvent: {
       id: '16',
-      time: '4:45 PM',
+      time: '16:45',
       title: "What We've Learned from Scanning 10K+ Kubernetes Clusters",
       duration: '30 min',
       speakers: [
@@ -271,17 +271,17 @@ const ITEMS = [
     },
   },
   {
-    time: '5:15 PM',
+    time: '17:15',
     title: 'Change tracks, Short Break',
     duration: '15 min',
   },
   {
-    time: '5:30 PM',
+    time: '17:30',
     title: 'Closing',
     duration: '15 min',
   },
   {
-    time: '5:45 PM',
+    time: '17:45',
     title: 'Apéro',
     duration: '3h 45min',
   },
