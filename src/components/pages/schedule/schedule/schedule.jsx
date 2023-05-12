@@ -277,17 +277,11 @@ const ITEMS = [
   },
   {
     time: '5:30 PM',
-    title: 'To be announced',
-    duration: '30 min',
-    isKeynote: true,
-  },
-  {
-    time: '6:00 PM',
     title: 'Closing',
     duration: '15 min',
   },
   {
-    time: '6:15 PM',
+    time: '5:45 PM',
     title: 'Apéro',
     duration: '3h 45min',
   },
