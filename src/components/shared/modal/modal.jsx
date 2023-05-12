@@ -1,4 +1,5 @@
 import { AnimatePresence, m, LazyMotion, domAnimation, useReducedMotion } from 'framer-motion';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React, { useCallback, useEffect, useId } from 'react';
 
@@ -28,19 +29,25 @@ const defaultModalBackdropAnimation = {
   exit: { opacity: 0 },
 };
 
-const Modal = ({ isVisible, isPresentationShow, modalData, onModalHide, onPresentationShow }) => {
+const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow }) => {
   const {
-    name,
-    photo,
-    position,
-    content,
-    twitterUrl,
-    linkedInUrl,
-    githubUrl,
-    communityUrl,
-    instagramUrl,
-    websiteUrl,
-    schedule: { time, title, duration, content: presentation },
+    id = '',
+    name = '',
+    photo = '',
+    position = '',
+    content = '',
+    twitterUrl = '',
+    linkedInUrl = '',
+    githubUrl = '',
+    communityUrl = '',
+    instagramUrl = '',
+    websiteUrl = '',
+    time = '',
+    title = '',
+    duration = '',
+    presentation = '',
+    speakers = [],
+    isCoincidedEvent = false,
   } = modalData;
   const shouldReduceMotion = useReducedMotion();
   const headingId = useId();
@@ -82,22 +89,26 @@ const Modal = ({ isVisible, isPresentationShow, modalData, onModalHide, onPresen
                   <span className="relative ml-8 rounded-full bg-yellow px-2 py-1.5 text-[13px] font-semibold leading-none tracking-tighter text-primary-1 before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3">
                     {duration}
                   </span>
-                  <button
-                    className="relative ml-8 inline-flex items-center gap-x-2 text-left text-lg font-semibold leading-normal text-primary-5 transition-colors duration-200 before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3 hover:text-blue-1"
-                    type="button"
-                    onClick={onPresentationShow}
-                  >
-                    <img
-                      className="h-7 w-7 rounded-full"
-                      src={photo}
-                      width={28}
-                      alt={name}
-                      loading="lazy"
-                    />
-                    <p className="whitespace-nowrap text-sm font-medium leading-none sm:whitespace-normal">
-                      {name}
-                    </p>
-                  </button>
+                  {speakers.length > 0 &&
+                    speakers.map(({ id: speakerId, name, photo }, index) => (
+                      <Link
+                        className="relative ml-8 inline-flex items-center gap-x-2 text-left text-lg font-semibold leading-normal text-primary-5 transition-colors duration-200 before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3 hover:text-blue-1"
+                        to="/#speaker"
+                        state={{ modalId: speakerId || id }}
+                        key={index}
+                      >
+                        <img
+                          className="h-7 w-7 rounded-full"
+                          src={photo}
+                          width={28}
+                          alt={name}
+                          loading="lazy"
+                        />
+                        <p className="whitespace-nowrap text-sm font-medium leading-none sm:whitespace-normal">
+                          {name}
+                        </p>
+                      </Link>
+                    ))}
                 </div>
                 <h2 className="mt-7 text-2xl font-semibold leading-tight tracking-[-0.01em] text-primary-1 sm:text-lg">
                   {title}
@@ -224,13 +235,13 @@ const Modal = ({ isVisible, isPresentationShow, modalData, onModalHide, onPresen
                     <span className="relative ml-8 rounded-full bg-yellow px-2 py-1.5 text-[13px] font-semibold leading-none tracking-tighter text-primary-1 before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3">
                       {duration}
                     </span>
-                    <button
+                    <Link
                       className="mt-3 block text-left text-lg font-semibold leading-normal text-primary-1 transition-colors duration-200 hover:text-blue-1"
-                      type="button"
-                      onClick={onPresentationShow}
+                      to="/schedule"
+                      state={{ modalId: id, isCoincidedEvent }}
                     >
                       {title}
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </>
@@ -251,26 +262,26 @@ const Modal = ({ isVisible, isPresentationShow, modalData, onModalHide, onPresen
 
 Modal.propTypes = {
   onModalHide: PropTypes.func.isRequired,
-  onPresentationShow: PropTypes.func.isRequired,
   isVisible: PropTypes.bool.isRequired,
   isPresentationShow: PropTypes.bool.isRequired,
   modalData: PropTypes.shape({
-    photo: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    position: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
-    twitterUrl: PropTypes.string.isRequired,
-    linkedInUrl: PropTypes.string.isRequired,
-    githubUrl: PropTypes.string.isRequired,
-    communityUrl: PropTypes.string.isRequired,
-    instagramUrl: PropTypes.string.isRequired,
-    websiteUrl: PropTypes.string.isRequired,
-    schedule: PropTypes.shape({
-      time: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      duration: PropTypes.string.isRequired,
-      content: PropTypes.string.isRequired,
-    }),
+    id: PropTypes.string,
+    photo: PropTypes.string,
+    name: PropTypes.string,
+    position: PropTypes.string,
+    content: PropTypes.string,
+    twitterUrl: PropTypes.string,
+    linkedInUrl: PropTypes.string,
+    githubUrl: PropTypes.string,
+    communityUrl: PropTypes.string,
+    instagramUrl: PropTypes.string,
+    websiteUrl: PropTypes.string,
+    time: PropTypes.string,
+    title: PropTypes.string,
+    duration: PropTypes.string,
+    presentation: PropTypes.string,
+    speakers: PropTypes.array,
+    isCoincidedEvent: PropTypes.bool,
   }).isRequired,
 };
 export default Modal;

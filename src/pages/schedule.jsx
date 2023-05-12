@@ -7,10 +7,10 @@ import Layout from 'components/shared/layout';
 import SEO from 'components/shared/seo';
 import SEO_DATA from 'constants/seo-data';
 
-const SchedulePage = () => (
+const SchedulePage = ({ location }) => (
   <Layout headerClassnames="!bg-white">
     <Hero />
-    <Schedule />
+    <Schedule location={location} />
   </Layout>
 );
 
