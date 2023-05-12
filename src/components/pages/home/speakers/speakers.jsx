@@ -100,7 +100,7 @@ const ITEMS = [
     websiteUrl: 'https://juliusv.com/',
     schedule: {
       time: '3:00 PM',
-      title: 'To be announced',
+      title: 'Native Histograms in Prometheus: A Better Histogram Experience for Everyone',
       duration: '30 min',
       content:
         'Histograms are crucial for anyone who wants to track service latency and other numeric value distributions in Prometheus. However, the existing "legacy" histograms in Prometheus come with a number of painful drawbacks: they require manual and static bucket configuration, generate a separate time series for each configured histogram bucket, and thus require you to make hard tradeoffs between a histogram\'s resolution and cost.\n' +
@@ -532,7 +532,7 @@ const Speakers = ({ location }) => {
             <li
               className={clsx(
                 'group flex w-[240px] cursor-pointer flex-col lg:w-52 md:w-48 sm:w-auto sm:max-w-[200px]',
-                index > 3 && !isSpeakersOpen ? 'hidden' : 'flex'
+                index > 7 && !isSpeakersOpen ? 'hidden' : 'flex'
               )}
               key={index}
               onClick={() => handleModalShow(index)}

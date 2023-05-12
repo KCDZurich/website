@@ -190,7 +190,7 @@ const ITEMS = [
   {
     id: '3',
     time: '3:00 PM',
-    title: 'To be announced',
+    title: 'Native Histograms in Prometheus: A Better Histogram Experience for Everyone',
     duration: '30 min',
     speakers: [
       {
