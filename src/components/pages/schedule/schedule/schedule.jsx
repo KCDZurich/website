@@ -294,14 +294,14 @@ const ITEMS = [
 ];
 
 const Schedule = () => (
-  <section className="safe-paddings pt-9 pb-48">
-    <ul className="mx-auto w-[1072px] rounded-[10px] border border-primary-2 shadow-lg">
+  <section className="safe-paddings pt-9 pb-48 lg:px-8 md:px-5 xs:px-0">
+    <ul className="mx-auto w-[1072px] max-w-full rounded-[10px] border border-primary-2 shadow-lg">
       {ITEMS.map(({ id, time, title, duration, isKeynote, speakers, coincidedEvent }, index) => {
         const isEven = index % 2 === 1;
 
         return (
           <li
-            className={clsx('grid grid-cols-[114px_1fr]', {
+            className={clsx('grid grid-cols-[114px_1fr] md:grid-cols-[106px_1fr] sm:grid-cols-1', {
               'bg-primary-4': isEven,
               'bg-lightGreen': title === 'Welcome',
               'bg-lightYellow': title === 'Lunch',
@@ -309,43 +309,53 @@ const Schedule = () => (
             })}
             key={index}
           >
-            <div className="flex items-center justify-center">
-              <time className="mb-10 text-[15px] font-semibold leading-none tracking-tight text-primary-1 opacity-60">
+            <div className="flex items-center justify-center sm:justify-start sm:px-5 sm:pt-5">
+              <time className="mb-10 text-[15px] font-semibold leading-none tracking-tight text-primary-1 opacity-60 md:text-sm sm:mb-0">
                 {time}
               </time>
+              {isKeynote && (
+                <span className="ml-4 hidden rounded-full bg-blue-1 px-2 py-1.5 text-xs font-semibold leading-none tracking-tighter text-white sm:inline-flex">
+                  Keynote
+                </span>
+              )}
             </div>
             <div
-              className={clsx('border-l border-l-primary-2', {
-                'grid grid-cols-2': coincidedEvent,
+              className={clsx('border-l border-l-primary-2 sm:border-none', {
+                'grid grid-cols-2 sm:grid-cols-1': coincidedEvent,
               })}
             >
-              <div className="flex flex-col gap-y-3 px-7 py-6">
+              <div
+                className={clsx(
+                  'flex flex-col gap-y-3 px-7 py-6 md:py-4 sm:gap-y-1.5 sm:px-5 sm:py-4',
+                  { 'sm:pt-2': isKeynote }
+                )}
+              >
                 <h3 className="inline-flex items-center gap-x-3">
                   {id ? (
                     <Link
-                      className="text-lg font-semibold leading-snug tracking-tight text-primary-1 transition-colors duration-200 hover:text-blue-1"
+                      className="text-lg font-semibold leading-snug tracking-tight text-primary-1 transition-colors duration-200 hover:text-blue-1 md:text-base"
                       to="/#speaker"
                       state={{ modalId: id }}
                     >
                       {title}
                     </Link>
                   ) : (
-                    <span className="text-lg font-semibold leading-snug tracking-tight text-primary-1">
+                    <span className="text-lg font-semibold leading-snug tracking-tight text-primary-1 md:text-base">
                       {title}
                     </span>
                   )}
                   {isKeynote && (
-                    <span className="rounded-full bg-blue-1 px-2 py-2 text-xs font-semibold leading-none tracking-tighter text-white">
+                    <span className="rounded-full bg-blue-1 px-2 py-2 text-xs font-semibold leading-none tracking-tighter text-white sm:hidden">
                       Keynote
                     </span>
                   )}
                 </h3>
-                <div className="mt-auto flex items-center gap-x-8">
-                  <span className="rounded-full bg-yellow px-2 py-2 text-[13px] font-semibold leading-none tracking-tighter text-primary-1">
+                <div className="mt-auto flex items-center gap-x-8 sm:gap-x-7">
+                  <span className="rounded-full bg-yellow px-2 py-2 text-[13px] font-semibold leading-none tracking-tighter text-primary-1 md:text-xs">
                     {duration}
                   </span>
                   {speakers && speakers.length > 0 && (
-                    <ul className="relative inline-flex gap-x-5 before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3">
+                    <ul className="relative inline-flex gap-x-5 before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3 sm:gap-x-4">
                       {speakers.map(({ name, photo }, index) => (
                         <li className="" key={index}>
                           <figure className="flex items-center gap-x-2">
@@ -357,7 +367,7 @@ const Schedule = () => (
                               alt={name}
                               loading="lazy"
                             />
-                            <figcaption className="text-sm font-medium leading-none text-primary-5">
+                            <figcaption className="text-sm font-medium leading-none text-primary-5 md:text-[13px]">
                               {name}
                             </figcaption>
                           </figure>
@@ -368,33 +378,38 @@ const Schedule = () => (
                 </div>
               </div>
               {coincidedEvent && (
-                <div className="flex flex-col gap-y-3 border-l border-l-primary-2 px-7 py-6">
+                <div
+                  className={clsx(
+                    'flex flex-col gap-y-3 border-l border-primary-2 px-7 py-6 md:py-4 sm:gap-y-1.5 sm:border-t sm:border-l-0 sm:px-5 sm:py-4',
+                    { 'sm:pt-2': isKeynote }
+                  )}
+                >
                   <h3 className="inline-flex items-center gap-x-3">
                     {coincidedEvent.id ? (
                       <Link
-                        className="text-lg font-semibold leading-snug tracking-tight text-primary-1 transition-colors duration-200 hover:text-blue-1"
+                        className="text-lg font-semibold leading-snug tracking-tight text-primary-1 transition-colors duration-200 hover:text-blue-1 md:text-base"
                         to="/#speaker"
                         state={{ modalId: coincidedEvent.id }}
                       >
                         {coincidedEvent.title}
                       </Link>
                     ) : (
-                      <span className="text-lg font-semibold leading-snug tracking-tight text-primary-1">
+                      <span className="text-lg font-semibold leading-snug tracking-tight text-primary-1 md:text-base">
                         {coincidedEvent.title}
                       </span>
                     )}
                     {coincidedEvent.isKeynote && (
-                      <span className="rounded-full bg-blue-1 px-4 py-2 text-xs font-semibold leading-none tracking-tighter text-white">
+                      <span className="rounded-full bg-blue-1 px-4 py-2 text-xs font-semibold leading-none tracking-tighter text-white sm:hidden">
                         Keynote
                       </span>
                     )}
                   </h3>
-                  <div className="mt-auto flex items-center gap-x-8">
-                    <span className="rounded-full bg-yellow px-2 py-2 text-[13px] font-semibold leading-none tracking-tighter text-primary-1">
+                  <div className="mt-auto flex items-center gap-x-8 sm:gap-x-7">
+                    <span className="rounded-full bg-yellow px-2 py-2 text-[13px] font-semibold leading-none tracking-tighter text-primary-1 md:text-xs">
                       {coincidedEvent.duration}
                     </span>
                     {coincidedEvent.speakers && coincidedEvent.speakers.length > 0 && (
-                      <ul className="relative inline-flex gap-x-5 before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3">
+                      <ul className="relative inline-flex gap-x-5 before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3 sm:gap-x-4">
                         {coincidedEvent.speakers.map(({ name, photo }, index) => (
                           <li className="" key={index}>
                             <figure className="flex items-center gap-x-2">
