@@ -448,7 +448,7 @@ const Schedule = ({ location }) => {
               key={index}
             >
               <div className="flex items-center justify-center sm:justify-start sm:px-5 sm:pt-5">
-                <time className="mb-auto mt-7 text-[15px] font-semibold leading-none tracking-tight text-primary-1 opacity-60 md:text-sm sm:my-0">
+                <time className="mb-auto mt-7 text-[15px] font-semibold leading-none tracking-tight text-primary-1 opacity-60 md:mt-5 md:text-sm sm:my-0">
                   {time}
                 </time>
                 {isKeynote && (
