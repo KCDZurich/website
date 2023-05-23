@@ -42,7 +42,7 @@ const ITEMS = [
     instagramUrl: '',
     websiteUrl: '',
     time: '9:00',
-    title: 'Simplifying multi-cloud networking with Cilium',
+    title: 'Cilium Mesh - How to Connect Kubernetes with Legacy VM and Server Infrastructure',
     duration: '30 min',
   },
   {
@@ -59,7 +59,7 @@ const ITEMS = [
     instagramUrl: '',
     websiteUrl: '',
     time: '9:00',
-    title: 'Simplifying multi-cloud networking with Cilium',
+    title: 'Cilium Mesh - How to Connect Kubernetes with Legacy VM and Server Infrastructure',
     duration: '30 min',
   },
   {
@@ -128,7 +128,7 @@ const ITEMS = [
     instagramUrl: '',
     websiteUrl: '',
     time: '10:45',
-    title: 'To be announced',
+    title: 'When Things Get Big: Scaling Cloud Native Workloads and Software Distribution',
     duration: '30 min',
   },
   {
@@ -386,6 +386,10 @@ const Speakers = ({ location }) => {
         window.scrollTo({
           top: window.pageYOffset + element.getBoundingClientRect().top,
         });
+
+        if (Number(state.modalId) > 7) {
+          handleShowMoreClick();
+        }
 
         handleModalShow(Number(state.modalId));
       }

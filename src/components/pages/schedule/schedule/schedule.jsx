@@ -38,7 +38,7 @@ const ITEMS = [
   {
     id: '01',
     time: '9:00',
-    title: 'Simplifying multi-cloud networking with Cilium',
+    title: 'Cilium Mesh - How to Connect Kubernetes with Legacy VM and Server Infrastructure',
     duration: '30 min',
     isKeynote: true,
     speakers: [
@@ -53,7 +53,9 @@ const ITEMS = [
         photo: LizRicePhoto,
       },
     ],
-    presentation: '',
+    presentation:
+      'Kubernetes has taken the industry by storm and has become the standard platform for new workloads. It is ideal for containerized workloads. However, a majority of workloads will remain where they are for another while, running on VMs or physical servers in either public or private cloud. How do we connect the new world of Kubernetes consisting of services, identities and CI/CD with the existing world of VMs, servers, and existing network infrastructure?\n' +
+      'In this session, we will look into the brand new Cilium Mesh layer. Cilium Mesh is a new universal networking layer to connect workloads and machines across cloud, on-prem, and edge. It consists of a Kubernetes networking component (CNI), a multi-cluster connectivity plane (Cluster Mesh), and a transit gateway to connect with VMs and servers in existing networks.',
   },
   {
     time: '9:30',
@@ -104,7 +106,7 @@ const ITEMS = [
   {
     id: '5',
     time: '10:45',
-    title: 'To be announced',
+    title: 'When Things Get Big: Scaling Cloud Native Workloads and Software Distribution',
     duration: '30 min',
     speakers: [
       {
