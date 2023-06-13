@@ -404,6 +404,8 @@ const Schedule = ({ location }) => {
 
       if (state?.modalId) {
         handleModalShow(Number(state.modalId));
+      } else {
+        handleModalHide();
       }
 
       if (state?.isCoincidedEvent) {

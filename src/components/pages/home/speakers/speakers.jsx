@@ -366,6 +366,8 @@ const Speakers = ({ location }) => {
         }
 
         handleModalShow(Number(state.modalId));
+      } else {
+        handleModalHide();
       }
     }
   }, [location]);
