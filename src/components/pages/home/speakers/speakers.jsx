@@ -10,13 +10,12 @@ import AnnieTalvastoPhoto from './images/annie-talvasto-photo.jpg';
 import BillPhoto from './images/bill-mulligan-photo.jpg';
 import FilipPhoto from './images/filip-nicolic-photo.jpg';
 import JuliusVolzPhoto from './images/julius-volz-photo.jpg';
-import KatieGamanjiPhoto from './images/katie-gamanji-photo.jpg';
 import LenaPhoto from './images/lena-fuhrimann-photo.jpg';
 import LisaFalcoPhoto from './images/lisa-falco-photo.jpg';
 import LizRicePhoto from './images/liz-rice-photo.jpg';
-import MatthiasPhoto from './images/matthias-bertschy-photo.jpg';
 import MaxKorbacherPhoto from './images/max-korbacher-photo.jpg';
 import PriyaWadhwaPhoto from './images/priya-wadhwa-photo.jpg';
+import RaphaelPhoto from './images/raphael-photo.jpg';
 import RetoLehmannPhoto from './images/reto-lehmann-photo.jpg';
 import RicardoRochaPhoto from './images/ricardo-rocha-photo.jpg';
 import SebastianKisterPhoto from './images/sebastian-kister-photo.jpg';
@@ -46,7 +45,7 @@ const ITEMS = [
     duration: '30 min',
   },
   {
-    id: '2',
+    id: '18',
     name: 'Liz Rice',
     position: 'Chief Open Source Office <br/> Isovalent',
     content:
@@ -58,25 +57,8 @@ const ITEMS = [
     communityUrl: '',
     instagramUrl: '',
     websiteUrl: '',
-    time: '9:00',
-    title: 'Cilium Mesh - How to Connect Kubernetes with Legacy VM and Server Infrastructure',
-    duration: '30 min',
-  },
-  {
-    id: '18',
-    name: 'Katie Gamanji',
-    position: 'Senior Field Engineer at Apple <br/> TOC at CNCF',
-    content:
-      'Katie is a cloud native leader, practitioner, and contributor, currently in a Senior Kubernetes Field Engineer role at Apple and a TOC for CNCF (Cloud Native Computing Foundation).  As a cloud platform engineer, Katie has built the infrastructure for Conde Nast and American Express, gravitating towards cloud-native technologies, principles, and Kubernetes as the focal point. At CNCF (Cloud Native Computing Foundation), she was a Technical Oversight Committee member and led the CNCF End User Community.  At present, Katie advises the Keptn startup and is part of the OpenUK C-suite.',
-    photo: KatieGamanjiPhoto,
-    twitterUrl: 'https://twitter.com/k_gamanji',
-    linkedInUrl: 'https://www.linkedin.com/in/katie-gamanji/',
-    githubUrl: '',
-    communityUrl: '',
-    instagramUrl: '',
-    websiteUrl: '',
     time: '16:45',
-    title: 'Reverse Engineering Cloud Native: Interoperability and Community',
+    title: 'eBPF for Security',
     duration: '30 min',
   },
   {
@@ -329,27 +311,19 @@ const ITEMS = [
   },
   {
     id: '16',
-    name: 'Matthias Bertschy',
-    position: 'Senior Kubernetes Developer at ARMO',
+    name: 'Raphaël Pinson',
+    position: 'Solutions Architect at Isovalent',
     content:
-      'Matthias is a Senior Kubernetes Developer at ARMO working on Kubescape, the open-source Kubernetes security\n' +
-      'platform. He started his career in 2005 as a System Administrator. In 2011 he joined a leading security solution\n' +
-      'provider in Switzerland to become a Security System Engineer. He got certified as an Ethical Hacker in 2012\n' +
-      '(GPEN certification) and validated his first four years as a professional with a CISSP in 2015. He discovered\n' +
-      'Kubernetes in 2016 and has become a regular contributor, member of SIG Node and a reviewer for the kubelet\n' +
-      'and test-infra. During the last 5 years, he has helped several Swiss banks through their digital transformations in\n' +
-      'Senior DevOps Engineer, Productivity Manager and Platform Architect positions. His list of certifications include Red\n' +
-      'Hat Certified Architect, every Kubernetes certifications, and many Linux Foundation courses on Open Source\n' +
-      'Management & Strategy.',
-    photo: MatthiasPhoto,
-    twitterUrl: 'https://twitter.com/matthyx',
-    linkedInUrl: 'https://www.linkedin.com/in/matthias-bertschy-b427b815/',
+      'Raphaël Pinson is a Solutions Architect with Cloud Native networking and security specialists Isovalent, creators of the Cilium eBPF-based networking project. He works on Cilium, Hubble & Tetragon and the future of Cloud-Native networking & security using eBPF. An early adept of the DevOps principles, he has been a practitioner of Configuration Management and Agile principles in Operations for many years, with a special involvement in the Puppet and Terraform communities over the years.',
+    photo: RaphaelPhoto,
+    twitterUrl: 'https://twitter.com/raphink',
+    linkedInUrl: 'https://www.linkedin.com/in/raphink/',
     githubUrl: '',
     communityUrl: '',
     instagramUrl: '',
     websiteUrl: '',
     time: '16:00',
-    title: "What We've Learned from Scanning 10K+ Kubernetes Clusters",
+    title: 'Bridging Dev and Ops with eBPF: Extending Observability Upwards and Downwards',
     duration: '30 min',
     isCoincidedEvent: true,
   },
