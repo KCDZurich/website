@@ -10,13 +10,12 @@ import AnnieTalvastoPhoto from './images/annie-talvasto-photo.jpg';
 import BillPhoto from './images/bill-mulligan-photo.jpg';
 import FilipPhoto from './images/filip-nicolic-photo.jpg';
 import JuliusVolzPhoto from './images/julius-volz-photo.jpg';
-import KatieGamanjiPhoto from './images/katie-gamanji-photo.jpg';
 import LenaPhoto from './images/lena-fuhrimann-photo.jpg';
 import LisaFalcoPhoto from './images/lisa-falco-photo.jpg';
 import LizRicePhoto from './images/liz-rice-photo.jpg';
-import MatthiasPhoto from './images/matthias-bertschy-photo.jpg';
 import MaxKorbacherPhoto from './images/max-korbacher-photo.jpg';
 import PriyaWadhwaPhoto from './images/priya-wadhwa-photo.jpg';
+import RaphaelPhoto from './images/raphael-photo.jpg';
 import RetoPhoto from './images/reto-lehmann-photo.jpg';
 import RicardoRochaPhoto from './images/ricardo-rocha-photo.jpg';
 import SebastianKisterPhoto from './images/sebastian-kister-photo.jpg';
@@ -47,11 +46,6 @@ const ITEMS = [
         name: 'Thomas Graf',
         photo: ThomasGrafPhoto,
       },
-      {
-        id: '1',
-        name: 'Liz Rice',
-        photo: LizRicePhoto,
-      },
     ],
     presentation:
       'Kubernetes has taken the industry by storm and has become the standard platform for new workloads. It is ideal for containerized workloads. However, a majority of workloads will remain where they are for another while, running on VMs or physical servers in either public or private cloud. How do we connect the new world of Kubernetes consisting of services, identities and CI/CD with the existing world of VMs, servers, and existing network infrastructure?\n' +
@@ -63,7 +57,7 @@ const ITEMS = [
     duration: '15 min',
   },
   {
-    id: '6',
+    id: '5',
     time: '9:45',
     title: 'The state of Green Washing - or how to build sustainable systems with Kubernetes ',
     duration: '30 min',
@@ -76,7 +70,7 @@ const ITEMS = [
     presentation:
       'Kubernetes is not the answer to everything, but where it is, it is a great companion to designing systems and putting environmental sustainability into your mind. But being eco-friendly invites people to greenwash their intentions, so let us start the story from the end and clarify some myths. Saving money on infrastructure may reduce your Carbon impact, but we can do more. In this presentation, we will look at what is currently possible, what are the recent developments and what we need in the future to create a carbon-aware system landscape. You will learn how designing system architectures for eco-friendliness, will have a sustainable impact, in many ways.',
     coincidedEvent: {
-      id: '12',
+      id: '11',
       time: '9:45',
       title: 'Forensic container checkpointing and analysis',
       duration: '30 min',
@@ -104,7 +98,7 @@ const ITEMS = [
     duration: '30 min',
   },
   {
-    id: '5',
+    id: '4',
     time: '10:45',
     title: 'When Things Get Big: Scaling Cloud Native Workloads and Software Distribution',
     duration: '30 min',
@@ -117,7 +111,7 @@ const ITEMS = [
     presentation:
       'The move to containers has significantly improved the way services and workloads are deployed and managed in large scale computing infrastructures. It also brought new challenges that can be handled with intrusive changes in the workflows or hidden in the stack. This session will focus on one of those challenges and go in detail on how you can efficiently distribute very large software packages across thousands of nodes for your batch, HPC or ML workloads.',
     coincidedEvent: {
-      id: '13',
+      id: '12',
       time: '10:45',
       title: 'Demystifying eBPF - eBPF Firewall from scratch',
       duration: '30 min',
@@ -146,7 +140,7 @@ const ITEMS = [
     duration: '15 min',
   },
   {
-    id: '8',
+    id: '7',
     time: '11:30',
     title: 'Responsible AI: The Key to Ethical, Safe and Inclusive Software Development',
     duration: '30 min',
@@ -179,7 +173,7 @@ const ITEMS = [
       'bias, privacy, security, and transparency in the software development \n' +
       'process can help ensure that the software is safe and secure to use.',
     coincidedEvent: {
-      id: '4',
+      id: '3',
       time: '11:30',
       title: 'What Anime Taught Me About K8s & Tech Careers',
       duration: '30 min',
@@ -199,7 +193,7 @@ const ITEMS = [
     duration: '1h 30min',
   },
   {
-    id: '11',
+    id: '10',
     time: '13:30',
     title: 'Buzzing Across the Cloud Native Landscape with eBPF',
     duration: '30 min',
@@ -221,7 +215,7 @@ const ITEMS = [
       'away with an understanding of the buzz around eBPF and knowledge of tools that may solve some of their\n' +
       'problems in networking, observability, and security.',
     coincidedEvent: {
-      id: '15',
+      id: '14',
       time: '13:30',
       title: 'Streamlined Troubleshooting in Kubernetes',
       duration: '30 min',
@@ -244,7 +238,7 @@ const ITEMS = [
     duration: '15 min',
   },
   {
-    id: '3',
+    id: '2',
     time: '14:15',
     title: 'Native Histograms in Prometheus: A Better Histogram Experience for Everyone',
     duration: '30 min',
@@ -259,7 +253,7 @@ const ITEMS = [
       '\n' +
       'In this talk, Prometheus co-founder Julius Volz will present a new "native" histogram metric type that is currently being added to Prometheus. These native histograms allow you to track value distributions in higher detail at a significantly lower storage and processing cost, while also reducing the manual bucket configuration effort. Julius will explain how native histograms work, how they achieve these key benefits, and how you can use them in Prometheus today in an experimental fashion.',
     coincidedEvent: {
-      id: '10',
+      id: '9',
       time: '14:15',
       title: 'Tales of Serverless - a story about building scalable applications',
       duration: '30 min',
@@ -283,7 +277,7 @@ const ITEMS = [
     duration: '30 min',
   },
   {
-    id: '7',
+    id: '6',
     time: '15:15',
     title: 'Securing your Software Supply Chain on Kubernetes with Sigstore',
     duration: '30 min',
@@ -296,7 +290,7 @@ const ITEMS = [
     presentation:
       'How secure are the images running in your Kubernetes cluster right now? If you don’t know, then this talk is for you! In this talk, Priya Wadhwa will discuss how to determine the composition and vulnerability risk of your images. She’ll cover how to secure your images with easy container signing through Sigstore, and how to enforce policies against your images in your Kubernetes cluster with the Sigstore policy-controller. This talk will demo how to set this up while diving in to the SLSA principles of software supply chain security and how they can be applied to secure a build pipeline. \n',
     coincidedEvent: {
-      id: '14',
+      id: '13',
       time: '15:15',
       title: 'Closing the Developer Experience Gap of your Container Platforms',
       duration: '30 min',
@@ -326,7 +320,7 @@ const ITEMS = [
     duration: '15 min',
   },
   {
-    id: '9',
+    id: '8',
     time: '16:00',
     title:
       "Process is what naturally follows - a cloud platform's guide on people-first transformation",
@@ -340,28 +334,18 @@ const ITEMS = [
     presentation:
       "The fastest way to change the world is by making it a business case. Let's talk about real transformation hands-on, about time-to-market and the priorities when it's necessary to change cultural paradigms.",
     coincidedEvent: {
-      id: '16',
+      id: '15',
       time: '16:00',
-      title: "What We've Learned from Scanning 10K+ Kubernetes Clusters",
+      title: 'Bridging Dev and Ops with eBPF: Extending Observability Upwards and Downwards',
       duration: '30 min',
       speakers: [
         {
-          name: 'Matthias Bertschy',
-          photo: MatthiasPhoto,
+          name: 'Raphaël Pinson',
+          photo: RaphaelPhoto,
         },
       ],
       presentation:
-        'The number of misconfigurations, unpatched vulnerabilities, & overly-privileged users in K8s systems is\n' +
-        "ASTOUNDING. We learned this from analyzing the data from more than 10K+ unique K8s cluster scans, and we've\n" +
-        'learned a great deal about the state of K8s risk, compliance, & security vulnerabilities.\n' +
-        '\n' +
-        "In this talk we'll shed light on the most common misconfigurations according to multiple frameworks (NSA-CISA,\n" +
-        'MITRE ATT&CK), alongside known vulnerabilities, & RBAC violations in CI/CD pipelines.\n' +
-        '\n' +
-        "We'll also provide interesting insights on why and where Kubernetes deployments mostly commonly fail and\n" +
-        'statistics on which controls fail most, as well as the weak spots and gotchas to pay attention to. Stick around\n' +
-        "though, as we'll wrap up with some simple measures your can take immediately to work towards eliminating these\n" +
-        'risks and improving your overall cloud native security posture.',
+        'eBPF (extended Berkeley Packet Filter) is a powerful and versatile technology that can be used to extend observability in Linux systems. In this talk, we will explore how eBPF can be used to bridge the gap between dev and ops by providing a deeper understanding of the kernel and OS internals as well as the applications running on top. We will discuss how eBPF can be used to extend observability downwards by enabling access to low-level system information and how it can be used to extend observability upwards by providing application-level tracing capabilities.',
     },
   },
   {
@@ -370,21 +354,19 @@ const ITEMS = [
     duration: '15 min',
   },
   {
-    id: '2',
+    id: '1',
     time: '16:45',
-    title: 'Reverse Engineering Cloud Native: Interoperability and Community',
+    title: 'eBPF for Security',
     duration: '30 min',
     isKeynote: true,
     speakers: [
       {
-        name: 'Katie Gamanji',
-        photo: KatieGamanjiPhoto,
+        name: 'Liz Rice',
+        photo: LizRicePhoto,
       },
     ],
     presentation:
-      'Kubernetes has become the default container orchestrator framework, setting the standards for application deployment in a distributed environment. In the past years, numerous tools have been developed to extend Kubernetes capabilities and enhance its features. Simultaneously, the expansion of the technology landscape prompted the growth of the adopter base and the number of scenarios where cloud native can be applied. The organic adoption and development of new tools, created the ecosystem and community as we know it today.\n' +
-      '\n' +
-      "This keynote will feature the core principles that define the next generation's identity of cloud native practitioners using a reverse engineering approach. It will present the interoperability of tools, inclusivity at the community and adopters level, and a culture of change and education that drives the ubiquity of the cloud native.",
+      'eBPF is a ground-breaking technology that allows us to customize the behavior of the operating system’s kernel. In this talk you’ll get an introduction to how eBPF works, and then we’ll dive into how it’s being used for a new generation of security tools. You’ll see how the Cilium team are using their in-depth knowledge of eBPF and the Linux kernel to create Tetragon, a powerful open source solution for security observability and enforcement.',
   },
   {
     time: '17:15',
@@ -422,6 +404,8 @@ const Schedule = ({ location }) => {
 
       if (state?.modalId) {
         handleModalShow(Number(state.modalId));
+      } else {
+        handleModalHide();
       }
 
       if (state?.isCoincidedEvent) {
