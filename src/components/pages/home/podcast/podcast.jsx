@@ -11,7 +11,7 @@ const Podcast = () => (
   <section className="safe-paddings pb-40 md:pb-20">
     <div className="container-md">
       <div className="flex items-center gap-x-[10%] md:flex-col md:gap-y-8 sm:items-center">
-        <div className="w-[416px] shrink-0">
+        <div className="w-[416px] max-w-full shrink-0">
           <StaticImage
             className="rounded-[4px] shadow-xl"
             imgClassName="rounded-[4px]"

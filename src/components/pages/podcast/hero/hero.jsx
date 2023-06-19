@@ -73,7 +73,7 @@ const Hero = () => {
       <div className="container-md">
         <h1 className="text-6xl font-bold leading-denser">Podcast</h1>
         <div className="mt-20 flex gap-x-[10%] md:mt-10 md:flex-col md:gap-y-10">
-          <div className="w-[384px] shrink-0">
+          <div className="w-[384px] max-w-full shrink-0">
             <StaticImage
               className="rounded-[4px] shadow-xl"
               imgClassName="rounded-[4px]"
@@ -82,7 +82,7 @@ const Hero = () => {
               loading="eager"
             />
             <div className="mt-7 flex items-center text-primary-1">
-              <h3>Share episode:</h3>
+              <h3 className="whitespace-nowrap">Share episode:</h3>
               <div className="ml-6 flex gap-x-4">
                 {PODCAST_SOCIAL_LINKS.map(({ icon: Icon, tag: Tag }, index) => (
                   <Tag className="group" url={sharedUrl} title={SOCIAL_SHARE_TEXT} key={index}>
@@ -123,14 +123,14 @@ const Hero = () => {
             </div>
             <div className="mt-5 text-primary-1">
               <h3 className="mt-7">Listen to podcast:</h3>
-              <ul className="mt-3 flex gap-x-5">
+              <ul className="mt-3 flex gap-x-5 md:gap-x-3">
                 {PODCAST_LINKS.map((link, index) => {
                   const Icon = link.icon;
 
                   return (
-                    <li className="" key={index}>
+                    <li key={index}>
                       <a
-                        className="flex h-full items-center justify-center rounded-lg border border-primary-2 py-2 px-7 shadow-sm transition-colors duration-200 hover:text-blue-1"
+                        className="flex h-full items-center justify-center rounded-lg border border-primary-2 py-2 px-7 shadow-sm transition-colors duration-200 hover:text-blue-1 md:px-5"
                         href={link.to}
                         target="_blank"
                         rel="nofollow noreferrer"
