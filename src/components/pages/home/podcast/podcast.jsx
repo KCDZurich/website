@@ -17,7 +17,6 @@ const Podcast = () => (
             imgClassName="rounded-[4px]"
             src="../../podcast/hero/img/podcast-cover.jpg"
             alt="Podcast cover"
-            loading="eager"
           />
         </div>
         <div>

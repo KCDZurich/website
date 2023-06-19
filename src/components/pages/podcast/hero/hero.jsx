@@ -72,8 +72,8 @@ const Hero = () => {
     <section className="safe-paddings pt-28 pb-20 md:pt-20">
       <div className="container-md">
         <h1 className="text-6xl font-bold leading-denser">Podcast</h1>
-        <div className="mt-20 flex gap-x-[10%] md:mt-10 md:flex-col md:gap-y-10">
-          <div className="w-[384px] max-w-full shrink-0">
+        <div className="mt-20 flex gap-x-[10%] md:mt-10 sm:flex-col sm:gap-y-10">
+          <div className="w-[384px] max-w-full shrink-0 md:w-2/5 sm:w-full">
             <StaticImage
               className="rounded-[4px] shadow-xl"
               imgClassName="rounded-[4px]"
