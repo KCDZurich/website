@@ -84,8 +84,9 @@ module.exports = {
         tighter: '-0.04em',
       },
       boxShadow: {
+        sm: '0px 4px 8px rgba(38, 47, 89, 0.1)',
         lg: '0px 14px 20px rgba(38, 47, 89, 0.1)',
-        xl: '0px 15px 40px #999999',
+        xl: '0px 14px 40px #ccc',
       },
     },
   },

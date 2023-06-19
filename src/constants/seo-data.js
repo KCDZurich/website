@@ -38,6 +38,11 @@ export default {
     title: 'Team — Kubernetes Community Days',
     description: 'Experience the power of community at the Kubernetes Community Days in Zurich!',
   },
+  podcast: {
+    title: 'Meet the Speakers of Kubernetes Community Day Zürich 2023 Podcast',
+    description:
+      'Listen in to our exciting Kubernetes Community Day Zürich 2023 Podcast to hear from our renowned speakers\n',
+  },
   static: ({ title }) => ({
     title: `${title} — Kubernetes Community Days`,
   }),
