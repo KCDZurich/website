@@ -21,6 +21,13 @@ const Venue = () => (
           experts from all levels and backgrounds to learn, network, and share their knowledge on
           all things cloud native.
         </p>
+        <p className="mt-7">
+          Watch all the speakers’ sessions videos from June 15, 2023 on{' '}
+          <Link className="" to="/archive" theme="primary">
+            Archive page
+          </Link>
+          !
+        </p>
       </div>
 
       <div className="lg:mt-38 mt-40 xl:mt-32 md:mt-24">

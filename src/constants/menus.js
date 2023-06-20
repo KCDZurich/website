@@ -6,6 +6,7 @@ const MENUS = {
     { text: 'Schedule', ...LINKS.schedule },
     { text: 'Sponsors', ...LINKS.sponsors },
     { text: 'Workshops', ...LINKS.workshops },
+    { text: 'Archive', ...LINKS.archive },
   ],
   footer: [
     { text: 'Code of Conduct', ...LINKS.conduct },
@@ -18,6 +19,7 @@ const MENUS = {
     { text: 'Schedule', ...LINKS.schedule },
     { text: 'Call for Proposal', ...LINKS.proposal },
     { text: 'Workshops', ...LINKS.workshops },
+    { text: 'Archive', ...LINKS.archive },
     { text: 'Sponsors', ...LINKS.sponsors },
   ],
 };
