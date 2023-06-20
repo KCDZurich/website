@@ -71,7 +71,7 @@ const Hero = () => {
   return (
     <section className="safe-paddings pt-28 pb-20 md:pt-20">
       <div className="container-md">
-        <h1 className="text-6xl font-bold leading-denser">Podcast</h1>
+        <h1 className="text-6xl font-bold leading-denser text-primary-1">Podcast</h1>
         <div className="mt-20 flex gap-x-[10%] md:mt-10 sm:flex-col sm:gap-y-10">
           <div className="w-[384px] max-w-full shrink-0 md:w-2/5 sm:w-full">
             <StaticImage
@@ -81,7 +81,7 @@ const Hero = () => {
               alt="Podcast cover"
               loading="eager"
             />
-            <div className="mt-7 flex items-center overflow-x-hidden text-primary-1">
+            <div className="mt-7 flex items-center overflow-hidden text-primary-1">
               <h3 className="whitespace-nowrap">Share episode:</h3>
               <div className="ml-6 flex gap-x-4 md:ml-3">
                 {PODCAST_SOCIAL_LINKS.map(({ icon: Icon, tag: Tag }, index) => (
