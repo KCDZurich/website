@@ -74,7 +74,7 @@ const Hero = () => {
         <h1 className="flex items-center text-6xl font-bold leading-denser text-primary-1">
           Podcast
           <a
-            className="ml-8 flex w-[130px] items-center justify-center rounded-[50px] border border-primary-2 px-4 py-2"
+            className="ml-8 flex w-[130px] min-w-[90px] items-center justify-center rounded-[50px] border border-primary-2 px-4 py-2 sm:ml-2.5"
             href="https://b-nova.com"
             aria-label="b-nova"
             target="_blank"
