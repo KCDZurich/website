@@ -92,16 +92,19 @@ const Hero = () => {
                 <LazyMotion features={domAnimation}>
                   <m.button
                     className={clsx(
-                      'relative flex items-center py-2 transition duration-200',
+                      'relative flex cursor-default items-center py-2 transition duration-200',
                       isCopied && 'pointer-events-none'
                     )}
                     animate={isCopied ? 'toggled' : 'initial'}
                     disabled={isCopied}
                     onClick={() => handleCopy(sharedUrl)}
                   >
-                    <CopyIcon className="w-5 shrink-0" aria-hidden />
+                    <CopyIcon
+                      className="w-5 shrink-0 cursor-pointer transition duration-200 hover:text-blue-1"
+                      aria-hidden
+                    />
                     <m.p
-                      className="ml-2 whitespace-nowrap text-sm font-semibold leading-none opacity-0"
+                      className="ml-2 whitespace-nowrap text-sm font-semibold leading-none opacity-0 md:ml-1"
                       variants={{
                         initial: {
                           opacity: 0,
