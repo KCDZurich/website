@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 import slugify from 'slugify';
 
 import MENUS from 'constants/menus';
@@ -9,9 +9,21 @@ import Logo from 'icons/logo.inline.svg';
 import Burger from '../burger';
 import Button from '../button';
 import Link from '../link';
+import Modal from '../modal';
 
 const Header = ({ isMobileMenuOpen, onBurgerClick, additionalClassName, homepage }) => {
   const getAnchor = (str) => slugify(str).toLocaleLowerCase();
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const handleModalShow = () => {
+    document.body.classList.add('overflow-hidden');
+    setIsModalVisible(true);
+  };
+
+  const handleModalHide = () => {
+    document.body.classList.remove('overflow-hidden');
+    setIsModalVisible(false);
+  };
 
   const handleAnchorClick = (e) => {
     const id = getAnchor(e.target.firstChild.data);
@@ -66,18 +78,24 @@ const Header = ({ isMobileMenuOpen, onBurgerClick, additionalClassName, homepage
         </nav>
         <Button
           className="-mr-2 md:hidden"
-          to="https://tickets.kcdzurich.ch/"
           theme="primary"
           size="sm"
-          target="_blank"
+          onClick={() => handleModalShow()}
         >
-          Get your ticket
+          KCD Zürich 2023 Video
         </Button>
 
         <Burger
           className={clsx('z-50 hidden md:block', isMobileMenuOpen && 'text-black dark:text-white')}
           isToggled={isMobileMenuOpen}
           onClick={onBurgerClick}
+        />
+
+        <Modal
+          modalData={{}}
+          isVisible={isModalVisible}
+          isVideoModal
+          onModalHide={handleModalHide}
         />
       </div>
     </header>
