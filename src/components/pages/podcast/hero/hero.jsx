@@ -81,9 +81,9 @@ const Hero = () => {
               alt="Podcast cover"
               loading="eager"
             />
-            <div className="mt-7 flex items-center text-primary-1">
+            <div className="mt-7 flex items-center overflow-x-hidden text-primary-1">
               <h3 className="whitespace-nowrap">Share episode:</h3>
-              <div className="ml-6 flex gap-x-4">
+              <div className="ml-6 flex gap-x-4 md:ml-3">
                 {PODCAST_SOCIAL_LINKS.map(({ icon: Icon, tag: Tag }, index) => (
                   <Tag className="group" url={sharedUrl} title={SOCIAL_SHARE_TEXT} key={index}>
                     <Icon className="h-5 w-5 transition-colors duration-200 group-hover:text-blue-1" />
@@ -133,7 +133,7 @@ const Hero = () => {
                   return (
                     <li key={index}>
                       <a
-                        className="flex h-full items-center justify-center rounded-lg border border-primary-2 py-2 px-7 shadow-sm transition-colors duration-200 hover:text-blue-1 md:px-5"
+                        className="flex h-full items-center justify-center rounded-lg border border-primary-2 py-2 px-7 shadow-sm transition-colors duration-200 hover:text-blue-1 md:px-4"
                         href={link.to}
                         target="_blank"
                         rel="nofollow noreferrer"
