@@ -71,7 +71,24 @@ const Hero = () => {
   return (
     <section className="safe-paddings pt-28 pb-20 md:pt-20">
       <div className="container-md">
-        <h1 className="text-6xl font-bold leading-denser text-primary-1">Podcast</h1>
+        <h1 className="flex items-center text-6xl font-bold leading-denser text-primary-1">
+          Podcast
+          <a
+            className="ml-8 flex w-[130px] items-center justify-center rounded-[50px] border border-primary-2 px-4 py-2"
+            href="https://b-nova.com"
+            aria-label="b-nova"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <StaticImage
+              className=""
+              imgClassName=""
+              src="./img/b-nova-logo.png"
+              alt="b nova"
+              loading="eager"
+            />
+          </a>
+        </h1>
         <div className="mt-20 flex gap-x-[10%] md:mt-10 sm:flex-col sm:gap-y-10">
           <div className="w-[384px] max-w-full shrink-0 md:w-2/5 sm:w-full">
             <StaticImage
