@@ -5,7 +5,7 @@ import Button from 'components/shared/button';
 
 const TITLE = 'Podcast';
 const DESCRIPTION =
-  'Discover the Kubernetes Universe at Kubernetes Community Days Zurich 2023, powered by B-Nova. Tune in to the podcast episode where industry leaders and developers shape the future of container orchestration.';
+  'Discover the Kubernetes Universe at Kubernetes Community Days Zurich 2023, powered by b-nova. Tune in to the podcast episode where industry leaders and developers shape the future of container orchestration.';
 
 const Podcast = () => (
   <section className="safe-paddings pb-40 md:pb-20">
