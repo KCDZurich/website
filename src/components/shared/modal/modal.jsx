@@ -1,14 +1,18 @@
+import clsx from 'clsx';
 import { AnimatePresence, m, LazyMotion, domAnimation, useReducedMotion } from 'framer-motion';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React, { useCallback, useEffect, useId } from 'react';
 
+import CloseIcon from 'icons/close.inline.svg';
 import CommunityIcon from 'icons/cncf-icon.inline.svg';
 import GithubIcon from 'icons/github-icon.inline.svg';
 import InstagramIcon from 'icons/instagram-icon.inline.svg';
 import LinkedInIcon from 'icons/linkedin-icon.inline.svg';
 import TwitterIcon from 'icons/twitter-icon.inline.svg';
 import WebsiteIcon from 'icons/webpage-icon.inline.svg';
+
+import Button from '../button';
 
 const defaultModalAnimation = {
   transition: { duration: 0.2, delay: 0.1, ease: 'easeInOut' },
@@ -29,7 +33,7 @@ const defaultModalBackdropAnimation = {
   exit: { opacity: 0 },
 };
 
-const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow }) => {
+const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoModal }) => {
   const {
     id = '',
     name = '',
@@ -73,14 +77,41 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow }) => {
       {isVisible && (
         <LazyMotion features={domAnimation}>
           <m.div
-            className="fixed inset-0 z-20 m-auto flex h-[fit-content] max-h-[calc(100%-60px)] max-w-[592px] flex-col overflow-y-auto rounded bg-white p-10 text-primary-1 sm:left-2 sm:right-2 sm:p-5"
+            className={clsx(
+              'fixed inset-0 z-20 m-auto flex h-[fit-content] max-h-[calc(100%-60px)] max-w-[592px] flex-col rounded bg-white text-primary-1 sm:left-2 sm:right-2',
+              {
+                'overflow-y-auto p-10 sm:p-5': !isVideoModal,
+                'w-[1200px] max-w-[90vw]': isVideoModal,
+              }
+            )}
             key="modal"
             role="dialog"
             aria-modal="true"
             aria-labelledby={headingId}
             {...modalAnimation}
           >
-            {isPresentationShow ? (
+            {/* eslint-disable-next-line no-nested-ternary */}
+            {isVideoModal ? (
+              <>
+                <iframe
+                  allow="autoplay; picture-in-picture; web-share"
+                  src="https://www.youtube.com/embed/7-b0llQFT8E?autoplay=0&mute=0&rel=0"
+                  title="Kubernetes Community Days Zurich 2023"
+                  width="100%"
+                  height="520"
+                  allowFullScreen
+                />
+                <Button
+                  className="z-999 absolute -top-12 -right-12 border-0 bg-transparent"
+                  theme="primary"
+                  size="sm"
+                  aria-label="close modal"
+                  onClick={onModalHide}
+                >
+                  <CloseIcon className="h-7 w-7" aria-hidden />
+                </Button>
+              </>
+            ) : isPresentationShow ? (
               <>
                 <div className="flex items-center">
                   <time className="text-sm font-semibold leading-none tracking-tight text-primary-1 opacity-60">
@@ -263,7 +294,8 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow }) => {
 Modal.propTypes = {
   onModalHide: PropTypes.func.isRequired,
   isVisible: PropTypes.bool.isRequired,
-  isPresentationShow: PropTypes.bool.isRequired,
+  isPresentationShow: PropTypes.bool,
+  isVideoModal: PropTypes.bool,
   modalData: PropTypes.shape({
     id: PropTypes.string,
     photo: PropTypes.string,
@@ -284,4 +316,10 @@ Modal.propTypes = {
     isCoincidedEvent: PropTypes.bool,
   }).isRequired,
 };
+
+Modal.defaultProps = {
+  isPresentationShow: false,
+  isVideoModal: false,
+};
+
 export default Modal;

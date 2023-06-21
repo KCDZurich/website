@@ -43,6 +43,11 @@ export default {
     description:
       'Relive the exciting moments from Kubernetes Community Days Zürich 2023. Explore our collection of talk videos and event pictures that capture the best of this event.',
   },
+  podcast: {
+    title: 'Meet the Speakers of Kubernetes Community Day Zürich 2023 Podcast',
+    description:
+      'Listen in to our exciting Kubernetes Community Day Zürich 2023 Podcast to hear from our renowned speakers\n',
+  },
   static: ({ title }) => ({
     title: `${title} — Kubernetes Community Days`,
   }),
