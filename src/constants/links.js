@@ -51,6 +51,10 @@ export default {
     to: 'https://events.linuxfoundation.org/about/code-of-conduct/',
     target: '_blank',
   },
+  podcast: {
+    to: '/podcast',
+    homeTo: '/podcast',
+  },
 
   // Social-links
   linkedin: {
