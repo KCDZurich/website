@@ -19,8 +19,8 @@ const Podcast = () => (
             alt="Podcast cover"
           />
         </div>
-        <div>
-          <h2 className="text-6xl font-bold leading-tight text-primary-1">{TITLE}</h2>
+        <div className="text-primary-1">
+          <h2 className="text-6xl font-bold leading-tight">{TITLE}</h2>
           <p className="mt-5 text-lg">{DESCRIPTION}</p>
           <Button className="mt-7" to="/podcast" theme="primary" size="lg">
             Discover our podcast
