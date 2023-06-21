@@ -3,7 +3,6 @@ import React from 'react';
 
 import Hero from 'components/pages/home/hero';
 import Partners from 'components/pages/home/partners';
-import Schedule from 'components/pages/home/schedule';
 import Speakers from 'components/pages/home/speakers';
 import Sponsors from 'components/pages/home/sponsors';
 import Venue from 'components/pages/home/venue';
@@ -16,7 +15,6 @@ const HomePage = ({ location }) => (
     <Hero />
     <Venue />
     <Speakers location={location} />
-    <Schedule />
     <Workshops />
     <Sponsors />
     <Partners />
