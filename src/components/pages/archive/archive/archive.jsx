@@ -26,7 +26,7 @@ const ITEMS = [
     title: 'Cilium Mesh - How to Connect Kubernetes with Legacy VM and Server Infrastructure',
     duration: '30 min',
     isKeynote: true,
-    pdf: '/',
+    pdf: '/archive/Liz-Rice-eBPF-for-security.pdf',
     speakers: [
       {
         name: 'Thomas Graf',
@@ -41,7 +41,7 @@ const ITEMS = [
     id: '02',
     title: 'The state of Green Washing - or how to build sustainable systems with Kubernetes ',
     duration: '30 min',
-    pdf: '/',
+    pdf: '/archive/Liz-Rice-eBPF-for-security.pdf',
     speakers: [
       {
         name: 'Max Körbächer',
@@ -362,7 +362,8 @@ const Archive = () => (
                 <Link
                   className="mt-6 inline-block font-semibold"
                   theme="blue-underlined"
-                  to="mailto:hello@kcdzurich.ch"
+                  to={pdf}
+                  download
                 >
                   Download PDF
                 </Link>
