@@ -3,6 +3,15 @@ import React from 'react';
 const Venue = () => (
   <section className="safe-paddings bg-white py-40 md:py-24 sm:py-16">
     <div className="container-md">
+      <iframe
+        className="mb-20"
+        allow="autoplay; picture-in-picture; web-share"
+        src="https://www.youtube.com/embed/7-b0llQFT8E?autoplay=0&mute=0&rel=0"
+        title="Kubernetes Community Days Zurich 2023"
+        width="100%"
+        height="400"
+        allowFullScreen
+      />
       <div className="text-2xl text-primary-1 sm:text-lg">
         <p>
           <span className="font-bold">Kubernetes Community Days</span> (KCDs) are global,

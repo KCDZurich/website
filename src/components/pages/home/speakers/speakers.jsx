@@ -373,7 +373,7 @@ const Speakers = ({ location }) => {
   }, [location]);
 
   return (
-    <section className="safe-paddings relative bg-white pb-40 lg:pb-32 md:py-24 sm:py-16">
+    <section className="safe-paddings relative bg-white md:pt-24 sm:pt-16">
       <div className="container flex flex-col sm:items-center">
         <h2
           className="text-6xl font-bold leading-tight text-primary-1 md:text-center"
