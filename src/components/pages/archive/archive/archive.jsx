@@ -17,6 +17,7 @@ import RicardoRochaPhoto from 'components/pages/schedule/schedule/images/ricardo
 import SebastianKisterPhoto from 'components/pages/schedule/schedule/images/sebastian-kister-photo.jpg';
 import ThomasGrafPhoto from 'components/pages/schedule/schedule/images/thomas-graf-photo.jpg';
 import TimoSalmPhoto from 'components/pages/schedule/schedule/images/timo-salm-photo.jpg';
+import Link from 'components/shared/link';
 
 // TODO: merge with ITEMS array from components/pages/schedule
 const ITEMS = [
@@ -25,6 +26,7 @@ const ITEMS = [
     title: 'Cilium Mesh - How to Connect Kubernetes with Legacy VM and Server Infrastructure',
     duration: '30 min',
     isKeynote: true,
+    pdf: '/',
     speakers: [
       {
         name: 'Thomas Graf',
@@ -39,6 +41,7 @@ const ITEMS = [
     id: '02',
     title: 'The state of Green Washing - or how to build sustainable systems with Kubernetes ',
     duration: '30 min',
+    pdf: '/',
     speakers: [
       {
         name: 'Max Körbächer',
@@ -303,51 +306,67 @@ const ITEMS = [
       'eBPF is a ground-breaking technology that allows us to customize the behavior of the operating system’s kernel. In this talk you’ll get an introduction to how eBPF works, and then we’ll dive into how it’s being used for a new generation of security tools. You’ll see how the Cilium team are using their in-depth knowledge of eBPF and the Linux kernel to create Tetragon, a powerful open source solution for security observability and enforcement.',
   },
 ];
+
 const TITLE = 'Kubernetes Community Day Zürich 2023';
 const DATE = '15 June, 2023';
 
 const Archive = () => (
-  <section className="safe-paddings py-10">
-    <div className="container">
-      <h2 className="">{TITLE}</h2>
-      <time dateTime="2023-06-15">{DATE}</time>
-      <ul className="">
-        {ITEMS.map(({ title, duration, isKeynote, speakers }, index) => (
-          <li className="" key={index}>
-            <div className="">{isKeynote && <span className="">Keynote</span>}</div>
+  <section className="safe-paddings py-24">
+    <div className="container-md text-primary-1">
+      <h2 className="text-2xl font-bold leading-snug">{TITLE}</h2>
+      <time className="mt-3 block text-lg leading-normal" dateTime="2023-06-15">
+        {DATE}
+      </time>
+      <ul className="mt-8 flex flex-col gap-y-6">
+        {ITEMS.map(({ title, duration, isKeynote, speakers, presentation, pdf }, index) => (
+          <li className="flex gap-x-12 border-b border-primary-3 pb-6" key={index}>
+            <div className="w-[384px] shrink-0 bg-gray-11" />
             <div className="">
-              <div className="">
-                <h3 className="">
-                  <span className="">{title}</span>
-                  {isKeynote && <span className="">Keynote</span>}
-                </h3>
-                <div className="">
-                  <span className="rounded-full bg-yellow px-2 py-2 text-[13px] font-semibold leading-none tracking-tighter text-primary-1 md:text-xs">
-                    {duration}
+              <div className="flex items-center gap-x-8">
+                {speakers && speakers.length > 0 && (
+                  <ul className="relative inline-flex gap-x-5 sm:gap-x-4">
+                    {speakers.map(({ name, photo }, index) => (
+                      <li className="" key={index}>
+                        <figure className="flex items-center gap-x-2">
+                          <img
+                            className="h-7 w-7 rounded-full"
+                            src={photo}
+                            width={28}
+                            height={28}
+                            alt={name}
+                            loading="lazy"
+                          />
+                          <figcaption className="text-sm font-medium leading-none text-primary-5 md:text-[13px]">
+                            {name}
+                          </figcaption>
+                        </figure>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <span className="relative rounded-full bg-yellow px-2 py-2 text-[13px] font-semibold leading-none tracking-tighter text-primary-1 before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3 md:text-xs">
+                  {duration}
+                </span>
+                {isKeynote && (
+                  <span className="relative rounded-full bg-blue-1 px-2 py-2 text-xs font-semibold leading-none tracking-tighter text-white before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3 sm:hidden">
+                    Keynote
                   </span>
-                  {speakers && speakers.length > 0 && (
-                    <ul className="relative inline-flex gap-x-5 before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3 sm:gap-x-4">
-                      {speakers.map(({ name, photo }, index) => (
-                        <li className="" key={index}>
-                          <figure className="flex items-center gap-x-2">
-                            <img
-                              className="h-7 w-7 rounded-full"
-                              src={photo}
-                              width={28}
-                              height={28}
-                              alt={name}
-                              loading="lazy"
-                            />
-                            <figcaption className="text-sm font-medium leading-none text-primary-5 md:text-[13px]">
-                              {name}
-                            </figcaption>
-                          </figure>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
+                )}
               </div>
+              <h3 className="mt-4 text-lg font-semibold leading-snug tracking-tight">{title}</h3>
+              <div
+                className="overflowed-text mt-4 mb-0 text-lg leading-normal"
+                dangerouslySetInnerHTML={{ __html: presentation }}
+              />
+              {pdf && (
+                <Link
+                  className="mt-6 inline-block font-semibold"
+                  theme="blue-underlined"
+                  to="mailto:hello@kcdzurich.ch"
+                >
+                  Download PDF
+                </Link>
+              )}
             </div>
           </li>
         ))}

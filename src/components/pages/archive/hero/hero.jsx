@@ -4,31 +4,34 @@ import Button from 'components/shared/button';
 
 const TITLE = 'Archive';
 const DESCRIPTION =
-  'Thank you to each of you for making Kubernetes Community Days Zürich a resounding success. Our sincere thanks also go to our sponsors. Your support played a crucial role in the success of this event.';
+  'Thank you to each of you for making <b>Kubernetes Community Days Zürich</b> a resounding success. Our sincere thanks also go to our <b>sponsors</b>. Your support played a crucial role in the success of this event.';
 
 const Hero = () => (
-  <section className="safe-paddings overflow-hidden bg-[#EDC3C7] bg-opacity-10 pt-28 pb-40 lg:pb-32 md:pt-24 md:pb-[500px] sm:pb-[520px] [@media(max-width:600px)]:pb-[430px] [@media(max-width:460px)]:pb-[420px]">
-    <div className="container flex items-center gap-x-5 lg:flex-col">
-      <div className="text-primary-1">
-        <h1 className="text-6xl font-bold leading-tight sm:text-5xl">{TITLE}</h1>
-        <p className="mt-9 text-lg leading-normal">{DESCRIPTION}</p>
+  <section className="safe-paddings overflow-hidden bg-[#EDC3C7] bg-opacity-10 pt-28 pb-40 lg:pb-32 md:pt-24 md:pb-24">
+    <div className="container flex items-center gap-x-10 md:flex-col md:gap-y-10">
+      <div className="text-primary-1 md:flex md:flex-col md:items-center md:text-center">
+        <h1 className="text-6xl font-bold leading-tight lg:max-w-[500px] sm:text-5xl">{TITLE}</h1>
+        <p
+          className="mt-9 text-lg leading-normal lg:max-w-[500px]"
+          dangerouslySetInnerHTML={{ __html: DESCRIPTION }}
+        />
         <Button
           className="mt-7 text-white shadow-[0_15px_40px_#999999] hover:shadow-[0px_15px_30px_#adadad]"
-          to="https://tickets.kcdzurich.ch/"
+          to="https://www.youtube.com/watch?v=7-b0llQFT8E"
           theme="blue"
           size="lg"
           target="_blank"
         >
-          Get your ticket
+          Watch on YouTube
         </Button>
       </div>
       <iframe
-        className="max-w-[800px] shrink-0"
+        className="max-w-[800px] shrink-0 lg:max-w-[700px]"
         allow="autoplay; picture-in-picture; web-share"
         src="https://www.youtube.com/embed/7-b0llQFT8E?autoplay=0&mute=0&rel=0"
         title="Kubernetes Community Days Zurich 2023"
         width="100%"
-        height="400"
+        height="350"
         allowFullScreen
       />
     </div>
