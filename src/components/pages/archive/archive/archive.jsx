@@ -26,8 +26,8 @@ const ITEMS = [
     title: 'Cilium Mesh - How to Connect Kubernetes with Legacy VM and Server Infrastructure',
     duration: '30 min',
     isKeynote: true,
-    pdf: '/archive/Liz-Rice-eBPF-for-security.pdf',
-    videoSrc: 'https://www.youtube.com/embed/7-b0llQFT8E',
+    pdf: '/archive/Thomas Graf - Cilium Mesh - Connecting.pdf',
+    videoSrc: '',
     speakers: [
       {
         name: 'Thomas Graf',
@@ -42,8 +42,8 @@ const ITEMS = [
     id: '02',
     title: 'The state of Green Washing - or how to build sustainable systems with Kubernetes ',
     duration: '30 min',
-    pdf: '/archive/Liz-Rice-eBPF-for-security.pdf',
-    videoSrc: 'https://www.youtube.com/embed/7-b0llQFT8E',
+    pdf: '/archive/Max Koerbaecher - State of greenwashing KCD Zürich.pdf',
+    videoSrc: 'https://www.youtube.com/embed/X1LWl_dH15A',
     speakers: [
       {
         name: 'Max Körbächer',
@@ -57,6 +57,8 @@ const ITEMS = [
     id: '03',
     title: 'Forensic container checkpointing and analysis',
     duration: '30 min',
+    pdf: '/archive/Adrian Reber - forensic-container-checkpointing.pdf',
+    videoSrc: '',
     speakers: [
       {
         name: 'Adrian Reber',
@@ -78,6 +80,8 @@ const ITEMS = [
     id: '04',
     title: 'When Things Get Big: Scaling Cloud Native Workloads and Software Distribution',
     duration: '30 min',
+    pdf: '/archive/Ricardo Rocha - When Things Get Big.pdf',
+    videoSrc: 'https://www.youtube.com/embed/eCtr7NIZKJk',
     speakers: [
       {
         name: 'Ricardo Rocha',
@@ -91,6 +95,8 @@ const ITEMS = [
     id: '05',
     title: 'Demystifying eBPF - eBPF Firewall from scratch',
     duration: '30 min',
+    pdf: '/archive/Filip Nicolic - ebpf-firewall-from-scratch.pdf',
+    videoSrc: '',
     speakers: [
       {
         name: 'Filip Nicolic',
@@ -113,6 +119,8 @@ const ITEMS = [
     id: '06',
     title: 'Responsible AI: The Key to Ethical, Safe and Inclusive Software Development',
     duration: '30 min',
+    pdf: '/archive/Lisa Falco - ResponsibleAI.pdf',
+    videoSrc: '',
     speakers: [
       {
         name: 'Lisa Falco',
@@ -146,6 +154,8 @@ const ITEMS = [
     id: '07',
     title: 'What Anime Taught Me About K8s & Tech Careers',
     duration: '30 min',
+    pdf: '/archive/Annie Talvasto - What Anime Taught Me about K8s & Tech Careers.pdf',
+    videoSrc: 'https://www.youtube.com/embed/AQzImhUOc-A',
     speakers: [
       {
         name: 'Annie Talvasto',
@@ -159,6 +169,8 @@ const ITEMS = [
     id: '08',
     title: 'Buzzing Across the Cloud Native Landscape with eBPF',
     duration: '30 min',
+    pdf: '/archive/Bill Mulligan - Buzz or Byte_ eBPF.pdf',
+    videoSrc: 'https://www.youtube.com/embed/2KzyYwn68Ew',
     speakers: [
       {
         name: 'Bill Mulligan',
@@ -182,6 +194,8 @@ const ITEMS = [
     time: '13:30',
     title: 'Streamlined Troubleshooting in Kubernetes',
     duration: '30 min',
+    pdf: '/archive/Lena Fuhrimann - Streamlined Kubernetes Troubleshooting.pdf',
+    videoSrc: 'https://www.youtube.com/embed/sk6j7_VFhSc',
     speakers: [
       {
         name: 'Lena Fuhrimann',
@@ -198,6 +212,8 @@ const ITEMS = [
     id: '10',
     title: 'Native Histograms in Prometheus: A Better Histogram Experience for Everyone',
     duration: '30 min',
+    pdf: '/archive/Julius Volz - Native Histograms.pdf',
+    videoSrc: 'https://www.youtube.com/embed/NDb9yZl1u1Y',
     speakers: [
       {
         name: 'Julius Volz',
@@ -213,6 +229,8 @@ const ITEMS = [
     id: '11',
     title: 'Tales of Serverless - a story about building scalable applications',
     duration: '30 min',
+    pdf: '/archive/Reto Lehmann - Tales of Serverless.pdf',
+    videoSrc: 'https://www.youtube.com/embed/1-wD56yUczs',
     speakers: [
       {
         name: 'Reto Lehmann',
@@ -230,6 +248,8 @@ const ITEMS = [
     id: '12',
     title: 'Securing your Software Supply Chain on Kubernetes with Sigstore',
     duration: '30 min',
+    pdf: '/archive/Priya Wadhwa - Securing your Software Supply Chain on Kubernetes with Sigstore.pdf',
+    videoSrc: 'https://www.youtube.com/embed/Scca_ubkuM0',
     speakers: [
       {
         name: 'Priya Wadhwa',
@@ -244,6 +264,8 @@ const ITEMS = [
     time: '15:15',
     title: 'Closing the Developer Experience Gap of your Container Platforms',
     duration: '30 min',
+    pdf: '/archive/Timo Salm - closing-the-developer-experience-gap-of-your-container-platforms.pdf',
+    videoSrc: '',
     speakers: [
       {
         name: 'Timo Salm',
@@ -269,6 +291,7 @@ const ITEMS = [
     title:
       "Process is what naturally follows - a cloud platform's guide on people-first transformation",
     duration: '30 min',
+    videoSrc: 'https://www.youtube.com/embed/5z7GXebGc80',
     speakers: [
       {
         name: 'Sebastian Kister',
@@ -283,6 +306,8 @@ const ITEMS = [
     time: '16:00',
     title: 'Bridging Dev and Ops with eBPF: Extending Observability Upwards and Downwards',
     duration: '30 min',
+    pdf: '/archive/Raphael Pinson - Bridge Dev & Ops with eBPF.pdf',
+    videoSrc: '',
     speakers: [
       {
         name: 'Raphaël Pinson',
@@ -297,6 +322,8 @@ const ITEMS = [
     time: '16:45',
     title: 'eBPF for Security',
     duration: '30 min',
+    pdf: '/archive/Liz Rice - eBPF for security.pdf',
+    videoSrc: '',
     isKeynote: true,
     speakers: [
       {
@@ -323,8 +350,8 @@ const Archive = () => (
         {ITEMS.map(
           ({ title, duration, isKeynote, speakers, presentation, pdf, videoSrc }, index) => (
             <li className="flex gap-x-12 border-b border-primary-3 pb-6 md:flex-col" key={index}>
-              <div className="w-[384px] max-w-full shrink-0 bg-gray-11 md:mb-4 md:w-[480px]">
-                {videoSrc && (
+              <div className="w-[384px] max-w-full shrink-0 md:mb-4 md:w-[480px]">
+                {videoSrc ? (
                   <iframe
                     className="max-w-full"
                     allow="autoplay; picture-in-picture; web-share"
@@ -334,6 +361,8 @@ const Archive = () => (
                     height="220"
                     allowFullScreen
                   />
+                ) : (
+                  <div className="h-[220px] bg-gray-11" />
                 )}
               </div>
               <div>
