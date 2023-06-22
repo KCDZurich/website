@@ -27,6 +27,7 @@ const ITEMS = [
     duration: '30 min',
     isKeynote: true,
     pdf: '/archive/Liz-Rice-eBPF-for-security.pdf',
+    videoSrc: 'https://www.youtube.com/embed/7-b0llQFT8E',
     speakers: [
       {
         name: 'Thomas Graf',
@@ -42,6 +43,7 @@ const ITEMS = [
     title: 'The state of Green Washing - or how to build sustainable systems with Kubernetes ',
     duration: '30 min',
     pdf: '/archive/Liz-Rice-eBPF-for-security.pdf',
+    videoSrc: 'https://www.youtube.com/embed/7-b0llQFT8E',
     speakers: [
       {
         name: 'Max Körbächer',
@@ -311,66 +313,80 @@ const TITLE = 'Kubernetes Community Day Zürich 2023';
 const DATE = '15 June, 2023';
 
 const Archive = () => (
-  <section className="safe-paddings py-24">
+  <section className="safe-paddings py-24 md:py-16">
     <div className="container-md text-primary-1">
       <h2 className="text-2xl font-bold leading-snug">{TITLE}</h2>
       <time className="mt-3 block text-lg leading-normal" dateTime="2023-06-15">
         {DATE}
       </time>
       <ul className="mt-8 flex flex-col gap-y-6">
-        {ITEMS.map(({ title, duration, isKeynote, speakers, presentation, pdf }, index) => (
-          <li className="flex gap-x-12 border-b border-primary-3 pb-6" key={index}>
-            <div className="w-[384px] shrink-0 bg-gray-11" />
-            <div className="">
-              <div className="flex items-center gap-x-8">
-                {speakers && speakers.length > 0 && (
-                  <ul className="relative inline-flex gap-x-5 sm:gap-x-4">
-                    {speakers.map(({ name, photo }, index) => (
-                      <li className="" key={index}>
-                        <figure className="flex items-center gap-x-2">
-                          <img
-                            className="h-7 w-7 rounded-full"
-                            src={photo}
-                            width={28}
-                            height={28}
-                            alt={name}
-                            loading="lazy"
-                          />
-                          <figcaption className="text-sm font-medium leading-none text-primary-5 md:text-[13px]">
-                            {name}
-                          </figcaption>
-                        </figure>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                <span className="relative rounded-full bg-yellow px-2 py-2 text-[13px] font-semibold leading-none tracking-tighter text-primary-1 before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3 md:text-xs">
-                  {duration}
-                </span>
-                {isKeynote && (
-                  <span className="relative rounded-full bg-blue-1 px-2 py-2 text-xs font-semibold leading-none tracking-tighter text-white before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3 sm:hidden">
-                    Keynote
-                  </span>
+        {ITEMS.map(
+          ({ title, duration, isKeynote, speakers, presentation, pdf, videoSrc }, index) => (
+            <li className="flex gap-x-12 border-b border-primary-3 pb-6 md:flex-col" key={index}>
+              <div className="w-[384px] max-w-full shrink-0 bg-gray-11 md:mb-4 md:w-[480px]">
+                {videoSrc && (
+                  <iframe
+                    className="max-w-full"
+                    allow="autoplay; picture-in-picture; web-share"
+                    src={`${videoSrc}?autoplay=0&mute=0&rel=0`}
+                    title={title}
+                    width="100%"
+                    height="220"
+                    allowFullScreen
+                  />
                 )}
               </div>
-              <h3 className="mt-4 text-lg font-semibold leading-snug tracking-tight">{title}</h3>
-              <div
-                className="overflowed-text mt-4 mb-0 text-lg leading-normal"
-                dangerouslySetInnerHTML={{ __html: presentation }}
-              />
-              {pdf && (
-                <Link
-                  className="mt-6 inline-block font-semibold"
-                  theme="blue-underlined"
-                  to={pdf}
-                  download
-                >
-                  Download PDF
-                </Link>
-              )}
-            </div>
-          </li>
-        ))}
+              <div>
+                <div className="flex items-center gap-x-8">
+                  {speakers && speakers.length > 0 && (
+                    <ul className="relative inline-flex gap-x-5 sm:gap-x-4">
+                      {speakers.map(({ name, photo }, index) => (
+                        <li className="" key={index}>
+                          <figure className="flex items-center gap-x-2">
+                            <img
+                              className="h-7 w-7 rounded-full"
+                              src={photo}
+                              width={28}
+                              height={28}
+                              alt={name}
+                              loading="lazy"
+                            />
+                            <figcaption className="text-sm font-medium leading-none text-primary-5 md:text-[13px]">
+                              {name}
+                            </figcaption>
+                          </figure>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <span className="relative rounded-full bg-yellow px-2 py-2 text-[13px] font-semibold leading-none tracking-tighter text-primary-1 before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3 md:text-xs">
+                    {duration}
+                  </span>
+                  {isKeynote && (
+                    <span className="relative rounded-full bg-blue-1 px-2 py-2 text-xs font-semibold leading-none tracking-tighter text-white before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3 sm:hidden">
+                      Keynote
+                    </span>
+                  )}
+                </div>
+                <h3 className="mt-4 text-lg font-semibold leading-snug tracking-tight">{title}</h3>
+                <div
+                  className="overflowed-text mt-4 mb-0 text-lg leading-normal"
+                  dangerouslySetInnerHTML={{ __html: presentation }}
+                />
+                {pdf && (
+                  <Link
+                    className="mt-6 inline-block font-semibold"
+                    theme="blue-underlined"
+                    to={pdf}
+                    download
+                  >
+                    Download PDF
+                  </Link>
+                )}
+              </div>
+            </li>
+          )
+        )}
       </ul>
     </div>
   </section>

@@ -28,7 +28,7 @@ const Venue = () => (
         </p>
         <p className="mt-7">
           Watch all the speakers’ sessions videos from June 15, 2023 on{' '}
-          <Link className="" to="/archive" theme="primary">
+          <Link className="font-semibold" to="/archive" theme="blue-underlined">
             Archive page
           </Link>
           !
