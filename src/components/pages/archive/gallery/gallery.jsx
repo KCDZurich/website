@@ -4,46 +4,10 @@ import React, { useState } from 'react';
 
 import LINKS from 'constants/links';
 
-import AnnieTalvastoPhoto from './images/annie-talvasto-photo.jpg';
-import JuliusVolzPhoto from './images/julius-volz-photo.jpg';
-import LizRicePhoto from './images/liz-rice-photo.jpg';
-import RicardoRochaPhoto from './images/ricardo-rocha-photo.jpg';
-import ThomasGrafPhoto from './images/thomas-graf-photo.jpg';
 import ChevronDown from './svg/arrow-down.inline.svg';
 
 const TITLE = 'Photo gallery';
-const ITEMS = [
-  {
-    photo: ThomasGrafPhoto,
-  },
-  {
-    photo: LizRicePhoto,
-  },
-  {
-    photo: JuliusVolzPhoto,
-  },
-  {
-    photo: AnnieTalvastoPhoto,
-  },
-  {
-    photo: RicardoRochaPhoto,
-  },
-  {
-    photo: ThomasGrafPhoto,
-  },
-  {
-    photo: LizRicePhoto,
-  },
-  {
-    photo: JuliusVolzPhoto,
-  },
-  {
-    photo: AnnieTalvastoPhoto,
-  },
-  {
-    photo: RicardoRochaPhoto,
-  },
-];
+const ITEMS = [{ photo: '' }];
 
 const Gallery = () => {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
