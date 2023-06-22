@@ -28,7 +28,8 @@ const Link = ({ className: additionalClassName, size, theme, to, children, ...pr
     additionalClassName
   );
 
-  if (to.startsWith('/')) {
+  // eslint-disable-next-line react/prop-types
+  if (to.startsWith('/') && !props.download) {
     return (
       <GatsbyLink className={className} to={to} {...props}>
         {children}

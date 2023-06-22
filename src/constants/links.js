@@ -27,6 +27,10 @@ export default {
     id: getAnchor('Workshops'),
     homeTo: '/workshops',
   },
+  archive: {
+    to: '/archive',
+    homeTo: '/archive',
+  },
   proposal: {
     to: `/#${getAnchor('Call for Proposal')}`,
     id: getAnchor('Call for Proposal'),
