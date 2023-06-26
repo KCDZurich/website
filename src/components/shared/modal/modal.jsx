@@ -2,9 +2,9 @@ import clsx from 'clsx';
 import { AnimatePresence, m, LazyMotion, domAnimation, useReducedMotion } from 'framer-motion';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import React, { useCallback, useEffect, useId } from 'react';
+import React, { useCallback, useEffect, useId, useState } from 'react';
 
-// import ArrowRight from 'components/pages/archive/gallery/svg/arrow-right.inline.svg';
+import ArrowRight from 'components/pages/archive/gallery/svg/arrow-right.inline.svg';
 import CloseIcon from 'icons/close.inline.svg';
 import CommunityIcon from 'icons/cncf-icon.inline.svg';
 import GithubIcon from 'icons/github-icon.inline.svg';
@@ -53,10 +53,11 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
     presentation = '',
     speakers = [],
     isCoincidedEvent = false,
-    activePhoto = null,
-    // sliderRef = null,
-    // sliderIndex = 0,
+    activePhoto = '',
+    sliderRef = null,
+    sliderIndex = 0,
   } = modalData;
+  const [gallerySrc, setGallerySrc] = useState(activePhoto);
   const shouldReduceMotion = useReducedMotion();
   const headingId = useId();
   const modalAnimation = shouldReduceMotion ? {} : defaultModalAnimation;
@@ -73,6 +74,10 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
   );
 
   useEffect(() => {
+    setGallerySrc(activePhoto);
+  }, [activePhoto]);
+
+  useEffect(() => {
     window.addEventListener('keydown', handleWindowKeyDown);
     return () => window.removeEventListener('keydown', handleWindowKeyDown);
   }, [handleWindowKeyDown]);
@@ -87,7 +92,7 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
               {
                 'overflow-y-auto p-10 sm:p-5': !isVideoModal && !isPhotoGallery,
                 'w-[1200px] max-w-[90vw]': isVideoModal,
-                'w-[980px] max-w-[90vw] p-0': isPhotoGallery,
+                'w-[1218px] max-w-[80vw] p-0': isPhotoGallery,
               }
             )}
             key="modal"
@@ -122,7 +127,7 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
               <>
                 <img
                   className="w-full"
-                  src={activePhoto}
+                  src={gallerySrc}
                   width={680}
                   height={440}
                   alt="Gallery item"
@@ -136,22 +141,42 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                 >
                   <CloseIcon className="h-7 w-7" aria-hidden />
                 </Button>
-                {/* <button */}
-                {/*   className="prev-slide group-prev absolute -left-20 top-0 bottom-0 z-20 m-auto flex h-8 w-8 items-center justify-center rounded-full text-[#b5b5b5] transition-colors duration-200 disabled:opacity-50" */}
-                {/*   type="button" */}
-                {/*   onClick={() => sliderRef?.current?.swiper?.slideTo(sliderIndex - 1)} */}
-                {/* > */}
-                {/*   <span className="sr-only">Go to prev slide</span> */}
-                {/*   <ArrowRight className="h-auto w-full -rotate-180 lg:w-6" /> */}
-                {/* </button> */}
-                {/* <button */}
-                {/*   className="next-slide group-next absolute -right-20 top-0 bottom-0 z-20 m-auto flex h-8 w-8 items-center justify-center rounded-full text-[#b5b5b5] transition-colors duration-200 disabled:opacity-50" */}
-                {/*   type="button" */}
-                {/*   onClick={() => sliderRef?.current?.swiper?.slideTo(sliderIndex + 1)} */}
-                {/* > */}
-                {/*   <span className="sr-only">Go to next slide</span> */}
-                {/*   <ArrowRight className="h-auto w-full lg:w-6" /> */}
-                {/* </button> */}
+                <button
+                  className="prev-slide group-prev absolute -left-20 top-0 bottom-0 z-20 m-auto flex h-[55px] w-[55px] items-center justify-center rounded-full text-white transition-colors duration-200 disabled:opacity-50 lg:-left-16 sm:-left-14"
+                  type="button"
+                  disabled={!sliderRef?.current?.swiper.clickedSlide.previousSibling}
+                  onClick={() => {
+                    if (sliderRef?.current?.swiper) {
+                      setGallerySrc(
+                        sliderRef.current.swiper.clickedSlide.previousSibling.children[0].src
+                      );
+                      sliderRef.current.swiper.clickedSlide =
+                        sliderRef.current.swiper.clickedSlide.previousSibling;
+                      sliderRef.current.swiper.slideTo(sliderIndex - 1);
+                    }
+                  }}
+                >
+                  <span className="sr-only">Go to prev slide</span>
+                  <ArrowRight className="h-auto w-full -rotate-180" />
+                </button>
+                <button
+                  className="next-slide group-next sm:-rigth-14 absolute -right-20 top-0 bottom-0 z-20 m-auto flex h-[55px] w-[55px] items-center justify-center rounded-full text-white transition-colors duration-200 disabled:opacity-50 lg:-right-16"
+                  type="button"
+                  disabled={!sliderRef?.current?.swiper.clickedSlide.nextSibling}
+                  onClick={() => {
+                    if (sliderRef?.current?.swiper) {
+                      setGallerySrc(
+                        sliderRef.current.swiper.clickedSlide.nextSibling.children[0].src
+                      );
+                      sliderRef.current.swiper.clickedSlide =
+                        sliderRef.current.swiper.clickedSlide.nextSibling;
+                      sliderRef.current.swiper.slideTo(sliderIndex + 1);
+                    }
+                  }}
+                >
+                  <span className="sr-only">Go to next slide</span>
+                  <ArrowRight className="h-auto w-full" />
+                </button>
               </>
             ) : isPresentationShow ? (
               <>

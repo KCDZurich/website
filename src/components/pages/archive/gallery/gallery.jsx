@@ -142,20 +142,20 @@ const Gallery = () => {
             <span className="text-lg font-semibold text-primary-5">/ {ITEMS.length}</span>
           </p>
         </header>
-        <div className="relative mt-14 xl:mt-10 lg:mt-8 md:mt-4">
+        <div className="relative mt-14 xl:mt-10 lg:mt-12 lg:pb-10 md:mt-4">
           <button
-            className="prev-slide group-prev absolute -left-[70px] top-0 bottom-0 z-20 m-auto flex h-9 w-9 items-center justify-center rounded-full text-[#b5b5b5] transition-colors duration-200 disabled:opacity-50"
+            className="prev-slide group-prev absolute -left-[70px] top-0 bottom-0 z-20 m-auto flex h-9 w-9 items-center justify-center rounded-full text-[#b5b5b5] transition-colors duration-200 disabled:opacity-50 lg:top-auto lg:left-0 lg:-bottom-10"
             type="button"
           >
             <span className="sr-only">Prev</span>
-            <ArrowRight className="h-auto w-full -rotate-180 lg:w-6" />
+            <ArrowRight className="h-auto w-full -rotate-180" />
           </button>
           <button
-            className="next-slide group-next absolute -right-[70px] top-0 bottom-0 z-20 m-auto flex h-9 w-9 items-center justify-center rounded-full text-[#b5b5b5] transition-colors duration-200 disabled:opacity-50"
+            className="next-slide group-next absolute -right-[70px] top-0 bottom-0 z-20 m-auto flex h-9 w-9 items-center justify-center rounded-full text-[#b5b5b5] transition-colors duration-200 disabled:opacity-50 lg:top-auto lg:left-12 lg:right-auto lg:-bottom-10"
             type="button"
           >
             <span className="sr-only">Next</span>
-            <ArrowRight className="h-auto w-full lg:w-6" />
+            <ArrowRight className="h-auto w-full" />
           </button>
           <Swiper
             ref={sliderRef}
