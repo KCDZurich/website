@@ -7,7 +7,7 @@ const DESCRIPTION =
   'Thank you to each of you for making <b>Kubernetes Community Days Zürich</b> a resounding success. Our sincere thanks also go to our <b>sponsors</b>. Your support played a crucial role in the success of this event.';
 
 const Hero = () => (
-  <section className="safe-paddings overflow-hidden bg-[#EDC3C7] bg-opacity-10 pt-28 pb-40 lg:pb-32 md:pt-24 md:pb-24">
+  <section className="safe-paddings overflow-hidden bg-[#EDC3C7] bg-opacity-10 pt-24 pb-20 lg:pb-32 md:pt-24 md:pb-24">
     <div className="container flex items-center gap-x-10 md:flex-col md:gap-y-10">
       <div className="text-primary-1 md:flex md:flex-col md:items-center md:text-center">
         <h1 className="text-6xl font-bold leading-tight lg:max-w-[500px] sm:text-5xl">{TITLE}</h1>

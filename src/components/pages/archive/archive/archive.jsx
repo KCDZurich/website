@@ -27,7 +27,7 @@ const ITEMS = [
     duration: '30 min',
     isKeynote: true,
     pdf: '/archive/Thomas Graf - Cilium Mesh - Connecting.pdf',
-    videoSrc: '',
+    videoSrc: 'https://www.youtube.com/embed/FHoNJnkn7Rk',
     speakers: [
       {
         name: 'Thomas Graf',
@@ -58,7 +58,7 @@ const ITEMS = [
     title: 'Forensic container checkpointing and analysis',
     duration: '30 min',
     pdf: '/archive/Adrian Reber - forensic-container-checkpointing.pdf',
-    videoSrc: '',
+    videoSrc: 'https://www.youtube.com/embed/tEyH2ogFKeg',
     speakers: [
       {
         name: 'Adrian Reber',
@@ -96,7 +96,7 @@ const ITEMS = [
     title: 'Demystifying eBPF - eBPF Firewall from scratch',
     duration: '30 min',
     pdf: '/archive/Filip Nicolic - ebpf-firewall-from-scratch.pdf',
-    videoSrc: '',
+    videoSrc: 'https://www.youtube.com/embed/_dJN_k0tyyc',
     speakers: [
       {
         name: 'Filip Nicolic',
@@ -120,7 +120,7 @@ const ITEMS = [
     title: 'Responsible AI: The Key to Ethical, Safe and Inclusive Software Development',
     duration: '30 min',
     pdf: '/archive/Lisa Falco - ResponsibleAI.pdf',
-    videoSrc: '',
+    videoSrc: 'https://www.youtube.com/embed/1DzBYzzsbO4',
     speakers: [
       {
         name: 'Lisa Falco',
@@ -265,7 +265,7 @@ const ITEMS = [
     title: 'Closing the Developer Experience Gap of your Container Platforms',
     duration: '30 min',
     pdf: '/archive/Timo Salm - closing-the-developer-experience-gap-of-your-container-platforms.pdf',
-    videoSrc: '',
+    videoSrc: 'https://www.youtube.com/embed/CwoViX_5LPM',
     speakers: [
       {
         name: 'Timo Salm',
@@ -307,7 +307,7 @@ const ITEMS = [
     title: 'Bridging Dev and Ops with eBPF: Extending Observability Upwards and Downwards',
     duration: '30 min',
     pdf: '/archive/Raphael Pinson - Bridge Dev & Ops with eBPF.pdf',
-    videoSrc: '',
+    videoSrc: 'https://www.youtube.com/embed/yf_exP0ohOU',
     speakers: [
       {
         name: 'Raphaël Pinson',
@@ -323,7 +323,7 @@ const ITEMS = [
     title: 'eBPF for Security',
     duration: '30 min',
     pdf: '/archive/Liz Rice - eBPF for security.pdf',
-    videoSrc: '',
+    videoSrc: 'https://www.youtube.com/embed/IF7bmm9140Q',
     isKeynote: true,
     speakers: [
       {
@@ -340,7 +340,7 @@ const TITLE = 'Kubernetes Community Day Zürich 2023';
 const DATE = '15 June, 2023';
 
 const Archive = () => (
-  <section className="safe-paddings py-24 md:py-16">
+  <section className="safe-paddings py-20 md:py-16">
     <div className="container-md text-primary-1">
       <h2 className="text-2xl font-bold leading-snug">{TITLE}</h2>
       <time className="mt-3 block text-lg leading-normal" dateTime="2023-06-15">
@@ -349,7 +349,10 @@ const Archive = () => (
       <ul className="mt-8 flex flex-col gap-y-6">
         {ITEMS.map(
           ({ title, duration, isKeynote, speakers, presentation, pdf, videoSrc }, index) => (
-            <li className="flex gap-x-12 border-b border-primary-3 pb-6 md:flex-col" key={index}>
+            <li
+              className="flex items-center gap-x-12 border-b border-gray-10 pb-6 md:flex-col"
+              key={index}
+            >
               <div className="w-[384px] max-w-full shrink-0 md:mb-4 md:w-[480px]">
                 {videoSrc ? (
                   <iframe
