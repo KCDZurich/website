@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React, { useCallback, useEffect, useId } from 'react';
 
+// import ArrowRight from 'components/pages/archive/gallery/svg/arrow-right.inline.svg';
 import CloseIcon from 'icons/close.inline.svg';
 import CommunityIcon from 'icons/cncf-icon.inline.svg';
 import GithubIcon from 'icons/github-icon.inline.svg';
@@ -52,11 +53,15 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
     presentation = '',
     speakers = [],
     isCoincidedEvent = false,
+    activePhoto = null,
+    // sliderRef = null,
+    // sliderIndex = 0,
   } = modalData;
   const shouldReduceMotion = useReducedMotion();
   const headingId = useId();
   const modalAnimation = shouldReduceMotion ? {} : defaultModalAnimation;
   const modalBackdropAnimation = shouldReduceMotion ? {} : defaultModalBackdropAnimation;
+  const isPhotoGallery = activePhoto;
 
   const handleWindowKeyDown = useCallback(
     (e) => {
@@ -80,8 +85,9 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
             className={clsx(
               'fixed inset-0 z-20 m-auto flex h-[fit-content] max-h-[calc(100%-60px)] max-w-[592px] flex-col rounded bg-white text-primary-1 sm:left-2 sm:right-2',
               {
-                'overflow-y-auto p-10 sm:p-5': !isVideoModal,
+                'overflow-y-auto p-10 sm:p-5': !isVideoModal && !isPhotoGallery,
                 'w-[1200px] max-w-[90vw]': isVideoModal,
+                'w-[980px] max-w-[90vw] p-0': isPhotoGallery,
               }
             )}
             key="modal"
@@ -110,6 +116,42 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                 >
                   <CloseIcon className="h-7 w-7" aria-hidden />
                 </Button>
+              </>
+            ) : // eslint-disable-next-line no-nested-ternary
+            isPhotoGallery ? (
+              <>
+                <img
+                  className="w-full"
+                  src={activePhoto}
+                  width={680}
+                  height={440}
+                  alt="Gallery item"
+                />
+                <Button
+                  className="z-999 absolute -top-10 -right-12 border-0 bg-transparent"
+                  theme="primary"
+                  size="sm"
+                  aria-label="close modal"
+                  onClick={onModalHide}
+                >
+                  <CloseIcon className="h-7 w-7" aria-hidden />
+                </Button>
+                {/* <button */}
+                {/*   className="prev-slide group-prev absolute -left-20 top-0 bottom-0 z-20 m-auto flex h-8 w-8 items-center justify-center rounded-full text-[#b5b5b5] transition-colors duration-200 disabled:opacity-50" */}
+                {/*   type="button" */}
+                {/*   onClick={() => sliderRef?.current?.swiper?.slideTo(sliderIndex - 1)} */}
+                {/* > */}
+                {/*   <span className="sr-only">Go to prev slide</span> */}
+                {/*   <ArrowRight className="h-auto w-full -rotate-180 lg:w-6" /> */}
+                {/* </button> */}
+                {/* <button */}
+                {/*   className="next-slide group-next absolute -right-20 top-0 bottom-0 z-20 m-auto flex h-8 w-8 items-center justify-center rounded-full text-[#b5b5b5] transition-colors duration-200 disabled:opacity-50" */}
+                {/*   type="button" */}
+                {/*   onClick={() => sliderRef?.current?.swiper?.slideTo(sliderIndex + 1)} */}
+                {/* > */}
+                {/*   <span className="sr-only">Go to next slide</span> */}
+                {/*   <ArrowRight className="h-auto w-full lg:w-6" /> */}
+                {/* </button> */}
               </>
             ) : isPresentationShow ? (
               <>
@@ -314,6 +356,9 @@ Modal.propTypes = {
     presentation: PropTypes.string,
     speakers: PropTypes.array,
     isCoincidedEvent: PropTypes.bool,
+    activePhoto: PropTypes.string,
+    sliderRef: PropTypes.object,
+    sliderIndex: PropTypes.number,
   }).isRequired,
 };
 
