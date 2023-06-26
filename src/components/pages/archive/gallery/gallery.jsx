@@ -129,10 +129,10 @@ const Gallery = () => {
   };
 
   return (
-    <section className="safe-paddings relative bg-white py-16 md:py-24 sm:py-16">
+    <section className="safe-paddings relative bg-white pt-16 pb-48 md:py-24 sm:py-16">
       <div className="container flex flex-col">
         <header className="flex items-baseline justify-between">
-          <h2 className="text-6xl font-bold leading-tight text-primary-1 md:text-2xl">{TITLE}</h2>
+          <h2 className="text-6xl font-bold leading-tight text-primary-1 md:text-4xl">{TITLE}</h2>
           <p>
             <span className="text-primary mr-1.5 text-3xl font-semibold">
               {`${activeSlideIndex + 1}${

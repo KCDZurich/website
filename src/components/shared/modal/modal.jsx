@@ -92,7 +92,7 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
               {
                 'overflow-y-auto p-10 sm:p-5': !isVideoModal && !isPhotoGallery,
                 'w-[1200px] max-w-[90vw]': isVideoModal,
-                'w-[1218px] max-w-[80vw] p-0': isPhotoGallery,
+                'w-[1136px] max-w-[80vw] p-0': isPhotoGallery,
               }
             )}
             key="modal"
@@ -128,8 +128,8 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                 <img
                   className="w-full"
                   src={gallerySrc}
-                  width={680}
-                  height={440}
+                  width={1136}
+                  height={758}
                   alt="Gallery item"
                 />
                 <Button
@@ -142,7 +142,7 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   <CloseIcon className="h-7 w-7" aria-hidden />
                 </Button>
                 <button
-                  className="prev-slide group-prev absolute -left-20 top-0 bottom-0 z-20 m-auto flex h-[55px] w-[55px] items-center justify-center rounded-full text-white transition-colors duration-200 disabled:opacity-50 lg:-left-16 sm:-left-14"
+                  className="prev-slide group-prev absolute -left-20 top-0 bottom-0 z-20 m-auto flex h-[55px] w-[55px] items-center justify-center rounded-full text-white transition-colors duration-200 disabled:opacity-50 lg:-left-16 lg:h-10 lg:w-10 sm:-left-14"
                   type="button"
                   disabled={!sliderRef?.current?.swiper.clickedSlide.previousSibling}
                   onClick={() => {
@@ -160,7 +160,7 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   <ArrowRight className="h-auto w-full -rotate-180" />
                 </button>
                 <button
-                  className="next-slide group-next sm:-rigth-14 absolute -right-20 top-0 bottom-0 z-20 m-auto flex h-[55px] w-[55px] items-center justify-center rounded-full text-white transition-colors duration-200 disabled:opacity-50 lg:-right-16"
+                  className="next-slide group-next absolute -right-20 top-0 bottom-0 z-20 m-auto flex h-[55px] w-[55px] items-center justify-center rounded-full text-white transition-colors duration-200 disabled:opacity-50 lg:-right-16 lg:h-10 lg:w-10 sm:-right-14"
                   type="button"
                   disabled={!sliderRef?.current?.swiper.clickedSlide.nextSibling}
                   onClick={() => {
