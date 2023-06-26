@@ -415,7 +415,7 @@ const Schedule = ({ location }) => {
   }, [location]);
 
   return (
-    <section className="safe-paddings pt-9 pb-48 lg:px-8 md:px-5 sm:pt-10 xs:px-0">
+    <section className="safe-paddings pt-9 pb-48 lg:px-8 lg:pb-44 md:px-5 md:pb-40 sm:pb-24 sm:pt-10 xs:px-0">
       <ul className="mx-auto w-[1072px] max-w-full rounded-[10px] border border-primary-2 shadow-lg">
         {ITEMS.map(({ id, time, title, duration, isKeynote, speakers, coincidedEvent }, index) => {
           const isEven = index % 2 === 1;

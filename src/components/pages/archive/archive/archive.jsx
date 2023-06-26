@@ -350,7 +350,7 @@ const Archive = () => (
         {ITEMS.map(
           ({ title, duration, isKeynote, speakers, presentation, pdf, videoSrc }, index) => (
             <li
-              className="flex items-center gap-x-12 border-b border-gray-10 pb-6 md:flex-col"
+              className="flex items-center gap-x-12 border-b border-gray-10 pb-6 md:flex-col md:items-start"
               key={index}
             >
               <div className="w-[384px] max-w-full shrink-0 md:mb-4 md:w-[480px]">
