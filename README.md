@@ -60,6 +60,12 @@ npm run serve
 npm run clean
 ```
 
+## License
+
+The project is licensed under [Creative Commons Attribution Share Alike 4.0 International](LICENSE)
+
+The included Fonts under [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+
 ## Project Structure
 
 ```text
