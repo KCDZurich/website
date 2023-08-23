@@ -4,6 +4,8 @@ import React from 'react';
 import Archive from 'components/pages/archive/archive';
 import Gallery from 'components/pages/archive/gallery';
 import Hero from 'components/pages/archive/hero';
+import Podcast from 'components/pages/archive/podcast';
+import Sponsors from 'components/pages/archive/sponsors';
 import Layout from 'components/shared/layout';
 import SEO from 'components/shared/seo';
 import SEO_DATA from 'constants/seo-data';
@@ -11,7 +13,9 @@ import SEO_DATA from 'constants/seo-data';
 const ArchivePage = () => (
   <Layout>
     <Hero />
+    <Podcast />
     <Archive />
+    <Sponsors />
     <Gallery />
   </Layout>
 );

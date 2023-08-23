@@ -340,7 +340,7 @@ const TITLE = 'Kubernetes Community Day Zürich 2023';
 const DATE = '15 June, 2023';
 
 const Archive = () => (
-  <section className="safe-paddings py-20 md:py-16">
+  <section className="safe-paddings pb-20 md:pb-16">
     <div className="container-md text-primary-1">
       <h2 className="text-2xl font-bold leading-snug">{TITLE}</h2>
       <time className="mt-3 block text-lg leading-normal" dateTime="2023-06-15">
