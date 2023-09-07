@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'components/shared/link';
 
 const Venue = () => (
-  <section className="safe-paddings bg-white py-40 md:py-24 sm:py-16">
+  <section className="safe-paddings bg-white py-40 pb-20 md:py-24 sm:py-16">
     <div className="container-md text-2xl text-primary-1 sm:text-lg">
       <p>
         <span className="font-bold">Kubernetes Community Days</span> (KCDs) are global,
