@@ -1,20 +1,12 @@
 import React from 'react';
 
 import Link from 'components/shared/link';
-import ArchLogo from 'icons/archcloud.svg';
-import CloudNativeLogo from 'icons/cloudnative.svg';
-import InsideItLogo from 'icons/insideIt.svg';
 import Rokt from 'icons/rokt.svg';
-import TechFaceLogo from 'icons/techface.svg';
 import WhiteRabbit from 'icons/white-rabbit.svg';
 
 const TITLE = 'Community & Media Partners';
 
 const ITEMS = [
-  { icon: CloudNativeLogo, url: 'https://www.cncf.io/' },
-  { icon: TechFaceLogo, url: 'https://techface.ch/' },
-  { icon: InsideItLogo, url: 'https://www.inside-it.ch/' },
-  { icon: ArchLogo, url: 'https://arch.cloud/' },
   { icon: Rokt, url: 'https://rokt.cloud/' },
   { icon: WhiteRabbit, url: 'https://www.whiterabbitcom.ch' },
 ];
