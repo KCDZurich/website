@@ -3,21 +3,19 @@ import React from 'react';
 
 import Hero from 'components/pages/home/hero';
 import Partners from 'components/pages/home/partners';
-import Podcast from 'components/pages/home/podcast';
-import Speakers from 'components/pages/home/speakers';
+// import Speakers from 'components/pages/home/speakers';
 import Sponsors from 'components/pages/home/sponsors';
 import Venue from 'components/pages/home/venue';
-import Workshops from 'components/pages/home/workshops';
+// import Workshops from 'components/pages/home/workshops';
 import Layout from 'components/shared/layout';
 import SEO from 'components/shared/seo';
 
-const HomePage = ({ location }) => (
+const HomePage = () => (
   <Layout homepage>
     <Hero />
     <Venue />
-    <Podcast />
-    <Speakers location={location} />
-    <Workshops />
+    {/* <Speakers location={location} /> */}
+    {/* <Workshops /> */}
     <Sponsors />
     <Partners />
   </Layout>

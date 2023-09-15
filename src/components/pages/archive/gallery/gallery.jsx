@@ -129,7 +129,7 @@ const Gallery = () => {
   };
 
   return (
-    <section className="safe-paddings relative bg-white pt-16 pb-48 lg:pb-44 md:pb-40 sm:pb-24">
+    <section className="safe-paddings relative bg-white pb-48 lg:pb-44 md:pb-40 sm:pb-24">
       <div className="container flex flex-col">
         <header className="flex items-baseline justify-between">
           <h2 className="text-6xl font-bold leading-tight text-primary-1 md:text-4xl">{TITLE}</h2>

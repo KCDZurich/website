@@ -8,7 +8,7 @@ const DESCRIPTION =
   'Discover the Kubernetes Universe at Kubernetes Community Days Zurich 2023, powered by b-nova. Tune in to the podcast episode where industry leaders and developers shape the future of container orchestration.';
 
 const Podcast = () => (
-  <section className="safe-paddings pb-40 md:pb-20">
+  <section className="safe-paddings py-40 md:py-24 sm:py-16">
     <div className="container-md">
       <div className="flex items-center gap-x-[10%] md:flex-col md:gap-y-8 sm:items-center">
         <div className="w-[416px] max-w-full shrink-0">
