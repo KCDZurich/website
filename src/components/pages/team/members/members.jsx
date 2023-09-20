@@ -7,18 +7,11 @@ import Isovalent from 'icons/isovalent.svg';
 import Rokt from 'icons/rokt.svg';
 import WhiteRabbit from 'icons/white-rabbit.svg';
 
-import AndreasGehrigPhoto from './images/andreas-gehrig-photo.jpg';
 import MilenaThalmannPhoto from './images/milena-thalmann-photo.jpg';
 import PhilippMeierPhoto from './images/philipp-meier-photo.jpg';
 import ThomasPhiliponaPhoto from './images/thomas-philipona-photo.jpg';
 
 const ITEMS = [
-  {
-    name: 'Andreas Gehrig',
-    position: 'Co-founder Arch.cloud',
-    photo: AndreasGehrigPhoto,
-    url: 'https://www.linkedin.com/in/andreasgehrig/',
-  },
   {
     name: 'Milena Thalmann',
     position: 'Founder White Rabbit Communications',
@@ -49,12 +42,9 @@ const LOGOS = [
 const Members = () => (
   <section className="safe-paddings relative bg-white pb-40 lg:pb-32 md:py-24 sm:py-16">
     <div className="container">
-      <ul className="mt-20 grid grid-cols-4 gap-8 lg:gap-6 md:flex md:flex-wrap md:justify-evenly [@media(max-width:900px)]:mx-auto [@media(max-width:900px)]:max-w-[570px]">
+      <ul className="mx-auto mt-20 grid max-w-4xl grid-cols-3 gap-8 sm:flex sm:flex-wrap sm:justify-center">
         {ITEMS.map(({ name, position, photo, url }, index) => (
-          <li
-            className="flex w-[240px] flex-col lg:w-52 md:w-48 sm:w-auto sm:max-w-[200px]"
-            key={index}
-          >
+          <li className="flex flex-col sm:max-w-[280px]" key={index}>
             <img
               className="w-full"
               src={photo}
