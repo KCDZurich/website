@@ -5,17 +5,19 @@ slug: data-privacy
 
 ## Impressum
 
-Verein cloudnative.zürich <br/> 8800 Thalwil
+Verein cloudnative.amsterdam
 
-E-Mail: [hello@kcdzurich.ch](mailto:hello@kcdzurich.ch)
+E-Mail: TODO: email
 
 ## Datenschutzerklärung
 
 Verantwortliche Stelle im Sinne der Datenschutzgesetze, insbesondere der EU-Datenschutzgrundverordnung (DSGVO), ist:
 
-Verein cloudnative.zürich <br/> 8800 Thalwil
+Verein cloudnative.amsterdam
 
-E-Mail: [hello@kcdzurich.ch](mailto:hello@kcdzurich.ch) <br/> Website: [kcdzurich.ch](https://tickets.kcdzurich.ch/)
+E-Mail: TODO: email
+
+Website: TODO: website url
 
 ## Allgemeiner Hinweis
 
@@ -37,7 +39,9 @@ Wir bearbeiten Personendaten im Einklang mit dem schweizerischen Datenschutzrech
 - b) Bearbeitung von Personendaten zur Erfüllung eines Vertrages mit der betroffenen Person sowie zur Durchführung entsprechender vorvertraglicher Massnahmen.
 - c) Bearbeitung von Personendaten zur Erfüllung einer rechtlichen Verpflichtung, der wir gemäss allenfalls anwendbarem Recht der EU oder gemäss allenfalls anwendbarem Recht eines Landes, in dem die DSGVO ganz oder teilweise anwendbar ist, unterliegen.
 - d) Bearbeitung von Personendaten um lebenswichtige Interessen der betroffenen Person oder einer anderen natürlichen Person zu schützen.
-- e) Bearbeitung von Personendaten um die berechtigten Interessen von uns oder von Dritten zu wahren, sofern nicht die Grundfreiheiten und Grundrechte sowie Interessen der betroffenen Person überwiegen. Berechtigte Interessen sind insbesondere unser betriebswirtschaftliches Interesse, unsere Website bereitstellen zu können, die Informationssicherheit, die Durchsetzung von eigenen rechtlichen Ansprüchen und die Einhaltung von schweizerischem Recht. <br/> Wir bearbeiten Personendaten für jene Dauer, die für den jeweiligen Zweck oder die jeweiligen Zwecke erforderlich ist. Bei länger dauernden Aufbewahrungspflichten aufgrund von gesetzlichen und sonstigen Pflichten, denen wir unterliegen, schränken wir die Bearbeitung entsprechend ein.
+- e) Bearbeitung von Personendaten um die berechtigten Interessen von uns oder von Dritten zu wahren, sofern nicht die Grundfreiheiten und Grundrechte sowie Interessen der betroffenen Person überwiegen. Berechtigte Interessen sind insbesondere unser betriebswirtschaftliches Interesse, unsere Website bereitstellen zu können, die Informationssicherheit, die Durchsetzung von eigenen rechtlichen Ansprüchen und die Einhaltung von schweizerischem Recht.
+
+Wir bearbeiten Personendaten für jene Dauer, die für den jeweiligen Zweck oder die jeweiligen Zwecke erforderlich ist. Bei länger dauernden Aufbewahrungspflichten aufgrund von gesetzlichen und sonstigen Pflichten, denen wir unterliegen, schränken wir die Bearbeitung entsprechend ein.
 
 ## Externe Zahlungsdienstleister
 

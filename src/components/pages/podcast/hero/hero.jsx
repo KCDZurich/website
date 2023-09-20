@@ -15,13 +15,13 @@ import LinkedinIcon from './svg/linkedin-logo.inline.svg';
 import SpotifyIcon from './svg/spotify-icon.inline.svg';
 import TwitterIcon from './svg/twitter-logo.inline.svg';
 
-const TITLE = 'Kubernetes Community Day Zürich 2023';
+const TITLE = 'Kubernetes Community Day Utrecht 2023';
 const SUB_TITLE =
   'Podcast by <a class="text-blue-1" href="https://b-nova.com/home/techhub/decodify" target="_blank">decodify</a> presented by <a class="text-blue-1" href="https://b-nova.com/home" target="_blank">b-nova</a>';
 const DURATION = '36 min';
 const DATE = 'June 18, 2023';
 const DESCRIPTION =
-  '<p>We would like to extend a thank you to b-nova, our podcast sponsor for the Kubernetes Community Day Zürich 2023.</p><p>Their generous support and commitment to the community have made it possible for us to continue sharing valuable content and insights about KCD Zürich. Thank you, b-nova, for empowering our community through your sponsorship.</p><p>Make sure to subscribe and stay tuned for more exciting discussions and insights!</p>';
+  '<p>We would like to extend a thank you to b-nova, our podcast sponsor for the Kubernetes Community Day Utrecht 2023.</p><p>Their generous support and commitment to the community have made it possible for us to continue sharing valuable content and insights about KCD Utrecht. Thank you, b-nova, for empowering our community through your sponsorship.</p><p>Make sure to subscribe and stay tuned for more exciting discussions and insights!</p>';
 
 const SOCIAL_SHARE_TEXT =
   'Dive into our insightful Podcast and meet our brilliant speakers, making waves in the industry. This has been made possible by our dedicated sponsor, b-nova, who shares our passion for enriching our community. Listen now at Kcdzurich.ch/podcast 🎧';

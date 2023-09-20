@@ -336,7 +336,7 @@ const ITEMS = [
   },
 ];
 
-const TITLE = 'Kubernetes Community Day Zürich 2023';
+const TITLE = 'Kubernetes Community Day Utrecht 2023';
 const DATE = '15 June, 2023';
 
 const Archive = () => (

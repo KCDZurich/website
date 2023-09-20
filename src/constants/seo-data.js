@@ -1,8 +1,8 @@
 export default {
   schedule: {
-    title: 'Kubernetes Community Days Zürich - Event Schedule for June 15, 2023',
+    title: 'Kubernetes Community Days Utrecht - Event Schedule for June 15, 2023',
     description:
-      'Explore the detailed agenda for Kubernetes Community Days in Zürich on June 15, 2023. Listen to expert talks, and connect with Kubernetes professionals. Plan your day now!',
+      'Explore the detailed agenda for Kubernetes Community Days in Utrecht on June 15, 2023. Listen to expert talks, and connect with Kubernetes professionals. Plan your day now!',
   },
   workshops: {
     title: 'Workshops — Kubernetes Community Days',
@@ -36,17 +36,17 @@ export default {
   },
   team: {
     title: 'Team — Kubernetes Community Days',
-    description: 'Experience the power of community at the Kubernetes Community Days in Zurich!',
+    description: 'Experience the power of community at the Kubernetes Community Days in Utrecht!',
   },
   archive: {
-    title: 'Kubernetes Community Days Zürich 2023 - Event Highlights',
+    title: 'Kubernetes Community Days Utrecht 2023 - Event Highlights',
     description:
-      'Relive the exciting moments from Kubernetes Community Days Zürich 2023. Explore our collection of talk videos and event pictures that capture the best of this event.',
+      'Relive the exciting moments from Kubernetes Community Days Utrecht 2023. Explore our collection of talk videos and event pictures that capture the best of this event.',
   },
   podcast: {
-    title: 'Meet the Speakers of Kubernetes Community Day Zürich 2023 Podcast',
+    title: 'Meet the Speakers of Kubernetes Community Day Utrecht 2023 Podcast',
     description:
-      'Listen in to our exciting Kubernetes Community Day Zürich 2023 Podcast to hear from our renowned speakers\n',
+      'Listen in to our exciting Kubernetes Community Day Utrecht 2023 Podcast to hear from our renowned speakers\n',
   },
   static: ({ title }) => ({
     title: `${title} — Kubernetes Community Days`,
