@@ -4,7 +4,7 @@ import Button from 'components/shared/button';
 
 const TITLE = 'Archive';
 const DESCRIPTION =
-  'Thank you to each of you for making <b>Kubernetes Community Days Zürich</b> a resounding success. Our sincere thanks also go to our <b>sponsors</b>. Your support played a crucial role in the success of this event.';
+  'Thank you to each of you for making <b>Kubernetes Community Days Utrecht</b> a resounding success. Our sincere thanks also go to our <b>sponsors</b>. Your support played a crucial role in the success of this event.';
 
 const Hero = () => (
   <section className="safe-paddings overflow-hidden bg-[#EDC3C7] bg-opacity-10 pt-24 pb-20 lg:pb-32 md:pb-24">
@@ -29,7 +29,7 @@ const Hero = () => (
         className="max-w-[800px] shrink-0 lg:max-w-[700px]"
         allow="autoplay; picture-in-picture; web-share"
         src="https://www.youtube.com/embed/7-b0llQFT8E?autoplay=0&mute=0&rel=0"
-        title="Kubernetes Community Days Zurich 2023"
+        title="Kubernetes Community Days Utrecht 2023"
         width="100%"
         height="350"
         allowFullScreen

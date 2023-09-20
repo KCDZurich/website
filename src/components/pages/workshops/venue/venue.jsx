@@ -28,17 +28,17 @@ const Venue = () => (
               theme="primary"
             >
               Google HQ <br />
-              at Zurich Europaallee
+              at Utrecht Europaallee
             </Link>
             <address className="mt-5 text-lg not-italic text-[#262F59] opacity-60 sm:text-lg">
-              Google EURF <br /> Europaallee 36 <br /> 8004 Zürich
+              Google EURF <br /> Europaallee 36 <br /> 8004 Utrecht
             </address>
           </div>
         </div>
 
         <div className="mt-8 w-[520px] text-lg leading-normal text-primary-1 xl:max-w-[470px] lg:ml-8 lg:max-w-[530px] md:ml-0 md:mt-5 md:w-full md:max-w-none sm:text-lg">
           <p>
-            The Kubernetes Community Days in Zurich will be held at the Google HQ at Zurich
+            The Kubernetes Community Days in Utrecht will be held at the Google HQ at Utrecht
             Europaallee, a modern and convenient location next to the train station. Attendees can
             expect to enjoy a variety of vegetarian and vegan food options throughout the day.
           </p>

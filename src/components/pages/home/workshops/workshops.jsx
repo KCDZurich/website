@@ -60,7 +60,7 @@ const Workshops = () => {
             size="lg"
             onClick={() => handleModalShow()}
           >
-            KCD Zürich 2023 Video
+            KCD Utrecht 2023 Video
           </Button>
           <Modal
             modalData={{}}

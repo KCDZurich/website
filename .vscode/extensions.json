@@ -12,6 +12,6 @@
     "esbenp.prettier-vscode",
     "wayou.vscode-todo-highlight",
     "formulahendry.auto-rename-tag",
-    "formulahendry.auto-close-tag",
+    "formulahendry.auto-close-tag"
   ]
 }
