@@ -30,9 +30,9 @@ const Hero = () => (
           className="mt-7 text-white shadow-[0_15px_40px_#999999] hover:shadow-[0px_15px_30px_#adadad]"
           theme="blue"
           size="lg"
-          to="/archive"
+          to="https://www.cncf.io/"
         >
-          Check Out KCD 2023
+          Tickets
         </Button>
       </div>
       <img
