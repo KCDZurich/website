@@ -16,7 +16,7 @@ const Sponsors = () => (
         movement, and we invite you to be a vital contributor to its success. Connect with us today
         to explore how you can make a lasting impact on the future of cloud-native computing.
       </p>
-      <Button className="mt-7" to="mailto:hello@kcdzurich.ch" theme="primary" size="lg">
+      <Button className="mt-7" to="mailto:info@cloudnative.amsterdam" theme="primary" size="lg">
         Contact us
       </Button>
     </div>
