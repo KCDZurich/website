@@ -1,14 +1,14 @@
 import React from 'react';
 
 import Link from 'components/shared/link';
-import Rokt from 'icons/rokt.svg';
-import WhiteRabbit from 'icons/white-rabbit.svg';
+// import Rokt from 'icons/rokt.svg';
+// import WhiteRabbit from 'icons/white-rabbit.svg';
 
 const TITLE = 'Community & Media Partners';
 
 const ITEMS = [
-  { icon: Rokt, url: 'https://rokt.cloud/' },
-  { icon: WhiteRabbit, url: 'https://www.whiterabbitcom.ch' },
+  // { icon: Rokt, url: 'https://rokt.cloud/' },
+  // { icon: WhiteRabbit, url: 'https://www.whiterabbitcom.ch' },
 ];
 
 const Partners = () => (
