@@ -66,15 +66,15 @@ export default {
     target: '_blank',
   },
   twitter: {
-    to: 'https://twitter.com/KcdZurich?s=20&t=2K7fxHFqThcgycuBzO_rSw',
+    to: 'https://twitter.com/cloudnativeams',
     target: '_blank',
   },
   googlemaps: {
-    to: 'https://goo.gl/maps/ooQufQWKzaRM286Z7',
+    to: 'https://maps.app.goo.gl/wfLb1JAmjq53pLZH6',
     target: '_blank',
   },
   youtube: {
-    to: 'https://www.youtube.com/@KCDZH',
+    to: 'https://www.youtube.com/@cncf',
     target: '_blank',
   },
 };
