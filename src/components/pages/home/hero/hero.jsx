@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import Button from 'components/shared/button';
+import Button from 'components/shared/button';
 
 // import illustration from './images/hero-illustration.png';
 
@@ -34,6 +34,14 @@ const Hero = () => (
         >
           Tickets
         </Button> */}
+        <Button
+          className="mt-7 text-black shadow-[0_15px_40px_#999999] hover:shadow-[0px_15px_30px_#adadad]"
+          theme="primary"
+          size="lg"
+          to="https://forms.gle/JyrTeEJuk2PVAT7d9"
+        >
+          Call for Papers
+        </Button>
       </div>
       {/* <img
         className="absolute -top-44 -left-32 translate-x-1/2 xl:-top-28 xl:-left-8 xl:w-full xl:max-w-[920px] lg:left-[38%] lg:-top-16 lg:w-[750px] lg:translate-x-1 md:top-[37%] md:left-1/2 md:-translate-x-1/2 md:translate-y-1/2 sm:top-[27%] [@media(max-width:600px)]:top-[47%] [@media(max-width:600px)]:w-[600px] [@media(max-width:460px)]:top-[65%] [@media(max-width:460px)]:w-[490px]"
