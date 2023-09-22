@@ -11,8 +11,8 @@ const MENUS = {
   ],
   footer: [
     { text: 'Code of Conduct', ...LINKS.conduct },
-    // { text: 'Team', ...LINKS.team },
     { text: 'Mission Statement', ...LINKS.mission },
+    { text: 'Team', ...LINKS.team },
     // { text: 'Data Privacy', ...LINKS.privacy },
   ],
   mobile: [
