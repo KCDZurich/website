@@ -79,8 +79,8 @@ const Sponsors = () => (
         We would like to extend a special thank you to our sponsors for their support and commitment
         to the community. We couldn&apos;t do it without them! If you&apos;re interested in becoming
         a next year sponsor, please contact{' '}
-        <Link className="font-semibold" theme="blue-underlined" to="mailto:hello@kcdzurich.ch">
-          hello@kcdzurich.ch
+        <Link className="font-semibold" theme="blue-underlined" to="mailto:hello@kcdutrecht.nl">
+          hello@kcdutrecht.nl
         </Link>
       </p>
 
