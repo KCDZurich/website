@@ -5,7 +5,7 @@ import LINKS from 'constants/links.js';
 import MENUS from 'constants/menus';
 import GoogleMaps from 'icons/google-maps-icon.inline.svg';
 // import LinkedIn from 'icons/linkedin-logo.inline.svg';
-import Logo from 'icons/logo.inline.svg';
+// import Logo from 'icons/logo.inline.svg';
 import Twitter from 'icons/twitter-logo.inline.svg';
 import Youtube from 'icons/youtube.inline.svg';
 
@@ -40,9 +40,9 @@ const Footer = () => {
   return (
     <footer className="safe-paddings border-t border-t-gray-10 bg-white">
       <div className="container flex items-center justify-between pt-5 pb-5 sm:flex-col sm:justify-around">
-        <Link className="ml-2" to="/">
+        {/* <Link className="ml-2" to="/">
           <Logo className="h-12 w-44" />
-        </Link>
+        </Link> */}
 
         <nav className="mt-4 flex">
           <ul className="grid min-w-fit grid-cols-2 grid-rows-2 gap-y-4 gap-x-3 xl:gap-x-1 lg:mr-6 lg:gap-x-4 sm:mx-auto [@media(max-width:375px)]:grid-cols-1 [@media(max-width:375px)]:justify-items-center">
