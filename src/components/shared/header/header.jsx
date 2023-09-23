@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 // import { useState } from 'react';
-import React from 'react';
+import React, { useState } from 'react';
 import slugify from 'slugify';
 
 import MENUS from 'constants/menus';
@@ -10,21 +10,21 @@ import Logo from 'icons/logo.inline.svg';
 import Burger from '../burger';
 import Button from '../button';
 import Link from '../link';
-// import Modal from '../modal';
+import Modal from '../modal';
 
 const Header = ({ isMobileMenuOpen, onBurgerClick, additionalClassName, homepage }) => {
   const getAnchor = (str) => slugify(str).toLocaleLowerCase();
-  // const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
-  // const handleModalShow = () => {
-  //   document.body.classList.add('overflow-hidden');
-  //   setIsModalVisible(true);
-  // };
+  const handleModalShow = () => {
+    document.body.classList.add('overflow-hidden');
+    setIsModalVisible(true);
+  };
 
-  // const handleModalHide = () => {
-  //   document.body.classList.remove('overflow-hidden');
-  //   setIsModalVisible(false);
-  // };
+  const handleModalHide = () => {
+    document.body.classList.remove('overflow-hidden');
+    setIsModalVisible(false);
+  };
 
   const handleAnchorClick = (e) => {
     const id = getAnchor(e.target.firstChild.data);
@@ -77,27 +77,27 @@ const Header = ({ isMobileMenuOpen, onBurgerClick, additionalClassName, homepage
             ))}
           </ul>
         </nav>
-        {/* <Button
+        <Button
           className="-mr-2 md:hidden"
           theme="primary"
           size="sm"
           onClick={() => handleModalShow()}
         >
-          KCD Utrecht 2023 Video
-        </Button> */}
+          KCD Amsterdam 2023 Video
+        </Button>
 
         <Burger
           className="z-50 hidden md:block"
           isToggled={isMobileMenuOpen}
           onClick={onBurgerClick}
         />
-        {/* 
+
         <Modal
           modalData={{}}
           isVisible={isModalVisible}
           isVideoModal
           onModalHide={handleModalHide}
-        /> */}
+        />
       </div>
     </header>
   );
