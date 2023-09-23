@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Button from 'components/shared/button';
-
+import LINKS from 'constants/links.js';
 // import illustration from './images/hero-illustration.png';
 
 const TITLE = 'Kubernetes Community Days Utrecht';
@@ -26,19 +26,19 @@ const Hero = () => (
         <p className="mt-5 max-w-[500px] text-lg leading-normal text-primary-1 lg:max-w-[500px]">
           {DESCRIPTION}
         </p>
-        {/* <Button
+        <Button
           className="mt-7 text-white shadow-[0_15px_40px_#999999] hover:shadow-[0px_15px_30px_#adadad]"
           theme="blue"
           size="lg"
-          to="https://www.cncf.io/"
+          {...LINKS.tickets}
         >
           Tickets
-        </Button> */}
+        </Button>
         <Button
-          className="mt-7 text-black shadow-[0_15px_40px_#999999] hover:shadow-[0px_15px_30px_#adadad]"
+          className="mt-7 ml-3 text-primary-1 shadow-[0_15px_40px_#999999] hover:shadow-[0px_15px_30px_#adadad]"
           theme="primary"
           size="lg"
-          to="https://forms.gle/JyrTeEJuk2PVAT7d9"
+          {...LINKS.cfp}
         >
           Call for Papers
         </Button>
