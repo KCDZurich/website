@@ -5,12 +5,12 @@ require('dotenv').config();
 module.exports = {
   flags: { DEV_SSR: process.env.GATSBY_DEV_SSR || false },
   siteMetadata: {
-    siteTitle: 'Kubernetes Community Days',
+    siteTitle: 'Kubernetes Community Days Utrecht',
     siteDescription: 'Kubernetes Community Days Utrecht website',
     siteImage: '/images/social-preview.jpg',
     siteLanguage: 'en',
     siteUrl: process.env.GATSBY_DEFAULT_SITE_URL || 'http://localhost:8000',
-    authorName: 'Pixel Point',
+    authorName: 'Luca Camphuisen',
   },
   plugins: [
     {

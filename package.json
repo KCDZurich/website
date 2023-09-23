@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-tailwind-starter",
+  "name": "kcd-utrecht",
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Alex Barashkov <alex@pixelpoint.io>",
+  "author": "Luca Camphuisen <luca@logic-shift.com>",
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=8.6.0"
