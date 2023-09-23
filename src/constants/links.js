@@ -40,7 +40,11 @@ export default {
     to: '/team',
   },
   tickets: {
-    to: 'https://tickets.kcdzurich.ch/',
+    to: 'https://cncf.io/',
+    target: '_blank',
+  },
+  cfp: {
+    to: 'https://forms.gle/JyrTeEJuk2PVAT7d9',
     target: '_blank',
   },
   mission: {
