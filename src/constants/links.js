@@ -66,7 +66,7 @@ export default {
 
   // Social-links
   linkedin: {
-    to: 'https://www.linkedin.com/company/kubernetes-community-days-zurich/',
+    to: 'https://www.linkedin.com/company/cloudnativeams/',
     target: '_blank',
   },
   twitter: {
