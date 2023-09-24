@@ -40,7 +40,7 @@ export default {
     to: '/team',
   },
   tickets: {
-    to: 'https://cncf.io/',
+    to: 'https://www.eventbrite.com/e/725590579957',
     target: '_blank',
   },
   cfp: {
