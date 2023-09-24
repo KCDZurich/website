@@ -40,7 +40,7 @@ export default {
     to: '/team',
   },
   tickets: {
-    to: 'https://www.eventbrite.com/e/725590579957',
+    to: 'https://kcdutrecht2023.eventbrite.com/',
     target: '_blank',
   },
   cfp: {
