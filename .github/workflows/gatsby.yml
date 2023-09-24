@@ -78,7 +78,7 @@ jobs:
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: 'true'
-          GATSBY_DEFAULT_SITE_URL: https://cloudnative-amsterdam.github.io/kcd-utrecht-website
+          GATSBY_DEFAULT_SITE_URL: https://kcdutrecht.nl
           GATSBY_DEV_SSR: false
 
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
