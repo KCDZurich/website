@@ -47,7 +47,7 @@ const Sponsors = () => (
       <p className="mx-auto mt-6 max-w-[800px] text-lg leading-normal text-primary-1">
         <strong>Kubernetes Community Days</strong> is more than an event; it's a community-driven
         movement, and we invite you to be a vital contributor to its success. Connect with us today
-        to explore how you can make a lasting impact on the future of cloud-native computing.
+        to explore how you can make a lasting impact on the future of cloud-native computing. Please see our <a href="https://drive.google.com/file/d/1iXJpCmh2v_a0PviqjXg_H3NbBkv060q2/view?usp=sharing">sponsorship prospectus</a> for more information.
       </p>
       <Button className="mt-7" to="mailto:hello@kcdutrecht.nl" theme="primary" size="lg">
         Contact us
