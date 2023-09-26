@@ -42,7 +42,7 @@ const ITEMS = [
     id: '02',
     title: 'The state of Green Washing - or how to build sustainable systems with Kubernetes ',
     duration: '30 min',
-    pdf: '/archive/Max Koerbaecher - State of greenwashing KCD Zürich.pdf',
+    pdf: '/archive/Max Koerbaecher - State of greenwashing KCD Zurich.pdf',
     videoSrc: 'https://www.youtube.com/embed/X1LWl_dH15A',
     speakers: [
       {
