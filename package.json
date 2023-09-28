@@ -24,9 +24,9 @@
   },
   "dependencies": {
     "@mdx-js/react": "^2.3.0",
-    "clsx": "^1.2.1",
+    "clsx": "^2.0.0",
     "copy-to-clipboard": "^3.3.3",
-    "framer-motion": "^7.10.3",
+    "framer-motion": "^10.16.4",
     "gatsby": "^5.12.5",
     "gatsby-plugin-canonical-urls": "^5.12.0",
     "gatsby-plugin-image": "^3.12.0",
@@ -40,7 +40,7 @@
     "react-share": "^4.4.1",
     "remark-gfm": "^3.0.1",
     "slugify": "^1.6.6",
-    "swiper": "^9.4.1",
+    "swiper": "^10.3.1",
     "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
@@ -66,13 +66,13 @@
     "gatsby-source-filesystem": "^5.12.0",
     "gatsby-transformer-sharp": "^5.12.0",
     "husky": "^8.0.3",
-    "lint-staged": "^13.3.0",
-    "markdownlint-cli": "^0.32.2",
+    "lint-staged": "^14.0.1",
+    "markdownlint-cli": "^0.37.0",
     "postcss": "^8.4.30",
     "postcss-import": "^15.1.0",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.2.8",
-    "tailwindcss-safe-area": "^0.2.2"
+    "tailwindcss-safe-area": "^0.4.1"
   },
   "keywords": [
     "react",

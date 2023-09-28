@@ -1,9 +1,9 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable import/no-unresolved */
 import React, { useState, useRef } from 'react';
-import { Navigation } from 'swiper';
+import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import 'swiper/swiper.min.css';
+import 'swiper/css';
 
 import Modal from '../../../shared/modal';
 
@@ -144,14 +144,14 @@ const Gallery = () => {
         </header>
         <div className="relative mt-14 xl:mt-10 lg:mt-12 lg:pb-10 md:mt-4">
           <button
-            className="prev-slide group-prev absolute -left-[70px] top-0 bottom-0 z-20 m-auto flex h-9 w-9 items-center justify-center rounded-full text-[#b5b5b5] transition-colors duration-200 disabled:opacity-50 lg:top-auto lg:left-0 lg:-bottom-10"
+            className="prev-slide group-prev absolute -left-[70px] bottom-0 top-0 z-20 m-auto flex h-9 w-9 items-center justify-center rounded-full text-[#b5b5b5] transition-colors duration-200 disabled:opacity-50 lg:-bottom-10 lg:left-0 lg:top-auto"
             type="button"
           >
             <span className="sr-only">Prev</span>
             <ArrowRight className="h-auto w-full -rotate-180" />
           </button>
           <button
-            className="next-slide group-next absolute -right-[70px] top-0 bottom-0 z-20 m-auto flex h-9 w-9 items-center justify-center rounded-full text-[#b5b5b5] transition-colors duration-200 disabled:opacity-50 lg:top-auto lg:left-12 lg:right-auto lg:-bottom-10"
+            className="next-slide group-next absolute -right-[70px] bottom-0 top-0 z-20 m-auto flex h-9 w-9 items-center justify-center rounded-full text-[#b5b5b5] transition-colors duration-200 disabled:opacity-50 lg:-bottom-10 lg:left-12 lg:right-auto lg:top-auto"
             type="button"
           >
             <span className="sr-only">Next</span>
