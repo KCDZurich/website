@@ -11,10 +11,9 @@ const Venue = () => (
         native communities, supported by the Cloud Native Computing Foundation (CNCF).
       </p>
       <p className="mt-7">
-        This is the first KCD in <span className="font-bold">Switzerland</span>, and we’re excited
-        to bring the community together. We want to provide a platform for professionals and experts
-        from all levels and backgrounds to learn, network, and share their knowledge on all things
-        cloud native.
+        We’re excited to bring the community together. We want to provide a platform for
+        professionals and experts from all levels and backgrounds to learn, network, and share their
+        knowledge on all things cloud native.
       </p>
       <p className="mt-7">
         Watch all the speakers’ sessions videos from June 15, 2023 on{' '}
