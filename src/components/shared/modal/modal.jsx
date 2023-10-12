@@ -113,7 +113,7 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   allowFullScreen
                 />
                 <Button
-                  className="z-999 absolute -top-12 -right-12 border-0 bg-transparent"
+                  className="z-999 absolute -right-12 -top-12 border-0 bg-transparent"
                   theme="primary"
                   size="sm"
                   aria-label="close modal"
@@ -133,7 +133,7 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   alt="Gallery item"
                 />
                 <Button
-                  className="z-999 absolute -top-10 -right-12 border-0 bg-transparent"
+                  className="z-999 absolute -right-12 -top-10 border-0 bg-transparent"
                   theme="primary"
                   size="sm"
                   aria-label="close modal"
@@ -142,7 +142,7 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   <CloseIcon className="h-7 w-7" aria-hidden />
                 </Button>
                 <button
-                  className="prev-slide group-prev absolute -left-20 top-0 bottom-0 z-20 m-auto flex h-[55px] w-[55px] items-center justify-center rounded-full text-white transition-colors duration-200 disabled:opacity-50 lg:-left-16 lg:h-10 lg:w-10 sm:-left-14"
+                  className="prev-slide group-prev absolute -left-20 bottom-0 top-0 z-20 m-auto flex h-[55px] w-[55px] items-center justify-center rounded-full text-white transition-colors duration-200 disabled:opacity-50 lg:-left-16 lg:h-10 lg:w-10 sm:-left-14"
                   type="button"
                   disabled={!sliderRef?.current?.swiper.clickedSlide.previousSibling}
                   onClick={() => {
@@ -160,7 +160,7 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   <ArrowRight className="h-auto w-full -rotate-180" />
                 </button>
                 <button
-                  className="next-slide group-next absolute -right-20 top-0 bottom-0 z-20 m-auto flex h-[55px] w-[55px] items-center justify-center rounded-full text-white transition-colors duration-200 disabled:opacity-50 lg:-right-16 lg:h-10 lg:w-10 sm:-right-14"
+                  className="next-slide group-next absolute -right-20 bottom-0 top-0 z-20 m-auto flex h-[55px] w-[55px] items-center justify-center rounded-full text-white transition-colors duration-200 disabled:opacity-50 lg:-right-16 lg:h-10 lg:w-10 sm:-right-14"
                   type="button"
                   disabled={!sliderRef?.current?.swiper.clickedSlide.nextSibling}
                   onClick={() => {
@@ -184,15 +184,13 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   <time className="text-sm font-semibold leading-none tracking-tight text-primary-1 opacity-60">
                     {time}
                   </time>
-                  <span className="relative ml-8 rounded-full bg-yellow px-2 py-1.5 text-[13px] font-semibold leading-none tracking-tighter text-primary-1 before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3">
+                  <span className="relative ml-8 rounded-full bg-yellow px-2 py-1.5 text-[13px] font-semibold leading-none tracking-tighter text-primary-1 before:absolute before:-left-4 before:bottom-0 before:top-0 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3">
                     {duration}
                   </span>
                   {speakers.length > 0 &&
-                    speakers.map(({ id: speakerId, name, photo }, index) => (
-                      <Link
-                        className="relative ml-8 inline-flex items-center gap-x-2 text-left text-lg font-semibold leading-normal text-primary-5 transition-colors duration-200 before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3 hover:text-blue-1"
-                        to="/#speaker"
-                        state={{ modalId: speakerId || id }}
+                    speakers.map(({ name, photo }, index) => (
+                      <span
+                        className="relative ml-8 inline-flex items-center gap-x-2 text-left text-lg font-semibold leading-normal text-primary-5 transition-colors duration-200 before:absolute before:-left-4 before:bottom-0 before:top-0 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3 hover:text-blue-1"
                         key={index}
                       >
                         <img
@@ -205,7 +203,7 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                         <p className="whitespace-nowrap text-sm font-medium leading-none sm:whitespace-normal">
                           {name}
                         </p>
-                      </Link>
+                      </span>
                     ))}
                 </div>
                 <h2 className="mt-7 text-2xl font-semibold leading-tight tracking-[-0.01em] text-primary-1 sm:text-lg">
@@ -220,7 +218,7 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
               <>
                 <div className="flex items-start">
                   <img
-                    className="mr-7 mb-7 h-auto w-[120px] sm:mr-4 sm:mb-4"
+                    className="mb-7 mr-7 h-auto w-[120px] sm:mb-4 sm:mr-4"
                     src={photo}
                     width={120}
                     alt={name}
@@ -330,7 +328,7 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                     <time className="text-sm font-semibold leading-none tracking-tight text-primary-1 opacity-60">
                       {time}
                     </time>
-                    <span className="relative ml-8 rounded-full bg-yellow px-2 py-1.5 text-[13px] font-semibold leading-none tracking-tighter text-primary-1 before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3">
+                    <span className="relative ml-8 rounded-full bg-yellow px-2 py-1.5 text-[13px] font-semibold leading-none tracking-tighter text-primary-1 before:absolute before:-left-4 before:bottom-0 before:top-0 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3">
                       {duration}
                     </span>
                     <Link
