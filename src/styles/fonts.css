@@ -94,4 +94,20 @@
     line-gap-override: 0%;
     size-adjust: 97.74%;
   }
+
+  @font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/orbitron/orbitron-700.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url('/fonts/orbitron/orbitron-800.woff2') format('woff2');
+  }
 }

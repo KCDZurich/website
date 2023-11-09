@@ -7,9 +7,9 @@ module.exports = {
     container: false,
   },
   theme: {
-    // TODO: Uncomment this part of the code and the import of "defaultTheme" above, and complete TODOs
     fontFamily: {
       sans: ['Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', ...defaultTheme.fontFamily.sans],
+      'sans-cyber': ['Orbitron', ...defaultTheme.fontFamily.sans],
       mono: ['', ...defaultTheme.fontFamily.mono],
     },
     fontSize: {
@@ -39,7 +39,7 @@ module.exports = {
       yellow: '#FFEA7D',
       blue: { 1: '#3333FF', 2: '#2929FF' },
       primary: {
-        1: '#262F59',
+        1: '#0A1133',
         2: 'rgba(38, 47, 89, 0.1)',
         3: 'rgba(38, 47, 89, 0.3)',
         4: 'rgba(38, 47, 89, 0.03)',

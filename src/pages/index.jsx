@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+/* eslint-disable  no-unused-vars  */
 import React from 'react';
 
 import Hero from 'components/pages/home/hero';
@@ -11,13 +12,13 @@ import Layout from 'components/shared/layout';
 import SEO from 'components/shared/seo';
 
 const HomePage = () => (
-  <Layout homepage>
+  <Layout isHomePage>
     <Hero />
-    <Venue />
+    {/* <Venue /> */}
     {/* <Speakers location={location} /> */}
     {/* <Workshops /> */}
-    <Sponsors />
-    <Partners />
+    {/* <Sponsors /> */}
+    {/* <Partners /> */}
   </Layout>
 );
 
