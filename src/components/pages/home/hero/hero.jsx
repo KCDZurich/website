@@ -22,7 +22,12 @@ const Hero = () => (
       <p className="mt-4 max-w-[440px] text-base font-medium leading-relaxed text-primary-1 md:mt-3 md:max-w-[300px] md:text-sm xs:mt-2 xs:max-w-[330px] xs:text-[12px]">
         {description}
       </p>
-      <Button className="mt-12 !text-base md:mt-9 sm:mt-8" theme="cyber" size="lg" to={buttonURL}>
+      <Button
+        className="z-[1] mt-12 !text-base md:mt-9 sm:mt-8"
+        theme="cyber"
+        size="lg"
+        to={buttonURL}
+      >
         {buttonText}
       </Button>
     </div>
