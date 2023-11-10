@@ -76,7 +76,12 @@ const Header = ({ isMobileMenuOpen, onBurgerClick, additionalClassName, isHomePa
             ))}
           </ul>
         </nav>
-        <Button className="md:hidden" theme="primary" size="sm" onClick={() => handleModalShow()}>
+        <Button
+          className="lg:!px-2 lg:!text-[13px] md:hidden"
+          theme="primary"
+          size="sm"
+          onClick={() => handleModalShow()}
+        >
           <ComputerIcon className="mr-2.5 h-4 w-4" aria-hidden />
           Video 2023
         </Button>

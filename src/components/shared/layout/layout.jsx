@@ -11,7 +11,7 @@ const Layout = ({ children, headerClassnames, isHomePage }) => {
   const handleHeaderBurgerClick = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col overflow-hidden">
       <Header
         isHomePage={isHomePage}
         isMobileMenuOpen={isMobileMenuOpen}

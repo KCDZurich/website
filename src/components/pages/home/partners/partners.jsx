@@ -13,16 +13,16 @@ const ITEMS = [
 ];
 
 const Partners = () => (
-  <section className="safe-paddings py-28">
-    <div className="container flex gap-x-8 md:flex-col md:gap-y-10">
-      <h2 className="w-1/2 max-w-[590px] font-sans-cyber text-[52px] font-bold lowercase leading-tight">
+  <section className="safe-paddings py-28 lg:py-10">
+    <div className="container flex gap-x-8 lg:flex-col lg:gap-y-10 lg:!px-12">
+      <h2 className="w-1/2 max-w-[590px] font-sans-cyber text-[52px] font-bold lowercase leading-tight lg:w-full lg:text-[40px]">
         Community
-        <span className="-mt-1 ml-16 block">// Media Partners</span>
+        <span className="-mt-1 ml-16 block lg:ml-0">// Media Partners</span>
       </h2>
-      <ul className="grid w-1/2 grid-cols-2 grid-rows-2">
+      <ul className="grid w-1/2 grid-cols-2 grid-rows-2 lg:w-full lg:grid-cols-3 lg:grid-rows-1">
         {ITEMS.map(({ icon, url }, index) => (
           <li
-            className="relative before:absolute before:right-0 before:h-full before:w-[1px] before:bg-vertical-dashed-line after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-horizontal-dashed-line last:after:hidden even:before:hidden [&:nth-last-child(2):even]:after:hidden"
+            className="relative before:absolute before:right-0 before:h-full before:w-[1px] before:bg-vertical-dashed-line after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-horizontal-dashed-line last:after:hidden even:before:hidden lg:after:hidden lg:before:last:hidden lg:before:even:block [&:nth-last-child(2):even]:after:hidden"
             key={index}
           >
             <Link

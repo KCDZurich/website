@@ -6,9 +6,9 @@ const title = 'Ticketing coming soon';
 const Tickets = () => (
   <section className="safe-paddings">
     <div className="container-xl bg-primary-1">
-      <div className="container flex items-center gap-x-20 md:flex-col md:gap-y-10">
-        <div className="text-2xl leading-normal text-white">
-          <h2 className="font-sans-cyber text-[52px] font-bold lowercase leading-tight text-red">
+      <div className="container flex items-center gap-x-20 lg:gap-x-16 lg:!px-5 md:flex-col md:gap-y-10">
+        <div className="text-2xl leading-normal text-white lg:text-base">
+          <h2 className="font-sans-cyber text-[52px] font-bold lowercase leading-tight text-red lg:text-[40px]">
             {title}
           </h2>
           <p className="mt-5">
@@ -17,7 +17,7 @@ const Tickets = () => (
           </p>
         </div>
         <StaticImage
-          className="-mr-2 max-w-[560px] shrink-0 lg:max-w-[700px]"
+          className="-mr-2 max-w-[560px] shrink-0 lg:max-w-[480px]"
           src="./images/tickets-illustration.png"
           width={495}
           heigth={336}

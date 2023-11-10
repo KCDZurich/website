@@ -4,12 +4,14 @@ import Link from 'components/shared/link';
 import DisketteIcon from 'icons/diskette.inline.svg';
 
 const Venue = () => (
-  <section className="safe-paddings pt-24">
-    <div className="container flex gap-x-36">
+  <section className="safe-paddings pt-24 lg:pt-16">
+    <div className="container flex gap-x-36 lg:gap-x-10 lg:!px-12">
       <div className="max-w-[270px] shrink-0">
-        <h2 className="font-sans-cyber text-[52px] font-bold leading-tight">What is KCD?</h2>
+        <h2 className="font-sans-cyber text-[52px] font-bold leading-tight lg:text-[40px]">
+          What is KCD?
+        </h2>
       </div>
-      <div className="text-2xl leading-normal text-primary-1 sm:text-lg">
+      <div className="text-2xl leading-normal text-primary-1 lg:text-xl sm:text-lg">
         <p>
           <span className="font-bold">Kubernetes Community Days</span> (KCDs) are global,
           community-organized events that gather adopters and technologists from open source and

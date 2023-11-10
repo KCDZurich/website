@@ -26,23 +26,23 @@ const items = [
 ];
 
 const Features = () => (
-  <section className="safe-paddings pt-[82px]">
-    <div className="mx-auto max-w-[1232px] bg-box-bordered bg-center bg-no-repeat py-6">
+  <section className="safe-paddings pt-[82px] lg:pt-10">
+    <div className="relative mx-auto max-w-[1232px] bg-box-bordered bg-contain bg-center bg-no-repeat py-6 lg:max-w-[95vw] lg:py-0">
       <ul className="grid grid-cols-12">
         {items.map(({ title, content, icon }, index) => (
           <li
-            className="col-span-4 flex flex-col px-8 py-4 leading-normal text-primary-1 first:pl-10 last:pr-10"
+            className="col-span-4 flex flex-col px-8 py-4 leading-normal text-primary-1 first:pl-10 last:pr-10 lg:py-8"
             key={index}
           >
             <img className="mx-auto" src={icon} width={97} height={91} loading="lazy" alt="" />
-            <h3 className="mx-auto font-mono-cyber text-4xl font-bold uppercase tracking-wide">
+            <h3 className="mx-auto font-mono-cyber text-4xl font-bold uppercase tracking-wide lg:text-[33px]">
               {title}
             </h3>
-            <p className="mt-12 text-xl">{content}</p>
+            <p className="mt-12 text-xl lg:text-base">{content}</p>
           </li>
         ))}
       </ul>
-      {/* <img className="absolute inset-0 -z-10" src={borderImage} alt="" /> */}
+      {/* <img className="absolute inset-0" src="/images/border.svg" alt="" /> */}
     </div>
   </section>
 );
