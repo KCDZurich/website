@@ -51,11 +51,11 @@ const Header = ({ isMobileMenuOpen, onBurgerClick, additionalClassName, isHomePa
         additionalClassName
       )}
     >
-      <div className="container flex items-center justify-between py-5">
+      <div className="container flex items-center justify-between py-5 md:py-2">
         <Link className="z-50 block" to="/">
           <Logo className="h-12 w-44" />
         </Link>
-        <nav>
+        <nav className={clsx(isHomePage && 'lg:mr-32')}>
           <ul className="flex space-x-8 text-white lg:ml-0 lg:space-x-6 md:hidden">
             {MENUS.header.map(({ text, to, homeTo }, index) => (
               <li className="text-[15px] font-semibold text-primary-1" key={index}>

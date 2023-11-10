@@ -10,7 +10,7 @@ const styles = {
   base: 'inline-flex items-center justify-center !leading-none text-center whitespace-nowrap rounded transition-[colors, opacity] duration-200 outline-none font-bold tracking-wide',
   size: {
     lg: 'h-16 px-11 py-[18px] text-lg md:!text-[11px] md:px-8 md:py-2 md:!h-11',
-    sm: 'h-12 px-5 text-base md:!text-[11px] md:!h-10 md:!px-7',
+    sm: 'h-12 px-5 text-base md:!text-[11px] md:!h-10 md:!px-7 xs:!text-base',
     xs: 'h-10 px-5 text-xs',
   },
   theme: {
