@@ -30,10 +30,10 @@ const items = [
 const Features = () => (
   <section className="safe-paddings pt-[104px] lg:pt-10 md:pt-[45px]">
     <div className="relative mx-auto max-w-[1232px] pb-9 lg:max-w-[95vw] lg:pb-5 md:pb-2.5">
-      <ul className="grid grid-cols-12 xs:grid-cols-1 xs:gap-y-5">
+      <ul className="grid grid-cols-12 xs:flex xs:flex-col xs:gap-y-5">
         {items.map(({ title, content, icon }, index) => (
           <li
-            className="relative col-span-4 flex flex-col px-8 py-4 leading-normal text-primary-1 first:pl-10 last:pr-10 lg:px-4 lg:py-8 lg:first:pl-6 lg:last:pr-6 md:px-3.5 md:py-6 md:first:pl-4 md:last:pr-5 xs:col-span-full xs:!p-6"
+            className="relative col-span-4 flex flex-col px-8 py-4 leading-normal text-primary-1 first:pl-10 last:pr-10 lg:px-4 lg:py-8 lg:first:pl-6 lg:last:pr-6 md:px-3.5 md:py-6 md:first:pl-4 md:last:pr-5 xs:max-w-[342px] xs:!p-6"
             key={index}
           >
             <div className="flex flex-col xs:flex-row xs:items-center xs:justify-center">
@@ -51,7 +51,7 @@ const Features = () => (
             </div>
             <p className="mt-12 text-xl lg:mt-7 lg:text-base md:text-sm xs:mt-8">{content}</p>
             <img
-              className="pointer-events-none absolute inset-0 -z-10 hidden h-full w-full xs:block"
+              className="pointer-events-none absolute inset-0 -z-10 hidden h-full w-full object-contain xs:block"
               src={mobileBorder}
               alt=""
             />

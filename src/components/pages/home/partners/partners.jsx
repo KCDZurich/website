@@ -7,9 +7,15 @@ import rokt from './images/rokt.svg';
 import whiteRabbit from './images/white-rabbit.svg';
 
 const ITEMS = [
-  { icon: rokt, url: 'https://rokt.cloud/' },
-  { icon: whiteRabbit, url: 'https://www.whiterabbitcom.ch' },
-  { icon: cloudNative, url: 'https://www.cncf.io/' },
+  { icon: rokt, url: 'https://rokt.cloud/', name: 'Rokt', width: 111, height: 73 },
+  {
+    icon: whiteRabbit,
+    url: 'https://www.whiterabbitcom.ch',
+    name: 'WhiteRabbit',
+    width: 82,
+    height: 91,
+  },
+  { icon: cloudNative, url: 'https://www.cncf.io/', name: 'CloudNative', width: 239, height: 46 },
 ];
 
 const Partners = () => (
@@ -20,7 +26,7 @@ const Partners = () => (
         <span className="-mt-1 ml-16 block lg:ml-0">// Media Partners</span>
       </h2>
       <ul className="grid w-1/2 grid-cols-2 grid-rows-2 lg:w-full lg:grid-cols-3 lg:grid-rows-1 sm:grid-cols-2 sm:grid-rows-2">
-        {ITEMS.map(({ icon, url }, index) => (
+        {ITEMS.map(({ icon, url, name, width, height }, index) => (
           <li
             className="relative before:absolute before:right-0 before:h-full before:w-[1px] before:bg-vertical-dashed-line after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-horizontal-dashed-line last:after:hidden even:before:hidden lg:after:hidden lg:before:last:hidden lg:before:even:block sm:after:block sm:before:last:block sm:before:even:hidden [&:nth-last-child(2):even]:after:hidden"
             key={index}
@@ -30,13 +36,14 @@ const Partners = () => (
               to={url}
             >
               <img
-                className="max-w-[240px] md:max-w-full xs:max-h-[60px]"
+                className="w-auto max-w-[240px] md:max-w-full xs:max-h-[60px]"
                 src={icon}
-                width="auto"
-                height="auto"
+                width={width}
+                height={height}
                 loading="lazy"
                 alt=""
               />
+              <span className="sr-only">{name} page</span>
             </Link>
           </li>
         ))}
