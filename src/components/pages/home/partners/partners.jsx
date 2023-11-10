@@ -34,6 +34,7 @@ const Partners = () => (
             <Link
               className="flex h-full w-full items-center justify-center p-[18px] transition-all duration-200 hover:bg-primary-1 hover:bg-opacity-10"
               to={url}
+              target="_blank"
             >
               <img
                 className="w-auto max-w-[240px] md:max-w-full xs:max-h-[60px]"
