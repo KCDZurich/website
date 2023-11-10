@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import slugify from 'slugify';
 
 import MENUS from 'constants/menus';
-import DisketteIcon from 'icons/disket.inline.svg';
+import ComputerIcon from 'icons/computer.inline.svg';
 import Logo from 'icons/logo.inline.svg';
 
 import Burger from '../burger';
@@ -76,13 +76,8 @@ const Header = ({ isMobileMenuOpen, onBurgerClick, additionalClassName, isHomePa
             ))}
           </ul>
         </nav>
-        <Button
-          className="uppercase md:hidden"
-          theme="primary"
-          size="sm"
-          onClick={() => handleModalShow()}
-        >
-          <DisketteIcon className="mr-2.5 h-4 w-4" aria-hidden />
+        <Button className="md:hidden" theme="primary" size="sm" onClick={() => handleModalShow()}>
+          <ComputerIcon className="mr-2.5 h-4 w-4" aria-hidden />
           Video 2023
         </Button>
         <Burger

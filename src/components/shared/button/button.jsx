@@ -15,9 +15,9 @@ const styles = {
   },
   theme: {
     blue: 'bg-blue-1 text-white hover:bg-blue-2',
-    cyber: 'relative min-w-[212px] text-white uppercase rounded-[3px] border border-primary-1',
+    cyber: 'relative min-w-[212px] text-white uppercase rounded border border-primary-1',
     primary:
-      'bg-none text-primary-1 border-[3px] border-primary-1 hover:bg-primary-1 hover:bg-opacity-10',
+      'bg-white uppercase text-primary-1 border-[3px] border-primary-1 hover:bg-primary-1 hover:bg-opacity-10',
     'link-primary':
       'font-semibold inline-flex items-baseline leading-none transition-colors text-primary-1 hover:text-blue-1',
   },

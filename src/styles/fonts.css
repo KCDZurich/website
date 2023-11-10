@@ -110,4 +110,11 @@
     font-display: swap;
     src: url('/fonts/orbitron/orbitron-800.woff2') format('woff2');
   }
+
+  @font-face {
+    font-family: 'Pixel Operator';
+    font-style: normal;
+    font-display: swap;
+    src: url('/fonts/pixel-operator/pixel-operator-700.woff2') format('woff2');
+  }
 }
