@@ -22,21 +22,30 @@ const Hero = () => (
       <p className="mt-4 max-w-[440px] text-base font-medium leading-relaxed text-primary-1 md:mt-3 md:max-w-[300px] md:text-sm xs:mt-2 xs:max-w-[330px] xs:text-[12px]">
         {description}
       </p>
-      <Button className="mt-12 !text-base md:mt-7 xs:mt-9" theme="cyber" size="lg" to={buttonURL}>
+      <Button className="mt-12 !text-base md:mt-9 sm:mt-8" theme="cyber" size="lg" to={buttonURL}>
         {buttonText}
       </Button>
     </div>
     <StaticImage
-      className="!absolute -top-[72px] left-1/2 -z-10 w-[1680px] -translate-x-1/2 lg:-top-[60px] lg:w-[1370px] md:-top-[48px] md:w-[1100px] xs:!hidden"
-      src="./images/hero-illustration.png"
+      className="pointer-events-none !absolute -top-[72px] left-1/2 -z-10 w-[1680px] -translate-x-1/2 lg:-top-[60px] lg:w-[1370px] md:-top-[48px] md:w-[1100px] xs:!hidden"
+      src="./images/hero-desktop.png"
       formats={['auto', 'webp']}
       width={1680}
       height={831}
       loading="eager"
       alt="Hero illustration"
     />
+    {/* <StaticImage */}
+    {/*   className="!absolute pointer-events-none -top-[67px] left-1/2 -z-10 !hidden w-[1024px] -translate-x-1/2 md:!block xs:!hidden" */}
+    {/*   src="./images/hero-tablet.png" */}
+    {/*   formats={['auto', 'webp']} */}
+    {/*   width={1024} */}
+    {/*   height={618} */}
+    {/*   loading="eager" */}
+    {/*   alt="Tablet hero illustration" */}
+    {/* /> */}
     <StaticImage
-      className="!absolute left-1/2 top-0 -z-10 !hidden h-[623px] w-full min-w-[360px] -translate-x-1/2 object-contain xs:!block"
+      className="pointer-events-none !absolute left-1/2 top-0 -z-10 !hidden h-[623px] w-full min-w-[360px] -translate-x-1/2 object-contain xs:!block"
       src="./images/hero-mobile.jpg"
       layout="fullWidth"
       width={360}

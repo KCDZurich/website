@@ -28,7 +28,7 @@ const items = [
 ];
 
 const Features = () => (
-  <section className="safe-paddings pt-[104px] lg:pt-10 md:pt-[45px]">
+  <section className="safe-paddings pt-[104px] lg:pt-10 md:pt-11">
     <div className="relative mx-auto max-w-[1232px] pb-9 lg:max-w-[95vw] lg:pb-5 md:pb-2.5">
       <ul className="grid grid-cols-12 xs:flex xs:flex-col xs:gap-y-5">
         {items.map(({ title, content, icon }, index) => (
@@ -61,6 +61,8 @@ const Features = () => (
       <img
         className="pointer-events-none absolute inset-0 -top-2 -z-10 block h-full w-full lg:top-1 md:-top-1 xs:hidden"
         src={border}
+        width={1216}
+        height={424}
         alt=""
       />
     </div>
