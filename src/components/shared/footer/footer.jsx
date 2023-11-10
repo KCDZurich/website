@@ -40,13 +40,13 @@ const Footer = () => {
 
   return (
     <footer className="safe-paddings border-t border-t-gray-10 bg-white">
-      <div className="container flex items-center justify-between pb-5 pt-5 sm:flex-col sm:items-start">
+      <div className="container flex items-center justify-between pb-5 pt-5 md:items-start md:gap-x-8 sm:flex-col">
         <Link to="/">
-          <Logo className="h-12 w-44" />
+          <Logo className="h-12 w-44 md:h-auto md:w-36" />
           <span className="sr-only">KCD Zurich</span>
         </Link>
 
-        <nav className="mt-4 flex sm:mt-12">
+        <nav className="mt-4 flex md:mt-0 sm:mt-12">
           <ul className="grid min-w-fit grid-cols-2 grid-rows-2 gap-x-3 gap-y-4 xl:gap-x-1 lg:mr-6 lg:gap-x-4 sm:mx-auto sm:gap-x-0 [@media(max-width:375px)]:grid-cols-1">
             {MENUS.footer.map(({ text, to, target, name }, index) => (
               <li className="w-fit max-w-min text-sm font-semibold text-primary-1" key={index}>
@@ -65,9 +65,9 @@ const Footer = () => {
           </ul>
         </nav>
 
-        <div className="mt-4 sm:mt-12">
+        <div className="mt-4 md:mt-0 sm:mt-12">
           <Link
-            className="ml-2 font-semibold transition-colors duration-200 sm:ml-0"
+            className="ml-2 text-sm font-semibold transition-colors duration-200 sm:ml-0"
             theme="primary"
             to="mailto:hello@kcdzurich.ch"
           >
