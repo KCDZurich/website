@@ -27,23 +27,14 @@ const Hero = () => (
       </Button>
     </div>
     <StaticImage
-      className="pointer-events-none !absolute -top-[72px] left-1/2 -z-10 w-[1680px] -translate-x-1/2 lg:-top-[60px] lg:w-[1370px] md:-top-[48px] md:w-[1100px] xs:!hidden"
+      className="pointer-events-none !absolute -top-[76px] left-1/2 -z-10 w-[1696px] -translate-x-1/2 lg:-top-[60px] lg:w-[1370px] md:-top-[48px] md:w-[1100px] xs:!hidden"
       src="./images/hero-desktop.png"
       formats={['auto', 'webp']}
-      width={1680}
-      height={831}
+      width={1696}
+      height={832}
       loading="eager"
       alt="Hero illustration"
     />
-    {/* <StaticImage */}
-    {/*   className="!absolute pointer-events-none -top-[67px] left-1/2 -z-10 !hidden w-[1024px] -translate-x-1/2 md:!block xs:!hidden" */}
-    {/*   src="./images/hero-tablet.png" */}
-    {/*   formats={['auto', 'webp']} */}
-    {/*   width={1024} */}
-    {/*   height={618} */}
-    {/*   loading="eager" */}
-    {/*   alt="Tablet hero illustration" */}
-    {/* /> */}
     <StaticImage
       className="pointer-events-none !absolute left-1/2 top-0 -z-10 !hidden h-[623px] w-full min-w-[360px] -translate-x-1/2 object-contain xs:!block"
       src="./images/hero-mobile.jpg"

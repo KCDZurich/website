@@ -16,7 +16,8 @@ const styles = {
   },
   theme: {
     blue: 'bg-blue-1 text-white hover:bg-blue-2 rounded',
-    cyber: 'relative min-w-[212px] text-white uppercase rounded border border-primary-1 md:min-w-0',
+    cyber:
+      'relative min-w-[212px] font-semibold text-white uppercase rounded border border-primary-1 md:min-w-0',
     primary: 'bg-white uppercase text-primary-1 border-[3px] border-primary-1 hover:bg-blue-light',
     'link-primary':
       'font-semibold inline-flex items-baseline leading-none transition-colors text-primary-1 hover:text-blue-1',
