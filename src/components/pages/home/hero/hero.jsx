@@ -23,7 +23,7 @@ const Hero = () => (
         {description}
       </p>
       <Button
-        className="z-[1] mt-12 !text-base md:mt-9 sm:mt-8"
+        className="z-[1] mt-12 !text-base md:mt-9 md:!text-[11px] sm:mt-8"
         theme="cyber"
         size="lg"
         to={buttonURL}

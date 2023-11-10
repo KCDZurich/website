@@ -20,7 +20,7 @@ const Sponsors = () => (
             future of cloud-native computing.
           </p>
           <Button
-            className="!h-13 mt-9 !px-10 lg:mt-12 md:mt-6 xs:mt-8"
+            className="!h-13 mt-9 !px-10 lg:mt-12 md:mt-6 md:!text-[11px] xs:mt-8"
             to="mailto:hello@kcdzurich.ch"
             theme="primary"
             size="sm"
