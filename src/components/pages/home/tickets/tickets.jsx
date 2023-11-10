@@ -8,7 +8,8 @@ const Tickets = () => (
     <div className="container-xl bg-[#1A1D2E]">
       <div className="container flex items-center gap-x-20 lg:gap-x-16 lg:!px-5 md:gap-x-4 md:!px-2 md:py-2 xs:flex-col-reverse xs:gap-y-2.5 xs:!px-0 xs:pb-12 xs:pt-4">
         <div className="text-2xl leading-normal text-white lg:text-base md:text-sm xs:text-base">
-          <h2 className="bg-red bg-clip-text font-sans-cyber text-[52px] font-bold lowercase leading-tight text-transparent [text-shadow:_0_2px_0_rgb(0_0_0_/_25%)]	lg:text-[40px] md:text-[32px]">
+          {/*  bg-red bg-clip-text text-transparent [text-shadow:_0_2px_0_rgb(0_0_0_/_25%)] */}
+          <h2 className="font-sans-cyber text-[52px] font-bold lowercase leading-tight text-red	lg:text-[40px] md:text-[32px]">
             {title}
           </h2>
           <p className="mt-5 lg:mt-2 md:mt-4 xs:mt-3">

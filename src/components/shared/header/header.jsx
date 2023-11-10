@@ -87,7 +87,7 @@ const Header = ({ isMobileMenuOpen, onBurgerClick, additionalClassName, isHomePa
           Video 2023
         </Button>
         <Burger
-          className="z-50 hidden md:block"
+          className="!absolute right-4 z-50 hidden md:block"
           isToggled={isMobileMenuOpen}
           onClick={onBurgerClick}
         />

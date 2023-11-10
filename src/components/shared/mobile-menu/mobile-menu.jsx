@@ -38,7 +38,7 @@ const MobileMenu = ({ isOpen, onButtonClick }) => {
   return (
     <LazyMotion features={domAnimation}>
       <m.nav
-        className="safe-paddings fixed inset-0 z-[-1] mt-[70px] hidden overflow-x-hidden overflow-y-hidden bg-white px-8 pt-[72px] pb-5 lg:flex lg:flex-col lg:justify-between"
+        className="safe-paddings fixed inset-0 z-[-1] mt-[64px] hidden overflow-x-hidden overflow-y-hidden bg-white px-8 pb-5 pt-[72px] lg:flex lg:flex-col lg:justify-between"
         initial="from"
         animate={controls}
         variants={variants}
@@ -60,7 +60,7 @@ const MobileMenu = ({ isOpen, onButtonClick }) => {
           </ul>
         </div>
         <Button
-          className="mt-7 text-white"
+          className="mt-7 text-white md:!h-16 md:!text-lg"
           to="https://tickets.kcdzurich.ch/"
           theme="blue"
           size="lg"
