@@ -30,7 +30,7 @@ const items = [
 const Features = () => (
   <section className="safe-paddings pt-[104px] lg:pt-10 md:pt-11">
     <div className="relative mx-auto max-w-[1232px] pb-9 lg:max-w-[95vw] lg:pb-5 md:pb-2.5">
-      <ul className="grid grid-cols-12 xs:flex xs:flex-col xs:gap-y-5">
+      <ul className="grid grid-cols-12 xs:flex xs:flex-col xs:items-center xs:gap-y-5">
         {items.map(({ title, content, icon }, index) => (
           <li
             className="relative col-span-4 flex flex-col px-8 py-4 leading-normal text-primary-1 first:pl-10 last:pr-10 lg:px-4 lg:py-8 lg:first:pl-6 lg:last:pr-6 md:px-3.5 md:py-6 md:first:pl-4 md:last:pr-5 xs:max-w-[342px] xs:!p-6"
@@ -53,6 +53,8 @@ const Features = () => (
             <img
               className="pointer-events-none absolute inset-0 -z-10 hidden h-full w-full object-contain xs:block"
               src={mobileBorder}
+              width={342}
+              height={241}
               alt=""
             />
           </li>
