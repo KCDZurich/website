@@ -14,8 +14,8 @@ const ITEMS = [
 
 const Partners = () => (
   <section className="safe-paddings py-28 lg:py-10">
-    <div className="container flex gap-x-8 lg:flex-col lg:gap-y-10 lg:!px-12">
-      <h2 className="w-1/2 max-w-[590px] font-sans-cyber text-[52px] font-bold lowercase leading-tight lg:w-full lg:text-[40px]">
+    <div className="container flex gap-x-8 lg:flex-col lg:gap-y-10">
+      <h2 className="w-1/2 max-w-[590px] font-sans-cyber text-[52px] font-bold lowercase leading-tight lg:w-full lg:text-[40px] md:text-[36px]">
         Community
         <span className="-mt-1 ml-16 block lg:ml-0">// Media Partners</span>
       </h2>

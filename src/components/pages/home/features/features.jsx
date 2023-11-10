@@ -31,14 +31,21 @@ const Features = () => (
       <ul className="grid grid-cols-12">
         {items.map(({ title, content, icon }, index) => (
           <li
-            className="col-span-4 flex flex-col px-8 py-4 leading-normal text-primary-1 first:pl-10 last:pr-10 lg:py-8"
+            className="col-span-4 flex flex-col px-8 py-4 leading-normal text-primary-1 first:pl-10 last:pr-10 lg:py-8 md:p-4"
             key={index}
           >
-            <img className="mx-auto" src={icon} width={97} height={91} loading="lazy" alt="" />
-            <h3 className="mx-auto font-mono-cyber text-4xl font-bold uppercase tracking-wide lg:text-[33px]">
+            <img
+              className="mx-auto md:max-w-[65px]"
+              src={icon}
+              width={97}
+              height={91}
+              loading="lazy"
+              alt=""
+            />
+            <h3 className="mx-auto font-mono-cyber text-4xl font-bold uppercase tracking-wide lg:text-[33px] md:text-[25px]">
               {title}
             </h3>
-            <p className="mt-12 text-xl lg:text-base">{content}</p>
+            <p className="mt-12 text-xl lg:text-base md:text-sm">{content}</p>
           </li>
         ))}
       </ul>

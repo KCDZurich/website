@@ -9,13 +9,13 @@ import cyberBg from './images/cyber-button-bg.png';
 const styles = {
   base: 'inline-flex items-center justify-center !leading-none text-center whitespace-nowrap rounded transition-[colors, opacity] duration-200 outline-none font-bold tracking-wide',
   size: {
-    lg: 'h-16 px-11 py-[18px] text-lg',
-    sm: 'h-12 px-5 text-base',
+    lg: 'h-16 px-11 py-[18px] text-lg md:!text-[11px] md:px-8 md:py-2 md:!h-11',
+    sm: 'h-12 px-5 text-base md:!text-[11px] md:!h-10 md:!px-7',
     xs: 'h-10 px-5 text-xs',
   },
   theme: {
     blue: 'bg-blue-1 text-white hover:bg-blue-2',
-    cyber: 'relative min-w-[212px] text-white uppercase rounded border border-primary-1',
+    cyber: 'relative min-w-[212px] text-white uppercase rounded border border-primary-1 md:min-w-0',
     primary:
       'bg-white uppercase text-primary-1 border-[3px] border-primary-1 hover:bg-primary-1 hover:bg-opacity-10',
     'link-primary':
