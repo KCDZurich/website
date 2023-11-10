@@ -19,7 +19,12 @@ const Sponsors = () => (
             success. Connect with us today to explore how you can make a lasting impact on the
             future of cloud-native computing.
           </p>
-          <Button className="mt-11 !h-14 !px-10 md:mt-6" to="mailto:" theme="primary" size="sm">
+          <Button
+            className="mt-11 !h-14 !px-10 md:mt-6"
+            to="mailto:hello@kcdzurich.ch"
+            theme="primary"
+            size="sm"
+          >
             Subscribe
           </Button>
         </div>

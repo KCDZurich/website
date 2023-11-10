@@ -7,7 +7,7 @@ const dateString = 'june 13th 2024';
 const title = 'KCD Zurich 2024';
 const description =
   'Experience the power of community at the Kubernetes Community Days in Zurich! When a diverse group of experts comes together to learn, network, and share knowledge on all things cloud native.';
-const buttonURL = '/';
+const buttonURL = 'mailto:milena@kcdzurich.ch';
 const buttonText = 'Get All News';
 
 const Hero = () => (
