@@ -28,10 +28,10 @@ const items = [
 const Features = () => (
   <section className="safe-paddings pt-[82px] lg:pt-10">
     <div className="relative mx-auto max-w-[1232px] bg-box-bordered bg-contain bg-center bg-no-repeat py-6 lg:max-w-[95vw] lg:py-0">
-      <ul className="grid grid-cols-12">
+      <ul className="grid grid-cols-12 xs:grid-cols-1">
         {items.map(({ title, content, icon }, index) => (
           <li
-            className="col-span-4 flex flex-col px-8 py-4 leading-normal text-primary-1 first:pl-10 last:pr-10 lg:py-8 md:p-4"
+            className="col-span-4 flex flex-col px-8 py-4 leading-normal text-primary-1 first:pl-10 last:pr-10 lg:py-8 md:p-4 xs:col-span-full"
             key={index}
           >
             <img
