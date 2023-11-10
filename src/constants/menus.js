@@ -17,8 +17,8 @@ const MENUS = {
   ],
   mobile: [
     // { text: 'Speakers', ...LINKS.speakers },
-    { text: 'Schedule', ...LINKS.schedule },
-    { text: 'Call for Proposal', ...LINKS.proposal },
+    // { text: 'Schedule', ...LINKS.schedule },
+    // { text: 'Call for Proposal', ...LINKS.proposal },
     // { text: 'Workshops', ...LINKS.workshops },
     { text: 'Sponsors', ...LINKS.sponsors },
     { text: 'Podcast', ...LINKS.podcast },

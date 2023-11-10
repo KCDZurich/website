@@ -88,7 +88,7 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
         <LazyMotion features={domAnimation}>
           <m.div
             className={clsx(
-              'fixed inset-0 z-50 m-auto flex h-[fit-content] max-h-[calc(100%-60px)] max-w-[592px] flex-col rounded bg-white text-primary-1 sm:left-2 sm:right-2',
+              'fixed inset-0 z-50 m-auto flex h-[fit-content] max-h-[calc(100%-60px)] max-w-[592px] flex-col rounded bg-white text-primary-1 md:max-h-[65vh] sm:left-2 sm:right-2',
               {
                 'overflow-y-auto p-10 sm:p-5': !isVideoModal && !isPhotoGallery,
                 'w-[1200px] max-w-[90vw]': isVideoModal,
@@ -113,7 +113,7 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   allowFullScreen
                 />
                 <Button
-                  className="z-999 absolute -right-12 -top-12 border-0 bg-transparent"
+                  className="z-999 absolute -right-12 -top-12 md:-right-6"
                   theme="default"
                   size="sm"
                   aria-label="close modal"
@@ -133,7 +133,7 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   alt="Gallery item"
                 />
                 <Button
-                  className="z-999 absolute -right-12 -top-10 border-0 bg-transparent"
+                  className="z-999 absolute -right-12 -top-10 md:-right-6"
                   theme="default"
                   size="sm"
                   aria-label="close modal"
