@@ -1,8 +1,11 @@
 import React from 'react';
 
+import mobileBorder from './images/border-mobile.svg';
+import border from './images/border.svg';
 import compassIcon from './images/compas.svg';
 import folderIcon from './images/folder.svg';
 import goalIcon from './images/goal.svg';
+
 
 const items = [
   {
@@ -26,30 +29,42 @@ const items = [
 ];
 
 const Features = () => (
-  <section className="safe-paddings pt-[82px] lg:pt-10">
-    <div className="relative mx-auto max-w-[1232px] bg-box-bordered bg-contain bg-center bg-no-repeat py-6 lg:max-w-[95vw] lg:py-0">
-      <ul className="grid grid-cols-12 xs:grid-cols-1">
+  <section className="safe-paddings pt-[104px] lg:py-10">
+    <div className="relative mx-auto max-w-[1232px] pb-9 lg:max-w-[95vw] lg:py-0">
+      {/* bg-box-bordered bg-contain bg-center bg-no-repeat */}
+      <ul className="grid grid-cols-12 xs:grid-cols-1 xs:gap-y-5">
         {items.map(({ title, content, icon }, index) => (
           <li
-            className="col-span-4 flex flex-col px-8 py-4 leading-normal text-primary-1 first:pl-10 last:pr-10 lg:py-8 md:p-4 xs:col-span-full"
+            className="relative col-span-4 flex flex-col px-8 py-4 leading-normal text-primary-1 first:pl-10 last:pr-10 lg:py-8 md:p-4 xs:col-span-full xs:!p-6"
             key={index}
           >
+            <div className="flex flex-col xs:flex-row xs:items-center xs:justify-center">
+              <img
+                className="mx-auto md:max-w-[65px] xs:mx-0 xs:max-w-[60px]"
+                src={icon}
+                width={97}
+                height={91}
+                loading="lazy"
+                alt=""
+              />
+              <h3 className="mx-auto font-mono-cyber text-4xl font-bold uppercase tracking-wide lg:text-[33px] md:text-[25px] xs:mx-0 xs:ml-3 xs:text-[31px]">
+                {title}
+              </h3>
+            </div>
+            <p className="mt-12 text-xl lg:text-base md:text-sm xs:mt-10">{content}</p>
             <img
-              className="mx-auto md:max-w-[65px]"
-              src={icon}
-              width={97}
-              height={91}
-              loading="lazy"
+              className="absolute inset-0 hidden h-full w-full xs:block"
+              src={mobileBorder}
               alt=""
             />
-            <h3 className="mx-auto font-mono-cyber text-4xl font-bold uppercase tracking-wide lg:text-[33px] md:text-[25px]">
-              {title}
-            </h3>
-            <p className="mt-12 text-xl lg:text-base md:text-sm">{content}</p>
           </li>
         ))}
       </ul>
-      {/* <img className="absolute inset-0" src="/images/border.svg" alt="" /> */}
+      <img
+        className="absolute inset-0 -top-2 block h-full w-full lg:top-0 xs:hidden"
+        src={border}
+        alt=""
+      />
     </div>
   </section>
 );

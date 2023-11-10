@@ -68,7 +68,6 @@ module.exports = {
     }),
     backgroundImage: {
       'header-gradient': 'linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)',
-      'box-bordered': 'url(/images/border.svg)',
       'horizontal-dashed-line':
         "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='592' height='3' viewBox='0 0 592 3' fill='none'%3E%3Cpath opacity='0.2' d='M592 2L8.74244e-08 1' stroke='%230A1133' stroke-dasharray='15 5'/%3E%3C/svg%3E\")",
       'vertical-dashed-line':

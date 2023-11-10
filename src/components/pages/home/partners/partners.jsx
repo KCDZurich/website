@@ -15,7 +15,7 @@ const ITEMS = [
 const Partners = () => (
   <section className="safe-paddings py-28 lg:py-10">
     <div className="container flex gap-x-8 lg:flex-col lg:gap-y-10">
-      <h2 className="w-1/2 max-w-[590px] font-sans-cyber text-[52px] font-bold lowercase leading-tight lg:w-full lg:text-[40px] md:text-[36px]">
+      <h2 className="w-1/2 max-w-[590px] font-sans-cyber text-[52px] font-bold lowercase leading-tight tracking-tight lg:w-full lg:text-[40px] md:text-[36px]">
         Community
         <span className="-mt-1 ml-16 block lg:ml-0">// Media Partners</span>
       </h2>
@@ -26,11 +26,11 @@ const Partners = () => (
             key={index}
           >
             <Link
-              className="flex h-full w-full items-center justify-center p-4 transition-all duration-200 hover:bg-primary-1 hover:bg-opacity-10"
+              className="flex h-full w-full items-center justify-center p-[18px] transition-all duration-200 hover:bg-primary-1 hover:bg-opacity-10"
               to={url}
             >
               <img
-                className="max-w-[210px]"
+                className="max-w-[240px]"
                 src={icon}
                 width="auto"
                 height="auto"
