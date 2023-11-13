@@ -4,7 +4,7 @@ import React from 'react';
 
 const defaultTitle = 'Kubernetes Community Days Zürich';
 const defaultDescription =
-  'Experience the power of community at the Kubernetes Community Days in Zurich!';
+  'Experience the power of community at the Kubernetes Community Days in Zürich!';
 
 const SEO = ({ title, description, pathname }) => {
   const {

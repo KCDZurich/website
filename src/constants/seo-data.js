@@ -36,7 +36,7 @@ export default {
   },
   team: {
     title: 'Team — Kubernetes Community Days',
-    description: 'Experience the power of community at the Kubernetes Community Days in Zurich!',
+    description: 'Experience the power of community at the Kubernetes Community Days in Zürich!',
   },
   archive: {
     title: 'Kubernetes Community Days Zürich 2023 - Event Highlights',

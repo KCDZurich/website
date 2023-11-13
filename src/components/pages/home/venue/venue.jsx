@@ -16,7 +16,7 @@ const Venue = () => (
           <span className="font-bold">Kubernetes Community Days</span> (KCDs) are global,
           community-organized events that gather adopters and technologists from open source and
           cloud native communities, supported by the Cloud Native Computing Foundation (CNCF).{' '}
-          <br /> We are committed to supporting the local Zurich community and local businesses.
+          <br /> We are committed to supporting the local Zürich community and local businesses.
         </p>
         <p className="mt-6 md:mt-4">
           Learn more about our work and watch all the speakers’ sessions videos from June 15, 2023

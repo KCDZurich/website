@@ -7,7 +7,7 @@ const DESCRIPTION =
   'Thank you to each of you for making <b>Kubernetes Community Days Zürich</b> a resounding success. Our sincere thanks also go to our <b>sponsors</b>. Your support played a crucial role in the success of this event.';
 
 const Hero = () => (
-  <section className="safe-paddings overflow-hidden bg-[#EDC3C7] bg-opacity-10 pt-24 pb-20 lg:pb-32 md:pb-24">
+  <section className="safe-paddings overflow-hidden bg-[#EDC3C7] bg-opacity-10 pb-20 pt-24 lg:pb-32 md:pb-24">
     <div className="container flex items-center gap-x-10 md:flex-col md:gap-y-10">
       <div className="text-primary-1 md:flex md:flex-col md:items-center md:text-center">
         <h1 className="text-6xl font-bold leading-tight lg:max-w-[500px] sm:text-5xl">{TITLE}</h1>
@@ -29,7 +29,7 @@ const Hero = () => (
         className="max-w-[800px] shrink-0 lg:max-w-[700px]"
         allow="autoplay; picture-in-picture; web-share"
         src="https://www.youtube.com/embed/7-b0llQFT8E?autoplay=0&mute=0&rel=0"
-        title="Kubernetes Community Days Zurich 2023"
+        title="Kubernetes Community Days Zürich 2023"
         width="100%"
         height="350"
         allowFullScreen

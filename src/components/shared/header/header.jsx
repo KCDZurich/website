@@ -54,7 +54,7 @@ const Header = ({ isMobileMenuOpen, onBurgerClick, additionalClassName, isHomePa
       <div className="container flex items-center justify-between py-5 md:py-2">
         <Link className="z-50 block" to="/">
           <Logo className="h-12 w-44" />
-          <span className="sr-only">KCD Zurich</span>
+          <span className="sr-only">KCD Zürich</span>
         </Link>
         <nav className={clsx(isHomePage && 'lg:mr-32')}>
           <ul className="flex space-x-8 text-white lg:ml-0 lg:space-x-6 md:hidden">

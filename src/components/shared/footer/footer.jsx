@@ -43,7 +43,7 @@ const Footer = () => {
       <div className="container flex items-center justify-between pb-5 pt-5 md:items-start md:gap-x-8 sm:flex-col">
         <Link to="/">
           <Logo className="h-12 w-44 md:h-auto md:w-36" />
-          <span className="sr-only">KCD Zurich</span>
+          <span className="sr-only">KCD Zürich</span>
         </Link>
 
         <nav className="mt-4 flex md:mt-0 sm:mt-12">
@@ -67,7 +67,7 @@ const Footer = () => {
 
         <div className="mt-4 md:mt-0 sm:mt-12">
           <Link
-            className="ml-2 text-sm font-semibold transition-colors duration-200 hover:text-[#06B3B8] sm:ml-0"
+            className="ml-2 text-sm font-semibold transition-colors duration-200 hover:!text-[#06B3B8] sm:ml-0"
             theme="primary"
             to="mailto:hello@kcdzurich.ch"
           >
