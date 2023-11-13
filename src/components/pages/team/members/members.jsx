@@ -2,7 +2,6 @@ import clsx from 'clsx';
 import React from 'react';
 
 import Link from 'components/shared/link';
-import ArchCloud from 'icons/archcloud.svg';
 import Isovalent from 'icons/isovalent.svg';
 import Rokt from 'icons/rokt.svg';
 import WhiteRabbit from 'icons/white-rabbit.svg';
@@ -33,7 +32,6 @@ const ITEMS = [
 ];
 
 const LOGOS = [
-  { icon: ArchCloud, url: 'https://arch.cloud/', iconClassName: 'w-[260px] h-auto' },
   { icon: WhiteRabbit, url: 'https://www.whiterabbitcom.ch', iconClassName: 'w-[200px]' },
   { icon: Isovalent, url: 'https://isovalent.com/', iconClassName: '' },
   { icon: Rokt, url: 'https://rokt.cloud/', iconClassName: 'w-28 h-[72px]' },

@@ -94,4 +94,60 @@
     line-gap-override: 0%;
     size-adjust: 97.74%;
   }
+
+  @font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/orbitron/orbitron-700.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Orbitron Fallback';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Arial Bold');
+    ascent-override: 86.53%;
+    descent-override: 20.8%;
+    line-gap-override: 0%;
+    size-adjust: 116.83%;
+  }
+
+  @font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url('/fonts/orbitron/orbitron-800.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Orbitron Fallback';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Arial Bold');
+    ascent-override: 86.53%;
+    descent-override: 20.8%;
+    line-gap-override: 0%;
+    size-adjust: 116.83%;
+  }
+
+  @font-face {
+    font-family: 'Pixel Operator';
+    font-style: normal;
+    font-display: swap;
+    src: url('/fonts/pixel-operator/pixel-operator-700.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Pixel Operator Fallback';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Courier New Bold');
+    ascent-override: 123.33%;
+    descent-override: 21.94%;
+    line-gap-override: 0%;
+    size-adjust: 65.88%;
+  }
 }

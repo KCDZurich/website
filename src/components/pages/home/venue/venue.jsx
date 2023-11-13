@@ -1,27 +1,35 @@
 import React from 'react';
 
 import Link from 'components/shared/link';
+import DisketteIcon from 'icons/diskette.inline.svg';
 
 const Venue = () => (
-  <section className="safe-paddings bg-white py-40 pb-20 md:py-24 sm:py-16">
-    <div className="container-md text-2xl text-primary-1 sm:text-lg">
-      <p>
-        <span className="font-bold">Kubernetes Community Days</span> (KCDs) are global,
-        community-organized events that gather adopters and technologists from open source and cloud
-        native communities, supported by the Cloud Native Computing Foundation (CNCF).
-      </p>
-      <p className="mt-7">
-        We’re excited to bring the community together. We want to provide a platform for
-        professionals and experts from all levels and backgrounds to learn, network, and share their
-        knowledge on all things cloud native.
-      </p>
-      <p className="mt-7">
-        Watch all the speakers’ sessions videos from June 15, 2023 on{' '}
-        <Link className="font-semibold" to="/archive" theme="blue-underlined">
-          Archive page
-        </Link>
-        !
-      </p>
+  <section className="safe-paddings pt-24 lg:pt-16 md:pt-10 xs:pt-12">
+    <div className="container flex gap-x-36 lg:gap-x-10 md:gap-x-4 xs:flex-col xs:gap-y-4">
+      <div className="max-w-[270px] shrink-0 md:max-w-[220px] xs:max-w-full">
+        <h2 className="font-sans-cyber text-[52px] font-bold leading-tight lg:text-[40px] md:text-[36px] xs:text-[32px]">
+          what is KCD?
+        </h2>
+      </div>
+      <div className="text-2xl leading-normal text-primary-1 lg:text-xl md:text-base">
+        <p>
+          <span className="font-bold">Kubernetes Community Days</span> (KCDs) are global,
+          community-organized events that gather adopters and technologists from open source and
+          cloud native communities, supported by the Cloud Native Computing Foundation (CNCF).{' '}
+          <br /> We are committed to supporting the local Zurich community and local businesses.
+        </p>
+        <p className="mt-6 md:mt-4">
+          Learn more about our work and watch all the speakers’ sessions videos from June 15, 2023
+          on{' '}
+          <Link
+            className="ml-3 inline-flex items-center border-b-2 border-transparent pb-0.5 font-mono-cyber text-[27px] font-bold leading-none tracking-wide transition-colors duration-200 hover:border-primary-1 lg:text-[24px] md:ml-1 md:text-lg sm:ml-2 sm:text-xl"
+            to="/archive"
+          >
+            <DisketteIcon className="mr-2 h-5 w-5 lg:h-4 lg:w-4 md:h-3 md:w-3" aria-hidden />
+            archive page
+          </Link>
+        </p>
+      </div>
     </div>
   </section>
 );

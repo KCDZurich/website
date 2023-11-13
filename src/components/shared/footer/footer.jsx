@@ -13,10 +13,10 @@ import Button from '../button';
 import Link from '../link';
 
 const items = [
-  { icon: GoogleMaps, iconClassName: 'w-11 h-9', url: LINKS.googlemaps.to },
-  { icon: LinkedIn, iconClassName: 'w-4 h-4', url: LINKS.linkedin.to },
-  { icon: Twitter, iconClassName: 'w-5 h-4', url: LINKS.twitter.to },
-  { icon: Youtube, iconClassName: 'w-6 h-5', url: LINKS.youtube.to },
+  { icon: GoogleMaps, iconClassName: 'w-11 h-9', url: LINKS.googlemaps.to, name: 'Google maps' },
+  { icon: LinkedIn, iconClassName: 'w-4 h-4', url: LINKS.linkedin.to, name: 'LinkedIn' },
+  { icon: Twitter, iconClassName: 'w-5 h-4', url: LINKS.twitter.to, name: 'Twitter' },
+  { icon: Youtube, iconClassName: 'w-6 h-5', url: LINKS.youtube.to, name: 'YouTube' },
 ];
 
 const Footer = () => {
@@ -37,16 +37,18 @@ const Footer = () => {
       });
     }
   };
+
   return (
     <footer className="safe-paddings border-t border-t-gray-10 bg-white">
-      <div className="container flex items-center justify-between pt-5 pb-5 sm:flex-col sm:justify-around">
-        <Link className="ml-2" to="/">
-          <Logo className="h-12 w-44" />
+      <div className="container flex items-center justify-between pb-5 pt-5 md:items-start md:gap-x-8 sm:flex-col">
+        <Link to="/">
+          <Logo className="h-12 w-44 md:h-auto md:w-36" />
+          <span className="sr-only">KCD Zurich</span>
         </Link>
 
-        <nav className="mt-4 flex">
-          <ul className="grid min-w-fit grid-cols-2 grid-rows-2 gap-y-4 gap-x-3 xl:gap-x-1 lg:mr-6 lg:gap-x-4 sm:mx-auto [@media(max-width:375px)]:grid-cols-1 [@media(max-width:375px)]:justify-items-center">
-            {MENUS.footer.map(({ text, to, target }, index) => (
+        <nav className="mt-4 flex md:mt-0 sm:mt-12">
+          <ul className="grid min-w-fit grid-cols-2 grid-rows-2 gap-x-3 gap-y-4 xl:gap-x-1 lg:mr-6 lg:gap-x-4 sm:mx-auto sm:gap-x-0 [@media(max-width:375px)]:grid-cols-1">
+            {MENUS.footer.map(({ text, to, target, name }, index) => (
               <li className="w-fit max-w-min text-sm font-semibold text-primary-1" key={index}>
                 <Button
                   className="flex sm:flex-wrap"
@@ -56,14 +58,16 @@ const Footer = () => {
                   onClick={handleAnchorClick}
                 >
                   {text}
+                  <span className="sr-only">Link to our {name}</span>
                 </Button>
               </li>
             ))}
           </ul>
         </nav>
-        <div className="mt-4">
+
+        <div className="mt-4 md:mt-0 sm:mt-12">
           <Link
-            className="ml-2 font-semibold transition-colors duration-200"
+            className="ml-2 text-sm font-semibold transition-colors duration-200 sm:ml-0"
             theme="primary"
             to="mailto:hello@kcdzurich.ch"
           >

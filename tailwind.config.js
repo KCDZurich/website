@@ -7,10 +7,11 @@ module.exports = {
     container: false,
   },
   theme: {
-    // TODO: Uncomment this part of the code and the import of "defaultTheme" above, and complete TODOs
     fontFamily: {
       sans: ['Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', ...defaultTheme.fontFamily.sans],
+      'sans-cyber': ['Orbitron', 'Orbitron Fallback', ...defaultTheme.fontFamily.sans],
       mono: ['', ...defaultTheme.fontFamily.mono],
+      'mono-cyber': ['Pixel Operator', 'Pixel Operator Fallback', ...defaultTheme.fontFamily.mono],
     },
     fontSize: {
       xs: ['12px'],
@@ -37,9 +38,11 @@ module.exports = {
       black: '#000000',
       white: '#ffffff',
       yellow: '#FFEA7D',
+      red: '#FF5712',
       blue: { 1: '#3333FF', 2: '#2929FF' },
+      'blue-light': '#DFEFF2',
       primary: {
-        1: '#262F59',
+        1: '#0A1133',
         2: 'rgba(38, 47, 89, 0.1)',
         3: 'rgba(38, 47, 89, 0.3)',
         4: 'rgba(38, 47, 89, 0.03)',
@@ -65,6 +68,10 @@ module.exports = {
     }),
     backgroundImage: {
       'header-gradient': 'linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)',
+      'horizontal-dashed-line':
+        "url(\"data:image/svg+xml,%3Csvg width='592' height='3' viewBox='0 0 592 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.2' d='M592 2L8.74244e-08 1' stroke='%230A1133' stroke-dasharray='15 5'/%3E%3C/svg%3E%0A\")",
+      'vertical-dashed-line':
+        "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='246' viewBox='0 0 2 246' fill='none'%3E%3Cpath opacity='0.2' d='M1.00001 246.001L0.999989 1.09673e-05' stroke='%230A1133' stroke-dasharray='15 5'/%3E%3C/svg%3E\")",
       ...defaultTheme.backgroundImage,
     },
     screens: {
@@ -73,7 +80,7 @@ module.exports = {
       lg: { max: '1279px' },
       md: { max: '1023px' },
       sm: { max: '767px' },
-      xs: { max: '479px' },
+      xs: { max: '660px' },
     },
     extend: {
       lineHeight: {

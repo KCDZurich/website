@@ -1,14 +1,18 @@
 @layer components {
+  .container-xl {
+    @apply mx-auto max-w-[1696px] xl:px-8 lg:max-w-none md:px-7 sm:px-4;
+  }
+
   .container-lg {
-    @apply mx-auto max-w-[1472px] xl:px-10 lg:max-w-none md:px-7 sm:px-4;
+    @apply mx-auto max-w-[1472px] xl:px-8 lg:max-w-none md:px-7 sm:px-4;
   }
 
   .container {
-    @apply mx-auto max-w-[1216px] xl:px-10 lg:max-w-full md:px-7 sm:px-4;
+    @apply mx-auto max-w-[1216px] lg:max-w-full lg:px-12 md:px-8 sm:px-4;
   }
 
   .container-md {
-    @apply mx-auto max-w-[1008px] xl:px-10 lg:max-w-full md:px-7 sm:px-4;
+    @apply mx-auto max-w-[1008px] xl:px-8 lg:max-w-full md:px-7 sm:px-4;
   }
 
   .container-sm {
