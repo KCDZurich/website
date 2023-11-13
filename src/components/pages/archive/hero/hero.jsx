@@ -16,10 +16,10 @@ const Hero = () => (
           dangerouslySetInnerHTML={{ __html: DESCRIPTION }}
         />
         <Button
-          className="mt-7 text-white shadow-[0_15px_40px_#999999] hover:shadow-[0px_15px_30px_#adadad]"
+          className="mt-7 !h-16 shadow-[0_15px_40px_#999999] hover:shadow-[0px_15px_30px_#adadad]"
           to="https://www.youtube.com/watch?v=7-b0llQFT8E"
-          theme="blue"
-          size="lg"
+          theme="primary"
+          size="sm"
           target="_blank"
         >
           Watch on YouTube
