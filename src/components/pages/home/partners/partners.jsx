@@ -7,15 +7,15 @@ import rokt from './images/rokt.svg';
 import whiteRabbit from './images/white-rabbit.svg';
 
 const ITEMS = [
-  { icon: rokt, url: 'https://rokt.cloud/', name: 'Rokt', width: 111, height: 73 },
+  { icon: rokt, url: 'https://rokt.cloud/', name: 'Rokt', width: 112, height: 74 },
   {
     icon: whiteRabbit,
     url: 'https://www.whiterabbitcom.ch',
     name: 'WhiteRabbit',
-    width: 82,
-    height: 91,
+    width: 83,
+    height: 92,
   },
-  { icon: cloudNative, url: 'https://www.cncf.io/', name: 'CloudNative', width: 239, height: 46 },
+  { icon: cloudNative, url: 'https://www.cncf.io/', name: 'CloudNative', width: 240, height: 46 },
 ];
 
 const Partners = () => (
@@ -37,7 +37,7 @@ const Partners = () => (
               target="_blank"
             >
               <img
-                className="w-auto max-w-[240px] md:max-w-full xs:max-h-[60px]"
+                className="w-auto max-w-[240px] md:max-w-full"
                 src={icon}
                 width={width}
                 height={height}
