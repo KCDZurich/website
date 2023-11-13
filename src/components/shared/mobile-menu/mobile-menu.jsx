@@ -4,6 +4,7 @@ import React from 'react';
 
 import MENUS from 'constants/menus';
 import useScrollOverflow from 'hooks/use-scroll-overflow';
+import ComputerIcon from 'icons/computer.inline.svg';
 
 import Button from '../button';
 
@@ -30,7 +31,7 @@ const variants = {
   },
 };
 
-const MobileMenu = ({ isOpen, onButtonClick }) => {
+const MobileMenu = ({ isOpen, onButtonClick, handleModalShow }) => {
   const controls = useAnimation();
 
   useScrollOverflow(controls, isOpen);
@@ -60,12 +61,13 @@ const MobileMenu = ({ isOpen, onButtonClick }) => {
           </ul>
         </div>
         <Button
-          className="mt-7 text-white md:!h-16 md:!text-lg"
-          to="https://tickets.kcdzurich.ch/"
-          theme="blue"
-          size="lg"
+          className="mt-7 md:!h-16 md:!text-lg"
+          theme="primary"
+          size="sm"
+          onClick={() => handleModalShow()}
         >
-          Get your ticket
+          <ComputerIcon className="mr-2.5 h-4 w-4" aria-hidden />
+          Video 2023
         </Button>
       </m.nav>
     </LazyMotion>
@@ -75,6 +77,7 @@ const MobileMenu = ({ isOpen, onButtonClick }) => {
 MobileMenu.propTypes = {
   isOpen: PropTypes.bool,
   onButtonClick: PropTypes.func.isRequired,
+  handleModalShow: PropTypes.func.isRequired,
 };
 
 MobileMenu.defaultProps = {
