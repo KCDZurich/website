@@ -4,7 +4,7 @@ import React from 'react';
 import Button from 'components/shared/button';
 
 const dateString = 'june 13th 2024';
-const title = 'KCD Zurich 2024';
+const title = 'KCD Zürich 2024';
 const description =
   'Experience the power of community at the Kubernetes Community Days in Zurich! When a diverse group of experts comes together to learn, network, and share knowledge on all things cloud native.';
 const buttonURL = 'mailto:milena@kcdzurich.ch';
@@ -32,7 +32,7 @@ const Hero = () => (
       </Button>
     </div>
     <StaticImage
-      className="pointer-events-none !absolute -top-[76px] left-1/2 -z-10 w-[1696px] -translate-x-1/2 lg:-top-[60px] lg:w-[1370px] md:-top-[48px] md:w-[1100px] xs:!hidden"
+      className="pointer-events-none !absolute -top-[76px] left-1/2 -z-10 w-[1696px] -translate-x-1/2 lg:!hidden"
       src="./images/hero-desktop.png"
       formats={['auto', 'webp']}
       width={1696}
@@ -41,11 +41,15 @@ const Hero = () => (
       alt="Hero illustration"
     />
     <StaticImage
-      className="pointer-events-none !absolute left-1/2 top-0 -z-10 !hidden h-[623px] w-full min-w-[360px] -translate-x-1/2 object-contain xs:!block"
+      className="pointer-events-none !absolute -top-[60px] left-1/2 -z-10 !hidden w-[1370px] -translate-x-1/2 lg:!block md:-top-[48px] md:w-[1100px] xs:!hidden"
+      src="./images/hero-tablet.png"
+      formats={['auto', 'webp']}
+      loading="eager"
+      alt="Tablet hero illustration"
+    />
+    <StaticImage
+      className="pointer-events-none !absolute left-1/2 top-0 -z-10 !hidden max-h-[623px] w-full min-w-[360px] -translate-x-1/2 xs:!block"
       src="./images/hero-mobile.jpg"
-      layout="fullWidth"
-      width={360}
-      height={623}
       loading="eager"
       alt="Mobile hero illustration"
     />
