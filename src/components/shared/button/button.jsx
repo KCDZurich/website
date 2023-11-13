@@ -21,7 +21,7 @@ const styles = {
     primary: 'bg-white uppercase text-primary-1 border-[3px] border-primary-1 hover:bg-blue-light',
     default: 'border-0 bg-transparent text-primary-1 hover:bg-opacity-10',
     'link-primary':
-      'font-semibold inline-flex items-baseline leading-none transition-colors text-primary-1 hover:text-blue-1',
+      'font-semibold inline-flex items-baseline leading-none transition-colors text-primary-1 hover:text-[#06B3B8]',
   },
 };
 
