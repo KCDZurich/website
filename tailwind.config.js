@@ -9,9 +9,9 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', ...defaultTheme.fontFamily.sans],
-      'sans-cyber': ['Orbitron', ...defaultTheme.fontFamily.sans],
+      'sans-cyber': ['Orbitron', 'Orbitron Fallback', ...defaultTheme.fontFamily.sans],
       mono: ['', ...defaultTheme.fontFamily.mono],
-      'mono-cyber': ['Pixel Operator', ...defaultTheme.fontFamily.mono],
+      'mono-cyber': ['Pixel Operator', 'Pixel Operator Fallback', ...defaultTheme.fontFamily.mono],
     },
     fontSize: {
       xs: ['12px'],
