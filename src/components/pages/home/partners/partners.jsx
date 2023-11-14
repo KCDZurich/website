@@ -44,7 +44,7 @@ const Partners = () => (
                 loading="lazy"
                 alt=""
               />
-              <span className="sr-only">{name} page</span>
+              <span className="sr-only">{name} partner page</span>
             </Link>
           </li>
         ))}

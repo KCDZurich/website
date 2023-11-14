@@ -74,7 +74,7 @@ const Footer = () => {
             hello@kcdzurich.ch
           </Link>
           <ul className="mt-4 flex min-w-fit gap-x-2.5">
-            {items.map(({ icon, iconClassName, url }, index) => {
+            {items.map(({ icon, iconClassName, url, name }, index) => {
               const Icon = icon;
 
               return (
@@ -84,6 +84,7 @@ const Footer = () => {
                     to={url}
                     target="_blank"
                   >
+                    <span className="sr-only">Find us at {name}</span>
                     <Icon className={iconClassName} />
                   </Link>
                 </li>
