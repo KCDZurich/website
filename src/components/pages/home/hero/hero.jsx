@@ -32,7 +32,7 @@ const Hero = () => (
       </Button>
     </div>
     <StaticImage
-      className="pointer-events-none !absolute -top-[76px] left-1/2 -z-10 w-[1696px] -translate-x-1/2 lg:!hidden"
+      className="hero-clip-path pointer-events-none !absolute -top-[76px] left-1/2 -z-10 w-[1696px] -translate-x-1/2 after:absolute after:left-1/2 after:top-0 after:-z-20 after:h-full after:w-full after:-translate-x-1/2 after:bg-hero-gradient lg:!hidden"
       src="./images/hero-desktop.png"
       formats={['auto', 'webp']}
       width={1696}
@@ -41,14 +41,14 @@ const Hero = () => (
       alt="Hero illustration"
     />
     <StaticImage
-      className="pointer-events-none !absolute -top-[60px] left-1/2 -z-10 !hidden w-[1370px] -translate-x-1/2 lg:!block md:-top-[48px] md:w-[1100px] xs:!hidden"
+      className="pointer-events-none !absolute -top-[60px] left-1/2 -z-10 !hidden w-[1370px] -translate-x-1/2 bg-hero-gradient lg:!block md:-top-[48px] md:w-[1100px] xs:!hidden"
       src="./images/hero-tablet.png"
       formats={['auto', 'webp']}
       loading="eager"
       alt="Tablet hero illustration"
     />
     <StaticImage
-      className="pointer-events-none !absolute left-1/2 top-0 -z-10 !hidden max-h-[623px] w-full min-w-[360px] -translate-x-1/2 xs:!block"
+      className="pointer-events-none !absolute left-1/2 top-0 -z-10 !hidden max-h-[623px] w-full min-w-[360px] -translate-x-1/2 bg-hero-mobile-gradient xs:!block"
       src="./images/hero-mobile.jpg"
       loading="eager"
       alt="Mobile hero illustration"
