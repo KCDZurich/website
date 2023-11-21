@@ -61,7 +61,7 @@ const Features = () => (
         ))}
       </ul>
       <img
-        className="pointer-events-none absolute inset-0 -top-2 -z-10 block h-full w-full lg:top-1 md:-top-1 xs:hidden"
+        className="pointer-events-none absolute inset-0 -top-2 -z-10 block h-full w-full lg:top-1 md:-top-1 sm:-top-4 xs:hidden"
         src={border}
         width={1216}
         height={424}
