@@ -7,8 +7,8 @@ const dateString = 'june 13th 2024';
 const title = 'KCD Zürich 2024';
 const description =
   'Experience the power of community at the Kubernetes Community Days in Zürich! When a diverse group of experts comes together to learn, network, and share knowledge on all things cloud native.';
-const buttonURL = 'mailto:milena@kcdzurich.ch';
-const buttonText = 'Get All News';
+const buttonURL = 'https://tickets.kcdzurich.ch/';
+const buttonText = 'Get Your Ticket';
 
 const Hero = () => (
   <section className="safe-paddings relative xs:max-h-[623px] xs:pb-[66.666%]">
@@ -27,6 +27,8 @@ const Hero = () => (
         theme="cyber"
         size="lg"
         to={buttonURL}
+        target="_blank"
+        rel="nofollow noreferrer"
       >
         {buttonText}
       </Button>
