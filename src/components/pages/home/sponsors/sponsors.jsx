@@ -234,10 +234,10 @@ const Sponsors = () => (
                   />
                 </a>
               ) : (
-                <span className="flex h-full w-full items-center justify-center px-4 py-3.5 font-mono-cyber text-2xl font-bold uppercase -tracking-wider text-[#7d8597] lg:text-xl md:text-sm sm:py-3.5">
+                <span className="flex h-full w-full items-center justify-center px-4 py-3.5 font-mono-cyber text-2xl font-bold uppercase -tracking-[0.72px] text-[#7d8597] lg:text-xl md:text-sm sm:py-3.5">
                   loading...
                   <img
-                    className="ml-5 lg:ml-5 lg:h-[20px] lg:w-[20px] sm:h-[16px] sm:w-[16px]"
+                    className="ml-3 lg:ml-5 lg:h-[20px] lg:w-[20px] sm:h-[16px] sm:w-[16px]"
                     src={loader}
                     width={26}
                     height={26}
