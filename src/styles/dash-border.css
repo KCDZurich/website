@@ -1,11 +1,4 @@
 @layer components {
-  /*.custom-border {*/
-  /*    position: relative;*/
-  /*    border: 1px solid;*/
-  /*    border-image: url('/images/border-345.png') 30 / 30px / 0px space;*/
-  /*    !* https://interactive-examples.mdn.mozilla.net/media/examples/border-diamonds.png *!*/
-  /*}*/
-
   .dash-border {
     border-image: url('/images/dash-border.svg') 14 / 16px round;
   }
@@ -16,9 +9,5 @@
 
   .dash-border-right-and-bottom-none {
     border-image-width: 16px 0 0 16px;
-
-    /*@media (max-width: 767px) {*/
-    /*    border-image-width: 16px 0 16px 16px;*/
-    /*}*/
   }
 }
