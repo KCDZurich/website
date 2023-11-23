@@ -210,29 +210,27 @@ const Sponsors = () => (
               })}
               key={index}
             >
-              <a
-                className="flex h-full w-full items-center justify-center px-4 py-3.5 transition-all duration-200 hover:bg-primary-1 hover:bg-opacity-10"
-                href={url}
-                target="_blank"
-                rel="nofollow noreferrer"
-              >
-                {icon ? (
-                  <>
-                    <span className="sr-only">{`${name} partner link`}</span>
-                    <img
-                      className="sm:max-h-[48px] sm:w-auto"
-                      src={icon}
-                      width={176}
-                      height={64}
-                      alt=""
-                    />
-                  </>
-                ) : (
-                  <span className="font-mono-cyber text-2xl font-bold uppercase tracking-tighter lg:text-xl md:text-sm sm:py-3.5">
-                    loading...
-                  </span>
-                )}
-              </a>
+              {url ? (
+                <a
+                  className="flex h-full w-full items-center justify-center px-4 py-3.5 transition-all duration-200 hover:bg-primary-1 hover:bg-opacity-10"
+                  href={url}
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                >
+                  <span className="sr-only">{`${name} partner link`}</span>
+                  <img
+                    className="sm:max-h-[48px] sm:w-auto"
+                    src={icon}
+                    width={176}
+                    height={64}
+                    alt=""
+                  />
+                </a>
+              ) : (
+                <span className="flex h-full w-full items-center justify-center px-4 py-3.5 font-mono-cyber text-2xl font-bold uppercase tracking-wide text-[#7d8597] lg:text-xl md:text-sm sm:py-3.5">
+                  loading...
+                </span>
+              )}
             </li>
           ))}
 
