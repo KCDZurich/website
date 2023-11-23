@@ -1,9 +1,54 @@
+import clsx from 'clsx';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import Button from 'components/shared/button';
+import acendLogo from 'icons/sponsors/acend.svg';
+import adfinisLogo from 'icons/sponsors/adfinis.svg';
+import airlockLogo from 'icons/sponsors/airlock.svg';
+import amanoxLogo from 'icons/sponsors/amanox.svg';
+import bNovaLogo from 'icons/sponsors/b-nova.svg';
+import campToCampLogo from 'icons/sponsors/camp-to-camp.svg';
+import flowLogo from 'icons/sponsors/flow.svg';
+import googleCloudLogo from 'icons/sponsors/google-cloud.svg';
+import innoqLogo from 'icons/sponsors/innoq.svg';
+import isovalentLogo from 'icons/sponsors/isovalent.svg';
+import nutanixLogo from 'icons/sponsors/nutanix.svg';
+import postFinanceLogo from 'icons/sponsors/post-finance.svg';
+import puzzleLogo from 'icons/sponsors/puzzle.svg';
+import redHatLogo from 'icons/sponsors/red-hat.svg';
+import separator from 'icons/sponsors/separator.svg';
+import veeamLogo from 'icons/sponsors/veeam.svg';
+import vshnLogo from 'icons/sponsors/vshn.svg';
 
 const title = 'Sponsors';
+const subtitle = 'Already Joined';
+const goldSponsors = [
+  { icon: googleCloudLogo, url: 'https://cloud.google.com/', name: 'Google cloud' },
+  { icon: isovalentLogo, url: 'https://isovalent.com/', name: 'Isovalent' },
+  { icon: vshnLogo, url: 'https://www.vshn.ch/', name: 'VSHN' },
+];
+const silverSponsors = [
+  { icon: redHatLogo, url: 'https://www.redhat.com/', name: 'RedHat' },
+  { icon: flowLogo, url: 'https://flow.swiss/', name: 'Flow' },
+  { icon: veeamLogo, url: 'https://www.veeam.com/', name: 'Veeam' },
+  { icon: airlockLogo, url: 'https://www.airlock.com/en/', name: 'Airlock' },
+  { icon: amanoxLogo, url: 'https://www.amanox.ch/en/', name: 'Amanox Solutions' },
+  { icon: nutanixLogo, url: 'https://www.nutanix.com/', name: 'Nutanix' },
+];
+const bronzeSponsors = [
+  { icon: innoqLogo, url: 'https://www.innoq.com/', name: 'Inoq' },
+  { icon: adfinisLogo, url: 'https://adfinis.com/', name: 'Adfinis' },
+  { icon: '', url: '', name: '' },
+  { icon: '', url: '', name: '' },
+];
+const specialSponsors = [
+  { icon: postFinanceLogo, url: 'https://www.postfinance.ch/', name: 'PostFinance' },
+  { icon: puzzleLogo, url: 'https://www.puzzle.ch/', name: 'Puzzle ITC' },
+  { icon: campToCampLogo, url: 'https://www.camptocamp.com/', name: 'CampToCamp' },
+  { icon: bNovaLogo, url: 'https://b-nova.com/', name: 'b-nova' },
+  { icon: acendLogo, url: 'https://acend.ch/', name: 'Acend' },
+];
 
 const Sponsors = () => (
   <section className="safe-paddings relative pt-[113px] lg:pt-9 md:pt-6 xs:pt-8" id="sponsors">
@@ -44,6 +89,198 @@ const Sponsors = () => (
           alt=""
           loading="lazy"
         />
+      </div>
+    </div>
+    <div className="container-xl relative bg-blue-super-light py-24 before:absolute before:left-0 before:top-0 before:h-12 before:w-full before:bg-sponsors-separator before:bg-cover lg:py-14 lg:before:h-9 md:py-10 sm:before:h-8">
+      <div className="container lg:!px-4 md:!px-2 xs:!px-0">
+        <h2 className="font-mono-cyber text-4xl font-bold uppercase tracking-wide lg:text-[32px] md:text-2xl xs:text-[32px]">
+          {subtitle}
+        </h2>
+
+        <ul className="mt-8 grid grid-cols-[176px_repeat(5,minmax(0,208px))] grid-rows-[repeat(5,95px)] lg:grid-cols-[135px_repeat(5,minmax(0,1fr))] lg:grid-rows-[repeat(5,73px)] md:grid-cols-[100px_repeat(5,minmax(0,1fr))] md:grid-rows-[repeat(5,48px)] sm:mt-6 sm:grid-cols-2 sm:grid-rows-none">
+          <li className="relative col-end-2 flex items-center before:absolute before:bottom-0 before:left-0 before:h-1/2 before:w-[2px] before:bg-[#ADCFD3] sm:col-span-full sm:mb-3 sm:before:hidden">
+            <span className="relative z-10 bg-[#EFFAFB] py-3">
+              <img
+                className="md:max-w-[15px] sm:max-w-[23px]"
+                src={separator}
+                width={28}
+                height={19}
+                alt=""
+              />
+            </span>
+            <h3 className="ml-4 font-mono-cyber text-3xl font-bold uppercase leading-normal tracking-wide lg:text-2xl md:text-xl sm:ml-3 sm:text-2xl">
+              Gold
+            </h3>
+          </li>
+          {goldSponsors.map(({ icon, url, name }, index) => (
+            <li
+              className={clsx('dash-border dash-border-right-and-bottom-none', {
+                'sm:[border-image-width:16px_16px_16px_16px]': index % 2 !== 0,
+                '[border-image-width:16px_16px_0_16px] sm:[border-image-width:16px_16px_16px_16px]':
+                  goldSponsors.length - 1 === index,
+              })}
+              key={index}
+            >
+              <a
+                className="flex h-full w-full items-center justify-center px-4 py-3.5 transition-all duration-200 hover:bg-primary-1 hover:bg-opacity-10 md:p-2"
+                href={url}
+                target="_blank"
+                rel="nofollow noreferrer"
+              >
+                <span className="sr-only">{`${name} partner link`}</span>
+                <img
+                  className="sm:max-h-[48px] sm:w-auto"
+                  src={icon}
+                  width={176}
+                  height={64}
+                  alt=""
+                />
+              </a>
+            </li>
+          ))}
+
+          <li className="relative col-end-2 flex items-center before:absolute before:bottom-0 before:left-0 before:h-full before:w-[2px] before:bg-[#ADCFD3] sm:col-span-full sm:mb-3 sm:mt-6 sm:before:hidden">
+            <span className="relative z-10 bg-[#EFFAFB] py-3">
+              <img
+                className="md:max-w-[15px] sm:max-w-[23px]"
+                src={separator}
+                width={28}
+                height={19}
+                alt=""
+              />
+            </span>
+            <h3 className="ml-4 font-mono-cyber text-3xl font-bold uppercase leading-normal tracking-wide lg:text-2xl md:text-xl sm:text-2xl">
+              Silver
+            </h3>
+          </li>
+          {silverSponsors.map(({ icon, url, name }, index) => (
+            <li
+              className={clsx('dash-border', {
+                'dash-border-right-and-bottom-none': index === 0 || index === 1,
+                'sm:[border-image-width:16px_16px_0_16px]': index % 2 !== 0,
+                '[border-image-width:16px_0_16px_16px] sm:[border-image-width:16px_0_0_16px]':
+                  index === 2,
+                'dash-border-right-and-bottom-none col-start-2 col-end-3 sm:col-span-1 sm:[border-image-width:16px_0_16px_16px]':
+                  index === 4,
+                'col-start-3 col-end-4 [border-image-width:16px_16px_0_16px] sm:col-span-1 sm:![border-image-width:16px_16px_16px_16px]':
+                  index === 5,
+              })}
+              key={index}
+            >
+              <a
+                className="flex h-full w-full items-center justify-center px-4 py-3.5 transition-all duration-200 hover:bg-primary-1 hover:bg-opacity-10"
+                href={url}
+                target="_blank"
+                rel="nofollow noreferrer"
+              >
+                <span className="sr-only">{`${name} partner link`}</span>
+                <img
+                  className="sm:max-h-[48px] sm:w-auto"
+                  src={icon}
+                  width={176}
+                  height={64}
+                  alt=""
+                />
+              </a>
+            </li>
+          ))}
+
+          <li className="relative col-end-2 row-end-4 flex items-center before:absolute before:bottom-0 before:left-0 before:h-full before:w-[2px] before:bg-[#ADCFD3] sm:hidden" />
+          <li className="relative col-end-2 flex items-center before:absolute before:bottom-0 before:left-0 before:h-full before:w-[2px] before:bg-[#ADCFD3] sm:col-span-full sm:mb-3 sm:mt-6 sm:before:hidden">
+            <span className="relative z-10 bg-[#EFFAFB] py-3">
+              <img
+                className="md:max-w-[15px] sm:max-w-[23px]"
+                src={separator}
+                width={28}
+                height={19}
+                alt=""
+              />
+            </span>
+            <h3 className="ml-4 font-mono-cyber text-3xl font-bold uppercase leading-normal tracking-wide lg:text-2xl md:text-xl sm:text-2xl">
+              Bronze
+            </h3>
+          </li>
+          {bronzeSponsors.map(({ icon, url, name }, index) => (
+            <li
+              className={clsx('dash-border dash-border-right-and-bottom-none', {
+                'sm:[border-image-width:16px_16px_0_16px]': index === 1,
+                'sm:[border-image-width:16px_0_16px_16px]': index === 2,
+                'sm:[border-image-width:16px_16px_16px_16px]': index === 3,
+                '[border-image-width:16px_16px_0_16px]': bronzeSponsors.length - 1 === index,
+              })}
+              key={index}
+            >
+              <a
+                className="flex h-full w-full items-center justify-center px-4 py-3.5 transition-all duration-200 hover:bg-primary-1 hover:bg-opacity-10"
+                href={url}
+                target="_blank"
+                rel="nofollow noreferrer"
+              >
+                {icon ? (
+                  <>
+                    <span className="sr-only">{`${name} partner link`}</span>
+                    <img
+                      className="sm:max-h-[48px] sm:w-auto"
+                      src={icon}
+                      width={176}
+                      height={64}
+                      alt=""
+                    />
+                  </>
+                ) : (
+                  <span className="font-mono-cyber text-2xl font-bold uppercase tracking-tighter lg:text-xl md:text-sm sm:py-3.5">
+                    loading...
+                  </span>
+                )}
+              </a>
+            </li>
+          ))}
+
+          <li className="relative col-end-2 flex items-center before:absolute before:left-0 before:top-0 before:h-1/2 before:w-[2px] before:bg-[#ADCFD3] sm:col-span-full sm:mb-3 sm:mt-6 sm:before:hidden">
+            <span className="relative z-10 bg-[#EFFAFB] py-3">
+              <img
+                className="md:max-w-[15px] sm:max-w-[23px]"
+                src={separator}
+                width={28}
+                height={19}
+                alt=""
+              />
+            </span>
+            <h3 className="ml-4 font-mono-cyber text-3xl font-bold uppercase leading-normal tracking-wide lg:text-2xl md:text-xl sm:text-2xl">
+              Special
+            </h3>
+          </li>
+          {specialSponsors.map(({ icon, url, name }, index) => (
+            <li
+              className={clsx(
+                'dash-border dash-border-right-none sm:dash-border-right-and-bottom-none',
+                {
+                  '[border-image-width:16px_16px_16px_16px] sm:[border-image-width:16px_16px_16px_16px]':
+                    specialSponsors.length - 1 === index,
+                  'sm:[border-image-width:16px_16px_0_16px]': index === 1,
+                  'sm:[border-image-width:16px_16px_16px_16px]': index === 3,
+                }
+              )}
+              key={index}
+            >
+              <a
+                className="flex h-full w-full items-center justify-center px-4 py-3.5 transition-all duration-200 hover:bg-primary-1 hover:bg-opacity-10"
+                href={url}
+                target="_blank"
+                rel="nofollow noreferrer"
+              >
+                <span className="sr-only">{`${name} partner link`}</span>
+                <img
+                  className="sm:max-h-[48px] sm:w-auto"
+                  src={icon}
+                  width={176}
+                  height={64}
+                  alt=""
+                />
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   </section>
