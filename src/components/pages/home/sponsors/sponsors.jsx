@@ -3,6 +3,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import Button from 'components/shared/button';
+import loader from 'icons/loader.gif';
 import acendLogo from 'icons/sponsors/acend.svg';
 import adfinisLogo from 'icons/sponsors/adfinis.svg';
 import airlockLogo from 'icons/sponsors/airlock.svg';
@@ -133,6 +134,7 @@ const Sponsors = () => (
                   src={icon}
                   width={176}
                   height={64}
+                  loading="lazy"
                   alt=""
                 />
               </a>
@@ -146,6 +148,7 @@ const Sponsors = () => (
                 src={separator}
                 width={28}
                 height={19}
+                loading="lazy"
                 alt=""
               />
             </span>
@@ -179,6 +182,7 @@ const Sponsors = () => (
                   src={icon}
                   width={176}
                   height={64}
+                  loading="lazy"
                   alt=""
                 />
               </a>
@@ -193,6 +197,7 @@ const Sponsors = () => (
                 src={separator}
                 width={28}
                 height={19}
+                loading="lazy"
                 alt=""
               />
             </span>
@@ -223,12 +228,21 @@ const Sponsors = () => (
                     src={icon}
                     width={176}
                     height={64}
+                    loading="lazy"
                     alt=""
                   />
                 </a>
               ) : (
                 <span className="flex h-full w-full items-center justify-center px-4 py-3.5 font-mono-cyber text-2xl font-bold uppercase tracking-wide text-[#7d8597] lg:text-xl md:text-sm sm:py-3.5">
                   loading...
+                  <img
+                    className="ml-7 lg:ml-5 lg:h-[20px] lg:w-[20px] sm:h-[16px] sm:w-[16px]"
+                    src={loader}
+                    width={26}
+                    height={26}
+                    loading="lazy"
+                    alt=""
+                  />
                 </span>
               )}
             </li>
@@ -241,6 +255,7 @@ const Sponsors = () => (
                 src={separator}
                 width={28}
                 height={19}
+                loading="lazy"
                 alt=""
               />
             </span>
@@ -273,6 +288,7 @@ const Sponsors = () => (
                   src={icon}
                   width={176}
                   height={64}
+                  loading="lazy"
                   alt=""
                 />
               </a>
