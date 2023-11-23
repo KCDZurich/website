@@ -115,8 +115,8 @@ const Sponsors = () => (
           {goldSponsors.map(({ icon, url, name }, index) => (
             <li
               className={clsx('dash-border dash-border-right-and-bottom-none', {
-                'sm:[border-image-width:16px_16px_16px_16px]': index % 2 !== 0,
-                '[border-image-width:16px_16px_0_16px] sm:[border-image-width:16px_16px_16px_16px]':
+                'sm:[border-image-width:5px_5px_5px_5px]': index % 2 !== 0,
+                'w-[209px] [border-image-width:5px_5px_0_5px] lg:w-auto sm:[border-image-width:5px_5px_5px_5px]':
                   goldSponsors.length - 1 === index,
               })}
               key={index}
@@ -157,12 +157,12 @@ const Sponsors = () => (
             <li
               className={clsx('dash-border', {
                 'dash-border-right-and-bottom-none': index === 0 || index === 1,
-                'sm:[border-image-width:16px_16px_0_16px]': index % 2 !== 0,
-                '[border-image-width:16px_0_16px_16px] sm:[border-image-width:16px_0_0_16px]':
+                'sm:[border-image-width:5px_5px_0_5px]': index % 2 !== 0,
+                '[border-image-width:5px_0_5px_5px] sm:[border-image-width:5px_0_0_5px]':
                   index === 2,
-                'dash-border-right-and-bottom-none col-start-2 col-end-3 sm:col-span-1 sm:[border-image-width:16px_0_16px_16px]':
+                'dash-border-right-and-bottom-none col-start-2 col-end-3 sm:col-span-1 sm:[border-image-width:5px_0_5px_5px]':
                   index === 4,
-                'col-start-3 col-end-4 [border-image-width:16px_16px_0_16px] sm:col-span-1 sm:![border-image-width:16px_16px_16px_16px]':
+                'col-start-3 col-end-4 w-[209px] [border-image-width:5px_5px_0_5px] lg:w-auto sm:col-span-1 sm:![border-image-width:5px_5px_5px_5px]':
                   index === 5,
               })}
               key={index}
@@ -203,10 +203,10 @@ const Sponsors = () => (
           {bronzeSponsors.map(({ icon, url, name }, index) => (
             <li
               className={clsx('dash-border dash-border-right-and-bottom-none', {
-                'sm:[border-image-width:16px_16px_0_16px]': index === 1,
-                'sm:[border-image-width:16px_0_16px_16px]': index === 2,
-                'sm:[border-image-width:16px_16px_16px_16px]': index === 3,
-                '[border-image-width:16px_16px_0_16px]': bronzeSponsors.length - 1 === index,
+                'sm:[border-image-width:5px_5px_0_5px]': index === 1,
+                'sm:[border-image-width:5px_0_5px_5px]': index === 2,
+                'sm:[border-image-width:5px_5px_5px_5px]': index === 3,
+                '[border-image-width:5px_5px_0_5px]': bronzeSponsors.length - 1 === index,
               })}
               key={index}
             >
@@ -255,10 +255,10 @@ const Sponsors = () => (
               className={clsx(
                 'dash-border dash-border-right-none sm:dash-border-right-and-bottom-none',
                 {
-                  '[border-image-width:16px_16px_16px_16px] sm:[border-image-width:16px_16px_16px_16px]':
+                  '[border-image-width:5px_5px_5px_5px] sm:[border-image-width:5px_5px_5px_5px]':
                     specialSponsors.length - 1 === index,
-                  'sm:[border-image-width:16px_16px_0_16px]': index === 1,
-                  'sm:[border-image-width:16px_16px_16px_16px]': index === 3,
+                  'sm:[border-image-width:5px_5px_0_5px]': index === 1,
+                  'sm:[border-image-width:5px_5px_5px_5px]': index === 3,
                 }
               )}
               key={index}

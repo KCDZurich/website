@@ -1,13 +1,13 @@
 @layer components {
   .dash-border {
-    border-image: url('/images/dash-border.svg') 14 / 16px round;
+    border-image: url('/images/dash-border.svg') 5 / 5px round;
   }
 
   .dash-border-right-none {
-    border-image-width: 16px 0 16px 16px;
+    border-image-width: 5px 0 5px 5px;
   }
 
   .dash-border-right-and-bottom-none {
-    border-image-width: 16px 0 0 16px;
+    border-image-width: 5px 0 0 5px;
   }
 }
