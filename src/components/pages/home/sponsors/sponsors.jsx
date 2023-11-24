@@ -114,7 +114,7 @@ const Sponsors = () => {
               </span>
               <h3
                 className={clsx(
-                  activeColor === 'gold' && 'text-[#ff8800]',
+                  activeColor === 'gold' && 'text-[#E4A62D]',
                   'ml-4 font-mono-cyber text-3xl font-bold uppercase leading-normal tracking-wide transition-colors duration-200 lg:text-2xl md:text-xl sm:ml-3 sm:text-2xl'
                 )}
               >
@@ -164,7 +164,7 @@ const Sponsors = () => {
               </span>
               <h3
                 className={clsx(
-                  activeColor === 'silver' && 'text-[#82aedf]',
+                  activeColor === 'silver' && 'text-[#63B5BE]',
                   'ml-4 font-mono-cyber text-3xl font-bold uppercase leading-normal tracking-wide transition-colors duration-200 lg:text-2xl md:text-xl sm:text-2xl'
                 )}
               >
@@ -221,7 +221,7 @@ const Sponsors = () => {
               </span>
               <h3
                 className={clsx(
-                  activeColor === 'bronze' && 'text-[#ff5e40]',
+                  activeColor === 'bronze' && 'text-[#B09886]',
                   'ml-4 font-mono-cyber text-3xl font-bold uppercase leading-normal tracking-wide transition-colors duration-200 lg:text-2xl md:text-xl sm:text-2xl'
                 )}
               >
@@ -284,7 +284,12 @@ const Sponsors = () => {
                   alt=""
                 />
               </span>
-              <h3 className="ml-4 font-mono-cyber text-3xl font-bold uppercase leading-normal tracking-wide lg:text-2xl md:text-xl sm:text-2xl">
+              <h3
+                className={clsx(
+                  activeColor === 'special' && 'text-[#5E88C8]',
+                  'ml-4 font-mono-cyber text-3xl font-bold uppercase leading-normal tracking-wide lg:text-2xl md:text-xl sm:text-2xl'
+                )}
+              >
                 Special
               </h3>
             </li>
@@ -306,6 +311,8 @@ const Sponsors = () => {
                   href={url}
                   target="_blank"
                   rel="nofollow noreferrer"
+                  onMouseEnter={() => setActiveColor('special')}
+                  onMouseLeave={() => setActiveColor('')}
                 >
                   <span className="sr-only">{`${name} partner link`}</span>
                   <img
