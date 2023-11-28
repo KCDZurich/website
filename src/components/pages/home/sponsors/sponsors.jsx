@@ -19,6 +19,7 @@ import postFinanceLogo from 'icons/sponsors/post-finance.svg';
 import puzzleLogo from 'icons/sponsors/puzzle.svg';
 import redHatLogo from 'icons/sponsors/red-hat.svg';
 import separator from 'icons/sponsors/separator.svg';
+import swisscomLogo from 'icons/sponsors/swiss-com.svg';
 import veeamLogo from 'icons/sponsors/veeam.svg';
 import vshnLogo from 'icons/sponsors/vshn.svg';
 
@@ -36,6 +37,7 @@ const silverSponsors = [
   { icon: airlockLogo, url: 'https://www.airlock.com/en/', name: 'Airlock' },
   { icon: amanoxLogo, url: 'https://www.amanox.ch/en/', name: 'Amanox Solutions' },
   { icon: nutanixLogo, url: 'https://www.nutanix.com/', name: 'Nutanix' },
+  { icon: swisscomLogo, url: 'https://www.swisscom.ch/', name: 'Swisscom' },
 ];
 const bronzeSponsors = [
   { icon: innoqLogo, url: 'https://www.innoq.com/', name: 'Inoq' },
@@ -183,6 +185,8 @@ const Sponsors = () => {
                     index === 4,
                   'col-start-3 col-end-4 w-[209px] [border-image-width:0_5px_0_5px] lg:w-auto sm:col-span-1 sm:![border-image-width:5px_5px_5px_5px]':
                     index === 5,
+                  'w-[209px] [border-image-width:0_5px_0_0] lg:w-auto sm:![border-image-width:0_5px_5px_5px]':
+                    index === 6,
                 })}
                 key={index}
               >
@@ -258,7 +262,7 @@ const Sponsors = () => {
                     />
                   </a>
                 ) : (
-                  <span className="flex h-full w-full items-center justify-center px-4 py-3.5 font-mono-cyber text-2xl font-bold uppercase -tracking-[0.72px] text-[#7d8597] lg:text-xl md:text-sm sm:py-3.5">
+                  <span className="flex h-full w-full items-center justify-center px-4 py-3.5 font-mono-cyber text-2xl font-bold uppercase -tracking-[0.72px] text-[#7d8597] lg:text-xl md:text-sm sm:min-h-[76px] sm:py-3.5">
                     loading...
                     <img
                       className="ml-3 lg:ml-5 lg:h-[20px] lg:w-[20px] sm:h-[16px] sm:w-[16px]"
