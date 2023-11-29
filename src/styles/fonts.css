@@ -136,6 +136,25 @@
   @font-face {
     font-family: 'Pixel Operator';
     font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/pixel-operator/pixel-operator.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Pixel Operator Fallback';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Arial');
+    ascent-override: 91.75%;
+    descent-override: 23.38%;
+    line-gap-override: 0%;
+    size-adjust: 88.55%;
+  }
+
+  @font-face {
+    font-family: 'Pixel Operator';
+    font-style: normal;
     font-weight: 700;
     font-display: swap;
     src: url('/fonts/pixel-operator/pixel-operator-bold.woff2') format('woff2');
