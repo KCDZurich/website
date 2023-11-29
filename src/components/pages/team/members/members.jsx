@@ -48,9 +48,9 @@ const ITEMS = [
 ];
 
 const Members = () => (
-  <section className="safe-paddings relative bg-white pb-28 md:pb-24 sm:py-16">
+  <section className="safe-paddings relative mt-[104px] bg-white pb-28 lg:mt-20 md:mt-14 md:pb-24 sm:mt-0 sm:py-16">
     <div className="container">
-      <ul className="mt-20 grid max-w-[1144px] grid-cols-3 gap-x-[104px] gap-y-8 lg:gap-x-24 md:gap-x-20 sm:mt-0 sm:flex sm:flex-wrap sm:justify-center">
+      <ul className="grid max-w-[1144px] grid-cols-3 gap-x-[104px] gap-y-8 lg:gap-x-24 md:gap-x-20 sm:flex sm:flex-wrap sm:justify-center">
         {ITEMS.map(({ name, position, photo: Photo, url }, index) => (
           <li className="flex flex-col sm:max-w-[280px]" key={index}>
             <Photo className="h-auto w-full" />
