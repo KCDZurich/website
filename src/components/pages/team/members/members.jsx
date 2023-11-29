@@ -48,7 +48,7 @@ const ITEMS = [
 ];
 
 const Members = () => (
-  <section className="safe-paddings relative mt-[104px] bg-white pb-28 lg:mt-20 md:mt-14 md:pb-24 sm:mt-0 sm:py-16">
+  <section className="safe-paddings relative mb-28 mt-[104px] bg-white lg:mt-20 md:mb-24 md:mt-14 sm:my-16">
     <div className="container">
       <ul className="grid max-w-[1144px] grid-cols-3 gap-x-[104px] gap-y-8 lg:gap-x-24 md:gap-x-20 sm:flex sm:flex-wrap sm:justify-center">
         {ITEMS.map(({ name, position, photo: Photo, url }, index) => (
