@@ -1,91 +1,76 @@
-import clsx from 'clsx';
+import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import Link from 'components/shared/link';
-import Isovalent from 'icons/isovalent.svg';
-import Rokt from 'icons/rokt.svg';
-import WhiteRabbit from 'icons/white-rabbit.svg';
 
-import MilenaThalmannPhoto from './images/milena-thalmann-photo.jpg';
-import PhilippMeierPhoto from './images/philipp-meier-photo.jpg';
-import ThomasPhiliponaPhoto from './images/thomas-philipona-photo.jpg';
+import linkedinIcon from './images/linkedin-logo.svg';
 
 const ITEMS = [
   {
     name: 'Milena Thalmann',
-    position: 'Founder White Rabbit Communications',
-    photo: MilenaThalmannPhoto,
+    position: 'Founder,<br/> White Rabbit Communications',
+    photo: () => (
+      <StaticImage
+        src="./images/milena-thalmann-photo.jpg"
+        alt="Milena Thalmann"
+        width={312}
+        height={409}
+      />
+    ),
     url: 'https://www.linkedin.com/in/milena-thalmann/',
   },
   {
     name: 'Philipp Meier',
-    position: 'Ecosystem Builder - Isovalent',
-    photo: PhilippMeierPhoto,
+    position: 'Ecosystem Builder, <br/> Isovalent',
+    photo: () => (
+      <StaticImage
+        src="./images/philipp-meier-photo.jpg"
+        alt="Philipp Meier"
+        width={312}
+        height={409}
+      />
+    ),
     url: 'https://www.linkedin.com/in/phmeier/',
   },
   {
     name: 'Thomas Philipona',
-    position: 'Founder ROKT GmbH',
-    photo: ThomasPhiliponaPhoto,
+    position: 'Founder, ROKT GmbH',
+    photo: () => (
+      <StaticImage
+        src="./images/thomas-philipona-photo.jpg"
+        alt="Thomas Philipona"
+        width={312}
+        height={409}
+      />
+    ),
     url: 'https://www.linkedin.com/in/thomas-philipona-thun/',
   },
 ];
 
-const LOGOS = [
-  { icon: WhiteRabbit, url: 'https://www.whiterabbitcom.ch', iconClassName: 'w-[200px]' },
-  { icon: Isovalent, url: 'https://isovalent.com/', iconClassName: '' },
-  { icon: Rokt, url: 'https://rokt.cloud/', iconClassName: 'w-28 h-[72px]' },
-];
-
 const Members = () => (
-  <section className="safe-paddings relative bg-white pb-40 lg:pb-32 md:py-24 sm:py-16">
+  <section className="safe-paddings relative bg-white pb-28 md:pb-24 sm:py-16">
     <div className="container">
-      <ul className="mx-auto mt-20 grid max-w-4xl grid-cols-3 gap-8 sm:flex sm:flex-wrap sm:justify-center">
-        {ITEMS.map(({ name, position, photo, url }, index) => (
+      <ul className="mt-20 grid max-w-[1144px] grid-cols-3 gap-x-[104px] gap-y-8 sm:mt-0 sm:flex sm:flex-wrap sm:justify-center">
+        {ITEMS.map(({ name, position, photo: Photo, url }, index) => (
           <li className="flex flex-col sm:max-w-[280px]" key={index}>
-            <img
-              className="w-full"
-              src={photo}
-              width={240}
-              height={284}
-              loading="lazy"
-              alt={name}
+            <Photo className="h-auto w-full" />
+            <div className="mt-6 flex items-center">
+              <span className="text-2xl font-bold uppercase leading-normal text-primary-1 sm:text-left">
+                {name}
+              </span>
+              <Link className="ml-auto" to={url} target="_blank">
+                <img src={linkedinIcon} width={32} height={32} alt="LinkedIn" />
+              </Link>
+            </div>
+
+            <span
+              className="mt-2 text-lg text-primary-1"
+              dangerouslySetInnerHTML={{ __html: position }}
             />
-
-            <p className="mt-2.5 text-2xl font-bold leading-normal text-primary-1 sm:text-left">
-              {name}
-            </p>
-
-            <span className="mt-1.5 text-primary-1">{position}</span>
-
-            <Link
-              className="mt-2.5 text-base font-semibold leading-normal text-blue-1"
-              to={url}
-              target="_blank"
-            >
-              LinkedIn
-            </Link>
           </li>
         ))}
       </ul>
     </div>
-
-    <ul className="mx-auto mt-36 flex flex-wrap justify-center gap-x-4">
-      {LOGOS.map(({ icon, url, iconClassName }, index) => (
-        <li className="flex min-h-[80px] min-w-[280px] items-center justify-center" key={index}>
-          <Link className="flex h-full w-full items-center justify-center" to={url}>
-            <img
-              className={clsx(iconClassName, 'max-w-[260px] md:max-w-[220px]')}
-              src={icon}
-              width="auto"
-              height="auto"
-              loading="lazy"
-              alt=""
-            />
-          </Link>
-        </li>
-      ))}
-    </ul>
   </section>
 );
 
