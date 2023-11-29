@@ -50,16 +50,22 @@ const ITEMS = [
 const Members = () => (
   <section className="safe-paddings relative bg-white pb-28 md:pb-24 sm:py-16">
     <div className="container">
-      <ul className="mt-20 grid max-w-[1144px] grid-cols-3 gap-x-[104px] gap-y-8 sm:mt-0 sm:flex sm:flex-wrap sm:justify-center">
+      <ul className="mt-20 grid max-w-[1144px] grid-cols-3 gap-x-[104px] gap-y-8 lg:gap-x-24 md:gap-x-20 sm:mt-0 sm:flex sm:flex-wrap sm:justify-center">
         {ITEMS.map(({ name, position, photo: Photo, url }, index) => (
           <li className="flex flex-col sm:max-w-[280px]" key={index}>
             <Photo className="h-auto w-full" />
             <div className="mt-6 flex items-center">
-              <span className="text-2xl font-bold uppercase leading-normal text-primary-1 sm:text-left">
+              <span className="text-2xl font-bold uppercase leading-normal text-primary-1 lg:text-xl md:text-lg sm:text-left">
                 {name}
               </span>
               <Link className="ml-auto" to={url} target="_blank">
-                <img src={linkedinIcon} width={32} height={32} alt="LinkedIn" />
+                <img
+                  className="md:h-7 md:w-7"
+                  src={linkedinIcon}
+                  width={32}
+                  height={32}
+                  alt="LinkedIn"
+                />
               </Link>
             </div>
 
