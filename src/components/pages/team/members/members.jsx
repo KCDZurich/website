@@ -3,7 +3,7 @@ import React from 'react';
 
 import Link from 'components/shared/link';
 
-import linkedinIcon from './images/linkedin-logo.svg';
+import LinkedinIcon from './images/linkedin.inline.svg';
 
 const ITEMS = [
   {
@@ -58,14 +58,12 @@ const Members = () => (
               <span className="text-2xl font-bold uppercase leading-normal text-primary-1 lg:text-xl md:text-lg sm:text-left">
                 {name}
               </span>
-              <Link className="ml-auto" to={url} target="_blank">
-                <img
-                  className="md:h-7 md:w-7"
-                  src={linkedinIcon}
-                  width={32}
-                  height={32}
-                  alt="LinkedIn"
+              <Link className="group ml-auto" to={url} target="_blank">
+                <LinkedinIcon
+                  className="ml-4 h-8 w-8 text-[#0A1133] transition-colors duration-200 group-hover:text-[#405480] md:h-7 md:w-7"
+                  aria-hidden
                 />
+                <span className="sr-only">Linkedin</span>
               </Link>
             </div>
 
