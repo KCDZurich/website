@@ -69,12 +69,12 @@ const Hero = () => {
   const sharedUrl = `${process.env.GATSBY_DEFAULT_SITE_URL}/podcast`;
 
   return (
-    <section className="safe-paddings pb-20 pt-[72px] md:pt-12 sm:pb-16 xs:pt-8">
+    <section className="safe-paddings pb-20 pt-[86px] md:pt-12 sm:pb-16 xs:pt-8">
       <div className="container">
         <h1 className="sr-only">Podcast</h1>
         <div className="flex md:flex-col md:gap-y-10 md:bg-[linear-gradient(180deg,#DAF2F4_0%,#E8F1F3_100%)] md:p-8 sm:px-6">
-          <div className="flex shrink-0 flex-col justify-center bg-[linear-gradient(180deg,#DAF2F4_0%,#E8F1F3_100%)] py-8 pl-8 pr-9 lg:flex-1 lg:shrink md:flex-row md:gap-x-8 md:bg-none md:p-0 xs:flex-col">
-            <div className="border-4 border-b-[#0a113333] border-l-white border-r-[#0a113333] border-t-white p-3.5 md:flex-1">
+          <div className="relative flex shrink-0 flex-col justify-center bg-[linear-gradient(180deg,#DAF2F4_0%,#E8F1F3_100%)] py-8 pl-8 pr-9 after:absolute after:left-full after:top-0 after:h-6 after:w-1.5 after:bg-[#daf2f4] lg:flex-1 lg:shrink md:flex-row md:gap-x-8 md:bg-none md:p-0 xs:flex-col">
+            <div className="max-w-[488px] border-4 border-b-[#0a113333] border-l-white border-r-[#0a113333] border-t-white p-2.5 md:flex-1 sm:max-w-none">
               <StaticImage
                 class="h-auto w-full max-w-[460px] lg:max-w-none md:max-w-full md:object-contain"
                 src="./img/podcast-cover.jpg"
@@ -82,9 +82,9 @@ const Hero = () => {
                 loading="eager"
               />
             </div>
-            <div className="md:flex-1">
+            <div className="max-w-[488px] md:flex-1 sm:max-w-none">
               <div className="mt-4 flex items-baseline whitespace-nowrap font-mono-cyber text-[22px] font-normal md:mt-0 md:flex-col xs:mt-4 xs:flex-row 2xs:flex-col">
-                <span>b-nova - &gt;_decodify</span>
+                <span>b-nova - &nbsp;&gt;_decodify</span>
                 <span className="flex w-full items-baseline justify-between">
                   <time>(JUN18.23)</time>
 
@@ -93,8 +93,8 @@ const Hero = () => {
                 </span>
               </div>
 
-              <div className="mt-6 flex items-center gap-x-7 text-primary-1 lg:flex-col lg:items-start lg:gap-y-1.5">
-                <h3 className="whitespace-nowrap font-mono-cyber text-[22px] font-bold uppercase tracking-[-0.03em]">
+              <div className="mt-[18px] flex items-center gap-x-7 text-primary-1 lg:flex-col lg:items-start lg:gap-y-1.5">
+                <h3 className="whitespace-nowrap font-mono-cyber text-[22px] font-bold uppercase tracking-[-0.04em]">
                   Listen to podcast:
                 </h3>
                 <ul className="flex gap-x-2 md:gap-x-3">
@@ -119,8 +119,8 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <div className="before:triangle relative mt-6 flex flex-col bg-[linear-gradient(180deg,#DAF2F4_0%,#E8F1F3_100%)] py-8 pl-9 pr-8 text-primary-1 before:absolute before:-left-4 before:bottom-[calc(100%-13.5px)] after:absolute after:bottom-8 after:left-0 after:top-1 after:w-px after:bg-[url('/images/dash-line-gray.svg')] lg:flex-1 md:mt-0 md:border-t md:border-dashed md:border-primary-1/20 md:bg-none md:p-0 md:before:border-none md:after:bg-none">
-            <header className="mt-7">
+          <div className="before:triangle relative mt-6 flex w-full flex-col bg-[linear-gradient(180deg,#DAF2F4_0%,#E8F1F3_100%)] py-8 pl-9 pr-8 text-primary-1 before:absolute before:-left-[11px] before:bottom-[calc(100%-16.5px)] after:absolute after:bottom-8 after:left-0 after:top-1 after:w-px after:bg-[url('/images/dash-line-gray.svg')] lg:flex-1 md:mt-0 md:border-t md:border-dashed md:border-primary-1/20 md:bg-none md:p-0 md:before:border-none md:after:bg-none">
+            <header className="mt-8 max-w-[520px] md:max-w-none">
               <h2
                 className="flex items-center font-sans-cyber text-6xl font-bold leading-denser text-primary-1 md:text-5xl sm:text-4xl"
                 aria-hidden
@@ -133,12 +133,12 @@ const Hero = () => {
               />
             </header>
             <div
-              className="mb-8 mt-6 space-y-5 border-t border-dashed border-primary-1/20 pt-6 text-lg leading-normal sm:text-base"
+              className="mb-8 mt-6 max-w-[520px] space-y-5 border-t border-dashed border-primary-1/20 pt-7 text-lg leading-normal md:max-w-none sm:text-base"
               dangerouslySetInnerHTML={{ __html: DESCRIPTION }}
             />
-            <div className="mt-auto flex items-center overflow-hidden text-primary-1 2xs:flex-col 2xs:items-start">
+            <div className="-mb-1 mt-auto flex items-center overflow-hidden text-primary-1 2xs:flex-col 2xs:items-start">
               <h3 className="whitespace-nowrap font-semibold">Share episode:</h3>
-              <div className="ml-6 flex gap-x-4 md:ml-3 2xs:ml-0 2xs:mt-1">
+              <div className="ml-5 flex gap-x-4 md:ml-3 2xs:ml-0 2xs:mt-1">
                 {PODCAST_SOCIAL_LINKS.map(({ icon: Icon, tag: Tag }, index) => (
                   <Tag className="group" url={sharedUrl} title={SOCIAL_SHARE_TEXT} key={index}>
                     <Icon className="h-[30px] w-[30px] text-primary-1 transition-colors duration-200 group-hover:text-[#405480]" />
