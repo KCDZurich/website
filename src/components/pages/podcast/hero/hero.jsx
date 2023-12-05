@@ -71,7 +71,7 @@ const Hero = () => {
   return (
     <section className="safe-paddings pb-20 pt-[86px] lg:py-10 md:pt-[52px] sm:pt-14">
       <div className="container">
-        <div className="relative flex sm:flex-col sm:gap-y-8 sm:bg-[linear-gradient(180deg,#DAF2F4_0%,#E8F1F3_100%)] sm:px-6 sm:pb-8 sm:pt-10">
+        <div className="relative flex sm:flex-col sm:gap-y-8 sm:overflow-hidden sm:bg-[linear-gradient(180deg,#DAF2F4_0%,#E8F1F3_100%)] sm:px-6 sm:pb-8 sm:pt-10">
           <img
             className="absolute -top-[18px] left-[56%] hidden h-[35px] w-auto sm:block"
             src={rectangleSvg}
@@ -81,7 +81,7 @@ const Hero = () => {
             height={35}
             aria-hidden
           />
-          <div className="relative flex shrink-0 flex-col bg-[linear-gradient(180deg,#DAF2F4_0%,#E8F1F3_100%)] py-8 pl-8 pr-9 after:absolute after:left-full after:top-0 after:h-6 after:w-1.5 after:bg-[#daf2f4] lg:shrink lg:pb-8 lg:pl-6 lg:pr-7 lg:pt-6 md:pr-[22px] md:pt-11 sm:p-0">
+          <div className="relative flex shrink-0 flex-col bg-[linear-gradient(180deg,#DAF2F4_0%,#E8F1F3_100%)] py-8 pl-8 pr-9 after:absolute after:left-full after:top-0 after:h-6 after:w-1.5 after:bg-[#daf2f4] lg:shrink lg:pb-8 lg:pl-6 lg:pr-7 lg:pt-6 md:pr-[22px] md:pt-11 sm:bg-none sm:p-0">
             <div className="max-w-[488px] border-4 border-b-[#0a113333] border-l-white border-r-[#0a113333] border-t-white p-2.5 lg:max-w-[386px] md:border-[3px] sm:max-w-none">
               <StaticImage
                 class="h-auto w-full max-w-[460px] lg:max-w-[362px] md:max-w-[262px] md:object-contain sm:max-w-none"
