@@ -5,21 +5,21 @@ import React from 'react';
 import { LinkedinShareButton, TwitterShareButton, FacebookShareButton } from 'react-share';
 
 import useCopyToClipboard from 'hooks/use-copy-to-clipboard';
+import CopyIcon from 'icons/copy-pixel-icon.inline.svg';
+import FacebookIcon from 'icons/facebook-pixel-logo.inline.svg';
+import LinkedinIcon from 'icons/linkedin-pixel-logo.inline.svg';
+import TwitterIcon from 'icons/x-pixel-logo.inline.svg';
 
 import AmazonIcon from './svg/amazon-icon.inline.svg';
 import AppleIcon from './svg/apple-icon.inline.svg';
-import CopyIcon from './svg/copy-icon.inline.svg';
-import FacebookIcon from './svg/facebook-logo.inline.svg';
 import GoogleIcon from './svg/google-icon.inline.svg';
-import LinkedinIcon from './svg/linkedin-logo.inline.svg';
+import rectangleSvg from './svg/rectangle.svg';
 import SpotifyIcon from './svg/spotify-icon.inline.svg';
-import TwitterIcon from './svg/twitter-logo.inline.svg';
 
-const TITLE = 'Kubernetes Community Day Zürich 2023';
 const SUB_TITLE =
-  'Podcast by <a class="text-blue-1" href="https://b-nova.com/home/techhub/decodify" target="_blank">decodify</a> presented by <a class="text-blue-1" href="https://b-nova.com/home" target="_blank">b-nova</a>';
-const DURATION = '36 min';
-const DATE = 'June 18, 2023';
+  'Podcast by <a href="https://b-nova.com/home/techhub/decodify" target="_blank">decodify</a> presented by <a href="https://b-nova.com/home" target="_blank">b-nova</a>';
+const DURATION = '36:00';
+
 const DESCRIPTION =
   '<p>We would like to extend a thank you to b-nova, our podcast sponsor for the Kubernetes Community Day Zürich 2023.</p><p>Their generous support and commitment to the community have made it possible for us to continue sharing valuable content and insights about KCD Zürich. Thank you, b-nova, for empowering our community through your sponsorship.</p><p>Make sure to subscribe and stay tuned for more exciting discussions and insights!</p>';
 
@@ -69,41 +69,89 @@ const Hero = () => {
   const sharedUrl = `${process.env.GATSBY_DEFAULT_SITE_URL}/podcast`;
 
   return (
-    <section className="safe-paddings pt-28 pb-20 md:pt-20">
-      <div className="container-md">
-        <h1 className="flex items-center text-6xl font-bold leading-denser text-primary-1">
-          Podcast
-          <a
-            className="ml-8 flex w-[130px] min-w-[90px] items-center justify-center rounded-[50px] border border-primary-2 px-4 py-2 sm:ml-2.5"
-            href="https://b-nova.com"
-            aria-label="b-nova"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <StaticImage
-              className=""
-              imgClassName=""
-              src="./img/b-nova-logo.png"
-              alt="b nova"
-              loading="eager"
+    <section className="safe-paddings pb-20 pt-[86px] lg:py-10 md:pt-[52px] sm:pt-14">
+      <div className="container">
+        <div className="relative flex sm:flex-col sm:gap-y-8 sm:overflow-hidden sm:bg-[linear-gradient(180deg,#DAF2F4_0%,#E8F1F3_100%)] sm:px-6 sm:pb-8 sm:pt-10">
+          <img
+            className="absolute -top-[18px] left-[56%] hidden h-[35px] w-auto sm:block"
+            src={rectangleSvg}
+            alt=""
+            loading="lazy"
+            width={587}
+            height={35}
+            aria-hidden
+          />
+          <div className="relative flex shrink-0 flex-col bg-[linear-gradient(180deg,#DAF2F4_0%,#E8F1F3_100%)] py-8 pl-8 pr-9 after:absolute after:left-full after:top-0 after:h-6 after:w-1.5 after:bg-[#daf2f4] lg:shrink lg:pb-8 lg:pl-6 lg:pr-7 lg:pt-6 md:pr-[22px] md:pt-11 sm:bg-none sm:p-0">
+            <div className="max-w-[488px] border-4 border-b-[#0a113333] border-l-white border-r-[#0a113333] border-t-white p-2.5 lg:max-w-[386px] md:border-[3px] sm:max-w-none">
+              <StaticImage
+                class="h-auto w-full max-w-[460px] lg:max-w-[362px] md:max-w-[262px] md:object-contain sm:max-w-none"
+                src="./img/podcast-cover.jpg"
+                alt="Podcast cover"
+                loading="eager"
+              />
+            </div>
+
+            <div className="mb-[18px] mt-4 flex items-baseline whitespace-nowrap font-mono-cyber text-[22px] font-normal lg:mb-4 lg:max-w-[386px] lg:text-lg md:mt-3 md:text-sm sm:my-2.5 sm:max-w-none">
+              <span>b-nova - &nbsp;&gt;_decodify</span>
+              <span className="flex w-full items-baseline justify-between">
+                <time>(JUN18.23)</time>
+
+                <span className="flex h-px flex-1 bg-[url('/images/dash-line.svg')] bg-cover" />
+                <span>{DURATION}</span>
+              </span>
+            </div>
+
+            <div className="mt-auto flex items-center gap-x-7 text-primary-1 lg:gap-x-5 md:flex-col md:items-start md:gap-y-1.5 sm:flex-row sm:gap-x-[18px] [@media(max-width:359px)]:flex-col">
+              <span className="whitespace-nowrap font-mono-cyber text-[22px] font-bold uppercase tracking-tighter lg:text-base lg:tracking-[-0.03em]">
+                Listen to podcast:
+              </span>
+              <ul className="flex gap-x-2 md:gap-x-[5px]">
+                {PODCAST_LINKS.map((link, index) => {
+                  const Icon = link.icon;
+
+                  return (
+                    <li key={index}>
+                      <a
+                        className="flex h-full items-center justify-center border-2 border-primary-1 bg-white px-5 py-1 transition-colors duration-200 hover:bg-blue-light lg:px-4 lg:py-0.5 md:px-4 md:py-[2px] sm:border-[1.5px] sm:px-2"
+                        href={link.to}
+                        target="_blank"
+                        rel="nofollow noreferrer"
+                      >
+                        <span className="sr-only">{link.title}</span>
+                        <Icon className="h-auto w-6 lg:w-[19px] sm:w-3" aria-hidden />
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
+
+          <div className="before:triangle relative mt-6 flex w-full flex-col bg-[linear-gradient(180deg,#DAF2F4_0%,#E8F1F3_100%)] py-8 pl-9 pr-8 text-primary-1 before:absolute before:-left-[11px] before:bottom-[calc(100%-16.5px)] after:absolute after:bottom-8 after:left-0 after:top-1 after:w-px after:bg-[url('/images/dash-line-gray.svg')] lg:flex-1 lg:pl-7 md:pl-[22px] md:pt-6 sm:mt-0 sm:bg-[url('/images/dash-line-gray-horizontal.svg')] sm:bg-[length:100%_auto] sm:bg-no-repeat sm:p-0 sm:before:border-none sm:after:bg-none">
+            <header className="mt-8 max-w-[520px] lg:mt-3 md:mt-0 md:max-w-none sm:mt-8">
+              <h1
+                className="flex items-center font-sans-cyber text-6xl font-bold leading-denser text-primary-1 lg:text-5xl md:text-4xl sm:text-[32px]"
+                aria-hidden
+              >
+                podcast
+              </h1>
+              <p
+                className="mt-3 text-lg leading-normal lg:text-sm md:mt-2 md:text-[13px] sm:mt-2 [&_a]:font-semibold [&_a]:text-[#F14600] [&_a]:transition-colors [&_a]:duration-200 hover:[&_a]:text-[#FF9737]"
+                dangerouslySetInnerHTML={{ __html: SUB_TITLE }}
+              />
+            </header>
+            <div
+              className="mb-8 mt-6 max-w-[520px] space-y-5 bg-[url('/images/dash-line-gray-horizontal.svg')] bg-[length:100%_auto] bg-no-repeat pt-7 text-lg leading-normal lg:mt-[18px] lg:max-w-[87%] lg:space-y-[18px] lg:pt-5 lg:text-sm md:mb-5 md:max-w-[96%] md:text-[13px] sm:mt-8 sm:max-w-none sm:bg-none sm:pt-0"
+              dangerouslySetInnerHTML={{ __html: DESCRIPTION }}
             />
-          </a>
-        </h1>
-        <div className="mt-20 flex gap-x-[10%] md:mt-10 sm:flex-col sm:gap-y-10">
-          <div className="w-[384px] max-w-full shrink-0 md:w-2/5 sm:w-full">
-            <StaticImage
-              className="rounded-[4px] shadow-xl"
-              imgClassName="rounded-[4px]"
-              src="./img/podcast-cover.jpg"
-              alt="Podcast cover"
-              loading="eager"
-            />
-            <div className="mt-7 flex items-center overflow-hidden text-primary-1">
-              <h3 className="whitespace-nowrap">Share episode:</h3>
-              <div className="ml-6 flex gap-x-4 md:ml-3">
+            <div className="-mb-1 mt-auto flex items-center overflow-hidden text-primary-1">
+              <span className="whitespace-nowrap font-semibold lg:text-sm md:text-[13px]">
+                Share episode:
+              </span>
+              <div className="ml-5 flex items-center gap-x-4 lg:gap-x-3 md:mb-0 md:ml-7 2xs:ml-5 2xs:gap-x-2">
                 {PODCAST_SOCIAL_LINKS.map(({ icon: Icon, tag: Tag }, index) => (
                   <Tag className="group" url={sharedUrl} title={SOCIAL_SHARE_TEXT} key={index}>
-                    <Icon className="h-5 w-5 transition-colors duration-200 group-hover:text-blue-1" />
+                    <Icon className="h-[30px] w-[30px] text-primary-1 transition-colors duration-200 group-hover:text-[#405480] lg:h-6 lg:w-6 2xs:h-[18px] 2xs:w-[18px]" />
                   </Tag>
                 ))}
                 <LazyMotion features={domAnimation}>
@@ -117,7 +165,7 @@ const Hero = () => {
                     onClick={() => handleCopy(sharedUrl)}
                   >
                     <CopyIcon
-                      className="w-5 shrink-0 cursor-pointer transition duration-200 hover:text-blue-1"
+                      className="w-[30px] shrink-0 cursor-pointer text-primary-1 transition-colors duration-200 hover:text-[#405480] lg:h-6 lg:w-6 2xs:h-[18px] 2xs:w-[18px]"
                       aria-hidden
                     />
                     <m.p
@@ -141,47 +189,6 @@ const Hero = () => {
                 </LazyMotion>
               </div>
             </div>
-            <div className="mt-5 text-primary-1">
-              <h3 className="mt-7">Listen to podcast:</h3>
-              <ul className="mt-3 flex gap-x-5 md:gap-x-3">
-                {PODCAST_LINKS.map((link, index) => {
-                  const Icon = link.icon;
-
-                  return (
-                    <li key={index}>
-                      <a
-                        className="flex h-full items-center justify-center rounded-lg border border-primary-2 py-2 px-7 shadow-sm transition-colors duration-200 hover:text-blue-1 md:px-4"
-                        href={link.to}
-                        target="_blank"
-                        rel="nofollow noreferrer"
-                      >
-                        <span className="sr-only">{link.title}</span>
-                        <Icon className="h-auto w-[24px]" aria-hidden />
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </div>
-          <div className="text-primary-1">
-            <header className="mb-6 border-b border-gray-10 pb-6">
-              <h2 className="text-2xl font-bold leading-snug">{TITLE}</h2>
-              <p
-                className="mt-3 text-lg font-semibold leading-normal"
-                dangerouslySetInnerHTML={{ __html: SUB_TITLE }}
-              />
-              <p className="mt-3 text-sm font-medium leading-normal">
-                <span>Duration: {DURATION}</span>
-                <span className="relative ml-8 before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3">
-                  {DATE}
-                </span>
-              </p>
-            </header>
-            <div
-              className="space-y-5 text-lg leading-normal"
-              dangerouslySetInnerHTML={{ __html: DESCRIPTION }}
-            />
           </div>
         </div>
       </div>
