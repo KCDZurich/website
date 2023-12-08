@@ -1,17 +1,21 @@
 import React from 'react';
 
-const TITLE = 'Team';
+const TITLE = 'team';
 
 const DESCRIPTION =
-  'The Kubernetes Community Days in Zürich are organized by a dedicated committee who are passionate about bringing people together and fostering a sense of community. Our goal is to provide a platform for like-minded individuals from all levels and backgrounds that is dedicated to learning, growth, and diversity.';
+  '<strong>The Kubernetes Community Days in Zürich</strong> are organized by a dedicated committee who are passionate about bringing people together and fostering a sense of community. Our goal is to provide a platform for like-minded individuals from all levels and backgrounds that is dedicated to learning, growth, and diversity.';
 
 const Hero = () => (
-  <section className="safe-paddings safe-paddings overflow-hidden bg-[#EDC3C7] bg-opacity-10 pb-20 pt-24">
-    <div className="container relative mt-4 text-center text-primary-1">
-      <div className="absolute -top-1/2 left-1/2 h-[503px] w-[503px] -translate-x-1/2 bg-white blur-[100px] md:-left-[30%] md:h-[350px] md:w-[350px]" />
-      <div className="relative">
-        <h1 className="text-6xl font-bold leading-denser ">{TITLE}</h1>
-        <p className="mx-auto mt-8 max-w-[1008px] text-2xl leading-normal">{DESCRIPTION}</p>
+  <section className="safe-paddings overflow-hidden bg-opacity-10 pt-[72px] lg:pt-16 md:pt-8">
+    <div className="container mt-4 text-primary-1">
+      <div className="relative grid grid-cols-12 gap-x-8 md:grid-cols-1 md:gap-y-6">
+        <h1 className="col-span-4 col-start-1 font-sans-cyber text-[52px] font-bold leading-tight md:col-span-full sm:text-5xl">
+          {TITLE}
+        </h1>
+        <p
+          className="col-start-5 col-end-13 mx-auto text-2xl leading-normal md:col-span-full md:text-xl [&_strong]:font-bold"
+          dangerouslySetInnerHTML={{ __html: DESCRIPTION }}
+        />
       </div>
     </div>
   </section>
