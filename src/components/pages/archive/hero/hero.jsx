@@ -53,11 +53,27 @@ const Hero = () => {
             alt=""
           />
           <button
-            className="absolute left-[55%] top-[5%] z-30 block h-[63%] w-[700px] max-w-[72%] -translate-x-1/2 md:left-[53%] md:top-[18.8%] md:h-[54%] xs:left-1/2 xs:top-[14%] xs:max-w-[66%]"
+            className="group absolute left-[55%] top-[5%] z-30 block h-[63%] w-[700px] max-w-[72%] -translate-x-1/2 md:left-[53%] md:top-[18.8%] md:h-[54%] xs:left-1/2 xs:top-[14%] xs:max-w-[66%]"
             type="button"
             onClick={() => handleModalShow()}
           >
+            <StaticImage
+              className="!-left-[12px] !top-[18px] !w-[102%] lg:!-left-[2%] lg:!top-[2.5%] lg:!w-[105%] md:!-left-[2%] md:!top-0 md:!w-[103%]"
+              src="./images/tv-screen.png"
+              width={522}
+              height={353}
+              loading="eager"
+              alt=""
+            />
             <span className="sr-only">Play video</span>
+            <StaticImage
+              className="!absolute inset-0 z-0 transition-all duration-200 group-hover:scale-110"
+              src="./images/play-icon.png"
+              width={383}
+              height={395}
+              loading="eager"
+              alt=""
+            />
           </button>
           <video
             className="absolute left-[55%] top-[5%] z-10 block max-w-[72%] -translate-x-1/2 md:top-[18.8%] xs:left-1/2 xs:top-[15%] xs:max-w-[66%]"
