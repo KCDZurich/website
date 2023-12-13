@@ -1,0 +1,14 @@
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-pagination-bullet-active {
+  background: #0a1133;
+}
+
+@media screen and (max-width: 540px) {
+  .swiper-pagination {
+    display: none;
+  }
+}

@@ -1,11 +1,12 @@
 /* eslint-disable import/no-unresolved */
 import React, { useState, useRef } from 'react';
-import { Navigation } from 'swiper/modules';
+import { Grid, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
+import 'swiper/css/grid';
 
-import Modal from '../../../shared/modal';
+import Modal from 'components/shared/modal';
 
 import photo1 from './images/kcdzurich01.jpg';
 import photo2 from './images/kcdzurich02.jpg';
@@ -53,9 +54,11 @@ import photo73 from './images/kcdzurich73.jpg';
 import photo77 from './images/kcdzurich77.jpg';
 import photo79 from './images/kcdzurich79.jpg';
 import photo81 from './images/kcdzurich81.jpg';
-import ArrowRight from './svg/arrow-right.inline.svg';
+import Arrow from './svg/arrow.inline.svg';
 
-const TITLE = 'Photo gallery';
+import './gallery.css';
+
+const title = 'photo gallery';
 const ITEMS = [
   { photo: photo1 },
   { photo: photo2 },
@@ -110,7 +113,15 @@ const Gallery = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [activePhoto, setActivePhoto] = useState('');
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-  const [slidesPerView, setSlidesPerView] = useState(null);
+
+  const pagination = {
+    clickable: true,
+    renderBullet(index, className) {
+      return `<button class="w-4 h-4 mx-1 border-solid border-2 border-black ${className}" type="button"><span class="sr-only">Choose slide number ${
+        index + 1
+      }</span></button>`;
+    },
+  };
 
   const handleModalShow = (photo) => {
     document.body.classList.add('overflow-hidden');
@@ -125,58 +136,66 @@ const Gallery = () => {
 
   const handleSliderChange = (swiper) => {
     setActiveSlideIndex(swiper.realIndex);
-    setSlidesPerView(swiper.params.slidesPerView);
   };
 
   return (
-    <section className="safe-paddings relative bg-white pb-48 lg:pb-44 md:pb-40 sm:pb-24">
-      <div className="container flex flex-col">
-        <header className="flex items-baseline justify-between">
-          <h2 className="text-6xl font-bold leading-tight text-primary-1 md:text-4xl">{TITLE}</h2>
-          <p>
-            <span className="text-primary mr-1.5 text-3xl font-semibold">
-              {`${activeSlideIndex + 1}${
-                slidesPerView >= 2 ? `–${activeSlideIndex + slidesPerView}` : ''
-              }`}
-            </span>
-            <span className="text-lg font-semibold text-primary-5">/ {ITEMS.length}</span>
-          </p>
+    <section className="safe-paddings relative mt-[120px] lg:my-16 md:mt-10 sm:mt-8">
+      <div className="container">
+        <header className="relative z-10 flex items-center justify-between sm:flex-col sm:items-start">
+          <div>
+            <h2 className="font-sans-cyber text-[52px] font-bold leading-denser tracking-tight lg:text-5xl md:text-4xl">
+              {title}
+            </h2>
+            <p className="mt-7 max-w-[600px] text-xl leading-normal lg:text-lg">
+              Welcome to our photo gallery, where we are excited to share highlights from our events
+              of the past year.
+            </p>
+          </div>
+          <div className="mt-14 flex items-center gap-x-3 sm:mt-8">
+            <button
+              className="prev-slide group-prev flex h-9 w-[72px] items-center justify-center border-2 border-black text-black transition-colors duration-200 disabled:opacity-20"
+              type="button"
+            >
+              <span className="sr-only">Prev slide</span>
+              <Arrow className="rotate-180" width={10} height={20} aria-hidden />
+            </button>
+            <button
+              className="next-slide group-next flex h-9 w-[72px] items-center justify-center border-2 border-black text-black transition-colors duration-200 disabled:opacity-20"
+              type="button"
+            >
+              <span className="sr-only">Next slide</span>
+              <Arrow width={10} height={20} aria-hidden />
+            </button>
+          </div>
         </header>
-        <div className="relative mt-14 xl:mt-10 lg:mt-12 lg:pb-10 md:mt-4">
-          <button
-            className="prev-slide group-prev absolute -left-[70px] bottom-0 top-0 z-20 m-auto flex h-9 w-9 items-center justify-center rounded-full text-[#b5b5b5] transition-colors duration-200 disabled:opacity-50 lg:-bottom-10 lg:left-0 lg:top-auto"
-            type="button"
-          >
-            <span className="sr-only">Prev</span>
-            <ArrowRight className="h-auto w-full -rotate-180" />
-          </button>
-          <button
-            className="next-slide group-next absolute -right-[70px] bottom-0 top-0 z-20 m-auto flex h-9 w-9 items-center justify-center rounded-full text-[#b5b5b5] transition-colors duration-200 disabled:opacity-50 lg:-bottom-10 lg:left-12 lg:right-auto lg:top-auto"
-            type="button"
-          >
-            <span className="sr-only">Next</span>
-            <ArrowRight className="h-auto w-full" />
-          </button>
+        <div className="relative -mt-16 bg-archive-gallery bg-contain bg-center bg-no-repeat p-[52px] xl:-mt-4 lg:mt-8 lg:bg-cover lg:pb-4 sm:mt-2 sm:px-4">
           <Swiper
+            className="mt-24 h-[580px] !pb-20 md:mt-4 md:h-[460px] md:!pb-4 sm:h-[500px] [@media(max-width:540px)]:h-auto"
             ref={sliderRef}
-            spaceBetween={32}
-            slidesPerView={4}
-            slidesPerGroup={4}
-            modules={[Navigation]}
+            grid={{
+              rows: 2,
+            }}
             navigation={{
               nextEl: '.next-slide',
               prevEl: '.prev-slide',
             }}
+            pagination={pagination}
+            spaceBetween={30}
+            slidesPerView={4}
+            slidesPerGroup={4}
+            modules={[Grid, Navigation, Pagination]}
             breakpoints={{
               200: {
                 slidesPerView: 1,
                 slidesPerGroup: 1,
                 spaceBetween: 0,
+                grid: { rows: 1 },
               },
               540: {
                 slidesPerView: 2,
                 slidesPerGroup: 2,
                 spaceBetween: 20,
+                grid: { rows: 2 },
               },
               768: {
                 slidesPerView: 3,
@@ -188,7 +207,6 @@ const Gallery = () => {
                 spaceBetween: 24,
               },
             }}
-            onInit={(swiper) => setSlidesPerView(swiper.params.slidesPerView)}
             onSlideChange={(swiper) => handleSliderChange(swiper)}
           >
             {ITEMS.map(({ photo }, index) => (

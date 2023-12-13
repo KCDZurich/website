@@ -106,7 +106,7 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
               <>
                 <iframe
                   allow="autoplay; picture-in-picture; web-share"
-                  src="https://www.youtube.com/embed/7-b0llQFT8E?autoplay=0&mute=0&rel=0"
+                  src="https://www.youtube.com/embed/7-b0llQFT8E?autoplay=1&mute=0&rel=0"
                   title="Kubernetes Community Days Zürich 2023"
                   width="100%"
                   height="520"
