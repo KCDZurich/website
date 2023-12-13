@@ -57,14 +57,6 @@ const Hero = () => {
             type="button"
             onClick={() => handleModalShow()}
           >
-            <StaticImage
-              className="!-left-[12px] !top-[18px] !w-[102%] lg:!-left-[2%] lg:!top-[2.5%] lg:!w-[105%] md:!-left-[2%] md:!top-0 md:!w-[103%]"
-              src="./images/tv-screen.png"
-              width={522}
-              height={353}
-              loading="eager"
-              alt=""
-            />
             <span className="sr-only">Play video</span>
             <StaticImage
               className="!absolute inset-0 z-0 transition-all duration-200 group-hover:scale-110"
