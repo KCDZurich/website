@@ -19,7 +19,10 @@ const title = 'photo gallery';
 const Gallery = () => {
   const data = useStaticQuery(graphql`
     {
-      allFile(filter: { relativeDirectory: { eq: "archive-2023" }, extension: { eq: "jpg" } }) {
+      allFile(
+        filter: { relativeDirectory: { eq: "archive-2023" }, extension: { eq: "jpg" } }
+        sort: { relativePath: ASC }
+      ) {
         nodes {
           publicURL
           childImageSharp {
