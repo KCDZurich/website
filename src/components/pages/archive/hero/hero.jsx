@@ -68,8 +68,8 @@ const Hero = () => {
             muted
             loop
           >
-            <source type="video/webm" src="/images/archive-video.webm" />
-            <source type="video/mp4" src="/images/archive-video.mp4" />
+            <source type="video/webm" src="/images/archive.webm" />
+            <source type="video/mp4" src="/images/archive.mp4" />
           </video>
         </div>
       </div>

@@ -398,7 +398,7 @@ const Archive = () => {
                   <h3 className="text-3xl font-bold leading-snug tracking-tight lg:text-2xl md:text-xl">
                     {title}
                   </h3>
-                  <div className="mt-2 flex items-center gap-x-6 text-2xl font-bold leading-normal md:text-base">
+                  <div className="mt-2 flex items-center gap-x-6 text-2xl font-bold leading-normal lg:text-lg md:text-base">
                     {videoSrc && (
                       <Link
                         className="inline-flex items-center font-mono-cyber tracking-tight text-orange"
@@ -410,7 +410,7 @@ const Archive = () => {
                     )}
                     {pdf && (
                       <Link
-                        className="inline-flex items-center font-mono-cyber text-2xl font-bold leading-normal tracking-tighter text-black md:text-base"
+                        className="inline-flex items-center font-mono-cyber text-2xl font-bold leading-normal tracking-tighter text-black lg:text-lg md:text-base"
                         to={pdf}
                         download
                       >
@@ -421,7 +421,12 @@ const Archive = () => {
                   </div>
                 </div>
                 <div className="relative">
-                  <Separator className="absolute -left-9" width={9} heigth={153} aria-hidden />
+                  <Separator
+                    className="absolute -left-9 sm:-left-6"
+                    width={9}
+                    heigth={153}
+                    aria-hidden
+                  />
                   <div
                     className="overflowed-text max-h-32 text-xl leading-normal lg:text-lg md:text-base"
                     dangerouslySetInnerHTML={{ __html: presentation }}
