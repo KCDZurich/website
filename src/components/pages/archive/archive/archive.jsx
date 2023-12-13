@@ -362,7 +362,7 @@ const Archive = () => {
           {visibleItems.map(
             ({ title, duration, isKeynote, speakers, presentation, pdf, videoSrc }, index) => (
               <li
-                className="relative grid grid-cols-[172px_1fr_1fr] gap-x-24 py-8 after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-[url('/images/dash-line-gray-horizontal.svg')] after:bg-contain after:bg-repeat-x first:before:absolute first:before:top-0 first:before:h-[1px] first:before:w-full first:before:bg-[url('/images/dash-line-gray-horizontal.svg')] first:before:bg-contain first:before:bg-repeat-x md:grid-cols-[122px_1fr_1fr] md:gap-x-12 sm:w-[730px] sm:gap-x-8"
+                className="group relative grid grid-cols-[172px_1fr_1fr] gap-x-24 py-8 after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-[url('/images/dash-line-gray-horizontal.svg')] after:bg-contain after:bg-repeat-x first:before:absolute first:before:top-0 first:before:h-[1px] first:before:w-full first:before:bg-[url('/images/dash-line-gray-horizontal.svg')] first:before:bg-contain first:before:bg-repeat-x md:grid-cols-[122px_1fr_1fr] md:gap-x-12 sm:w-[730px] sm:gap-x-8"
                 key={index}
               >
                 <div className="mt-2 flex flex-col justify-between">
@@ -401,7 +401,7 @@ const Archive = () => {
                   <div className="-ml-2 mt-2 flex items-center gap-x-6 text-2xl font-bold leading-normal lg:-ml-1 lg:gap-x-1.5 lg:text-lg md:text-base">
                     {videoSrc && (
                       <Link
-                        className="inline-flex items-center border-2 border-transparent px-2 py-1 font-mono-cyber tracking-tight text-orange transition-colors duration-200 hover:border-orange lg:px-1"
+                        className="inline-flex items-center border-2 border-transparent px-2 py-1 font-mono-cyber tracking-tight text-orange transition-colors duration-200 hover:!border-orange group-hover:border-orange group-hover:border-opacity-50 lg:px-1"
                         to={videoSrc}
                         target="_blank"
                       >
@@ -410,7 +410,7 @@ const Archive = () => {
                     )}
                     {pdf && (
                       <Link
-                        className="inline-flex items-center border-2 border-transparent px-2 py-1 font-mono-cyber text-2xl font-bold leading-normal tracking-tighter text-black transition-colors duration-200 hover:border-black lg:px-1 lg:text-lg md:text-base"
+                        className="inline-flex items-center border-2 border-transparent px-2 py-1 font-mono-cyber text-2xl font-bold leading-normal tracking-tighter text-black transition-colors duration-200 hover:!border-black group-hover:border-black group-hover:border-opacity-50 lg:px-1 lg:text-lg md:text-base"
                         to={pdf}
                         download
                       >
