@@ -148,7 +148,9 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   onClick={() => {
                     if (sliderRef?.current?.swiper) {
                       setGallerySrc(
-                        sliderRef.current.swiper.clickedSlide.previousSibling.children[0].src
+                        sliderRef.current.swiper.clickedSlide.previousSibling.getAttribute(
+                          'data-full-size-image'
+                        )
                       );
                       sliderRef.current.swiper.clickedSlide =
                         sliderRef.current.swiper.clickedSlide.previousSibling;
@@ -166,7 +168,9 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   onClick={() => {
                     if (sliderRef?.current?.swiper) {
                       setGallerySrc(
-                        sliderRef.current.swiper.clickedSlide.nextSibling.children[0].src
+                        sliderRef.current.swiper.clickedSlide.nextSibling.getAttribute(
+                          'data-full-size-image'
+                        )
                       );
                       sliderRef.current.swiper.clickedSlide =
                         sliderRef.current.swiper.clickedSlide.nextSibling;

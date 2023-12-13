@@ -376,7 +376,7 @@ const Archive = () => {
                               src={photo}
                               width={74}
                               height={74}
-                              alt={name}
+                              alt={`${name} photo`}
                               loading="lazy"
                             />
                             <figcaption className="mt-2 text-xl font-semibold leading-tight md:text-sm">

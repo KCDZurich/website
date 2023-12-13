@@ -17,7 +17,7 @@ const Podcast = () => (
               class="h-auto w-full max-w-[460px] lg:max-w-[362px] md:max-w-[262px] md:object-contain sm:max-w-none"
               src="./img/podcast-cover.jpg"
               alt="Podcast cover"
-              loading="eager"
+              loading="lazy"
             />
           </div>
         </div>
