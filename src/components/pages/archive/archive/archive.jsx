@@ -401,7 +401,7 @@ const Archive = () => {
                   <div className="-ml-2 mt-2 flex items-center gap-x-6 text-2xl font-bold leading-normal lg:-ml-1 lg:gap-x-1.5 lg:text-lg md:text-base">
                     {videoSrc && (
                       <Link
-                        className="inline-flex items-center border-2 border-transparent px-2 py-1 font-mono-cyber tracking-tight text-orange transition-colors duration-200 hover:!border-orange group-hover:border-orange group-hover:border-opacity-50 lg:px-1"
+                        className="inline-flex items-center border-2 border-transparent px-2 py-1 font-mono-cyber tracking-tight text-orange transition-colors duration-200 hover:!border-orange group-hover:border-orange group-hover:border-opacity-10 lg:px-1"
                         to={videoSrc}
                         target="_blank"
                       >
@@ -410,7 +410,7 @@ const Archive = () => {
                     )}
                     {pdf && (
                       <Link
-                        className="inline-flex items-center border-2 border-transparent px-2 py-1 font-mono-cyber text-2xl font-bold leading-normal tracking-tighter text-black transition-colors duration-200 hover:!border-black group-hover:border-black group-hover:border-opacity-50 lg:px-1 lg:text-lg md:text-base"
+                        className="inline-flex items-center border-2 border-transparent px-2 py-1 font-mono-cyber text-2xl font-bold leading-normal tracking-tighter text-black transition-colors duration-200 hover:!border-black group-hover:border-black group-hover:border-opacity-10 lg:px-1 lg:text-lg md:text-base"
                         to={pdf}
                         download
                       >
