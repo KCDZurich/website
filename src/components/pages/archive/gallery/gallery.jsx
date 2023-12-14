@@ -24,12 +24,7 @@ const Gallery = () => {
         nodes {
           publicURL
           childImageSharp {
-            gatsbyImageData(
-              width: 234
-              height: 224
-              aspectRatio: 1
-              transformOptions: { cropFocus: CENTER }
-            )
+            gatsbyImageData(width: 234, aspectRatio: 1, transformOptions: { cropFocus: CENTER })
           }
         }
       }
@@ -37,6 +32,7 @@ const Gallery = () => {
   `);
   const sliderRef = useRef();
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isNextButtonDisable, setIsNextButtonDisable] = useState(false);
   const [clickedIndex, setClickedIndex] = useState(0);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
@@ -54,6 +50,12 @@ const Gallery = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
+          afterChange: (currentSlideIndex) => {
+            setCurrentSlideIndex(currentSlideIndex);
+            sliderRef?.current.props.children.length / 2 - currentSlideIndex <= 3
+              ? setIsNextButtonDisable(true)
+              : setIsNextButtonDisable(false);
+          },
         },
       },
       {
@@ -61,6 +63,12 @@ const Gallery = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
+          afterChange: (currentSlideIndex) => {
+            setCurrentSlideIndex(currentSlideIndex);
+            sliderRef?.current.props.children.length / 2 - currentSlideIndex <= 2
+              ? setIsNextButtonDisable(true)
+              : setIsNextButtonDisable(false);
+          },
         },
       },
       {
@@ -70,6 +78,12 @@ const Gallery = () => {
           slidesToScroll: 2,
           dots: false,
           rows: 1,
+          afterChange: (currentSlideIndex) => {
+            setCurrentSlideIndex(currentSlideIndex);
+            sliderRef?.current.props.children.length - currentSlideIndex <= 2
+              ? setIsNextButtonDisable(true)
+              : setIsNextButtonDisable(false);
+          },
         },
       },
       {
@@ -79,11 +93,19 @@ const Gallery = () => {
           slidesToScroll: 1,
           dots: false,
           rows: 1,
+          infinite: true,
+          afterChange: (currentSlideIndex) => {
+            setCurrentSlideIndex(currentSlideIndex);
+            setIsNextButtonDisable(false);
+          },
         },
       },
     ],
     afterChange: (currentSlideIndex) => {
       setCurrentSlideIndex(currentSlideIndex);
+      sliderRef?.current.props.children.length / 2 - currentSlideIndex <= 4
+        ? setIsNextButtonDisable(true)
+        : setIsNextButtonDisable(false);
     },
   };
 
@@ -125,7 +147,7 @@ const Gallery = () => {
             <button
               className="flex h-9 w-[72px] items-center justify-center border-2 border-black text-black transition-colors duration-200 disabled:opacity-20"
               type="button"
-              disabled={currentSlideIndex > 16}
+              disabled={isNextButtonDisable}
               onClick={() => sliderRef?.current?.slickNext()}
             >
               <span className="sr-only">Next slide</span>
@@ -152,7 +174,6 @@ const Gallery = () => {
         </div>
         <Modal
           modalData={{
-            sliderRef,
             galleryItems: data.allFile.nodes,
             slideIndex: clickedIndex,
           }}
