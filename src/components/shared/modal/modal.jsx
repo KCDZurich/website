@@ -2,9 +2,12 @@ import clsx from 'clsx';
 import { AnimatePresence, m, LazyMotion, domAnimation, useReducedMotion } from 'framer-motion';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import React, { useCallback, useEffect, useId, useState } from 'react';
+import React, { useCallback, useEffect, useId } from 'react';
+import Slider from 'react-slick';
 
-import ArrowRight from 'components/pages/archive/gallery/svg/arrow-right.inline.svg';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 import CloseIcon from 'icons/close.inline.svg';
 import CommunityIcon from 'icons/cncf-icon.inline.svg';
 import GithubIcon from 'icons/github-icon.inline.svg';
@@ -53,16 +56,23 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
     presentation = '',
     speakers = [],
     isCoincidedEvent = false,
-    activePhoto = '',
-    sliderRef = null,
-    sliderIndex = 0,
+    galleryItems = [],
+    slideIndex = 0,
   } = modalData;
-  const [gallerySrc, setGallerySrc] = useState(activePhoto);
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    accessibility: true,
+    initialSlide: slideIndex,
+  };
   const shouldReduceMotion = useReducedMotion();
   const headingId = useId();
   const modalAnimation = shouldReduceMotion ? {} : defaultModalAnimation;
   const modalBackdropAnimation = shouldReduceMotion ? {} : defaultModalBackdropAnimation;
-  const isPhotoGallery = activePhoto;
+  const isPhotoGallery = galleryItems.length;
 
   const handleWindowKeyDown = useCallback(
     (e) => {
@@ -72,10 +82,6 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
     },
     [onModalHide]
   );
-
-  useEffect(() => {
-    setGallerySrc(activePhoto);
-  }, [activePhoto]);
 
   useEffect(() => {
     window.addEventListener('keydown', handleWindowKeyDown);
@@ -92,7 +98,7 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
               {
                 'overflow-y-auto p-10 sm:p-5': !isVideoModal && !isPhotoGallery,
                 'w-[1200px] max-w-[90vw]': isVideoModal,
-                'w-[1136px] max-w-[80vw] p-0': isPhotoGallery,
+                'w-[1200px] max-w-[80vw] p-0': isPhotoGallery,
               }
             )}
             key="modal"
@@ -125,13 +131,18 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
             ) : // eslint-disable-next-line no-nested-ternary
             isPhotoGallery ? (
               <>
-                <img
-                  className="w-full"
-                  src={gallerySrc}
-                  width={1136}
-                  height={758}
-                  alt="Gallery item"
-                />
+                <Slider {...settings}>
+                  {galleryItems.map((item, index) => (
+                    <img
+                      key={index}
+                      className="w-full"
+                      src={item.publicURL}
+                      width={1200}
+                      height={800}
+                      alt="Gallery photo"
+                    />
+                  ))}
+                </Slider>
                 <Button
                   className="z-999 absolute -right-12 -top-10 md:-right-6"
                   theme="default"
@@ -141,46 +152,6 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                 >
                   <CloseIcon className="h-7 w-7" aria-hidden />
                 </Button>
-                <button
-                  className="prev-slide group-prev absolute -left-20 bottom-0 top-0 z-20 m-auto flex h-[55px] w-[55px] items-center justify-center rounded-full text-white transition-colors duration-200 disabled:opacity-50 lg:-left-16 lg:h-10 lg:w-10 sm:-left-14"
-                  type="button"
-                  disabled={!sliderRef?.current?.swiper.clickedSlide.previousSibling}
-                  onClick={() => {
-                    if (sliderRef?.current?.swiper) {
-                      setGallerySrc(
-                        sliderRef.current.swiper.clickedSlide.previousSibling.getAttribute(
-                          'data-full-size-image'
-                        )
-                      );
-                      sliderRef.current.swiper.clickedSlide =
-                        sliderRef.current.swiper.clickedSlide.previousSibling;
-                      sliderRef.current.swiper.slideTo(sliderIndex - 1);
-                    }
-                  }}
-                >
-                  <span className="sr-only">Go to prev slide</span>
-                  <ArrowRight className="h-auto w-full -rotate-180" />
-                </button>
-                <button
-                  className="next-slide group-next absolute -right-20 bottom-0 top-0 z-20 m-auto flex h-[55px] w-[55px] items-center justify-center rounded-full text-white transition-colors duration-200 disabled:opacity-50 lg:-right-16 lg:h-10 lg:w-10 sm:-right-14"
-                  type="button"
-                  disabled={!sliderRef?.current?.swiper.clickedSlide.nextSibling}
-                  onClick={() => {
-                    if (sliderRef?.current?.swiper) {
-                      setGallerySrc(
-                        sliderRef.current.swiper.clickedSlide.nextSibling.getAttribute(
-                          'data-full-size-image'
-                        )
-                      );
-                      sliderRef.current.swiper.clickedSlide =
-                        sliderRef.current.swiper.clickedSlide.nextSibling;
-                      sliderRef.current.swiper.slideTo(sliderIndex + 1);
-                    }
-                  }}
-                >
-                  <span className="sr-only">Go to next slide</span>
-                  <ArrowRight className="h-auto w-full" />
-                </button>
               </>
             ) : isPresentationShow ? (
               <>
@@ -384,8 +355,8 @@ Modal.propTypes = {
     speakers: PropTypes.array,
     isCoincidedEvent: PropTypes.bool,
     activePhoto: PropTypes.string,
-    sliderRef: PropTypes.object,
-    sliderIndex: PropTypes.number,
+    galleryItems: PropTypes.array,
+    slideIndex: PropTypes.number,
   }).isRequired,
 };
 

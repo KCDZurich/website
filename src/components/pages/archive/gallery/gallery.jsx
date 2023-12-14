@@ -2,11 +2,9 @@
 import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React, { useState, useRef } from 'react';
-import { Grid, Navigation, Pagination } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-import 'swiper/css';
-import 'swiper/css/grid';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 import Modal from 'components/shared/modal';
 
@@ -26,7 +24,12 @@ const Gallery = () => {
         nodes {
           publicURL
           childImageSharp {
-            gatsbyImageData(width: 260)
+            gatsbyImageData(
+              width: 234
+              height: 224
+              aspectRatio: 1
+              transformOptions: { cropFocus: CENTER }
+            )
           }
         }
       }
@@ -34,35 +37,70 @@ const Gallery = () => {
   `);
   const sliderRef = useRef();
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [activePhoto, setActivePhoto] = useState('');
-  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const [clickedIndex, setClickedIndex] = useState(0);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
-  const pagination = {
-    clickable: true,
-    renderBullet(index, className) {
-      return `<button class="w-4 h-4 mx-1 border-solid border-2 border-black ${className}" type="button"><span class="sr-only">Choose slide number ${
-        index + 1
-      }</span></button>`;
+  const sliderSettings = {
+    dots: true,
+    arrows: false,
+    infinite: false,
+    speed: 500,
+    rows: 2,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 860,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 660,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          dots: false,
+          rows: 1,
+        },
+      },
+      {
+        breakpoint: 560,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
+          rows: 1,
+        },
+      },
+    ],
+    afterChange: (currentSlideIndex) => {
+      setCurrentSlideIndex(currentSlideIndex);
     },
   };
 
-  const handleModalShow = (photo) => {
+  const handleModalShow = (photo, index) => {
     document.body.classList.add('overflow-hidden');
     setIsModalVisible(true);
-    setActivePhoto(photo);
+    setClickedIndex(index);
   };
 
   const handleModalHide = () => {
     document.body.classList.remove('overflow-hidden');
     setIsModalVisible(false);
-  };
-
-  const handleSliderChange = (swiper) => {
-    setActiveSlideIndex(swiper.realIndex);
+    setClickedIndex(0);
   };
 
   return (
-    <section className="safe-paddings relative mt-[120px] lg:my-16 md:mt-10 sm:mt-8">
+    <section className="safe-paddings relative mb-[100px] mt-[120px] lg:mb-32 lg:mt-16 md:mt-10 sm:mt-8 xs:mb-8">
       <div className="container">
         <header className="relative z-10 flex items-center justify-between sm:flex-col sm:items-start">
           <div>
@@ -76,83 +114,47 @@ const Gallery = () => {
           </div>
           <div className="mt-14 flex items-center gap-x-3 sm:mt-8">
             <button
-              className="prev-slide group-prev flex h-9 w-[72px] items-center justify-center border-2 border-black text-black transition-colors duration-200 disabled:opacity-20"
+              className="flex h-9 w-[72px] items-center justify-center border-2 border-black text-black transition-colors duration-200 disabled:opacity-20"
               type="button"
+              disabled={currentSlideIndex === 0}
+              onClick={() => sliderRef?.current?.slickPrev()}
             >
               <span className="sr-only">Prev slide</span>
               <Arrow className="rotate-180" width={10} height={20} aria-hidden />
             </button>
             <button
-              className="next-slide group-next flex h-9 w-[72px] items-center justify-center border-2 border-black text-black transition-colors duration-200 disabled:opacity-20"
+              className="flex h-9 w-[72px] items-center justify-center border-2 border-black text-black transition-colors duration-200 disabled:opacity-20"
               type="button"
+              disabled={currentSlideIndex > 16}
+              onClick={() => sliderRef?.current?.slickNext()}
             >
               <span className="sr-only">Next slide</span>
               <Arrow width={10} height={20} aria-hidden />
             </button>
           </div>
         </header>
-        <div className="relative -mt-16 bg-archive-gallery bg-contain bg-center bg-no-repeat p-[52px] xl:-mt-4 lg:mt-8 lg:bg-cover lg:pb-4 sm:mt-2 sm:px-4">
-          <Swiper
-            className="mt-24 h-[580px] !pb-20 md:mt-4 md:h-[460px] md:!pb-4 sm:h-[500px] [@media(max-width:540px)]:h-auto"
-            ref={sliderRef}
-            grid={{
-              rows: 2,
-            }}
-            navigation={{
-              nextEl: '.next-slide',
-              prevEl: '.prev-slide',
-            }}
-            pagination={pagination}
-            spaceBetween={30}
-            slidesPerView={4}
-            slidesPerGroup={4}
-            modules={[Grid, Navigation, Pagination]}
-            breakpoints={{
-              200: {
-                slidesPerView: 1,
-                slidesPerGroup: 1,
-                spaceBetween: 0,
-                grid: { rows: 1 },
-              },
-              540: {
-                slidesPerView: 2,
-                slidesPerGroup: 2,
-                spaceBetween: 20,
-                grid: { rows: 2 },
-              },
-              768: {
-                slidesPerView: 3,
-                slidesPerGroup: 3,
-                spaceBetween: 20,
-              },
-              1024: {
-                slidesPerView: 4,
-                spaceBetween: 24,
-              },
-            }}
-            onSlideChange={(swiper) => handleSliderChange(swiper)}
-          >
+        <div className="relative bg-archive-gallery bg-contain bg-center bg-no-repeat p-[52px_30px] lg:bg-cover lg:py-20 sm:mt-6 sm:px-4 xs:p-5">
+          <Slider className="mt-10 lg:mt-5" ref={sliderRef} {...sliderSettings}>
             {data.allFile.nodes.map((photo, index) => {
               const image = getImage(photo);
 
               return (
-                <SwiperSlide
+                <button
                   key={index}
-                  virtualIndex={index}
-                  data-full-size-image={photo.publicURL}
-                  onClick={() => handleModalShow(photo.publicURL)}
+                  type="button"
+                  onClick={() => handleModalShow(photo.publicURL, index)}
                 >
                   <GatsbyImage className="cursor-pointer" image={image} alt="Gallery item" />
-                </SwiperSlide>
+                </button>
               );
             })}
-          </Swiper>
+          </Slider>
         </div>
         <Modal
           modalData={{
-            activePhoto,
             sliderRef,
-            sliderIndex: activeSlideIndex,
+            galleryItems: data.allFile.nodes,
+            slideIndex: clickedIndex,
           }}
           isVisible={isModalVisible}
           onModalHide={handleModalHide}

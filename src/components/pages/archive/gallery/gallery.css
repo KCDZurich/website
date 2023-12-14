@@ -1,14 +1,50 @@
-.swiper-pagination {
-  display: flex;
-  justify-content: center;
+.slick-slide {
+  display: flex !important;
+  flex-direction: column;
+  row-gap: 3.25rem;
 }
 
-.swiper-pagination-bullet-active {
-  background: #0a1133;
+.slick-dots {
+  bottom: -7rem;
 }
 
-@media screen and (max-width: 540px) {
-  .swiper-pagination {
-    display: none;
+.slick-dots li {
+  margin: 0 1px;
+}
+
+.slick-dots li button:before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  opacity: 1 !important;
+  border: 2px solid #0a1133;
+}
+
+.slick-dots li.slick-active button:before {
+  background-color: #0a1133;
+}
+
+.slick-prev,
+.slick-next {
+  width: 40px;
+  height: 40px;
+}
+
+.slick-prev {
+  left: -50px;
+}
+
+.slick-next {
+  right: -50px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 44px;
+}
+
+@media screen and (max-width: 1280px) {
+  .slick-dots {
+    bottom: -9rem;
   }
 }

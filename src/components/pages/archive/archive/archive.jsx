@@ -362,10 +362,10 @@ const Archive = () => {
           {visibleItems.map(
             ({ title, duration, isKeynote, speakers, presentation, pdf, videoSrc }, index) => (
               <li
-                className="group relative grid grid-cols-[172px_1fr_1fr] gap-x-24 py-8 after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-[url('/images/dash-line-gray-horizontal.svg')] after:bg-contain after:bg-repeat-x first:before:absolute first:before:top-0 first:before:h-[1px] first:before:w-full first:before:bg-[url('/images/dash-line-gray-horizontal.svg')] first:before:bg-contain first:before:bg-repeat-x md:grid-cols-[122px_1fr_1fr] md:gap-x-12 sm:w-[730px] sm:gap-x-8"
+                className="group relative grid grid-cols-[172px_1fr_1fr] gap-x-24 pb-6 pt-8 after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-[url('/images/dash-line-gray-horizontal.svg')] after:bg-contain after:bg-repeat-x first:before:absolute first:before:top-0 first:before:h-[1px] first:before:w-full first:before:bg-[url('/images/dash-line-gray-horizontal.svg')] first:before:bg-contain first:before:bg-repeat-x md:grid-cols-[122px_1fr_1fr] md:gap-x-12 sm:w-[730px] sm:gap-x-8"
                 key={index}
               >
-                <div className="mt-2 flex flex-col justify-between">
+                <div className="mt-2 flex flex-col">
                   {speakers && speakers.length > 0 && (
                     <ul className="relative inline-flex gap-x-5 sm:gap-x-4">
                       {speakers.map(({ name, photo }, index) => (
@@ -438,7 +438,7 @@ const Archive = () => {
         </ul>
         {!showAll && (
           <Button
-            className="!h-13 mx-auto mt-7 !block !px-10 uppercase lg:mt-12 md:mt-6 md:!text-[11px] xs:mt-8"
+            className="!h-13 mx-auto mt-9 !block !px-10 uppercase lg:mt-12 md:mt-6 md:!text-[11px] xs:mt-8"
             theme="primary"
             size="sm"
             onClick={() => setShowAll(true)}
