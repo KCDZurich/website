@@ -358,7 +358,7 @@ const Archive = () => {
           {date}
         </time>
         <h2 className="mt-5 text-2xl font-bold leading-snug lg:text-xl md:text-lg">{title}</h2>
-        <ul className="mt-8 flex flex-col sm:overflow-x-auto">
+        <ul className="relative mt-8 flex flex-col sm:left-1/2 sm:right-1/2 sm:-mx-[50vw] sm:w-screen sm:overflow-x-auto sm:px-4">
           {visibleItems.map(
             ({ title, duration, isKeynote, speakers, presentation, pdf, videoSrc }, index) => (
               <li
