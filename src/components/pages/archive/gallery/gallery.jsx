@@ -26,7 +26,7 @@ const Gallery = () => {
         nodes {
           publicURL
           childImageSharp {
-            gatsbyImageData(width: 234, aspectRatio: 1, transformOptions: { cropFocus: CENTER })
+            gatsbyImageData(width: 240)
           }
         }
       }
@@ -157,7 +157,7 @@ const Gallery = () => {
             </button>
           </div>
         </header>
-        <div className="relative p-[52px_30px] lg:px-10 lg:pb-8 lg:pt-16 sm:px-4 xs:px-5 xs:pb-8 xs:pt-12">
+        <div className="relative p-[52px_30px] lg:px-10 lg:pb-8 lg:pt-16 sm:px-4 xs:mt-4 xs:px-5 xs:pb-8 xs:pt-12">
           <Slider className="relative z-20 mt-10 lg:mt-0" ref={sliderRef} {...sliderSettings}>
             {sliderThumbnailData.allFile.nodes.map((photo, index) => {
               const image = getImage(photo);
