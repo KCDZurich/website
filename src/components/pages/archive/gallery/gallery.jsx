@@ -9,6 +9,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import Modal from 'components/shared/modal';
 
 import Arrow from './svg/arrow.inline.svg';
+import bgTablet from './svg/bg.svg';
 
 import './gallery.css';
 
@@ -59,7 +60,7 @@ const Gallery = () => {
         },
       },
       {
-        breakpoint: 860,
+        breakpoint: 880,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -122,7 +123,7 @@ const Gallery = () => {
   };
 
   return (
-    <section className="safe-paddings relative mb-[100px] mt-[120px] lg:mb-32 lg:mt-16 md:mt-10 sm:mt-8 xs:mb-8">
+    <section className="safe-paddings relative mb-[100px] mt-[120px] lg:mb-20 lg:mt-16 md:mt-10 sm:mt-8 xs:mb-8">
       <div className="container">
         <header className="relative z-10 flex items-center justify-between sm:flex-col sm:items-start">
           <div>
@@ -155,8 +156,8 @@ const Gallery = () => {
             </button>
           </div>
         </header>
-        <div className="relative bg-archive-gallery bg-contain bg-center bg-no-repeat p-[52px_30px] lg:bg-cover lg:py-20 sm:mt-6 sm:px-4 xs:p-5">
-          <Slider className="mt-10 lg:mt-5" ref={sliderRef} {...sliderSettings}>
+        <div className="relative p-[52px_30px] lg:px-10 lg:pb-8 lg:pt-16 sm:px-4 xs:px-5 xs:pb-8 xs:pt-10">
+          <Slider className="relative z-20 mt-10 lg:mt-0" ref={sliderRef} {...sliderSettings}>
             {sliderThumbnailData.allFile.nodes.map((photo, index) => {
               const image = getImage(photo);
 
@@ -171,6 +172,13 @@ const Gallery = () => {
               );
             })}
           </Slider>
+          <img
+            className="absolute inset-0 z-10 h-full w-full"
+            src={bgTablet}
+            width={1216}
+            height={664}
+            alt=""
+          />
         </div>
         <Modal
           modalData={{
