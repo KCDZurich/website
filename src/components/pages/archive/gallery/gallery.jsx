@@ -9,7 +9,8 @@ import 'slick-carousel/slick/slick-theme.css';
 import Modal from 'components/shared/modal';
 
 import Arrow from './svg/arrow.inline.svg';
-import bgTablet from './svg/bg.svg';
+import bgMobile from './svg/bg-mobile.svg';
+import bg from './svg/bg.svg';
 
 import './gallery.css';
 
@@ -156,7 +157,7 @@ const Gallery = () => {
             </button>
           </div>
         </header>
-        <div className="relative p-[52px_30px] lg:px-10 lg:pb-8 lg:pt-16 sm:px-4 xs:px-5 xs:pb-8 xs:pt-10">
+        <div className="relative p-[52px_30px] lg:px-10 lg:pb-8 lg:pt-16 sm:px-4 xs:px-5 xs:pb-8 xs:pt-12">
           <Slider className="relative z-20 mt-10 lg:mt-0" ref={sliderRef} {...sliderSettings}>
             {sliderThumbnailData.allFile.nodes.map((photo, index) => {
               const image = getImage(photo);
@@ -173,10 +174,17 @@ const Gallery = () => {
             })}
           </Slider>
           <img
-            className="absolute inset-0 z-10 h-full w-full"
-            src={bgTablet}
+            className="absolute inset-0 z-10 h-full w-full xs:hidden"
+            src={bg}
             width={1216}
             height={664}
+            alt=""
+          />
+          <img
+            className="absolute inset-0 z-10 hidden h-full w-full xs:block"
+            src={bgMobile}
+            width={329}
+            height={282}
             alt=""
           />
         </div>
