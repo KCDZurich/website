@@ -48,3 +48,13 @@
     bottom: -9rem;
   }
 }
+
+@media screen and (max-width: 560px) {
+  .slick-prev {
+    left: -42px;
+  }
+
+  .slick-next {
+    right: -38px;
+  }
+}
