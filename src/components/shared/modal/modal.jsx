@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { AnimatePresence, m, LazyMotion, domAnimation, useReducedMotion } from 'framer-motion';
-import { Link } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import React, { useCallback, useEffect, useId } from 'react';
 import Slider from 'react-slick';
@@ -56,10 +57,25 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
     presentation = '',
     speakers = [],
     isCoincidedEvent = false,
-    galleryItems = [],
+    isPhotoGallery = false,
     slideIndex = 0,
   } = modalData;
-  const settings = {
+  const sliderGalleryData = useStaticQuery(graphql`
+    {
+      allFile(
+        filter: { relativeDirectory: { eq: "archive-2023" }, extension: { eq: "jpg" } }
+        sort: { relativePath: ASC }
+      ) {
+        nodes {
+          publicURL
+          childImageSharp {
+            gatsbyImageData(width: 1200)
+          }
+        }
+      }
+    }
+  `);
+  const sliderSettings = {
     dots: false,
     infinite: true,
     speed: 500,
@@ -72,7 +88,6 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
   const headingId = useId();
   const modalAnimation = shouldReduceMotion ? {} : defaultModalAnimation;
   const modalBackdropAnimation = shouldReduceMotion ? {} : defaultModalBackdropAnimation;
-  const isPhotoGallery = galleryItems.length;
 
   const handleWindowKeyDown = useCallback(
     (e) => {
@@ -131,17 +146,21 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
             ) : // eslint-disable-next-line no-nested-ternary
             isPhotoGallery ? (
               <>
-                <Slider {...settings}>
-                  {galleryItems.map((item, index) => (
-                    <img
-                      key={index}
-                      className="w-full"
-                      src={item.publicURL}
-                      width={1200}
-                      height={800}
-                      alt="Gallery photo"
-                    />
-                  ))}
+                <Slider {...sliderSettings}>
+                  {sliderGalleryData.allFile.nodes.map((photo, index) => {
+                    const image = getImage(photo);
+
+                    return (
+                      <GatsbyImage
+                        key={index}
+                        className="w-full"
+                        image={image}
+                        width={1200}
+                        height={800}
+                        alt="Gallery photo"
+                      />
+                    );
+                  })}
                 </Slider>
                 <Button
                   className="z-999 absolute -right-12 -top-10 md:-right-6"
@@ -355,7 +374,7 @@ Modal.propTypes = {
     speakers: PropTypes.array,
     isCoincidedEvent: PropTypes.bool,
     activePhoto: PropTypes.string,
-    galleryItems: PropTypes.array,
+    isPhotoGallery: PropTypes.bool,
     slideIndex: PropTypes.number,
   }).isRequired,
 };

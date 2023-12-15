@@ -15,7 +15,7 @@ import './gallery.css';
 const title = 'photo gallery';
 
 const Gallery = () => {
-  const data = useStaticQuery(graphql`
+  const sliderThumbnailData = useStaticQuery(graphql`
     {
       allFile(
         filter: { relativeDirectory: { eq: "archive-2023" }, extension: { eq: "jpg" } }
@@ -157,7 +157,7 @@ const Gallery = () => {
         </header>
         <div className="relative bg-archive-gallery bg-contain bg-center bg-no-repeat p-[52px_30px] lg:bg-cover lg:py-20 sm:mt-6 sm:px-4 xs:p-5">
           <Slider className="mt-10 lg:mt-5" ref={sliderRef} {...sliderSettings}>
-            {data.allFile.nodes.map((photo, index) => {
+            {sliderThumbnailData.allFile.nodes.map((photo, index) => {
               const image = getImage(photo);
 
               return (
@@ -174,7 +174,7 @@ const Gallery = () => {
         </div>
         <Modal
           modalData={{
-            galleryItems: data.allFile.nodes,
+            isPhotoGallery: true,
             slideIndex: clickedIndex,
           }}
           isVisible={isModalVisible}
