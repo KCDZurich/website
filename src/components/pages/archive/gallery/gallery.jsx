@@ -136,7 +136,7 @@ const Gallery = () => {
           </div>
           <div className="mt-14 flex items-center gap-x-3 sm:mt-8">
             <button
-              className="flex h-9 w-[72px] items-center justify-center border-2 border-black text-black transition-colors duration-200 disabled:opacity-20"
+              className="flex h-9 w-[72px] items-center justify-center border-2 border-black text-black transition-colors duration-200 hover:border-mint hover:text-mint disabled:opacity-20"
               type="button"
               disabled={currentSlideIndex === 0}
               onClick={() => sliderRef?.current?.slickPrev()}
@@ -145,7 +145,7 @@ const Gallery = () => {
               <Arrow className="rotate-180" width={10} height={20} aria-hidden />
             </button>
             <button
-              className="flex h-9 w-[72px] items-center justify-center border-2 border-black text-black transition-colors duration-200 disabled:opacity-20"
+              className="flex h-9 w-[72px] items-center justify-center border-2 border-black text-black transition-colors duration-200 hover:border-mint hover:text-mint disabled:opacity-20"
               type="button"
               disabled={isNextButtonDisable}
               onClick={() => sliderRef?.current?.slickNext()}

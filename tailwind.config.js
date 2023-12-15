@@ -41,6 +41,7 @@ module.exports = {
       'yellow-light': '#FFF0EA',
       red: '#FF5712',
       orange: '#F14600',
+      mint: '#06B3B8',
       blue: { 1: '#3333FF', 2: '#2929FF' },
       'blue-light': '#DFEFF2',
       'blue-super-light': '#EFFAFB',

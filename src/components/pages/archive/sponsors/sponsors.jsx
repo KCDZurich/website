@@ -61,7 +61,7 @@ const Sponsors = () => {
           commitment to the community. We couldn&apos;t do it without them! If you&apos;re
           interested in becoming a next year sponsor, please contact{' '}
           <Link
-            className="!border-b !border-black !text-black"
+            className="!border-b !border-black !text-black hover:!border-mint hover:!text-mint"
             theme="blue-underlined"
             to="mailto:hello@kcdzurich.ch"
           >

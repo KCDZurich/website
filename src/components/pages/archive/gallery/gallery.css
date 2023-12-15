@@ -18,6 +18,11 @@
   height: 16px;
   opacity: 1 !important;
   border: 2px solid #0a1133;
+  transition: all 200ms ease;
+}
+
+.slick-dots li button:hover:before {
+  background-color: #06b3b8;
 }
 
 .slick-dots li.slick-active button:before {
