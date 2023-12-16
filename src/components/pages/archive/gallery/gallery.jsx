@@ -128,7 +128,7 @@ const Gallery = () => {
       <div className="container">
         <header className="relative z-10 flex items-center justify-between sm:flex-col sm:items-start">
           <div>
-            <h2 className="font-sans-cyber text-[52px] font-bold leading-denser tracking-tight lg:text-5xl md:text-4xl">
+            <h2 className="font-sans-cyber text-[52px] font-bold leading-denser tracking-tight lg:text-5xl md:text-4xl sm:text-[32px]">
               {title}
             </h2>
             <p className="mt-7 max-w-[600px] text-xl leading-normal lg:text-lg">

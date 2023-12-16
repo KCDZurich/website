@@ -16,6 +16,8 @@ const Podcast = () => (
             <StaticImage
               class="h-auto w-full max-w-[460px] lg:max-w-[362px] md:max-w-[262px] md:object-contain sm:max-w-none"
               src="./img/podcast-cover.jpg"
+              width={460}
+              height={459}
               alt="Podcast cover"
               loading="lazy"
             />

@@ -3,7 +3,7 @@ import { AnimatePresence, m, LazyMotion, domAnimation, useReducedMotion } from '
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
-import React, { useCallback, useEffect, useId } from 'react';
+import React, { useCallback, useEffect, useId, useRef } from 'react';
 import Slider from 'react-slick';
 
 import 'slick-carousel/slick/slick.css';
@@ -81,9 +81,9 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    accessibility: true,
     initialSlide: slideIndex,
   };
+  const sliderRef = useRef();
   const shouldReduceMotion = useReducedMotion();
   const headingId = useId();
   const modalAnimation = shouldReduceMotion ? {} : defaultModalAnimation;
@@ -94,8 +94,16 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
       if (e.key === 'Escape') {
         onModalHide();
       }
+
+      if (e.key === 'ArrowRight' && isPhotoGallery) {
+        sliderRef?.current?.slickNext();
+      }
+
+      if (e.key === 'ArrowLeft' && isPhotoGallery) {
+        sliderRef?.current?.slickPrev();
+      }
     },
-    [onModalHide]
+    [isPhotoGallery, onModalHide]
   );
 
   useEffect(() => {
@@ -146,7 +154,7 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
             ) : // eslint-disable-next-line no-nested-ternary
             isPhotoGallery ? (
               <>
-                <Slider {...sliderSettings}>
+                <Slider ref={sliderRef} {...sliderSettings}>
                   {sliderGalleryData.allFile.nodes.map((photo, index) => {
                     const image = getImage(photo);
 
