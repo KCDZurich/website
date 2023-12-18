@@ -76,21 +76,6 @@ const Gallery = () => {
       {
         breakpoint: 660,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          dots: false,
-          rows: 1,
-          afterChange: (currentSlideIndex) => {
-            setCurrentSlideIndex(currentSlideIndex);
-            sliderRef?.current.props.children.length - currentSlideIndex <= 2
-              ? setIsNextButtonDisable(true)
-              : setIsNextButtonDisable(false);
-          },
-        },
-      },
-      {
-        breakpoint: 560,
-        settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
           dots: false,
@@ -174,10 +159,10 @@ const Gallery = () => {
             })}
           </Slider>
           <img
-            className="absolute inset-0 z-10 h-full w-full xs:hidden"
+            className="absolute inset-0 z-10 h-full w-full object-cover xs:hidden"
             src={bg}
             width={1216}
-            height={664}
+            height={516}
             alt=""
           />
           <img
