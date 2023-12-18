@@ -46,7 +46,7 @@ const Header = ({ isMobileMenuOpen, onBurgerClick, additionalClassName, isHomePa
   return (
     <header
       className={clsx(
-        'safe-paddings transition-200 z-10 transition-colors',
+        'safe-paddings transition-200 relative z-10 transition-colors',
         isMobileMenuOpen ? 'bg-white bg-opacity-100' : '',
         additionalClassName
       )}

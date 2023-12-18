@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useState } from 'react';
 
 import AdrianPhoto from 'components/pages/schedule/schedule/images/adrian-reber-photo.jpg';
 import AnnieTalvastoPhoto from 'components/pages/schedule/schedule/images/annie-talvasto-photo.jpg';
@@ -17,10 +17,14 @@ import RicardoRochaPhoto from 'components/pages/schedule/schedule/images/ricardo
 import SebastianKisterPhoto from 'components/pages/schedule/schedule/images/sebastian-kister-photo.jpg';
 import ThomasGrafPhoto from 'components/pages/schedule/schedule/images/thomas-graf-photo.jpg';
 import TimoSalmPhoto from 'components/pages/schedule/schedule/images/timo-salm-photo.jpg';
+import Button from 'components/shared/button';
 import Link from 'components/shared/link';
+import DisketteIcon from 'icons/diskette.inline.svg';
+
+import Separator from './svg/separator.inline.svg';
 
 // TODO: merge with ITEMS array from components/pages/schedule
-const ITEMS = [
+const items = [
   {
     id: '01',
     title: 'Cilium Mesh - How to Connect Kubernetes with Legacy VM and Server Infrastructure',
@@ -336,54 +340,46 @@ const ITEMS = [
   },
 ];
 
-const TITLE = 'Kubernetes Community Day Zürich 2023';
-const DATE = '15 June, 2023';
+const title = 'Kubernetes Community Day Zürich 2023';
+const date = '15 june, 2023';
 
-const Archive = () => (
-  <section className="safe-paddings pb-20 md:pb-16">
-    <div className="container-md text-primary-1">
-      <h2 className="text-2xl font-bold leading-snug">{TITLE}</h2>
-      <time className="mt-3 block text-lg leading-normal" dateTime="2023-06-15">
-        {DATE}
-      </time>
-      <ul className="mt-8 flex flex-col gap-y-6">
-        {ITEMS.map(
-          ({ title, duration, isKeynote, speakers, presentation, pdf, videoSrc }, index) => (
-            <li
-              className="flex items-center gap-x-12 border-b border-gray-10 pb-6 md:flex-col md:items-start"
-              key={index}
-            >
-              <div className="w-[384px] max-w-full shrink-0 md:mb-4 md:w-[480px]">
-                {videoSrc ? (
-                  <iframe
-                    className="max-w-full"
-                    allow="autoplay; picture-in-picture; web-share"
-                    src={`${videoSrc}?autoplay=0&mute=0&rel=0`}
-                    title={title}
-                    width="100%"
-                    height="220"
-                    allowFullScreen
-                  />
-                ) : (
-                  <div className="h-[220px] bg-gray-11" />
-                )}
-              </div>
-              <div>
-                <div className="flex items-center gap-x-8">
+const Archive = () => {
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleItems = showAll ? items : items.slice(0, 3);
+
+  return (
+    <section className="safe-paddings mt-[117px] lg:mt-16 md:mt-10 sm:mt-8">
+      <div className="container text-primary-1">
+        <time
+          className="block font-sans-cyber text-[52px] font-bold leading-denser tracking-tight lg:text-5xl md:text-4xl sm:text-[32px]"
+          dateTime="2023-06-15"
+        >
+          {date}
+        </time>
+        <h2 className="mt-5 text-2xl font-bold leading-snug lg:text-xl md:text-lg">{title}</h2>
+        <ul className="relative mt-8 flex flex-col sm:left-1/2 sm:right-1/2 sm:-mx-[50vw] sm:w-screen sm:overflow-x-auto sm:px-4">
+          {visibleItems.map(
+            ({ title, duration, isKeynote, speakers, presentation, pdf, videoSrc }, index) => (
+              <li
+                className="group relative grid grid-cols-[172px_1fr_1fr] gap-x-24 pb-6 pt-8 after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-[url('/images/dash-line-gray-horizontal.svg')] after:bg-contain after:bg-repeat-x first:before:absolute first:before:top-0 first:before:h-[1px] first:before:w-full first:before:bg-[url('/images/dash-line-gray-horizontal.svg')] first:before:bg-contain first:before:bg-repeat-x md:grid-cols-[122px_1fr_1fr] md:gap-x-12 sm:w-[730px] sm:gap-x-8"
+                key={index}
+              >
+                <div className="mt-2 flex flex-col">
                   {speakers && speakers.length > 0 && (
                     <ul className="relative inline-flex gap-x-5 sm:gap-x-4">
                       {speakers.map(({ name, photo }, index) => (
-                        <li className="" key={index}>
-                          <figure className="flex items-center gap-x-2">
+                        <li key={index}>
+                          <figure className="flex flex-col">
                             <img
-                              className="h-7 w-7 rounded-full"
+                              className=""
                               src={photo}
-                              width={28}
-                              height={28}
-                              alt={name}
+                              width={74}
+                              height={74}
+                              alt={`${name} photo`}
                               loading="lazy"
                             />
-                            <figcaption className="text-sm font-medium leading-none text-primary-5 md:text-[13px]">
+                            <figcaption className="mt-2 text-xl font-semibold leading-tight md:text-sm">
                               {name}
                             </figcaption>
                           </figure>
@@ -391,37 +387,68 @@ const Archive = () => (
                       ))}
                     </ul>
                   )}
-                  <span className="relative rounded-full bg-yellow px-2 py-2 text-[13px] font-semibold leading-none tracking-tighter text-primary-1 before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3 md:text-xs">
-                    {duration}
-                  </span>
-                  {isKeynote && (
-                    <span className="relative rounded-full bg-blue-1 px-2 py-2 text-xs font-semibold leading-none tracking-tighter text-white before:absolute before:top-0 before:bottom-0 before:-left-4 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3 sm:hidden">
-                      Keynote
-                    </span>
-                  )}
+                  <div className="mt-4 flex items-center gap-x-1.5 font-mono-cyber text-xl font-bold leading-none tracking-tighter md:text-xs">
+                    <span className="rounded-sm bg-yellow-light px-3 py-1.5">{duration}</span>
+                    {isKeynote && (
+                      <span className="rounded-sm bg-blue-light px-3 py-1.5">Keynote</span>
+                    )}
+                  </div>
                 </div>
-                <h3 className="mt-4 text-lg font-semibold leading-snug tracking-tight">{title}</h3>
-                <div
-                  className="overflowed-text mt-4 mb-0 text-lg leading-normal"
-                  dangerouslySetInnerHTML={{ __html: presentation }}
-                />
-                {pdf && (
-                  <Link
-                    className="mt-6 inline-block font-semibold"
-                    theme="blue-underlined"
-                    to={pdf}
-                    download
-                  >
-                    Download PDF
-                  </Link>
-                )}
-              </div>
-            </li>
-          )
+                <div className="flex flex-col justify-between">
+                  <h3 className="text-3xl font-bold leading-snug tracking-tight lg:text-2xl md:text-xl">
+                    {title}
+                  </h3>
+                  <div className="-ml-2 mt-2 flex items-center gap-x-6 text-2xl font-bold leading-normal lg:-ml-1 lg:gap-x-1.5 lg:text-lg md:text-base">
+                    {videoSrc && (
+                      <Link
+                        className="inline-flex items-center border-2 border-transparent px-2 py-1 font-mono-cyber tracking-tight text-orange transition-colors duration-200 hover:!border-orange group-hover:border-orange group-hover:border-opacity-10 lg:px-1"
+                        to={videoSrc}
+                        target="_blank"
+                      >
+                        Watch on YouTube
+                      </Link>
+                    )}
+                    {pdf && (
+                      <Link
+                        className="inline-flex items-center border-2 border-transparent px-2 py-1 font-mono-cyber text-2xl font-bold leading-normal tracking-tighter text-black transition-colors duration-200 hover:!border-black group-hover:border-black group-hover:border-opacity-10 lg:px-1 lg:text-lg md:text-base"
+                        to={pdf}
+                        download
+                      >
+                        <DisketteIcon className="mr-1.5 h-4 w-4 md:h-3 md:w-3" aria-hidden />
+                        download pdf
+                      </Link>
+                    )}
+                  </div>
+                </div>
+                <div className="relative">
+                  <Separator
+                    className="absolute -left-9 sm:-left-6"
+                    width={9}
+                    heigth={153}
+                    aria-hidden
+                  />
+                  <div
+                    className="overflowed-text max-h-32 text-xl leading-normal lg:text-lg md:text-base"
+                    dangerouslySetInnerHTML={{ __html: presentation }}
+                  />
+                </div>
+              </li>
+            )
+          )}
+        </ul>
+        {!showAll && (
+          <Button
+            className="!h-13 mx-auto mt-9 !block !px-10 uppercase lg:mt-12 md:mt-6 md:!text-[11px] xs:mt-8"
+            theme="primary"
+            size="sm"
+            onClick={() => setShowAll(true)}
+          >
+            See more
+          </Button>
         )}
-      </ul>
-    </div>
-  </section>
-);
+      </div>
+    </section>
+  );
+};
 
 export default Archive;
