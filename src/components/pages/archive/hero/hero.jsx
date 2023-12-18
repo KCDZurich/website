@@ -22,7 +22,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="safe-paddings overflow-hidden bg-archive-hero bg-cover pt-20 md:pt-12">
+    <section className="safe-paddings overflow-hidden bg-blue-super-light bg-archive-hero bg-cover pt-20 md:pt-12">
       <div className="container relative z-[1] flex lg:items-center xs:flex-col xs:gap-y-10">
         <div className="mt-20 lg:mt-0">
           <h1 className="font-sans-cyber text-[72px] font-bold leading-denser tracking-tight text-primary-1 lg:text-5xl md:text-4xl">
