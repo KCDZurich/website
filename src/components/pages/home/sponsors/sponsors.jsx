@@ -9,11 +9,13 @@ import adfinisLogo from 'icons/sponsors/adfinis.svg';
 import airlockLogo from 'icons/sponsors/airlock.svg';
 import amanoxLogo from 'icons/sponsors/amanox.svg';
 import bNovaLogo from 'icons/sponsors/b-nova.svg';
+import bespinianLogo from 'icons/sponsors/bespinian.svg';
 import campToCampLogo from 'icons/sponsors/camp-to-camp.svg';
 import flowLogo from 'icons/sponsors/flow.svg';
 import googleCloudLogo from 'icons/sponsors/google-cloud.svg';
 import innoqLogo from 'icons/sponsors/innoq.svg';
 import isovalentLogo from 'icons/sponsors/isovalent.svg';
+import letsbootLogo from 'icons/sponsors/letsboot.svg';
 import nutanixLogo from 'icons/sponsors/nutanix.svg';
 import postFinanceLogo from 'icons/sponsors/post-finance.svg';
 import puzzleLogo from 'icons/sponsors/puzzle.svg';
@@ -42,8 +44,8 @@ const silverSponsors = [
 const bronzeSponsors = [
   { icon: innoqLogo, url: 'https://www.innoq.com/', name: 'Inoq' },
   { icon: adfinisLogo, url: 'https://adfinis.com/', name: 'Adfinis' },
-  { icon: '', url: '', name: '' },
-  { icon: '', url: '', name: '' },
+  { icon: bespinianLogo, url: 'https://bespinian.io/', name: 'Bespinian' },
+  { icon: letsbootLogo, url: 'https://www.letsboot.ch/', name: 'Letsboot.ch' },
 ];
 const specialSponsors = [
   { icon: postFinanceLogo, url: 'https://www.postfinance.ch/', name: 'PostFinance' },
@@ -102,7 +104,6 @@ const Sponsors = () => {
           <h2 className="font-mono-cyber text-4xl font-bold uppercase tracking-wide lg:text-[32px] md:text-2xl xs:text-[32px]">
             {subtitle}
           </h2>
-
           <ul className="mt-8 grid grid-cols-[176px_repeat(5,minmax(0,208px))] grid-rows-[repeat(5,95px)] lg:grid-cols-[135px_repeat(5,minmax(0,1fr))] lg:grid-rows-[repeat(5,73px)] md:grid-cols-[100px_repeat(5,minmax(0,1fr))] md:grid-rows-[repeat(5,48px)] sm:mt-6 sm:grid-cols-2 sm:grid-rows-none">
             <li className="relative col-end-2 flex items-center before:absolute before:bottom-0 before:left-0 before:h-1/2 before:w-[2px] before:bg-[#ADCFD3] sm:col-span-full sm:mb-3 sm:before:hidden">
               <span className="relative z-10 bg-[#EFFAFB] py-3">
