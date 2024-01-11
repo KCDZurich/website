@@ -38,6 +38,7 @@ const LearnMore = () => (
               src={icon}
               width={53}
               height={53}
+              loading="lazy"
               alt={`${title} illustration`}
             />
             <h3
