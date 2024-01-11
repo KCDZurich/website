@@ -71,6 +71,7 @@ module.exports = {
       lightOrange: 'rgba(255, 180, 125, 0.2)',
     }),
     backgroundImage: {
+      'inner-hero-gradient': 'linear-gradient(179deg, #0FDBE2 -4.41%, #DFEFF2 56.83%)',
       'hero-gradient':
         'linear-gradient(to top, #dfeff2 0%, #dfeff2 45%, #0FE3EA 90.889%, #fff 90.889%, #fff 100%)',
       'hero-mobile-gradient':
