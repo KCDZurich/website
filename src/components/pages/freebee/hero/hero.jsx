@@ -17,7 +17,7 @@ const Hero = () => (
           free entry to <strong>KCD Zürich 2024</strong> in June{' '}
           <time dateTime="2024-06-13">13th 2024</time>!
         </p>
-        <div className="relative mx-auto mt-14 w-[1336px] lg:left-1/2 lg:-translate-x-1/2 md:w-[1060px] 2xs:left-[33%] 2xs:w-[960px]">
+        <div className="relative mx-auto mt-14 w-[1336px] lg:left-1/2 lg:-translate-x-1/2 md:w-[1060px] 2xs:left-[34%] 2xs:w-[920px]">
           <img
             className="pointer-events-none"
             src={ticket}
@@ -26,7 +26,7 @@ const Hero = () => (
             loading="eager"
             alt="Ticket illustration"
           />
-          <span className="absolute bottom-28 left-[525px] z-10 block font-mono-cyber text-5xl font-bold uppercase leading-normal md:bottom-[88px] md:left-[404px] md:text-4xl 2xs:bottom-[82px] 2xs:left-[380px] 2xs:text-3xl">
+          <span className="absolute bottom-28 left-[525px] z-10 block font-mono-cyber text-5xl font-bold uppercase leading-normal md:bottom-[88px] md:left-[404px] md:text-4xl 2xs:bottom-[77px] 2xs:left-[360px] 2xs:text-3xl">
             freeasinbeer
           </span>
         </div>
