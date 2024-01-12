@@ -93,7 +93,7 @@ module.exports = {
       md: { max: '1023px' },
       sm: { max: '767px' },
       xs: { max: '660px' },
-      '2xs': { max: '413px' },
+      '2xs': { max: '414px' },
     },
     extend: {
       lineHeight: {
