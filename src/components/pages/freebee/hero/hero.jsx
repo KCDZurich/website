@@ -4,6 +4,7 @@ import Link from 'components/shared/link';
 
 import bgMask from './images/bg-mask.svg';
 import mobileTicket from './images/ticket-mobile.svg';
+import tabletTicket from './images/ticket-tablet.svg';
 import ticket from './images/ticket.svg';
 
 const Hero = () => (
@@ -20,12 +21,20 @@ const Hero = () => (
         </p>
         <div className="relative mx-auto mt-10 w-[1336px] lg:left-1/2 lg:mx-0 lg:mt-9 lg:w-[1088px] lg:-translate-x-1/2 md:w-[1082px] xs:mt-11 xs:w-[360px]">
           <img
-            className="pointer-events-none -ml-[15px] lg:-ml-[22px] md:-ml-[12px] xs:hidden"
+            className="pointer-events-none -ml-[15px] lg:-ml-[22px] lg:hidden md:-ml-[12px]"
             src={ticket}
             width={1336}
             height={305}
             loading="eager"
             alt="Ticket illustration"
+          />
+          <img
+            className="pointer-events-none mx-auto hidden lg:block xs:hidden"
+            src={tabletTicket}
+            width={626}
+            height={252}
+            loading="eager"
+            alt="Tablet Ticket illustration"
           />
           <img
             className="pointer-events-none mx-auto hidden xs:block"
@@ -35,11 +44,11 @@ const Hero = () => (
             loading="eager"
             alt="Mobile Ticket illustration"
           />
-          <span className="absolute bottom-28 left-[510px] z-10 block font-mono-cyber text-5xl font-bold uppercase leading-normal lg:bottom-[92px] lg:left-[408px] lg:text-[32px] md:bottom-[92px] md:left-[410px] xs:bottom-[340px] xs:left-[74px] xs:text-[36px]">
+          <span className="absolute bottom-28 left-[510px] z-10 block font-mono-cyber text-5xl font-bold uppercase leading-normal lg:bottom-[84px] lg:left-[410px] lg:text-[32px] md:left-[406px] xs:bottom-[340px] xs:left-[74px] xs:text-[36px]">
             freeasinbeer
           </span>
         </div>
-        <p className="mt-7 lg:mt-6 lg:text-lg md:mt-8 xs:mt-10 xs:px-8 xs:text-base">
+        <p className="mt-7 lg:mt-8 lg:text-lg md:mt-10 xs:px-8 xs:text-base">
           Just use this code on{' '}
           <Link
             className="border-b-2 border-transparent border-opacity-10 font-semibold text-orange transition-colors duration-200 hover:border-orange"
