@@ -60,6 +60,7 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
     isPhotoGallery = false,
     slideIndex = 0,
   } = modalData;
+
   const sliderGalleryData = useStaticQuery(graphql`
     {
       allFile(
@@ -75,6 +76,7 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
       }
     }
   `);
+
   const sliderSettings = {
     dots: false,
     infinite: true,
@@ -83,6 +85,7 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
     slidesToScroll: 1,
     initialSlide: slideIndex,
   };
+
   const sliderRef = useRef();
   const shouldReduceMotion = useReducedMotion();
   const headingId = useId();
@@ -183,16 +186,26 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
             ) : isPresentationShow ? (
               <>
                 <div className="flex items-center">
-                  <time className="text-sm font-semibold leading-none tracking-tight text-primary-1 opacity-60">
-                    {time}
-                  </time>
-                  <span className="relative ml-8 rounded-full bg-yellow px-2 py-1.5 text-[13px] font-semibold leading-none tracking-tighter text-primary-1 before:absolute before:-left-4 before:bottom-0 before:top-0 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3">
-                    {duration}
-                  </span>
+                  {time && (
+                    <time className="text-sm font-semibold leading-none tracking-tight text-primary-1 opacity-60">
+                      {time}
+                    </time>
+                  )}
+                  {duration && (
+                    <span className="relative ml-8 rounded-full bg-yellow px-2 py-1.5 text-[13px] font-semibold leading-none tracking-tighter text-primary-1 before:absolute before:-left-4 before:bottom-0 before:top-0 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3">
+                      {duration}
+                    </span>
+                  )}
                   {speakers.length > 0 &&
                     speakers.map(({ name, photo }, index) => (
                       <span
-                        className="relative ml-8 inline-flex items-center gap-x-2 text-left text-lg font-semibold leading-normal text-primary-5 transition-colors duration-200 before:absolute before:-left-4 before:bottom-0 before:top-0 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3 hover:text-blue-1"
+                        className={clsx(
+                          'relative inline-flex items-center gap-x-2 text-left text-lg font-semibold leading-normal text-primary-5 transition-colors duration-200 hover:text-blue-1',
+                          {
+                            'ml-8 before:absolute before:-left-4 before:bottom-0 before:top-0 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3':
+                              time || duration,
+                          }
+                        )}
                         key={index}
                       >
                         <img
