@@ -8,10 +8,10 @@ import SEO from 'components/shared/seo';
 import SEO_DATA from 'constants/seo-data';
 import endpoints from 'constants/sessionize';
 
-const SpeakersPage = ({ location }) => (
+const SpeakersPage = () => (
   <Layout headerClassnames="!bg-white">
     <Hero />
-    <Speakers location={location} endpoint={endpoints.speakers} />
+    <Speakers endpoint={endpoints.speakers} />
   </Layout>
 );
 
