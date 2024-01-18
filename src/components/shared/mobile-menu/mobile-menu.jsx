@@ -39,7 +39,7 @@ const MobileMenu = ({ isOpen, onButtonClick, handleModalShow }) => {
   return (
     <LazyMotion features={domAnimation}>
       <m.nav
-        className="safe-paddings fixed inset-0 z-[-1] mt-[64px] hidden overflow-x-hidden overflow-y-hidden bg-white px-8 py-5 lg:flex lg:flex-col lg:justify-between"
+        className="safe-paddings fixed inset-0 z-[-1] mt-[56px] hidden overflow-x-hidden overflow-y-hidden bg-white px-8 py-5 lg:flex lg:flex-col lg:justify-between"
         initial="from"
         animate={controls}
         variants={variants}

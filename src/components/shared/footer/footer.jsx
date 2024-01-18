@@ -42,7 +42,7 @@ const Footer = () => {
     <footer className="safe-paddings border-t border-t-gray-10 bg-white">
       <div className="container flex items-center justify-between pb-5 pt-5 md:items-start md:gap-x-8 sm:flex-col">
         <Link to="/">
-          <Logo className="h-12 w-44 md:h-auto md:w-36" />
+          <Logo className="h-[40px] w-[149px] md:h-auto md:w-36" />
           <span className="sr-only">KCD Zürich</span>
         </Link>
 

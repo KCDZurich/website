@@ -53,7 +53,7 @@ const Header = ({ isMobileMenuOpen, onBurgerClick, additionalClassName, isHomePa
     >
       <div className="container flex items-center justify-between py-5 md:py-2">
         <Link className="z-50 block" to="/">
-          <Logo className="h-12 w-44" />
+          <Logo className="h-[40px] w-[149px]" />
           <span className="sr-only">KCD Zürich</span>
         </Link>
         <nav className={clsx(isHomePage && 'lg:mr-32')}>
