@@ -5,9 +5,11 @@ import slugify from 'slugify';
 
 import MENUS from 'constants/menus';
 import ComputerIcon from 'icons/computer.inline.svg';
+import Logo from 'icons/logo.inline.svg';
 
 import Burger from '../burger';
 import Button from '../button';
+import Link from '../link';
 import Modal from '../modal';
 
 const Header = ({ isMobileMenuOpen, onBurgerClick, additionalClassName, isHomePage }) => {
@@ -49,7 +51,11 @@ const Header = ({ isMobileMenuOpen, onBurgerClick, additionalClassName, isHomePa
         additionalClassName
       )}
     >
-      <div className="container flex items-center justify-between py-5 md:h-16 md:py-2">
+      <div className="container flex items-center justify-between py-5 md:py-2">
+        <Link className="z-50 block" to="/">
+          <Logo className="h-[40px] w-[149px]" />
+          <span className="sr-only">KCD Zürich</span>
+        </Link>
         <nav className={clsx(isHomePage && 'lg:mr-32')}>
           <ul className="flex space-x-8 text-white lg:ml-0 lg:space-x-6 md:hidden">
             {MENUS.header.map(({ text, to, homeTo }, index) => (

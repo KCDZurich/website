@@ -4,7 +4,7 @@ const MENUS = {
   header: [
     // { text: 'Speakers', ...LINKS.speakers },
     // { text: 'Schedule', ...LINKS.schedule },
-    { text: 'Home', ...LINKS.home },
+    // { text: 'Home', ...LINKS.home },
     { text: 'Sponsors', ...LINKS.sponsors },
     // { text: 'Workshops', ...LINKS.workshops },
     { text: 'Podcast', ...LINKS.podcast },
@@ -21,7 +21,7 @@ const MENUS = {
     // { text: 'Schedule', ...LINKS.schedule },
     // { text: 'Call for Proposal', ...LINKS.proposal },
     // { text: 'Workshops', ...LINKS.workshops },
-    { text: 'Home', ...LINKS.home },
+    // { text: 'Home', ...LINKS.home },
     { text: 'Sponsors', ...LINKS.sponsors },
     { text: 'Podcast', ...LINKS.podcast },
     { text: 'Archive', ...LINKS.archive },

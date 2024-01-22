@@ -5,6 +5,7 @@ import LINKS from 'constants/links.js';
 import MENUS from 'constants/menus';
 import GoogleMaps from 'icons/google-maps-icon.inline.svg';
 import LinkedIn from 'icons/linkedin-logo.inline.svg';
+import Logo from 'icons/logo.inline.svg';
 import Twitter from 'icons/twitter-logo.inline.svg';
 import Youtube from 'icons/youtube.inline.svg';
 
@@ -40,6 +41,11 @@ const Footer = () => {
   return (
     <footer className="safe-paddings border-t border-t-gray-10 bg-white">
       <div className="container flex items-center justify-between pb-5 pt-5 md:items-start md:gap-x-8 sm:flex-col">
+        <Link to="/">
+          <Logo className="h-[40px] w-[149px] md:h-auto md:w-36" />
+          <span className="sr-only">KCD Zürich</span>
+        </Link>
+
         <nav className="mt-4 flex md:mt-0 sm:mt-12">
           <ul className="grid min-w-fit grid-cols-2 grid-rows-2 gap-x-3 gap-y-4 xl:gap-x-1 lg:mr-6 lg:gap-x-4 sm:mx-auto sm:gap-x-0 [@media(max-width:375px)]:grid-cols-1">
             {MENUS.footer.map(({ text, to, target, name }, index) => (

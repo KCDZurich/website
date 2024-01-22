@@ -42,6 +42,10 @@ export default {
     title: 'Team — Kubernetes Community Days',
     description: 'Experience the power of community at the Kubernetes Community Days in Zürich!',
   },
+  freebee: {
+    title: 'Kubernetes Community Days',
+    description: '',
+  },
   archive: {
     title: 'Kubernetes Community Days Zürich 2023 - Event Highlights',
     description:

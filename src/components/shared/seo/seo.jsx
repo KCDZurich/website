@@ -6,7 +6,7 @@ const defaultTitle = 'Kubernetes Community Days Zürich';
 const defaultDescription =
   'Experience the power of community at the Kubernetes Community Days in Zürich!';
 
-const SEO = ({ title, description, pathname }) => {
+const SEO = ({ title, description, pathname, isNoIndex }) => {
   const {
     site: {
       siteMetadata: { siteTitle, siteDescription, siteUrl, siteImage },
@@ -41,6 +41,7 @@ const SEO = ({ title, description, pathname }) => {
       <meta property="og:type" content="website" />
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
+      {isNoIndex && <meta name="robots" content="noindex" />}
     </>
   );
 };
