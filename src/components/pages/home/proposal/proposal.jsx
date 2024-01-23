@@ -1,3 +1,4 @@
+import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import Button from 'components/shared/button';
@@ -5,29 +6,43 @@ import LINKS from 'constants/links';
 
 const TITLE = 'Call for Proposal';
 const DESCRIPTION =
-  "If you are an expert or newcomer in the cloud native computing world and would like to share your knowledge and experience with the community, we encourage you to submit a proposal. Our committee is looking for diverse topics and speakers, so don't hesitate to submit your ideas. We can't wait to see what the community offers, and we look forward to receiving your submissions.";
+  "Whether you’re an expert or new to cloud native computing, we encourage you to share your knowledge by submitting a proposal. We welcome diverse topics and speakers, and we’re excited to see the community's contributions — looking forward to your submissions!";
+const BTN_TITLE = 'Submit';
 
 const Proposal = () => (
-  <section className="safe-paddings relative bg-[#EDC3C7] bg-opacity-10 py-20">
-    <div className="container-md text-center text-primary-1">
-      <div className="absolute left-1/2 top-0 h-[529px] w-[529px] -translate-x-1/2 bg-white blur-[100px] md:-left-[30%] md:h-[350px] md:w-[350px]" />
-      <div className="relative">
-        <h2 className="text-6xl font-bold leading-tight" id={LINKS.proposal.id}>
+  <section className="safe-paddings relative pb-32 pt-[120px] lg:pt-16 md:pb-24 md:pt-10 sm:pb-16 sm:pt-8">
+    <div className="container-md">
+      <div className="container-md relative flex flex-col items-center py-24 text-center text-primary-1 lg:py-[4.5rem] md:border-[5px] md:border-b-[#FCC5B1] md:border-l-[#FEEBE4] md:border-r-[#FCC5B1] md:border-t-[#FEEBE4] md:bg-[#FFF4F0] md:py-16 sm:py-8">
+        <h2
+          className="font-sans-cyber text-[52px] font-bold lowercase leading-tight lg:text-[40px] md:text-[32px]"
+          id={LINKS.proposal.id}
+        >
           {TITLE}
         </h2>
-        <p className="mt-8 text-2xl leading-normal sm:text-lg">{DESCRIPTION}</p>
+        <p className="mt-5 max-w-[861px] text-2xl leading-normal md:text-lg">{DESCRIPTION}</p>
         <Button
-          className="mt-10"
-          to="https://kcd.smapply.io/prog/kcd_zurich_2023/"
+          className="mt-11 min-w-[170px] flex-none md:mt-8"
+          to="https://sessionize.com/kcd-zurich-2024/"
           theme="primary"
-          size="lg"
+          size="sm"
           target="_blank"
         >
-          Call for Proposal
+          {BTN_TITLE}
         </Button>
+        <StaticImage
+          className="!absolute !inset-0 -z-10 m-auto h-[513px] w-[1008px] flex-none lg:scale-[0.9] md:!hidden"
+          src="./images/background.png"
+          formats={['auto', 'webp']}
+          width={1008}
+          height={513}
+          loading="eager"
+          alt="Hero illustration"
+        />
       </div>
     </div>
   </section>
 );
 
 export default Proposal;
+
+// w-[861px]
