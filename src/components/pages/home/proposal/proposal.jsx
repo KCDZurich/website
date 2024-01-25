@@ -7,7 +7,7 @@ import Illustration from './images/bg.svg';
 
 const TITLE = 'Call for Proposal';
 const DESCRIPTION =
-  "Whether you’re an expert or new to cloud native computing, we encourage you to share your knowledge by submitting a proposal. We welcome diverse topics and speakers, and we’re excited to see the community's contributions — looking forward to your submissions!";
+  'Whether you’re an expert or new to cloud native computing, we encourage you to share your knowledge by submitting a proposal. We welcome diverse topics and speakers, and we’re excited to see the community’s contributions — looking forward to your submissions!';
 const BTN_TITLE = 'Submit';
 
 const Proposal = () => (
