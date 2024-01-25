@@ -22,7 +22,7 @@ const Proposal = () => (
         </h2>
         <p className="mt-5 max-w-[861px] text-2xl leading-normal md:text-lg">{DESCRIPTION}</p>
         <Button
-          className="mt-11 min-w-[170px] flex-none hover:bg-[#FFE1D4] md:mt-8"
+          className="mt-11 min-w-[170px] flex-none hover:!bg-[#FFE1D4] md:mt-8"
           to="https://sessionize.com/kcd-zurich-2024/"
           theme="primary"
           size="sm"
@@ -44,5 +44,3 @@ const Proposal = () => (
 );
 
 export default Proposal;
-
-// w-[861px]
