@@ -1,8 +1,9 @@
-import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import Button from 'components/shared/button';
 import LINKS from 'constants/links';
+
+import Illustration from './images/bg.svg';
 
 const TITLE = 'Call for Proposal';
 const DESCRIPTION =
@@ -21,7 +22,7 @@ const Proposal = () => (
         </h2>
         <p className="mt-5 max-w-[861px] text-2xl leading-normal md:text-lg">{DESCRIPTION}</p>
         <Button
-          className="mt-11 min-w-[170px] flex-none md:mt-8"
+          className="mt-11 min-w-[170px] flex-none hover:bg-[#FFE1D4] md:mt-8"
           to="https://sessionize.com/kcd-zurich-2024/"
           theme="primary"
           size="sm"
@@ -29,10 +30,9 @@ const Proposal = () => (
         >
           {BTN_TITLE}
         </Button>
-        <StaticImage
+        <img
           className="!absolute !inset-0 -z-10 m-auto h-[513px] w-[1008px] flex-none lg:scale-[0.9] md:!hidden"
-          src="./images/background.png"
-          formats={['auto', 'webp']}
+          src={Illustration}
           width={1008}
           height={513}
           loading="eager"
