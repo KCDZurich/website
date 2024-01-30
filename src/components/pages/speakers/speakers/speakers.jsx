@@ -1,25 +1,27 @@
 /* eslint-disable react/prop-types */
-import clsx from 'clsx';
 import React, { useEffect, useState, useCallback } from 'react';
 
-import Modal from 'components/shared/modal';
+import Button from 'components/shared/button';
+
+import iconCross from './images/cross.svg';
+import Modal from './modal';
 
 const Speakers = ({ endpoint }) => {
   const [speakers, setSpeakers] = useState([]);
   const [error, setError] = useState(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [modalDataId, setModalDataId] = useState(0);
+  const [modalDataIndex, setModalDataIndex] = useState(null);
 
-  const handleModalShow = (id) => {
+  const handleModalShow = (index) => {
     document.body.classList.add('overflow-hidden');
     setIsModalVisible(true);
-    setModalDataId(id);
+    setModalDataIndex(index);
   };
 
   const handleModalHide = () => {
     document.body.classList.remove('overflow-hidden');
     setIsModalVisible(false);
-    setModalDataId(0);
+    setModalDataIndex(null);
   };
 
   const fetchSpeakers = useCallback(async () => {
@@ -28,7 +30,18 @@ const Speakers = ({ endpoint }) => {
 
       if (response.ok) {
         const data = await response.json();
-        setSpeakers(data);
+        setSpeakers([
+          data[0],
+          data[0],
+          data[0],
+          data[0],
+          data[0],
+          data[0],
+          data[0],
+          data[0],
+          data[0],
+        ]);
+        // setSpeakers(data);
       } else {
         throw new Error(`Error: ${response.status}`);
       }
@@ -42,74 +55,168 @@ const Speakers = ({ endpoint }) => {
   }, [fetchSpeakers]);
 
   return (
-    <section className="safe-paddings pb-48 pt-9 lg:px-8 lg:pb-44 md:px-5 md:pb-40 sm:pb-24 sm:pt-10 xs:px-0">
-      <ul className="mx-auto w-[1072px] max-w-full rounded-[10px] border border-primary-2 shadow-lg">
-        {!error && !speakers.length && (
-          <li className="flex items-center justify-center px-7 py-6 text-base font-medium text-gray-7">
-            Loading...
+    <section className="safe-paddings mt-20 pb-48 lg:pb-44 md:mt-14 md:pb-40 sm:pb-24">
+      <div className="container">
+        <ul className="relative before:absolute before:left-0 before:top-0 before:h-full before:w-[1px] before:bg-vertical-dashed-line after:absolute after:right-0 after:top-0 after:h-full after:w-[1px] after:bg-vertical-dashed-line">
+          <li className="relative flex items-stretch before:absolute before:top-0 before:h-[1px] before:w-full before:bg-horizontal-dashed-line before:bg-auto before:bg-center after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-horizontal-dashed-line after:bg-auto after:bg-center sm:after:hidden">
+            <div className="relative w-full flex-1 px-8 py-4 after:absolute after:right-0 after:top-0 after:h-full after:w-[1px] after:bg-vertical-dashed-line sm:py-0">
+              <img
+                className="absolute -left-2 -top-2 h-[17px] w-[17px]"
+                src={iconCross}
+                width={17}
+                height={17}
+                loading="eager"
+                alt=""
+              />
+              <h3 className="text-base font-semibold leading-normal text-primary-1/60 sm:hidden">
+                Speaker
+              </h3>
+            </div>
+            <div className="relative w-full flex-1 px-8 py-4 after:absolute after:right-0 after:top-0 after:h-full after:w-[1px] after:bg-vertical-dashed-line sm:py-0">
+              <img
+                className="absolute -left-2 -top-2 h-[17px] w-[17px] sm:hidden"
+                src={iconCross}
+                width={17}
+                height={17}
+                loading="eager"
+                alt=""
+              />
+              <h3 className="text-base font-semibold leading-normal text-primary-1/60 sm:hidden">
+                Talk
+              </h3>
+            </div>
+            <div className="relative w-full flex-1 px-8 py-4 sm:py-0">
+              <img
+                className="absolute -left-2 -top-2 h-[17px] w-[17px] sm:hidden"
+                src={iconCross}
+                width={17}
+                height={17}
+                loading="eager"
+                alt=""
+              />
+              <img
+                className="absolute -right-2 -top-2 h-[17px] w-[17px]"
+                src={iconCross}
+                width={17}
+                height={17}
+                loading="eager"
+                alt=""
+              />
+              <h3 className="text-base font-semibold leading-normal text-primary-1/60 sm:hidden">
+                Info
+              </h3>
+            </div>
           </li>
-        )}
-        {error && !speakers.length && (
-          <li className="flex items-center justify-center px-7 py-6 text-base font-medium text-red">
-            Loading error
-          </li>
-        )}
-
-        {!error && speakers.length > 0 && (
-          <>
-            {speakers.map(({ profilePicture, fullName, tagLine, id }, index) => {
-              const isEven = index % 2 === 1;
-
-              return (
-                <li
-                  className={clsx('flex flex-col items-start justify-start', {
-                    'bg-primary-4': isEven,
-                  })}
-                  key={id}
-                >
-                  <button
-                    className="group flex w-full cursor-pointer flex-row items-center justify-start gap-x-6 px-7 py-6"
-                    type="button"
-                    onClick={() => handleModalShow(index)}
+          {!error && !speakers.length && (
+            <li className="relative flex items-center justify-center px-7 py-6 text-base font-medium text-gray-7 after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-horizontal-dashed-line after:bg-auto after:bg-center">
+              Loading...
+            </li>
+          )}
+          {error && !speakers.length && (
+            <li className="relative flex items-center justify-center px-7 py-6 text-base font-medium text-red after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-horizontal-dashed-line after:bg-auto after:bg-center">
+              Loading error
+            </li>
+          )}
+          {!error && speakers.length > 0 && (
+            <>
+              {speakers.map(({ profilePicture, fullName, tagLine, bio, sessions }, index) => {
+                const last = speakers.length - 1 === index;
+                return (
+                  <li
+                    className="relative flex items-stretch after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-horizontal-dashed-line after:bg-auto after:bg-center sm:flex-col"
+                    key={index}
                   >
-                    <img
-                      className="h-10 w-10 rounded-full"
-                      src={profilePicture}
-                      width={40}
-                      height={40}
-                      alt={fullName}
-                      loading="lazy"
-                    />
-                    <div className="flex flex-col items-start justify-start gap-y-1.5">
-                      <h3 className="text-lg font-semibold leading-snug tracking-tight text-primary-1 transition-colors duration-200 group-hover:text-blue-1 md:text-base">
-                        {fullName}
-                      </h3>
-                      <p className="text-sm font-normal leading-none tracking-tighter text-gray-7 transition-colors duration-200 group-hover:text-primary-1">
-                        {tagLine}
+                    <div className="relative w-full flex-1 px-8 py-6 after:absolute after:right-0 after:top-0 after:h-full after:w-[1px] after:bg-vertical-dashed-line sm:px-6 sm:after:hidden">
+                      {last && (
+                        <img
+                          className="absolute -bottom-2 -left-2 h-[17px] w-[17px] sm:hidden"
+                          src={iconCross}
+                          width={17}
+                          height={17}
+                          loading="lazy"
+                          alt=""
+                        />
+                      )}
+                      <div className="flex w-full flex-1 flex-row gap-x-5">
+                        <div className="relative h-[52px] w-[52px]">
+                          <div className="absolute inset-0 z-10 h-full w-full bg-primary-1 opacity-50 mix-blend-color" />
+                          <img
+                            className="h-[52px] w-[52px] brightness-110 saturate-0"
+                            src={profilePicture}
+                            width={52}
+                            height={52}
+                            alt={fullName}
+                            loading={index <= 5 ? 'eager' : 'lazy'}
+                          />
+                        </div>
+                        <div className="flex flex-col gap-y-2">
+                          <h3 className="text-lg font-bold uppercase leading-snug text-primary-1 transition-colors duration-200 md:text-base">
+                            {fullName}
+                          </h3>
+                          <p className="text-sm font-normal leading-none text-primary-1/60 transition-colors duration-200">
+                            {tagLine}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="relative flex w-full flex-1 flex-col px-8 py-6 after:absolute after:right-0 after:top-0 after:h-full after:w-[1px] after:bg-vertical-dashed-line sm:px-6 sm:py-0 sm:after:hidden">
+                      {last && (
+                        <img
+                          className="absolute -bottom-2 -left-2 h-[17px] w-[17px] sm:hidden"
+                          src={iconCross}
+                          width={17}
+                          height={17}
+                          loading="lazy"
+                          alt=""
+                        />
+                      )}
+                      <p className="text-xl font-bold leading-snug text-primary-1 transition-colors duration-200 md:text-base">
+                        {sessions[0].name}
                       </p>
                     </div>
-                  </button>
-                </li>
-              );
-            })}
-          </>
-        )}
-      </ul>
+                    <div className="relative flex w-full flex-1 flex-col gap-y-2 px-8 py-6 sm:px-6 sm:pb-4 sm:pt-3">
+                      {last && (
+                        <>
+                          <img
+                            className="absolute -bottom-2 -left-2 h-[17px] w-[17px]"
+                            src={iconCross}
+                            width={17}
+                            height={17}
+                            loading="lazy"
+                            alt=""
+                          />
+                          <img
+                            className="absolute -bottom-2 -right-2 h-[17px] w-[17px]"
+                            src={iconCross}
+                            width={17}
+                            height={17}
+                            loading="lazy"
+                            alt=""
+                          />
+                        </>
+                      )}
+                      <p className="line-clamp-2 text-lg font-normal leading-normal text-primary-1 transition-colors duration-200 sm:line-clamp-3">
+                        {bio}
+                      </p>
+                      <Button
+                        className="-ml-2 max-w-max flex-none justify-start !text-xl -tracking-[.05em]"
+                        theme="link-red"
+                        size="lg"
+                        type="button"
+                        onClick={() => handleModalShow(index)}
+                      >
+                        Learn more
+                      </Button>
+                    </div>
+                  </li>
+                );
+              })}
+            </>
+          )}
+        </ul>
+      </div>
       <Modal
-        modalData={
-          speakers.length > 0
-            ? {
-                id: String(modalDataId),
-                presentation: speakers[modalDataId].bio,
-                speakers: [
-                  {
-                    name: speakers[modalDataId].fullName,
-                    photo: speakers[modalDataId].profilePicture,
-                  },
-                ],
-              }
-            : {}
-        }
+        modalData={modalDataIndex !== null ? speakers[modalDataIndex] : {}}
         isVisible={isModalVisible}
         isPresentationShow
         onModalHide={handleModalHide}
