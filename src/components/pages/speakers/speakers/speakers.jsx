@@ -30,18 +30,7 @@ const Speakers = ({ endpoint }) => {
 
       if (response.ok) {
         const data = await response.json();
-        setSpeakers([
-          data[0],
-          data[0],
-          data[0],
-          data[0],
-          data[0],
-          data[0],
-          data[0],
-          data[0],
-          data[0],
-        ]);
-        // setSpeakers(data);
+        setSpeakers(data);
       } else {
         throw new Error(`Error: ${response.status}`);
       }
