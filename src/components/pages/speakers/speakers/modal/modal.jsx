@@ -3,23 +3,23 @@ import { AnimatePresence, m, LazyMotion, domAnimation, useReducedMotion } from '
 import PropTypes from 'prop-types';
 import React, { useId } from 'react';
 
-import FacebookIcon from 'icons/facebook-pixel-logo.inline.svg';
-import InstagramIcon from 'icons/instagram-icon.inline.svg';
-import LinkedInIcon from 'icons/linkedin-icon.inline.svg';
-import TwitterIcon from 'icons/twitter-icon.inline.svg';
-import WebsiteIcon from 'icons/webpage-icon.inline.svg';
-
 import iconClose from './images/close.svg';
+import FacebookIcon from './images/facebook.inline.svg';
+import InstagramIcon from './images/instagram.inline.svg';
+import LinkIcon from './images/link.inline.svg';
+import LinkedInIcon from './images/linkedin.inline.svg';
+import SessionizeIcon from './images/sessionize.inline.svg';
+import TwitterIcon from './images/x.inline.svg';
 
 const icons = {
   Twitter: TwitterIcon,
   LinkedIn: LinkedInIcon,
   Facebook: FacebookIcon,
   Instagram: InstagramIcon,
-  Blog: WebsiteIcon,
-  Company_Website: WebsiteIcon,
-  Sessionize: WebsiteIcon,
-  Other: WebsiteIcon,
+  Blog: LinkIcon,
+  Company_Website: LinkIcon,
+  Sessionize: SessionizeIcon,
+  Other: LinkIcon,
 };
 
 const defaultModalAnimation = {
@@ -64,7 +64,7 @@ const Modal = ({ isVisible, modalData, onModalHide }) => {
             {...modalAnimation}
           >
             <button
-              className="absolute right-[18px] top-[18px]"
+              className="absolute right-[18px] top-[18px] transition-opacity hover:opacity-60"
               type="button"
               onClick={onModalHide}
             >
@@ -78,7 +78,7 @@ const Modal = ({ isVisible, modalData, onModalHide }) => {
               />
             </button>
             <div className="flex w-full flex-1 flex-row gap-x-5">
-              <div className="relative h-[52px] w-[52px]">
+              <div className="relative h-[52px] w-[52px] flex-none">
                 <div className="absolute inset-0 z-10 h-full w-full bg-primary-1 opacity-50 mix-blend-color" />
                 <img
                   className="h-[52px] w-[52px] brightness-110 saturate-0"
@@ -149,7 +149,7 @@ Modal.propTypes = {
         url: PropTypes.string.isRequired,
         linkType: PropTypes.string.isRequired,
       })
-    ).isRequired,
+    ),
   }).isRequired,
 };
 
