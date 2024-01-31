@@ -4,6 +4,8 @@ import React, { useEffect, useState, useCallback } from 'react';
 import Button from 'components/shared/button';
 import LINKS from 'constants/links';
 
+import maskImage from './images/mask.svg';
+
 const TITLE = 'Speakers';
 const DESCRIPTION =
   'Explore cloud native excellence at <b>KCDs 2024</b>! Join expert speakers for talks, networking, and a vibrant celebration of innovation.';
@@ -20,7 +22,7 @@ const Speakers = ({ endpoint }) => {
       if (response.ok) {
         const data = await response.json();
         setSpeakers([data[0], data[0], data[0], data[0], data[0], data[0], data[0], data[0]]);
-        // setSpeakers(data);
+        // setSpeakers(data.filter(({ isTopSpeaker }) => isTopSpeaker));
       } else {
         throw new Error(`Error: ${response.status}`);
       }
@@ -33,11 +35,9 @@ const Speakers = ({ endpoint }) => {
     fetchSpeakers();
   }, [fetchSpeakers]);
 
-  // eslint-disable-next-line no-console
-  console.log('speakers: ', speakers);
-
-  // eslint-disable-next-line no-console
-  console.log('error: ', error);
+  if (error) {
+    return null;
+  }
 
   return (
     <section className="safe-paddings relative pt-[120px] lg:pt-16 md:pt-10 sm:pt-8">
@@ -52,24 +52,32 @@ const Speakers = ({ endpoint }) => {
           className="mt-5 max-w-[644px] text-center text-xl leading-normal md:text-lg"
           dangerouslySetInnerHTML={{ __html: DESCRIPTION }}
         />
-        <ul className="mt-14 grid w-full grid-cols-4 gap-8 lg:gap-6 md:grid-cols-3 md:justify-items-center md:gap-4 xs:flex xs:flex-wrap xs:justify-evenly [@media(max-width:620px)]:grid-cols-2">
+        <ul className="mt-14 grid w-full grid-cols-4 justify-items-center gap-14 lg:grid-cols-3 md:mt-9 md:grid-cols-2 md:gap-9 sm:mt-8 sm:gap-8 xs:grid-cols-1">
           {speakers.map(({ profilePicture, fullName, tagLine }, index) => (
-            <li
-              className="flex w-[240px] flex-col items-center lg:w-52 md:w-48 sm:w-auto sm:max-w-[200px]"
-              key={index}
-            >
-              <div className="relative h-[280px] w-[240px] overflow-hidden">
-                <div className="absolute inset-0 z-10 h-full w-full bg-primary-1 opacity-50 mix-blend-color" />
+            <li className="flex max-w-[248px] flex-col items-center" key={index}>
+              <div className="relative h-[280px] w-[240px]">
                 <img
-                  className="h-full min-w-fit brightness-110 saturate-0"
-                  src={profilePicture}
+                  className="absolute inset-0 z-10 h-full w-full"
+                  src={maskImage}
                   width={240}
                   height={280}
                   loading="lazy"
                   alt={fullName}
                 />
+                <div className="speaker-photo-clip-path relative h-full w-full">
+                  <div className="absolute inset-0 z-10 h-full w-full bg-primary-1 opacity-50 mix-blend-color " />
+                  <img
+                    className="h-full object-cover brightness-110 saturate-0"
+                    src={profilePicture}
+                    width={240}
+                    height={280}
+                    loading="lazy"
+                    alt={fullName}
+                  />
+                </div>
+                <div className="speaker-photo-clip-path absolute left-2 top-2 -z-10 h-full w-full bg-[#A1CBD3] opacity-20" />
               </div>
-              <h3 className="mt-5 text-lg font-bold uppercase leading-tight text-primary-1">
+              <h3 className="mt-7 text-lg font-bold uppercase leading-tight text-primary-1">
                 {fullName}
               </h3>
               <p className="mt-2 text-sm leading-tight text-primary-1/60">{tagLine}</p>
