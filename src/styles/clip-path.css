@@ -7,4 +7,7 @@
   .speaker-photo-clip-path {
     clip-path: path('M223.846 0H0V280H240V124.309L223.846 109.939V0Z');
   }
+  .speaker-shadow-clip-path {
+    clip-path: path('M223.846 0H0V280H240V113.304L223.846 98.9344V0Z');
+  }
 }

@@ -93,7 +93,7 @@ const Modal = ({ isVisible, modalData, onModalHide }) => {
                 <h3 className="text-lg font-bold uppercase leading-snug text-primary-1 transition-colors duration-200 md:text-base">
                   {fullName}
                 </h3>
-                <p className="text-sm font-normal leading-none text-primary-1/60 transition-colors duration-200">
+                <p className="text-left text-sm font-normal leading-tight text-primary-1/60 transition-colors duration-200">
                   {tagLine}
                 </p>
               </div>

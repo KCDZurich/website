@@ -65,7 +65,7 @@ const Speakers = ({ endpoint }) => {
                 loading="eager"
                 alt=""
               />
-              <h3 className="text-base font-semibold leading-normal text-primary-1/60">Speaker</h3>
+              <h2 className="text-base font-semibold leading-normal text-primary-1/60">Speaker</h2>
             </div>
             <div className="relative w-full flex-1 px-8 py-4 after:absolute after:right-0 after:top-0 after:h-full after:w-[1px] after:bg-vertical-dashed-line sm:hidden">
               <img
@@ -76,7 +76,7 @@ const Speakers = ({ endpoint }) => {
                 loading="eager"
                 alt=""
               />
-              <h3 className="text-base font-semibold leading-normal text-primary-1/60">Talk</h3>
+              <h2 className="text-base font-semibold leading-normal text-primary-1/60">Talk</h2>
             </div>
             <div className="relative w-full flex-1 px-8 py-4 sm:hidden">
               <img
@@ -87,7 +87,7 @@ const Speakers = ({ endpoint }) => {
                 loading="eager"
                 alt=""
               />
-              <h3 className="text-base font-semibold leading-normal text-primary-1/60">Info</h3>
+              <h2 className="text-base font-semibold leading-normal text-primary-1/60">Info</h2>
             </div>
           </li>
           {!error && !speakers.length && (
@@ -132,14 +132,18 @@ const Speakers = ({ endpoint }) => {
                             loading={index <= 5 ? 'eager' : 'lazy'}
                           />
                         </div>
-                        <div className="flex flex-col gap-y-2">
-                          <h3 className="text-lg font-bold uppercase leading-snug text-primary-1 transition-colors duration-200 md:text-base">
+                        <button
+                          className="group flex flex-col gap-y-2"
+                          type="button"
+                          onClick={() => handleModalShow(index)}
+                        >
+                          <h2 className="text-lg font-bold uppercase leading-snug text-primary-1 transition-colors duration-200 group-hover:text-orange md:text-base">
                             {fullName}
-                          </h3>
-                          <p className="text-sm font-normal leading-tight text-primary-1/60 transition-colors duration-200">
+                          </h2>
+                          <p className="text-left text-sm font-normal leading-tight text-primary-1/60 transition-colors duration-200">
                             {tagLine}
                           </p>
-                        </div>
+                        </button>
                       </div>
                     </div>
                     <div className="relative flex w-full flex-1 flex-col px-8 py-6 after:absolute after:right-0 after:top-0 after:h-full after:w-[1px] after:bg-vertical-dashed-line sm:px-4 sm:py-0 sm:after:hidden">
