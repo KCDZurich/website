@@ -122,7 +122,7 @@ const Speakers = ({ endpoint }) => {
                       )}
                       <div className="flex w-full flex-1 flex-row gap-x-5">
                         <div className="relative h-[52px] w-[52px] flex-none">
-                          <div className="absolute inset-0 z-10 h-full w-full bg-primary-1 opacity-50 mix-blend-color" />
+                          <div className="absolute inset-0 z-10 h-full w-full bg-primary-1 opacity-50 mix-blend-color sm:hidden" />
                           <img
                             className="h-[52px] w-[52px] brightness-110 saturate-0"
                             src={profilePicture}
