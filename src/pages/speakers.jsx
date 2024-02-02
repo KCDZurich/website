@@ -6,12 +6,11 @@ import Speakers from 'components/pages/speakers/speakers';
 import Layout from 'components/shared/layout';
 import SEO from 'components/shared/seo';
 import SEO_DATA from 'constants/seo-data';
-import endpoints from 'constants/sessionize';
 
 const SpeakersPage = () => (
   <Layout headerClassnames="!bg-white">
     <Hero />
-    <Speakers endpoint={endpoints.speakers} />
+    <Speakers />
   </Layout>
 );
 

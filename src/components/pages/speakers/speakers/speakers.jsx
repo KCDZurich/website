@@ -2,13 +2,13 @@
 import React, { useState } from 'react';
 
 import Button from 'components/shared/button';
-import useGetSpeakers from 'hooks/use-get-speakers';
+import useSpeakers from 'hooks/use-speakers';
 
 import iconCross from './images/cross.svg';
 import Modal from './modal';
 
-const Speakers = ({ endpoint }) => {
-  const { speakers, error } = useGetSpeakers(endpoint, false);
+const Speakers = () => {
+  const { speakers, error } = useSpeakers(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalDataIndex, setModalDataIndex] = useState(null);
 

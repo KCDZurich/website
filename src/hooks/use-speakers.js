@@ -1,12 +1,14 @@
 import { useEffect, useState, useCallback } from 'react';
 
-export default function useGetSpeakers(endpoint, topSpeakers = false) {
+import endpoints from 'constants/sessionize';
+
+export default function useSpeakers(endpoint, topSpeakers = false) {
   const [speakers, setSpeakers] = useState([]);
   const [error, setError] = useState(null);
 
   const fetchSpeakers = useCallback(async () => {
     try {
-      const response = await fetch(endpoint);
+      const response = await fetch(endpoints.speakers);
 
       if (response.ok) {
         const data = await response.json();
@@ -18,7 +20,7 @@ export default function useGetSpeakers(endpoint, topSpeakers = false) {
       setError(error.toString());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [endpoint]);
+  }, []);
 
   useEffect(() => {
     fetchSpeakers();

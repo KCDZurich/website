@@ -3,7 +3,7 @@ import React from 'react';
 
 import Button from 'components/shared/button';
 import LINKS from 'constants/links';
-import useGetSpeakers from 'hooks/use-get-speakers';
+import useSpeakers from 'hooks/use-speakers';
 
 import maskImage from './images/mask.svg';
 
@@ -12,8 +12,8 @@ const DESCRIPTION =
   'Explore cloud native excellence at <b>KCDs 2024</b>! Join expert speakers for talks, networking, and a vibrant celebration of innovation.';
 const BTN_TITLE = 'All speakers';
 
-const Speakers = ({ endpoint }) => {
-  const { speakers, error } = useGetSpeakers(endpoint, false);
+const Speakers = () => {
+  const { speakers, error } = useSpeakers(false);
 
   return (
     <section className="safe-paddings relative pt-[120px] lg:pt-16 md:pt-10 sm:pt-8">

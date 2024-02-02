@@ -10,14 +10,13 @@ import Sponsors from 'components/pages/home/sponsors';
 import Venue from 'components/pages/home/venue';
 import Layout from 'components/shared/layout';
 import SEO from 'components/shared/seo';
-import endpoints from 'constants/sessionize';
 
 const HomePage = () => (
   <Layout isHomePage>
     <Hero />
     <Venue />
     <Features />
-    <Speakers endpoint={endpoints.speakers} />
+    <Speakers />
     <Proposal />
     <Sponsors />
     <Partners />
