@@ -1,0 +1,28 @@
+import { useEffect, useState, useCallback } from 'react';
+
+export default function useGetSpeakers(endpoint, topSpeakers = false) {
+  const [speakers, setSpeakers] = useState([]);
+  const [error, setError] = useState(null);
+
+  const fetchSpeakers = useCallback(async () => {
+    try {
+      const response = await fetch(endpoint);
+
+      if (response.ok) {
+        const data = await response.json();
+        setSpeakers(topSpeakers ? data.filter(({ isTopSpeaker }) => isTopSpeaker) : data);
+      } else {
+        throw new Error(`Error: ${response.status}`);
+      }
+    } catch (error) {
+      setError(error.toString());
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [endpoint]);
+
+  useEffect(() => {
+    fetchSpeakers();
+  }, [fetchSpeakers]);
+
+  return { speakers, error };
+}

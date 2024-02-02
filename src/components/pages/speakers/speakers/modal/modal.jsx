@@ -5,11 +5,13 @@ import React, { useId } from 'react';
 
 import iconClose from './images/close.svg';
 import FacebookIcon from './images/facebook.inline.svg';
+import GithubIcon from './images/github.inline.svg';
 import InstagramIcon from './images/instagram.inline.svg';
 import LinkIcon from './images/link.inline.svg';
 import LinkedInIcon from './images/linkedin.inline.svg';
 import SessionizeIcon from './images/sessionize.inline.svg';
 import TwitterIcon from './images/x.inline.svg';
+import YoutubeIcon from './images/youtube.inline.svg';
 
 const icons = {
   Twitter: TwitterIcon,
@@ -21,6 +23,17 @@ const icons = {
   Sessionize: SessionizeIcon,
   Other: LinkIcon,
 };
+
+const additionalIcons = [
+  {
+    name: 'youtube',
+    icon: YoutubeIcon,
+  },
+  {
+    name: 'github',
+    icon: GithubIcon,
+  },
+];
 
 const defaultModalAnimation = {
   transition: { duration: 0.2, delay: 0.1, ease: 'easeInOut' },
@@ -104,7 +117,12 @@ const Modal = ({ isVisible, modalData, onModalHide }) => {
             />
             <ul className="mt-7 flex items-center gap-5">
               {links.map(({ title, url, linkType }, index) => {
-                const Icon = icons[linkType];
+                let Icon = icons[linkType];
+
+                additionalIcons.forEach(({ name, icon }) => {
+                  if (url.includes(name)) Icon = icon;
+                });
+
                 return (
                   <li key={index}>
                     <a

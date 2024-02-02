@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect, useState, useCallback } from 'react';
+import React from 'react';
 
 import Button from 'components/shared/button';
 import LINKS from 'constants/links';
+import useGetSpeakers from 'hooks/use-get-speakers';
 
 import maskImage from './images/mask.svg';
 
@@ -12,28 +13,7 @@ const DESCRIPTION =
 const BTN_TITLE = 'All speakers';
 
 const Speakers = ({ endpoint }) => {
-  const [speakers, setSpeakers] = useState([]);
-  const [error, setError] = useState(null);
-
-  const fetchSpeakers = useCallback(async () => {
-    try {
-      const response = await fetch(endpoint);
-
-      if (response.ok) {
-        const data = await response.json();
-        // setSpeakers(data.filter(({ isTopSpeaker }) => isTopSpeaker));
-        setSpeakers(data);
-      } else {
-        throw new Error(`Error: ${response.status}`);
-      }
-    } catch (error) {
-      setError(error.toString());
-    }
-  }, [endpoint]);
-
-  useEffect(() => {
-    fetchSpeakers();
-  }, [fetchSpeakers]);
+  const { speakers, error } = useGetSpeakers(endpoint, false);
 
   return (
     <section className="safe-paddings relative pt-[120px] lg:pt-16 md:pt-10 sm:pt-8">

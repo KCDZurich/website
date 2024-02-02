@@ -7,12 +7,11 @@ const DESCRIPTION =
 const Hero = () => (
   <section className="safe-paddings pt-[88px] lg:pt-[4.5rem] md:pt-16 sm:pt-8">
     <div className="container grid grid-cols-12">
-      <h1
-        className="col-span-4 font-sans-cyber text-[52px] font-bold lowercase leading-tight text-primary-1 lg:text-[40px] md:col-span-12 md:text-[32px]"
-        dangerouslySetInnerHTML={{ __html: TITLE }}
-      />
+      <h1 className="col-span-4 font-sans-cyber text-[52px] font-bold lowercase leading-tight text-primary-1 lg:text-[40px] md:col-span-12 md:text-[32px]">
+        {TITLE}
+      </h1>
       <p
-        className="col-span-8 text-2xl leading-normal text-primary-1 md:col-span-12 md:mt-4 md:text-xl sm:text-lg"
+        className="col-span-8 text-2xl leading-normal text-primary-1 lg:text-xl md:col-span-12 md:mt-4 sm:text-lg"
         dangerouslySetInnerHTML={{ __html: DESCRIPTION }}
       />
     </div>

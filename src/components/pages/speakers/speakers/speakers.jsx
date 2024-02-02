@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useState } from 'react';
 
 import Button from 'components/shared/button';
+import useGetSpeakers from 'hooks/use-get-speakers';
 
 import iconCross from './images/cross.svg';
 import Modal from './modal';
 
 const Speakers = ({ endpoint }) => {
-  const [speakers, setSpeakers] = useState([]);
-  const [error, setError] = useState(null);
+  const { speakers, error } = useGetSpeakers(endpoint, false);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalDataIndex, setModalDataIndex] = useState(null);
 
@@ -23,25 +23,6 @@ const Speakers = ({ endpoint }) => {
     setIsModalVisible(false);
     setModalDataIndex(null);
   };
-
-  const fetchSpeakers = useCallback(async () => {
-    try {
-      const response = await fetch(endpoint);
-
-      if (response.ok) {
-        const data = await response.json();
-        setSpeakers(data);
-      } else {
-        throw new Error(`Error: ${response.status}`);
-      }
-    } catch (error) {
-      setError(error.toString());
-    }
-  }, [endpoint]);
-
-  useEffect(() => {
-    fetchSpeakers();
-  }, [fetchSpeakers]);
 
   return (
     <section className="safe-paddings mt-20 pb-48 lg:pb-44 md:mt-14 md:pb-40 sm:pb-24">
@@ -157,7 +138,7 @@ const Speakers = ({ endpoint }) => {
                           alt=""
                         />
                       )}
-                      <p className="text-xl font-bold leading-snug text-primary-1 transition-colors duration-200 md:text-lg">
+                      <p className="text-xl font-bold leading-snug text-primary-1 transition-colors duration-200 lg:text-lg">
                         {sessions[0].name}
                       </p>
                     </div>
@@ -182,7 +163,7 @@ const Speakers = ({ endpoint }) => {
                           />
                         </>
                       )}
-                      <p className="line-clamp-2 text-lg font-normal leading-normal text-primary-1 transition-colors duration-200 md:text-base">
+                      <p className="line-clamp-2 text-lg font-normal leading-normal text-primary-1 transition-colors duration-200 lg:text-base">
                         {bio}
                       </p>
                       <Button
@@ -203,7 +184,7 @@ const Speakers = ({ endpoint }) => {
         </ul>
       </div>
       <Modal
-        modalData={modalDataIndex !== null ? speakers[modalDataIndex] : {}}
+        modalData={speakers[modalDataIndex] || {}}
         isVisible={isModalVisible}
         isPresentationShow
         onModalHide={handleModalHide}
