@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from 'react';
 
 import endpoints from 'constants/sessionize';
 
-export default function useSpeakers(endpoint, topSpeakers = false) {
+export default function useSpeakers(topSpeakers = false) {
   const [speakers, setSpeakers] = useState([]);
   const [error, setError] = useState(null);
 
