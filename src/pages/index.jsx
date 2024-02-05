@@ -5,6 +5,7 @@ import Features from 'components/pages/home/features';
 import Hero from 'components/pages/home/hero';
 import Partners from 'components/pages/home/partners';
 import Proposal from 'components/pages/home/proposal';
+import Speakers from 'components/pages/home/speakers';
 import Sponsors from 'components/pages/home/sponsors';
 import Venue from 'components/pages/home/venue';
 import Layout from 'components/shared/layout';
@@ -15,6 +16,7 @@ const HomePage = () => (
     <Hero />
     <Venue />
     <Features />
+    <Speakers />
     <Proposal />
     <Sponsors />
     <Partners />
