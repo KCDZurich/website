@@ -1,433 +1,110 @@
 /* eslint-disable react/prop-types */
-import clsx from 'clsx';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-import Modal from 'components/shared/modal';
+import Button from 'components/shared/button';
 import LINKS from 'constants/links';
+import useSpeakers from 'hooks/use-speakers';
 
-import AdrianReberPhoto from './images/adrian-reber-photo.jpg';
-import AnnieTalvastoPhoto from './images/annie-talvasto-photo.jpg';
-import BillPhoto from './images/bill-mulligan-photo.jpg';
-import FilipPhoto from './images/filip-nicolic-photo.jpg';
-import JuliusVolzPhoto from './images/julius-volz-photo.jpg';
-import LenaPhoto from './images/lena-fuhrimann-photo.jpg';
-import LisaFalcoPhoto from './images/lisa-falco-photo.jpg';
-import LizRicePhoto from './images/liz-rice-photo.jpg';
-import MaxKorbacherPhoto from './images/max-korbacher-photo.jpg';
-import PriyaWadhwaPhoto from './images/priya-wadhwa-photo.jpg';
-import RaphaelPhoto from './images/raphael-photo.jpg';
-import RetoLehmannPhoto from './images/reto-lehmann-photo.jpg';
-import RicardoRochaPhoto from './images/ricardo-rocha-photo.jpg';
-import SebastianKisterPhoto from './images/sebastian-kister-photo.jpg';
-import ThomasGrafPhoto from './images/thomas-graf-photo.jpg';
-import TimoSalmPhoto from './images/timo-salm-photo.jpg';
-import ChevronDown from './svg/arrow-down.inline.svg';
+import maskImage from './images/mask.svg';
 
 const TITLE = 'Speakers';
+const DESCRIPTION =
+  'Explore cloud native excellence at <b>KCDs 2024</b>! Join expert speakers for talks, networking, and a vibrant celebration of innovation.';
+const BTN_TITLE = 'More to come';
 
-// TODO: replace id => index connect with only id`s
-const ITEMS = [
-  {
-    id: '2',
-    name: 'Thomas Graf',
-    position: 'CTO & CO-Founder <br/> Isovalent',
-    content:
-      'Thomas is the Co-Founder and CTO of Isovalent, long-time eBPF developer, and one of the creators of the Cilium project. Before working on Cilium, and eBPF, Thomas was a Linux kernel developer for 15+ years focusing on networking, security, and eBPF. Thomas currently serves as the Co-Chair of the eBPF Foundation. When not working on open source software, Thomas is enjoying the Swiss mountains on bike and foot with his family.',
-    photo: ThomasGrafPhoto,
-    twitterUrl: '',
-    linkedInUrl: '',
-    githubUrl: '',
-    communityUrl: '',
-    instagramUrl: '',
-    websiteUrl: '',
-    time: '9:00',
-    title: 'Cilium Mesh - How to Connect Kubernetes with Legacy VM and Server Infrastructure',
-    duration: '30 min',
-  },
-  {
-    id: '18',
-    name: 'Liz Rice',
-    position: 'Chief Open Source Office <br/> Isovalent',
-    content:
-      "Liz Rice is Chief Open Source Officer with eBPF specialists Isovalent, creators of the Cilium cloud native networking, security and observability project. She was Chair of the CNCF's Technical Oversight Committee in 2019-2022, and Co-Chair of KubeCon + CloudNativeCon in 2018. She is also the author of Container Security, published by O'Reilly. She has a wealth of software development, team, and product management experience from working on network protocols and distributed systems, and in digital technology sectors such as VOD, music, and VoIP. When not writing code, or talking about it, Liz loves riding bikes in places with better weather than her native London, competing in virtual races on Zwift, and making music under the pseudonym Insider Nine.",
-    photo: LizRicePhoto,
-    twitterUrl: '',
-    linkedInUrl: '',
-    githubUrl: '',
-    communityUrl: '',
-    instagramUrl: '',
-    websiteUrl: '',
-    time: '16:45',
-    title: 'eBPF for Security',
-    duration: '30 min',
-  },
-  {
-    id: '12',
-    name: 'Julius Volz',
-    position: 'Co-Founder of prometheus.io <br/> Founder at PromLabs',
-    content:
-      'Julius co-founded the Prometheus monitoring system and originally led the project to success at SoundCloud and beyond. He now focuses on growing the Prometheus community, started PromCon, the first conference around Prometheus, and helps companies use and adapt Prometheus through his company PromLabs. Before creating Prometheus at SoundCloud, Julius was a Site Reliability Engineer at Google.',
-    photo: JuliusVolzPhoto,
-    twitterUrl: 'https://twitter.com/juliusvolz',
-    linkedInUrl: 'https://www.linkedin.com/in/julius-volz/',
-    githubUrl: '',
-    communityUrl: 'https://community.cncf.io/u/mvhzxh/',
-    instagramUrl: '',
-    websiteUrl: 'https://juliusv.com/',
-    time: '14:15',
-    title: 'Native Histograms in Prometheus: A Better Histogram Experience for Everyone',
-    duration: '30 min',
-  },
-  {
-    id: '8',
-    name: 'Annie Talvasto',
-    position: 'CNCF Ambassador <br/> Azure MVP',
-    content:
-      'Annie Talvasto is an international technology speaker, CNCF Ambassador, Azure MVP and specialist in Kubernetes & open source. Annie hosts & produces the Cloud Gossip podcast and has been a co-organizer of Kubernetes & CNCF Finland meetup since 2017. She has worked at various tech companies from cloud start-ups to enterprises. Annie has spoken at tech conferences on multiple continents, including KubeCon + CloudNativeCon, Microsoft Build & Ignite, NDC, KCDC, Global Azure, Future Tech and more. During her career she has spoken to more than 30,000 developers at User Groups meetings & Conferences.',
-    photo: AnnieTalvastoPhoto,
-    twitterUrl: 'https://twitter.com/AnnieTalvasto',
-    linkedInUrl: 'https://www.linkedin.com/in/talvasto/',
-    githubUrl: '',
-    communityUrl: 'https://community.cncf.io/u/mwwdtj/#/about',
-    instagramUrl: '',
-    websiteUrl: '',
-    time: '11:30',
-    title: 'What Anime Taught Me About K8s & Tech Careers',
-    duration: '30 min',
-    isCoincidedEvent: true,
-  },
-  {
-    id: '6',
-    name: 'Ricardo Rocha',
-    position: 'Computing Engineer CERN <br/> TOC CNCF',
-    content:
-      'Ricardo is a Computing Engineer in the CERN cloud team focusing on containerized deployments, networking and more recently machine learning platforms. He has led for several years the internal effort to transition services and workloads to use cloud native technologies, as well as dissemination and training efforts. Ricardo got CERN to join the CNCF and is currently in the TOC and a lead of the CNCF Research User Group. Prior to this work Ricardo helped develop the grid computing infrastructure serving the Large Hadron Collider (LHC).',
-    photo: RicardoRochaPhoto,
-    twitterUrl: 'https://twitter.com/ahcorporto',
-    linkedInUrl: 'https://www.linkedin.com/in/ricardo-rocha-739aa718/',
-    githubUrl: 'https://github.com/rochaporto',
-    communityUrl: 'https://community.cncf.io/u/m46hr5/#/about',
-    instagramUrl: '',
-    websiteUrl: '',
-    time: '10:45',
-    title: 'When Things Get Big: Scaling Cloud Native Workloads and Software Distribution',
-    duration: '30 min',
-  },
-  {
-    id: '4',
-    name: 'Max Körbächer',
-    position: 'Co-Founder of Liquid Reply <br/> Co-Chair CNCF TAG Environmental Sustainability',
-    content:
-      'Max is Co-Founder and Cloud Native Advocate at Liquid Reply. He is Co-Chair of the CNCF Environmental Sustainability Technical Advisory Group and served 3 years at the Kubernetes release team. Besides, he is part of different OSS Advisory Boards. His focus is on designing and building cloud-native solutions on/with Kubernetes and platform engineering to simplify the current challenges of complex systems.',
-    photo: MaxKorbacherPhoto,
-    twitterUrl: 'https://twitter.com/mkoerbi',
-    linkedInUrl: 'https://www.linkedin.com/in/maxkoerbaecher/',
-    githubUrl: '',
-    communityUrl: 'https://community.cncf.io/u/m76gha/#/about',
-    instagramUrl: '',
-    websiteUrl: '',
-    time: '9:45',
-    title: 'The state of Green Washing - or how to build sustainable systems with Kubernetes',
-    duration: '30 min',
-  },
-  {
-    id: '14',
-    name: 'Priya Wadhwa',
-    position: 'Software Engineer <br/> Chainguard',
-    content:
-      'Priya Wadhwa is an engineering manager working on open source security at Chainguard. She serves on the Sigstore Technical Steering Committee and is a maintainer on many Sigstore projects and Tekton Chains. Priya is passionate about making security easy and available for everyone.',
-    photo: PriyaWadhwaPhoto,
-    twitterUrl: 'https://twitter.com/priyawadhwa16',
-    linkedInUrl: '',
-    githubUrl: 'https://github.com/priyawadhwa',
-    communityUrl: '',
-    instagramUrl: '',
-    websiteUrl: '',
-    time: '15:15',
-    title: 'Securing your Software Supply Chain on Kubernetes with Sigstore',
-    duration: '30 min',
-  },
-  {
-    id: '8',
-    name: 'Lisa Falco',
-    position: 'Consultant in Medical & Responsible AI <br/> Zühlke Group',
-    content:
-      'Lisa is a Lead Consultant in AI & Data with 15 years of industry experience in medical applications of Data Science and in bringing medical software products to market. She combines solid expertise in Machine Learning and AI with a passion for developing user-centric products, particularly in healthcare and medical technology. Among others she was previously Director of Data Science at Ava Women and Head of Product at Pipra. She has a PhD in Biomedical Imaging from EPFL, Switzerland.',
-    photo: LisaFalcoPhoto,
-    twitterUrl: 'https://twitter.com/lisafalco',
-    linkedInUrl: 'https://www.linkedin.com/in/lisa-falco-jon',
-    githubUrl: '',
-    communityUrl: '',
-    instagramUrl: 'https://www.instagram.com/lisafalco_dsw/',
-    websiteUrl: 'https://lisafalco.com',
-    time: '11:30',
-    title: 'Responsible AI: The Key to Ethical, Safe and Inclusive Software Development',
-    duration: '30 min',
-  },
-  {
-    id: '16',
-    name: 'Sebastian Kister',
-    position: 'Lead Kubernetes <br/> Competence Center Audi',
-    content:
-      'Sebastian is an awarded global thought leader for enterprise transformation and counts world wide as transformation evangelist. He is leading a competence center in IT infrastructure and aligning all brands in the VW Group with the mission to once again boldly go where no one has gone before. As an agile digital native with countless successfully implemented projects in 7 industries he can be described as well as a startup-professional who helped to shape products from genesis to market leader with bleeding-edge technology. Always striving to innovate and question the status quo, he helps to break dogmas, implement a new culture, and never settles while pursuing constant progress.',
-    photo: SebastianKisterPhoto,
-    twitterUrl: '',
-    linkedInUrl: 'https://www.linkedin.com/in/sebastiankister/',
-    githubUrl: '',
-    communityUrl: 'https://community.cncf.io/u/mrku63/#/about',
-    instagramUrl: '',
-    websiteUrl: '',
-    time: '16:00',
-    title:
-      "Process is what naturally follows - a cloud platform's guide on people-first transformation",
-    duration: '30 min',
-  },
-  {
-    id: '12',
-    name: 'Reto Lehmann',
-    position: 'Principal Software Engineer at Red Hat',
-    content:
-      'Reto Lehmann is a Principal Software Engineer at Red Hat and a contributor to the Knative project. He has been working on its various components, including Knative Serving, Client, and sandbox repositories. Reto has over ten years of experience in the field of containers and cloud-native technology, having built Kubernetes-based platforms\n' +
-      'both on-premise and in various public clouds.\n' +
-      '\n' +
-      'Before his work at Red Hat, Reto gained valuable experience as a consultant, helping organizations adopt cloud- native technology and implement effective solutions. He is also an adjunct professor, where he teaches courses about these topics.',
-    photo: RetoLehmannPhoto,
-    twitterUrl: '',
-    linkedInUrl: 'https://www.linkedin.com/in/retocode/',
-    githubUrl: '',
-    communityUrl: '',
-    instagramUrl: '',
-    websiteUrl: '',
-    time: '14:15',
-    title: 'Tales of Serverless - a story about building scalable applications',
-    duration: '30 min',
-    isCoincidedEvent: true,
-  },
-  {
-    id: '10',
-    name: 'Bill Mulligan',
-    position: 'Cilium and eBPF Community Pollinator',
-    content:
-      'Bill Mulligan is a cloud native pollinator and community builder. He has given talks and written articles about\n' +
-      'building the business case for cloud native. While at CNCF he restarted the Kubernetes Community Day program\n' +
-      'and worked to grow the student community. He is currently at Isovalent strengthening the Cilium and eBPF\n' +
-      'communities.',
-    photo: BillPhoto,
-    twitterUrl: 'https://twitter.com/breakawaybilly',
-    linkedInUrl: 'https://www.linkedin.com/in/bamulligan/',
-    githubUrl: '',
-    communityUrl: '',
-    instagramUrl: '',
-    websiteUrl: '',
-    time: '13:30',
-    title: 'Buzzing Across the Cloud Native Landscape with eBPF',
-    duration: '30 min',
-  },
-  {
-    id: '4',
-    name: 'Adrian Reber',
-    position: 'Senior Principal Software Engineer at Red Hat',
-    content:
-      'Adrian is a Senior Principal Software Engineer at Red Hat and is migrating processes at least since 2010. He\n' +
-      'started to migrate processes in a high performance computing environment and at some point he migrated so\n' +
-      'many processes that he got a PhD for that. Most of the time he is now migrating containers but occasionally he still\n' +
-      'migrates single processes.',
-    photo: AdrianReberPhoto,
-    twitterUrl: '',
-    linkedInUrl: '',
-    githubUrl: '',
-    communityUrl: '',
-    instagramUrl: '',
-    websiteUrl: '',
-    time: '9:45',
-    title: 'Forensic container checkpointing and analysis',
-    duration: '30 min',
-    isCoincidedEvent: true,
-  },
-  {
-    id: '6',
-    name: 'Filip Nikolic',
-    position: 'Architect Owner Kubernetes Postfinance',
-    content:
-      'Filip works for a financial institute and is a strong advocate of cloud-native technologies. As a speaker at the\n' +
-      'conference, Filip will share insights into why an increasing number of CNCF projects decide to make use of eBPF.',
-    photo: FilipPhoto,
-    twitterUrl: 'https://twitter.com/f1kook1f',
-    linkedInUrl: 'https://www.linkedin.com/in/filip-nikolic/',
-    githubUrl: '',
-    communityUrl: '',
-    instagramUrl: '',
-    websiteUrl: '',
-    time: '10:45',
-    title: 'Demystifying eBPF - eBPF Firewall from scratch',
-    duration: '30 min',
-    isCoincidedEvent: true,
-  },
-  {
-    id: '14',
-    name: 'Timo Salm',
-    position: 'Lead Developer Experience Solutions Engineer VMware',
-    content:
-      'Timo Salm is based out of Stuttgart in southwest Germany and in the role of the first VMware Tanzu Solutions\n' +
-      'Engineer for Developer Experience in EMEA with a focus on VMware Tanzu Application Platform and commercial\n' +
-      "Spring products. In this role, he’s responsible for educating customers on these products' value, vision, and\n" +
-      'strategy and ensuring that they succeed by working closely on different levels of abstractions of modern\n' +
-      'applications and modern infrastructure.\n' +
-      'Before Timo joined Pivotal and VMware, he worked for more than seven years for consulting firms in the\n' +
-      'automotive industry as a software architect and full-stack developer on projects for customer-facing products.',
-    photo: TimoSalmPhoto,
-    twitterUrl: 'https://twitter.com/salmto',
-    linkedInUrl: 'https://www.linkedin.com/in/timo-salm-8779a680/',
-    githubUrl: '',
-    communityUrl: '',
-    instagramUrl: '',
-    websiteUrl: '',
-    time: '15:15',
-    title: 'Closing the Developer Experience Gap of your Container Platforms',
-    duration: '30 min',
-    isCoincidedEvent: true,
-  },
-  {
-    id: '10',
-    name: 'Lena Fuhrimann',
-    position: 'Co-Founder & Cloud Software Architect bespinian',
-    content:
-      'Lena is a passionate software engineer and architect. Together with Mathis Kretz she founded the company\n' +
-      'bespinian in 2019 and has since worked with many customers and interesting technologies. Her main focus lies on\n' +
-      'security, Kubernetes, serverless technologies, public clouds and Infrastructure as Code. However, she has also\n' +
-      'worked a lot with Kubernetes and its ecosystem and has deployed many applications to those platforms using\n' +
-      'automation and GitOps. She uses Arch btw.',
-    photo: LenaPhoto,
-    twitterUrl: 'https://twitter.com/the_cloudlena',
-    linkedInUrl: 'https://www.linkedin.com/in/lena-fuhrimann/',
-    githubUrl: '',
-    communityUrl: '',
-    instagramUrl: '',
-    websiteUrl: '',
-    time: '13:30',
-    title: 'Streamlined Troubleshooting in Kubernetes',
-    duration: '30 min',
-    isCoincidedEvent: true,
-  },
-  {
-    id: '16',
-    name: 'Raphaël Pinson',
-    position: 'Solutions Architect at Isovalent',
-    content:
-      'Raphaël Pinson is a Solutions Architect with Cloud Native networking and security specialists Isovalent, creators of the Cilium eBPF-based networking project. He works on Cilium, Hubble & Tetragon and the future of Cloud-Native networking & security using eBPF. An early adept of the DevOps principles, he has been a practitioner of Configuration Management and Agile principles in Operations for many years, with a special involvement in the Puppet and Terraform communities over the years.',
-    photo: RaphaelPhoto,
-    twitterUrl: 'https://twitter.com/raphink',
-    linkedInUrl: 'https://www.linkedin.com/in/raphink/',
-    githubUrl: '',
-    communityUrl: '',
-    instagramUrl: '',
-    websiteUrl: '',
-    time: '16:00',
-    title: 'Bridging Dev and Ops with eBPF: Extending Observability Upwards and Downwards',
-    duration: '30 min',
-    isCoincidedEvent: true,
-  },
-];
-
-const Speakers = ({ location }) => {
-  const [isSpeakersOpen, setIsSpeakersOpen] = useState(false);
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [modalDataId, setModalDataId] = useState(0);
-
-  const handleModalShow = (id) => {
-    document.body.classList.add('overflow-hidden');
-    setIsModalVisible(true);
-    setModalDataId(id);
-  };
-
-  const handleModalHide = () => {
-    document.body.classList.remove('overflow-hidden');
-    setIsModalVisible(false);
-    setModalDataId(0);
-  };
-
-  const handleShowMoreClick = () => {
-    setIsSpeakersOpen((isSpeakersOpen) => !isSpeakersOpen);
-  };
-
-  useEffect(() => {
-    if (typeof window !== `undefined`) {
-      const { state = {} } = location;
-
-      if (state?.modalId) {
-        const element = document.getElementById('speakers');
-
-        window.scrollTo({
-          top: window.pageYOffset + element.getBoundingClientRect().top,
-        });
-
-        if (Number(state.modalId) > 7) {
-          handleShowMoreClick();
-        }
-
-        handleModalShow(Number(state.modalId));
-      } else {
-        handleModalHide();
-      }
-    }
-  }, [location]);
+const Speakers = () => {
+  const { speakers, error } = useSpeakers(true);
 
   return (
-    <section className="safe-paddings relative bg-white md:pt-24 sm:pt-16">
-      <div className="container flex flex-col sm:items-center">
+    <section className="safe-paddings relative pt-[120px] lg:pt-16 md:pt-10 sm:pt-8">
+      <div className="container flex flex-col items-center">
         <h2
-          className="text-6xl font-bold leading-tight text-primary-1 md:text-center"
+          className="font-sans-cyber text-[52px] font-bold lowercase leading-tight lg:text-[40px] md:text-[32px]"
           id={LINKS.speakers.id}
         >
           {TITLE}
         </h2>
-        <ul className="mt-14 grid w-full grid-cols-4 gap-8 lg:gap-6 md:grid-cols-3 md:justify-items-center md:gap-4 xs:flex xs:flex-wrap xs:justify-evenly [@media(max-width:620px)]:grid-cols-2">
-          {ITEMS.map(({ name, position, photo }, index) => (
-            <li
-              className={clsx(
-                'group flex w-[240px] cursor-pointer flex-col lg:w-52 md:w-48 sm:w-auto sm:max-w-[200px]',
-                index > 7 && !isSpeakersOpen ? 'hidden' : 'flex'
-              )}
-              key={index}
-              onClick={() => handleModalShow(index)}
-            >
-              <img
-                className="w-full"
-                src={photo}
-                width={240}
-                height={284}
-                loading="lazy"
-                alt={name}
-              />
-              <p className="mt-2.5 text-2xl font-bold leading-normal text-primary-1 transition-colors duration-200 group-hover:text-blue-1 sm:text-left">
-                {name}
-              </p>
-              <span
-                className="mt-1.5 text-primary-1"
-                dangerouslySetInnerHTML={{ __html: position }}
-              />
-            </li>
-          ))}
-        </ul>
-        <button
-          className="mx-auto mt-10 flex items-center px-5 py-2 text-center text-lg font-bold leading-none text-primary-1 transition-colors duration-200"
-          type="button"
-          onClick={handleShowMoreClick}
-        >
-          <span>{isSpeakersOpen ? 'Hide all speakers' : 'View all speakers'}</span>
-          <ChevronDown
-            className={clsx(
-              'ml-2 block w-2.5 shrink-0 transition-[transform,color] duration-200',
-              isSpeakersOpen ? 'rotate-180' : ''
-            )}
-          />
-        </button>
-        <Modal
-          modalData={ITEMS[modalDataId]}
-          isVisible={isModalVisible}
-          isPresentationShow={false}
-          onModalHide={handleModalHide}
+        <p
+          className="mt-5 max-w-[644px] text-center text-xl leading-normal md:text-lg"
+          dangerouslySetInnerHTML={{ __html: DESCRIPTION }}
         />
+        {error && !speakers.length && (
+          <div className="mt-14 w-full md:mt-9 sm:mt-8">
+            <h3 className="text-center text-lg font-bold uppercase leading-tight text-red">
+              Loading error
+            </h3>
+          </div>
+        )}
+        <ul className="mt-14 grid w-full grid-cols-4 justify-items-center gap-14 lg:grid-cols-3 md:mt-9 md:grid-cols-2 md:gap-9 sm:mt-8 sm:gap-8 xs:grid-cols-1">
+          {!error && !speakers.length && (
+            <>
+              {Array.from({ length: 4 }, (_, index) => index).map((item) => (
+                <li className="flex max-w-[248px] animate-pulse flex-col items-center" key={item}>
+                  <div className="relative h-[280px] w-[240px]">
+                    <img
+                      className="absolute inset-0 z-10 h-full w-full"
+                      src={maskImage}
+                      width={240}
+                      height={280}
+                      loading="lazy"
+                      alt=""
+                    />
+                    <div className="speaker-photo-clip-path relative h-full w-full">
+                      <div className="absolute inset-0 z-10 h-full w-full bg-primary-1/10" />
+                    </div>
+                    <div className="speaker-shadow-clip-path absolute left-2 top-2 -z-10 h-full w-full bg-[#A1CBD3] opacity-20" />
+                  </div>
+                  <div className="mt-7 h-[23px] w-6/12 rounded bg-primary-1/10" />
+                  <div className="mt-2 h-[18px] w-10/12 rounded bg-primary-1/10" />
+                </li>
+              ))}
+            </>
+          )}
+          {!error && speakers.length > 0 && (
+            <>
+              {speakers.map(({ profilePicture, fullName, tagLine }, index) => (
+                <li className="flex max-w-[248px] flex-col items-center" key={index}>
+                  <div className="relative h-[280px] w-[240px]">
+                    <img
+                      className="absolute inset-0 z-10 h-full w-full"
+                      src={maskImage}
+                      width={240}
+                      height={280}
+                      loading="lazy"
+                      alt=""
+                    />
+                    <div className="speaker-photo-clip-path relative h-full w-full">
+                      <div className="absolute inset-0 z-10 h-full w-full bg-primary-1 opacity-50 mix-blend-color " />
+                      <img
+                        className="h-full object-cover brightness-110 saturate-0"
+                        src={profilePicture}
+                        width={240}
+                        height={280}
+                        loading="lazy"
+                        alt={fullName}
+                      />
+                    </div>
+                    <div className="speaker-shadow-clip-path absolute left-2 top-2 -z-10 h-full w-full bg-[#A1CBD3] opacity-20" />
+                  </div>
+                  <h3 className="mt-7 text-lg font-bold uppercase leading-tight text-primary-1">
+                    {fullName}
+                  </h3>
+                  <p className="mt-2 text-center text-sm leading-tight text-primary-1/60">
+                    {tagLine}
+                  </p>
+                </li>
+              ))}
+            </>
+          )}
+        </ul>
+        <Button
+          className="mt-12 min-w-[170px] flex-none opacity-60 hover:bg-white md:mt-8 xs:mt-8"
+          theme="primary"
+          size="sm"
+          disabled
+        >
+          {BTN_TITLE}
+        </Button>
       </div>
     </section>
   );
