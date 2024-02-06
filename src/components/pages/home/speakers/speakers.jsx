@@ -9,7 +9,7 @@ import maskImage from './images/mask.svg';
 
 const TITLE = 'Speakers';
 const DESCRIPTION =
-  'Explore cloud native excellence at <b>KCDs 2024</b>! Join expert speakers for talks, networking, and a vibrant celebration of innovation.';
+  'Explore cloud native excellence at <b>KCD Zurich 2024</b>! Join expert speakers for talks, networking, and a vibrant celebration of innovation.';
 const BTN_TITLE = 'More to come';
 
 const Speakers = () => {
@@ -25,7 +25,7 @@ const Speakers = () => {
           {TITLE}
         </h2>
         <p
-          className="mt-5 max-w-[644px] text-center text-xl leading-normal md:text-lg"
+          className="mt-5 max-w-[660px] text-center text-xl leading-normal md:text-lg"
           dangerouslySetInnerHTML={{ __html: DESCRIPTION }}
         />
         {error && !speakers.length && (
