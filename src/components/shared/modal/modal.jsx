@@ -10,12 +10,12 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import CloseIcon from 'icons/close.inline.svg';
-import CommunityIcon from 'icons/cncf-icon.inline.svg';
-import GithubIcon from 'icons/github-icon.inline.svg';
-import InstagramIcon from 'icons/instagram-icon.inline.svg';
-import LinkedInIcon from 'icons/linkedin-icon.inline.svg';
-import TwitterIcon from 'icons/twitter-icon.inline.svg';
-import WebsiteIcon from 'icons/webpage-icon.inline.svg';
+import CommunityIcon from 'icons/social/cncf.inline.svg';
+import GithubIcon from 'icons/social/github.inline.svg';
+import InstagramIcon from 'icons/social/instagram.inline.svg';
+import LinkedInIcon from 'icons/social/linkedin.inline.svg';
+import WebsiteIcon from 'icons/social/webpage.inline.svg';
+import TwitterIcon from 'icons/social/x.inline.svg';
 
 import Button from '../button';
 
@@ -242,16 +242,16 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   className="text-lg leading-normal sm:text-base"
                   dangerouslySetInnerHTML={{ __html: content }}
                 />
-                <ul className="flex items-center gap-5">
+                <ul className="mt-8 flex items-center gap-5">
                   {twitterUrl && (
                     <li>
                       <a
-                        className="mt-8 block transition-colors duration-200 hover:text-blue-1"
+                        className="group block"
                         href={twitterUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <TwitterIcon className="h-[20px]" />
+                        <TwitterIcon className="h-[18px] w-[18px] text-primary-1 transition-opacity group-hover:opacity-60" />
                         <span className="sr-only">Twitter link</span>
                       </a>
                     </li>
@@ -259,12 +259,12 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   {linkedInUrl && (
                     <li>
                       <a
-                        className="mt-8 block transition-colors duration-200 hover:text-blue-1"
+                        className="group block"
                         href={linkedInUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <LinkedInIcon className="h-[21px]" />
+                        <LinkedInIcon className="h-[18px] w-[18px] text-primary-1 transition-opacity group-hover:opacity-60" />
                         <span className="sr-only">Linkedin link</span>
                       </a>
                     </li>
@@ -272,12 +272,12 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   {githubUrl && (
                     <li>
                       <a
-                        className="mt-8 block transition-colors duration-200 hover:text-blue-1"
+                        className="group block"
                         href={githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <GithubIcon className="h-[20px]" />
+                        <GithubIcon className="h-[18px] w-[18px] text-primary-1 transition-opacity group-hover:opacity-60" />
                         <span className="sr-only">Github link</span>
                       </a>
                     </li>
@@ -285,12 +285,12 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   {communityUrl && (
                     <li>
                       <a
-                        className="mt-8 block transition-colors duration-200 hover:text-blue-1"
+                        className="group block"
                         href={communityUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <CommunityIcon className="h-[22px]" />
+                        <CommunityIcon className="h-[18px] w-[18px] text-primary-1 transition-opacity group-hover:opacity-60" />
                         <span className="sr-only">Cloud native community link</span>
                       </a>
                     </li>
@@ -298,12 +298,12 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   {instagramUrl && (
                     <li>
                       <a
-                        className="mt-8 block transition-colors duration-200 hover:text-blue-1"
+                        className="group block"
                         href={instagramUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <InstagramIcon className="h-[21px]" />
+                        <InstagramIcon className="h-[18px] w-[18px] text-primary-1 transition-opacity group-hover:opacity-60" />
                         <span className="sr-only">Instagram link</span>
                       </a>
                     </li>
@@ -311,12 +311,12 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   {websiteUrl && (
                     <li>
                       <a
-                        className="mt-8 block transition-colors duration-200 hover:text-blue-1"
+                        className="group block"
                         href={websiteUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <WebsiteIcon className="h-[21px]" />
+                        <WebsiteIcon className="h-[18px] w-[18px] text-primary-1 transition-opacity group-hover:opacity-60" />
                         <span className="sr-only">Personal website link</span>
                       </a>
                     </li>

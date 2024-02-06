@@ -3,20 +3,22 @@ import slugify from 'slugify';
 
 import LINKS from 'constants/links.js';
 import MENUS from 'constants/menus';
-import GoogleMaps from 'icons/google-maps-icon.inline.svg';
-import LinkedIn from 'icons/linkedin-logo.inline.svg';
 import Logo from 'icons/logo.inline.svg';
-import Twitter from 'icons/twitter-logo.inline.svg';
-import Youtube from 'icons/youtube.inline.svg';
+import GithubIcon from 'icons/social/github.inline.svg';
+import GooglemapsIcon from 'icons/social/google-maps.inline.svg';
+import LinkedinIcon from 'icons/social/linkedin.inline.svg';
+import XIcon from 'icons/social/x.inline.svg';
+import YoutubeIcon from 'icons/social/youtube.inline.svg';
 
 import Button from '../button';
 import Link from '../link';
 
 const items = [
-  { icon: GoogleMaps, iconClassName: 'w-11 h-9', url: LINKS.googlemaps.to, name: 'Google maps' },
-  { icon: LinkedIn, iconClassName: 'w-4 h-4', url: LINKS.linkedin.to, name: 'LinkedIn' },
-  { icon: Twitter, iconClassName: 'w-5 h-4', url: LINKS.twitter.to, name: 'Twitter' },
-  { icon: Youtube, iconClassName: 'w-6 h-5', url: LINKS.youtube.to, name: 'YouTube' },
+  { icon: GooglemapsIcon, url: LINKS.googlemaps.to, name: 'Google maps' },
+  { icon: LinkedinIcon, url: LINKS.linkedin.to, name: 'LinkedIn' },
+  { icon: XIcon, url: LINKS.twitter.to, name: 'Twitter' },
+  { icon: GithubIcon, url: LINKS.github.to, name: 'GitHub' },
+  { icon: YoutubeIcon, url: LINKS.youtube.to, name: 'YouTube' },
 ];
 
 const Footer = () => {
@@ -67,25 +69,25 @@ const Footer = () => {
 
         <div className="mt-4 md:mt-0 sm:mt-12">
           <Link
-            className="ml-2 text-sm font-semibold transition-colors duration-200 hover:!text-[#06B3B8] sm:ml-0"
+            className="ml-0.5 text-sm font-semibold transition-colors duration-200 hover:!text-[#06B3B8] sm:ml-0"
             theme="primary"
             to="mailto:hello@kcdzurich.ch"
           >
             hello@kcdzurich.ch
           </Link>
-          <ul className="mt-4 flex min-w-fit gap-x-2.5">
-            {items.map(({ icon, iconClassName, url, name }, index) => {
+          <ul className="mt-4 flex min-w-fit gap-x-[18px]">
+            {items.map(({ icon, url, name }, index) => {
               const Icon = icon;
 
               return (
-                <li className="h-9 w-9" key={index}>
+                <li className="h-[18px] w-[18px]" key={index}>
                   <Link
-                    className="flex h-full w-full items-center justify-center"
+                    className="group flex h-full w-full items-center justify-center"
                     to={url}
                     target="_blank"
                   >
                     <span className="sr-only">Find us at {name}</span>
-                    <Icon className={iconClassName} />
+                    <Icon className="h-[18px] w-[18px] text-primary-1 transition-opacity group-hover:opacity-60" />
                   </Link>
                 </li>
               );
