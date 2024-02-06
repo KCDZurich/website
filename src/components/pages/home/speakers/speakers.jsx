@@ -13,7 +13,7 @@ const DESCRIPTION =
 const BTN_TITLE = 'All speakers';
 
 const Speakers = () => {
-  const { speakers, error } = useSpeakers(false);
+  const { speakers, error } = useSpeakers(true);
 
   return (
     <section className="safe-paddings relative pt-[120px] lg:pt-16 md:pt-10 sm:pt-8">
