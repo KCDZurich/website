@@ -28,8 +28,8 @@ const Speakers = () => {
     <section className="safe-paddings mt-20 pb-48 lg:pb-44 md:mt-14 md:pb-40 sm:pb-24">
       <div className="container">
         <ul className="relative before:absolute before:left-0 before:top-0 before:h-full before:w-[1px] before:bg-vertical-dashed-line after:absolute after:right-0 after:top-0 after:h-full after:w-[1px] after:bg-vertical-dashed-line">
-          <li className="relative flex items-stretch before:absolute before:top-0 before:h-[1px] before:w-full before:bg-horizontal-dashed-line before:bg-auto before:bg-center after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-horizontal-dashed-line after:bg-auto after:bg-center">
-            <div className="relative w-full flex-1 px-8 py-4 after:absolute after:right-0 after:top-0 after:h-full after:w-[1px] after:bg-vertical-dashed-line sm:px-4 sm:after:hidden">
+          <li className="relative grid grid-cols-3 before:absolute before:top-0 before:h-[1px] before:w-full before:bg-horizontal-dashed-line before:bg-auto before:bg-center after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-horizontal-dashed-line after:bg-auto after:bg-center sm:grid-cols-1">
+            <div className="relative px-8 py-4 after:absolute after:right-0 after:top-0 after:h-full after:w-[1px] after:bg-vertical-dashed-line sm:px-4 sm:after:hidden">
               <img
                 className="absolute -left-2 -top-2 h-[17px] w-[17px]"
                 src={iconCross}
@@ -48,7 +48,7 @@ const Speakers = () => {
               />
               <h2 className="text-base font-semibold leading-normal text-primary-1/60">Speaker</h2>
             </div>
-            <div className="relative w-full flex-1 px-8 py-4 after:absolute after:right-0 after:top-0 after:h-full after:w-[1px] after:bg-vertical-dashed-line sm:hidden">
+            <div className="relative px-8 py-4 after:absolute after:right-0 after:top-0 after:h-full after:w-[1px] after:bg-vertical-dashed-line sm:hidden">
               <img
                 className="absolute -right-2 -top-2 h-[17px] w-[17px] "
                 src={iconCross}
@@ -59,7 +59,7 @@ const Speakers = () => {
               />
               <h2 className="text-base font-semibold leading-normal text-primary-1/60">Talk</h2>
             </div>
-            <div className="relative w-full flex-1 px-8 py-4 sm:hidden">
+            <div className="relative px-8 py-4 sm:hidden">
               <img
                 className="absolute -right-2 -top-2 h-[17px] w-[17px]"
                 src={iconCross}
@@ -87,10 +87,10 @@ const Speakers = () => {
                 const last = speakers.length - 1 === index;
                 return (
                   <li
-                    className="relative flex items-stretch after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-horizontal-dashed-line after:bg-auto after:bg-center sm:flex-col"
+                    className="relative grid grid-cols-3 after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-horizontal-dashed-line after:bg-auto after:bg-center sm:grid-cols-1 sm:flex-col"
                     key={index}
                   >
-                    <div className="relative w-full flex-1 px-8 py-6 after:absolute after:right-0 after:top-0 after:h-full after:w-[1px] after:bg-vertical-dashed-line sm:px-4 sm:pb-[18px] sm:pt-4 sm:after:hidden">
+                    <div className="relative px-8 py-6 after:absolute after:right-0 after:top-0 after:h-full after:w-[1px] after:bg-vertical-dashed-line sm:px-4 sm:pb-[18px] sm:pt-4 sm:after:hidden">
                       {last && (
                         <img
                           className="absolute -bottom-2 -left-2 h-[17px] w-[17px] sm:hidden"
@@ -118,7 +118,7 @@ const Speakers = () => {
                           type="button"
                           onClick={() => handleModalShow(index)}
                         >
-                          <h2 className="text-lg font-bold uppercase leading-snug text-primary-1 transition-colors duration-200 group-hover:text-orange md:text-base">
+                          <h2 className="text-left text-lg font-bold uppercase leading-snug text-primary-1 transition-colors duration-200 group-hover:text-orange md:text-base">
                             {fullName}
                           </h2>
                           <p className="text-left text-sm font-normal leading-tight text-primary-1/60 transition-colors duration-200">
@@ -127,7 +127,7 @@ const Speakers = () => {
                         </button>
                       </div>
                     </div>
-                    <div className="relative flex w-full flex-1 flex-col px-8 py-6 after:absolute after:right-0 after:top-0 after:h-full after:w-[1px] after:bg-vertical-dashed-line sm:px-4 sm:py-0 sm:after:hidden">
+                    <div className="relative flex flex-col px-8 py-6 after:absolute after:right-0 after:top-0 after:h-full after:w-[1px] after:bg-vertical-dashed-line sm:px-4 sm:py-0 sm:after:hidden">
                       {last && (
                         <img
                           className="absolute -bottom-2 -left-2 h-[17px] w-[17px] sm:hidden"
@@ -142,7 +142,7 @@ const Speakers = () => {
                         {sessions[0].name}
                       </p>
                     </div>
-                    <div className="relative flex w-full flex-1 flex-col gap-y-2 px-8 py-6 sm:px-4 sm:pb-4 sm:pt-3">
+                    <div className="relative flex flex-col gap-y-2 px-8 py-6 sm:px-4 sm:pb-4 sm:pt-3">
                       {last && (
                         <>
                           <img
