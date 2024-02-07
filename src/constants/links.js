@@ -78,7 +78,7 @@ export default {
     target: '_blank',
   },
   github: {
-    to: 'https://github.com/KCDZurich/website',
+    to: 'https://github.com/KCDZurich',
     target: '_blank',
   },
 };
