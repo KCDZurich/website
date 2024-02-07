@@ -80,14 +80,14 @@ const Footer = () => {
               const Icon = icon;
 
               return (
-                <li className="h-[18px] w-[18px]" key={index}>
+                <li className="h-[22px] w-[22px]" key={index}>
                   <Link
                     className="group flex h-full w-full items-center justify-center"
                     to={url}
                     target="_blank"
                   >
                     <span className="sr-only">Find us at {name}</span>
-                    <Icon className="h-[18px] w-[18px] text-primary-1 transition-opacity group-hover:opacity-60" />
+                    <Icon className="h-[22px] w-[22px] text-primary-1 transition-opacity group-hover:opacity-60" />
                   </Link>
                 </li>
               );

@@ -19,6 +19,11 @@ import TwitterIcon from 'icons/social/x.inline.svg';
 
 import Button from '../button';
 
+const classesForIcons = {
+  link: 'group block',
+  icon: 'h-[22px] w-[22px] text-primary-1 transition-opacity group-hover:opacity-60',
+};
+
 const defaultModalAnimation = {
   transition: { duration: 0.2, delay: 0.1, ease: 'easeInOut' },
   initial: { opacity: 0, scale: 0.9, y: 20 },
@@ -242,16 +247,16 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   className="text-lg leading-normal sm:text-base"
                   dangerouslySetInnerHTML={{ __html: content }}
                 />
-                <ul className="mt-8 flex items-center gap-5">
+                <ul className="mt-8 flex items-center gap-[18px]">
                   {twitterUrl && (
                     <li>
                       <a
-                        className="group block"
+                        className={clsx(classesForIcons.link)}
                         href={twitterUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <TwitterIcon className="h-[18px] w-[18px] text-primary-1 transition-opacity group-hover:opacity-60" />
+                        <TwitterIcon className={clsx(classesForIcons.icon)} />
                         <span className="sr-only">Twitter link</span>
                       </a>
                     </li>
@@ -259,12 +264,12 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   {linkedInUrl && (
                     <li>
                       <a
-                        className="group block"
+                        className={clsx(classesForIcons.link)}
                         href={linkedInUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <LinkedInIcon className="h-[18px] w-[18px] text-primary-1 transition-opacity group-hover:opacity-60" />
+                        <LinkedInIcon className={clsx(classesForIcons.icon)} />
                         <span className="sr-only">Linkedin link</span>
                       </a>
                     </li>
@@ -272,12 +277,12 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   {githubUrl && (
                     <li>
                       <a
-                        className="group block"
+                        className={clsx(classesForIcons.link)}
                         href={githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <GithubIcon className="h-[18px] w-[18px] text-primary-1 transition-opacity group-hover:opacity-60" />
+                        <GithubIcon className={clsx(classesForIcons.icon)} />
                         <span className="sr-only">Github link</span>
                       </a>
                     </li>
@@ -285,12 +290,12 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   {communityUrl && (
                     <li>
                       <a
-                        className="group block"
+                        className={clsx(classesForIcons.link)}
                         href={communityUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <CommunityIcon className="h-[18px] w-[18px] text-primary-1 transition-opacity group-hover:opacity-60" />
+                        <CommunityIcon className={clsx(classesForIcons.icon)} />
                         <span className="sr-only">Cloud native community link</span>
                       </a>
                     </li>
@@ -298,12 +303,12 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   {instagramUrl && (
                     <li>
                       <a
-                        className="group block"
+                        className={clsx(classesForIcons.link)}
                         href={instagramUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <InstagramIcon className="h-[18px] w-[18px] text-primary-1 transition-opacity group-hover:opacity-60" />
+                        <InstagramIcon className={clsx(classesForIcons.icon)} />
                         <span className="sr-only">Instagram link</span>
                       </a>
                     </li>
@@ -311,12 +316,12 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
                   {websiteUrl && (
                     <li>
                       <a
-                        className="group block"
+                        className={clsx(classesForIcons.link)}
                         href={websiteUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <WebsiteIcon className="h-[18px] w-[18px] text-primary-1 transition-opacity group-hover:opacity-60" />
+                        <WebsiteIcon className={clsx(classesForIcons.icon)} />
                         <span className="sr-only">Personal website link</span>
                       </a>
                     </li>
