@@ -5,10 +5,10 @@ import React from 'react';
 import { LinkedinShareButton, TwitterShareButton, FacebookShareButton } from 'react-share';
 
 import useCopyToClipboard from 'hooks/use-copy-to-clipboard';
-import CopyIcon from 'icons/copy-pixel-icon.inline.svg';
-import FacebookIcon from 'icons/facebook-pixel-logo.inline.svg';
-import LinkedinIcon from 'icons/linkedin-pixel-logo.inline.svg';
-import TwitterIcon from 'icons/x-pixel-logo.inline.svg';
+import CopyIcon from 'icons/pixel/copy-pixel-icon.inline.svg';
+import FacebookIcon from 'icons/pixel/facebook-pixel-logo.inline.svg';
+import LinkedinIcon from 'icons/pixel/linkedin-pixel-logo.inline.svg';
+import TwitterIcon from 'icons/pixel/x-pixel-logo.inline.svg';
 
 import AmazonIcon from './svg/amazon-icon.inline.svg';
 import AppleIcon from './svg/apple-icon.inline.svg';

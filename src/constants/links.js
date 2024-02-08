@@ -77,4 +77,8 @@ export default {
     to: 'https://www.youtube.com/@KCDZH',
     target: '_blank',
   },
+  github: {
+    to: 'https://github.com/KCDZurich',
+    target: '_blank',
+  },
 };
