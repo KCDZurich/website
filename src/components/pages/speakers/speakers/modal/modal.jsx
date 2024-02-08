@@ -3,15 +3,16 @@ import { AnimatePresence, m, LazyMotion, domAnimation, useReducedMotion } from '
 import PropTypes from 'prop-types';
 import React, { useId } from 'react';
 
+import FacebookIcon from 'icons/social/facebook.inline.svg';
+import GithubIcon from 'icons/social/github.inline.svg';
+import InstagramIcon from 'icons/social/instagram.inline.svg';
+import LinkedInIcon from 'icons/social/linkedin.inline.svg';
+import LinkIcon from 'icons/social/other.inline.svg';
+import SessionizeIcon from 'icons/social/sessionize.inline.svg';
+import TwitterIcon from 'icons/social/x.inline.svg';
+import YoutubeIcon from 'icons/social/youtube.inline.svg';
+
 import iconClose from './images/close.svg';
-import FacebookIcon from './images/facebook.inline.svg';
-import GithubIcon from './images/github.inline.svg';
-import InstagramIcon from './images/instagram.inline.svg';
-import LinkIcon from './images/link.inline.svg';
-import LinkedInIcon from './images/linkedin.inline.svg';
-import SessionizeIcon from './images/sessionize.inline.svg';
-import TwitterIcon from './images/x.inline.svg';
-import YoutubeIcon from './images/youtube.inline.svg';
 
 const icons = {
   Twitter: TwitterIcon,
@@ -115,7 +116,7 @@ const Modal = ({ isVisible, modalData, onModalHide }) => {
               className="mt-7 text-lg leading-normal sm:text-base"
               dangerouslySetInnerHTML={{ __html: bio }}
             />
-            <ul className="mt-7 flex items-center gap-5">
+            <ul className="mt-7 flex items-center gap-[18px]">
               {links.map(({ title, url, linkType }, index) => {
                 let Icon = icons[linkType];
 
@@ -126,7 +127,7 @@ const Modal = ({ isVisible, modalData, onModalHide }) => {
                 return (
                   <li key={index}>
                     <a
-                      className="block text-primary-1 transition-colors duration-200 hover:text-blue-1"
+                      className="block text-primary-1 transition-opacity hover:opacity-60"
                       href={url}
                       target="_blank"
                       rel="noopener noreferrer"
