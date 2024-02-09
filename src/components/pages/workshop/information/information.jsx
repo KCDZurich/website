@@ -4,7 +4,6 @@ import React from 'react';
 import Button from 'components/shared/button';
 import Argo from 'icons/argo-horizontal-logo.svg';
 import Audience from 'icons/audience-icon.inline.svg';
-// import Aws from 'icons/aws-logo.svg';
 import Calendar from 'icons/calendar-icon.inline.svg';
 import Cilium from 'icons/cilium-horizontal-logo.svg';
 import Clock from 'icons/clock-icon.inline.svg';
@@ -22,7 +21,6 @@ import DanielStrohecker from './images/daniel-strohecker-photo.jpg';
 import DavidSchneider from './images/david-schneider-photo.jpg';
 import GabrielGraf from './images/gabriel-graf-photo.jpg';
 import LorenzBischof from './images/lorenz-bischof-photo.jpg';
-import NemanjaKostic from './images/nemanja-kostic-photo.jpg';
 import RaffaelHertle from './images/raffael-hertle-photo.jpg';
 import SebastianPlattner from './images/sebastian-plattner-photo.jpg';
 
@@ -183,37 +181,6 @@ const Content = [
       },
     ],
   },
-  {
-    name: 'aws',
-    description:
-      'The workshop consists of a mix of presentations and hands-on labs in order to teach the content in the pragmatic way. We will be using AWS serverless services, especially some of the new and recently released AWS services:',
-    features: [
-      'Designing Figma screen with <strong>Cloudscape</strong> design system',
-      'Automatic conversion of design into React code with <strong>AWS Amplify Studio</strong>',
-      'Local backend code development with <strong>AWS SAM</strong> and <strong>AWS Toolkit</strong>',
-      'Using ML-assisted code writing with <strong>AWS CodeWhisperer</strong>',
-      'Code review with <strong>AWS CodeGuru</strong>',
-      'Code deployment using <strong>AWS CodeCatalyst</strong>',
-      'Visualizing code structure with <strong>AWS Application Composer</strong>',
-      'Infrastructure as code with <strong>AWS CDK</strong>',
-    ],
-    requirements: 'Participants will need a laptop with direct access to the Internet.',
-    audience:
-      'The workshop is aimed at developers who want to learn the full end-to-end development and deployment process from a local machine to an AWS account.',
-    conditions: {
-      description: 'At least 10 Participants are required for the workshop to take place.',
-      seats: 18,
-      costs: '650 CHF',
-      description1: 'Includes catering, documentation and an AWS account',
-    },
-    trainers: [
-      {
-        name: 'Nemanja Kostic',
-        photo: NemanjaKostic,
-        position: 'arch.cloud co-founder',
-      },
-    ],
-  },
 ];
 
 const Cards = [
@@ -265,22 +232,10 @@ const Cards = [
     price: 'CHF 650',
     url: 'https://workshops.kcdzurich.ch/',
   },
-  // {
-  //   name: 'aws',
-  //   icon: Aws,
-  //   iconClassname: 'h-16 w-[106px]',
-  //   title: 'AWS Serverless',
-  //   description:
-  //     'This one-day training in English will demonstrate how to build your startup application, from a napkin idea to a fully functional production deployment, using AWS serverless services.',
-  //   date: 'June 15, 2023',
-  //   time: '09:00 - 16:45',
-  //   price: 'CHF 650',
-  //   url: 'https://workshops.kcdzurich.ch/',
-  // },
 ];
 
 const Information = ({ itemName }) => (
-  <section className="safe-paddings pt-20 pb-48">
+  <section className="safe-paddings pb-48 pt-20">
     <div className="container grid grid-cols-12 md:flex md:flex-col">
       <div className="content col-start-2 col-end-7 xl:col-start-1 lg:col-end-8">
         <ul className="ml-3">
@@ -293,10 +248,10 @@ const Information = ({ itemName }) => (
                 </div>
                 <p className="mt-6 text-lg leading-normal text-primary-1">{description}</p>
 
-                <ul className="mt-5 space-y-2 border-b border-gray-10 pl-4 pb-4">
+                <ul className="mt-5 space-y-2 border-b border-gray-10 pb-4 pl-4">
                   {features.map((item, index) => (
                     <li
-                      className="relative before:absolute before:top-2.5 before:-left-4 before:h-2 before:w-2 before:rounded-full before:bg-blue-1 before:content-['']"
+                      className="relative before:absolute before:-left-4 before:top-2.5 before:h-2 before:w-2 before:rounded-full before:bg-blue-1 before:content-['']"
                       key={index}
                     >
                       <p
@@ -350,10 +305,10 @@ const Information = ({ itemName }) => (
                   <Trainer className="mr-3 h-[22px] w-[18px]" />
                   <span className="text-2xl font-bold leading-normal text-primary-1">Trainer</span>
                 </div>
-                <ul className="mt-5 flex space-x-8 sm:flex-wrap sm:space-y-4 sm:space-x-0">
+                <ul className="mt-5 flex space-x-8 sm:flex-wrap sm:space-x-0 sm:space-y-4">
                   {trainers.map(({ name, photo, position }, index) => (
                     <li
-                      className="mt-0 leading-normal text-primary-1 sm:w-auto sm:max-w-[200px] sm:first:mr-8 sm:first:mb-6"
+                      className="mt-0 leading-normal text-primary-1 sm:w-auto sm:max-w-[200px] sm:first:mb-6 sm:first:mr-8"
                       key={index}
                     >
                       <img
@@ -400,7 +355,7 @@ const Information = ({ itemName }) => (
                 <Clock className="h-4 w-4" />
                 <time className="ml-2.5 font-bold leading-normal">{time}</time>
               </div>
-              <div className="mt-6 mb-8 flex w-fit items-center justify-center">
+              <div className="mb-8 mt-6 flex w-fit items-center justify-center">
                 <Coins className="h-4 w-4" />
                 <span className="ml-2.5 font-bold leading-normal">{price}</span>
               </div>

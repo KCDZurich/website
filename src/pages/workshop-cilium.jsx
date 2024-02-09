@@ -2,24 +2,23 @@
 
 import React from 'react';
 
+import Hero from 'components/pages/workshop/hero';
+import Information from 'components/pages/workshop/information';
 import Layout from 'components/shared/layout';
 import SEO from 'components/shared/seo';
-import Hero from 'components/shared/workshop-hero/hero';
-import Information from 'components/shared/workshop-information';
 import SEO_DATA from 'constants/seo-data';
+import LIST from 'constants/workshops';
 
-const TITLE = 'Cilium Basics';
+const WorkshopGo = () => {
+  const data = LIST.find(({ name }) => name === 'cilium');
 
-const DESCRIPTION = [
-  'This one-day training in English or German provides a practical and clear introduction to Cilium, an eBFP-based networking, observability and security stack for cloud and on-premise infrastructure.',
-];
-
-const WorkshopGo = () => (
-  <Layout>
-    <Hero title={TITLE} description={DESCRIPTION} />
-    <Information itemName="cilium" />
-  </Layout>
-);
+  return (
+    <Layout>
+      <Hero title={data.page.title} description={data.page.description} />
+      <Information itemName="cilium" />
+    </Layout>
+  );
+};
 
 export default WorkshopGo;
 

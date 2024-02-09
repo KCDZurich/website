@@ -2,25 +2,23 @@
 
 import React from 'react';
 
+import Hero from 'components/pages/workshop/hero';
+import Information from 'components/pages/workshop/information';
 import Layout from 'components/shared/layout';
 import SEO from 'components/shared/seo';
-import Hero from 'components/shared/workshop-hero/hero';
-import Information from 'components/shared/workshop-information';
 import SEO_DATA from 'constants/seo-data';
+import LIST from 'constants/workshops';
 
-const TITLE = 'Kubernetes Basics';
+const WorkshopGo = () => {
+  const data = LIST.find(({ name }) => name === 'kubernetes');
 
-const DESCRIPTION = [
-  'Container technologies, Kubernetes above all, have become more important in recent years and now are a significant driver of digitalization.',
-  'This one-day training in German or English provides a practical and easy-to-understand introduction to Kubernetes.',
-];
-
-const WorkshopGo = () => (
-  <Layout>
-    <Hero title={TITLE} description={DESCRIPTION} />
-    <Information itemName="kubernetes" />
-  </Layout>
-);
+  return (
+    <Layout>
+      <Hero title={data.page.title} description={data.page.description} />
+      <Information itemName="kubernetes" />
+    </Layout>
+  );
+};
 
 export default WorkshopGo;
 
