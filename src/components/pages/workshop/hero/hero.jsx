@@ -2,17 +2,24 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const Hero = ({ title, description }) => (
-  <section className="safe-paddings relative bg-[#EDC3C7] bg-opacity-10 pb-20 pt-24">
-    <div className="absolute -top-[17%] left-[10%] h-[514px] w-[514px] translate-x-1/2 bg-white blur-[100px]" />
-    <div className="container text-bg-primary-1 relative mx-auto mt-4 max-w-[1008px] text-left text-primary-1 xl:max-w-[1216px]">
-      <h1 className="text-6xl font-bold leading-denser">{title}</h1>
-      <ul className="mt-8 text-lg leading-normal">
-        {description.map((item, index) => (
-          <li key={index}>
-            <p className="mt-5">{item}</p>
-          </li>
-        ))}
-      </ul>
+  <section className="safe-paddings relative pt-4">
+    <div className="container-xl bg-blue-light bg-opacity-90">
+      <div className="container grid grid-cols-12 py-[72px] lg:!px-4 lg:py-14 md:!px-2 md:py-14 xs:!px-0">
+        <h1 className="col-span-4 font-sans-cyber text-[48px] font-bold lowercase leading-tight text-primary-1 lg:text-[40px] md:col-span-12 md:text-[32px]">
+          {title}
+        </h1>
+        <ul className="col-span-8 flex flex-col gap-y-5 md:col-span-12 md:mt-4">
+          {description.map((item, index) => (
+            <li key={index}>
+              <p
+                className="text-2xl leading-normal text-primary-1 lg:text-xl sm:text-lg"
+                dangerouslySetInnerHTML={{ __html: item }}
+                key={index}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   </section>
 );

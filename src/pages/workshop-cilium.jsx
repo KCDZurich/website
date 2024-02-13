@@ -15,7 +15,7 @@ const WorkshopGo = () => {
   return (
     <Layout>
       <Hero title={data.page.title} description={data.page.description} />
-      <Information itemName="cilium" />
+      <Information data={data} />
     </Layout>
   );
 };

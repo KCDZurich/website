@@ -26,6 +26,7 @@ const WorkshopCard = ({
   time,
   price,
   seats,
+  buttonTitle,
 }) => {
   const optionsData = {
     date,
@@ -35,10 +36,10 @@ const WorkshopCard = ({
   };
 
   return (
-    <div className="flex h-full w-[384px] flex-col bg-white p-8">
+    <div className="flex h-full max-w-[384px] flex-col border border-primary-1 bg-white p-8 shadow-[20px_20px_0px_0px_rgba(217,217,217,0.3)] outline outline-4 outline-offset-0 outline-white">
       <img className={iconClassname} src={icon} width="auto" height="auto" loading="lazy" alt="" />
       <h4 className="mt-8 text-xl font-bold leading-normal text-primary-1">{title}</h4>
-      <p className="mt-1.5 text-base leading-normal text-primary-1">{description}</p>
+      <p className="mt-1.5 flex-1 text-base leading-normal text-primary-1">{description}</p>
       <div className="mb-12 mt-7 flex flex-col gap-y-2.5">
         {options.map((item, index) => {
           const Icon = icons[item];
@@ -54,7 +55,7 @@ const WorkshopCard = ({
         })}
       </div>
       <Button className="mt-auto" size="sm" theme="primary" to={url}>
-        More info
+        {buttonTitle}
       </Button>
     </div>
   );
@@ -64,12 +65,13 @@ WorkshopCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
+  buttonTitle: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   iconClassname: PropTypes.string,
   date: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
-  seats: PropTypes.string.isRequired,
+  seats: PropTypes.number.isRequired,
 };
 
 WorkshopCard.defaultProps = {

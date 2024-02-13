@@ -20,7 +20,6 @@ export default [
     price: 'CHF 650',
     date: 'June 14, 2023',
     time: '09:00 - 16:45',
-    url: 'https://workshops.kcdzurich.ch/',
     card: {
       title: 'GitOps with ArgoCD',
       description:
@@ -79,7 +78,6 @@ export default [
     price: 'CHF 650',
     date: 'June 14, 2023',
     time: '09:00 - 16:45',
-    url: 'https://workshops.kcdzurich.ch/',
     card: {
       title: 'Go Basics',
       description:
@@ -134,7 +132,6 @@ export default [
     price: 'CHF 650',
     date: 'June 14, 2023',
     time: '09:00 - 16:45',
-    url: 'https://workshops.kcdzurich.ch/',
     card: {
       title: 'Cilium Basics',
       description:
@@ -190,7 +187,6 @@ export default [
     price: 'CHF 650',
     date: 'June 14, 2023',
     time: '09:00 - 16:45',
-    url: 'https://workshops.kcdzurich.ch/',
     card: {
       title: 'Kubernetes Basics',
       description:

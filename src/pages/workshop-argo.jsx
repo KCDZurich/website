@@ -15,7 +15,7 @@ const WorkshopArgo = () => {
   return (
     <Layout>
       <Hero title={data.page.title} description={data.page.description} />
-      <Information itemName="argo" />
+      <Information data={data} />
     </Layout>
   );
 };
