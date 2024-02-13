@@ -239,7 +239,8 @@ const Sponsors = () => {
                   'sm:[border-image-width:5px_5px_0_5px]': index === 1,
                   'sm:[border-image-width:5px_0_5px_5px]': index === 2,
                   'sm:[border-image-width:5px_5px_5px_5px]': index === 3,
-                  '[border-image-width:5px_5px_0_5px]': specialSponsors.length - 1 === index,
+                  'sm:[border-image-width:0_5px_5px_5px]': index === 4,
+                  '[border-image-width:5px_5px_5px_5px]': specialSponsors.length - 1 === index,
                 })}
                 key={index}
               >
@@ -292,6 +293,7 @@ const Sponsors = () => {
                     '[border-image-width:5px_5px_5px_5px] sm:[border-image-width:5px_5px_5px_5px]':
                       bronzeSponsors.length - 1 === index,
                     'sm:[border-image-width:5px_5px_0_5px]': index === 1,
+                    'sm:[border-image-width:5px_0_5px_5px]': index === 2,
                     'sm:[border-image-width:5px_5px_5px_5px]': index === 3,
                   }
                 )}
