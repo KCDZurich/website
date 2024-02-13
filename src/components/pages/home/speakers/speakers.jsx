@@ -38,7 +38,7 @@ const Speakers = () => {
         <ul className="mt-14 grid w-full grid-cols-4 justify-items-center gap-14 lg:grid-cols-3 md:mt-9 md:grid-cols-2 md:gap-9 sm:mt-8 sm:gap-8 xs:grid-cols-1">
           {!error && !speakers.length && (
             <>
-              {Array.from({ length: 4 }, (_, index) => index).map((item) => (
+              {Array.from({ length: 8 }, (_, index) => index).map((item) => (
                 <li className="flex max-w-[248px] animate-pulse flex-col items-center" key={item}>
                   <div className="relative h-[280px] w-[240px]">
                     <img

@@ -226,6 +226,57 @@ const Sponsors = () => {
               </span>
               <h3
                 className={clsx(
+                  activeColor === 'special' && 'text-[#5E88C8]',
+                  'ml-4 font-mono-cyber text-3xl font-bold uppercase leading-normal tracking-wide lg:text-2xl md:text-xl sm:text-2xl'
+                )}
+              >
+                Special
+              </h3>
+            </li>
+            {specialSponsors.map(({ icon, url, name }, index) => (
+              <li
+                className={clsx('dash-border dash-border-right-and-bottom-none', {
+                  'sm:[border-image-width:5px_5px_0_5px]': index === 1,
+                  'sm:[border-image-width:5px_0_5px_5px]': index === 2,
+                  'sm:[border-image-width:5px_5px_5px_5px]': index === 3,
+                  '[border-image-width:5px_5px_0_5px]': specialSponsors.length - 1 === index,
+                })}
+                key={index}
+              >
+                <a
+                  className="flex h-full w-full items-center justify-center px-4 py-3.5 transition-all duration-200 hover:bg-primary-1 hover:bg-opacity-10"
+                  href={url}
+                  target="_blank"
+                  rel="nofollow noreferrer"
+                  onMouseEnter={() => setActiveColor('special')}
+                  onMouseLeave={() => setActiveColor('')}
+                >
+                  <span className="sr-only">{`${name} partner link`}</span>
+                  <img
+                    className="sm:max-h-[48px] sm:w-auto"
+                    src={icon}
+                    width={176}
+                    height={64}
+                    loading="lazy"
+                    alt=""
+                  />
+                </a>
+              </li>
+            ))}
+
+            <li className="relative col-end-2 flex items-center before:absolute before:left-0 before:top-0 before:h-1/2 before:w-[2px] before:bg-[#ADCFD3] sm:col-span-full sm:mb-3 sm:mt-6 sm:before:hidden">
+              <span className="relative z-10 bg-[#EFFAFB] py-3">
+                <img
+                  className="md:max-w-[15px] sm:max-w-[23px]"
+                  src={separator}
+                  width={28}
+                  height={19}
+                  loading="lazy"
+                  alt=""
+                />
+              </span>
+              <h3
+                className={clsx(
                   activeColor === 'bronze' && 'text-[#B09886]',
                   'ml-4 font-mono-cyber text-3xl font-bold uppercase leading-normal tracking-wide transition-colors duration-200 lg:text-2xl md:text-xl sm:text-2xl'
                 )}
@@ -235,12 +286,15 @@ const Sponsors = () => {
             </li>
             {bronzeSponsors.map(({ icon, url, name }, index) => (
               <li
-                className={clsx('dash-border dash-border-right-and-bottom-none', {
-                  'sm:[border-image-width:5px_5px_0_5px]': index === 1,
-                  'sm:[border-image-width:5px_0_5px_5px]': index === 2,
-                  'sm:[border-image-width:5px_5px_5px_5px]': index === 3,
-                  '[border-image-width:5px_5px_0_5px]': bronzeSponsors.length - 1 === index,
-                })}
+                className={clsx(
+                  'dash-border dash-border-right-none sm:dash-border-right-and-bottom-none',
+                  {
+                    '[border-image-width:5px_5px_5px_5px] sm:[border-image-width:5px_5px_5px_5px]':
+                      bronzeSponsors.length - 1 === index,
+                    'sm:[border-image-width:5px_5px_0_5px]': index === 1,
+                    'sm:[border-image-width:5px_5px_5px_5px]': index === 3,
+                  }
+                )}
                 key={index}
               >
                 {url ? (
@@ -275,60 +329,6 @@ const Sponsors = () => {
                     />
                   </span>
                 )}
-              </li>
-            ))}
-
-            <li className="relative col-end-2 flex items-center before:absolute before:left-0 before:top-0 before:h-1/2 before:w-[2px] before:bg-[#ADCFD3] sm:col-span-full sm:mb-3 sm:mt-6 sm:before:hidden">
-              <span className="relative z-10 bg-[#EFFAFB] py-3">
-                <img
-                  className="md:max-w-[15px] sm:max-w-[23px]"
-                  src={separator}
-                  width={28}
-                  height={19}
-                  loading="lazy"
-                  alt=""
-                />
-              </span>
-              <h3
-                className={clsx(
-                  activeColor === 'special' && 'text-[#5E88C8]',
-                  'ml-4 font-mono-cyber text-3xl font-bold uppercase leading-normal tracking-wide lg:text-2xl md:text-xl sm:text-2xl'
-                )}
-              >
-                Special
-              </h3>
-            </li>
-            {specialSponsors.map(({ icon, url, name }, index) => (
-              <li
-                className={clsx(
-                  'dash-border dash-border-right-none sm:dash-border-right-and-bottom-none',
-                  {
-                    '[border-image-width:5px_5px_5px_5px] sm:[border-image-width:5px_5px_5px_5px]':
-                      specialSponsors.length - 1 === index,
-                    'sm:[border-image-width:5px_5px_0_5px]': index === 1,
-                    'sm:[border-image-width:5px_5px_5px_5px]': index === 3,
-                  }
-                )}
-                key={index}
-              >
-                <a
-                  className="flex h-full w-full items-center justify-center px-4 py-3.5 transition-all duration-200 hover:bg-primary-1 hover:bg-opacity-10"
-                  href={url}
-                  target="_blank"
-                  rel="nofollow noreferrer"
-                  onMouseEnter={() => setActiveColor('special')}
-                  onMouseLeave={() => setActiveColor('')}
-                >
-                  <span className="sr-only">{`${name} partner link`}</span>
-                  <img
-                    className="sm:max-h-[48px] sm:w-auto"
-                    src={icon}
-                    width={176}
-                    height={64}
-                    loading="lazy"
-                    alt=""
-                  />
-                </a>
               </li>
             ))}
           </ul>
