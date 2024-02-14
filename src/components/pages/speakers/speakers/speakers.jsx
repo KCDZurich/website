@@ -2,13 +2,13 @@
 import React, { useState } from 'react';
 
 import Button from 'components/shared/button';
-import useSpeakers from 'hooks/use-speakers';
+import useSessionize from 'hooks/use-sessionize';
 
 import iconCross from './images/cross.svg';
 import Modal from './modal';
 
 const Speakers = () => {
-  const { speakers, error } = useSpeakers(false);
+  const { acceptedSpeakers, error } = useSessionize(true, true, true);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalDataIndex, setModalDataIndex] = useState(null);
 
@@ -71,120 +71,122 @@ const Speakers = () => {
               <h2 className="text-base font-semibold leading-normal text-primary-1/60">Info</h2>
             </div>
           </li>
-          {!error && !speakers.length && (
+          {!error && !acceptedSpeakers.length && (
             <li className="relative flex items-center justify-center px-7 py-6 text-base font-medium text-gray-7 after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-horizontal-dashed-line after:bg-auto after:bg-center sm:p-4">
               Loading...
             </li>
           )}
-          {error && !speakers.length && (
+          {error && !acceptedSpeakers.length && (
             <li className="relative flex items-center justify-center px-7 py-6 text-base font-medium text-red after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-horizontal-dashed-line after:bg-auto after:bg-center sm:p-4">
               Loading error
             </li>
           )}
-          {!error && speakers.length > 0 && (
+          {!error && acceptedSpeakers.length > 0 && (
             <>
-              {speakers.map(({ profilePicture, fullName, tagLine, bio, sessions }, index) => {
-                const last = speakers.length - 1 === index;
-                return (
-                  <li
-                    className="relative grid grid-cols-3 after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-horizontal-dashed-line after:bg-auto after:bg-center sm:grid-cols-1 sm:flex-col"
-                    key={index}
-                  >
-                    <div className="relative px-8 py-6 after:absolute after:right-0 after:top-0 after:h-full after:w-[1px] after:bg-vertical-dashed-line sm:px-4 sm:pb-[18px] sm:pt-4 sm:after:hidden">
-                      {last && (
-                        <img
-                          className="absolute -bottom-2 -left-2 h-[17px] w-[17px] sm:hidden"
-                          src={iconCross}
-                          width={17}
-                          height={17}
-                          loading="lazy"
-                          alt=""
-                        />
-                      )}
-                      <div className="flex w-full flex-1 flex-row gap-x-5">
-                        <div className="relative h-[52px] w-[52px] flex-none">
-                          <div className="absolute inset-0 z-10 h-full w-full bg-primary-1 opacity-50 mix-blend-color sm:hidden" />
+              {acceptedSpeakers.map(
+                ({ profilePicture, fullName, tagLine, bio, sessions }, index) => {
+                  const last = acceptedSpeakers.length - 1 === index;
+                  return (
+                    <li
+                      className="relative grid grid-cols-3 after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-horizontal-dashed-line after:bg-auto after:bg-center sm:grid-cols-1 sm:flex-col"
+                      key={index}
+                    >
+                      <div className="relative px-8 py-6 after:absolute after:right-0 after:top-0 after:h-full after:w-[1px] after:bg-vertical-dashed-line sm:px-4 sm:pb-[18px] sm:pt-4 sm:after:hidden">
+                        {last && (
                           <img
-                            className="h-[52px] w-[52px] brightness-110 saturate-0"
-                            src={profilePicture}
-                            width={52}
-                            height={52}
-                            alt={fullName}
-                            loading={index <= 5 ? 'eager' : 'lazy'}
+                            className="absolute -bottom-2 -left-2 h-[17px] w-[17px] sm:hidden"
+                            src={iconCross}
+                            width={17}
+                            height={17}
+                            loading="lazy"
+                            alt=""
                           />
+                        )}
+                        <div className="flex w-full flex-1 flex-row gap-x-5">
+                          <div className="relative h-[52px] w-[52px] flex-none">
+                            <div className="absolute inset-0 z-10 h-full w-full bg-primary-1 opacity-50 mix-blend-color sm:hidden" />
+                            <img
+                              className="h-[52px] w-[52px] brightness-110 saturate-0"
+                              src={profilePicture}
+                              width={52}
+                              height={52}
+                              alt={fullName}
+                              loading={index <= 5 ? 'eager' : 'lazy'}
+                            />
+                          </div>
+                          <button
+                            className="group flex flex-col gap-y-2"
+                            type="button"
+                            onClick={() => handleModalShow(index)}
+                          >
+                            <h2 className="text-left text-lg font-bold uppercase leading-snug text-primary-1 transition-colors duration-200 group-hover:text-orange md:text-base">
+                              {fullName}
+                            </h2>
+                            <p className="text-left text-sm font-normal leading-tight text-primary-1/60 transition-colors duration-200">
+                              {tagLine}
+                            </p>
+                          </button>
                         </div>
-                        <button
-                          className="group flex flex-col gap-y-2"
+                      </div>
+                      <div className="relative flex flex-col px-8 py-6 after:absolute after:right-0 after:top-0 after:h-full after:w-[1px] after:bg-vertical-dashed-line sm:px-4 sm:py-0 sm:after:hidden">
+                        {last && (
+                          <img
+                            className="absolute -bottom-2 -left-2 h-[17px] w-[17px] sm:hidden"
+                            src={iconCross}
+                            width={17}
+                            height={17}
+                            loading="lazy"
+                            alt=""
+                          />
+                        )}
+                        <p className="text-xl font-bold leading-snug text-primary-1 transition-colors duration-200 lg:text-lg">
+                          {sessions[0].name}
+                        </p>
+                      </div>
+                      <div className="relative flex flex-col gap-y-2 px-8 py-6 sm:px-4 sm:pb-4 sm:pt-3">
+                        {last && (
+                          <>
+                            <img
+                              className="absolute -bottom-2 -left-2 h-[17px] w-[17px]"
+                              src={iconCross}
+                              width={17}
+                              height={17}
+                              loading="lazy"
+                              alt=""
+                            />
+                            <img
+                              className="absolute -bottom-2 -right-2 h-[17px] w-[17px]"
+                              src={iconCross}
+                              width={17}
+                              height={17}
+                              loading="lazy"
+                              alt=""
+                            />
+                          </>
+                        )}
+                        <p className="line-clamp-2 text-lg font-normal leading-normal text-primary-1 transition-colors duration-200 lg:text-base">
+                          {bio}
+                        </p>
+                        <Button
+                          className="-ml-2 max-w-max flex-none justify-start !text-xl -tracking-[.05em] md:!h-6 sm:!text-lg"
+                          theme="link-red"
+                          size="lg"
                           type="button"
                           onClick={() => handleModalShow(index)}
                         >
-                          <h2 className="text-left text-lg font-bold uppercase leading-snug text-primary-1 transition-colors duration-200 group-hover:text-orange md:text-base">
-                            {fullName}
-                          </h2>
-                          <p className="text-left text-sm font-normal leading-tight text-primary-1/60 transition-colors duration-200">
-                            {tagLine}
-                          </p>
-                        </button>
+                          Learn more
+                        </Button>
                       </div>
-                    </div>
-                    <div className="relative flex flex-col px-8 py-6 after:absolute after:right-0 after:top-0 after:h-full after:w-[1px] after:bg-vertical-dashed-line sm:px-4 sm:py-0 sm:after:hidden">
-                      {last && (
-                        <img
-                          className="absolute -bottom-2 -left-2 h-[17px] w-[17px] sm:hidden"
-                          src={iconCross}
-                          width={17}
-                          height={17}
-                          loading="lazy"
-                          alt=""
-                        />
-                      )}
-                      <p className="text-xl font-bold leading-snug text-primary-1 transition-colors duration-200 lg:text-lg">
-                        {sessions[0].name}
-                      </p>
-                    </div>
-                    <div className="relative flex flex-col gap-y-2 px-8 py-6 sm:px-4 sm:pb-4 sm:pt-3">
-                      {last && (
-                        <>
-                          <img
-                            className="absolute -bottom-2 -left-2 h-[17px] w-[17px]"
-                            src={iconCross}
-                            width={17}
-                            height={17}
-                            loading="lazy"
-                            alt=""
-                          />
-                          <img
-                            className="absolute -bottom-2 -right-2 h-[17px] w-[17px]"
-                            src={iconCross}
-                            width={17}
-                            height={17}
-                            loading="lazy"
-                            alt=""
-                          />
-                        </>
-                      )}
-                      <p className="line-clamp-2 text-lg font-normal leading-normal text-primary-1 transition-colors duration-200 lg:text-base">
-                        {bio}
-                      </p>
-                      <Button
-                        className="-ml-2 max-w-max flex-none justify-start !text-xl -tracking-[.05em] md:!h-6 sm:!text-lg"
-                        theme="link-red"
-                        size="lg"
-                        type="button"
-                        onClick={() => handleModalShow(index)}
-                      >
-                        Learn more
-                      </Button>
-                    </div>
-                  </li>
-                );
-              })}
+                    </li>
+                  );
+                }
+              )}
             </>
           )}
         </ul>
       </div>
       <Modal
-        modalData={speakers[modalDataIndex] || {}}
+        modalData={acceptedSpeakers[modalDataIndex] || {}}
         isVisible={isModalVisible}
         isPresentationShow
         onModalHide={handleModalHide}
