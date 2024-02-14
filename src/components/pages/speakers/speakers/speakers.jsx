@@ -8,7 +8,7 @@ import iconCross from './images/cross.svg';
 import Modal from './modal';
 
 const Speakers = () => {
-  const { acceptedSpeakers, error } = useSessionize(true, true, true);
+  const { acceptedSpeakers, error } = useSessionize(false, true);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalDataIndex, setModalDataIndex] = useState(null);
 

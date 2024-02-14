@@ -2,11 +2,7 @@ import { useEffect, useState, useCallback } from 'react';
 
 import endpoints from 'constants/sessionize';
 
-export default function useSessionize(
-  getSessions = false,
-  getSpeakers = false,
-  getAcceptedSpeakers = false
-) {
+export default function useSessionize(getTopSpeakers = false, getAcceptedSpeakers = false) {
   const [sessions, setSessions] = useState([]);
   const [speakers, setSpeakers] = useState([]);
   const [topSpeakers, setTopSpeakers] = useState([]);
@@ -50,14 +46,14 @@ export default function useSessionize(
   }, []);
 
   useEffect(() => {
-    if (getSessions) {
+    if (getAcceptedSpeakers) {
       fetchSessions();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fetchSessions]);
 
   useEffect(() => {
-    if (getSpeakers) {
+    if (getTopSpeakers || getAcceptedSpeakers) {
       fetchSpeakers();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -76,5 +72,5 @@ export default function useSessionize(
     }
   }, [getAcceptedSpeakers, sessions, speakers]);
 
-  return { sessions, speakers, topSpeakers, acceptedSpeakers, error };
+  return { topSpeakers, acceptedSpeakers, error };
 }

@@ -13,7 +13,7 @@ const DESCRIPTION =
 const BTN_TITLE = 'All speakers';
 
 const Speakers = () => {
-  const { topSpeakers, error } = useSessionize(false, true);
+  const { topSpeakers, error } = useSessionize(true, false);
 
   return (
     <section className="safe-paddings relative pt-[120px] lg:pt-16 md:pt-10 sm:pt-8">
