@@ -12,7 +12,9 @@ export default function useSpeakers(topSpeakers = false) {
 
       if (response.ok) {
         const data = await response.json();
-        setSpeakers(topSpeakers ? data.filter(({ isTopSpeaker }) => isTopSpeaker) : data);
+        setSpeakers(
+          topSpeakers ? data.filter(({ isTopSpeaker }) => isTopSpeaker).slice(0, 8) : data
+        );
       } else {
         throw new Error(`Error: ${response.status}`);
       }
