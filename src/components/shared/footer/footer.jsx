@@ -67,7 +67,7 @@ const Footer = () => {
           </ul>
         </nav>
 
-        <div className="mt-4 md:mt-0 sm:mt-12">
+        <div className="m:mt-12">
           <Link
             className="ml-0.5 text-sm font-semibold transition-colors duration-200 hover:!text-[#06B3B8] sm:ml-0"
             theme="primary"
