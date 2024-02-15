@@ -16,3 +16,15 @@
     transform: rotate(225deg);
   }
 }
+
+@layer components {
+  .square-square-bullet {
+    @apply relative pl-3.5 before:absolute before:left-0 before:top-2.5 before:block before:h-1 before:w-1 before:bg-orange before:leading-none;
+  }
+
+  .with-square-bullet {
+    ul > li {
+      @apply square-square-bullet;
+    }
+  }
+}

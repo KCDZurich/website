@@ -1,117 +1,101 @@
+import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import React from 'react';
 
 import WorkshopCard from 'components/pages/workshops/list/card';
+import separator from 'icons/sponsors/separator.svg';
 
-// import ChristianHaller from './images/christian-haller-photo.jpg';
-// import ChristianSchlatter from './images/christian-schlatter-photo.jpg';
-// import DanielStrohecker from './images/daniel-strohecker-photo.jpg';
-// import DavidSchneider from './images/david-schneider-photo.jpg';
-// import GabrielGraf from './images/gabriel-graf-photo.jpg';
-// import LorenzBischof from './images/lorenz-bischof-photo.jpg';
-// import RaffaelHertle from './images/raffael-hertle-photo.jpg';
-// import SebastianPlattner from './images/sebastian-plattner-photo.jpg';
+const blocks = ['content', 'requirements', 'audience', 'conditions', 'trainers'];
+const titles = {
+  content: 'Content',
+  requirements: 'Requirements',
+  audience: 'Target audience',
+  conditions: 'Conditions',
+  trainers: 'trainer',
+};
 
 const Information = ({ data }) => {
-  const { name, icon, iconClassname, date, time, price, seats, card } = data;
+  const { name, icon, iconClassname, date, time, price, seats, card, page } = data;
+  const content = Object.keys(page).filter((key) => blocks.includes(key));
 
   return (
-    <section className="safe-paddings pb-48 pt-20">
-      <div className="container grid grid-cols-12 md:flex md:flex-col">
-        <div className="content col-start-2 col-end-7 xl:col-start-1 lg:col-end-8">
-          <ul className="ml-3">
-            {/* {Content.filter((item) => item.name === itemName).map(
-              ({ description, features, requirements, audience, conditions, trainers }, index) => (
-                <li className="text-primary-1" key={index}>
-                  <div className="flex items-center justify-center w-fit">
-                    <ContentIcon className="mr-3 h-[23px] w-4" />
-                    <span className="text-2xl font-bold leading-normal text-primary-1">Content</span>
-                  </div>
-                  <p className="mt-6 text-lg leading-normal text-primary-1">{description}</p>
-  
-                  <ul className="pb-4 pl-4 mt-5 space-y-2 border-b border-gray-10">
-                    {features.map((item, index) => (
-                      <li
-                        className="relative before:absolute before:-left-4 before:top-2.5 before:h-2 before:w-2 before:rounded-full before:bg-blue-1 before:content-['']"
-                        key={index}
-                      >
-                        <p
-                          className="text-lg leading-normal"
-                          dangerouslySetInnerHTML={{ __html: item }}
-                        />
-                      </li>
-                    ))}
-                  </ul>
-  
-                  <div className="mt-3.5 flex w-fit items-center justify-center">
-                    <ListIcon className="mr-3 h-[23px] w-[19px]" />
-                    <span className="text-2xl font-bold leading-normal text-primary-1">
-                      Requirements
-                    </span>
-                  </div>
-                  <p className="pb-3 mt-4 text-lg leading-normal border-b border-gray-10">
-                    {requirements}
-                  </p>
-  
-                  <div className="mt-3.5 flex w-fit items-center justify-center">
-                    <Audience className="mr-3 h-[23px] w-[22px]" />
-                    <span className="text-2xl font-bold leading-normal text-primary-1">
-                      Target audience
-                    </span>
-                  </div>
-                  <p className="pb-3 mt-5 text-lg leading-normal border-b border-gray-10">
-                    {audience}
-                  </p>
-  
-                  <div className="mt-3.5 flex w-fit items-center justify-center">
-                    <Conditions className="mr-3 h-[23px] w-[19px]" />
-                    <span className="text-2xl font-bold leading-normal text-primary-1">
-                      Conditions
-                    </span>
-                  </div>
-                  <div className="text-lg leading-normal">
-                    <p className="mt-5">{conditions.description}</p>
-                    <p className="mt-1">
-                      <span className="font-bold">Seats: </span>
-                      {conditions.seats}
+    <section className="safe-paddings pb-[152px] pt-[72px] lg:pt-16 md:pb-24 md:pt-14 sm:pb-16">
+      <div className="container grid grid-cols-12 gap-x-8 gap-y-8 md:gap-y-12">
+        <ul className="col-span-7 flex flex-col gap-y-[28px] md:col-span-12">
+          {content.map((key, index) => (
+            <li className="grid-gap grid grid-cols-7 md:grid-cols-12" key={index}>
+              <div className="relative col-span-2 flex items-start justify-end before:absolute before:bottom-0 before:right-0 before:h-[calc(100%-27px)] before:w-[2px] before:bg-[#ADCFD3] md:col-span-3 sm:col-span-12 sm:justify-start sm:before:hidden">
+                <div className="-mt-[18px] flex h-9 items-center gap-2.5 sm:mt-0">
+                  <span className="text-right font-mono-cyber text-2xl font-bold uppercase leading-[1.125] tracking-[-0.03em]">
+                    {titles[key]}
+                  </span>
+                  <img
+                    className="rotate-180 md:max-w-[20px] sm:order-first sm:max-w-[23px] sm:rotate-0"
+                    src={separator}
+                    width={28}
+                    height={19}
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div
+                className={clsx(
+                  'dash-border col-span-5 flex flex-col gap-y-3.5 pt-7 [border-image-width:5px_0_0_0] md:col-span-9 sm:col-span-12',
+                  index < content.length - 1 ? 'pb-4' : 'pb-2'
+                )}
+              >
+                {typeof page[key] === 'string' && (
+                  <p className="text-lg leading-normal text-primary-1">{page[key]}</p>
+                )}
+                {key === 'content' && (
+                  <>
+                    <p className="text-lg leading-normal text-primary-1">{page[key].description}</p>
+                    <div className="with-square-bullet flex gap-x-14 gap-y-3.5 sm:flex-col">
+                      {page[key].features.map((item, index) => (
+                        <ul className="flex w-[202px] list-none flex-col gap-y-3.5" key={index}>
+                          {item.map((item, i) => (
+                            <li className="text-base leading-normal text-primary-1" key={i}>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      ))}
+                    </div>
+                  </>
+                )}
+                {key === 'conditions' &&
+                  page[key].map((item, index) => (
+                    <p className="text-lg leading-normal text-primary-1" key={index}>
+                      {item}
                     </p>
-                    <p>
-                      <span className="font-bold">Costs: </span>
-                      {conditions.costs}
-                    </p>
-                    <p className="pb-3 border-b border-gray-10">{conditions.description1}</p>
-                  </div>
-  
-                  <div className="mt-3.5 flex w-fit items-center justify-center">
-                    <Trainer className="mr-3 h-[22px] w-[18px]" />
-                    <span className="text-2xl font-bold leading-normal text-primary-1">Trainer</span>
-                  </div>
-                  <ul className="flex mt-5 space-x-8 sm:flex-wrap sm:space-x-0 sm:space-y-4">
-                    {trainers.map(({ name, photo, position }, index) => (
-                      <li
-                        className="mt-0 leading-normal text-primary-1 sm:w-auto sm:max-w-[200px] sm:first:mb-6 sm:first:mr-8"
-                        key={index}
-                      >
+                  ))}
+                {key === 'trainers' && (
+                  <ul className="flex flex-row gap-10 sm:flex-col">
+                    {page[key].map(({ name, photo, position }, index) => (
+                      <li className="flex flex-col" key={index}>
                         <img
-                          className="h-[237px] w-[176px]"
+                          className="h-auto w-[192px]"
                           src={photo}
-                          width="auto"
-                          height="auto"
+                          width={192}
+                          height={259}
                           loading="lazy"
                           alt={name}
                         />
-                        <p className="mt-2.5 text-lg font-bold">{name}</p>
-                        <span className="mt-1.5 block">{position}</span>
+                        <p className="mt-5 text-base font-bold uppercase leading-normal text-primary-1">
+                          {name}
+                        </p>
+                        <span className="mt-1.5 block text-sm leading-normal text-primary-1/60">
+                          {position}
+                        </span>
                       </li>
                     ))}
                   </ul>
-                </li>
-              )
-            )} */}
-          </ul>
-        </div>
-
-        <div className="col-span-4 col-start-8 ml-6 xl:col-end-13 md:row-start-2 md:mt-8 md:max-w-[384px] md:self-center">
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+        <div className="col-span-4 col-end-13 -ml-8 flex justify-center xl:-ml-6 lg:-ml-4 md:col-span-12 md:col-end-auto">
           <WorkshopCard
             title={card.title}
             description={card.description}
@@ -123,6 +107,7 @@ const Information = ({ data }) => {
             price={price}
             seats={seats}
             buttonTitle="Get your ticket"
+            className="self-start"
           />
         </div>
       </div>

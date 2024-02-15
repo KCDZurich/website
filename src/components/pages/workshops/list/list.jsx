@@ -12,25 +12,33 @@ const WorkshopList = () => (
             (
               { name, icon, iconClassname, date, time, price, seats, card: { title, description } },
               index
-            ) => (
-              <li
-                className="odd:justify-self-end even:justify-self-start sm:!justify-self-center"
-                key={index}
-              >
-                <WorkshopCard
-                  title={title}
-                  description={description}
-                  url={`/workshop-${name}`}
-                  icon={icon}
-                  iconClassname={iconClassname}
-                  date={date}
-                  time={time}
-                  price={price}
-                  seats={seats}
-                  buttonTitle="More info"
-                />
-              </li>
-            )
+            ) => {
+              let patternPlace = null;
+              if (index === 0) patternPlace = 'left-top';
+              if (index === LIST.length - 1) patternPlace = 'right-bottom';
+
+              return (
+                <li
+                  className="odd:justify-self-end even:justify-self-start sm:!justify-self-center"
+                  key={index}
+                >
+                  <WorkshopCard
+                    title={title}
+                    description={description}
+                    url={`/workshop-${name}`}
+                    icon={icon}
+                    iconClassname={iconClassname}
+                    date={date}
+                    time={time}
+                    price={price}
+                    seats={seats}
+                    buttonTitle="More info"
+                    className="h-full"
+                    patternPlace={patternPlace}
+                  />
+                </li>
+              );
+            }
           )}
         </ul>
       </div>
