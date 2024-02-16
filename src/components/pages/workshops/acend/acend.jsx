@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 
 import Link from 'components/shared/link';
-import AcendLogo from 'icons/acend-logo.inline.svg';
+import acendLogo from 'icons/acend-logo.svg';
 import iconPlus from 'icons/plus.svg';
 
 const position = {
@@ -18,8 +18,12 @@ const DESCRIPTION =
 const Acend = () => (
   <section className="safe-paddings relative pb-[120px] pt-[104px] lg:py-20 sm:py-16">
     <div className="container">
-      <div className="dash-border relative grid grid-cols-12 [border-image-width:5px_5px_5px_5px]">
-        <div className="dash-border relative col-span-4 flex min-h-[179px] items-center justify-center [border-image-width:0_5px_0_0] md:col-span-12 md:[border-image-width:0_0_5px_0]">
+      <div className="dash-border grid-gap relative grid grid-cols-12 [border-image-width:5px_5px_5px_5px] md:gap-0">
+        <Link
+          className="dash-border relative col-span-4 flex min-h-[179px] items-center justify-center transition-colors duration-200 [border-image-width:0_5px_0_0] hover:bg-primary-1/10 md:col-span-12 md:[border-image-width:0_0_5px_0]"
+          to="https://acend.ch/"
+          target="_blank"
+        >
           {['top-left', 'top-right', 'bottom-left', 'bottom-right'].map((item, index) => (
             <img
               className={clsx('absolute h-[17px] w-[17px]', position[item])}
@@ -31,11 +35,17 @@ const Acend = () => (
               key={index}
             />
           ))}
-          <Link className="h-fit w-fit" to="https://acend.ch/" target="_blank">
-            <AcendLogo className="h-[79px] w-[252px]" />
-          </Link>
-        </div>
-        <div className="relative col-span-8 flex min-h-[179px] items-center justify-center lg:p-12 md:col-span-12 md:p-8">
+          <img
+            className="h-[79px] w-[252px]"
+            src={acendLogo}
+            width={252}
+            height={79}
+            loading="lazy"
+            alt=""
+          />
+          <span className="sr-only">Go to acend.ch</span>
+        </Link>
+        <div className="relative col-span-8 flex min-h-[179px] items-center px-6 lg:p-12 md:col-span-12 md:p-8">
           {['top-right', 'bottom-right'].map((item, index) => (
             <img
               className={clsx('absolute h-[17px] w-[17px] md:hidden', position[item])}

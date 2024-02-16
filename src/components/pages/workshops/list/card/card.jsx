@@ -25,7 +25,6 @@ const patternPlaces = {
 
 const WorkshopCard = ({
   icon,
-  iconClassname,
   title,
   description,
   url,
@@ -47,20 +46,13 @@ const WorkshopCard = ({
   return (
     <div
       className={clsx(
-        'relative z-10 max-w-[384px] border border-primary-1 shadow-[20px_20px_0px_0px_rgba(161,203,211,0.3)] outline outline-4 outline-offset-0 outline-white',
+        'relative z-10 w-[384px] border border-primary-1 shadow-[20px_20px_0px_0px_rgba(161,203,211,0.3)] outline outline-4 outline-offset-0 outline-white',
         className
       )}
     >
       <div className="flex h-full flex-col bg-white p-8">
-        <img
-          className={iconClassname}
-          src={icon}
-          width="auto"
-          height="auto"
-          loading="lazy"
-          alt=""
-        />
-        <h4 className="mt-8 text-xl font-bold leading-normal text-primary-1">{title}</h4>
+        <img src={icon.value} width={icon.width} height={icon.height} loading="lazy" alt="" />
+        <h2 className="mt-8 text-xl font-bold leading-normal text-primary-1">{title}</h2>
         <p className="mt-1.5 flex-1 text-base leading-normal text-primary-1">{description}</p>
         <div className="mb-12 mt-7 flex flex-col gap-y-2.5">
           {options.map((item, index) => {
@@ -70,7 +62,11 @@ const WorkshopCard = ({
                 <Icon className="h-4 w-4" />
                 <span className="ml-2.5 w-fit font-mono-cyber text-[25px] leading-none">
                   <span className="font-bold">{item}: </span>
-                  {optionsData[item]}
+                  {['date', 'time'].includes(item) ? (
+                    <time>{optionsData[item]}</time>
+                  ) : (
+                    optionsData[item]
+                  )}
                 </span>
               </div>
             );
@@ -102,8 +98,7 @@ WorkshopCard.propTypes = {
   description: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   buttonTitle: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired,
-  iconClassname: PropTypes.string,
+  icon: PropTypes.object.isRequired,
   date: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
@@ -113,7 +108,6 @@ WorkshopCard.propTypes = {
 };
 
 WorkshopCard.defaultProps = {
-  iconClassname: null,
   className: null,
   patternPlace: null,
 };

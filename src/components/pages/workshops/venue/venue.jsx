@@ -1,9 +1,8 @@
+import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import Button from 'components/shared/button';
 import Link from 'components/shared/link';
-
-import CardIllusrtation from './images/card-illustration.jpg';
 
 const TITLE = 'Venue information';
 
@@ -17,9 +16,9 @@ const Venue = () => (
           theme="primary"
         >
           <div className="relative h-[198px] w-full overflow-hidden md:h-auto md:w-auto md:flex-1">
-            <img
+            <StaticImage
               className="absolute inset-0 m-auto min-h-[198px] min-w-[416px] md:min-h-full md:min-w-[442px]"
-              src={CardIllusrtation}
+              src="./images/card-illustration.jpg"
               width={416}
               height={198}
               loading="lazy"

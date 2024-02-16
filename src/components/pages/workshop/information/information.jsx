@@ -15,12 +15,12 @@ const titles = {
 };
 
 const Information = ({ data }) => {
-  const { name, icon, iconClassname, date, time, price, seats, card, page } = data;
+  const { name, icon, date, time, price, seats, card, page } = data;
   const content = Object.keys(page).filter((key) => blocks.includes(key));
 
   return (
     <section className="safe-paddings pb-[152px] pt-[72px] lg:pt-16 md:pb-24 md:pt-14 sm:pb-16">
-      <div className="container grid grid-cols-12 gap-x-8 gap-y-8 md:flex md:flex-col md:gap-y-12">
+      <div className="container mt-[18px] grid grid-cols-12 gap-x-8 gap-y-8 md:flex md:flex-col md:gap-y-12">
         <ul className="col-span-7 flex flex-col gap-y-[28px]">
           {content.map((key, index) => (
             <li className="grid-gap grid grid-cols-7 md:grid-cols-12" key={index}>
@@ -72,21 +72,25 @@ const Information = ({ data }) => {
                 {key === 'trainers' && (
                   <ul className="flex flex-row gap-10 sm:flex-col">
                     {page[key].map(({ name, photo, position }, index) => (
-                      <li className="flex flex-col" key={index}>
-                        <img
-                          className="h-auto w-[192px]"
-                          src={photo}
-                          width={192}
-                          height={259}
-                          loading="lazy"
-                          alt={name}
-                        />
-                        <p className="mt-5 text-base font-bold uppercase leading-normal text-primary-1">
-                          {name}
-                        </p>
-                        <span className="mt-1.5 block text-sm leading-normal text-primary-1/60">
-                          {position}
-                        </span>
+                      <li key={index}>
+                        <figure className="flex flex-col">
+                          <img
+                            className="h-auto w-[192px]"
+                            src={photo}
+                            width={192}
+                            height={259}
+                            loading="lazy"
+                            alt={name}
+                          />
+                          <figcaption className="mt-5">
+                            <span className="text-base font-bold uppercase leading-normal text-primary-1">
+                              {name}
+                            </span>
+                            <span className="mt-1.5 block text-sm leading-normal text-primary-1/60">
+                              {position}
+                            </span>
+                          </figcaption>
+                        </figure>
                       </li>
                     ))}
                   </ul>
@@ -95,13 +99,12 @@ const Information = ({ data }) => {
             </li>
           ))}
         </ul>
-        <div className="col-span-4 col-end-13 -ml-8 flex justify-center xl:-ml-6 lg:-ml-4 md:ml-0">
+        <div className="col-span-4 col-end-13 -ml-16 -mt-[18px] flex justify-center xl:-ml-6 lg:-ml-4 md:ml-0 md:mt-0">
           <WorkshopCard
             title={card.title}
             description={card.description}
             url={`/workshop-${name}`}
             icon={icon}
-            iconClassname={iconClassname}
             date={date}
             time={time}
             price={price}

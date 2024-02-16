@@ -4,7 +4,7 @@ import React from 'react';
 const Hero = ({ title, description }) => (
   <section className="safe-paddings relative pt-4">
     <div className="container-xl bg-blue-light bg-opacity-90">
-      <div className="container grid grid-cols-12 py-[72px] lg:!px-4 lg:py-14 md:!px-2 md:py-14 xs:!px-0">
+      <div className="container grid-gap grid grid-cols-12 py-[72px] lg:!px-4 lg:py-14 md:!px-2 md:py-14 xs:!px-0">
         <h1 className="col-span-4 font-sans-cyber text-[48px] font-bold lowercase leading-tight text-primary-1 lg:text-[40px] md:col-span-12 md:text-[32px]">
           {title}
         </h1>
@@ -14,7 +14,6 @@ const Hero = ({ title, description }) => (
               <p
                 className="text-2xl leading-normal text-primary-1 lg:text-xl sm:text-lg"
                 dangerouslySetInnerHTML={{ __html: item }}
-                key={index}
               />
             </li>
           ))}

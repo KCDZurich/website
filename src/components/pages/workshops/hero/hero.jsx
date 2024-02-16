@@ -7,7 +7,7 @@ const DESCRIPTION =
 
 const Hero = () => (
   <section className="safe-paddings py-[88px] lg:py-[4.5rem] md:py-16 sm:py-8">
-    <div className="container grid grid-cols-12">
+    <div className="container grid-gap grid grid-cols-12">
       <h1 className="col-span-4 font-sans-cyber text-[52px] font-bold lowercase leading-tight text-primary-1 lg:text-[40px] md:col-span-12 md:text-[32px]">
         {TITLE}
       </h1>

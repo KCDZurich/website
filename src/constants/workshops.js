@@ -14,8 +14,11 @@ import SebastianPlattner from 'images/workshops/sebastian-plattner-photo.jpg';
 export default [
   {
     name: 'argo',
-    icon: Argo,
-    iconClassname: 'h-16 w-[138px]',
+    icon: {
+      value: Argo,
+      width: 138,
+      height: 64,
+    },
     seats: 14,
     price: 'CHF 650',
     date: 'June 14, 2023',
@@ -76,8 +79,11 @@ export default [
   },
   {
     name: 'go',
-    icon: Go,
-    iconClassname: 'h-16 w-[129px]',
+    icon: {
+      value: Go,
+      width: 129,
+      height: 64,
+    },
     seats: 14,
     price: 'CHF 650',
     date: 'June 14, 2023',
@@ -134,8 +140,11 @@ export default [
   },
   {
     name: 'cilium',
-    icon: Cilium,
-    iconClassname: 'h-16 w-[136px]',
+    icon: {
+      value: Cilium,
+      width: 136,
+      height: 64,
+    },
     seats: 14,
     price: 'CHF 650',
     date: 'June 14, 2023',
@@ -193,8 +202,11 @@ export default [
   },
   {
     name: 'kubernetes',
-    icon: Kubernetes,
-    iconClassname: 'h-16 w-[266px]',
+    icon: {
+      value: Kubernetes,
+      width: 266,
+      height: 64,
+    },
     seats: 14,
     price: 'CHF 650',
     date: 'June 14, 2023',

@@ -9,10 +9,7 @@ const WorkshopList = () => (
       <div className="container pb-[72px] pt-24 lg:!px-4 lg:py-14 md:!px-2 md:py-14 xs:!px-0">
         <ul className="mx-auto grid grid-cols-2 justify-items-stretch gap-24 lg:gap-14 sm:grid-cols-1">
           {LIST.map(
-            (
-              { name, icon, iconClassname, date, time, price, seats, card: { title, description } },
-              index
-            ) => {
+            ({ name, icon, date, time, price, seats, card: { title, description } }, index) => {
               let patternPlace = null;
               if (index === 0) patternPlace = 'left-top';
               if (index === LIST.length - 1) patternPlace = 'right-bottom';
@@ -27,7 +24,6 @@ const WorkshopList = () => (
                     description={description}
                     url={`/workshop-${name}`}
                     icon={icon}
-                    iconClassname={iconClassname}
                     date={date}
                     time={time}
                     price={price}
