@@ -47,7 +47,7 @@ const WorkshopCard = ({
   return (
     <div
       className={clsx(
-        'relative z-10 max-w-[384px] border border-primary-1 shadow-[20px_20px_0px_0px_rgba(217,217,217,0.3)] outline outline-4 outline-offset-0 outline-white',
+        'relative z-10 max-w-[384px] border border-primary-1 shadow-[20px_20px_0px_0px_rgba(161,203,211,0.3)] outline outline-4 outline-offset-0 outline-white',
         className
       )}
     >
@@ -69,7 +69,7 @@ const WorkshopCard = ({
               <div className="flex w-fit items-center justify-center" key={index}>
                 <Icon className="h-4 w-4" />
                 <span className="ml-2.5 w-fit font-mono-cyber text-[25px] leading-none">
-                  <span className="font-bold">{item}:</span>
+                  <span className="font-bold">{item}: </span>
                   {optionsData[item]}
                 </span>
               </div>

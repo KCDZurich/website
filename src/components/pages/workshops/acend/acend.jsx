@@ -16,7 +16,7 @@ const DESCRIPTION =
   'As a knowledge platform, acend accompanies engineers and their businesses across new technological frontiers. We offer extraordinary, inspiring and practice-oriented teaching and learning experiences.';
 
 const Acend = () => (
-  <section className="safe-paddings relative pb-[120px] pt-[104px] lg:py-20 md:py-14 sm:py-8">
+  <section className="safe-paddings relative pb-[120px] pt-[104px] lg:py-20 sm:py-16">
     <div className="container">
       <div className="dash-border relative grid grid-cols-12 [border-image-width:5px_5px_5px_5px]">
         <div className="dash-border relative col-span-4 flex min-h-[179px] items-center justify-center [border-image-width:0_5px_0_0] md:col-span-12 md:[border-image-width:0_0_5px_0]">

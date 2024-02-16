@@ -20,8 +20,8 @@ const Information = ({ data }) => {
 
   return (
     <section className="safe-paddings pb-[152px] pt-[72px] lg:pt-16 md:pb-24 md:pt-14 sm:pb-16">
-      <div className="container grid grid-cols-12 gap-x-8 gap-y-8 md:gap-y-12">
-        <ul className="col-span-7 flex flex-col gap-y-[28px] md:col-span-12">
+      <div className="container grid grid-cols-12 gap-x-8 gap-y-8 md:flex md:flex-col md:gap-y-12">
+        <ul className="col-span-7 flex flex-col gap-y-[28px]">
           {content.map((key, index) => (
             <li className="grid-gap grid grid-cols-7 md:grid-cols-12" key={index}>
               <div className="relative col-span-2 flex items-start justify-end before:absolute before:bottom-0 before:right-0 before:h-[calc(100%-27px)] before:w-[2px] before:bg-[#ADCFD3] md:col-span-3 sm:col-span-12 sm:justify-start sm:before:hidden">
@@ -50,7 +50,7 @@ const Information = ({ data }) => {
                 {key === 'content' && (
                   <>
                     <p className="text-lg leading-normal text-primary-1">{page[key].description}</p>
-                    <div className="with-square-bullet flex gap-x-14 gap-y-3.5 sm:flex-col">
+                    <div className="with-square-bullet flex gap-x-14 gap-y-3.5 xs:flex-col">
                       {page[key].features.map((item, index) => (
                         <ul className="flex w-[202px] list-none flex-col gap-y-3.5" key={index}>
                           {item.map((item, i) => (
@@ -95,7 +95,7 @@ const Information = ({ data }) => {
             </li>
           ))}
         </ul>
-        <div className="col-span-4 col-end-13 -ml-8 flex justify-center xl:-ml-6 lg:-ml-4 md:col-span-12 md:col-end-auto">
+        <div className="col-span-4 col-end-13 -ml-8 flex justify-center xl:-ml-6 lg:-ml-4 md:ml-0">
           <WorkshopCard
             title={card.title}
             description={card.description}
