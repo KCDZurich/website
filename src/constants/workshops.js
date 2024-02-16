@@ -21,7 +21,7 @@ export default [
     },
     seats: 14,
     price: 'CHF 650',
-    date: 'June 14, 2023',
+    date: 'June 12, 2024',
     time: '09:00 - 16:45',
     card: {
       title: 'GitOps with ArgoCD',
@@ -86,7 +86,7 @@ export default [
     },
     seats: 14,
     price: 'CHF 650',
-    date: 'June 14, 2023',
+    date: 'June 12, 2024',
     time: '09:00 - 16:45',
     card: {
       title: 'Go Basics',
@@ -147,7 +147,7 @@ export default [
     },
     seats: 14,
     price: 'CHF 650',
-    date: 'June 14, 2023',
+    date: 'June 12, 2024',
     time: '09:00 - 16:45',
     card: {
       title: 'Cilium Basics',
@@ -209,7 +209,7 @@ export default [
     },
     seats: 14,
     price: 'CHF 650',
-    date: 'June 14, 2023',
+    date: 'June 12, 2024',
     time: '09:00 - 16:45',
     card: {
       title: 'Kubernetes Basics',
