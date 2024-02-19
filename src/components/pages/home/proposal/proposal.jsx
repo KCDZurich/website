@@ -11,7 +11,7 @@ const DESCRIPTION =
 const BTN_TITLE = 'Submit';
 
 const Proposal = () => (
-  <section className="safe-paddings relative pb-32 pt-[120px] lg:pt-16 md:pb-24 md:pt-10 sm:pb-16 sm:pt-8">
+  <section className="safe-paddings relative pt-[120px] lg:pt-16 md:pt-10 sm:pt-8">
     <div className="container-md">
       <div className="container-md relative flex flex-col items-center py-24 text-center text-primary-1 lg:py-[4.5rem] md:border-[5px] md:border-b-[#FCC5B1] md:border-l-[#FEEBE4] md:border-r-[#FCC5B1] md:border-t-[#FEEBE4] md:bg-[#FFF4F0] md:py-16 sm:py-8">
         <h2
