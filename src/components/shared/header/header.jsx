@@ -56,7 +56,7 @@ const Header = ({ isMobileMenuOpen, onBurgerClick, additionalClassName, isHomePa
           <Logo className="h-[40px] w-[149px]" />
           <span className="sr-only">KCD Zürich</span>
         </Link>
-        <nav className={clsx(isHomePage && 'lg:mr-32')}>
+        <nav className={clsx(isHomePage && 'mr-32')}>
           <ul className="flex space-x-8 text-white lg:ml-0 lg:space-x-6 md:hidden">
             {MENUS.header.map(({ text, to, homeTo }, index) => (
               <li className="text-[15px] font-semibold text-primary-1" key={index}>
