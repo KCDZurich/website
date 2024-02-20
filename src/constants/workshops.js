@@ -7,7 +7,6 @@ import ChristianSchlatter from 'images/workshops/christian-schlatter-photo.jpg';
 import DanielStrohecker from 'images/workshops/daniel-strohecker-photo.jpg';
 import DavidSchneider from 'images/workshops/david-schneider-photo.jpg';
 import GabrielGraf from 'images/workshops/gabriel-graf-photo.jpg';
-import LorenzBischof from 'images/workshops/lorenz-bischof-photo.jpg';
 import RaffaelHertle from 'images/workshops/raffael-hertle-photo.jpg';
 import SebastianPlattner from 'images/workshops/sebastian-plattner-photo.jpg';
 
@@ -21,8 +20,8 @@ export default [
     },
     seats: 14,
     price: 'CHF 650',
-    date: 'June 12, 2024',
-    time: '09:00 - 16:45',
+    date: '<time datetime="2024-06-12">June 12, 2024</time>',
+    time: '<time>09:00 - 16:45</time>',
     card: {
       title: 'GitOps with ArgoCD',
       description:
@@ -67,7 +66,7 @@ export default [
         {
           name: 'Christian Schlatter',
           photo: ChristianSchlatter,
-          position: 'Trainer Puzzle ITC',
+          position: 'Trainer acend',
         },
         {
           name: 'Raffael Hertle',
@@ -86,8 +85,8 @@ export default [
     },
     seats: 14,
     price: 'CHF 650',
-    date: 'June 12, 2024',
-    time: '09:00 - 16:45',
+    date: '<time datetime="2024-06-12">June 12, 2024</time>',
+    time: '<time>09:00 - 16:45</time>',
     card: {
       title: 'Go Basics',
       description:
@@ -130,11 +129,6 @@ export default [
           photo: DavidSchneider,
           position: 'Trainer Puzzle ITC',
         },
-        {
-          name: 'Lorenz Bischof',
-          photo: LorenzBischof,
-          position: 'Trainer, Puzzle ITC',
-        },
       ],
     },
   },
@@ -147,8 +141,8 @@ export default [
     },
     seats: 14,
     price: 'CHF 650',
-    date: 'June 12, 2024',
-    time: '09:00 - 16:45',
+    date: '<time datetime="2024-06-12">June 12, 2024</time>',
+    time: '<time>09:00 - 16:45</time>',
     card: {
       title: 'Cilium Basics',
       description:
@@ -209,8 +203,8 @@ export default [
     },
     seats: 14,
     price: 'CHF 650',
-    date: 'June 12, 2024',
-    time: '09:00 - 16:45',
+    date: '<time datetime="2024-06-12">June 12, 2024</time>',
+    time: '<time>09:00 - 16:45</time>',
     card: {
       title: 'Kubernetes Basics',
       description:

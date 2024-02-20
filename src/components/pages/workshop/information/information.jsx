@@ -15,7 +15,7 @@ const titles = {
 };
 
 const Information = ({ data }) => {
-  const { name, icon, date, time, price, seats, card, page } = data;
+  const { icon, date, time, price, seats, card, page } = data;
   const content = Object.keys(page).filter((key) => blocks.includes(key));
 
   return (
@@ -26,9 +26,9 @@ const Information = ({ data }) => {
             <li className="grid-gap grid grid-cols-7 md:grid-cols-12" key={index}>
               <div className="relative col-span-2 flex items-start justify-end before:absolute before:bottom-0 before:right-0 before:h-[calc(100%-27px)] before:w-[2px] before:bg-[#ADCFD3] md:col-span-3 sm:col-span-12 sm:justify-start sm:before:hidden">
                 <div className="-mt-[18px] flex h-9 items-center gap-2.5 sm:mt-0">
-                  <span className="text-right font-mono-cyber text-2xl font-bold uppercase leading-[1.125] tracking-[-0.03em]">
+                  <h2 className="text-right font-mono-cyber text-2xl font-bold uppercase leading-[1.125] tracking-[-0.03em]">
                     {titles[key]}
-                  </span>
+                  </h2>
                   <img
                     className="rotate-180 md:max-w-[20px] sm:order-first sm:max-w-[23px] sm:rotate-0"
                     src={separator}
@@ -103,7 +103,7 @@ const Information = ({ data }) => {
           <WorkshopCard
             title={card.title}
             description={card.description}
-            url={`/workshop-${name}`}
+            url="https://workshops.kcdzurich.ch"
             icon={icon}
             date={date}
             time={time}

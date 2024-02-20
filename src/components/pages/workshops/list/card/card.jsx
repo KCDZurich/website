@@ -35,6 +35,7 @@ const WorkshopCard = ({
   buttonTitle,
   className,
   patternPlace,
+  isWorkshopList,
 }) => {
   const optionsData = {
     date,
@@ -42,6 +43,8 @@ const WorkshopCard = ({
     costs: price,
     seats,
   };
+
+  const Headline = isWorkshopList ? 'h2' : 'h3';
 
   return (
     <div
@@ -52,7 +55,9 @@ const WorkshopCard = ({
     >
       <div className="flex h-full flex-col bg-white p-8">
         <img src={icon.value} width={icon.width} height={icon.height} loading="lazy" alt="" />
-        <h2 className="mt-8 text-xl font-bold leading-normal text-primary-1">{title}</h2>
+        <Headline className="mt-8 text-xl font-bold leading-normal text-primary-1">
+          {title}
+        </Headline>
         <p className="mt-1.5 flex-1 text-base leading-normal text-primary-1">{description}</p>
         <div className="mb-12 mt-7 flex flex-col gap-y-2.5">
           {options.map((item, index) => {
@@ -62,11 +67,7 @@ const WorkshopCard = ({
                 <Icon className="h-4 w-4" />
                 <span className="ml-2.5 w-fit font-mono-cyber text-[25px] leading-none">
                   <span className="font-bold">{item}: </span>
-                  {['date', 'time'].includes(item) ? (
-                    <time>{optionsData[item]}</time>
-                  ) : (
-                    optionsData[item]
-                  )}
+                  <span dangerouslySetInnerHTML={{ __html: optionsData[item] }} />
                 </span>
               </div>
             );
@@ -74,6 +75,7 @@ const WorkshopCard = ({
         </div>
         <Button className="mt-auto" size="sm" theme="primary" to={url}>
           {buttonTitle}
+          {isWorkshopList && <span className="sr-only"> about {title} workshop</span>}
         </Button>
       </div>
       {patternPlace && (
@@ -105,11 +107,13 @@ WorkshopCard.propTypes = {
   seats: PropTypes.number.isRequired,
   className: PropTypes.string,
   patternPlace: PropTypes.string,
+  isWorkshopList: PropTypes.bool,
 };
 
 WorkshopCard.defaultProps = {
   className: null,
   patternPlace: null,
+  isWorkshopList: false,
 };
 
 export default WorkshopCard;

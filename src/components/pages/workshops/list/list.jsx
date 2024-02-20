@@ -31,6 +31,7 @@ const WorkshopList = () => (
                     buttonTitle="More info"
                     className="h-full"
                     patternPlace={patternPlace}
+                    isWorkshopList
                   />
                 </li>
               );

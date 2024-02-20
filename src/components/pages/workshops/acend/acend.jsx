@@ -45,7 +45,7 @@ const Acend = () => (
           />
           <span className="sr-only">Go to acend.ch</span>
         </Link>
-        <div className="relative col-span-8 flex min-h-[179px] items-center px-6 lg:p-12 md:col-span-12 md:p-8">
+        <div className="relative col-span-8 flex min-h-[179px] items-center px-6 lg:p-12 md:col-span-12 md:min-h-min md:p-4">
           {['top-right', 'bottom-right'].map((item, index) => (
             <img
               className={clsx('absolute h-[17px] w-[17px] md:hidden', position[item])}
