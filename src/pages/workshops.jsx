@@ -3,6 +3,7 @@ import React from 'react';
 
 import Acend from 'components/pages/workshops/acend';
 import Hero from 'components/pages/workshops/hero';
+import WorkshopList from 'components/pages/workshops/list';
 import Venue from 'components/pages/workshops/venue';
 import Layout from 'components/shared/layout';
 import SEO from 'components/shared/seo';
@@ -11,6 +12,7 @@ import SEO_DATA from 'constants/seo-data';
 const Workshops = () => (
   <Layout headerClassnames="!bg-white">
     <Hero />
+    <WorkshopList />
     <Acend />
     <Venue />
   </Layout>

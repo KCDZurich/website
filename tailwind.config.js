@@ -84,6 +84,7 @@ module.exports = {
         "url(\"data:image/svg+xml,%3Csvg width='592' height='3' viewBox='0 0 592 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.2' d='M592 2L8.74244e-08 1' stroke='%230A1133' stroke-dasharray='15 5'/%3E%3C/svg%3E%0A\")",
       'vertical-dashed-line':
         "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='246' viewBox='0 0 2 246' fill='none'%3E%3Cpath opacity='0.2' d='M1.00001 246.001L0.999989 1.09673e-05' stroke='%230A1133' stroke-dasharray='15 5'/%3E%3C/svg%3E\")",
+      'workshop-pattern': "url('images/workshop-pattern.svg')",
       ...defaultTheme.backgroundImage,
     },
     screens: {

@@ -29,11 +29,6 @@ export default {
     description:
       'This one-day training in German or English provides a practical and easy-to-understand introduction to Kubernetes.',
   },
-  workshopAws: {
-    title: 'Workshops AWS Serverless — Kubernetes Community Days',
-    description:
-      'This one-day training in English will demonstrate how to build your startup application, from a napkin idea to a fully functional production deployment, using AWS serverless services.',
-  },
   team: {
     title: 'Team — Kubernetes Community Days',
     description: 'Experience the power of community at the Kubernetes Community Days in Zürich!',
@@ -52,6 +47,7 @@ export default {
     description:
       'Listen in to our exciting Kubernetes Community Day Zürich 2023 Podcast to hear from our renowned speakers\n',
   },
+
   static: ({ title }) => ({
     title: `${title} — Kubernetes Community Days`,
   }),
