@@ -10,18 +10,22 @@ import GabrielGraf from 'images/workshops/gabriel-graf-photo.jpg';
 import RaffaelHertle from 'images/workshops/raffael-hertle-photo.jpg';
 import SebastianPlattner from 'images/workshops/sebastian-plattner-photo.jpg';
 
+const workshopInfo = {
+  seats: 14,
+  price: 'CHF 650',
+  date: '<time datetime="2024-06-12">June 12, 2024</time>',
+  time: '09:00 - 16:45',
+};
+
 export default [
   {
+    ...workshopInfo,
     name: 'argo',
     icon: {
       value: Argo,
       width: 138,
       height: 64,
     },
-    seats: 14,
-    price: 'CHF 650',
-    date: '<time datetime="2024-06-12">June 12, 2024</time>',
-    time: '<time>09:00 - 16:45</time>',
     card: {
       title: 'GitOps with ArgoCD',
       description:
@@ -77,16 +81,13 @@ export default [
     },
   },
   {
+    ...workshopInfo,
     name: 'go',
     icon: {
       value: Go,
       width: 129,
       height: 64,
     },
-    seats: 14,
-    price: 'CHF 650',
-    date: '<time datetime="2024-06-12">June 12, 2024</time>',
-    time: '<time>09:00 - 16:45</time>',
     card: {
       title: 'Go Basics',
       description:
@@ -133,16 +134,13 @@ export default [
     },
   },
   {
+    ...workshopInfo,
     name: 'cilium',
     icon: {
       value: Cilium,
       width: 136,
       height: 64,
     },
-    seats: 14,
-    price: 'CHF 650',
-    date: '<time datetime="2024-06-12">June 12, 2024</time>',
-    time: '<time>09:00 - 16:45</time>',
     card: {
       title: 'Cilium Basics',
       description:
@@ -195,16 +193,13 @@ export default [
     },
   },
   {
+    ...workshopInfo,
     name: 'kubernetes',
     icon: {
       value: Kubernetes,
       width: 266,
       height: 64,
     },
-    seats: 14,
-    price: 'CHF 650',
-    date: '<time datetime="2024-06-12">June 12, 2024</time>',
-    time: '<time>09:00 - 16:45</time>',
     card: {
       title: 'Kubernetes Basics',
       description:
