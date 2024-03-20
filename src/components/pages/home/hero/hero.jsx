@@ -44,7 +44,6 @@ const Hero = () => (
           theme="link-black"
           size="lg"
           to={secondaryButtonURL}
-          target="_blank"
           rel="nofollow noreferrer"
         >
           <span>{secondaryButtonText}</span>
