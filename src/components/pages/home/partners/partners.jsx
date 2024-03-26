@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'components/shared/link';
 
 import cloudnative from './images/cloudnative.svg';
-import gogrow from './images/gogrow.svg';
+import gogrow from './images/gogrow.png';
 import rokt from './images/rokt.svg';
 import whiterabbit from './images/whiterabbit.svg';
 
@@ -14,6 +14,7 @@ const ITEMS = [
     name: 'Rokt',
     width: 112,
     height: 74,
+    imageClassName: 'w-auto max-w-[240px] md:max-w-full',
   },
   {
     icon: whiterabbit,
@@ -21,6 +22,7 @@ const ITEMS = [
     name: 'WhiteRabbit',
     width: 83,
     height: 92,
+    imageClassName: 'w-auto max-w-[240px] md:max-w-full',
   },
   {
     icon: cloudnative,
@@ -28,6 +30,7 @@ const ITEMS = [
     name: 'CloudNative',
     width: 240,
     height: 46,
+    imageClassName: 'w-auto max-w-[240px] md:max-w-full',
   },
   {
     icon: gogrow,
@@ -35,6 +38,7 @@ const ITEMS = [
     name: 'The GoGrow Company',
     width: 152,
     height: 49,
+    imageClassName: 'max-w-[240px] md:max-w-full',
   },
 ];
 
@@ -46,7 +50,7 @@ const Partners = () => (
         <span className="-mt-1 ml-16 block lg:ml-0">// Media Partners</span>
       </h2>
       <ul className="grid w-1/2 grid-cols-2 grid-rows-2 lg:w-full sm:grid-cols-2">
-        {ITEMS.map(({ icon, url, name, width, height }, index) => (
+        {ITEMS.map(({ icon, url, name, width, height, imageClassName }, index) => (
           <li
             className="relative before:absolute before:right-0 before:h-full before:w-[1px] before:bg-vertical-dashed-line after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-horizontal-dashed-line after:bg-auto after:bg-center last:after:hidden even:before:hidden [&:nth-last-child(2)]:after:hidden"
             key={index}
@@ -57,12 +61,12 @@ const Partners = () => (
               target="_blank"
             >
               <img
-                className="w-auto max-w-[240px] md:max-w-full"
+                className={imageClassName}
                 src={icon}
                 width={width}
                 height={height}
                 loading="lazy"
-                alt=""
+                alt={name}
               />
               <span className="sr-only">{name} partner page</span>
             </Link>
