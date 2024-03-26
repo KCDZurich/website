@@ -66,7 +66,7 @@ const Partners = () => (
                 width={width}
                 height={height}
                 loading="lazy"
-                alt={name}
+                alt=""
               />
               <span className="sr-only">{name} partner page</span>
             </Link>
