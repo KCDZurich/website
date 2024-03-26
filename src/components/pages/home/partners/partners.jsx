@@ -16,11 +16,11 @@ const ITEMS = [
     height: 74,
   },
   {
-    icon: gogrow,
-    url: 'https://thegogorow.notion.site/The-GoGrow-Company-0ce3608a3f5d456286fad64d8d791202',
-    name: 'The GoGrow Company',
-    width: 152,
-    height: 49,
+    icon: whiterabbit,
+    url: 'https://www.whiterabbitcom.ch',
+    name: 'WhiteRabbit',
+    width: 83,
+    height: 92,
   },
   {
     icon: cloudnative,
@@ -30,11 +30,11 @@ const ITEMS = [
     height: 46,
   },
   {
-    icon: whiterabbit,
-    url: 'https://www.whiterabbitcom.ch',
-    name: 'WhiteRabbit',
-    width: 83,
-    height: 92,
+    icon: gogrow,
+    url: 'https://thegogorow.notion.site/The-GoGrow-Company-0ce3608a3f5d456286fad64d8d791202',
+    name: 'The GoGrow Company',
+    width: 152,
+    height: 49,
   },
 ];
 
