@@ -2,20 +2,44 @@ import React from 'react';
 
 import Link from 'components/shared/link';
 
-import cloudNative from './images/cloudnative.svg';
+import cloudnative from './images/cloudnative.svg';
+import gogrow from './images/gogrow.png';
 import rokt from './images/rokt.svg';
-import whiteRabbit from './images/white-rabbit.svg';
+import whiterabbit from './images/whiterabbit.svg';
 
 const ITEMS = [
-  { icon: rokt, url: 'https://rokt.cloud/', name: 'Rokt', width: 112, height: 74 },
   {
-    icon: whiteRabbit,
+    icon: rokt,
+    url: 'https://rokt.cloud/',
+    name: 'Rokt',
+    width: 112,
+    height: 74,
+    imageClassName: 'w-auto max-w-[240px] md:max-w-full',
+  },
+  {
+    icon: whiterabbit,
     url: 'https://www.whiterabbitcom.ch',
     name: 'WhiteRabbit',
     width: 83,
     height: 92,
+    imageClassName: 'w-auto max-w-[240px] md:max-w-full',
   },
-  { icon: cloudNative, url: 'https://www.cncf.io/', name: 'CloudNative', width: 240, height: 46 },
+  {
+    icon: cloudnative,
+    url: 'https://www.cncf.io/',
+    name: 'CloudNative',
+    width: 240,
+    height: 46,
+    imageClassName: 'w-auto max-w-[240px] md:max-w-full',
+  },
+  {
+    icon: gogrow,
+    url: 'https://thegogorow.notion.site/The-GoGrow-Company-0ce3608a3f5d456286fad64d8d791202',
+    name: 'The GoGrow Company',
+    width: 152,
+    height: 49,
+    imageClassName: 'max-w-[240px] md:max-w-full',
+  },
 ];
 
 const Partners = () => (
@@ -25,10 +49,10 @@ const Partners = () => (
         Community
         <span className="-mt-1 ml-16 block lg:ml-0">// Media Partners</span>
       </h2>
-      <ul className="grid w-1/2 grid-cols-2 grid-rows-2 lg:w-full lg:grid-cols-3 lg:grid-rows-1 sm:grid-cols-2 sm:grid-rows-2">
-        {ITEMS.map(({ icon, url, name, width, height }, index) => (
+      <ul className="grid w-1/2 grid-cols-2 grid-rows-2 lg:w-full sm:grid-cols-2">
+        {ITEMS.map(({ icon, url, name, width, height, imageClassName }, index) => (
           <li
-            className="relative before:absolute before:right-0 before:h-full before:w-[1px] before:bg-vertical-dashed-line after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-horizontal-dashed-line after:bg-auto after:bg-center last:after:hidden even:before:hidden lg:after:hidden lg:before:last:hidden lg:before:even:block sm:after:block sm:before:last:block sm:before:even:hidden [&:nth-last-child(2):even]:after:hidden"
+            className="relative before:absolute before:right-0 before:h-full before:w-[1px] before:bg-vertical-dashed-line after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-horizontal-dashed-line after:bg-auto after:bg-center last:after:hidden even:before:hidden [&:nth-last-child(2)]:after:hidden"
             key={index}
           >
             <Link
@@ -37,7 +61,7 @@ const Partners = () => (
               target="_blank"
             >
               <img
-                className="w-auto max-w-[240px] md:max-w-full"
+                className={imageClassName}
                 src={icon}
                 width={width}
                 height={height}
