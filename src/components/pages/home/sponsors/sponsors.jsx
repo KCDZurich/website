@@ -21,6 +21,7 @@ import postFinanceLogo from 'icons/sponsors/post-finance.svg';
 import puzzleLogo from 'icons/sponsors/puzzle.svg';
 import redHatLogo from 'icons/sponsors/red-hat.svg';
 import separator from 'icons/sponsors/separator.svg';
+import splunkLogo from 'icons/sponsors/splunk.svg';
 import swisscomLogo from 'icons/sponsors/swiss-com.svg';
 import veeamLogo from 'icons/sponsors/veeam.svg';
 import vshnLogo from 'icons/sponsors/vshn.svg';
@@ -46,6 +47,7 @@ const bronzeSponsors = [
   { icon: adfinisLogo, url: 'https://adfinis.com/', name: 'Adfinis' },
   { icon: bespinianLogo, url: 'https://bespinian.io/', name: 'Bespinian' },
   { icon: letsbootLogo, url: 'https://www.letsboot.ch/', name: 'Letsboot.ch' },
+  { icon: splunkLogo, url: 'https://www.splunk.com/', name: 'Splunk' },
 ];
 const specialSponsors = [
   { icon: postFinanceLogo, url: 'https://www.postfinance.ch/', name: 'PostFinance' },
@@ -290,7 +292,7 @@ const Sponsors = () => {
                 className={clsx(
                   'dash-border dash-border-right-none sm:dash-border-right-and-bottom-none',
                   {
-                    '[border-image-width:5px_5px_5px_5px] sm:[border-image-width:5px_5px_5px_5px]':
+                    '[border-image-width:0_5px_5px_5px] sm:[border-image-width:0_5px_5px_5px]':
                       bronzeSponsors.length - 1 === index,
                     'sm:[border-image-width:5px_5px_0_5px]': index === 1,
                     'sm:[border-image-width:5px_0_5px_5px]': index === 2,
