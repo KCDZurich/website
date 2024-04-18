@@ -3,7 +3,6 @@ import React from 'react';
 
 import Button from 'components/shared/button';
 
-const dateString = 'june 13th 2024';
 const title = 'KCD Zürich Rejects';
 const description =
   "KCD Zürich Rejects is an event designed to showcase the wealth of knowledge and innovation within the Kubernetes community that didn't fit into the main Kubernetes Community Days Zürich 2024 agenda.";
@@ -15,7 +14,7 @@ const Hero = () => (
   <section className="safe-paddings relative xs:max-h-[623px] xs:pb-[66.666%]">
     <div className="container py-40 lg:py-[88px] md:pb-[66px] md:pt-[85px] xs:py-12">
       <span className="ml-1 text-xl font-medium leading-normal text-white md:text-[13px]">
-        // conference <time dateTime="2024-06-13">{dateString}</time>
+        //<time dateTime="2024-06-05">june 5th2024 – 13.00 – open end</time>
       </span>
       <h1 className="mt-3 max-w-[480px] font-sans-cyber text-[72px] font-extrabold leading-denser tracking-tight text-primary-1 lg:max-w-[400px] lg:text-[64px] md:max-w-[320px] md:text-[40px] xs:text-[36px]">
         {title}
