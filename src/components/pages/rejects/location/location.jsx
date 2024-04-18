@@ -17,7 +17,7 @@ const Location = () => (
         >
           <div className="relative h-[390px] w-full overflow-hidden md:h-auto md:w-auto md:flex-1">
             <StaticImage
-              className="absolute inset-[5px] m-auto min-h-[390px] min-w-[404px] md:hidden"
+              className="absolute inset-[5px] m-auto min-h-[390px] min-w-[404px] md:!hidden"
               src="./images/rejects-location.jpg"
               width={404}
               height={390}
@@ -25,7 +25,7 @@ const Location = () => (
               alt=""
             />
             <StaticImage
-              className="absolute inset-0 m-auto hidden md:block"
+              className="absolute inset-0 m-auto !hidden md:!block"
               src="./images/rejects-location-mobile.jpg"
               width={404}
               height={192}
