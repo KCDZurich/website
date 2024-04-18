@@ -70,8 +70,8 @@ const Footer = () => {
           </ul>
           {location?.pathname === '/rejects2024/' && (
             <p className="mt-6 text-sm leading-normal opacity-50">
-              Inspired by the original <b className="font-semibold">"Cloud Native Rejekts"</b>{' '}
-              event. With gratitude for their pioneering concept.
+              Inspired by the original <b className="font-semibold">Cloud Native Rejekts</b> event.
+              With gratitude for their pioneering concept.
             </p>
           )}
         </nav>
