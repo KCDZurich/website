@@ -4,7 +4,7 @@ import React from 'react';
 import Button from 'components/shared/button';
 
 const dateString = 'june 13th 2024';
-const title = 'KCD Zurich Rejects';
+const title = 'KCD Zürich Rejects';
 const description =
   "KCD Zürich Rejects is an event designed to showcase the wealth of knowledge and innovation within the Kubernetes community that didn't fit into the main Kubernetes Community Days Zürich 2024 agenda.";
 
