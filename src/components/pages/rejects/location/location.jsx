@@ -11,9 +11,11 @@ const Location = () => (
     <div className="container-xl">
       <div className="container grid w-full grid-cols-12 gap-8 py-8 lg:gap-10 lg:!px-4 lg:py-[4.5rem] md:flex md:flex-col md:gap-12 md:!px-2 md:py-16 sm:py-8 xs:!px-0">
         <Link
-          to="https://goo.gl/maps/ooQufQWKzaRM286Z7"
+          to="https://maps.app.goo.gl/PKysm9HGHDBVbxLe6"
           className="group relative z-10 col-span-5 flex max-w-[416px] flex-col border border-primary-1 bg-white shadow-[20px_20px_0px_0px_rgba(161,203,211,0.3)] outline outline-4 outline-offset-0 outline-white md:max-w-none md:flex-row md:justify-stretch"
           theme="primary"
+          target="_blank"
+          rel="nofollow noreferrer"
         >
           <div className="relative h-[390px] w-full overflow-hidden md:h-auto md:w-auto md:flex-1">
             <StaticImage
@@ -48,10 +50,9 @@ const Location = () => (
           </h2>
           <p className="mt-5 text-xl leading-normal md:text-lg sm:text-base">
             Zentralwäscherei (ZWZ) is a 5-minute walk from Bahnhof Hardbrücke.{' '}
-            <strong className="font-bold">The Ombre Event Space</strong>
-            is located on the second floor and offers enough space for up to 100 people. It is set
-            up with a stage, a large video wall, a café seating area with bistro tables, and a
-            tribune for the audience.
+            <strong className="font-bold">The Ombre Event Space</strong> is located on the second
+            floor and offers enough space for up to 100 people. It is set up with a stage, a large
+            video wall, a café seating area with bistro tables, and a tribune for the audience.
           </p>
           <p className="mt-4 text-xl leading-normal md:text-lg sm:text-base">
             At the very top of our location, a spacious terrace awaits our guests with an extra
@@ -66,6 +67,8 @@ const Location = () => (
             to="https://rejects.kcdzurich.ch/"
             size="lg"
             theme="cyber"
+            target="_blank"
+            rel="nofollow noreferrer"
           >
             Get your ticket
           </Button>

@@ -5,7 +5,6 @@ import Features from 'components/pages/rejects/features';
 import Hero from 'components/pages/rejects/hero';
 import Location from 'components/pages/rejects/location';
 import Partners from 'components/pages/rejects/partners';
-import Speakers from 'components/pages/rejects/speakers';
 import Sponsors from 'components/pages/rejects/sponsors';
 import Venue from 'components/pages/rejects/venue';
 import Layout from 'components/shared/layout';
@@ -16,7 +15,6 @@ const RejectsPage = () => (
     <Hero />
     <Venue />
     <Features />
-    <Speakers />
     <Location />
     <Sponsors />
     <Partners />
@@ -25,4 +23,10 @@ const RejectsPage = () => (
 
 export default RejectsPage;
 
-export const Head = ({ location: { pathname } }) => <SEO pathname={pathname} />;
+export const Head = ({ location: { pathname } }) => (
+  <SEO
+    title="KCD Zürich Rejects 2024"
+    description="KCD Zürich Rejects on June 5th! This unique half-day event brings together tech enthusiasts and professionals for inspiring talks,  networking, and a stunning rooftop Apéro. Dive into discussions on the latest tech trends and connect with the community in the heart of Zürich."
+    pathname={pathname}
+  />
+);
