@@ -10,15 +10,14 @@ const Venue = () => (
       </div>
       <div className="text-2xl leading-normal text-primary-1 lg:text-xl md:text-base">
         <p>
-          With over 110 proposals received and only 17 slots available for KCD Zürich, Rejects
-          serves as a platform for those outstanding speakers who didn’t make the initial cut,
-          enabling them to share their expertise and insights with the community.
+          With over 90 people on the waiting list and a remarkable 110 talk submissions for KCD
+          Zürich, your enthusiasm has left us speechless.
         </p>
         <p className="mt-6 md:mt-4">
-          At KCD Zürich, we are deeply committed to fostering community engagement and providing
-          platforms for knowledge exchange. Given the unprecedented interest, we’ve decided to
-          organize an additional event titled{' '}
-          <strong className="font-bold">KCD Zürich Rejects</strong> on very short notice.
+          We’re excited to announce a special addition to our schedule:{' '}
+          <strong>KCD Zürich Rejects</strong>, to give more community members the opportunity to
+          share their insights and connect. We are excited to feature the top 6 speakers who didn’t
+          make the cut for the main event, ensuring their valuable talks are heard.
         </p>
       </div>
     </div>

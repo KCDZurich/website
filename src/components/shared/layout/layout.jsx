@@ -1,3 +1,4 @@
+import { useLocation } from '@reach/router';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 
@@ -7,6 +8,7 @@ import MobileMenu from 'components/shared/mobile-menu';
 import Modal from 'components/shared/modal';
 
 const Layout = ({ children, headerClassnames, isHomePage }) => {
+  const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -33,11 +35,13 @@ const Layout = ({ children, headerClassnames, isHomePage }) => {
       />
       <main className="flex-grow">{children}</main>
       <Footer />
-      <MobileMenu
-        isOpen={isMobileMenuOpen}
-        handleModalShow={handleModalShow}
-        onButtonClick={handleHeaderBurgerClick}
-      />
+      {location?.pathname !== '/rejects2024/' && (
+        <MobileMenu
+          isOpen={isMobileMenuOpen}
+          handleModalShow={handleModalShow}
+          onButtonClick={handleHeaderBurgerClick}
+        />
+      )}
       <Modal modalData={{}} isVisible={isModalVisible} isVideoModal onModalHide={handleModalHide} />
     </div>
   );

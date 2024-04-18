@@ -57,7 +57,7 @@ const Location = () => (
           <p className="mt-4 text-xl leading-normal md:text-lg sm:text-base">
             At the very top of our location, a spacious terrace awaits our guests with an extra
             large dinner table, bistro tables, lounge and BBQ grill. The perfect place to end an
-            event with an aperitif.
+            event with an networking apéro.
           </p>
           <p className="mt-4 text-xl font-bold leading-normal md:text-lg sm:text-base">
             We can't wait to see you!

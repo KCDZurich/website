@@ -25,7 +25,7 @@ const ITEMS = [
   },
   {
     icon: gogrow,
-    url: 'https://thegogorow.notion.site/The-GoGrow-Company-0ce3608a3f5d456286fad64d8d791202',
+    url: 'https://thegogrow.company/',
     name: 'The GoGrow Company',
     width: 152,
     height: 49,
