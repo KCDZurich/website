@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import React, { useState } from 'react';
 
+import acendLogo from 'icons/sponsors/acend.svg';
 import adfinisLogo from 'icons/sponsors/adfinis.svg';
 import campToCampLogo from 'icons/sponsors/camp-to-camp.svg';
 import cloudnativeLogo from 'icons/sponsors/cloudnative.svg';
@@ -25,11 +26,12 @@ const silverSponsors = [
   { icon: puzzleLogo, url: 'https://www.puzzle.ch/', name: 'Puzzle ITC' },
   { icon: campToCampLogo, url: 'https://www.camptocamp.com/', name: 'CampToCamp' },
   { icon: adfinisLogo, url: 'https://adfinis.com/', name: 'Adfinis' },
-  { icon: dbiLogo, url: 'https://www.dbi-services.com/', name: 'DBI Service' },
   { icon: redHatLogo, url: 'https://www.redhat.com/', name: 'RedHat' },
   { icon: roktLogo, url: 'https://rokt.cloud/', name: 'Rokt Cloud' },
   { icon: letsbootLogo, url: 'https://www.letsboot.ch/', name: 'Letsboot.ch' },
   { icon: flowLogo, url: 'https://flow.swiss/', name: 'Flow' },
+  { icon: acendLogo, url: 'https://acend.ch/', name: 'Acend' },
+  { icon: dbiLogo, url: 'https://www.dbi-services.com/', name: 'DBI Service' },
   { icon: peakScaleLogo, url: 'https://peakscale.ch/', name: 'Peak Scale' },
 ];
 
@@ -43,7 +45,7 @@ const Sponsors = () => {
           <h2 className="font-mono-cyber text-4xl font-bold uppercase tracking-tighter lg:text-[32px] md:text-2xl xs:text-[32px]">
             {title}
           </h2>
-          <ul className="mt-8 grid grid-cols-[190px_repeat(5,minmax(0,208px))] grid-rows-[repeat(3,95px)] lg:grid-cols-[170px_repeat(5,minmax(0,1fr))] lg:grid-rows-[repeat(3,73px)] md:grid-cols-[130px_repeat(5,minmax(0,1fr))] md:grid-rows-[repeat(3,48px)] sm:mt-6 sm:grid-cols-2 sm:grid-rows-none">
+          <ul className="mt-8 grid grid-cols-[190px_repeat(4,minmax(0,208px))] grid-rows-[repeat(4,95px)] lg:grid-cols-[170px_repeat(4,minmax(0,1fr))] lg:grid-rows-[repeat(4,73px)] md:grid-cols-[130px_repeat(4,minmax(0,1fr))] md:grid-rows-[repeat(4,48px)] sm:mt-6 sm:grid-cols-2 sm:grid-rows-none">
             <li className="relative col-end-2 flex items-center before:absolute before:bottom-0 before:left-0 before:h-1/2 before:w-[2px] before:bg-[#ADCFD3] sm:col-span-full sm:mb-3 sm:before:hidden">
               <span className="relative z-10 bg-[#EFFAFB] py-3">
                 <img
@@ -120,14 +122,14 @@ const Sponsors = () => {
                 className={clsx(
                   'dash-border dash-border-right-and-bottom-none sm:dash-border-right-and-bottom-none',
                   {
-                    '[border-image-width:0_5px_5px_5px] sm:[border-image-width:5px_5px_5px_5px]':
+                    '[border-image-width:5px_5px_5px_5px] sm:[border-image-width:5px_5px_5px_5px]':
                       silverSponsors.length - 1 === index,
-                    'sm:[border-image-width:5px_0_5px_5px]': silverSponsors.length - 2 === index,
-                    '[border-image-width:5px_5px_5px_5px]': index === 4,
-                    'col-start-2 col-end-3 sm:col-span-1 sm:[border-image-width:5px_0_5px_5px]':
-                      index === 5,
-                    '[border-image-width:5px_0_5px_5px]':
-                      index === 5 || index === 6 || index === 7 || index === 8,
+                    'sm:![border-image-width:5px_5px_5px_5px]': silverSponsors.length - 2 === index,
+                    '[border-image-width:5px_5px_0_5px]': index === 3,
+                    '[border-image-width:5px_5px_5px_5px]': index === 7,
+                    'col-start-2 sm:col-span-1 sm:[border-image-width:5px_0_0_5px]':
+                      index === 4 || index === 8,
+                    '[border-image-width:5px_0_5px_5px]': index === 8 || index === 9,
                     'sm:[border-image-width:5px_5px_0_5px]': index % 2 !== 0,
                   }
                 )}
