@@ -9,6 +9,7 @@ import Sponsors from 'components/pages/rejects/sponsors';
 import Venue from 'components/pages/rejects/venue';
 import Layout from 'components/shared/layout';
 import SEO from 'components/shared/seo';
+import SEO_DATA from 'constants/seo-data';
 
 const RejectsPage = () => (
   <Layout isHomePage>
@@ -24,10 +25,5 @@ const RejectsPage = () => (
 export default RejectsPage;
 
 export const Head = ({ location: { pathname } }) => (
-  <SEO
-    title="KCD Zürich Rejects 2024"
-    description="KCD Zürich Rejects on June 5th! This unique half-day event brings together tech enthusiasts and professionals for inspiring talks,  networking, and a stunning rooftop Apéro. Dive into discussions on the latest tech trends and connect with the community in the heart of Zürich."
-    ogImagePathname="/images/rejects-social-preview.jpg"
-    pathname={pathname}
-  />
+  <SEO {...SEO_DATA.rejects} pathname={pathname} />
 );

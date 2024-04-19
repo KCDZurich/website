@@ -47,6 +47,12 @@ export default {
     description:
       'Listen in to our exciting Kubernetes Community Day Zürich 2023 Podcast to hear from our renowned speakers\n',
   },
+  rejects: {
+    title: 'KCD Zürich Rejects 2024',
+    description:
+      'KCD Zürich Rejects on June 5th! This unique half-day event brings together tech enthusiasts and professionals for inspiring talks,  networking, and a stunning rooftop Apéro. Dive into discussions on the latest tech trends and connect with the community in the heart of Zürich.',
+    ogImagePathname: '/images/rejects-social-preview.jpg',
+  },
 
   static: ({ title }) => ({
     title: `${title} — Kubernetes Community Days`,
