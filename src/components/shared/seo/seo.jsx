@@ -6,7 +6,7 @@ const defaultTitle = 'Kubernetes Community Days Zürich';
 const defaultDescription =
   'Experience the power of community at the Kubernetes Community Days in Zürich!';
 
-const SEO = ({ title, description, pathname, isNoIndex }) => {
+const SEO = ({ title, description, pathname, ogImagePathname, isNoIndex }) => {
   const {
     site: {
       siteMetadata: { siteTitle, siteDescription, siteUrl, siteImage },
@@ -27,6 +27,7 @@ const SEO = ({ title, description, pathname, isNoIndex }) => {
   const currentTitle = title || defaultTitle || siteTitle;
   const currentDescription = description || defaultDescription || siteDescription;
   const currentUrl = pathname !== '/' ? `${siteUrl}${pathname}` : siteUrl;
+  const socialImage = `${siteUrl}${ogImagePathname || siteImage}`;
 
   return (
     <>
@@ -37,7 +38,7 @@ const SEO = ({ title, description, pathname, isNoIndex }) => {
       <meta property="og:title" content={currentTitle} />
       <meta property="og:description" content={currentDescription} />
       <meta property="og:url" content={currentUrl} />
-      <meta property="og:image" content={siteUrl + siteImage} />
+      <meta property="og:image" content={socialImage} />
       <meta property="og:type" content="website" />
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
