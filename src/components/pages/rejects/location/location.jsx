@@ -4,7 +4,7 @@ import React from 'react';
 import Button from 'components/shared/button';
 import Link from 'components/shared/link';
 
-const TITLE = 'Venue information';
+const TITLE = 'Event Information';
 
 const Location = () => (
   <section className="safe-paddings relative pb-32 pt-28 md:py-24 sm:py-16">
@@ -49,18 +49,26 @@ const Location = () => (
             {TITLE}
           </h2>
           <p className="mt-5 text-xl leading-normal md:text-lg sm:text-base">
-            Zentralwäscherei (ZWZ) is a 5-minute walk from Bahnhof Hardbrücke.{' '}
-            <strong className="font-bold">The Ombre Event Space</strong> is located on the second
-            floor and offers enough space for up to 100 people. It is set up with a stage, a large
-            video wall, a café seating area with bistro tables, and a tribune for the audience.
+            Choose from two experiences, both including food and drinks in the ticket price:
           </p>
+          <ul className="mt-4 list-inside list-disc text-xl leading-normal md:text-lg sm:text-base">
+            <li>
+              <b>Half-Day Experience [KCD Rejects]:</b>
+              <br />
+              Attend the afternoon’s KCD Rejects conference, featuring a series of insightful talks
+              and discussions.
+            </li>
+            <li>
+              <b>Full-Day Experience [Workshops + KCD Rejects]:</b>
+              <br />
+              Start your day with engaging Kubernetes or ArgoCD workshops, enjoy lunch, and continue
+              with the KCD Rejects conference in the afternoon.
+            </li>
+          </ul>
           <p className="mt-4 text-xl leading-normal md:text-lg sm:text-base">
-            At the very top of our location, a spacious terrace awaits our guests with an extra
-            large dinner table, bistro tables, lounge and BBQ grill. The perfect place to end an
-            event with an networking apéro.
-          </p>
-          <p className="mt-4 text-xl font-bold leading-normal md:text-lg sm:text-base">
-            We can't wait to see you!
+            Both options end with an amazing Rooftop Networking Apéro on a terrace with stunning
+            views, and is the perfect way to unwind and connect after a day filled with valuable
+            insights and interactions.
           </p>
           <Button
             className="mt-14 md:mt-7 md:text-[11px]"
