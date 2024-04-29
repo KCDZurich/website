@@ -1,3 +1,4 @@
+import { useLocation } from '@reach/router';
 import React from 'react';
 import slugify from 'slugify';
 
@@ -22,6 +23,8 @@ const items = [
 ];
 
 const Footer = () => {
+  const location = useLocation();
+
   const handleAnchorClick = (e) => {
     const getAnchor = (str) => slugify(str).toLocaleLowerCase();
 
@@ -42,13 +45,13 @@ const Footer = () => {
 
   return (
     <footer className="safe-paddings border-t border-t-gray-10 bg-white">
-      <div className="container flex items-center justify-between pb-5 pt-5 md:items-start md:gap-x-8 sm:flex-col">
+      <div className="container flex justify-between pb-5 pt-9 md:items-start md:gap-x-8 sm:flex-col sm:gap-y-12 sm:pt-5">
         <Link to="/">
           <Logo className="h-[40px] w-[149px] md:h-auto md:w-36" />
           <span className="sr-only">KCD Zürich</span>
         </Link>
 
-        <nav className="mt-4 flex md:mt-0 sm:mt-12">
+        <nav>
           <ul className="grid min-w-fit grid-cols-2 grid-rows-2 gap-x-3 gap-y-4 xl:gap-x-1 lg:mr-6 lg:gap-x-4 sm:mx-auto sm:gap-x-0 [@media(max-width:375px)]:grid-cols-1">
             {MENUS.footer.map(({ text, to, target, name }, index) => (
               <li className="w-fit max-w-min text-sm font-semibold text-primary-1" key={index}>
@@ -65,9 +68,15 @@ const Footer = () => {
               </li>
             ))}
           </ul>
+          {location?.pathname === '/rejects2024/' && (
+            <p className="mt-6 text-sm leading-normal opacity-50">
+              Inspired by the original <b className="font-semibold">Cloud Native Rejekts</b> event.
+              With gratitude for their pioneering concept.
+            </p>
+          )}
         </nav>
 
-        <div className="m:mt-12">
+        <div>
           <Link
             className="ml-0.5 text-sm font-semibold transition-colors duration-200 hover:!text-[#06B3B8] sm:ml-0"
             theme="primary"

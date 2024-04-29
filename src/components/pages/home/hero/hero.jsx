@@ -3,12 +3,18 @@ import React from 'react';
 
 import Button from 'components/shared/button';
 
+import ArrowIcon from './images/arrow.inline.svg';
+
 const dateString = 'june 13th 2024';
 const title = 'KCD Zürich 2024';
 const description =
   'Experience the power of community at the Kubernetes Community Days in Zürich! When a diverse group of experts comes together to learn, network, and share knowledge on all things cloud native.';
-const buttonURL = 'https://tickets.kcdzurich.ch/';
-const buttonText = 'Get Your Ticket';
+
+const mainButtonURL = 'https://tickets.kcdzurich.ch/';
+const mainButtonText = 'Get Your Ticket';
+
+const secondaryButtonURL = '/workshops';
+const secondaryButtonText = 'book a workshop';
 
 const Hero = () => (
   <section className="safe-paddings relative xs:max-h-[623px] xs:pb-[66.666%]">
@@ -22,16 +28,28 @@ const Hero = () => (
       <p className="mt-4 max-w-[440px] text-base font-medium leading-relaxed text-primary-1 md:mt-3 md:max-w-[300px] md:text-sm xs:mt-2 xs:max-w-[330px] xs:text-[12px]">
         {description}
       </p>
-      <Button
-        className="z-[1] mt-12 !text-base md:mt-9 md:!text-[11px] sm:mt-8"
-        theme="cyber"
-        size="lg"
-        to={buttonURL}
-        target="_blank"
-        rel="nofollow noreferrer"
-      >
-        {buttonText}
-      </Button>
+      <div className="mt-12 flex items-center gap-6 lg:flex-col lg:items-start md:mt-9 md:gap-[18px] sm:mt-8 sm:gap-3.5">
+        <Button
+          className="z-[1] !text-base md:!text-[11px] "
+          theme="cyber"
+          size="lg"
+          to={mainButtonURL}
+          target="_blank"
+          rel="nofollow noreferrer"
+        >
+          {mainButtonText}
+        </Button>
+        <Button
+          className="z-[1] inline-flex items-center gap-2 !text-2xl leading-normal lg:!text-xl md:!text-lg"
+          theme="link-black"
+          size="lg"
+          to={secondaryButtonURL}
+          rel="nofollow noreferrer"
+        >
+          <span>{secondaryButtonText}</span>
+          <ArrowIcon className="mt-[3px] h-2 w-auto" />
+        </Button>
+      </div>
     </div>
     <StaticImage
       className="hero-clip-path pointer-events-none !absolute -top-[76px] left-1/2 -z-10 w-[1696px] -translate-x-1/2 after:absolute after:left-1/2 after:top-0 after:-z-20 after:h-full after:w-full after:-translate-x-1/2 after:bg-hero-gradient lg:!hidden"

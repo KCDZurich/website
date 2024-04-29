@@ -17,13 +17,15 @@ const styles = {
   theme: {
     blue: 'bg-blue-1 text-white hover:bg-blue-2 rounded',
     cyber:
-      'relative w-[210px] font-semibold text-white uppercase rounded border border-primary-1 md:w-auto md:max-w-[144px]',
+      'relative w-[211px] font-semibold text-white uppercase rounded border border-primary-1 md:w-auto md:max-w-[144px]',
     primary: 'bg-white uppercase text-primary-1 border-[3px] border-primary-1 hover:bg-blue-light',
     default: 'border-0 bg-transparent text-primary-1 hover:bg-opacity-10',
     'link-primary':
       'font-semibold inline-flex items-baseline leading-none transition-colors text-primary-1 hover:text-[#06B3B8]',
     'link-red':
       'font-mono-cyber text-orange border-2 border-transparent hover:border-orange !px-2 !py-1 !h-auto !w-auto',
+    'link-black':
+      'font-mono-cyber text-primary-1 hover:text-orange !px-0 !py-0 !h-auto !w-auto lowercase md:!h-auto transition-colors',
   },
 };
 

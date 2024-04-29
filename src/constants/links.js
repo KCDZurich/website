@@ -24,7 +24,6 @@ export default {
   },
   workshops: {
     to: '/workshops',
-    id: getAnchor('Workshops'),
     homeTo: '/workshops',
   },
   archive: {

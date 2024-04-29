@@ -1,11 +1,14 @@
 import LINKS from 'constants/links.js';
 
+// { text: 'Home', ...LINKS.home },
+// { text: 'Speakers', ...LINKS.speakers },
+// { text: 'Schedule', ...LINKS.schedule },
+// { text: 'Call for Proposal', ...LINKS.proposal },
+
 const MENUS = {
   header: [
-    // { text: 'Home', ...LINKS.home },
-    // { text: 'Schedule', ...LINKS.schedule },
-    // { text: 'Workshops', ...LINKS.workshops },
     { text: 'Speakers', ...LINKS.speakers },
+    { text: 'Workshops', ...LINKS.workshops },
     { text: 'Sponsors', ...LINKS.sponsors },
     { text: 'Podcast', ...LINKS.podcast },
     { text: 'Archive', ...LINKS.archive },
@@ -18,11 +21,8 @@ const MENUS = {
     { text: 'Speakers', ...LINKS.speakers },
   ],
   mobile: [
-    // { text: 'Home', ...LINKS.home },
-    // { text: 'Schedule', ...LINKS.schedule },
-    // { text: 'Call for Proposal', ...LINKS.proposal },
-    // { text: 'Workshops', ...LINKS.workshops },
     { text: 'Speakers', ...LINKS.speakers },
+    { text: 'Workshops', ...LINKS.workshops },
     { text: 'Sponsors', ...LINKS.sponsors },
     { text: 'Podcast', ...LINKS.podcast },
     { text: 'Archive', ...LINKS.archive },
