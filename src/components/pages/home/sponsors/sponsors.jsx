@@ -22,6 +22,7 @@ import puzzleLogo from 'icons/sponsors/puzzle.svg';
 import redHatLogo from 'icons/sponsors/red-hat.svg';
 import separator from 'icons/sponsors/separator.svg';
 import splunkLogo from 'icons/sponsors/splunk.svg';
+import suseLogo from 'icons/sponsors/suse.svg';
 import swisscomLogo from 'icons/sponsors/swiss-com.svg';
 import veeamLogo from 'icons/sponsors/veeam.svg';
 import vshnLogo from 'icons/sponsors/vshn.svg';
@@ -48,6 +49,7 @@ const bronzeSponsors = [
   { icon: bespinianLogo, url: 'https://bespinian.io/', name: 'Bespinian' },
   { icon: letsbootLogo, url: 'https://www.letsboot.ch/', name: 'Letsboot.ch' },
   { icon: splunkLogo, url: 'https://www.splunk.com/', name: 'Splunk' },
+  { icon: suseLogo, url: 'https://www.suse.com/', name: 'Suse' },
 ];
 const specialSponsors = [
   { icon: postFinanceLogo, url: 'https://www.postfinance.ch/', name: 'PostFinance' },
@@ -295,8 +297,13 @@ const Sponsors = () => {
                     '[border-image-width:0_5px_5px_5px] sm:[border-image-width:0_5px_5px_5px]':
                       bronzeSponsors.length - 1 === index,
                     'sm:[border-image-width:5px_5px_0_5px]': index === 1,
-                    'sm:[border-image-width:5px_0_5px_5px]': index === 2,
-                    'sm:[border-image-width:5px_5px_5px_5px]': index === 3,
+                    'sm:[border-image-width:5px_5px_5px_5px]': index === 2,
+                    '[border-image-width:5px_5px_5px_5px] sm:[border-image-width:5px_5px_5px_0]':
+                      index === 3,
+                    'col-start-2 col-end-3 [border-image-width:0_0_5px_5px] sm:col-span-1 sm:[border-image-width:0_5px_5px_5px]':
+                      index === 4,
+                    'col-start-3 col-end-4 w-[209px] [border-image-width:0_5px_5px_5px] lg:w-auto sm:col-span-1 sm:[border-image-width:0_5px_5px_0]':
+                      index === 5,
                   }
                 )}
                 key={index}
