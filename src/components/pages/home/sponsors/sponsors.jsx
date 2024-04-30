@@ -302,7 +302,7 @@ const Sponsors = () => {
                       index === 3,
                     'col-start-2 col-end-3 [border-image-width:0_0_5px_5px] sm:col-span-1 sm:[border-image-width:0_5px_5px_5px]':
                       index === 4,
-                    'col-start-3 col-end-4 w-[209px] [border-image-width:0_5px_5px_5px] lg:w-auto sm:col-span-1 sm:[border-image-width:0_5px_5px_0]':
+                    'col-start-3 col-end-4 w-[209px] [border-image-width:0_5px_5px_5px] lg:w-auto sm:col-span-1 sm:![border-image-width:0_5px_5px_0]':
                       index === 5,
                   }
                 )}
