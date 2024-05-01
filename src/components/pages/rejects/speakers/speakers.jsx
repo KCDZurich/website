@@ -10,6 +10,7 @@ import marcHerrenPhoto from './images/marc-herren.jpg';
 import marcoKuendigPhoto from './images/marco-kuendig.jpg';
 import maskImage from './images/mask.svg';
 import simonKrengerPhoto from './images/simon-krenger.jpg';
+import thomasGrafPhoto from './images/thomas-graf.jpg';
 
 const TITLE = 'Speakers';
 const DESCRIPTION =
@@ -42,7 +43,7 @@ const SPEAKERS = [
   {
     fullName: 'Thomas Graf',
     tagLine: 'Senior Field Engineer @Apple | TOC @CNCF ',
-    profilePicture: josephinePfeifferPhoto,
+    profilePicture: thomasGrafPhoto,
   },
   {
     fullName: 'Marc Herren',
