@@ -5,6 +5,7 @@ import Features from 'components/pages/rejects/features';
 import Hero from 'components/pages/rejects/hero';
 import Location from 'components/pages/rejects/location';
 import Partners from 'components/pages/rejects/partners';
+import Speakers from 'components/pages/rejects/speakers';
 import Sponsors from 'components/pages/rejects/sponsors';
 import Venue from 'components/pages/rejects/venue';
 import Layout from 'components/shared/layout';
@@ -16,6 +17,7 @@ const RejectsPage = () => (
     <Hero />
     <Venue />
     <Features />
+    <Speakers />
     <Location />
     <Sponsors />
     <Partners />
