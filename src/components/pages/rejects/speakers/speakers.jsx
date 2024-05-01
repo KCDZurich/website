@@ -66,7 +66,7 @@ const Speakers = () => (
         className="mt-5 max-w-[660px] text-center text-xl leading-normal md:text-lg"
         dangerouslySetInnerHTML={{ __html: DESCRIPTION }}
       />
-      <ul className="mt-14 grid w-full grid-cols-4 justify-center gap-14 lg:grid-cols-3 md:mt-9 md:grid-cols-2 md:gap-9 sm:mt-8 sm:gap-8 xs:grid-cols-1">
+      <ul className="mt-14 grid w-full grid-cols-4 justify-items-center gap-14 lg:grid-cols-3 md:mt-9 md:grid-cols-2 md:gap-9 sm:mt-8 sm:gap-8 xs:grid-cols-1">
         {SPEAKERS.map(({ profilePicture, fullName, tagLine }, index) => (
           <li className="flex max-w-[248px] flex-col items-center" key={index}>
             <div className="relative h-[280px] w-[240px]">
