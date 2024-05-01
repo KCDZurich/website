@@ -20,35 +20,32 @@ const BTN_TITLE = 'More to come';
 const SPEAKERS = [
   {
     fullName: 'Marco Kündig',
-    tagLine: 'Kubernetes Pod and Node Autoscaling on Spot Instances in practice',
+    tagLine: 'CTO at copebit AG',
     profilePicture: marcoKuendigPhoto,
   },
   {
     fullName: 'Simon Krenger',
-    tagLine: 'Fixing Kubernetes anytime, anywhere',
+    tagLine: 'Principal Technical Account Manager at Red Hat',
     profilePicture: simonKrengerPhoto,
   },
   {
     fullName: 'Kyra Goud',
-    tagLine:
-      'Would you like fries with that? How we added AI-powered recommendations to Developer Hub',
+    tagLine: 'Specialist Solution Architect at Red Hat',
     profilePicture: kyraGoudPhoto,
   },
   {
     fullName: 'Josie Pfeiffer',
-    tagLine:
-      'Would you like fries with that? How we added AI-powered recommendations to Developer Hub',
+    tagLine: 'Cloud Native Consultant, Red Hat',
     profilePicture: josephinePfeifferPhoto,
   },
   {
     fullName: 'Thomas Graf',
-    tagLine: 'Senior Field Engineer @Apple | TOC @CNCF ',
+    tagLine: 'Founder & CTO of Isovalent',
     profilePicture: thomasGrafPhoto,
   },
   {
     fullName: 'Marc Herren',
-    tagLine:
-      'How do you make life easier as a Dev | Ops | TooBusy / Lazy person? Use earthly to build your artifcacts',
+    tagLine: 'Founder of remmen.io',
     profilePicture: marcHerrenPhoto,
   },
 ];
