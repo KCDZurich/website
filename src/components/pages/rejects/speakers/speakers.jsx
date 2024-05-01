@@ -14,7 +14,7 @@ import thomasGrafPhoto from './images/thomas-graf.jpg';
 
 const TITLE = 'Speakers';
 const DESCRIPTION =
-  'Explore cloud native excellence at <b>KCD Zurich 2024</b>! Join expert speakers for talks, networking, and a vibrant celebration of innovation.';
+  'Explore cloud native excellence at <b>KCD Zurich Rejects 2024</b>! Join expert speakers for talks, networking, and a vibrant celebration of innovation.';
 const BTN_TITLE = 'More to come';
 
 const SPEAKERS = [
