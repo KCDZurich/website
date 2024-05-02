@@ -61,7 +61,7 @@ const Hero = () => (
       alt="Hero illustration"
     />
     <StaticImage
-      className="pointer-events-none !absolute -top-[60px] left-1/2 -z-10 !hidden w-[1370px] -translate-x-1/2 bg-hero-gradient lg:!block md:-top-[48px] md:w-[1100px] xs:!hidden"
+      className="pointer-events-none !absolute -top-[60px] left-1/2 -z-10 !mr-40 !hidden w-[1370px] -translate-x-[48%] bg-hero-gradient lg:!block md:-top-[48px] md:w-[1100px] md:-translate-x-1/2 xs:!hidden"
       src="./images/hero-tablet.png"
       formats={['auto', 'webp']}
       loading="eager"

@@ -1,4 +1,3 @@
-import { useLocation } from '@reach/router';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
@@ -13,8 +12,13 @@ import Button from '../button';
 import Link from '../link';
 import Modal from '../modal';
 
-const Header = ({ isMobileMenuOpen, onBurgerClick, additionalClassName, isHomePage }) => {
-  const location = useLocation();
+const Header = ({
+  isMobileMenuOpen,
+  onBurgerClick,
+  additionalClassName,
+  isHomePage,
+  isHideMenu,
+}) => {
   const getAnchor = (str) => slugify(str).toLocaleLowerCase();
   const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -58,8 +62,8 @@ const Header = ({ isMobileMenuOpen, onBurgerClick, additionalClassName, isHomePa
           <Logo className="h-[40px] w-[149px]" />
           <span className="sr-only">KCD Zürich</span>
         </Link>
-        {location?.pathname !== '/rejects2024/' && (
-          <nav className={clsx(isHomePage && 'mr-36 lg:mr-44')}>
+        {!isHideMenu && (
+          <nav className={clsx(isHomePage && 'mr-40 lg:mr-[154px]')}>
             <ul
               className={clsx(
                 'flex space-x-8 text-white lg:ml-0 lg:space-x-6 md:hidden',
@@ -95,17 +99,21 @@ const Header = ({ isMobileMenuOpen, onBurgerClick, additionalClassName, isHomePa
           <ComputerIcon className="mr-2.5 h-4 w-4" aria-hidden />
           Video 2023
         </Button>
-        <Burger
-          className="!absolute right-4 z-50 hidden md:block"
-          isToggled={isMobileMenuOpen}
-          onClick={onBurgerClick}
-        />
-        <Modal
-          modalData={{}}
-          isVisible={isModalVisible}
-          isVideoModal
-          onModalHide={handleModalHide}
-        />
+        {!isHideMenu && (
+          <>
+            <Burger
+              className="!absolute right-4 z-50 hidden md:block"
+              isToggled={isMobileMenuOpen}
+              onClick={onBurgerClick}
+            />
+            <Modal
+              modalData={{}}
+              isVisible={isModalVisible}
+              isVideoModal
+              onModalHide={handleModalHide}
+            />
+          </>
+        )}
       </div>
     </header>
   );
@@ -116,12 +124,14 @@ Header.propTypes = {
   onBurgerClick: PropTypes.func.isRequired,
   additionalClassName: PropTypes.string,
   isHomePage: PropTypes.bool,
+  isHideMenu: PropTypes.bool,
 };
 
 Header.defaultProps = {
   isMobileMenuOpen: false,
   additionalClassName: null,
   isHomePage: false,
+  isHideMenu: false,
 };
 
 export default Header;
