@@ -13,7 +13,7 @@ import SEO from 'components/shared/seo';
 import SEO_DATA from 'constants/seo-data';
 
 const RejectsPage = () => (
-  <Layout isHomePage>
+  <Layout isHideMenu>
     <Hero />
     <Venue />
     <Features />

@@ -3,17 +3,17 @@ import React from 'react';
 
 import Button from 'components/shared/button';
 import LINKS from 'constants/links';
-import useSpeakers from 'hooks/use-speakers';
+import useSessionize from 'hooks/use-sessionize';
 
 import maskImage from './images/mask.svg';
 
 const TITLE = 'Speakers';
 const DESCRIPTION =
   'Explore cloud native excellence at <b>KCD Zurich 2024</b>! Join expert speakers for talks, networking, and a vibrant celebration of innovation.';
-const BTN_TITLE = 'More to come';
+const BTN_TITLE = 'All speakers';
 
 const Speakers = () => {
-  const { speakers, error } = useSpeakers(true);
+  const { topSpeakers, error } = useSessionize(true, false);
 
   return (
     <section className="safe-paddings relative pt-[120px] lg:pt-16 md:pt-10 sm:pt-8">
@@ -28,7 +28,7 @@ const Speakers = () => {
           className="mt-5 max-w-[660px] text-center text-xl leading-normal md:text-lg"
           dangerouslySetInnerHTML={{ __html: DESCRIPTION }}
         />
-        {error && !speakers.length && (
+        {error && !topSpeakers.length && (
           <div className="mt-14 w-full md:mt-9 sm:mt-8">
             <h3 className="text-center text-lg font-bold uppercase leading-tight text-red">
               Loading error
@@ -36,7 +36,7 @@ const Speakers = () => {
           </div>
         )}
         <ul className="mt-14 grid w-full grid-cols-4 justify-items-center gap-14 lg:grid-cols-3 md:mt-9 md:grid-cols-2 md:gap-9 sm:mt-8 sm:gap-8 xs:grid-cols-1">
-          {!error && !speakers.length && (
+          {!error && !topSpeakers.length && (
             <>
               {Array.from({ length: 8 }, (_, index) => index).map((item) => (
                 <li className="flex max-w-[248px] animate-pulse flex-col items-center" key={item}>
@@ -60,9 +60,9 @@ const Speakers = () => {
               ))}
             </>
           )}
-          {!error && speakers.length > 0 && (
+          {!error && topSpeakers.length > 0 && (
             <>
-              {speakers.map(({ profilePicture, fullName, tagLine }, index) => (
+              {topSpeakers.map(({ profilePicture, fullName, tagLine }, index) => (
                 <li className="flex max-w-[248px] flex-col items-center" key={index}>
                   <div className="relative h-[280px] w-[240px]">
                     <img
@@ -98,10 +98,11 @@ const Speakers = () => {
           )}
         </ul>
         <Button
-          className="mt-12 min-w-[170px] flex-none opacity-60 hover:bg-white md:mt-8 xs:mt-8"
+          className="mt-12 min-w-[170px] flex-none md:mt-8 xs:mt-8"
+          to="/speakers"
           theme="primary"
           size="sm"
-          disabled
+          target="_blank"
         >
           {BTN_TITLE}
         </Button>

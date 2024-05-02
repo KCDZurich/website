@@ -4,6 +4,10 @@ export default {
     description:
       'Explore the detailed agenda for Kubernetes Community Days in Zürich on June 15, 2023. Listen to expert talks, and connect with Kubernetes professionals. Plan your day now!',
   },
+  speakers: {
+    title: 'Experts & Innovators',
+    description: 'Discover the lineup of the speakers at Kubernetes Community Days Zurich',
+  },
   workshops: {
     title: 'Workshops — Kubernetes Community Days',
     description:

@@ -22,6 +22,8 @@ const styles = {
     default: 'border-0 bg-transparent text-primary-1 hover:bg-opacity-10',
     'link-primary':
       'font-semibold inline-flex items-baseline leading-none transition-colors text-primary-1 hover:text-[#06B3B8]',
+    'link-red':
+      'font-mono-cyber text-orange border-2 border-transparent hover:border-orange !px-2 !py-1 !h-auto !w-auto',
     'link-black':
       'font-mono-cyber text-primary-1 hover:text-orange !px-0 !py-0 !h-auto !w-auto lowercase md:!h-auto transition-colors',
   },
