@@ -1,4 +1,6 @@
+import clsx from 'clsx';
 import { StaticImage } from 'gatsby-plugin-image';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import Button from 'components/shared/button';
@@ -6,8 +8,8 @@ import Link from 'components/shared/link';
 
 const TITLE = 'Venue information';
 
-const Venue = () => (
-  <section className="safe-paddings relative pb-[152px] md:pb-24 sm:pb-16">
+const VenueInformation = ({ className }) => (
+  <section className={clsx('safe-paddings relative', className)}>
     <div className="container-xl bg-[#FFF4F0]">
       <div className="container grid w-full grid-cols-12 gap-8 py-[88px] lg:gap-10 lg:!px-4 lg:py-[4.5rem] md:flex md:flex-col md:gap-12 md:!px-2 md:py-16 sm:py-8 xs:!px-0">
         <Link
@@ -65,4 +67,12 @@ const Venue = () => (
   </section>
 );
 
-export default Venue;
+VenueInformation.propTypes = {
+  className: PropTypes.string,
+};
+
+VenueInformation.defaultProps = {
+  className: null,
+};
+
+export default VenueInformation;
