@@ -14,7 +14,7 @@ const Workshops = () => (
     <Hero />
     <WorkshopList />
     <Acend />
-    <VenueInformation />
+    <VenueInformation className="pb-[152px] md:pb-24 sm:pb-16" />
   </Layout>
 );
 
