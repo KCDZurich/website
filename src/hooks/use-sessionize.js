@@ -2,12 +2,37 @@ import { useEffect, useState, useCallback } from 'react';
 
 import endpoints from 'constants/sessionize';
 
-export default function useSessionize(getTopSpeakers = false, getAcceptedSpeakers = false) {
+export default function useSessionize({
+  getGrid = false,
+  getSessions = false,
+  getTopSpeakers = false,
+  getAcceptedSpeakers = false,
+}) {
+  const [grid, setGrid] = useState([]);
   const [sessions, setSessions] = useState([]);
   const [speakers, setSpeakers] = useState([]);
   const [topSpeakers, setTopSpeakers] = useState([]);
   const [acceptedSpeakers, setAcceptedSpeakers] = useState([]);
   const [error, setError] = useState(null);
+
+  const fetchGrid = useCallback(async () => {
+    try {
+      const response = await fetch(endpoints.grid);
+
+      if (response.ok) {
+        const data = await response.json();
+
+        if (data.length) {
+          setGrid(data[0].rooms);
+        }
+      } else {
+        throw new Error(`Error: ${response.status}`);
+      }
+    } catch (error) {
+      setError(error.toString());
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const fetchSessions = useCallback(async () => {
     try {
@@ -17,7 +42,7 @@ export default function useSessionize(getTopSpeakers = false, getAcceptedSpeaker
         const data = await response.json();
 
         if (data.length) {
-          setSessions(data[0].sessions);
+          setSessions(data[0].sessions.filter(({ status }) => status === 'Accepted'));
         }
       } else {
         throw new Error(`Error: ${response.status}`);
@@ -46,7 +71,14 @@ export default function useSessionize(getTopSpeakers = false, getAcceptedSpeaker
   }, []);
 
   useEffect(() => {
-    if (getAcceptedSpeakers) {
+    if (getGrid) {
+      fetchGrid();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fetchGrid]);
+
+  useEffect(() => {
+    if (getSessions || getAcceptedSpeakers) {
       fetchSessions();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -61,9 +93,7 @@ export default function useSessionize(getTopSpeakers = false, getAcceptedSpeaker
 
   useEffect(() => {
     if (getAcceptedSpeakers && sessions.length && speakers.length) {
-      const filteredSessions = sessions
-        .filter(({ status }) => status === 'Accepted')
-        .map(({ id }) => id);
+      const filteredSessions = sessions.map(({ id }) => id);
       setAcceptedSpeakers(
         speakers.filter((speaker) =>
           speaker.sessions.some((session) => filteredSessions.includes(String(session.id)))
@@ -72,5 +102,5 @@ export default function useSessionize(getTopSpeakers = false, getAcceptedSpeaker
     }
   }, [getAcceptedSpeakers, sessions, speakers]);
 
-  return { topSpeakers, acceptedSpeakers, error };
+  return { grid, sessions, topSpeakers, acceptedSpeakers, error };
 }
