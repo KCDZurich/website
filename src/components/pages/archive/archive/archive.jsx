@@ -1,25 +1,25 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 
-import AdrianPhoto from 'components/pages/schedule/schedule/images/adrian-reber-photo.jpg';
-import AnnieTalvastoPhoto from 'components/pages/schedule/schedule/images/annie-talvasto-photo.jpg';
-import BillPhoto from 'components/pages/schedule/schedule/images/bill-mulligan-photo.jpg';
-import FilipPhoto from 'components/pages/schedule/schedule/images/filip-nicolic-photo.jpg';
-import JuliusVolzPhoto from 'components/pages/schedule/schedule/images/julius-volz-photo.jpg';
-import LenaPhoto from 'components/pages/schedule/schedule/images/lena-fuhrimann-photo.jpg';
-import LisaFalcoPhoto from 'components/pages/schedule/schedule/images/lisa-falco-photo.jpg';
-import LizRicePhoto from 'components/pages/schedule/schedule/images/liz-rice-photo.jpg';
-import MaxKorbacherPhoto from 'components/pages/schedule/schedule/images/max-korbacher-photo.jpg';
-import PriyaWadhwaPhoto from 'components/pages/schedule/schedule/images/priya-wadhwa-photo.jpg';
-import RaphaelPhoto from 'components/pages/schedule/schedule/images/raphael-photo.jpg';
-import RetoPhoto from 'components/pages/schedule/schedule/images/reto-lehmann-photo.jpg';
-import RicardoRochaPhoto from 'components/pages/schedule/schedule/images/ricardo-rocha-photo.jpg';
-import SebastianKisterPhoto from 'components/pages/schedule/schedule/images/sebastian-kister-photo.jpg';
-import ThomasGrafPhoto from 'components/pages/schedule/schedule/images/thomas-graf-photo.jpg';
-import TimoSalmPhoto from 'components/pages/schedule/schedule/images/timo-salm-photo.jpg';
 import Button from 'components/shared/button';
 import Link from 'components/shared/link';
 import DisketteIcon from 'icons/diskette.inline.svg';
+import AdrianPhoto from 'images/schedule-2023/adrian-reber-photo.jpg';
+import AnnieTalvastoPhoto from 'images/schedule-2023/annie-talvasto-photo.jpg';
+import BillPhoto from 'images/schedule-2023/bill-mulligan-photo.jpg';
+import FilipPhoto from 'images/schedule-2023/filip-nicolic-photo.jpg';
+import JuliusVolzPhoto from 'images/schedule-2023/julius-volz-photo.jpg';
+import LenaPhoto from 'images/schedule-2023/lena-fuhrimann-photo.jpg';
+import LisaFalcoPhoto from 'images/schedule-2023/lisa-falco-photo.jpg';
+import LizRicePhoto from 'images/schedule-2023/liz-rice-photo.jpg';
+import MaxKorbacherPhoto from 'images/schedule-2023/max-korbacher-photo.jpg';
+import PriyaWadhwaPhoto from 'images/schedule-2023/priya-wadhwa-photo.jpg';
+import RaphaelPhoto from 'images/schedule-2023/raphael-photo.jpg';
+import RetoPhoto from 'images/schedule-2023/reto-lehmann-photo.jpg';
+import RicardoRochaPhoto from 'images/schedule-2023/ricardo-rocha-photo.jpg';
+import SebastianKisterPhoto from 'images/schedule-2023/sebastian-kister-photo.jpg';
+import ThomasGrafPhoto from 'images/schedule-2023/thomas-graf-photo.jpg';
+import TimoSalmPhoto from 'images/schedule-2023/timo-salm-photo.jpg';
 
 import Separator from './svg/separator.inline.svg';
 

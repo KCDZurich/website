@@ -5,7 +5,6 @@ import Hero from 'components/pages/schedule/hero';
 import Schedule from 'components/pages/schedule/schedule';
 import Layout from 'components/shared/layout';
 import SEO from 'components/shared/seo';
-import ITEMS from 'constants/schedule-2023';
 import SEO_DATA from 'constants/seo-data';
 
 const TITLE = 'Schedule for <time class="text-blue-1 xs:block">15 June, 2023</time>';
@@ -20,12 +19,12 @@ const SchedulePage = ({ location }) => (
       buttonLink="https://tickets.kcdzurich.ch/"
       buttonTitle="Get your ticket"
     />
-    <Schedule location={location} schedule={ITEMS} />
+    <Schedule location={location} />
   </Layout>
 );
 
 export default SchedulePage;
 
 export const Head = ({ location: { pathname } }) => (
-  <SEO {...SEO_DATA.schedule} pathname={pathname} />
+  <SEO {...SEO_DATA.schedule2023} pathname={pathname} />
 );

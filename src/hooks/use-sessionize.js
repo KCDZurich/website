@@ -3,36 +3,15 @@ import { useEffect, useState, useCallback } from 'react';
 import endpoints from 'constants/sessionize';
 
 export default function useSessionize({
-  getGrid = false,
   getSessions = false,
   getTopSpeakers = false,
   getAcceptedSpeakers = false,
 }) {
-  const [grid, setGrid] = useState([]);
   const [sessions, setSessions] = useState([]);
   const [speakers, setSpeakers] = useState([]);
   const [topSpeakers, setTopSpeakers] = useState([]);
   const [acceptedSpeakers, setAcceptedSpeakers] = useState([]);
   const [error, setError] = useState(null);
-
-  const fetchGrid = useCallback(async () => {
-    try {
-      const response = await fetch(endpoints.grid);
-
-      if (response.ok) {
-        const data = await response.json();
-
-        if (data.length) {
-          setGrid(data[0].rooms);
-        }
-      } else {
-        throw new Error(`Error: ${response.status}`);
-      }
-    } catch (error) {
-      setError(error.toString());
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const fetchSessions = useCallback(async () => {
     try {
@@ -42,7 +21,16 @@ export default function useSessionize({
         const data = await response.json();
 
         if (data.length) {
-          setSessions(data[0].sessions.filter(({ status }) => status === 'Accepted'));
+          setSessions(
+            data[0].sessions.filter(
+              ({ status, questionAnswers }) =>
+                status === 'Accepted' &&
+                questionAnswers.some(
+                  ({ question, answer }) =>
+                    question === 'Sponsor Spotlight' && (answer === 'false' || !answer)
+                )
+            )
+          );
         }
       } else {
         throw new Error(`Error: ${response.status}`);
@@ -71,13 +59,6 @@ export default function useSessionize({
   }, []);
 
   useEffect(() => {
-    if (getGrid) {
-      fetchGrid();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [fetchGrid]);
-
-  useEffect(() => {
     if (getSessions || getAcceptedSpeakers) {
       fetchSessions();
     }
@@ -102,5 +83,5 @@ export default function useSessionize({
     }
   }, [getAcceptedSpeakers, sessions, speakers]);
 
-  return { grid, sessions, topSpeakers, acceptedSpeakers, error };
+  return { sessions, topSpeakers, acceptedSpeakers, error };
 }
