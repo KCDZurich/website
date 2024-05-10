@@ -6,23 +6,26 @@ import Button from 'components/shared/button';
 
 const Hero = ({ className, title, description, buttonLink, buttonTitle }) => (
   <section
-    className={clsx('safe-paddings pb-10 pt-24 lg:pt-[4.5rem] md:pb-4 md:pt-16 sm:py-8', className)}
+    className={clsx(
+      'safe-paddings pb-20 pt-[88px] lg:pt-[4.5rem] md:pb-16 md:pt-16 sm:pb-8 sm:pt-8',
+      className
+    )}
   >
     <div className="container mt-4 text-center text-primary-1 sm:px-7">
       <h1
-        className="text-6xl font-bold leading-denser tracking-[-0.01em] md:text-4xl"
+        className="font-sans-cyber text-[52px] font-bold lowercase leading-tight text-primary-1 lg:text-[40px] md:text-[32px]"
         dangerouslySetInnerHTML={{ __html: title }}
       />
       {description && (
-        <p className="mx-auto mt-9 max-w-[865px] text-2xl leading-normal md:mt-6 md:text-xl sm:text-lg">
+        <p className="mx-auto mt-5 max-w-[890px] text-2xl leading-normal text-primary-1 md:text-xl sm:text-lg">
           {description}
         </p>
       )}
       {buttonLink && buttonTitle && (
         <Button
-          className="mt-10 shadow-xl hover:bg-blue-2 hover:shadow-[0px_15px_30px_#adadad] md:mt-8 xs:mt-7 xs:w-full"
+          className="mt-7 text-base md:text-[11px]"
           size="lg"
-          theme="blue"
+          theme="cyber"
           to={buttonLink}
           target="_blank"
         >

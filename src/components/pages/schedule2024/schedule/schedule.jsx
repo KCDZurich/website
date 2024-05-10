@@ -3,8 +3,17 @@ import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
 
 import Button from 'components/shared/button';
-import Modal from 'components/shared/modal';
 import useSessionize from 'hooks/use-sessionize';
+import iconPlus from 'icons/plus.svg';
+
+import Modal from './modal';
+
+const position = {
+  'top-left': '-top-2 -left-2',
+  'top-right': '-top-2 -right-2',
+  'bottom-left': '-bottom-2 -left-2',
+  'bottom-right': '-bottom-2 -right-2',
+};
 
 const Schedule = ({ location }) => {
   const { sessions, acceptedSpeakers, error } = useSessionize({
@@ -84,96 +93,145 @@ const Schedule = ({ location }) => {
   }, [sessions, acceptedSpeakers]);
 
   return (
-    <section className="safe-paddings pb-48 pt-9 lg:px-8 lg:pb-44 md:px-5 md:pb-40 sm:pb-24 sm:pt-10 xs:px-0">
-      <ul className="mx-auto w-[1072px] max-w-full rounded-[10px] border border-primary-2 shadow-lg">
-        {!error && !sessions.length && (
-          <li className="relative flex items-center justify-center px-7 py-6 text-base font-medium text-gray-7 sm:p-4">
-            Loading...
-          </li>
-        )}
-        {error && !sessions.length && (
-          <li className="relative flex items-center justify-center px-7 py-6 text-base font-medium text-red sm:p-4">
-            Loading error
-          </li>
-        )}
-        {!error && sessions.length > 0 && (
-          <>
-            {sessionList.map(({ time, events }, index) => {
-              const isEven = index % 2 === 1;
+    <section className="safe-paddings pb-[88px] lg:px-8 lg:pb-[4.5rem] md:px-5 md:pb-16 sm:pb-8 xs:px-4">
+      <div className="relative mx-auto w-[1072px] max-w-full">
+        <ul>
+          {['top-left', 'top-right', 'bottom-left', 'bottom-right'].map((item, index) => (
+            <img
+              className={clsx('absolute h-[17px] w-[17px]', position[item])}
+              src={iconPlus}
+              width={17}
+              height={17}
+              loading="lazy"
+              alt=""
+              key={index}
+            />
+          ))}
+          {!error && !sessions.length && (
+            <li className="relative flex items-center justify-center px-7 py-6 text-base font-medium text-gray-7 sm:p-4">
+              Loading...
+            </li>
+          )}
+          {error && !sessions.length && (
+            <li className="relative flex items-center justify-center px-7 py-6 text-base font-medium text-red sm:p-4">
+              Loading error
+            </li>
+          )}
+          {!error && sessions.length > 0 && (
+            <>
+              {sessionList.map(({ time, events }, index) => {
+                const isEven = index % 2 === 1;
 
-              return (
-                <li
-                  className={clsx(
-                    'grid grid-cols-[114px_1fr] divide-x divide-primary-2 md:grid-cols-[106px_1fr] sm:grid-cols-1 sm:divide-x-0',
-                    { 'bg-primary-4': isEven }
-                  )}
-                  key={index}
-                >
-                  <div className="flex items-center justify-center sm:justify-start sm:px-5 sm:pt-5">
-                    <time className="mb-auto mt-7 text-[15px] font-semibold leading-none tracking-tight text-primary-1 opacity-60 md:mt-5 md:text-sm sm:my-0">
-                      {time}
-                    </time>
-                  </div>
-                  <div className="flex divide-x divide-primary-2 sm:flex-col sm:divide-x-0 sm:divide-y">
-                    {events.map(({ id, title, duration, speakers }, index) => (
-                      <div className="flex-1" key={index}>
-                        <div className="flex flex-col gap-y-3 px-7 py-6 md:py-4 sm:gap-y-2 sm:px-5 sm:pb-4">
-                          <h3 className="inline-flex items-center gap-x-3">
-                            {id ? (
-                              <Button
-                                className="!whitespace-normal !text-left text-lg !font-semibold !leading-snug tracking-tight text-primary-1 transition-colors duration-200 hover:text-blue-1 md:text-base"
-                                theme="link-primary"
-                                onClick={() => handleModalShow(id)}
-                              >
-                                {title}
-                              </Button>
-                            ) : (
-                              <span className="text-lg font-semibold leading-snug tracking-tight text-primary-1 md:text-base">
-                                {title}
+                return (
+                  <li
+                    className={clsx(
+                      'dash-border grid grid-cols-[114px_1fr] [border-image-width:0_5px_0_5px] md:grid-cols-[106px_1fr] sm:grid-cols-1',
+                      isEven && 'bg-blue-super-light',
+                      index === 0 && '[border-image-width:5px_5px_0_5px]',
+                      index === sessionList.length - 1 && '[border-image-width:0_5px_5px_5px]'
+                    )}
+                    key={index}
+                  >
+                    <div className="dash-border relative flex items-center justify-center [border-image-width:0_5px_0_0] sm:justify-start sm:px-5 sm:pt-5">
+                      {index === 0 && (
+                        <img
+                          className={clsx(
+                            'absolute h-[17px] w-[17px] sm:hidden',
+                            position['top-right']
+                          )}
+                          src={iconPlus}
+                          width={17}
+                          height={17}
+                          loading="lazy"
+                          alt=""
+                          key={index}
+                        />
+                      )}
+                      {index === sessionList.length - 1 && (
+                        <img
+                          className={clsx(
+                            'absolute h-[17px] w-[17px] sm:hidden',
+                            position['bottom-right']
+                          )}
+                          src={iconPlus}
+                          width={17}
+                          height={17}
+                          loading="lazy"
+                          alt=""
+                          key={index}
+                        />
+                      )}
+                      <time className="mb-auto mt-7 text-[15px] font-semibold leading-none tracking-tight text-primary-1 opacity-60 md:mt-5 md:text-sm sm:my-0">
+                        {time}
+                      </time>
+                    </div>
+                    <div className="flex divide-x divide-primary-2 sm:flex-col sm:divide-x-0 sm:divide-y">
+                      {events.map(({ id, title, duration, speakers }, index) => (
+                        <div
+                          className={clsx(
+                            'dash-border flex-1 [border-image-width:0_5px_0_0] sm:[border-image-width:0_0_5px_0]',
+                            index === events.length - 1 &&
+                              '[border-image-width:0_0_0_0] sm:[border-image-width:0_0_0_0]'
+                          )}
+                          key={index}
+                        >
+                          <div className="flex flex-col gap-y-3 px-7 py-6 md:py-4 sm:gap-y-2 sm:px-5 sm:pb-4">
+                            <h3 className="inline-flex items-center gap-x-3">
+                              {id ? (
+                                <Button
+                                  className="!whitespace-normal !text-left text-lg !font-semibold !leading-snug tracking-tight text-primary-1 transition-colors duration-200 hover:text-orange md:text-base"
+                                  theme="link-primary"
+                                  onClick={() => handleModalShow(id)}
+                                >
+                                  {title}
+                                </Button>
+                              ) : (
+                                <span className="text-lg font-semibold leading-snug tracking-tight text-primary-1 md:text-base">
+                                  {title}
+                                </span>
+                              )}
+                            </h3>
+                            <div className="mt-auto flex items-center gap-x-8 sm:gap-x-7">
+                              <span className="rounded-full bg-primary-1 bg-opacity-50 px-2 py-2 text-[13px] font-semibold leading-none tracking-tighter text-white md:text-xs">
+                                {duration}
                               </span>
-                            )}
-                          </h3>
-                          <div className="mt-auto flex items-center gap-x-8 sm:gap-x-7">
-                            <span className="rounded-full bg-yellow px-2 py-2 text-[13px] font-semibold leading-none tracking-tighter text-primary-1 md:text-xs">
-                              {duration}
-                            </span>
-                            {speakers && speakers.length > 0 && (
-                              <ul className="relative inline-flex gap-x-5 before:absolute before:-left-4 before:bottom-0 before:top-0 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3 sm:gap-x-4">
-                                {speakers.map(({ fullName, profilePicture }, index) => (
-                                  <li className="" key={index}>
-                                    <figure className="flex items-center gap-x-2">
-                                      <img
-                                        className="h-7 w-7 rounded-full"
-                                        src={profilePicture}
-                                        width={28}
-                                        height={28}
-                                        alt={fullName}
-                                        loading="lazy"
-                                      />
-                                      <figcaption className="text-sm font-medium leading-none text-primary-5 md:text-[13px]">
-                                        {fullName}
-                                      </figcaption>
-                                    </figure>
-                                  </li>
-                                ))}
-                              </ul>
-                            )}
+                              {speakers && speakers.length > 0 && (
+                                <ul className="relative inline-flex gap-x-5 before:absolute before:-left-4 before:bottom-0 before:top-0 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3 sm:gap-x-4">
+                                  {speakers.map(({ fullName, profilePicture }, index) => (
+                                    <li className="" key={index}>
+                                      <figure className="flex items-center gap-x-2">
+                                        <img
+                                          className="h-7 w-7 rounded-full"
+                                          src={profilePicture}
+                                          width={28}
+                                          height={28}
+                                          alt={fullName}
+                                          loading="lazy"
+                                        />
+                                        <figcaption className="text-sm font-medium leading-none text-primary-5 md:text-[13px]">
+                                          {fullName}
+                                        </figcaption>
+                                      </figure>
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                </li>
-              );
-            })}
-          </>
-        )}
-      </ul>
+                      ))}
+                    </div>
+                  </li>
+                );
+              })}
+            </>
+          )}
+        </ul>
+      </div>
       {!error && sessions.length > 0 && (
         <Modal
           modalData={{
             ...sessions[modalDataId],
-            presentation: sessions[modalDataId].description,
             time: getStartTime(sessions[modalDataId].startsAt),
             duration: getDiffTime(sessions[modalDataId].startsAt, sessions[modalDataId].endsAt),
             speakers: acceptedSpeakers
@@ -181,7 +239,6 @@ const Schedule = ({ location }) => {
               .map(({ fullName, profilePicture }) => ({ name: fullName, photo: profilePicture })),
           }}
           isVisible={isModalVisible}
-          isPresentationShow
           onModalHide={handleModalHide}
         />
       )}
