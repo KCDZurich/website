@@ -17,7 +17,7 @@ export default function useSessionize(getTopSpeakers = false, getAcceptedSpeaker
         const data = await response.json();
 
         if (data.length) {
-          setSessions(data[0].sessions);
+          setSessions(data[0].sessions.filter(({ status }) => status === 'Accepted'));
         }
       } else {
         throw new Error(`Error: ${response.status}`);
@@ -62,7 +62,12 @@ export default function useSessionize(getTopSpeakers = false, getAcceptedSpeaker
   useEffect(() => {
     if (getAcceptedSpeakers && sessions.length && speakers.length) {
       const filteredSessions = sessions
-        .filter(({ status }) => status === 'Accepted')
+        .filter(({ questionAnswers }) =>
+          questionAnswers.some(
+            ({ question, answer }) =>
+              question === 'Sponsor Spotlight' && (answer === 'false' || !answer)
+          )
+        )
         .map(({ id }) => id);
       setAcceptedSpeakers(
         speakers.filter((speaker) =>
