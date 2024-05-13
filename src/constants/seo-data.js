@@ -5,9 +5,9 @@ export default {
       'Explore the detailed agenda for Kubernetes Community Days in Zürich on June 15, 2023. Listen to expert talks, and connect with Kubernetes professionals. Plan your day now!',
   },
   schedule2024: {
-    title: 'Kubernetes Community Days Zürich - Event Schedule for June 15, 2023',
+    title: 'Kubernetes Community Days Zürich - Event Schedule for June 13, 2024',
     description:
-      'Explore the detailed agenda for Kubernetes Community Days in Zürich on June 15, 2023. Listen to expert talks, and connect with Kubernetes professionals. Plan your day now!',
+      'Explore the detailed agenda for Kubernetes Community Days in Zürich on June 13, 2024. Listen to expert talks, and connect with Kubernetes professionals. Plan your day now!',
   },
   speakers: {
     title: 'Experts & Innovators',

@@ -192,7 +192,7 @@ const Schedule = ({ location }) => {
                               )}
                             </h3>
                             <div className="mt-auto flex items-center gap-x-8 sm:gap-x-7">
-                              <span className="rounded-full bg-primary-1 bg-opacity-50 px-2 py-2 text-[13px] font-semibold leading-none tracking-tighter text-white md:text-xs">
+                              <span className="whitespace-nowrap rounded-sm bg-primary-1 bg-opacity-50 px-2 py-1 font-mono-cyber text-lg font-semibold leading-none tracking-tighter text-white md:text-base">
                                 {duration}
                               </span>
                               {speakers && speakers.length > 0 && (
