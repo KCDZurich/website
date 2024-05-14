@@ -200,14 +200,17 @@ const Schedule = ({ location }) => {
                                   {speakers.map(({ fullName, profilePicture }, index) => (
                                     <li className="" key={index}>
                                       <figure className="flex items-center gap-x-2">
-                                        <img
-                                          className="h-7 w-7 rounded-full"
-                                          src={profilePicture}
-                                          width={28}
-                                          height={28}
-                                          alt={fullName}
-                                          loading="lazy"
-                                        />
+                                        <div className="relative h-7 w-7 flex-none">
+                                          <div className="absolute inset-0 z-10 h-full w-full rounded-full bg-primary-1 opacity-50 mix-blend-color sm:hidden" />
+                                          <img
+                                            className="h-7 w-7 rounded-full brightness-110 saturate-0"
+                                            src={profilePicture}
+                                            width={28}
+                                            height={28}
+                                            alt={fullName}
+                                            loading="lazy"
+                                          />
+                                        </div>
                                         <figcaption className="text-sm font-medium leading-none text-primary-5 md:text-[13px]">
                                           {fullName}
                                         </figcaption>

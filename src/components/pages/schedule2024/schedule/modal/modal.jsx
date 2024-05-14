@@ -16,7 +16,7 @@ const Modal = ({ isVisible, modalData, onModalHide }) => {
           </time>
         )}
         {duration && (
-          <span className="relative ml-8 rounded-full bg-primary-1 bg-opacity-50 px-2 py-1.5 text-[13px] font-semibold leading-none tracking-tighter text-white before:absolute before:-left-4 before:bottom-0 before:top-0 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3">
+          <span className="relative ml-8 whitespace-nowrap rounded-sm bg-primary-1 bg-opacity-50 px-2 py-1 font-mono-cyber text-lg font-semibold leading-none tracking-tighter text-white before:absolute before:-left-4 before:bottom-0 before:top-0 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3 md:text-base">
             {duration}
           </span>
         )}
@@ -24,7 +24,7 @@ const Modal = ({ isVisible, modalData, onModalHide }) => {
           speakers.map(({ name, photo }, index) => (
             <span
               className={clsx(
-                'relative inline-flex items-center gap-x-2 text-left text-lg font-semibold leading-normal text-primary-5 transition-colors duration-200 hover:text-blue-1',
+                'relative inline-flex items-center gap-x-2 text-left text-lg font-semibold leading-normal text-primary-5 transition-colors duration-200',
                 {
                   'ml-8 before:absolute before:-left-4 before:bottom-0 before:top-0 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3':
                     time || duration,
@@ -32,13 +32,17 @@ const Modal = ({ isVisible, modalData, onModalHide }) => {
               )}
               key={index}
             >
-              <img
-                className="h-7 w-7 rounded-full"
-                src={photo}
-                width={28}
-                alt={name}
-                loading="lazy"
-              />
+              <div className="relative h-7 w-7 flex-none">
+                <div className="absolute inset-0 z-10 h-full w-full rounded-full bg-primary-1 opacity-50 mix-blend-color sm:hidden" />
+                <img
+                  className="h-7 w-7 rounded-full brightness-110 saturate-0"
+                  src={photo}
+                  width={28}
+                  height={28}
+                  alt={name}
+                  loading="lazy"
+                />
+              </div>
               <p className="whitespace-nowrap text-sm font-medium leading-none sm:whitespace-normal">
                 {name}
               </p>
