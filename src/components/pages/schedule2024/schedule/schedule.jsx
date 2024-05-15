@@ -95,18 +95,18 @@ const Schedule = ({ location }) => {
   return (
     <section className="safe-paddings pb-[88px] lg:px-8 lg:pb-[4.5rem] md:px-5 md:pb-16 sm:pb-8 xs:px-4">
       <div className="relative mx-auto w-[1072px] max-w-full">
+        {['top-left', 'top-right', 'bottom-left', 'bottom-right'].map((item, index) => (
+          <img
+            className={clsx('absolute h-[17px] w-[17px]', position[item])}
+            src={iconPlus}
+            width={17}
+            height={17}
+            loading="lazy"
+            alt=""
+            key={index}
+          />
+        ))}
         <ul>
-          {['top-left', 'top-right', 'bottom-left', 'bottom-right'].map((item, index) => (
-            <img
-              className={clsx('absolute h-[17px] w-[17px]', position[item])}
-              src={iconPlus}
-              width={17}
-              height={17}
-              loading="lazy"
-              alt=""
-              key={index}
-            />
-          ))}
           {!error && !sessions.length && (
             <li className="relative flex items-center justify-center px-7 py-6 text-base font-medium text-gray-7 sm:p-4">
               Loading...
@@ -176,7 +176,7 @@ const Schedule = ({ location }) => {
                           key={index}
                         >
                           <div className="flex flex-col gap-y-3 px-7 py-6 md:py-4 sm:gap-y-2 sm:px-5 sm:pb-4">
-                            <h3 className="inline-flex items-center gap-x-3">
+                            <h2 className="inline-flex items-center gap-x-3">
                               {id ? (
                                 <Button
                                   className="!whitespace-normal !text-left text-lg !font-semibold !leading-snug tracking-tight text-primary-1 transition-colors duration-200 hover:text-orange md:text-base"
@@ -190,7 +190,7 @@ const Schedule = ({ location }) => {
                                   {title}
                                 </span>
                               )}
-                            </h3>
+                            </h2>
                             <div className="mt-auto flex items-center gap-x-8 sm:gap-x-7">
                               <span className="whitespace-nowrap rounded-sm bg-primary-1 bg-opacity-50 px-2 py-1 font-mono-cyber text-lg font-semibold leading-none tracking-tighter text-white md:text-base">
                                 {duration}
@@ -207,7 +207,7 @@ const Schedule = ({ location }) => {
                                             src={profilePicture}
                                             width={28}
                                             height={28}
-                                            alt={fullName}
+                                            alt=""
                                             loading="lazy"
                                           />
                                         </div>

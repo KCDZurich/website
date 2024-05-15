@@ -4,22 +4,22 @@ import React, { useState } from 'react';
 import Button from 'components/shared/button';
 import Link from 'components/shared/link';
 import DisketteIcon from 'icons/diskette.inline.svg';
-import AdrianPhoto from 'images/schedule-2023/adrian-reber-photo.jpg';
-import AnnieTalvastoPhoto from 'images/schedule-2023/annie-talvasto-photo.jpg';
-import BillPhoto from 'images/schedule-2023/bill-mulligan-photo.jpg';
-import FilipPhoto from 'images/schedule-2023/filip-nicolic-photo.jpg';
-import JuliusVolzPhoto from 'images/schedule-2023/julius-volz-photo.jpg';
-import LenaPhoto from 'images/schedule-2023/lena-fuhrimann-photo.jpg';
-import LisaFalcoPhoto from 'images/schedule-2023/lisa-falco-photo.jpg';
-import LizRicePhoto from 'images/schedule-2023/liz-rice-photo.jpg';
-import MaxKorbacherPhoto from 'images/schedule-2023/max-korbacher-photo.jpg';
-import PriyaWadhwaPhoto from 'images/schedule-2023/priya-wadhwa-photo.jpg';
-import RaphaelPhoto from 'images/schedule-2023/raphael-photo.jpg';
-import RetoPhoto from 'images/schedule-2023/reto-lehmann-photo.jpg';
-import RicardoRochaPhoto from 'images/schedule-2023/ricardo-rocha-photo.jpg';
-import SebastianKisterPhoto from 'images/schedule-2023/sebastian-kister-photo.jpg';
-import ThomasGrafPhoto from 'images/schedule-2023/thomas-graf-photo.jpg';
-import TimoSalmPhoto from 'images/schedule-2023/timo-salm-photo.jpg';
+import adrianPhoto from 'images/schedule-2023/adrian-reber-photo.jpg';
+import annieTalvastoPhoto from 'images/schedule-2023/annie-talvasto-photo.jpg';
+import billPhoto from 'images/schedule-2023/bill-mulligan-photo.jpg';
+import filipPhoto from 'images/schedule-2023/filip-nicolic-photo.jpg';
+import juliusVolzPhoto from 'images/schedule-2023/julius-volz-photo.jpg';
+import lenaPhoto from 'images/schedule-2023/lena-fuhrimann-photo.jpg';
+import lisaFalcoPhoto from 'images/schedule-2023/lisa-falco-photo.jpg';
+import lizRicePhoto from 'images/schedule-2023/liz-rice-photo.jpg';
+import maxKorbacherPhoto from 'images/schedule-2023/max-korbacher-photo.jpg';
+import priyaWadhwaPhoto from 'images/schedule-2023/priya-wadhwa-photo.jpg';
+import raphaelPhoto from 'images/schedule-2023/raphael-photo.jpg';
+import retoPhoto from 'images/schedule-2023/reto-lehmann-photo.jpg';
+import ricardoRochaPhoto from 'images/schedule-2023/ricardo-rocha-photo.jpg';
+import sebastianKisterPhoto from 'images/schedule-2023/sebastian-kister-photo.jpg';
+import thomasGrafPhoto from 'images/schedule-2023/thomas-graf-photo.jpg';
+import timoSalmPhoto from 'images/schedule-2023/timo-salm-photo.jpg';
 
 import Separator from './svg/separator.inline.svg';
 
@@ -35,7 +35,7 @@ const items = [
     speakers: [
       {
         name: 'Thomas Graf',
-        photo: ThomasGrafPhoto,
+        photo: thomasGrafPhoto,
       },
     ],
     presentation:
@@ -51,7 +51,7 @@ const items = [
     speakers: [
       {
         name: 'Max Körbächer',
-        photo: MaxKorbacherPhoto,
+        photo: maxKorbacherPhoto,
       },
     ],
     presentation:
@@ -66,7 +66,7 @@ const items = [
     speakers: [
       {
         name: 'Adrian Reber',
-        photo: AdrianPhoto,
+        photo: adrianPhoto,
       },
     ],
     presentation:
@@ -89,7 +89,7 @@ const items = [
     speakers: [
       {
         name: 'Ricardo Rocha',
-        photo: RicardoRochaPhoto,
+        photo: ricardoRochaPhoto,
       },
     ],
     presentation:
@@ -104,7 +104,7 @@ const items = [
     speakers: [
       {
         name: 'Filip Nicolic',
-        photo: FilipPhoto,
+        photo: filipPhoto,
       },
     ],
     presentation:
@@ -128,7 +128,7 @@ const items = [
     speakers: [
       {
         name: 'Lisa Falco',
-        photo: LisaFalcoPhoto,
+        photo: lisaFalcoPhoto,
       },
     ],
     presentation:
@@ -163,7 +163,7 @@ const items = [
     speakers: [
       {
         name: 'Annie Talvasto',
-        photo: AnnieTalvastoPhoto,
+        photo: annieTalvastoPhoto,
       },
     ],
     presentation:
@@ -178,7 +178,7 @@ const items = [
     speakers: [
       {
         name: 'Bill Mulligan',
-        photo: BillPhoto,
+        photo: billPhoto,
       },
     ],
     presentation:
@@ -203,7 +203,7 @@ const items = [
     speakers: [
       {
         name: 'Lena Fuhrimann',
-        photo: LenaPhoto,
+        photo: lenaPhoto,
       },
     ],
     presentation:
@@ -221,7 +221,7 @@ const items = [
     speakers: [
       {
         name: 'Julius Volz',
-        photo: JuliusVolzPhoto,
+        photo: juliusVolzPhoto,
       },
     ],
     presentation:
@@ -238,7 +238,7 @@ const items = [
     speakers: [
       {
         name: 'Reto Lehmann',
-        photo: RetoPhoto,
+        photo: retoPhoto,
       },
     ],
     presentation:
@@ -257,7 +257,7 @@ const items = [
     speakers: [
       {
         name: 'Priya Wadhwa',
-        photo: PriyaWadhwaPhoto,
+        photo: priyaWadhwaPhoto,
       },
     ],
     presentation:
@@ -273,7 +273,7 @@ const items = [
     speakers: [
       {
         name: 'Timo Salm',
-        photo: TimoSalmPhoto,
+        photo: timoSalmPhoto,
       },
     ],
     presentation:
@@ -299,7 +299,7 @@ const items = [
     speakers: [
       {
         name: 'Sebastian Kister',
-        photo: SebastianKisterPhoto,
+        photo: sebastianKisterPhoto,
       },
     ],
     presentation:
@@ -315,7 +315,7 @@ const items = [
     speakers: [
       {
         name: 'Raphaël Pinson',
-        photo: RaphaelPhoto,
+        photo: raphaelPhoto,
       },
     ],
     presentation:
@@ -332,7 +332,7 @@ const items = [
     speakers: [
       {
         name: 'Liz Rice',
-        photo: LizRicePhoto,
+        photo: lizRicePhoto,
       },
     ],
     presentation:
