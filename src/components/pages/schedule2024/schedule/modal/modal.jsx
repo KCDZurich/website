@@ -16,7 +16,7 @@ const Modal = ({ isVisible, modalData, onModalHide }) => {
           </time>
         )}
         {duration && (
-          <span className="relative ml-8 whitespace-nowrap rounded-sm bg-primary-1 bg-opacity-50 px-2 py-1 font-mono-cyber text-lg font-semibold leading-none tracking-tighter text-white before:absolute before:-left-4 before:bottom-0 before:top-0 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3 md:text-base">
+          <span className="relative ml-8 whitespace-nowrap rounded-sm bg-orange bg-opacity-80 px-2 py-1 font-mono-cyber text-lg font-semibold leading-none tracking-tighter text-white before:absolute before:-left-4 before:bottom-0 before:top-0 before:my-auto before:h-1 before:w-1 before:rounded-full before:bg-primary-3 md:text-base">
             {duration}
           </span>
         )}
