@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Link from 'components/shared/link';
+import LINKS from 'constants/links.js';
 
 import bgMask from './images/bg-mask.svg';
 import ticket from './images/desktop-ticket.svg';
@@ -52,7 +53,7 @@ const Hero = () => (
           Just use this code on{' '}
           <Link
             className="border-b-2 border-transparent border-opacity-10 font-semibold text-orange transition-colors duration-200 hover:border-orange"
-            to="https://tickets.kcdzurich.ch/"
+            to={LINKS.tickets.to}
             target="_blank"
           >
             tickets.kcdzurich.ch

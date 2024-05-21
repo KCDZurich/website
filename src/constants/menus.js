@@ -1,32 +1,22 @@
 import LINKS from 'constants/links.js';
 
-// { text: 'Home', ...LINKS.home },
-// { text: 'Speakers', ...LINKS.speakers },
-// { text: 'Schedule', ...LINKS.schedule },
-// { text: 'Call for Proposal', ...LINKS.proposal },
+const {
+  schedule2024,
+  speakers,
+  workshops,
+  sponsors,
+  podcast,
+  archive,
+  conduct,
+  team,
+  mission,
+  privacy,
+} = LINKS;
 
 const MENUS = {
-  header: [
-    { text: 'Speakers', ...LINKS.speakers },
-    { text: 'Workshops', ...LINKS.workshops },
-    { text: 'Sponsors', ...LINKS.sponsors },
-    { text: 'Podcast', ...LINKS.podcast },
-    { text: 'Archive', ...LINKS.archive },
-  ],
-  footer: [
-    { text: 'Code of Conduct', ...LINKS.conduct },
-    { text: 'Team', ...LINKS.team },
-    { text: 'Mission Statement', ...LINKS.mission },
-    { text: 'Impressum & Data Privacy', ...LINKS.privacy },
-    { text: 'Speakers', ...LINKS.speakers },
-  ],
-  mobile: [
-    { text: 'Speakers', ...LINKS.speakers },
-    { text: 'Workshops', ...LINKS.workshops },
-    { text: 'Sponsors', ...LINKS.sponsors },
-    { text: 'Podcast', ...LINKS.podcast },
-    { text: 'Archive', ...LINKS.archive },
-  ],
+  header: [schedule2024, speakers, workshops, sponsors, archive],
+  footer: [conduct, team, mission, privacy, schedule2024, speakers],
+  mobile: [schedule2024, speakers, workshops, sponsors, podcast, archive],
 };
 
 export default MENUS;

@@ -5,6 +5,7 @@ import Hero from 'components/pages/schedule2023/hero';
 import Schedule from 'components/pages/schedule2023/schedule';
 import Layout from 'components/shared/layout';
 import SEO from 'components/shared/seo';
+import LINKS from 'constants/links.js';
 import SEO_DATA from 'constants/seo-data';
 
 const TITLE = 'Schedule for <time class="text-blue-1 xs:block">15 June, 2023</time>';
@@ -16,7 +17,7 @@ const SchedulePage = ({ location }) => (
     <Hero
       title={TITLE}
       description={DESCRIPTION}
-      buttonLink="https://tickets.kcdzurich.ch/"
+      buttonLink={LINKS.tickets.to}
       buttonTitle="Get your ticket"
     />
     <Schedule location={location} />

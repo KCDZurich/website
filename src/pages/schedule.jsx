@@ -9,15 +9,15 @@ import SEO_DATA from 'constants/seo-data';
 
 const TITLE = 'Schedule for <time class="xs:block">13 June, 2024</time>';
 const DESCRIPTION =
-  "Get ready for an action-packed day. With two tracks and more than 15 sessions to choose from, you'll have plenty of opportunities to learn from experts in the field. The whole event will be held in English.";
+  "Get ready for an action-packed day. With two tracks and 16 sessions to choose from, you'll have plenty of opportunities to learn from experts in the field. The whole event will be held in English.";
 
 const SchedulePage = ({ location }) => (
   <Layout headerClassnames="!bg-white">
     <Hero
       title={TITLE}
       description={DESCRIPTION}
-      buttonLink="https://tickets.kcdzurich.ch/"
-      buttonTitle="Get your ticket"
+      buttonLink="https://kcdzh24.sessionize.com"
+      buttonTitle="Use the app"
     />
     <Schedule location={location} />
   </Layout>

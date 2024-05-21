@@ -70,7 +70,7 @@ const Header = ({
                 isHomePage && 'lg:space-x-5'
               )}
             >
-              {MENUS.header.map(({ text, to, homeTo }, index) => (
+              {MENUS.header.map(({ title, to, homeTo }, index) => (
                 <li className="text-[15px] font-semibold text-primary-1" key={index}>
                   {isHomePage ? (
                     <Button
@@ -78,11 +78,11 @@ const Header = ({
                       theme="link-primary"
                       onClick={homeTo ? undefined : handleAnchorClick}
                     >
-                      {text}
+                      {title}
                     </Button>
                   ) : (
                     <Button to={to} theme="link-primary">
-                      {text}
+                      {title}
                     </Button>
                   )}
                 </li>

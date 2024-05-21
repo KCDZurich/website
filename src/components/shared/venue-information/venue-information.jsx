@@ -3,7 +3,6 @@ import { StaticImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Button from 'components/shared/button';
 import Link from 'components/shared/link';
 
 const TITLE = 'Venue information';
@@ -53,14 +52,6 @@ const VenueInformation = ({ className }) => (
           <p className="mt-4 text-xl font-bold leading-normal md:text-lg sm:text-base">
             We can't wait to see you there!
           </p>
-          <Button
-            className="mt-14 md:mt-7 md:text-[11px]"
-            to="https://tickets.kcdzurich.ch/"
-            size="lg"
-            theme="cyber"
-          >
-            Get your ticket
-          </Button>
         </div>
       </div>
     </div>
