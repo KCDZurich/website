@@ -46,14 +46,9 @@ const MobileMenu = ({ isOpen, onButtonClick, handleModalShow }) => {
       >
         <div className="scrollbar-hidden my-auto flex h-full w-full overflow-x-hidden overflow-y-scroll">
           <ul className="mx-auto flex flex-col justify-center space-y-3 text-center text-xl font-semibold text-primary-1">
-            {MENUS.mobile.map(({ title, to, id }, index) => (
+            {MENUS.mobile.map(({ title, to }, index) => (
               <li key={index}>
-                <Button
-                  className="block py-4"
-                  theme="link-primary"
-                  to={to || `/#${id}`}
-                  onClick={onButtonClick}
-                >
+                <Button className="block py-4" theme="link-primary" to={to} onClick={onButtonClick}>
                   {title}
                 </Button>
               </li>

@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import slugify from 'slugify';
 
 import MENUS from 'constants/menus';
 import ComputerIcon from 'icons/computer.inline.svg';
@@ -19,7 +18,6 @@ const Header = ({
   isHomePage,
   isHideMenu,
 }) => {
-  const getAnchor = (str) => slugify(str).toLocaleLowerCase();
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const handleModalShow = () => {
@@ -30,23 +28,6 @@ const Header = ({
   const handleModalHide = () => {
     document.body.classList.remove('overflow-hidden');
     setIsModalVisible(false);
-  };
-
-  const handleAnchorClick = (e) => {
-    const id = getAnchor(e.target.firstChild.data);
-
-    const element = document.getElementById(id);
-
-    if (element) {
-      const indent = 50;
-      const elementTop = element.getBoundingClientRect().top;
-      const elementOffset = window.pageYOffset + elementTop - indent;
-
-      window.scrollTo({
-        top: elementOffset,
-        behavior: 'smooth',
-      });
-    }
   };
 
   return (
@@ -70,21 +51,11 @@ const Header = ({
                 isHomePage && 'lg:space-x-5'
               )}
             >
-              {MENUS.header.map(({ title, to, homeTo }, index) => (
+              {MENUS.header.map(({ title, to }, index) => (
                 <li className="text-[15px] font-semibold text-primary-1" key={index}>
-                  {isHomePage ? (
-                    <Button
-                      to={homeTo}
-                      theme="link-primary"
-                      onClick={homeTo ? undefined : handleAnchorClick}
-                    >
-                      {title}
-                    </Button>
-                  ) : (
-                    <Button to={to} theme="link-primary">
-                      {title}
-                    </Button>
-                  )}
+                  <Button to={to} theme="link-primary">
+                    {title}
+                  </Button>
                 </li>
               ))}
             </ul>

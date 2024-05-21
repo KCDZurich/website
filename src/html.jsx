@@ -14,7 +14,7 @@ const HTML = ({
   body,
   postBodyComponents,
 }) => (
-  <html {...htmlAttributes}>
+  <html {...htmlAttributes} className="scroll-smooth">
     <head>
       <meta charSet="utf-8" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />

@@ -63,7 +63,7 @@ const Sponsors = () => {
   const [activeColor, setActiveColor] = useState('');
 
   return (
-    <section className="safe-paddings relative" id="sponsors">
+    <section className="safe-paddings relative scroll-mt-4" id="sponsors">
       <div className="container-xl bg-blue-light bg-opacity-90">
         <div className="container flex items-center gap-x-20 py-[72px] lg:gap-x-16 lg:!px-4 lg:py-14 md:gap-x-4 md:!px-2 md:py-14 xs:flex-col-reverse xs:gap-y-4 xs:!px-0">
           <div className="text-2xl leading-normal text-primary-1 lg:text-base md:text-sm xs:text-base">
