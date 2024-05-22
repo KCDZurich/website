@@ -53,7 +53,7 @@ const Footer = () => {
 
         <nav>
           <ul className="grid min-w-fit grid-cols-2 grid-rows-2 gap-x-3 gap-y-4 xl:gap-x-1 lg:mr-6 lg:gap-x-4 sm:mx-auto sm:gap-x-0 [@media(max-width:375px)]:grid-cols-1">
-            {MENUS.footer.map(({ text, to, target, name }, index) => (
+            {MENUS.footer.map(({ title, to, target, name }, index) => (
               <li className="w-fit max-w-min text-sm font-semibold text-primary-1" key={index}>
                 <Button
                   className="flex sm:flex-wrap"
@@ -62,7 +62,7 @@ const Footer = () => {
                   target={target}
                   onClick={handleAnchorClick}
                 >
-                  {text}
+                  {title}
                   <span className="sr-only">Link to our {name}</span>
                 </Button>
               </li>

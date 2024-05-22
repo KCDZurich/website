@@ -2,7 +2,11 @@ import { useEffect, useState, useCallback } from 'react';
 
 import endpoints from 'constants/sessionize';
 
-export default function useSessionize(getTopSpeakers = false, getAcceptedSpeakers = false) {
+export default function useSessionize({
+  getSessions = false,
+  getTopSpeakers = false,
+  getAcceptedSpeakers = false,
+}) {
   const [sessions, setSessions] = useState([]);
   const [speakers, setSpeakers] = useState([]);
   const [topSpeakers, setTopSpeakers] = useState([]);
@@ -17,7 +21,16 @@ export default function useSessionize(getTopSpeakers = false, getAcceptedSpeaker
         const data = await response.json();
 
         if (data.length) {
-          setSessions(data[0].sessions.filter(({ status }) => status === 'Accepted'));
+          setSessions(
+            data[0].sessions.filter(
+              ({ status, questionAnswers }) =>
+                status === 'Accepted' &&
+                questionAnswers.some(
+                  ({ question, answer }) =>
+                    question === 'Sponsor Spotlight' && (answer === 'false' || !answer)
+                )
+            )
+          );
         }
       } else {
         throw new Error(`Error: ${response.status}`);
@@ -46,7 +59,7 @@ export default function useSessionize(getTopSpeakers = false, getAcceptedSpeaker
   }, []);
 
   useEffect(() => {
-    if (getAcceptedSpeakers) {
+    if (getSessions || getAcceptedSpeakers) {
       fetchSessions();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -61,14 +74,7 @@ export default function useSessionize(getTopSpeakers = false, getAcceptedSpeaker
 
   useEffect(() => {
     if (getAcceptedSpeakers && sessions.length && speakers.length) {
-      const filteredSessions = sessions
-        .filter(({ questionAnswers }) =>
-          questionAnswers.some(
-            ({ question, answer }) =>
-              question === 'Sponsor Spotlight' && (answer === 'false' || !answer)
-          )
-        )
-        .map(({ id }) => id);
+      const filteredSessions = sessions.map(({ id }) => id);
       setAcceptedSpeakers(
         speakers.filter((speaker) =>
           speaker.sessions.some((session) => filteredSessions.includes(String(session.id)))
@@ -77,5 +83,5 @@ export default function useSessionize(getTopSpeakers = false, getAcceptedSpeaker
     }
   }, [getAcceptedSpeakers, sessions, speakers]);
 
-  return { topSpeakers, acceptedSpeakers, error };
+  return { sessions, topSpeakers, acceptedSpeakers, error };
 }

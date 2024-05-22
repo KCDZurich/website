@@ -3,63 +3,84 @@ import slugify from 'slugify';
 const getAnchor = (str) => slugify(str).toLocaleLowerCase();
 
 export default {
-  // Pages and sections
+  // Pages
   home: {
     to: '/',
   },
-  schedule: {
-    to: '/schedule',
-    id: getAnchor('Schedule'),
-    homeTo: '/schedule',
-  },
-  sponsors: {
-    to: `/#${getAnchor('Sponsors')}`,
-    id: getAnchor('Sponsors'),
-    homeTo: null,
-  },
-  speakers: {
-    to: '/speakers',
-    id: getAnchor('Speakers'),
-    homeTo: '/speakers',
-  },
-  workshops: {
-    to: '/workshops',
-    homeTo: '/workshops',
-  },
-  archive: {
-    to: '/archive',
-    homeTo: '/archive',
-  },
-  proposal: {
-    to: `/#${getAnchor('Call for Proposal')}`,
-    id: getAnchor('Call for Proposal'),
-    homeTo: null,
-  },
   team: {
+    title: 'Team',
     to: '/team',
   },
-  tickets: {
-    to: 'https://tickets.kcdzurich.ch/',
-    target: '_blank',
+  podcast: {
+    title: 'Podcast',
+    to: '/podcast',
+  },
+  archive: {
+    title: 'Archive',
+    to: '/archive',
+  },
+  schedule2023: {
+    title: 'Schedule',
+    to: '/schedule2023',
+  },
+  schedule2024: {
+    title: 'Schedule',
+    to: '/schedule',
+  },
+  rejects2024: {
+    title: 'Rejects',
+    to: '/rejects2024',
+  },
+  freebee: {
+    title: 'Freebee',
+    to: '/freebee',
+  },
+  speakers: {
+    title: 'Speakers',
+    to: '/speakers',
+  },
+  workshops: {
+    title: 'Workshops',
+    to: '/workshops',
+  },
+  workshopArgo: {
+    title: 'GitOps with ArgoCD',
+    to: '/workshop-argo',
+  },
+  workshopCilium: {
+    title: 'Cilium Basics',
+    to: '/workshop-cilium',
+  },
+  workshopGo: {
+    title: 'Go Basics',
+    to: '/workshop-go',
+  },
+  workshopKubernetes: {
+    title: 'Kubernetes Basics',
+    to: '/workshop-kubernetes',
   },
   mission: {
+    title: 'Mission Statement',
     to: '/mission-statement',
     target: '_blank',
   },
   privacy: {
+    title: 'Impressum & Data Privacy',
     to: '/data-privacy',
     target: '_blank',
   },
-  conduct: {
-    to: 'https://events.linuxfoundation.org/about/code-of-conduct/',
-    target: '_blank',
+
+  // Sections
+  sponsors: {
+    title: 'Sponsors',
+    to: `/#${getAnchor('Sponsors')}`,
   },
-  podcast: {
-    to: '/podcast',
-    homeTo: '/podcast',
+  proposal: {
+    title: 'Call for Proposal',
+    to: `/#${getAnchor('Call for Proposal')}`,
   },
 
-  // Social-links
+  // Social Links
   linkedin: {
     to: 'https://www.linkedin.com/company/kubernetes-community-days-zurich/',
     target: '_blank',
@@ -78,6 +99,18 @@ export default {
   },
   github: {
     to: 'https://github.com/KCDZurich',
+    target: '_blank',
+  },
+
+  // External Links
+  tickets: {
+    title: 'Tickets',
+    to: 'https://tickets.kcdzurich.ch/',
+    target: '_blank',
+  },
+  conduct: {
+    title: 'Code of Conduct',
+    to: 'https://events.linuxfoundation.org/about/code-of-conduct/',
     target: '_blank',
   },
 };

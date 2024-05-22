@@ -3,14 +3,14 @@ import React, { useState } from 'react';
 
 import Button from 'components/shared/button';
 import useSessionize from 'hooks/use-sessionize';
+import iconCross from 'icons/plus.svg';
 
-import iconCross from './images/cross.svg';
 import Modal from './modal';
 
 const Speakers = () => {
-  const { acceptedSpeakers, error } = useSessionize(false, true);
+  const { acceptedSpeakers, error } = useSessionize({ getAcceptedSpeakers: true });
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [modalDataIndex, setModalDataIndex] = useState(null);
+  const [modalDataIndex, setModalDataIndex] = useState(0);
 
   const handleModalShow = (index) => {
     document.body.classList.add('overflow-hidden');
@@ -21,7 +21,7 @@ const Speakers = () => {
   const handleModalHide = () => {
     document.body.classList.remove('overflow-hidden');
     setIsModalVisible(false);
-    setModalDataIndex(null);
+    setModalDataIndex(0);
   };
 
   return (
@@ -185,12 +185,13 @@ const Speakers = () => {
           )}
         </ul>
       </div>
-      <Modal
-        modalData={acceptedSpeakers[modalDataIndex] || {}}
-        isVisible={isModalVisible}
-        isPresentationShow
-        onModalHide={handleModalHide}
-      />
+      {!error && acceptedSpeakers.length > 0 && (
+        <Modal
+          modalData={acceptedSpeakers[modalDataIndex]}
+          isVisible={isModalVisible}
+          onModalHide={handleModalHide}
+        />
+      )}
     </section>
   );
 };
