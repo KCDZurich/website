@@ -23,7 +23,7 @@ const Hero = ({ className, title, description, buttonLink, buttonTitle }) => (
       )}
       {buttonLink && buttonTitle && (
         <Button
-          className="mt-7 !text-base md:!text-[11px]"
+          className="mt-7 !text-base md:!text-[15px]"
           size="lg"
           theme="cyber"
           to={buttonLink}

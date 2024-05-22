@@ -31,7 +31,7 @@ const Hero = () => (
       </p>
       <div className="mt-12 flex items-center gap-6 lg:flex-col lg:items-start md:mt-9 md:gap-[18px] sm:mt-8 sm:gap-3.5">
         <Button
-          className="z-[1] !text-base brightness-110 saturate-0 md:!text-[11px]"
+          className="z-[1] !text-base brightness-110 saturate-0 md:!text-[15px]"
           theme="cyber"
           size="lg"
           disabled
