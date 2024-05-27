@@ -4,17 +4,17 @@ import Link from 'components/shared/link';
 
 import cloudnative from './images/cloudnative.svg';
 import gogrow from './images/gogrow.png';
-import rokt from './images/rokt.svg';
+import timAndKoko from './images/tim-and-koko.svg';
 import whiterabbit from './images/whiterabbit.svg';
 
 const ITEMS = [
   {
-    icon: rokt,
+    icon: timAndKoko,
     url: 'https://rokt.cloud/',
-    name: 'Rokt',
-    width: 112,
-    height: 74,
-    imageClassName: 'w-auto max-w-[240px] md:max-w-full',
+    name: 'Tim & Koko',
+    width: 159,
+    height: 112,
+    imageClassName: 'w-auto max-w-[159px] xs:max-w-[96px]',
   },
   {
     icon: whiterabbit,
