@@ -4,6 +4,7 @@ import React from 'react';
 import Button from 'components/shared/button';
 import LINKS from 'constants/links';
 
+import benjaminKoltermannPhoto from './images/benjamin-koltermann.jpg';
 import josephinePfeifferPhoto from './images/josephine-pfeiffer.jpg';
 import kyraGoudPhoto from './images/kyra-goud.jpg';
 import marcHerrenPhoto from './images/marc-herren.jpg';
@@ -47,6 +48,11 @@ const SPEAKERS = [
     fullName: 'Marc Herren',
     tagLine: 'Founder of remmen.io',
     profilePicture: marcHerrenPhoto,
+  },
+  {
+    fullName: 'Benjamin Koltermann',
+    tagLine: 'CEO at AVOLENS',
+    profilePicture: benjaminKoltermannPhoto,
   },
 ];
 
