@@ -16,7 +16,7 @@ const Speakers = () => {
   const { topSpeakers, error } = useSessionize({ getTopSpeakers: true });
 
   return (
-    <section className="safe-paddings relative pt-[120px] lg:pt-16 md:pt-10 sm:pt-8">
+    <section className="safe-paddings relative py-[120px] lg:py-16 md:py-10 sm:py-8">
       <div className="container flex flex-col items-center">
         <h2
           className="font-sans-cyber text-[52px] font-bold lowercase leading-tight lg:text-[40px] md:text-[32px]"
