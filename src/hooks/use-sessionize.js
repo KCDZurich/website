@@ -23,12 +23,13 @@ export default function useSessionize({
         if (data.length) {
           setSessions(
             data[0].sessions.filter(
-              ({ status, questionAnswers }) =>
-                status === 'Accepted' &&
-                questionAnswers.some(
-                  ({ question, answer }) =>
-                    question === 'Sponsor Spotlight' && (answer === 'false' || !answer)
-                )
+              ({ status, questionAnswers, isServiceSession }) =>
+                (status === 'Accepted' &&
+                  questionAnswers.some(
+                    ({ question, answer }) =>
+                      question === 'Sponsor Spotlight' && (answer === 'false' || !answer)
+                  )) ||
+                isServiceSession
             )
           );
         }
