@@ -12,8 +12,8 @@ import letsbootLogo from 'icons/sponsors/letsboot.svg';
 import peakScaleLogo from 'icons/sponsors/peak-scale.svg';
 import puzzleLogo from 'icons/sponsors/puzzle.svg';
 import redHatLogo from 'icons/sponsors/red-hat.svg';
-import roktLogo from 'icons/sponsors/rokt.svg';
 import separator from 'icons/sponsors/separator.svg';
+import timLogo from 'icons/sponsors/tim-and-koko.svg';
 import vshnLogo from 'icons/sponsors/vshn.svg';
 
 const title = 'Sponsors';
@@ -27,7 +27,7 @@ const silverSponsors = [
   { icon: campToCampLogo, url: 'https://www.camptocamp.com/', name: 'CampToCamp' },
   { icon: adfinisLogo, url: 'https://adfinis.com/', name: 'Adfinis' },
   { icon: redHatLogo, url: 'https://www.redhat.com/', name: 'RedHat' },
-  { icon: roktLogo, url: 'https://rokt.cloud/', name: 'Rokt Cloud' },
+  { icon: timLogo, url: 'https://rokt.cloud/', name: 'Rokt Cloud' },
   { icon: letsbootLogo, url: 'https://www.letsboot.ch/', name: 'Letsboot.ch' },
   { icon: flowLogo, url: 'https://flow.swiss/', name: 'Flow' },
   { icon: acendLogo, url: 'https://acend.ch/', name: 'Acend' },
