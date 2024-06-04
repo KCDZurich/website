@@ -34,7 +34,7 @@ const ITEMS = [
   },
   {
     name: 'Thomas Philipona',
-    position: 'Founder, ROKT GmbH',
+    position: 'Founder, tim&koko',
     photo: () => (
       <StaticImage
         src="./images/thomas-philipona-photo.jpg"
