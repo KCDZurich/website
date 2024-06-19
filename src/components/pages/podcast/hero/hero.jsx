@@ -19,7 +19,7 @@ import SpotifyIcon from './svg/spotify-icon.inline.svg';
 
 const SUB_TITLE =
   'Podcast by <a href="https://b-nova.com/home/techhub/decodify" target="_blank">decodify</a> presented by <a href="https://b-nova.com/home" target="_blank">b-nova</a>';
-const DURATION = '36:00';
+const DURATION = '23:05';
 
 const DESCRIPTION =
   '<p>They’re back – the charming show hosts from b-nova, Tom and Stefan! This time, they’ve sat down with our most recent KCD Zürich speakers to extract even more exciting stories and insights. Stay tuned and listen in to the latest episodes.</p><p>On behalf of the Cloud Native Zürich team and the community, we extend a heartfelt thank you! Their generous support and commitment to the community have made it possible for us to continue sharing valuable content and insights.</p>';
