@@ -13,15 +13,16 @@ import TwitterIcon from 'icons/pixel/x-pixel-logo.inline.svg';
 import AmazonIcon from './svg/amazon-icon.inline.svg';
 import AppleIcon from './svg/apple-icon.inline.svg';
 import GoogleIcon from './svg/google-icon.inline.svg';
+import loadingIcon from './svg/loading.svg';
 import rectangleSvg from './svg/rectangle.svg';
 import SpotifyIcon from './svg/spotify-icon.inline.svg';
 
 const SUB_TITLE =
   'Podcast by <a href="https://b-nova.com/home/techhub/decodify" target="_blank">decodify</a> presented by <a href="https://b-nova.com/home" target="_blank">b-nova</a>';
-const DURATION = '36:00';
+const DURATION = '23:05';
 
 const DESCRIPTION =
-  '<p>We would like to extend a thank you to b-nova, our podcast sponsor for the Kubernetes Community Day Zürich 2023.</p><p>Their generous support and commitment to the community have made it possible for us to continue sharing valuable content and insights about KCD Zürich. Thank you, b-nova, for empowering our community through your sponsorship.</p><p>Make sure to subscribe and stay tuned for more exciting discussions and insights!</p>';
+  '<p>They’re back – the charming show hosts from b-nova, Tom and Stefan! This time, they’ve sat down with our most recent KCD Zürich speakers to extract even more exciting stories and insights. Stay tuned and listen in to the latest episodes.</p><p>On behalf of the Cloud Native Zürich team and the community, we extend a heartfelt thank you! Their generous support and commitment to the community have made it possible for us to continue sharing valuable content and insights.</p>';
 
 const SOCIAL_SHARE_TEXT =
   'Dive into our insightful Podcast and meet our brilliant speakers, making waves in the industry. This has been made possible by our dedicated sponsor, b-nova, who shares our passion for enriching our community. Listen now at Kcdzurich.ch/podcast 🎧';
@@ -69,17 +70,16 @@ const Hero = () => {
   const sharedUrl = `${process.env.GATSBY_DEFAULT_SITE_URL}/podcast`;
 
   return (
-    <section className="safe-paddings pb-20 pt-[86px] lg:py-10 md:pt-[52px] sm:pt-14">
+    <section className="safe-paddings pt-[86px] lg:pt-10 md:pt-[52px] sm:pt-14">
       <div className="container">
         <div className="relative flex sm:flex-col sm:gap-y-8 sm:overflow-hidden sm:bg-[linear-gradient(180deg,#DAF2F4_0%,#E8F1F3_100%)] sm:px-6 sm:pb-8 sm:pt-10">
           <img
             className="absolute -top-[18px] left-[56%] hidden h-[35px] w-auto sm:block"
             src={rectangleSvg}
-            alt=""
-            loading="lazy"
             width={587}
             height={35}
-            aria-hidden
+            loading="lazy"
+            alt=""
           />
           <div className="relative flex shrink-0 flex-col bg-[linear-gradient(180deg,#DAF2F4_0%,#E8F1F3_100%)] py-8 pl-8 pr-9 after:absolute after:left-full after:top-0 after:h-6 after:w-1.5 after:bg-[#daf2f4] lg:shrink lg:pb-8 lg:pl-6 lg:pr-7 lg:pt-6 md:pr-[22px] md:pt-11 sm:bg-none sm:p-0">
             <div className="max-w-[488px] border-4 border-b-[#0a113333] border-l-white border-r-[#0a113333] border-t-white p-2.5 lg:max-w-[386px] md:border-[3px] sm:max-w-none">
@@ -94,7 +94,7 @@ const Hero = () => {
             <div className="mb-[18px] mt-4 flex items-baseline whitespace-nowrap font-mono-cyber text-[22px] font-normal lg:mb-4 lg:max-w-[386px] lg:text-lg md:mt-3 md:text-sm sm:my-2.5 sm:max-w-none">
               <span>b-nova - &nbsp;&gt;_decodify</span>
               <span className="flex w-full items-baseline justify-between">
-                <time>(JUN18.23)</time>
+                <time>(JUN19.24)</time>
 
                 <span className="flex h-px flex-1 bg-[url('/images/dash-line.svg')] bg-cover" />
                 <span>{DURATION}</span>
@@ -144,6 +144,17 @@ const Hero = () => {
               className="mb-8 mt-6 max-w-[520px] space-y-5 bg-[url('/images/dash-line-gray-horizontal.svg')] bg-[length:100%_auto] bg-no-repeat pt-7 text-lg leading-normal lg:mt-[18px] lg:max-w-[87%] lg:space-y-[18px] lg:pt-5 lg:text-sm md:mb-5 md:max-w-[96%] md:text-[13px] sm:mt-8 sm:max-w-none sm:bg-none sm:pt-0"
               dangerouslySetInnerHTML={{ __html: DESCRIPTION }}
             />
+            <p className="flex items-center gap-x-3 font-mono-cyber text-2xl -tracking-[0.03em] opacity-50 lg:gap-x-2 lg:text-base">
+              <img
+                className="lg:max-w-[18px]"
+                src={loadingIcon}
+                width={24}
+                height={24}
+                loading="lazy"
+                alt=""
+              />
+              Stay tuned - new episodes coming soon....
+            </p>
             <div className="-mb-1 mt-auto flex items-center overflow-hidden text-primary-1">
               <span className="whitespace-nowrap font-semibold lg:text-sm md:text-[13px]">
                 Share episode:
