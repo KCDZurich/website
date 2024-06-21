@@ -13,7 +13,7 @@ import TwitterIcon from 'icons/pixel/x-pixel-logo.inline.svg';
 import AmazonIcon from './svg/amazon-icon.inline.svg';
 import AppleIcon from './svg/apple-icon.inline.svg';
 import GoogleIcon from './svg/google-icon.inline.svg';
-import loadingIcon from './svg/loading.svg';
+import microIcon from './svg/micro.svg';
 import rectangleSvg from './svg/rectangle.svg';
 import SpotifyIcon from './svg/spotify-icon.inline.svg';
 
@@ -144,18 +144,18 @@ const Hero = () => {
               className="mb-8 mt-6 max-w-[520px] space-y-5 bg-[url('/images/dash-line-gray-horizontal.svg')] bg-[length:100%_auto] bg-no-repeat pt-7 text-lg leading-normal lg:mt-[18px] lg:max-w-[87%] lg:space-y-[18px] lg:pt-5 lg:text-sm md:mb-5 md:max-w-[96%] md:text-[13px] sm:mt-8 sm:max-w-none sm:bg-none sm:pt-0"
               dangerouslySetInnerHTML={{ __html: DESCRIPTION }}
             />
-            <p className="flex items-center gap-x-3 font-mono-cyber text-2xl -tracking-[0.03em] opacity-50 lg:gap-x-2 lg:text-base">
+            <p className="mb-4 flex items-center gap-x-1.5 font-mono-cyber text-2xl -tracking-[0.03em] opacity-50 lg:gap-x-2 lg:text-base">
               <img
                 className="lg:max-w-[18px]"
-                src={loadingIcon}
-                width={24}
-                height={24}
+                src={microIcon}
+                width={26}
+                height={26}
                 loading="lazy"
                 alt=""
               />
-              Stay tuned - new episodes coming soon....
+              Online now
             </p>
-            <div className="-mb-1 mt-auto flex items-center overflow-hidden text-primary-1">
+            <div className="mt-auto flex items-center overflow-hidden text-primary-1">
               <span className="whitespace-nowrap font-semibold lg:text-sm md:text-[13px]">
                 Share episode:
               </span>
