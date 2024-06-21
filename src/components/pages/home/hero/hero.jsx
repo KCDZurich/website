@@ -2,9 +2,6 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import Button from 'components/shared/button';
-import LINKS from 'constants/links.js';
-
-import ArrowIcon from './images/arrow.inline.svg';
 
 const dateString = 'june 13th 2024';
 const title = 'KCD Zürich 2024';
@@ -13,9 +10,6 @@ const description =
 
 // const mainButtonURL = LINKS.tickets.to;
 const mainButtonText = 'Sold Out';
-
-const secondaryButtonURL = LINKS.rejects2024.to;
-const secondaryButtonText = 'Attend KCD Rejects';
 
 const Hero = () => (
   <section className="safe-paddings relative xs:max-h-[623px] xs:pb-[66.666%]">
@@ -37,16 +31,6 @@ const Hero = () => (
           disabled
         >
           {mainButtonText}
-        </Button>
-        <Button
-          className="z-[1] inline-flex items-center gap-2 !text-2xl leading-normal lg:!text-xl md:!text-lg"
-          theme="link-black"
-          size="lg"
-          to={secondaryButtonURL}
-          rel="nofollow noreferrer"
-        >
-          <span>{secondaryButtonText}</span>
-          <ArrowIcon className="mt-[3px] h-2 w-auto" />
         </Button>
       </div>
     </div>

@@ -90,7 +90,7 @@ const Sponsors = () => {
                     className="sm:max-h-[48px] sm:w-auto"
                     src={icon}
                     width={176}
-                    height={64}
+                    height={65}
                     loading="lazy"
                     alt=""
                   />
@@ -148,7 +148,7 @@ const Sponsors = () => {
                     className="sm:max-h-[48px] sm:w-auto"
                     src={icon}
                     width={176}
-                    height={64}
+                    height={65}
                     loading="lazy"
                     alt=""
                   />

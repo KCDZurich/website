@@ -1,14 +1,9 @@
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
-import Button from 'components/shared/button';
-
 const title = 'KCD Zürich Rejects';
 const description =
   "KCD Zürich Rejects is an event designed to showcase the wealth of knowledge and innovation within the Kubernetes community that didn't fit into the main Kubernetes Community Days Zürich 2024 agenda.";
-
-const mainButtonURL = 'https://rejects.kcdzurich.ch/';
-const mainButtonText = 'Get Your Ticket';
 
 const Hero = () => (
   <section className="safe-paddings relative xs:max-h-[623px] xs:pb-[66.666%]">
@@ -22,18 +17,7 @@ const Hero = () => (
       <p className="mt-4 max-w-[440px] text-base font-medium leading-relaxed text-primary-1 md:mt-3 md:max-w-[300px] md:text-sm xs:mt-2 xs:max-w-[330px] xs:text-[12px]">
         {description}
       </p>
-      <div className="mt-12 flex items-center gap-6 lg:flex-col lg:items-start md:mt-9 md:gap-[18px] sm:mt-8 sm:gap-3.5">
-        <Button
-          className="z-[1] !text-base md:!text-[11px] "
-          theme="cyber"
-          size="lg"
-          to={mainButtonURL}
-          target="_blank"
-          rel="nofollow noreferrer"
-        >
-          {mainButtonText}
-        </Button>
-      </div>
+      <div className="mt-12 flex items-center gap-6 lg:flex-col lg:items-start md:mt-9 md:gap-[18px] sm:mt-8 sm:gap-3.5" />
     </div>
     <StaticImage
       className="hero-clip-path pointer-events-none !absolute -top-[76px] left-1/2 -z-10 w-[1696px] -translate-x-1/2 after:absolute after:left-1/2 after:top-0 after:-z-20 after:h-full after:w-full after:-translate-x-1/2 after:bg-hero-gradient lg:!hidden"
