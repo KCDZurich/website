@@ -1,7 +1,6 @@
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
-import Button from 'components/shared/button';
 import Link from 'components/shared/link';
 
 const TITLE = 'Event Information';
@@ -70,16 +69,6 @@ const Location = () => (
             views, and is the perfect way to unwind and connect after a day filled with valuable
             insights and interactions.
           </p>
-          <Button
-            className="mt-14 md:mt-7 md:text-[11px]"
-            to="https://rejects.kcdzurich.ch/"
-            size="lg"
-            theme="cyber"
-            target="_blank"
-            rel="nofollow noreferrer"
-          >
-            Get your ticket
-          </Button>
         </div>
       </div>
     </div>
