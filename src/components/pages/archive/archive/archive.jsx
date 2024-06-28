@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 
@@ -14,7 +15,6 @@ import christopheTafaniPhoto from 'images/archive-2024/speakers/christophe-tafan
 import clementNussbaumerPhoto from 'images/archive-2024/speakers/clément-nussbaumer.jpg';
 import cyrillTroxlerPhoto from 'images/archive-2024/speakers/cyrill-troxler.jpg';
 import dimitrisAndreadisPhoto from 'images/archive-2024/speakers/dimitris-andreadis.jpg';
-import florianTrieloffPhoto from 'images/archive-2024/speakers/florian-trieloff.jpg';
 import franziskaBuhlerPhoto from 'images/archive-2024/speakers/franziska-buhler.jpg';
 import jonasFelixPhoto from 'images/archive-2024/speakers/jonas-felix.jpg';
 import katieGamanjiPhoto from 'images/archive-2024/speakers/katie-gamanji.jpg';
@@ -420,17 +420,6 @@ const items = {
           name: 'Benoit Entzmann',
           photo: benoitEntzmannPhoto,
         },
-      ],
-      presentation:
-        'We’ve carefully configured our Kubernetes cluster following security best practices. One of us is even Certified Kubernetes Security Specialist so we are confident our cluster is safe',
-    },
-    {
-      id: '05',
-      title: 'Oh No Our Kubernetes Cluster Has Been Compromised! Will YOU Save the Day?',
-      duration: '30 min',
-      pdf: '',
-      videoSrc: 'https://www.youtube.com/embed/2kaxA7kzZgM',
-      speakers: [
         {
           name: 'Chay Te',
           photo: ChayTePhoto,
@@ -486,7 +475,6 @@ const items = {
     },
     {
       id: '09',
-      time: '13:30',
       title: 'Crafting Intelligent Cloud Native applications with Quarkus',
       duration: '30 min',
       pdf: '',
@@ -499,20 +487,6 @@ const items = {
       ],
       presentation:
         'Quarkus was released on March 2019 in a galaxy not too far away (actually Neuchâtel, Switzerland) by a team of engineers that dreamed of supercharging Java for Cloud/Kubernetes native deployments, while bringing Joy back to Developers.',
-    },
-    {
-      id: '10',
-      title: 'Integrating backups into your GitOps Pipeline',
-      duration: '10 min',
-      pdf: '',
-      videoSrc: '',
-      speakers: [
-        {
-          name: 'Florian Trieloff',
-          photo: florianTrieloffPhoto,
-        },
-      ],
-      presentation: '',
     },
     {
       id: '11',
@@ -557,7 +531,6 @@ const items = {
         },
       ],
       presentation:
-        '\n' +
         'It is undeniable that Kubernetes served as the gravitational point for the cloud native landscape. By elevating a pluggable system, multiple areas were developed in the industry, galvanizing solutions that set the fundamentals of interoperability, standardization, and open guidelines for tooling',
     },
     {
@@ -630,17 +603,6 @@ const items = {
           name: 'Viktor Farcic',
           photo: viktorFarcicPhoto,
         },
-      ],
-      presentation:
-        'Our hero, a running application in a Kubernetes production environment, knows they are destined for greater things! They are serving end users, but currently, they are also endangering those users, the system, and themselves! ',
-    },
-    {
-      id: '19',
-      title: 'Choose Your Own Adventure: The Struggle for Security',
-      duration: '30 min',
-      pdf: '',
-      videoSrc: 'https://www.youtube.com/embed/sXbH-CPL4f0',
-      speakers: [
         {
           name: 'Whitney Lee',
           photo: whitneyLeePhoto,
@@ -682,18 +644,25 @@ const Archive = ({ year }) => {
           {visibleItems.map(
             ({ title, duration, isKeynote, speakers, presentation, pdf, videoSrc }, index) => (
               <li
-                className="group relative grid grid-cols-[172px_1fr_1fr] gap-x-24 pb-6 pt-8 after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-[url('/images/dash-line-gray-horizontal.svg')] after:bg-contain after:bg-repeat-x first:before:absolute first:before:top-0 first:before:h-[1px] first:before:w-full first:before:bg-[url('/images/dash-line-gray-horizontal.svg')] first:before:bg-contain first:before:bg-repeat-x md:grid-cols-[122px_1fr_1fr] md:gap-x-12 sm:w-[730px] sm:gap-x-8"
+                className="group relative grid grid-cols-[172px_1fr_1fr] gap-x-24 pb-6 pt-8 after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-[url('/images/dash-line-gray-horizontal.svg')] after:bg-contain after:bg-repeat-x first:before:absolute first:before:top-0 first:before:h-[1px] first:before:w-full first:before:bg-[url('/images/dash-line-gray-horizontal.svg')] first:before:bg-contain first:before:bg-repeat-x md:grid-cols-[130px_1fr_1fr] md:gap-x-12 sm:w-[730px] sm:gap-x-8"
                 key={index}
               >
                 <div className="mt-2 flex flex-col">
                   {speakers && speakers.length > 0 && (
-                    <ul className="relative inline-flex gap-x-5 sm:gap-x-4">
+                    <ul
+                      className={clsx(
+                        'relative inline-grid gap-x-5 sm:gap-x-4',
+                        speakers.length > 1 ? 'grid-cols-2' : 'grid-cols-1'
+                      )}
+                    >
                       {speakers.map(({ name, photo }, index) => (
-                        <li key={index}>
+                        <li className="" key={index}>
                           <figure className="flex flex-col">
                             <img
                               className={
-                                year === '2024' ? 'object-cover brightness-110 saturate-0' : ''
+                                year === '2024'
+                                  ? 'object-cover brightness-110 saturate-0 md:max-w-[60px]'
+                                  : ''
                               }
                               src={photo}
                               width={74}

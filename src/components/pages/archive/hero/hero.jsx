@@ -49,7 +49,7 @@ const Hero = ({ year }) => {
           </Button>
         </div>
         <div className="relative w-[59%] shrink-0 xs:w-full">
-          <span className="absolute bottom-[38%] right-28 z-20 text-lg font-bold leading-tight text-white shadow-[0_0_3px_rgba(10,17,51,0.07)] lg:right-[15%] md:bottom-[33%] md:text-sm sm:bottom-[35%] xs:right-[22%]">
+          <span className="absolute bottom-[38%] right-28 z-20 text-lg font-bold leading-tight text-white opacity-80 lg:right-[15%] md:bottom-[33%] md:text-sm sm:bottom-[35%] xs:right-[22%]">
             {year}
           </span>
           <StaticImage
