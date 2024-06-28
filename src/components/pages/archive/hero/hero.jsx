@@ -1,4 +1,5 @@
 import { StaticImage } from 'gatsby-plugin-image';
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 
 import Button from 'components/shared/button';
@@ -7,8 +8,12 @@ import Modal from 'components/shared/modal';
 const title = 'archive';
 const description =
   'Thank you to each of you for making <b>Kubernetes Community Days Zürich</b> a resounding success. Our sincere thanks also go to our <b>sponsors</b>. Your support played a crucial role in the success of this event.';
+const links = {
+  2023: 'https://www.youtube.com/watch?v=7-b0llQFT8E',
+  2024: 'https://www.youtube.com/watch?v=WAgs3D6Sv30',
+};
 
-const Hero = () => {
+const Hero = ({ year }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const handleModalShow = () => {
@@ -36,7 +41,7 @@ const Hero = () => {
             className="mt-14 !h-[75px] !w-[248px] !text-base md:mt-9 md:!text-[11px] sm:mt-8"
             theme="cyber"
             size="lg"
-            to="https://www.youtube.com/watch?v=7-b0llQFT8E"
+            to={links[year]}
             target="_blank"
             rel="nofollow noreferrer"
           >
@@ -44,6 +49,9 @@ const Hero = () => {
           </Button>
         </div>
         <div className="relative w-[59%] shrink-0 xs:w-full">
+          <span className="absolute bottom-[38%] right-28 z-20 text-lg font-bold leading-tight text-white opacity-80 lg:right-[15%] md:bottom-[33%] md:text-sm sm:bottom-[35%] xs:right-[22%]">
+            {year}
+          </span>
           <StaticImage
             className="relative z-20 -ml-6 -mr-24 -mt-10 md:-mr-16 md:mt-7 xs:-mx-6 xs:mt-0"
             src="./images/tv.png"
@@ -67,23 +75,44 @@ const Hero = () => {
               alt=""
             />
           </button>
-          <video
-            className="absolute left-[55%] top-[5%] z-10 block max-w-[72%] -translate-x-1/2 md:top-[18.8%] xs:left-1/2 xs:top-[15%] xs:max-w-[66%]"
-            width="700"
-            height="472"
-            autoPlay
-            playsInline
-            muted
-            loop
-          >
-            <source type="video/webm" src="/images/archive.webm" />
-            <source type="video/mp4" src="/images/archive.mp4" />
-          </video>
+          {year === '2023' ? (
+            <video
+              className="absolute left-[55%] top-[5%] z-10 block max-w-[72%] -translate-x-1/2 md:top-[18.8%] xs:left-1/2 xs:top-[15%] xs:max-w-[66%]"
+              width="700"
+              height="472"
+              autoPlay
+              playsInline
+              muted
+              loop
+            >
+              <source type="video/webm" src="/images/archive.webm" />
+              <source type="video/mp4" src="/images/archive.mp4" />
+            </video>
+          ) : (
+            <StaticImage
+              class="!absolute left-[55%] top-[8%] z-10 block w-[75%] -translate-x-1/2 md:top-[19%] xs:left-1/2 xs:top-[15%]"
+              src="./images/cover-2024.jpg"
+              width="496"
+              height="330"
+              alt="Recap 2024 cover"
+              loading="eager"
+            />
+          )}
         </div>
       </div>
-      <Modal modalData={{}} isVisible={isModalVisible} isVideoModal onModalHide={handleModalHide} />
+      <Modal
+        modalData={{}}
+        isVisible={isModalVisible}
+        dataYear={year}
+        isVideoModal
+        onModalHide={handleModalHide}
+      />
     </section>
   );
+};
+
+Hero.propTypes = {
+  year: PropTypes.oneOf(['2023', '2024']).isRequired,
 };
 
 export default Hero;

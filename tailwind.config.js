@@ -109,6 +109,9 @@ module.exports = {
         lg: '0px 14px 20px rgba(38, 47, 89, 0.1)',
         xl: '0px 14px 40px #ccc',
       },
+      backgroundSize: {
+        13: '13px',
+      },
     },
   },
   plugins: [require('tailwindcss-safe-area')],

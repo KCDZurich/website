@@ -46,10 +46,15 @@ export default {
     title: 'Kubernetes Community Days',
     description: '',
   },
-  archive: {
+  archive2023: {
     title: 'Kubernetes Community Days Zürich 2023 - Event Highlights',
     description:
       'Relive the exciting moments from Kubernetes Community Days Zürich 2023. Explore our collection of talk videos and event pictures that capture the best of this event.',
+  },
+  archive2024: {
+    title: 'Kubernetes Community Days Zürich 2024 - Event Highlights',
+    description:
+      'Relive the exciting moments from Kubernetes Community Days Zürich 2024. Explore our collection of talk videos and event pictures that capture the best of this event.',
   },
   podcast: {
     title: 'Meet the Speakers of Kubernetes Community Day Zürich 2023 Podcast',

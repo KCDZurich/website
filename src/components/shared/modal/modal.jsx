@@ -43,7 +43,19 @@ const defaultModalBackdropAnimation = {
   exit: { opacity: 0 },
 };
 
-const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoModal }) => {
+const videos = {
+  2023: 'https://www.youtube.com/embed/7-b0llQFT8E?autoplay=1&mute=0&rel=0',
+  2024: 'https://www.youtube.com/embed/WAgs3D6Sv30?autoplay=1&mute=0&rel=0',
+};
+
+const Modal = ({
+  isVisible,
+  modalData,
+  onModalHide,
+  isPresentationShow,
+  isVideoModal,
+  dataYear,
+}) => {
   const {
     id = '',
     name = '',
@@ -66,10 +78,22 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
     slideIndex = 0,
   } = modalData;
 
-  const sliderGalleryData = useStaticQuery(graphql`
-    {
-      allFile(
+  const galleries = useStaticQuery(graphql`
+    query galleryQuery {
+      gallery2023: allFile(
         filter: { relativeDirectory: { eq: "archive-2023" }, extension: { eq: "jpg" } }
+        sort: { relativePath: ASC }
+      ) {
+        nodes {
+          publicURL
+          childImageSharp {
+            gatsbyImageData(width: 1200)
+          }
+        }
+      }
+
+      gallery2024: allFile(
+        filter: { relativeDirectory: { eq: "archive-2024" }, extension: { eq: "jpg" } }
         sort: { relativePath: ASC }
       ) {
         nodes {
@@ -81,6 +105,11 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
       }
     }
   `);
+
+  const galleryData = {
+    2023: galleries?.gallery2023,
+    2024: galleries?.gallery2024,
+  };
 
   const sliderSettings = {
     dots: false,
@@ -143,8 +172,12 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
               <>
                 <iframe
                   allow="autoplay; picture-in-picture; web-share"
-                  src="https://www.youtube.com/embed/7-b0llQFT8E?autoplay=1&mute=0&rel=0"
-                  title="Kubernetes Community Days Zürich 2023"
+                  src={videos[dataYear]}
+                  title={
+                    dataYear === '2023'
+                      ? 'Kubernetes Community Days Zürich 2023'
+                      : 'Kubernetes Community Days Zürich 2024 Wrap Up Video'
+                  }
                   width="100%"
                   height="520"
                   allowFullScreen
@@ -163,7 +196,7 @@ const Modal = ({ isVisible, modalData, onModalHide, isPresentationShow, isVideoM
             isPhotoGallery ? (
               <>
                 <Slider ref={sliderRef} {...sliderSettings}>
-                  {sliderGalleryData.allFile.nodes.map((photo, index) => {
+                  {galleryData[dataYear].nodes.map((photo, index) => {
                     const image = getImage(photo);
 
                     return (
@@ -381,6 +414,7 @@ Modal.propTypes = {
   isVisible: PropTypes.bool.isRequired,
   isPresentationShow: PropTypes.bool,
   isVideoModal: PropTypes.bool,
+  dataYear: PropTypes.string,
   modalData: PropTypes.shape({
     id: PropTypes.string,
     photo: PropTypes.string,
@@ -408,6 +442,7 @@ Modal.propTypes = {
 Modal.defaultProps = {
   isPresentationShow: false,
   isVideoModal: false,
+  dataYear: '2024',
 };
 
 export default Modal;

@@ -2,14 +2,15 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import Button from 'components/shared/button';
+import LINKS from 'constants/links';
 
 const dateString = 'june 13th 2024';
 const title = 'KCD Zürich 2024';
 const description =
   'Experience the power of community at the Kubernetes Community Days in Zürich! When a diverse group of experts comes together to learn, network, and share knowledge on all things cloud native.';
 
-// const mainButtonURL = LINKS.tickets.to;
-const mainButtonText = 'Sold Out';
+const mainButtonURL = LINKS.archive2024.to;
+const mainButtonText = 'KCD 2024 Recap';
 
 const Hero = () => (
   <section className="safe-paddings relative xs:max-h-[623px] xs:pb-[66.666%]">
@@ -25,10 +26,10 @@ const Hero = () => (
       </p>
       <div className="mt-12 flex items-center gap-6 lg:flex-col lg:items-start md:mt-9 md:gap-[18px] sm:mt-8 sm:gap-3.5">
         <Button
-          className="z-[1] !text-base brightness-110 saturate-0 md:!text-[15px]"
+          className="z-[1] !text-base md:!text-[13px]"
           theme="cyber"
           size="lg"
-          disabled
+          to={mainButtonURL}
         >
           {mainButtonText}
         </Button>

@@ -12,8 +12,8 @@ const ITEMS = [
     icon: timAndKoko,
     url: 'https://rokt.cloud/',
     name: 'Tim & Koko',
-    width: 159,
-    height: 112,
+    width: 100,
+    height: 70,
     imageClassName: 'w-auto max-w-[159px] xs:max-w-[96px]',
   },
   {

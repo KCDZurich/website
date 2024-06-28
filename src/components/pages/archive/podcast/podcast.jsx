@@ -1,13 +1,16 @@
 import { StaticImage } from 'gatsby-plugin-image';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import Button from 'components/shared/button';
 
 const title = 'podcast';
-const description =
-  'Discover the Kubernetes Universe at Kubernetes Community Days Zürich 2023, powered by b-nova. Tune in to the podcast episode where industry leaders and developers shape the future of container orchestration.';
+const descriptions = {
+  2023: 'Discover the Kubernetes Universe at Kubernetes Community Days Zürich 2023, powered by b-nova. Tune in to the podcast episode where industry leaders and developers shape the future of container orchestration.',
+  2024: 'Discover the Kubernetes Universe at Kubernetes Community Days Zürich 2024, powered by b-nova. Tune in to the podcast episode where industry leaders and developers shape the future of container orchestration.',
+};
 
-const Podcast = () => (
+const Podcast = ({ year }) => (
   <section className="safe-paddings mt-[121px] lg:mt-16 md:mt-10 sm:mt-8">
     <div className="container overflow-hidden">
       <div className="relative flex sm:flex-col sm:gap-y-8 sm:overflow-hidden sm:bg-[linear-gradient(180deg,#DAF2F4_0%,#E8F1F3_100%)] sm:px-6 sm:pb-8 sm:pt-10">
@@ -31,7 +34,7 @@ const Podcast = () => (
           </header>
           <div
             className="mt-7 max-w-[520px] space-y-5 bg-[url('/images/dash-line-gray-horizontal.svg')] bg-[length:100%_auto] bg-no-repeat pt-7 text-xl leading-normal lg:mt-[18px] lg:max-w-[87%] lg:space-y-[18px] lg:pt-5 lg:text-base md:max-w-full sm:mt-8 sm:max-w-none sm:bg-none sm:pt-0"
-            dangerouslySetInnerHTML={{ __html: description }}
+            dangerouslySetInnerHTML={{ __html: descriptions[year] }}
           />
           <Button
             className="!h-13 mt-11 !px-10 lg:mt-12 md:mt-4 md:!text-[11px] xs:mt-8"
@@ -50,5 +53,9 @@ const Podcast = () => (
     </div>
   </section>
 );
+
+Podcast.propTypes = {
+  year: PropTypes.oneOf(['2023', '2024']).isRequired,
+};
 
 export default Podcast;

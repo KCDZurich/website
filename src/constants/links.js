@@ -15,9 +15,13 @@ export default {
     title: 'Podcast',
     to: '/podcast',
   },
-  archive: {
-    title: 'Archive',
+  archive2023: {
+    title: 'Archive 2023',
     to: '/archive',
+  },
+  archive2024: {
+    title: 'Archive 2024',
+    to: '/archive-2024',
   },
   schedule2023: {
     title: 'Schedule',

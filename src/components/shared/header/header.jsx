@@ -51,11 +51,54 @@ const Header = ({
                 isHomePage && 'lg:space-x-5'
               )}
             >
-              {MENUS.header.map(({ title, to }, index) => (
-                <li className="text-[15px] font-semibold text-primary-1" key={index}>
-                  <Button to={to} theme="link-primary">
-                    {title}
-                  </Button>
+              {MENUS.header.map(({ title, to, items }, index) => (
+                <li
+                  className={clsx(
+                    items && 'group relative',
+                    'text-[15px] font-semibold text-primary-1'
+                  )}
+                  key={index}
+                >
+                  {items ? (
+                    <>
+                      <button
+                        className="-my-3 whitespace-pre p-3 text-[15px] font-semibold text-primary-1"
+                        type="button"
+                      >
+                        {title}
+                      </button>
+                      <div className="group-hover:opacity-1 invisible absolute bottom-0 w-max -translate-x-1 translate-y-[114%] opacity-0 transition-[opacity,visibility] duration-200 group-hover:visible group-hover:opacity-100">
+                        <ul className="flex min-w-[184px] flex-col border border-primary-1 bg-white p-2">
+                          {items.map(({ title: childTitle, to: childTo }, idx) => (
+                            <li
+                              className="relative mt-4 before:absolute before:-top-2 before:h-px before:w-full before:bg-[url('/images/dash-line-gray.svg')] before:bg-13 first:mt-0 first:before:hidden"
+                              key={idx}
+                            >
+                              <Button
+                                className="!block p-2 !text-left !tracking-tight"
+                                to={childTo}
+                                theme="link-primary"
+                              >
+                                {childTitle}
+                              </Button>
+                            </li>
+                          ))}
+                        </ul>
+                        <span
+                          className="absolute inset-0 -left-[5px] -z-10 h-[calc(100%+5px)] w-[calc(100%+10px)] bg-white"
+                          aria-hidden
+                        />
+                        <span
+                          className="absolute inset-2.5 -z-20 h-full w-full bg-blue-light"
+                          aria-hidden
+                        />
+                      </div>
+                    </>
+                  ) : (
+                    <Button to={to} theme="link-primary">
+                      {title}
+                    </Button>
+                  )}
                 </li>
               ))}
             </ul>
@@ -68,7 +111,7 @@ const Header = ({
           onClick={() => handleModalShow()}
         >
           <ComputerIcon className="mr-2.5 h-4 w-4" aria-hidden />
-          Video 2023
+          Video 2024
         </Button>
         {!isHideMenu && (
           <>
