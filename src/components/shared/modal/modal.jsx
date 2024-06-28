@@ -43,6 +43,11 @@ const defaultModalBackdropAnimation = {
   exit: { opacity: 0 },
 };
 
+const videos = {
+  2023: 'https://www.youtube.com/embed/7-b0llQFT8E?autoplay=1&mute=0&rel=0',
+  2024: 'https://www.youtube.com/embed/WAgs3D6Sv30?autoplay=1&mute=0&rel=0',
+};
+
 const Modal = ({
   isVisible,
   modalData,
@@ -167,11 +172,7 @@ const Modal = ({
               <>
                 <iframe
                   allow="autoplay; picture-in-picture; web-share"
-                  src={
-                    dataYear === '2023'
-                      ? 'https://www.youtube.com/embed/7-b0llQFT8E?autoplay=1&mute=0&rel=0'
-                      : 'https://www.youtube.com/embed/bQLBOmHozO8?si=ddg1ZY9PONVGqc0o&autoplay=1&mute=0&rel=0'
-                  }
+                  src={videos[dataYear]}
                   title={
                     dataYear === '2023'
                       ? 'Kubernetes Community Days Zürich 2023'
