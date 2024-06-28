@@ -1,6 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import PropTypes from 'prop-types';
 import React, { useState, useRef } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -16,11 +17,23 @@ import './gallery.css';
 
 const title = 'photo gallery';
 
-const Gallery = () => {
-  const sliderThumbnailData = useStaticQuery(graphql`
-    {
-      allFile(
+const Gallery = ({ year }) => {
+  const thumbnails = useStaticQuery(graphql`
+    query thumbnailsQuery {
+      gallery2023: allFile(
         filter: { relativeDirectory: { eq: "archive-2023" }, extension: { eq: "jpg" } }
+        sort: { relativePath: ASC }
+      ) {
+        nodes {
+          publicURL
+          childImageSharp {
+            gatsbyImageData(width: 240)
+          }
+        }
+      }
+
+      gallery2024: allFile(
+        filter: { relativeDirectory: { eq: "archive-2024" }, extension: { eq: "jpg" } }
         sort: { relativePath: ASC }
       ) {
         nodes {
@@ -32,6 +45,11 @@ const Gallery = () => {
       }
     }
   `);
+  const sliderThumbnailData = {
+    2023: thumbnails?.gallery2023,
+    2024: thumbnails?.gallery2024,
+  };
+
   const sliderRef = useRef();
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isNextButtonDisable, setIsNextButtonDisable] = useState(false);
@@ -144,7 +162,7 @@ const Gallery = () => {
         </header>
         <div className="relative p-[52px_30px] lg:px-10 lg:pb-8 lg:pt-16 sm:px-4 xs:mt-4 xs:px-5 xs:pb-8 xs:pt-12">
           <Slider className="relative z-20 mt-10 lg:mt-0" ref={sliderRef} {...sliderSettings}>
-            {sliderThumbnailData.allFile.nodes.map((photo, index) => {
+            {sliderThumbnailData[year].nodes.map((photo, index) => {
               const image = getImage(photo);
 
               return (
@@ -174,6 +192,7 @@ const Gallery = () => {
           />
         </div>
         <Modal
+          dataYear={year}
           modalData={{
             isPhotoGallery: true,
             slideIndex: clickedIndex,
@@ -184,6 +203,10 @@ const Gallery = () => {
       </div>
     </section>
   );
+};
+
+Gallery.propTypes = {
+  year: PropTypes.oneOf(['2023', '2024']).isRequired,
 };
 
 export default Gallery;

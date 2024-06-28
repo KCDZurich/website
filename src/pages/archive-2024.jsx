@@ -12,16 +12,16 @@ import SEO_DATA from 'constants/seo-data';
 
 const ArchivePage = () => (
   <Layout>
-    <Hero year="2023" />
-    <Podcast year="2023" />
-    <Archive year="2023" />
-    <Sponsors year="2023" />
-    <Gallery year="2023" />
+    <Hero year="2024" />
+    <Podcast year="2024" />
+    <Archive year="2024" />
+    <Sponsors year="2024" />
+    <Gallery year="2024" />
   </Layout>
 );
 
 export default ArchivePage;
 
 export const Head = ({ location: { pathname } }) => (
-  <SEO {...SEO_DATA.archive2023} pathname={pathname} />
+  <SEO {...SEO_DATA.archive2024} pathname={pathname} />
 );
