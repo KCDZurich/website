@@ -56,7 +56,7 @@ const Sponsors = ({ year }) => {
     <section className="container-xl relative mt-[123px] bg-blue-super-light pt-24 before:absolute before:left-0 before:top-0 before:h-12 before:w-full before:bg-sponsors-separator before:bg-cover lg:mt-16 lg:py-14 lg:before:h-9 md:mt-10 md:pb-6 sm:mt-8 sm:before:h-8">
       <div className="container lg:!px-4 md:!px-2 xs:!px-0">
         <h2 className="leading-tighter font-mono-cyber text-4xl font-bold uppercase tracking-tighter md:text-3xl">
-          Thanks to our sponsors for KCD 2023
+          Thanks to our sponsors for KCD {year}
         </h2>
         <p className="mt-3 max-w-[960px] text-xl leading-normal text-primary-1 lg:text-lg">
           We would like to extend a special thank you to our sponsors for their support and
