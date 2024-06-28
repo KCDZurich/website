@@ -19,11 +19,11 @@ const Venue = () => (
           <br /> We are committed to supporting the local Zürich community and local businesses.
         </p>
         <p className="mt-6 md:mt-4">
-          Learn more about our work and watch all the speakers’ sessions videos from June 15, 2023
+          Learn more about our work and watch all the speakers’ sessions videos from June 13, 2024
           on{' '}
           <Link
             className="ml-3 inline-flex items-center border-b-2 border-transparent pb-0.5 font-mono-cyber text-[27px] font-bold leading-none tracking-wide transition-colors duration-200 hover:border-primary-1 lg:text-[24px] md:ml-1 md:text-lg sm:ml-2 sm:text-xl"
-            to="/archive"
+            to="/archive-2024"
           >
             <DisketteIcon className="mr-2 h-5 w-5 lg:h-4 lg:w-4 md:h-3 md:w-3" aria-hidden />
             archive page
