@@ -382,7 +382,7 @@ const items = {
       title:
         'Kubernetes at the Edge - How Roche is on the way to manage 1000+ clusters in Hospitals & Labs',
       duration: '30 min',
-      pdf: '',
+      pdf: '/archive-2024/Kubernetes at the Edge.pdf',
       videoSrc: 'https://www.youtube.com/embed/2KZzuOYc5vI',
       speakers: [
         {
@@ -398,7 +398,7 @@ const items = {
       title:
         'Successful Cloud Native Platform Engineering – Hype vs Reality - And a lot of Best Practices',
       duration: '30 min',
-      pdf: '',
+      pdf: '/archive-2024/SuccessfulPlatformEngineering.pdf',
       videoSrc: 'https://www.youtube.com/embed/CLGrm4eFBoo',
       speakers: [
         {
@@ -413,7 +413,7 @@ const items = {
       id: '04',
       title: 'Oh No Our Kubernetes Cluster Has Been Compromised! Will YOU Save the Day?',
       duration: '30 min',
-      pdf: '',
+      pdf: '/archive-2024/Oh No our K8s cluster has been compromised.pdf',
       videoSrc: 'https://www.youtube.com/embed/2kaxA7kzZgM',
       speakers: [
         {
@@ -432,7 +432,7 @@ const items = {
       id: '06',
       title: '"PIVOT!" — Bouncing between your app, your cluster and your cloud',
       duration: '30 min',
-      pdf: '',
+      pdf: '/archive-2024/"PIVOT!" — Bouncing between your app, your cluster and your cloud.pdf',
       videoSrc: 'https://www.youtube.com/embed/akgkusILt-w',
       speakers: [
         {
@@ -447,7 +447,7 @@ const items = {
       id: '07',
       title: 'RUD: Rapid Unscheduled Deletion of Critical Infrastructure Workloads',
       duration: '30 min',
-      pdf: '',
+      pdf: '/archive-2024/RUD Rapid Unscheduled Deletion of.pdf',
       videoSrc: 'https://www.youtube.com/embed/icsSFpg8QoM',
       speakers: [
         {
@@ -462,7 +462,7 @@ const items = {
       id: '08',
       title: 'Letting Your Containers Dream of Electric Sheep',
       duration: '30 min',
-      pdf: '',
+      pdf: '/archive-2024/Letting Your Containers Dream of Electric Sheep.pdf',
       videoSrc: 'https://www.youtube.com/embed/pMsrlwpvTBw',
       speakers: [
         {
@@ -477,7 +477,7 @@ const items = {
       id: '09',
       title: 'Crafting Intelligent Cloud Native applications with Quarkus',
       duration: '30 min',
-      pdf: '',
+      pdf: '/archive-2024/Crafting Intelligent Applications with Quarkus.pdf',
       videoSrc: 'https://www.youtube.com/embed/sRwhQzwi2qY',
       speakers: [
         {
@@ -492,7 +492,7 @@ const items = {
       id: '11',
       title: 'Securing Applications and Managing WAFs at a large scale',
       duration: '30 min',
-      pdf: '',
+      pdf: '/archive-2024/Securing_applications_and_managing_WAFs_at_a_large_scale.pdf',
       videoSrc: 'https://www.youtube.com/embed/LFSdsGhC-mM',
       speakers: [
         {
@@ -537,6 +537,7 @@ const items = {
       id: '14',
       title: 'Embracing the Future: The Effortless Mutual TLS and Traffic Control Without Sidecars',
       duration: '30 min',
+      pdf: '/archive-2024/Effortless mtls & traffic control without sidecar.pdf',
       videoSrc: 'https://www.youtube.com/embed/iICR5i-Ss14',
       speakers: [
         {
@@ -551,7 +552,7 @@ const items = {
       id: '15',
       title: 'Adventures in stateful applications on Kubernetes',
       duration: '30 min',
-      pdf: '',
+      pdf: '/archive-2024/Adventures in Stateful Applications on Kubernetes.pdf',
       videoSrc: 'https://www.youtube.com/embed/IF1_mxV5vTc',
       speakers: [
         {
@@ -566,7 +567,7 @@ const items = {
       id: '16',
       title: 'The Swiss Army Knife of Cloud Native Networking',
       duration: '30 min',
-      pdf: '',
+      pdf: '/archive-2024/The Swiss Army Knife of Cloud-Native Networking.pdf',
       videoSrc: 'https://www.youtube.com/embed/L3ba7LcJiFc',
       speakers: [
         {
@@ -596,7 +597,7 @@ const items = {
       id: '18',
       title: 'Choose Your Own Adventure: The Struggle for Security',
       duration: '30 min',
-      pdf: '',
+      pdf: '/archive-2024/The Struggle for Security.pdf',
       videoSrc: 'https://www.youtube.com/embed/sXbH-CPL4f0',
       speakers: [
         {
