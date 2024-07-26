@@ -5,7 +5,7 @@ slug: data-privacy
 
 ## Impressum
 
-Verein cloudnative.zürich <br/> 8800 Thalwil
+Verein cloudnative.zürich <br/> 8706 Meilen
 
 E-Mail: [hello@kcdzurich.ch](mailto:hello@kcdzurich.ch)
 
@@ -13,7 +13,7 @@ E-Mail: [hello@kcdzurich.ch](mailto:hello@kcdzurich.ch)
 
 Verantwortliche Stelle im Sinne der Datenschutzgesetze, insbesondere der EU-Datenschutzgrundverordnung (DSGVO), ist:
 
-Verein cloudnative.zürich <br/> 8800 Thalwil
+Verein cloudnative.zürich <br/> 8706 Meilen
 
 E-Mail: [hello@kcdzurich.ch](mailto:hello@kcdzurich.ch) <br/> Website: [kcdzurich.ch](https://tickets.kcdzurich.ch/)
 
