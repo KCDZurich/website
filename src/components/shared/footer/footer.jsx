@@ -4,7 +4,6 @@ import slugify from 'slugify';
 
 import LINKS from 'constants/links.js';
 import MENUS from 'constants/menus';
-import Logo from 'icons/logo.inline.svg';
 import GithubIcon from 'icons/social/github.inline.svg';
 import GooglemapsIcon from 'icons/social/google-maps.inline.svg';
 import LinkedinIcon from 'icons/social/linkedin.inline.svg';
@@ -46,17 +45,12 @@ const Footer = () => {
   return (
     <footer className="safe-paddings border-t border-t-gray-10 bg-white">
       <div className="container flex justify-between pb-5 pt-9 md:items-start md:gap-x-8 sm:flex-col sm:gap-y-12 sm:pt-5">
-        <Link to="/">
-          <Logo className="h-[40px] w-[149px] md:h-auto md:w-36" />
-          <span className="sr-only">KCD Zürich</span>
-        </Link>
-
         <nav>
-          <ul className="grid min-w-fit grid-cols-2 grid-rows-2 gap-x-3 gap-y-4 xl:gap-x-1 lg:mr-6 lg:gap-x-4 sm:mx-auto sm:gap-x-0 [@media(max-width:375px)]:grid-cols-1">
+          <ul className="grid min-w-fit grid-cols-2 grid-rows-2 gap-x-8 gap-y-4 xl:gap-x-1 lg:mr-6 lg:gap-x-4 sm:mx-auto sm:gap-x-0 [@media(max-width:375px)]:grid-cols-1">
             {MENUS.footer.map(({ title, to, target, name }, index) => (
               <li className="w-fit max-w-min text-sm font-semibold text-primary-1" key={index}>
                 <Button
-                  className="flex sm:flex-wrap"
+                  className="flex !tracking-normal sm:flex-wrap"
                   theme="link-primary"
                   to={to}
                   target={target}
@@ -76,15 +70,15 @@ const Footer = () => {
           )}
         </nav>
 
-        <div>
+        <div className="-mt-[3px] pr-[76px] lg:pr-14">
           <Link
-            className="ml-0.5 text-sm font-semibold transition-colors duration-200 hover:!text-[#06B3B8] sm:ml-0"
+            className="mr-1 text-sm font-semibold transition-colors duration-200 hover:!text-[#06B3B8] sm:ml-0"
             theme="primary"
             to="mailto:hello@kcdzurich.ch"
           >
             hello@kcdzurich.ch
           </Link>
-          <ul className="mt-4 flex min-w-fit gap-x-[18px]">
+          <ul className="mt-3 flex min-w-fit gap-x-3.5">
             {items.map(({ icon, url, name }, index) => {
               const Icon = icon;
 

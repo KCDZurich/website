@@ -38,7 +38,7 @@ const Header = ({
         additionalClassName
       )}
     >
-      <div className="container flex items-center justify-between py-5 md:py-2">
+      <div className="container flex items-center justify-between py-[17px] md:py-2">
         <Link className="z-50 block" to="/">
           <Logo className="h-[40px] w-[149px]" />
           <span className="sr-only">KCD Zürich</span>
@@ -47,8 +47,8 @@ const Header = ({
           <nav className={clsx(isHomePage && 'mr-40 lg:mr-[154px]')}>
             <ul
               className={clsx(
-                'flex space-x-8 text-white lg:ml-0 lg:space-x-6 md:hidden',
-                isHomePage && 'lg:space-x-5'
+                'flex gap-8 text-white lg:ml-0 lg:gap-6 md:hidden',
+                isHomePage && 'lg:gap-5'
               )}
             >
               {MENUS.header.map(({ title, to, items }, index) => (
@@ -62,7 +62,7 @@ const Header = ({
                   {items ? (
                     <>
                       <button
-                        className="-my-3 whitespace-pre p-3 text-[15px] font-semibold text-primary-1"
+                        className="-my-3 whitespace-pre py-3 text-[15px] font-semibold text-primary-1"
                         type="button"
                       >
                         {title}
@@ -95,7 +95,7 @@ const Header = ({
                       </div>
                     </>
                   ) : (
-                    <Button to={to} theme="link-primary">
+                    <Button className="!tracking-normal" to={to} theme="link-primary">
                       {title}
                     </Button>
                   )}
@@ -105,7 +105,7 @@ const Header = ({
           </nav>
         )}
         <Button
-          className="lg:!px-2 lg:!text-[13px] md:hidden"
+          className="min-h-[54px] tracking-wide-4 lg:!px-2 lg:!text-[13px] md:hidden"
           theme="primary"
           size="sm"
           onClick={() => handleModalShow()}

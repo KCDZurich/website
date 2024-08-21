@@ -54,7 +54,7 @@ const MobileMenu = ({ isOpen, onButtonClick, handleModalShow }) => {
       >
         <div className="scrollbar-hidden my-auto flex h-full w-full overflow-x-hidden overflow-y-scroll">
           <ul className="flex w-full flex-col justify-center space-y-3 text-center text-xl font-semibold text-primary-1">
-            {MENUS.mobile.map(({ title, to, items }, index) => (
+            {MENUS.header.map(({ title, to, items }, index) => (
               <li key={index}>
                 {items ? (
                   <button
@@ -117,7 +117,7 @@ const MobileMenu = ({ isOpen, onButtonClick, handleModalShow }) => {
           onClick={() => handleModalShow()}
         >
           <ComputerIcon className="mr-2.5 h-4 w-4" aria-hidden />
-          Video 2023
+          Video 2024
         </Button>
       </m.nav>
     </LazyMotion>

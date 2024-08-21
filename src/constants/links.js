@@ -73,6 +73,10 @@ export default {
     to: '/data-privacy',
     target: '_blank',
   },
+  whyRename: {
+    title: 'Why rename?',
+    to: '/why-rename',
+  },
 
   // Sections
   sponsors: {
