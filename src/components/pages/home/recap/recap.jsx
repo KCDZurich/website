@@ -56,7 +56,7 @@ const Recap = () => {
               className="mt-7 max-w-[520px] space-y-5 bg-[url('/images/dash-line-gray-horizontal.svg')] bg-[length:100%_auto] bg-no-repeat pt-6 text-lg leading-normal lg:mt-4 lg:max-w-[87%] lg:space-y-[18px] lg:pt-5 lg:text-base md:max-w-full sm:mt-8 sm:max-w-none sm:bg-none sm:pt-0"
               dangerouslySetInnerHTML={{ __html: description }}
             />
-            <div className="mt-9 flex items-center gap-8 xl:flex-col lg:mt-8 md:mt-4 md:flex-col md:items-start md:gap-3 sm:flex-row sm:items-center xs:mt-8 xs:items-start 2xs:flex-col">
+            <div className="mt-9 flex items-center gap-8 lg:mt-8 md:mt-4 md:flex-col md:items-start md:gap-3 sm:flex-row sm:items-center xs:mt-8 xs:flex-col xs:items-start">
               <Button
                 className="!h-13 !px-10 md:!text-[11px] 2xs:w-full"
                 to="/archive-2024"
