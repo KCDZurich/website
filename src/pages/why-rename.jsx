@@ -150,13 +150,15 @@ const content = [
 const WhyRenamePage = () => (
   <Layout>
     <Hero />
-    {content.map(({ title, content, isHighlighted, className }) =>
-      isHighlighted ? (
-        <HighlightedText title={title} content={content} className={className} />
-      ) : (
-        <MainText title={title} content={content} className={className} />
-      )
-    )}
+    {content.map(({ title, content, isHighlighted, className }, index) => (
+      <React.Fragment key={index}>
+        {isHighlighted ? (
+          <HighlightedText title={title} content={content} className={className} />
+        ) : (
+          <MainText title={title} content={content} className={className} />
+        )}
+      </React.Fragment>
+    ))}
     <FutureEvent />
   </Layout>
 );

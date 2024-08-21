@@ -24,7 +24,7 @@ const eventInfo = [
 ];
 
 const FutureEvent = () => (
-  <section className="safe-paddings my-24 lg:my-16 md:my-10">
+  <section className="future-event safe-paddings my-24 lg:my-16 md:my-10">
     <div className="container-md relative text-center sm:px-0">
       <div className="relative z-10 py-[120px] md:border-[5px] md:border-b-[#FCC5B1] md:border-l-[#FEEBE4] md:border-r-[#FCC5B1] md:border-t-[#FEEBE4] md:bg-[#FFF4F0] md:py-16 sm:border-none sm:px-4 sm:py-8">
         <h2 className="font-sans-cyber text-[52px] font-bold lowercase leading-tight lg:text-[40px] md:text-[36px] xs:text-[32px]">
