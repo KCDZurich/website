@@ -21,12 +21,16 @@ const Hero = () => (
           alt=""
           width={569}
           height={428}
+          loading="eager"
         />
       </div>
       <img
         className="absolute bottom-0 left-1/2 w-full min-w-[1696px] -translate-x-1/2 sm:min-w-[1200px]"
         src={pattern}
         alt=""
+        width={1696}
+        height={172}
+        loading="eager"
       />
     </div>
   </section>
