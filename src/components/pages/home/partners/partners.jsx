@@ -45,7 +45,7 @@ const Partners = () => (
         {ITEMS.map(({ icon, url, name, width, height, imageClassName, cardClassName }, index) => (
           <li
             className={clsx(
-              'relative before:absolute before:right-0 before:h-full before:w-px before:bg-vertical-dashed-line after:absolute after:inset-x-0 after:bottom-0 after:hidden after:h-px after:w-full after:bg-horizontal-dashed-line after:bg-auto after:bg-center last:before:hidden odd:before:block even:before:hidden sm:max-w-full sm:p-[18px] sm:after:block sm:last:after:hidden',
+              'relative before:absolute before:right-0 before:h-full before:w-px before:bg-vertical-dashed-line after:absolute after:inset-x-0 after:bottom-0 after:hidden after:h-px after:w-full after:bg-horizontal-dashed-line after:bg-auto after:bg-center last:before:hidden sm:max-w-full sm:p-[18px] sm:after:block sm:last:after:hidden sm:odd:before:block sm:even:before:hidden',
               cardClassName
             )}
             key={index}

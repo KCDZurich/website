@@ -74,11 +74,11 @@ export default {
   },
 
   static: ({ title }) => ({
-    title: `${title} — Kubernetes Community Days`,
+    title: `${title} — Cloud Native Zürich`,
   }),
 
   page404: {
-    title: 'Page Not Found — Kubernetes Community Days',
+    title: 'Page Not Found — Cloud Native Zürich',
     description: 'Sorry, we couldn’t find the page you’re looking for',
   },
 };

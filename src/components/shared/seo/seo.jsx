@@ -2,9 +2,8 @@
 import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
 
-const defaultTitle = 'Kubernetes Community Days Zürich';
-const defaultDescription =
-  'Experience the power of community at the Kubernetes Community Days in Zürich!';
+const defaultTitle = 'Cloud Native Zürich';
+const defaultDescription = 'Experience the power of community at the Cloud Native Zürich!';
 
 const SEO = ({ title, description, pathname, ogImagePathname, isNoIndex }) => {
   const {

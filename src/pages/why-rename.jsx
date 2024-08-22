@@ -113,7 +113,7 @@ const content = [
     ),
   },
   {
-    title: <>Clarifying Our Identity</>,
+    title: <>A new beginning</>,
     content: (
       <>
         We are aware that our new name bears a strong resemblance to the “OG Cloud Native event” in
