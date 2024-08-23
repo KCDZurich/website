@@ -111,9 +111,10 @@ const content = [
         </p>
       </>
     ),
+    isHighlighted: true,
   },
   {
-    title: <>A new beginning</>,
+    title: <>Clarifying our identity</>,
     content: (
       <>
         We are aware that our new name bears a strong resemblance to the “OG Cloud Native event” in
@@ -124,8 +125,6 @@ const content = [
         for the same community!
       </>
     ),
-    isHighlighted: true,
-    className: 'pb-[77px]',
   },
   {
     title: <>Looking Forward</>,

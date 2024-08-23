@@ -71,6 +71,7 @@ export default {
     title: 'Same Great Event, Brand New Name! Introducing Cloud Native Zürich 2025!',
     description:
       'We are excited to announce that Kubernetes Community Days Zürich will now be known as Cloud Native Zürich starting in 2025. This new name reflects our ongoing commitment to the cloud-native community and our desire to continue providing a platform for learning, networking, and knowledge sharing. Our goal and mission remain very much aligned with the CNCF and the community.',
+    ogImagePathname: '/images/why-rename-social-preview.jpg',
   },
 
   static: ({ title }) => ({
