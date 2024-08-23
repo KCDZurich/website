@@ -21,7 +21,7 @@ const Sponsors = () => (
           </p>
           <Button
             className="mt-[34px] !h-[54px] !px-9 !tracking-wider lg:mt-12 md:mt-6 md:!text-[11px] xs:mt-8"
-            to="mailto:hello@kcdzurich.ch"
+            to="mailto:hello@cloudnativezurich.ch"
             theme="primary"
             size="sm"
           >

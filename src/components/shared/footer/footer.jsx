@@ -74,9 +74,9 @@ const Footer = () => {
           <Link
             className="mr-1 text-sm font-semibold transition-colors duration-200 hover:!text-[#06B3B8] sm:ml-0"
             theme="primary"
-            to="mailto:hello@kcdzurich.ch"
+            to="mailto:hello@cloudnativezurich.ch"
           >
-            hello@kcdzurich.ch
+            hello@cloudnativezurich.ch
           </Link>
           <ul className="mt-3 flex min-w-fit gap-x-3.5">
             {items.map(({ icon, url, name }, index) => {
