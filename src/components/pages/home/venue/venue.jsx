@@ -12,7 +12,7 @@ const Venue = () => (
         <p>
           Cloud Native Zürich is community-organized events that gather adopters and technologists
           from open source and cloud native communities. <br /> We are committed to supporting the
-          local Zurich community and local businesses.
+          local Zürich community and local businesses.
         </p>
       </div>
     </div>
