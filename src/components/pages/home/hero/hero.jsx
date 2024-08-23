@@ -7,7 +7,7 @@ import LINKS from 'constants/links';
 
 const title = 'Cloud Native Zürich';
 const description =
-  'Experience the power of community at the Cloud Native Zurich! When a diverse group of experts comes together to learn, network, and share knowledge on all things cloud native.';
+  'Experience the power of community at the Cloud Native Zürich! When a diverse group of experts comes together to learn, network, and share knowledge on all things cloud native.';
 
 const mainButtonURL = LINKS.archive2024.to;
 const mainButtonText = 'KCD 2024 Recap';
