@@ -39,8 +39,8 @@ export default {
       'This one-day training in German or English provides a practical and easy-to-understand introduction to Kubernetes.',
   },
   team: {
-    title: 'Team — Kubernetes Community Days',
-    description: 'Experience the power of community at the Kubernetes Community Days in Zürich!',
+    title: 'Team — Cloud Native Zürich',
+    description: 'Experience the power of community at the Cloud Native Zürich!',
   },
   freebee: {
     title: 'Kubernetes Community Days',

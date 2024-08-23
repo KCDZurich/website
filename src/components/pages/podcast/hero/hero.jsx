@@ -25,7 +25,7 @@ const DESCRIPTION =
   '<p>They’re back – the charming show hosts from b-nova, Tom and Stefan! This time, they’ve sat down with our most recent KCD Zürich speakers to extract even more exciting stories and insights. Stay tuned and listen in to the latest episodes.</p><p>On behalf of the Cloud Native Zürich team and the community, we extend a heartfelt thank you! Their generous support and commitment to the community have made it possible for us to continue sharing valuable content and insights.</p>';
 
 const SOCIAL_SHARE_TEXT =
-  'Dive into our insightful Podcast and meet our brilliant speakers, making waves in the industry. This has been made possible by our dedicated sponsor, b-nova, who shares our passion for enriching our community. Listen now at Kcdzurich.ch/podcast 🎧';
+  'Dive into our insightful Podcast and meet our brilliant speakers, making waves in the industry. This has been made possible by our dedicated sponsor, b-nova, who shares our passion for enriching our community. Listen now at cloudnativezurich.ch/podcast 🎧';
 
 const PODCAST_SOCIAL_LINKS = [
   {
