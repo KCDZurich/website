@@ -15,7 +15,7 @@ Verantwortliche Stelle im Sinne der Datenschutzgesetze, insbesondere der EU-Date
 
 Verein cloudnative.zürich <br/> 8706 Meilen
 
-E-Mail: [hello@cloudnativezurich.ch](mailto:hello@cloudnativezurich.ch) <br/> Website: [cloudnativezurich.ch](https://tickets.cloudnativezurich.ch/)
+E-Mail: [hello@cloudnativezurich.ch](mailto:hello@cloudnativezurich.ch) <br/> Website: [cloudnativezurich.ch](https://cloudnativezurich.ch)
 
 ## Allgemeiner Hinweis
 
