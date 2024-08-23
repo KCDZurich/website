@@ -102,7 +102,9 @@ module.exports = {
       },
       letterSpacing: {
         tight: '-0.02em',
+        'tight-3': '-0.03em',
         tighter: '-0.04em',
+        'wide-4': '0.04em',
       },
       boxShadow: {
         sm: '0px 4px 8px rgba(38, 47, 89, 0.1)',

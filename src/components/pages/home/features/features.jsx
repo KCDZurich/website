@@ -2,7 +2,7 @@ import React from 'react';
 
 import mobileBorder from './images/border-mobile.svg';
 import border from './images/border.svg';
-import compassIcon from './images/compas.svg';
+import compassIcon from './images/compass.svg';
 import folderIcon from './images/folder.svg';
 import goalIcon from './images/goal.svg';
 
@@ -28,12 +28,12 @@ const items = [
 ];
 
 const Features = () => (
-  <section className="safe-paddings pt-[104px] lg:pt-10 md:pt-11">
+  <section className="safe-paddings pt-[104px] lg:pt-16 md:pt-11 sm:pt-14">
     <div className="relative mx-auto max-w-[1232px] pb-9 lg:max-w-[95vw] lg:pb-5 md:pb-2.5">
       <ul className="grid grid-cols-12 xs:flex xs:flex-col xs:items-center xs:gap-y-5">
         {items.map(({ title, content, icon }, index) => (
           <li
-            className="relative col-span-4 flex flex-col px-8 py-4 leading-normal text-primary-1 first:pl-10 last:pr-10 lg:px-4 lg:py-8 lg:first:pl-6 lg:last:pr-6 md:px-3.5 md:py-6 md:first:pl-4 md:last:pr-5 xs:max-w-[342px] xs:!p-6"
+            className="relative col-span-4 flex flex-col px-[29px] py-4 leading-normal text-primary-1 first:pl-10 first:pr-11 last:pl-[35px] last:pr-11 lg:px-4 lg:py-8 lg:first:pl-6 lg:last:pr-6 md:px-3.5 md:py-6 md:first:pl-4 md:last:pr-5 xs:max-w-[342px] xs:!p-6"
             key={index}
           >
             <div className="flex flex-col xs:flex-row xs:items-center xs:justify-center">
@@ -45,11 +45,11 @@ const Features = () => (
                 loading="lazy"
                 alt=""
               />
-              <h3 className="mx-auto font-mono-cyber text-4xl font-bold uppercase tracking-wide lg:text-[33px] md:text-[25px] xs:mx-0 xs:ml-3 xs:text-[31px]">
+              <h3 className="mx-auto mt-0.5 font-mono-cyber text-4xl font-bold uppercase tracking-tight-3 lg:text-[33px] md:text-[25px] xs:mx-0 xs:ml-3 xs:text-[31px]">
                 {title}
               </h3>
             </div>
-            <p className="mt-12 text-xl lg:mt-7 lg:text-base md:text-sm xs:mt-8">{content}</p>
+            <p className="mt-[50px] text-xl lg:mt-7 lg:text-base md:text-sm xs:mt-8">{content}</p>
             <img
               className="pointer-events-none absolute inset-0 -z-10 hidden h-full w-full object-contain xs:block"
               src={mobileBorder}

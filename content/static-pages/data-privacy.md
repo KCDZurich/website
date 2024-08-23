@@ -7,7 +7,7 @@ slug: data-privacy
 
 Verein cloudnative.zürich <br/> 8706 Meilen
 
-E-Mail: [hello@kcdzurich.ch](mailto:hello@kcdzurich.ch)
+E-Mail: [hello@cloudnativezurich.ch](mailto:hello@cloudnativezurich.ch)
 
 ## Datenschutzerklärung
 
@@ -15,7 +15,7 @@ Verantwortliche Stelle im Sinne der Datenschutzgesetze, insbesondere der EU-Date
 
 Verein cloudnative.zürich <br/> 8706 Meilen
 
-E-Mail: [hello@kcdzurich.ch](mailto:hello@kcdzurich.ch) <br/> Website: [kcdzurich.ch](https://tickets.kcdzurich.ch/)
+E-Mail: [hello@cloudnativezurich.ch](mailto:hello@cloudnativezurich.ch) <br/> Website: [cloudnativezurich.ch](https://tickets.cloudnativezurich.ch/)
 
 ## Allgemeiner Hinweis
 

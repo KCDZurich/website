@@ -65,9 +65,9 @@ const Sponsors = ({ year }) => {
           <Link
             className="!border-b !border-black !text-black hover:!border-mint hover:!text-mint"
             theme="blue-underlined"
-            to="mailto:hello@kcdzurich.ch"
+            to="mailto:hello@cloudnativezurich.ch"
           >
-            hello@kcdzurich.ch
+            hello@cloudnativezurich.ch
           </Link>
         </p>
         {year === '2023' ? (

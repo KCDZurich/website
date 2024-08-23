@@ -3,7 +3,7 @@ import React from 'react';
 const TITLE = 'team';
 
 const DESCRIPTION =
-  '<strong>The Kubernetes Community Days in Zürich</strong> are organized by a dedicated committee who are passionate about bringing people together and fostering a sense of community. Our goal is to provide a platform for like-minded individuals from all levels and backgrounds that is dedicated to learning, growth, and diversity.';
+  '<strong>Cloud Native Zürich</strong> are organized by a dedicated committee who are passionate about bringing people together and fostering a sense of community. Our goal is to provide a platform for like-minded individuals from all levels and backgrounds that is dedicated to learning, growth, and diversity.';
 
 const Hero = () => (
   <section className="safe-paddings overflow-hidden bg-opacity-10 pt-[72px] lg:pt-16 md:pt-8">

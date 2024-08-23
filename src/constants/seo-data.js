@@ -39,8 +39,8 @@ export default {
       'This one-day training in German or English provides a practical and easy-to-understand introduction to Kubernetes.',
   },
   team: {
-    title: 'Team — Kubernetes Community Days',
-    description: 'Experience the power of community at the Kubernetes Community Days in Zürich!',
+    title: 'Team — Cloud Native Zürich',
+    description: 'Experience the power of community at the Cloud Native Zürich!',
   },
   freebee: {
     title: 'Kubernetes Community Days',
@@ -67,13 +67,19 @@ export default {
       'KCD Zürich Rejects on June 5th! This unique half-day event brings together tech enthusiasts and professionals for inspiring talks,  networking, and a stunning rooftop Apéro. Dive into discussions on the latest tech trends and connect with the community in the heart of Zürich.',
     ogImagePathname: '/images/rejects-social-preview.jpg',
   },
+  whyRename: {
+    title: 'Same Great Event, Brand New Name! Introducing Cloud Native Zürich 2025!',
+    description:
+      'We are excited to announce that Kubernetes Community Days Zürich will now be known as Cloud Native Zürich starting in 2025. This new name reflects our ongoing commitment to the cloud-native community and our desire to continue providing a platform for learning, networking, and knowledge sharing. Our goal and mission remain very much aligned with the CNCF and the community.',
+    ogImagePathname: '/images/why-rename-social-preview.jpg',
+  },
 
   static: ({ title }) => ({
-    title: `${title} — Kubernetes Community Days`,
+    title: `${title} — Cloud Native Zürich`,
   }),
 
   page404: {
-    title: 'Page Not Found — Kubernetes Community Days',
+    title: 'Page Not Found — Cloud Native Zürich',
     description: 'Sorry, we couldn’t find the page you’re looking for',
   },
 };
